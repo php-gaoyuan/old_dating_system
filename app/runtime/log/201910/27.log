@@ -1,0 +1,12 @@
+---------------------------------------------------------------
+[ 2019-10-27T13:14:02+08:00 ] 42.189.209.99 GET /index/chat/chat/pals_id/8204
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000590s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14479 LIMIT 1 [ RunTime:0.000567s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000569s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14479  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000409s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14479 LIMIT 1 [ RunTime:0.000287s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000525s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14479 LIMIT 1 [ RunTime:0.000237s ]
+[ sql ] [ SQL ] INSERT INTO `wy_online` (`user_id` , `user_name` , `user_sex` , `user_ico` , `active_time` , `hidden`) VALUES (14479 , 'Jarvis96' , 1 , 'http://www.pauzzz.com/uploadfiles/avatar/20191013/cd26c0be3e2e442007ae851d820c5875.jpeg' , 1572153242 , 0) [ RunTime:0.000358s ]
+[ sql ] [ SQL ] SELECT `user_id`,`user_name`,`user_ico` FROM `wy_users` WHERE  `user_id` = 8204 LIMIT 1 [ RunTime:0.000237s ]

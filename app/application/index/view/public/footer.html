@@ -1,0 +1,31 @@
+<{include file="public:chat" /}>
+<!-- <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_537983_p50sudb7q2xogvi.css"/> -->
+<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_537983_m0uxbgjfqg.css"/>
+<style>
+	.mui-bar a.mui-tab-item{position: relative;}
+</style>
+<div style="height:60px;"></div>
+<nav class="mui-bar mui-bar-tab">
+    <a class="mui-tab-item <{if $act == 'main'}> mui-active <{/if}>" href="<{:url('main/index')}>">
+        <span class="mui-icon iconfont icon-zhinanzhen-copy"></span>
+        <span class="mui-tab-label"><{:lang("footer_nav1")}></span>
+    </a>
+    <a class="mui-tab-item <{if $act == 'chat'}> mui-active <{/if}>" href="<{:url('chat/index')}>">
+    	<span class="mui-badge mui-badge-danger" style="position: absolute;right: 14px;z-index: 999;" id="msg_nums"><{$log_messages}></span>
+        <span class="mui-icon iconfont icon-xiaoxi"></span>
+        <span class="mui-tab-label"><{:lang("footer_nav2")}></span>
+    </a>
+    <a class="mui-tab-item <{if $act == 'mood'}> mui-active <{/if}>" href="<{:url('mood/index')}>">
+        <span class="mui-icon mui-icon-pengyouquan"></span>
+        <span class="mui-tab-label"><{:lang("footer_nav3")}></span>
+    </a>
+    <a class="mui-tab-item <{if $act == 'pals'}> mui-active <{/if}>" href="<{:url('pals/index')}>">
+        <span class="mui-icon iconfont icon-wodehaoyou"></span>
+        <span class="mui-tab-label"><{:lang("footer_nav4")}></span>
+    </a>
+    
+    <a class="mui-tab-item <{if $act == 'user'}> mui-active <{/if}>" href="<{:url('user/index')}>">
+        <span class="mui-icon mui-icon-contact"></span>
+        <span class="mui-tab-label"><{:lang("footer_nav5")}></span>
+    </a>
+</nav>

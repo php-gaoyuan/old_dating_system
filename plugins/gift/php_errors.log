@@ -1,0 +1,2 @@
+[12-Mar-2015 16:24:17 PRC] PHP Warning:  include(/home/wwwroot/lovelove/plugins/../api/base_support.php): failed to open stream: No such file or directory in /home/wwwroot/lovelove/plugins/includes.php on line 2
+[12-Mar-2015 16:24:17 PRC] PHP Warning:  include(): Failed opening '/home/wwwroot/lovelove/plugins/../api/base_support.php' for inclusion (include_path='.:') in /home/wwwroot/lovelove/plugins/includes.php on line 2

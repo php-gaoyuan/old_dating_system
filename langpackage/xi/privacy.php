@@ -1,0 +1,61 @@
+<?php
+class privacylp{
+	var $pr_conf="Configuración de la privacidad";
+	var $pr_access="acceso";
+	var $pr_inputmess="Permisos Mensaje";
+	var $pr_reqcheck="Configuración del componente Anti-molestar";
+	var $pr_qanswer_err="Usted entra a la respuesta equivocada, por favor vuelve a confirmar!";
+	var $pr_save_sec="La configuración de privacidad de cambio exitoso!";
+	var $pr_acc_false="El usuario establece las restricciones de los derechos de privacidad!";
+	var $pr_no_data="Por favor, seleccione el elemento de ajuste！";
+	var $pr_home="Configuración de acceso Inicio";
+	var $pr_public="Abierto a todos";
+	var $pr_only_reger="Abierto sólo para la comunidad de usuarios registrados";
+	var $pr_only_pals="Abierto solamente para los Amigos";
+	var $pr_set_ques="Todos los usuarios con problemas de acceso a la contraseña";
+	var $pr_ques1="pregunta 1";
+	var $pr_ques2="pregunta 2";
+	var $pr_ques3="pregunta 3";
+	var $pr_ans1="Respuesta 1";
+	var $pr_ans2="Respuesta 2";
+	var $pr_ans3="Respuesta 3";
+	var $pr_que_limit="Preguntas o respuestas de hasta 20 caracteres se pueden introducir。";
+	var $pr_example="ejemplo";
+	var $pr_ex_que="Pregunta: ¿Cuál es mi apodo？";
+	var $pr_ex_an="Respuesta: Cerdo fuerte";
+	var $pr_button_action="presentar";
+	var $pr_button_cancel="cancelar";
+	var $pr_no_an="Por favor, introduzca la respuesta！";
+	var $pr_ans="Es necesario responder a las siguientes preguntas con el fin de acceder a la página de inicio!";
+	var $pr_select_que="elección";
+	var $pr_write_ans="Rellene las respuestas";
+	var $pr_send_set="Inicio de mensajes y comentarios en la configuración de permisos";
+	var $pr_send_public="Cualquier usuario puede dejar un mensaje o dejar un comentario";
+	var $pr_send_pals="Sólo permiten que sus amigos para dejar un mensaje o dejar un comentario";
+	var $pr_send_pri="No permita que nadie se deje un mensaje o dejar un comentario";
+	var $pr_role_check="autenticación";
+	var $pr_pals_public="Permite a nadie que me agregue como amigo";
+	var $pr_pals_check="La autenticación es necesaria para ponerme como amigo";
+	var $pr_pals_close="No permita que nadie se me puso como amigo";
+	var $pr_forget_sort="No haga caso de las categorías ";
+	var $pr_chose="seleccionar";
+	var $pr_add_sort="Añadir a ignorar categoría";
+	var $pr_shield_sort="Categorías bloqueadas";
+	var $pr_del="eliminar";
+	var $pr_forget_list="No haga caso de la lista";
+	var $pr_add_list="Añadir a ignorar los nombres";
+	var $pr_shield_list="Amigos bloqueados";
+	var $pr_handle_suc="operación exitosa";
+	var	$pr_type_0="Blog";
+	var	$pr_type_1="Grupos";
+	var	$pr_type_2="foto";
+	var	$pr_type_3="avatar";
+	var	$pr_type_4="voto";
+	var	$pr_type_5="cuota";
+	var	$pr_type_6="humor";
+	var	$pr_rep_screen="No repita el escudo";
+	var	$pr_amend_los="Modificación falla！";
+	var $pr_affair_set="Nada nueva configuración";
+	
+}
+?>

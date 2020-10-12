@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+<title>礼品插件</title>
+<version>1.0</version>
+<author>WEBZHU</author>
+<description>给好友送礼品，让他（她）有个好心情!</description>
+<website>http://www.webzhu.com</website><csspath/>
+<jspath/>
+<csspath/>
+<sqlpath>mysql.sql</sqlpath>
+<inurl>index.php</inurl>
+<show>2</show>
+<callfunction/>
+<plugin_id>10</plugin_id><autoorder>0</autoorder><valid>1</valid></plugin>

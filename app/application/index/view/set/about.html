@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title><{:lang('about')}></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="<{:config('skin_path')}>/css/mui.min.css" rel="stylesheet" />
+		<style>
+			.center{
+				text-align: center;
+				margin:15px 0;
+			}
+			.bottom{
+				display: block;
+				width: 100%;
+				position: absolute;
+				bottom:10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<{if !$is_h5_plus }>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title"><{:lang('about')}></h1>
+		</header>
+		<{/if}>
+		<div class="mui-content">
+			<img src="<{:config('skin_path')}>/images/login-log.png" style="margin:0 auto;display:block;width:90%"/>
+			<div class="center"><{:lang('banben')}>：<span>3.1</span></div>
+			<ul class="mui-table-view">
+			        <li class="mui-table-view-cell">
+			            <a class="mui-navigate-right">
+			                <{:lang('help center')}>
+			            </a>
+			        </li>
+			        <li class="mui-table-view-cell">
+			            <a class="mui-navigate-right">
+			                 <{:lang('tiaokuan')}>
+			            </a>
+			        </li>
+			        <li class="mui-table-view-cell">
+			            <a class="mui-navigate-right">
+			                 <{:lang('about us')}>
+			            </a>
+			        </li>
+			        <li class="mui-table-view-cell">
+			            <a class="mui-navigate-right">
+			                 <{:lang('jiaoyou')}>
+			            </a>
+			        </li>
+			        <li class="mui-table-view-cell">
+			            <a class="mui-navigate-right">
+			                 <{:lang('gengxin')}>
+			            </a>
+			        </li>
+			    </ul>
+			    
+			    <div class="center bottom">
+			    	<{:lang('guanwang')}>：www.pauzzz.com <br />
+			    </div>
+		</div>
+		<script type="text/javascript" src="<{:config('skin_path')}>/js/jquery.min.js"></script>
+		<script type="text/javascript" src="<{:config('skin_path')}>/js/public.js"></script>
+	</body>
+
+</html>

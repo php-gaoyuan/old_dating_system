@@ -1,0 +1,1933 @@
+---------------------------------------------------------------
+[ 2020-10-12T18:39:19+08:00 ] 127.0.0.1 GET /index.php/index/main/main.php
+[ info ] m.jyo.com/index.php/index/main/main.php [运行时间：0.022767s][吞吐率：43.92req/s] [内存消耗：1,122.05kb] [文件加载：43]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'error',
+    1 => '403',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'think_var=en-us',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-10-12T18:39:26+08:00 ] 127.0.0.1 GET //index/main/main.php
+[ info ] m.jyo.com//index/main/main.php [运行时间：0.020663s][吞吐率：48.40req/s] [内存消耗：1,121.77kb] [文件加载：43]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'error',
+    1 => '403',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'think_var=en-us',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-10-12T18:39:58+08:00 ] 127.0.0.1 GET //index/main/main.php
+[ info ] m.jyo.com//index/main/main.php [运行时间：0.020137s][吞吐率：49.66req/s] [内存消耗：1,122.22kb] [文件加载：43]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'error',
+    1 => '403',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; think_var=en-us',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-10-12T18:39:58+08:00 ] 127.0.0.1 GET //index/main/main.php
+[ info ] m.jyo.com//index/main/main.php [运行时间：0.018685s][吞吐率：53.52req/s] [内存消耗：1,122.17kb] [文件加载：43]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'error',
+    1 => '403',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; think_var=en-us',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-10-12T18:39:59+08:00 ] 127.0.0.1 GET //index/main/main.php
+[ info ] m.jyo.com//index/main/main.php [运行时间：0.019010s][吞吐率：52.60req/s] [内存消耗：1,122.17kb] [文件加载：43]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'error',
+    1 => '403',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; think_var=en-us',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-10-12T18:39:59+08:00 ] 127.0.0.1 GET //index/main/main.php
+[ info ] m.jyo.com//index/main/main.php [运行时间：0.018265s][吞吐率：54.75req/s] [内存消耗：1,122.17kb] [文件加载：43]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'error',
+    1 => '403',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; think_var=en-us',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-10-12T18:39:59+08:00 ] 127.0.0.1 GET //index/main/main.php
+[ info ] m.jyo.com//index/main/main.php [运行时间：0.018734s][吞吐率：53.38req/s] [内存消耗：1,122.17kb] [文件加载：43]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'error',
+    1 => '403',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; think_var=en-us',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-10-12T18:40:07+08:00 ] 127.0.0.1 GET //index/main/main.php
+[ info ] m.jyo.com//index/main/main.php [运行时间：0.019707s][吞吐率：50.74req/s] [内存消耗：1,122.22kb] [文件加载：43]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'error',
+    1 => '403',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; think_var=en-us',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-10-12T18:40:07+08:00 ] 127.0.0.1 GET //index/main/main.php
+[ info ] m.jyo.com//index/main/main.php [运行时间：0.018490s][吞吐率：54.08req/s] [内存消耗：1,122.17kb] [文件加载：43]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'error',
+    1 => '403',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; think_var=en-us',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-10-12T18:40:07+08:00 ] 127.0.0.1 GET //index/main/main.php
+[ info ] m.jyo.com//index/main/main.php [运行时间：0.018529s][吞吐率：53.97req/s] [内存消耗：1,122.17kb] [文件加载：43]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'error',
+    1 => '403',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; think_var=en-us',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-10-12T18:40:08+08:00 ] 127.0.0.1 GET //index/main/main.php
+[ info ] m.jyo.com//index/main/main.php [运行时间：0.018395s][吞吐率：54.36req/s] [内存消耗：1,122.17kb] [文件加载：43]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'error',
+    1 => '403',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; think_var=en-us',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-10-12T18:40:08+08:00 ] 127.0.0.1 GET //index/main/main.php
+[ info ] m.jyo.com//index/main/main.php [运行时间：0.018402s][吞吐率：54.34req/s] [内存消耗：1,122.17kb] [文件加载：43]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'error',
+    1 => '403',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; think_var=en-us',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-10-12T18:40:08+08:00 ] 127.0.0.1 GET //index/main/main.php
+[ info ] m.jyo.com//index/main/main.php [运行时间：0.018608s][吞吐率：53.74req/s] [内存消耗：1,122.17kb] [文件加载：43]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'error',
+    1 => '403',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; think_var=en-us',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-10-12T18:40:08+08:00 ] 127.0.0.1 GET //index/main/main.php
+[ info ] m.jyo.com//index/main/main.php [运行时间：0.018652s][吞吐率：53.61req/s] [内存消耗：1,122.17kb] [文件加载：43]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'error',
+    1 => '403',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; think_var=en-us',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-10-12T18:40:08+08:00 ] 127.0.0.1 GET //index/main/main.php
+[ info ] m.jyo.com//index/main/main.php [运行时间：0.019279s][吞吐率：51.87req/s] [内存消耗：1,122.17kb] [文件加载：43]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'error',
+    1 => '403',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; think_var=en-us',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-10-12T18:40:08+08:00 ] 127.0.0.1 GET //index/main/main.php
+[ info ] m.jyo.com//index/main/main.php [运行时间：0.018506s][吞吐率：54.04req/s] [内存消耗：1,122.17kb] [文件加载：43]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'error',
+    1 => '403',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; think_var=en-us',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-10-12T18:40:09+08:00 ] 127.0.0.1 GET //index/main/main.php
+[ info ] m.jyo.com//index/main/main.php [运行时间：0.018278s][吞吐率：54.71req/s] [内存消耗：1,122.17kb] [文件加载：43]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'error',
+    1 => '403',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; think_var=en-us',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-10-12T18:40:09+08:00 ] 127.0.0.1 GET //index/main/main.php
+[ info ] m.jyo.com//index/main/main.php [运行时间：0.018291s][吞吐率：54.67req/s] [内存消耗：1,122.17kb] [文件加载：43]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'error',
+    1 => '403',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; think_var=en-us',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-10-12T18:40:09+08:00 ] 127.0.0.1 GET //index/main/main.php
+[ info ] m.jyo.com//index/main/main.php [运行时间：0.018764s][吞吐率：53.29req/s] [内存消耗：1,122.17kb] [文件加载：43]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'error',
+    1 => '403',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; think_var=en-us',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-10-12T18:40:25+08:00 ] 127.0.0.1 GET /
+[ info ] m.jyo.com/ [运行时间：0.063087s][吞吐率：15.85req/s] [内存消耗：1,569.64kb] [文件加载：55]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'think_var=en-us',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\en-us.php
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\view\index\index.html [ array (
+  0 => 'lang',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-10-12T18:40:55+08:00 ] 127.0.0.1 POST /index/index/login.html
+[ info ] m.jyo.com/index/index/login.html [运行时间：0.035990s][吞吐率：27.79req/s] [内存消耗：1,936.58kb] [文件加载：54]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'think_var=en-us; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/',
+  'origin' => 'http://m.jyo.com',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '28',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'chuyang',
+  'pass' => '123456',
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\en-us.php
+[ info ] [ RUN ] app\index\controller\Index->login[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002874s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001389s ]
+[ sql ] [ SQL ] SELECT `is_pass`,`user_id`,`user_email`,`user_name`,`user_pws`,`user_sex`,`user_ico` FROM `wy_users` WHERE  (  user_name='chuyang' or user_email='chuyang' ) LIMIT 1 [ RunTime:0.006147s ]
+---------------------------------------------------------------
+[ 2020-10-12T18:41:00+08:00 ] 127.0.0.1 POST /index/index/login.html
+[ info ] m.jyo.com/index/index/login.html [运行时间：0.043254s][吞吐率：23.12req/s] [内存消耗：1,936.59kb] [文件加载：54]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'think_var=en-us; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/',
+  'origin' => 'http://m.jyo.com',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '28',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'chuyang',
+  'pass' => '123456',
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\en-us.php
+[ info ] [ RUN ] app\index\controller\Index->login[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010750s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001104s ]
+[ sql ] [ SQL ] SELECT `is_pass`,`user_id`,`user_email`,`user_name`,`user_pws`,`user_sex`,`user_ico` FROM `wy_users` WHERE  (  user_name='chuyang' or user_email='chuyang' ) LIMIT 1 [ RunTime:0.006869s ]
+---------------------------------------------------------------
+[ 2020-10-12T18:42:45+08:00 ] 127.0.0.1 POST /index/index/login.html
+[ info ] m.jyo.com/index/index/login.html [运行时间：0.036831s][吞吐率：27.15req/s] [内存消耗：1,936.76kb] [文件加载：54]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'think_var=en-us; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/',
+  'origin' => 'http://m.jyo.com',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '30',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'chuyang',
+  'pass' => 'hu851107',
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\en-us.php
+[ info ] [ RUN ] app\index\controller\Index->login[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000573s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000946s ]
+[ sql ] [ SQL ] SELECT `is_pass`,`user_id`,`user_email`,`user_name`,`user_pws`,`user_sex`,`user_ico` FROM `wy_users` WHERE  (  user_name='chuyang' or user_email='chuyang' ) LIMIT 1 [ RunTime:0.006563s ]
+---------------------------------------------------------------
+[ 2020-10-12T18:42:49+08:00 ] 127.0.0.1 GET /index/index/lang/lang/zh.html
+[ info ] m.jyo.com/index/index/lang/lang/zh.html [运行时间：0.022849s][吞吐率：43.77req/s] [内存消耗：1,378.70kb] [文件加载：50]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'think_var=en-us; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'lang' => 'zh',
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\en-us.php
+[ info ] [ RUN ] app\index\controller\Index->lang[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-10-12T18:42:49+08:00 ] 127.0.0.1 GET /index/index/index.html
+[ info ] m.jyo.com/index/index/index.html [运行时间：0.024414s][吞吐率：40.96req/s] [内存消耗：1,469.46kb] [文件加载：54]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\zh-cn.php
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\view\index\index.html [ array (
+  0 => 'lang',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-10-12T18:42:52+08:00 ] 127.0.0.1 POST /index/index/login.html
+[ info ] m.jyo.com/index/index/login.html [运行时间：0.051250s][吞吐率：19.51req/s] [内存消耗：2,366.50kb] [文件加载：62]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/index/index/index.html',
+  'origin' => 'http://m.jyo.com',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '28',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'chuyang',
+  'pass' => '851107',
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\zh-cn.php
+[ info ] [ RUN ] app\index\controller\Index->login[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000573s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000906s ]
+[ sql ] [ SQL ] SELECT `is_pass`,`user_id`,`user_email`,`user_name`,`user_pws`,`user_sex`,`user_ico` FROM `wy_users` WHERE  (  user_name='chuyang' or user_email='chuyang' ) LIMIT 1 [ RunTime:0.007993s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000637s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.005422s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000464s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_users` [ RunTime:0.001180s ]
+[ sql ] [ SQL ] UPDATE `chat_users`  SET `line_status`=1,`app_online`=1  WHERE  `uid` = 12053 [ RunTime:0.000281s ]
+[ sql ] [ SQL ] UPDATE `wy_users`  SET `lastlogin_datetime`='2020-10-12 18:42:52',`login_ip`='127.0.0.1'  WHERE  `user_id` = 12053 [ RunTime:0.000295s ]
+---------------------------------------------------------------
+[ 2020-10-12T18:42:52+08:00 ] 127.0.0.1 GET /index/main/index.html
+[ info ] m.jyo.com/index/main/index.html [运行时间：0.070331s][吞吐率：14.22req/s] [内存消耗：2,476.52kb] [文件加载：64]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'main',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; think_var=zh-cn; PHPSESSID=tm14sm838n33ouqr61o6m0ccn3; user_id=12053; user_name=chuyang; user_sex=1; user_ico=uploadfiles%2Favatar%2F20190408%2F1554704406365_162.jpg',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/index/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Main->index[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Main.php ]
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\view\main\index.html [ array (
+  0 => 'userinfo',
+  1 => 'is_h5_plus',
+  2 => 'lang',
+  3 => 'log_messages',
+  4 => 'act',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001200s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.004868s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000431s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000687s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000286s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000276s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000540s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000175s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=12053,`user_name`='chuyang',`user_sex`=1,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190408/1554704406365_162.jpg',`active_time`=1602499372,`hidden`=0  WHERE  `user_id` = 12053 [ RunTime:0.000185s ]
+---------------------------------------------------------------
+[ 2020-10-12T18:42:52+08:00 ] 127.0.0.1 GET /index/main/query/page/1.html
+[ info ] m.jyo.com/index/main/query/page/1.html [运行时间：0.060825s][吞吐率：16.44req/s] [内存消耗：2,275.92kb] [文件加载：60]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'main',
+    2 => 'query',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; think_var=zh-cn; PHPSESSID=tm14sm838n33ouqr61o6m0ccn3; user_id=12053; user_name=chuyang; user_sex=1; user_ico=uploadfiles%2Favatar%2F20190408%2F1554704406365_162.jpg',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/index/main/index.html',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Main->query[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Main.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000492s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000864s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000610s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000533s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000344s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000427s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.004459s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000285s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=12053,`user_name`='chuyang',`user_sex`=1,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190408/1554704406365_162.jpg',`active_time`=1602499372,`hidden`=0  WHERE  `user_id` = 12053 [ RunTime:0.000195s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wy_users` WHERE  `user_sex` <> 1  AND `is_pass` <> 0 LIMIT 1 [ RunTime:0.007540s ]
+[ sql ] [ SQL ] SELECT `u`.`user_name`,`u`.`user_ico`,`u`.`user_sex`,`u`.`user_group`,`u`.`user_id`,`o`.`online_id` FROM `wy_users` `u` LEFT JOIN `wy_online` `o` ON `u`.`user_id`=`o`.`user_id` WHERE  (  u.user_sex != '1' and u.is_pass!='0' ) ORDER BY u.is_service desc, o.active_time desc LIMIT 0,16 [ RunTime:0.008202s ]
+---------------------------------------------------------------
+[ 2020-10-12T18:42:54+08:00 ] 127.0.0.1 GET /index/main/query/page/2.html
+[ info ] m.jyo.com/index/main/query/page/2.html [运行时间：0.039385s][吞吐率：25.39req/s] [内存消耗：2,316.79kb] [文件加载：61]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'main',
+    2 => 'query',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; think_var=zh-cn; PHPSESSID=tm14sm838n33ouqr61o6m0ccn3; user_id=12053; user_name=chuyang; user_sex=1; user_ico=uploadfiles%2Favatar%2F20190408%2F1554704406365_162.jpg',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/index/main/index.html',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '2',
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Main->query[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Main.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001043s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000923s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000602s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000706s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000429s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000415s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000525s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000249s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=12053,`user_name`='chuyang',`user_sex`=1,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190408/1554704406365_162.jpg',`active_time`=1602499374,`hidden`=0  WHERE  `user_id` = 12053 [ RunTime:0.000235s ]
+---------------------------------------------------------------
+[ 2020-10-12T18:42:56+08:00 ] 127.0.0.1 GET /index/upgrade/index.html
+[ info ] m.jyo.com/index/upgrade/index.html [运行时间：0.076928s][吞吐率：13.00req/s] [内存消耗：2,481.91kb] [文件加载：64]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'upgrade',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; think_var=zh-cn; PHPSESSID=tm14sm838n33ouqr61o6m0ccn3; user_id=12053; user_name=chuyang; user_sex=1; user_ico=uploadfiles%2Favatar%2F20190408%2F1554704406365_162.jpg',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/index/main/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Upgrade->index[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Upgrade.php ]
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\view\upgrade\index.html [ array (
+  0 => 'userinfo',
+  1 => 'is_h5_plus',
+  2 => 'lang',
+  3 => 'log_messages',
+  4 => 'act',
+  5 => 'to_user_id',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011495s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000966s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000669s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000948s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000488s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000411s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.005141s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000235s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=12053,`user_name`='chuyang',`user_sex`=1,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190408/1554704406365_162.jpg',`active_time`=1602499376,`hidden`=0  WHERE  `user_id` = 12053 [ RunTime:0.000237s ]
+---------------------------------------------------------------
+[ 2020-10-12T18:43:40+08:00 ] 127.0.0.1 GET /index/main/query/page/2.html
+[ info ] m.jyo.com/index/main/query/page/2.html [运行时间：0.036167s][吞吐率：27.65req/s] [内存消耗：2,316.79kb] [文件加载：61]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'main',
+    2 => 'query',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; think_var=zh-cn; PHPSESSID=tm14sm838n33ouqr61o6m0ccn3; user_id=12053; user_name=chuyang; user_sex=1; user_ico=uploadfiles%2Favatar%2F20190408%2F1554704406365_162.jpg',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/index/main/index.html',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '2',
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Main->query[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Main.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000780s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000843s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000645s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000612s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000407s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000391s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000451s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000323s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=12053,`user_name`='chuyang',`user_sex`=1,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190408/1554704406365_162.jpg',`active_time`=1602499420,`hidden`=0  WHERE  `user_id` = 12053 [ RunTime:0.000321s ]
+---------------------------------------------------------------
+[ 2020-10-12T18:43:41+08:00 ] 127.0.0.1 GET /index/chat/index.html
+[ info ] m.jyo.com/index/chat/index.html [运行时间：0.072473s][吞吐率：13.80req/s] [内存消耗：2,475.52kb] [文件加载：64]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'chat',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; think_var=zh-cn; PHPSESSID=tm14sm838n33ouqr61o6m0ccn3; user_id=12053; user_name=chuyang; user_sex=1; user_ico=uploadfiles%2Favatar%2F20190408%2F1554704406365_162.jpg',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/index/main/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Chat->index[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Chat.php ]
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\view\chat\index.html [ array (
+  0 => 'userinfo',
+  1 => 'is_h5_plus',
+  2 => 'lang',
+  3 => 'log_messages',
+  4 => 'act',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011101s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000705s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000403s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000521s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000404s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000326s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000415s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000178s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=12053,`user_name`='chuyang',`user_sex`=1,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190408/1554704406365_162.jpg',`active_time`=1602499421,`hidden`=0  WHERE  `user_id` = 12053 [ RunTime:0.000162s ]
+---------------------------------------------------------------
+[ 2020-10-12T18:43:41+08:00 ] 127.0.0.1 GET /index/chat/getdata.html
+[ info ] m.jyo.com/index/chat/getdata.html [运行时间：0.045055s][吞吐率：22.20req/s] [内存消耗：2,314.01kb] [文件加载：60]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'chat',
+    2 => 'getdata',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; think_var=zh-cn; PHPSESSID=tm14sm838n33ouqr61o6m0ccn3; user_id=12053; user_name=chuyang; user_sex=1; user_ico=uploadfiles%2Favatar%2F20190408%2F1554704406365_162.jpg',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/index/chat/index.html',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Chat->getData[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Chat.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000656s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000776s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000538s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000554s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000341s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000321s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000344s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000171s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=12053,`user_name`='chuyang',`user_sex`=1,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190408/1554704406365_162.jpg',`active_time`=1602499421,`hidden`=0  WHERE  `user_id` = 12053 [ RunTime:0.000156s ]
+[ sql ] [ SQL ] SELECT * FROM `chat_log` WHERE  (  fromid='12053' or toid='12053' ) ORDER BY timeline desc [ RunTime:0.001847s ]
+[ sql ] [ SQL ] SELECT `user_id`,`user_name`,`user_ico`,`user_sex` FROM `wy_users` WHERE  `user_id` IN (3752,13760,704,11092,12575,698,5359) [ RunTime:0.000344s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 698  AND `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000715s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 704  AND `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000301s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 3752  AND `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000236s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 5359  AND `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000290s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11092  AND `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000240s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12575  AND `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000308s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13760  AND `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000350s ]
+---------------------------------------------------------------
+[ 2020-10-12T18:43:42+08:00 ] 127.0.0.1 GET /index/mood/index.html
+[ info ] m.jyo.com/index/mood/index.html [运行时间：0.066309s][吞吐率：15.08req/s] [内存消耗：2,475.59kb] [文件加载：64]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'mood',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; think_var=zh-cn; PHPSESSID=tm14sm838n33ouqr61o6m0ccn3; user_id=12053; user_name=chuyang; user_sex=1; user_ico=uploadfiles%2Favatar%2F20190408%2F1554704406365_162.jpg',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/index/chat/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Mood->index[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Mood.php ]
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\view\mood\index.html [ array (
+  0 => 'userinfo',
+  1 => 'is_h5_plus',
+  2 => 'lang',
+  3 => 'log_messages',
+  4 => 'act',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000616s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000741s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000919s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.001461s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000388s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000515s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000602s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000449s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=12053,`user_name`='chuyang',`user_sex`=1,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190408/1554704406365_162.jpg',`active_time`=1602499422,`hidden`=0  WHERE  `user_id` = 12053 [ RunTime:0.000385s ]
+---------------------------------------------------------------
+[ 2020-10-12T18:43:42+08:00 ] 127.0.0.1 GET /index/mood/index.html?page=1
+[ info ] m.jyo.com/index/mood/index.html?page=1 [运行时间：0.058396s][吞吐率：17.12req/s] [内存消耗：2,335.30kb] [文件加载：60]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'mood',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; think_var=zh-cn; PHPSESSID=tm14sm838n33ouqr61o6m0ccn3; user_id=12053; user_name=chuyang; user_sex=1; user_ico=uploadfiles%2Favatar%2F20190408%2F1554704406365_162.jpg',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/index/mood/index.html',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Mood->index[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Mood.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000550s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000967s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000603s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000452s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000267s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000289s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.005546s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000273s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=12053,`user_name`='chuyang',`user_sex`=1,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190408/1554704406365_162.jpg',`active_time`=1602499422,`hidden`=0  WHERE  `user_id` = 12053 [ RunTime:0.000280s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_recent_affair` [ RunTime:0.000852s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wy_recent_affair` `r` INNER JOIN `wy_users` `u` ON `r`.`user_id`=`u`.`user_id` WHERE  `r`.`user_id` <> '12053'  AND `u`.`user_sex` <> '1' LIMIT 1 [ RunTime:0.000637s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`type_id`,`r`.`title`,`r`.`content`,`r`.`user_id`,`r`.`user_name`,`r`.`update_time`,`r`.`for_content_id`,`u`.`user_ico`,`u`.`user_sex` FROM `wy_recent_affair` `r` INNER JOIN `wy_users` `u` ON `r`.`user_id`=`u`.`user_id` WHERE  `r`.`user_id` <> '12053'  AND `u`.`user_sex` <> '1' ORDER BY r.id desc LIMIT 0,16 [ RunTime:0.000905s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_mood` [ RunTime:0.000685s ]
+[ sql ] [ SQL ] SELECT `mood_pic` FROM `wy_mood` WHERE  `mood_id` = 1227 LIMIT 1 [ RunTime:0.000326s ]
+[ sql ] [ SQL ] SELECT `mood_pic` FROM `wy_mood` WHERE  `mood_id` = 1226 LIMIT 1 [ RunTime:0.000185s ]
+[ sql ] [ SQL ] SELECT `mood_pic` FROM `wy_mood` WHERE  `mood_id` = 1225 LIMIT 1 [ RunTime:0.000127s ]
+[ sql ] [ SQL ] SELECT `mood_pic` FROM `wy_mood` WHERE  `mood_id` = 1224 LIMIT 1 [ RunTime:0.000127s ]
+[ sql ] [ SQL ] SELECT `mood_pic` FROM `wy_mood` WHERE  `mood_id` = 1222 LIMIT 1 [ RunTime:0.000122s ]
+[ sql ] [ SQL ] SELECT `mood_pic` FROM `wy_mood` WHERE  `mood_id` = 1218 LIMIT 1 [ RunTime:0.000124s ]
+[ sql ] [ SQL ] SELECT `mood_pic` FROM `wy_mood` WHERE  `mood_id` = 1217 LIMIT 1 [ RunTime:0.000133s ]
+[ sql ] [ SQL ] SELECT `mood_pic` FROM `wy_mood` WHERE  `mood_id` = 1215 LIMIT 1 [ RunTime:0.000142s ]
+[ sql ] [ SQL ] SELECT `mood_pic` FROM `wy_mood` WHERE  `mood_id` = 1210 LIMIT 1 [ RunTime:0.000132s ]
+[ sql ] [ SQL ] SELECT `mood_pic` FROM `wy_mood` WHERE  `mood_id` = 1209 LIMIT 1 [ RunTime:0.000130s ]
+[ sql ] [ SQL ] SELECT `mood_pic` FROM `wy_mood` WHERE  `mood_id` = 1208 LIMIT 1 [ RunTime:0.000165s ]
+[ sql ] [ SQL ] SELECT `mood_pic` FROM `wy_mood` WHERE  `mood_id` = 1207 LIMIT 1 [ RunTime:0.000154s ]
+[ sql ] [ SQL ] SELECT `mood_pic` FROM `wy_mood` WHERE  `mood_id` = 1206 LIMIT 1 [ RunTime:0.000129s ]
+[ sql ] [ SQL ] SELECT `mood_pic` FROM `wy_mood` WHERE  `mood_id` = 1205 LIMIT 1 [ RunTime:0.000131s ]
+[ sql ] [ SQL ] SELECT `mood_pic` FROM `wy_mood` WHERE  `mood_id` = 1204 LIMIT 1 [ RunTime:0.000128s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`type_id`,`r`.`title`,`r`.`content`,`r`.`user_id`,`r`.`user_name`,`r`.`update_time`,`r`.`for_content_id`,`u`.`user_ico`,`u`.`user_sex` FROM `wy_recent_affair` `r` INNER JOIN `wy_users` `u` ON `r`.`user_id`=`u`.`user_id` WHERE  `r`.`user_id` = '704' ORDER BY r.id desc LIMIT 1 [ RunTime:0.000219s ]
+---------------------------------------------------------------
+[ 2020-10-12T18:43:44+08:00 ] 127.0.0.1 GET /index/pals/index.html
+[ info ] m.jyo.com/index/pals/index.html [运行时间：0.064043s][吞吐率：15.61req/s] [内存消耗：2,469.42kb] [文件加载：64]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'pals',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; think_var=zh-cn; PHPSESSID=tm14sm838n33ouqr61o6m0ccn3; user_id=12053; user_name=chuyang; user_sex=1; user_ico=uploadfiles%2Favatar%2F20190408%2F1554704406365_162.jpg',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/index/mood/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Pals->index[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Pals.php ]
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\view\pals\index.html [ array (
+  0 => 'userinfo',
+  1 => 'is_h5_plus',
+  2 => 'lang',
+  3 => 'log_messages',
+  4 => 'act',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000620s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000815s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000494s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000599s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000384s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000347s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000491s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000220s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=12053,`user_name`='chuyang',`user_sex`=1,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190408/1554704406365_162.jpg',`active_time`=1602499424,`hidden`=0  WHERE  `user_id` = 12053 [ RunTime:0.000236s ]
+---------------------------------------------------------------
+[ 2020-10-12T18:43:44+08:00 ] 127.0.0.1 GET /index/pals/get_pals_data.html
+[ info ] m.jyo.com/index/pals/get_pals_data.html [运行时间：0.045891s][吞吐率：21.79req/s] [内存消耗：2,327.53kb] [文件加载：60]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'pals',
+    2 => 'get_pals_data',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; think_var=zh-cn; PHPSESSID=tm14sm838n33ouqr61o6m0ccn3; user_id=12053; user_name=chuyang; user_sex=1; user_ico=uploadfiles%2Favatar%2F20190408%2F1554704406365_162.jpg',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/index/pals/index.html',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Pals->get_pals_data[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Pals.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000691s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001060s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.001202s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000794s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000441s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000411s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000494s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000282s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=12053,`user_name`='chuyang',`user_sex`=1,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190408/1554704406365_162.jpg',`active_time`=1602499424,`hidden`=0  WHERE  `user_id` = 12053 [ RunTime:0.000258s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_pals_mine` [ RunTime:0.000776s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_pals_mine` WHERE  `user_id` = 12053 [ RunTime:0.000205s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12575 LIMIT 1 [ RunTime:0.000346s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000283s ]
+---------------------------------------------------------------
+[ 2020-10-12T18:43:45+08:00 ] 127.0.0.1 GET /index/user/index.html
+[ info ] m.jyo.com/index/user/index.html [运行时间：0.075063s][吞吐率：13.32req/s] [内存消耗：2,515.98kb] [文件加载：64]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; think_var=zh-cn; PHPSESSID=tm14sm838n33ouqr61o6m0ccn3; user_id=12053; user_name=chuyang; user_sex=1; user_ico=uploadfiles%2Favatar%2F20190408%2F1554704406365_162.jpg',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/index/pals/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\User->index[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\User.php ]
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\view\user\index.html [ array (
+  0 => 'userinfo',
+  1 => 'is_h5_plus',
+  2 => 'lang',
+  3 => 'log_messages',
+  4 => 'act',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010976s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000690s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000425s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000468s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000255s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000282s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.004382s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000313s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=12053,`user_name`='chuyang',`user_sex`=1,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190408/1554704406365_162.jpg',`active_time`=1602499425,`hidden`=0  WHERE  `user_id` = 12053 [ RunTime:0.000161s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000304s ]
+---------------------------------------------------------------
+[ 2020-10-12T18:45:43+08:00 ] 127.0.0.1 GET /index/set/index.html
+[ info ] m.jyo.com/index/set/index.html [运行时间：0.069624s][吞吐率：14.36req/s] [内存消耗：2,465.49kb] [文件加载：64]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'set',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; think_var=zh-cn; PHPSESSID=tm14sm838n33ouqr61o6m0ccn3; user_id=12053; user_name=chuyang; user_sex=1; user_ico=uploadfiles%2Favatar%2F20190408%2F1554704406365_162.jpg',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/index/user/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Set->index[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Set.php ]
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\view\set\index.html [ array (
+  0 => 'userinfo',
+  1 => 'is_h5_plus',
+  2 => 'lang',
+  3 => 'log_messages',
+  4 => 'act',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010155s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000849s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000547s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000603s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000362s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000431s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.006385s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000288s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=12053,`user_name`='chuyang',`user_sex`=1,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190408/1554704406365_162.jpg',`active_time`=1602499543,`hidden`=0  WHERE  `user_id` = 12053 [ RunTime:0.000171s ]
+---------------------------------------------------------------
+[ 2020-10-12T18:45:59+08:00 ] 127.0.0.1 GET /index/user/index.html
+[ info ] m.jyo.com/index/user/index.html [运行时间：0.048420s][吞吐率：20.65req/s] [内存消耗：2,389.79kb] [文件加载：62]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; think_var=zh-cn; PHPSESSID=tm14sm838n33ouqr61o6m0ccn3; user_id=12053; user_name=chuyang; user_sex=1; user_ico=uploadfiles%2Favatar%2F20190408%2F1554704406365_162.jpg',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/index/pals/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\User->index[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\User.php ]
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\view\user\index.html [ array (
+  0 => 'userinfo',
+  1 => 'is_h5_plus',
+  2 => 'lang',
+  3 => 'log_messages',
+  4 => 'act',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010527s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000769s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000495s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000535s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000339s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000388s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000408s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000258s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=12053,`user_name`='chuyang',`user_sex`=1,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190408/1554704406365_162.jpg',`active_time`=1602499559,`hidden`=0  WHERE  `user_id` = 12053 [ RunTime:0.000171s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000272s ]
+---------------------------------------------------------------
+[ 2020-10-12T18:46:00+08:00 ] 127.0.0.1 GET /index/set/index.html
+[ info ] m.jyo.com/index/set/index.html [运行时间：0.049787s][吞吐率：20.09req/s] [内存消耗：2,348.62kb] [文件加载：62]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'set',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; think_var=zh-cn; PHPSESSID=tm14sm838n33ouqr61o6m0ccn3; user_id=12053; user_name=chuyang; user_sex=1; user_ico=uploadfiles%2Favatar%2F20190408%2F1554704406365_162.jpg',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/index/user/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Set->index[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Set.php ]
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\view\set\index.html [ array (
+  0 => 'userinfo',
+  1 => 'is_h5_plus',
+  2 => 'lang',
+  3 => 'log_messages',
+  4 => 'act',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000660s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000808s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000684s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.001204s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001414s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000578s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.004904s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000274s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=12053,`user_name`='chuyang',`user_sex`=1,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190408/1554704406365_162.jpg',`active_time`=1602499560,`hidden`=0  WHERE  `user_id` = 12053 [ RunTime:0.000234s ]
+---------------------------------------------------------------
+[ 2020-10-12T18:46:01+08:00 ] 127.0.0.1 GET /index/set/lang.html
+[ info ] m.jyo.com/index/set/lang.html [运行时间：0.050345s][吞吐率：19.86req/s] [内存消耗：2,417.75kb] [文件加载：63]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'set',
+    2 => 'lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; think_var=zh-cn; PHPSESSID=tm14sm838n33ouqr61o6m0ccn3; user_id=12053; user_name=chuyang; user_sex=1; user_ico=uploadfiles%2Favatar%2F20190408%2F1554704406365_162.jpg',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/index/set/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Set->lang[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Set.php ]
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\view\set\lang.html [ array (
+  0 => 'userinfo',
+  1 => 'is_h5_plus',
+  2 => 'lang',
+  3 => 'log_messages',
+  4 => 'act',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000611s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000900s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000499s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000543s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000346s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000368s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000464s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000177s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=12053,`user_name`='chuyang',`user_sex`=1,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190408/1554704406365_162.jpg',`active_time`=1602499561,`hidden`=0  WHERE  `user_id` = 12053 [ RunTime:0.000378s ]
+---------------------------------------------------------------
+[ 2020-10-12T18:54:11+08:00 ] 127.0.0.1 GET /index/main/index.html
+[ info ] m.jyo.com/index/main/index.html [运行时间：0.040285s][吞吐率：24.82req/s] [内存消耗：2,352.63kb] [文件加载：62]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'main',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; think_var=zh-cn; PHPSESSID=tm14sm838n33ouqr61o6m0ccn3; user_id=12053; user_name=chuyang; user_sex=1; user_ico=uploadfiles%2Favatar%2F20190408%2F1554704406365_162.jpg',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/index/pals/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Main->index[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Main.php ]
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\view\main\index.html [ array (
+  0 => 'userinfo',
+  1 => 'is_h5_plus',
+  2 => 'lang',
+  3 => 'log_messages',
+  4 => 'act',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000543s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000801s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000404s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000381s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000241s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000255s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000339s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000163s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=12053,`user_name`='chuyang',`user_sex`=1,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190408/1554704406365_162.jpg',`active_time`=1602500051,`hidden`=0  WHERE  `user_id` = 12053 [ RunTime:0.000238s ]
+---------------------------------------------------------------
+[ 2020-10-12T18:54:11+08:00 ] 127.0.0.1 GET /index/main/query/page/1.html
+[ info ] m.jyo.com/index/main/query/page/1.html [运行时间：0.053832s][吞吐率：18.58req/s] [内存消耗：2,275.92kb] [文件加载：60]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'main',
+    2 => 'query',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; think_var=zh-cn; PHPSESSID=tm14sm838n33ouqr61o6m0ccn3; user_id=12053; user_name=chuyang; user_sex=1; user_ico=uploadfiles%2Favatar%2F20190408%2F1554704406365_162.jpg',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/index/main/index.html',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Main->query[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Main.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000971s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000944s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000625s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000510s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000415s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000410s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000470s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000180s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=12053,`user_name`='chuyang',`user_sex`=1,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190408/1554704406365_162.jpg',`active_time`=1602500051,`hidden`=0  WHERE  `user_id` = 12053 [ RunTime:0.000157s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wy_users` WHERE  `user_sex` <> 1  AND `is_pass` <> 0 LIMIT 1 [ RunTime:0.007490s ]
+[ sql ] [ SQL ] SELECT `u`.`user_name`,`u`.`user_ico`,`u`.`user_sex`,`u`.`user_group`,`u`.`user_id`,`o`.`online_id` FROM `wy_users` `u` LEFT JOIN `wy_online` `o` ON `u`.`user_id`=`o`.`user_id` WHERE  (  u.user_sex != '1' and u.is_pass!='0' ) ORDER BY u.is_service desc, o.active_time desc LIMIT 0,16 [ RunTime:0.008106s ]
+---------------------------------------------------------------
+[ 2020-10-12T18:54:13+08:00 ] 127.0.0.1 GET /index/main/query/page/2.html
+[ info ] m.jyo.com/index/main/query/page/2.html [运行时间：0.036493s][吞吐率：27.40req/s] [内存消耗：2,316.76kb] [文件加载：61]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'main',
+    2 => 'query',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; think_var=zh-cn; PHPSESSID=tm14sm838n33ouqr61o6m0ccn3; user_id=12053; user_name=chuyang; user_sex=1; user_ico=uploadfiles%2Favatar%2F20190408%2F1554704406365_162.jpg',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/index/main/index.html',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '2',
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Main->query[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Main.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000871s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000875s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000589s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000539s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000401s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000402s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000536s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000323s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=12053,`user_name`='chuyang',`user_sex`=1,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190408/1554704406365_162.jpg',`active_time`=1602500053,`hidden`=0  WHERE  `user_id` = 12053 [ RunTime:0.000236s ]
+---------------------------------------------------------------
+[ 2020-10-12T18:54:15+08:00 ] 127.0.0.1 GET /index/upgrade/index.html
+[ info ] m.jyo.com/index/upgrade/index.html [运行时间：0.040545s][吞吐率：24.66req/s] [内存消耗：2,357.70kb] [文件加载：62]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'upgrade',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; think_var=zh-cn; PHPSESSID=tm14sm838n33ouqr61o6m0ccn3; user_id=12053; user_name=chuyang; user_sex=1; user_ico=uploadfiles%2Favatar%2F20190408%2F1554704406365_162.jpg',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/index/main/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Upgrade->index[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Upgrade.php ]
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\view\upgrade\index.html [ array (
+  0 => 'userinfo',
+  1 => 'is_h5_plus',
+  2 => 'lang',
+  3 => 'log_messages',
+  4 => 'act',
+  5 => 'to_user_id',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000596s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000841s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000530s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000656s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000501s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000533s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000858s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000286s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=12053,`user_name`='chuyang',`user_sex`=1,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190408/1554704406365_162.jpg',`active_time`=1602500055,`hidden`=0  WHERE  `user_id` = 12053 [ RunTime:0.000182s ]
+---------------------------------------------------------------
+[ 2020-10-12T18:54:17+08:00 ] 127.0.0.1 GET /index/main/query/page/2.html
+[ info ] m.jyo.com/index/main/query/page/2.html [运行时间：0.033444s][吞吐率：29.90req/s] [内存消耗：2,316.79kb] [文件加载：61]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'main',
+    2 => 'query',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; think_var=zh-cn; PHPSESSID=tm14sm838n33ouqr61o6m0ccn3; user_id=12053; user_name=chuyang; user_sex=1; user_ico=uploadfiles%2Favatar%2F20190408%2F1554704406365_162.jpg',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/index/main/index.html',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '2',
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Main->query[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Main.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000531s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000832s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000554s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000432s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000323s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000389s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000433s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000265s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=12053,`user_name`='chuyang',`user_sex`=1,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190408/1554704406365_162.jpg',`active_time`=1602500057,`hidden`=0  WHERE  `user_id` = 12053 [ RunTime:0.000243s ]
+---------------------------------------------------------------
+[ 2020-10-12T18:54:19+08:00 ] 127.0.0.1 GET /index/upgrade/index.html
+[ info ] m.jyo.com/index/upgrade/index.html [运行时间：0.039438s][吞吐率：25.36req/s] [内存消耗：2,357.70kb] [文件加载：62]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'upgrade',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; think_var=zh-cn; PHPSESSID=tm14sm838n33ouqr61o6m0ccn3; user_id=12053; user_name=chuyang; user_sex=1; user_ico=uploadfiles%2Favatar%2F20190408%2F1554704406365_162.jpg',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/index/main/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Upgrade->index[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Upgrade.php ]
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\view\upgrade\index.html [ array (
+  0 => 'userinfo',
+  1 => 'is_h5_plus',
+  2 => 'lang',
+  3 => 'log_messages',
+  4 => 'act',
+  5 => 'to_user_id',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000690s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000867s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000535s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000535s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000452s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000537s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000744s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000309s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=12053,`user_name`='chuyang',`user_sex`=1,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190408/1554704406365_162.jpg',`active_time`=1602500059,`hidden`=0  WHERE  `user_id` = 12053 [ RunTime:0.000342s ]
+---------------------------------------------------------------
+[ 2020-10-12T18:55:09+08:00 ] 127.0.0.1 GET /index/home/index/uid/3752
+[ info ] m.jyo.com/index/home/index/uid/3752 [运行时间：0.064939s][吞吐率：15.40req/s] [内存消耗：2,498.86kb] [文件加载：64]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'home',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; think_var=zh-cn; PHPSESSID=tm14sm838n33ouqr61o6m0ccn3; user_id=12053; user_name=chuyang; user_sex=1; user_ico=uploadfiles%2Favatar%2F20190408%2F1554704406365_162.jpg',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/index/main/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'uid' => '3752',
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Home->index[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Home.php ]
+[ info ] [ VIEW ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\view\home\index.html [ array (
+  0 => 'userinfo',
+  1 => 'is_h5_plus',
+  2 => 'lang',
+  3 => 'log_messages',
+  4 => 'act',
+  5 => 'uid',
+  6 => 'album_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000614s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000744s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000513s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000484s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000438s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000387s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000535s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000291s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=12053,`user_name`='chuyang',`user_sex`=1,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190408/1554704406365_162.jpg',`active_time`=1602500109,`hidden`=0  WHERE  `user_id` = 12053 [ RunTime:0.000282s ]
+[ sql ] [ SQL ] SELECT `user_id`,`user_name`,`user_sex`,`user_ico`,`birth_year`,`birth_month`,`birth_day`,`country`,`waimao`,`sexual`,`height`,`weight`,`income`,`gerenjieshao` FROM `wy_users` WHERE  `user_id` = 3752 LIMIT 1 [ RunTime:0.000171s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_album` [ RunTime:0.000338s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_album` WHERE  `user_id` = 3752 ORDER BY `add_time` [ RunTime:0.000182s ]
+---------------------------------------------------------------
+[ 2020-10-12T18:55:09+08:00 ] 127.0.0.1 GET /index/home/mood/uid/3752/page/1
+[ info ] m.jyo.com/index/home/mood/uid/3752/page/1 [运行时间：0.038286s][吞吐率：26.12req/s] [内存消耗：2,316.58kb] [文件加载：60]
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'home',
+    2 => 'mood',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; think_var=zh-cn; PHPSESSID=tm14sm838n33ouqr61o6m0ccn3; user_id=12053; user_name=chuyang; user_sex=1; user_ico=uploadfiles%2Favatar%2F20190408%2F1554704406365_162.jpg',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://m.jyo.com/index/home/index/uid/3752',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'm.jyo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'uid' => '3752',
+  'page' => '1',
+)
+[ info ] [ LANG ] D:\phpstudy_pro\WWW\jyo.com\app/application/index\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Home->mood[ D:\phpstudy_pro\WWW\jyo.com\app\application\index\controller\Home.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000816s ] mysql:host=127.0.0.1;port=3306;dbname=jyo_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000864s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000607s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000540s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000323s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000327s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000433s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000216s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=12053,`user_name`='chuyang',`user_sex`=1,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190408/1554704406365_162.jpg',`active_time`=1602500109,`hidden`=0  WHERE  `user_id` = 12053 [ RunTime:0.000159s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_recent_affair` [ RunTime:0.000439s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wy_recent_affair` WHERE  `user_id` = 3752 LIMIT 1 [ RunTime:0.000142s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_recent_affair` WHERE  `user_id` = 3752 ORDER BY id desc LIMIT 0,5 [ RunTime:0.000169s ]

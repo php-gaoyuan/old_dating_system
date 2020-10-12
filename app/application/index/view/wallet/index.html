@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title><{:lang('wallet')}></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="<{:config('skin_path')}>/css/mui.min.css" rel="stylesheet" />
+		<style>
+			.top{
+				background: #3F79DF;
+				text-align: center;
+				padding:40px 0;
+			}
+			.top p{
+				font-size: 1.3em;
+				color:#fff;
+			}
+			.top button{
+				background: #FD9803;
+			}
+			#balance{
+				font-size: 3em;
+				font-weight: 700;
+				margin: 1em 0;
+			}
+			.mui-table-view-cell{
+				padding:15px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<{if !$is_h5_plus }>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title"><{:lang('wallet')}></h1>
+		</header>
+		<{/if}>
+		<div class="mui-content">
+			<div class="top">
+				<p><{:lang('balance')}></p>
+				<p id="balance">$<{:number_format($userinfo.golds,2)}></p>
+				<button type="button" class="mui-btn mui-btn-yellow mui-btn-block" style="width:50%;margin:0 auto;"><{:lang('upgrade')}></button>
+			</div>
+			
+			
+			<ul class="mui-table-view">
+			        <li class="mui-table-view-cell">
+			            <a class="mui-navigate-right">
+			                <{:lang('pay_record')}>
+			            </a>
+			        </li>
+			        <li class="mui-table-view-cell">
+			            <a class="mui-navigate-right">
+			                 <{:lang('xiaofei_record')}>
+			            </a>
+			        </li>
+			    </ul>
+		</div>
+		<script type="text/javascript" src="<{:config('skin_path')}>/js/jquery.min.js"></script>
+		<script type="text/javascript" src="<{:config('skin_path')}>/js/public.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(".top button").click(function(){
+					window.location.href="<{:url('recharge/index')}>";
+				});
+			});
+		</script>
+	</body>
+
+</html>

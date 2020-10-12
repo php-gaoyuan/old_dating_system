@@ -1,0 +1,1004 @@
+---------------------------------------------------------------
+[ 2020-01-09T01:13:22+08:00 ] 106.33.10.125 GET /index/main/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000640s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001026s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000587s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000677s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 704  AND `is_read` = 0 LIMIT 1 [ RunTime:0.003623s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000282s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000537s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000266s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=704,`user_name`='PAUZZZ',`user_sex`=0,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190910/1568096892927_162.jpg',`active_time`=1578503602,`hidden`=0  WHERE  `user_id` = 704 [ RunTime:0.000404s ]
+---------------------------------------------------------------
+[ 2020-01-09T01:13:23+08:00 ] 106.33.10.125 GET /index/main/query/page/1.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000617s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001026s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000445s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000535s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 704  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000202s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000276s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000520s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000272s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=704,`user_name`='PAUZZZ',`user_sex`=0,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190910/1568096892927_162.jpg',`active_time`=1578503603,`hidden`=0  WHERE  `user_id` = 704 [ RunTime:0.000407s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wy_users` WHERE  `user_sex` <> 0  AND `is_pass` <> 0 LIMIT 1 [ RunTime:0.010614s ]
+[ sql ] [ SQL ] SELECT `u`.`user_name`,`u`.`user_ico`,`u`.`user_sex`,`u`.`user_group`,`u`.`user_id`,`o`.`online_id` FROM `wy_users` `u` LEFT JOIN `wy_online` `o` ON `u`.`user_id`=`o`.`user_id` WHERE  (  u.user_sex != '0' and u.is_pass!='0' ) ORDER BY u.is_service desc, o.active_time desc LIMIT 0,16 [ RunTime:0.020040s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:16:32+08:00 ] 172.58.155.209 POST /index/index/login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000598s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001034s ]
+[ sql ] [ SQL ] SELECT `is_pass`,`user_id`,`user_email`,`user_name`,`user_pws`,`user_sex`,`user_ico` FROM `wy_users` WHERE  (  user_name='shank5' or user_email='shank5' ) LIMIT 1 [ RunTime:0.010510s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:16:48+08:00 ] 172.58.155.209 POST /index/index/login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000622s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001050s ]
+[ sql ] [ SQL ] SELECT `is_pass`,`user_id`,`user_email`,`user_name`,`user_pws`,`user_sex`,`user_ico` FROM `wy_users` WHERE  (  user_name='shank5' or user_email='shank5' ) LIMIT 1 [ RunTime:0.000280s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000481s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000547s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000274s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_users` [ RunTime:0.000517s ]
+[ sql ] [ SQL ] UPDATE `chat_users`  SET `line_status`=1,`app_online`=1  WHERE  `uid` = 14543 [ RunTime:0.000487s ]
+[ sql ] [ SQL ] UPDATE `wy_users`  SET `lastlogin_datetime`='2020-01-09 14:16:48',`login_ip`='172.58.155.209'  WHERE  `user_id` = 14543 [ RunTime:0.002139s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:16:49+08:00 ] 172.58.155.209 GET /index/main/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000587s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000998s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000570s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000541s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000272s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000280s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000514s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000257s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578550609,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.001118s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:16:52+08:00 ] 172.58.155.209 GET /index/main/query/page/1.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000625s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001031s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000440s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000571s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000205s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000288s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000525s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000280s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578550612,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.001242s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wy_users` WHERE  `user_sex` <> 1  AND `is_pass` <> 0 LIMIT 1 [ RunTime:0.009920s ]
+[ sql ] [ SQL ] SELECT `u`.`user_name`,`u`.`user_ico`,`u`.`user_sex`,`u`.`user_group`,`u`.`user_id`,`o`.`online_id` FROM `wy_users` `u` LEFT JOIN `wy_online` `o` ON `u`.`user_id`=`o`.`user_id` WHERE  (  u.user_sex != '1' and u.is_pass!='0' ) ORDER BY u.is_service desc, o.active_time desc LIMIT 0,16 [ RunTime:0.010428s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:16:59+08:00 ] 172.58.155.209 GET /index/main/query/page/2.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000650s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001186s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000449s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000560s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000203s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000302s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000526s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000288s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578550619,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000432s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:17:02+08:00 ] 172.58.155.209 GET /index/chat/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000628s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001011s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000442s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000550s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000197s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000300s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000511s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000262s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578550622,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000431s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:17:02+08:00 ] 172.58.155.209 GET /index/chat/getdata.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000598s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001028s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000461s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000587s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000195s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000306s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000513s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000260s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578550622,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000263s ]
+[ sql ] [ SQL ] SELECT * FROM `chat_log` WHERE  (  fromid='14543' or toid='14543' ) ORDER BY timeline desc [ RunTime:0.000463s ]
+[ sql ] [ SQL ] SELECT `user_id`,`user_name`,`user_ico`,`user_sex` FROM `wy_users` WHERE  `user_id` IN (5256) [ RunTime:0.000242s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 5256  AND `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000284s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:17:05+08:00 ] 172.58.155.209 GET /index/chat/chat/pals_id/5256
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000613s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001050s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000460s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000554s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000193s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000303s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000506s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000188s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578550625,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000432s ]
+[ sql ] [ SQL ] SELECT `user_id`,`user_name`,`user_ico` FROM `wy_users` WHERE  `user_id` = 5256 LIMIT 1 [ RunTime:0.000260s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:18:24+08:00 ] 172.58.155.209 GET /index/upgrade/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000636s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001035s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000466s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000569s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000291s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000309s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000530s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000257s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578550704,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000420s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:18:48+08:00 ] 172.58.155.209 GET /index/upgrade/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000594s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001017s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000449s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000569s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000193s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000300s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000517s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000263s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578550728,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000574s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:19:02+08:00 ] 172.58.155.209 GET /index/upgrade/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000646s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001026s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000465s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000541s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000193s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000303s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000573s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000286s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578550742,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000416s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:19:22+08:00 ] 172.58.155.209 GET /index/chat/chat/pals_id/5256
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000617s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001013s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000471s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000570s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000227s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000298s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000517s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000258s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578550762,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000428s ]
+[ sql ] [ SQL ] SELECT `user_id`,`user_name`,`user_ico` FROM `wy_users` WHERE  `user_id` = 5256 LIMIT 1 [ RunTime:0.000181s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:19:30+08:00 ] 172.58.155.209 GET /index/search/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000619s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001011s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000449s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000541s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000192s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000280s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000518s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000275s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578550770,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000430s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:20:59+08:00 ] 172.58.155.209 GET /index/search/index.html?keyword=zola
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000576s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001045s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000725s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000552s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000190s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000287s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000522s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000257s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578550859,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000694s ]
+[ sql ] [ SQL ] SELECT `user_id`,`user_ico`,`user_sex`,`user_name` FROM `wy_users` WHERE  `user_name` LIKE '%zola%' [ RunTime:0.010915s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:21:00+08:00 ] 172.58.155.209 GET /index/search/index.html?keyword=zola
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000590s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001015s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000452s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000582s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000193s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000300s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000519s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000257s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578550860,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000442s ]
+[ sql ] [ SQL ] SELECT `user_id`,`user_ico`,`user_sex`,`user_name` FROM `wy_users` WHERE  `user_name` LIKE '%zola%' [ RunTime:0.000199s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:21:08+08:00 ] 172.58.155.209 GET /index/main/addFriend?uid=5256
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000629s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001018s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000453s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000544s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000207s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000294s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000514s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000271s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578550868,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000420s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_pals_mine` [ RunTime:0.000505s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_pals_mine` WHERE  (  `user_id` = 14543  AND `pals_id` = 5256 ) OR (  `pals_id` = 14543  AND `user_id` = 5256 ) LIMIT 1 [ RunTime:0.000364s ]
+[ sql ] [ SQL ] SELECT `user_id`,`user_name`,`user_sex`,`user_ico` FROM `wy_users` WHERE  `user_id` = 5256 LIMIT 1 [ RunTime:0.000243s ]
+[ sql ] [ SQL ] INSERT INTO `wy_pals_mine` (`user_id` , `pals_id` , `pals_name` , `pals_sex` , `pals_ico` , `add_time` , `active_time`) VALUES (14543 , 5256 , 'Zola' , 0 , 'uploadfiles/avatar/20200102/1577946334348_162.jpg' , '2020-01-09 14:21:08' , '2020-01-09 14:21:08') [ RunTime:0.001166s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:21:10+08:00 ] 172.58.155.209 GET /index/main/addFriend?uid=5256
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000609s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001036s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000438s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000573s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000192s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000295s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000521s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000274s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578550870,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000415s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_pals_mine` [ RunTime:0.000511s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_pals_mine` WHERE  (  `user_id` = 14543  AND `pals_id` = 5256 ) OR (  `pals_id` = 14543  AND `user_id` = 5256 ) LIMIT 1 [ RunTime:0.000353s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:21:21+08:00 ] 172.58.155.209 GET /index/main/query/page/2.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000614s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000998s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000450s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000553s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000204s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000297s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000516s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000265s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578550881,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000405s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:21:23+08:00 ] 172.58.155.209 GET /index/upgrade/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000617s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001007s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000448s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000547s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000202s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000303s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000520s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000268s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578550883,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000438s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:22:07+08:00 ] 172.58.155.209 GET /index/home/index/uid/5256
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000572s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000982s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000435s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000545s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000204s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000294s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000503s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000259s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578550927,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000435s ]
+[ sql ] [ SQL ] SELECT `user_id`,`user_name`,`user_sex`,`user_ico`,`birth_year`,`birth_month`,`birth_day`,`country`,`waimao`,`sexual`,`height`,`weight`,`income`,`gerenjieshao` FROM `wy_users` WHERE  `user_id` = 5256 LIMIT 1 [ RunTime:0.000274s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_album` [ RunTime:0.000495s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_album` WHERE  `user_id` = 5256 ORDER BY `add_time` [ RunTime:0.000281s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:22:08+08:00 ] 172.58.155.209 GET /index/home/mood/uid/5256/page/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000609s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001013s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000443s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000564s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000193s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000287s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000517s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000261s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578550928,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000517s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_recent_affair` [ RunTime:0.000517s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wy_recent_affair` WHERE  `user_id` = 5256 LIMIT 1 [ RunTime:0.000235s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_recent_affair` WHERE  `user_id` = 5256 ORDER BY id desc LIMIT 0,5 [ RunTime:0.000272s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:22:41+08:00 ] 172.58.155.209 GET /index/home/index/uid/998
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000595s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001023s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000436s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000564s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000191s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000284s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000520s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000297s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578550961,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000516s ]
+[ sql ] [ SQL ] SELECT `user_id`,`user_name`,`user_sex`,`user_ico`,`birth_year`,`birth_month`,`birth_day`,`country`,`waimao`,`sexual`,`height`,`weight`,`income`,`gerenjieshao` FROM `wy_users` WHERE  `user_id` = 998 LIMIT 1 [ RunTime:0.000285s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_album` [ RunTime:0.000495s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_album` WHERE  `user_id` = 998 ORDER BY `add_time` [ RunTime:0.000273s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:22:42+08:00 ] 172.58.155.209 GET /index/home/mood/uid/998/page/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000614s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001016s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000459s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000564s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000207s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000310s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000517s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000264s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578550962,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000428s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_recent_affair` [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wy_recent_affair` WHERE  `user_id` = 998 LIMIT 1 [ RunTime:0.000239s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_recent_affair` WHERE  `user_id` = 998 ORDER BY id desc LIMIT 0,5 [ RunTime:0.000267s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:23:05+08:00 ] 172.58.155.209 GET /index/home/index/uid/4243
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000635s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001022s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000484s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000615s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000216s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000303s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000527s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000272s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578550985,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000276s ]
+[ sql ] [ SQL ] SELECT `user_id`,`user_name`,`user_sex`,`user_ico`,`birth_year`,`birth_month`,`birth_day`,`country`,`waimao`,`sexual`,`height`,`weight`,`income`,`gerenjieshao` FROM `wy_users` WHERE  `user_id` = 4243 LIMIT 1 [ RunTime:0.001050s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_album` [ RunTime:0.000490s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_album` WHERE  `user_id` = 4243 ORDER BY `add_time` [ RunTime:0.000294s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:23:06+08:00 ] 172.58.155.209 GET /index/home/mood/uid/4243/page/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000608s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001024s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000446s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000545s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000211s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000285s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000510s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000261s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578550986,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000292s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_recent_affair` [ RunTime:0.000504s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wy_recent_affair` WHERE  `user_id` = 4243 LIMIT 1 [ RunTime:0.000228s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_recent_affair` WHERE  `user_id` = 4243 ORDER BY id desc LIMIT 0,5 [ RunTime:0.000273s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:23:07+08:00 ] 172.58.155.209 GET /index/main/addFriend?uid=4243
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000631s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001040s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000456s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000585s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000194s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000300s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000513s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000275s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578550987,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000284s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_pals_mine` [ RunTime:0.000510s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_pals_mine` WHERE  (  `user_id` = 14543  AND `pals_id` = 4243 ) OR (  `pals_id` = 14543  AND `user_id` = 4243 ) LIMIT 1 [ RunTime:0.000401s ]
+[ sql ] [ SQL ] SELECT `user_id`,`user_name`,`user_sex`,`user_ico` FROM `wy_users` WHERE  `user_id` = 4243 LIMIT 1 [ RunTime:0.000236s ]
+[ sql ] [ SQL ] INSERT INTO `wy_pals_mine` (`user_id` , `pals_id` , `pals_name` , `pals_sex` , `pals_ico` , `add_time` , `active_time`) VALUES (14543 , 4243 , 'anjing' , 0 , 'uploadfiles/avatar/20190313/1552447768264_162.jpg' , '2020-01-09 14:23:07' , '2020-01-09 14:23:07') [ RunTime:0.000672s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:23:18+08:00 ] 172.58.155.209 GET /index/home/index/uid/5613
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000640s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001045s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000445s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000569s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000196s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000284s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000515s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000268s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578550998,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000433s ]
+[ sql ] [ SQL ] SELECT `user_id`,`user_name`,`user_sex`,`user_ico`,`birth_year`,`birth_month`,`birth_day`,`country`,`waimao`,`sexual`,`height`,`weight`,`income`,`gerenjieshao` FROM `wy_users` WHERE  `user_id` = 5613 LIMIT 1 [ RunTime:0.000270s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_album` [ RunTime:0.000505s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_album` WHERE  `user_id` = 5613 ORDER BY `add_time` [ RunTime:0.000292s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:23:18+08:00 ] 172.58.155.209 GET /index/home/mood/uid/5613/page/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000716s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001408s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000616s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000784s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000231s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000399s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000713s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000327s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578550998,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000326s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_recent_affair` [ RunTime:0.000517s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wy_recent_affair` WHERE  `user_id` = 5613 LIMIT 1 [ RunTime:0.000239s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_recent_affair` WHERE  `user_id` = 5613 ORDER BY id desc LIMIT 0,5 [ RunTime:0.000280s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:23:32+08:00 ] 172.58.155.209 GET /index/home/index/uid/7936
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000573s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001071s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000470s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000583s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000209s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000313s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000525s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000291s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578551012,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000414s ]
+[ sql ] [ SQL ] SELECT `user_id`,`user_name`,`user_sex`,`user_ico`,`birth_year`,`birth_month`,`birth_day`,`country`,`waimao`,`sexual`,`height`,`weight`,`income`,`gerenjieshao` FROM `wy_users` WHERE  `user_id` = 7936 LIMIT 1 [ RunTime:0.000269s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_album` [ RunTime:0.000505s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_album` WHERE  `user_id` = 7936 ORDER BY `add_time` [ RunTime:0.000272s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:23:32+08:00 ] 172.58.155.209 GET /index/home/mood/uid/7936/page/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000620s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001033s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000441s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000553s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000198s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000292s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000524s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000271s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578551012,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000254s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_recent_affair` [ RunTime:0.000503s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wy_recent_affair` WHERE  `user_id` = 7936 LIMIT 1 [ RunTime:0.000233s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_recent_affair` WHERE  `user_id` = 7936 ORDER BY id desc LIMIT 0,5 [ RunTime:0.000255s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:23:48+08:00 ] 172.58.155.209 GET /index/main/query/page/2.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000621s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001057s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000465s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000573s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000198s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000294s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000519s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000266s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578551028,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000290s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:23:51+08:00 ] 172.58.155.209 GET /index/upgrade/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000637s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001050s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000542s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000562s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000192s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000299s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000514s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000271s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578551031,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000283s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:52:35+08:00 ] 172.58.155.5 GET /index/upgrade/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000603s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001082s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000573s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000575s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000283s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000309s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000525s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000277s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578552755,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000416s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:52:39+08:00 ] 172.58.155.5 GET /index/main/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000627s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001075s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000458s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000554s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000248s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000295s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000530s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000262s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578552759,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000438s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:52:41+08:00 ] 172.58.155.5 GET /index/main/query/page/1.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000601s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001101s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000424s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000566s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000194s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000284s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000531s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000281s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578552761,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000430s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wy_users` WHERE  `user_sex` <> 1  AND `is_pass` <> 0 LIMIT 1 [ RunTime:0.009843s ]
+[ sql ] [ SQL ] SELECT `u`.`user_name`,`u`.`user_ico`,`u`.`user_sex`,`u`.`user_group`,`u`.`user_id`,`o`.`online_id` FROM `wy_users` `u` LEFT JOIN `wy_online` `o` ON `u`.`user_id`=`o`.`user_id` WHERE  (  u.user_sex != '1' and u.is_pass!='0' ) ORDER BY u.is_service desc, o.active_time desc LIMIT 0,16 [ RunTime:0.010275s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:52:58+08:00 ] 172.58.155.5 GET /index/home/index/uid/834
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000627s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001057s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000451s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000568s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000209s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000305s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000516s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000276s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578552778,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000437s ]
+[ sql ] [ SQL ] SELECT `user_id`,`user_name`,`user_sex`,`user_ico`,`birth_year`,`birth_month`,`birth_day`,`country`,`waimao`,`sexual`,`height`,`weight`,`income`,`gerenjieshao` FROM `wy_users` WHERE  `user_id` = 834 LIMIT 1 [ RunTime:0.000266s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_album` [ RunTime:0.000514s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_album` WHERE  `user_id` = 834 ORDER BY `add_time` [ RunTime:0.001073s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:53:01+08:00 ] 172.58.155.5 GET /index/home/index/uid/834
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000620s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001058s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000449s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000572s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000193s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000289s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000524s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000275s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578552781,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000421s ]
+[ sql ] [ SQL ] SELECT `user_id`,`user_name`,`user_sex`,`user_ico`,`birth_year`,`birth_month`,`birth_day`,`country`,`waimao`,`sexual`,`height`,`weight`,`income`,`gerenjieshao` FROM `wy_users` WHERE  `user_id` = 834 LIMIT 1 [ RunTime:0.000216s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_album` [ RunTime:0.000516s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_album` WHERE  `user_id` = 834 ORDER BY `add_time` [ RunTime:0.000202s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:53:11+08:00 ] 172.58.155.5 GET /index/main/query/page/2.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000598s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001077s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000452s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000574s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000191s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000288s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000529s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000276s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578552791,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000433s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:53:12+08:00 ] 172.58.155.5 GET /index/home/mood/uid/834/page/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000612s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001068s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000429s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000557s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000202s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000274s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000530s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000287s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578552792,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000454s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_recent_affair` [ RunTime:0.000511s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wy_recent_affair` WHERE  `user_id` = 834 LIMIT 1 [ RunTime:0.000231s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_recent_affair` WHERE  `user_id` = 834 ORDER BY id desc LIMIT 0,5 [ RunTime:0.000253s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:53:18+08:00 ] 172.58.155.5 GET /index/home/photos/album_id/150.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000621s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001063s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000455s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000565s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000208s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000306s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000521s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000266s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578552798,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000284s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_album` [ RunTime:0.000519s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_album` WHERE  `album_id` = 150 LIMIT 1 [ RunTime:0.000254s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:53:29+08:00 ] 172.58.155.5 GET /index/main/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000634s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001065s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000452s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000573s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000194s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000283s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000534s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000281s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578552809,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000297s ]
+---------------------------------------------------------------
+[ 2020-01-09T14:53:38+08:00 ] 172.58.155.5 GET /index/main/query/page/1.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000614s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001061s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000446s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000606s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 14543  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000196s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000277s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000533s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 14543 LIMIT 1 [ RunTime:0.000279s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=14543,`user_name`='Shank5',`user_sex`=1,`user_ico`='http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1_small.gif',`active_time`=1578552818,`hidden`=0  WHERE  `user_id` = 14543 [ RunTime:0.000321s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wy_users` WHERE  `user_sex` <> 1  AND `is_pass` <> 0 LIMIT 1 [ RunTime:0.000190s ]
+[ sql ] [ SQL ] SELECT `u`.`user_name`,`u`.`user_ico`,`u`.`user_sex`,`u`.`user_group`,`u`.`user_id`,`o`.`online_id` FROM `wy_users` `u` LEFT JOIN `wy_online` `o` ON `u`.`user_id`=`o`.`user_id` WHERE  (  u.user_sex != '1' and u.is_pass!='0' ) ORDER BY u.is_service desc, o.active_time desc LIMIT 0,16 [ RunTime:0.010710s ]
+---------------------------------------------------------------
+[ 2020-01-09T18:07:17+08:00 ] 106.34.73.253 GET /index/main/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000634s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001047s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000575s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000546s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 704  AND `is_read` = 0 LIMIT 1 [ RunTime:0.003622s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000291s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000529s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000234s ]
+[ sql ] [ SQL ] INSERT INTO `wy_online` (`user_id` , `user_name` , `user_sex` , `user_ico` , `active_time` , `hidden`) VALUES (704 , 'PAUZZZ' , 0 , 'http://www.pauzzz.com/uploadfiles/avatar/20190910/1568096892927_162.jpg' , 1578564437 , 0) [ RunTime:0.000451s ]
+---------------------------------------------------------------
+[ 2020-01-09T18:07:18+08:00 ] 106.34.73.253 GET /index/main/query/page/1.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000613s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001025s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000493s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000573s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 704  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000202s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000291s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000502s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000278s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=704,`user_name`='PAUZZZ',`user_sex`=0,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190910/1568096892927_162.jpg',`active_time`=1578564438,`hidden`=0  WHERE  `user_id` = 704 [ RunTime:0.000437s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wy_users` WHERE  `user_sex` <> 0  AND `is_pass` <> 0 LIMIT 1 [ RunTime:0.010586s ]
+[ sql ] [ SQL ] SELECT `u`.`user_name`,`u`.`user_ico`,`u`.`user_sex`,`u`.`user_group`,`u`.`user_id`,`o`.`online_id` FROM `wy_users` `u` LEFT JOIN `wy_online` `o` ON `u`.`user_id`=`o`.`user_id` WHERE  (  u.user_sex != '0' and u.is_pass!='0' ) ORDER BY u.is_service desc, o.active_time desc LIMIT 0,16 [ RunTime:0.020440s ]
+---------------------------------------------------------------
+[ 2020-01-09T18:07:45+08:00 ] 61.158.152.49 GET /index/main/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000597s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001061s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000594s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000574s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000995s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000285s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000529s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000232s ]
+[ sql ] [ SQL ] INSERT INTO `wy_online` (`user_id` , `user_name` , `user_sex` , `user_ico` , `active_time` , `hidden`) VALUES (697 , 'jingjing' , 0 , 'http://www.pauzzz.com/uploadfiles/avatar/20191025/1571968321766_162.jpg' , 1578564465 , 0) [ RunTime:0.000273s ]
+---------------------------------------------------------------
+[ 2020-01-09T18:07:47+08:00 ] 61.158.152.49 GET /index/main/query/page/1.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000586s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001051s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000436s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000584s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000195s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000273s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000532s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000283s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=697,`user_name`='jingjing',`user_sex`=0,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20191025/1571968321766_162.jpg',`active_time`=1578564467,`hidden`=0  WHERE  `user_id` = 697 [ RunTime:0.000298s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wy_users` WHERE  `user_sex` <> 0  AND `is_pass` <> 0 LIMIT 1 [ RunTime:0.000188s ]
+[ sql ] [ SQL ] SELECT `u`.`user_name`,`u`.`user_ico`,`u`.`user_sex`,`u`.`user_group`,`u`.`user_id`,`o`.`online_id` FROM `wy_users` `u` LEFT JOIN `wy_online` `o` ON `u`.`user_id`=`o`.`user_id` WHERE  (  u.user_sex != '0' and u.is_pass!='0' ) ORDER BY u.is_service desc, o.active_time desc LIMIT 0,16 [ RunTime:0.020063s ]
+---------------------------------------------------------------
+[ 2020-01-09T18:07:48+08:00 ] 61.158.152.49 GET /index/chat/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000661s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001063s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000457s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000555s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000193s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000276s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000524s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000639s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=697,`user_name`='jingjing',`user_sex`=0,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20191025/1571968321766_162.jpg',`active_time`=1578564468,`hidden`=0  WHERE  `user_id` = 697 [ RunTime:0.000563s ]
+---------------------------------------------------------------
+[ 2020-01-09T18:07:49+08:00 ] 61.158.152.49 GET /index/chat/getdata.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000594s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001277s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000483s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000738s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000568s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000319s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000747s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000286s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=697,`user_name`='jingjing',`user_sex`=0,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20191025/1571968321766_162.jpg',`active_time`=1578564469,`hidden`=0  WHERE  `user_id` = 697 [ RunTime:0.000291s ]
+[ sql ] [ SQL ] SELECT * FROM `chat_log` WHERE  (  fromid='697' or toid='697' ) ORDER BY timeline desc [ RunTime:0.004496s ]
+[ sql ] [ SQL ] SELECT `user_id`,`user_name`,`user_ico`,`user_sex` FROM `wy_users` WHERE  `user_id` IN (1708,751,13422,11262,1664,9933,11559,11352,13894,881,13219,727,11014,13996,13176,10649,7959,13597,1459,12720,2592,11892,12873,8215,11867,12836,12702,12646,1855,12620,12323,12508,11587,11240,11180,11144,11431,2302,10953,11040,10562,5452,6073,7920,3445,14497,14495,14488,14489,14482,14479,10701,5049,9168,13461,10645,11198) [ RunTime:0.001667s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 727  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000388s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 751  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001083s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 881  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000988s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 1459  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000289s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 1664  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000941s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 1708  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.009226s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 1855  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000688s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 2302  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000684s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 2592  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000855s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 3445  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000814s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 5049  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000347s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 5452  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000676s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 6073  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000707s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 7920  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000266s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 7959  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001182s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 8215  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000701s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 9168  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000268s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 9933  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000919s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 10562  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000295s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 10645  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001479s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 10649  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000767s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 10701  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000865s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 10953  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001398s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11014  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000818s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11040  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000907s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11144  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000559s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11180  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000710s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11198  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000261s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11240  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000670s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11262  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001690s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11352  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000857s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11431  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000641s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11559  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000882s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11587  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000653s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11867  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000766s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11892  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000760s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12323  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000647s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12508  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000687s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12620  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000819s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12646  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000697s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12702  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000655s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12720  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000755s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12836  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000689s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12873  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000803s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13176  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001321s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13219  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001042s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13422  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000926s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13461  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000248s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13597  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000733s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13894  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000940s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13996  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000836s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 14479  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000840s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 14482  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000281s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 14488  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000243s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 14489  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000248s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 14495  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000238s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 14497  AND `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000244s ]
+---------------------------------------------------------------
+[ 2020-01-09T18:07:52+08:00 ] 61.158.152.49 GET /index/chat/chat/pals_id/1708
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000641s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001090s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000457s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000581s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000190s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000293s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000505s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000276s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=697,`user_name`='jingjing',`user_sex`=0,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20191025/1571968321766_162.jpg',`active_time`=1578564472,`hidden`=0  WHERE  `user_id` = 697 [ RunTime:0.000265s ]
+[ sql ] [ SQL ] SELECT `user_id`,`user_name`,`user_ico` FROM `wy_users` WHERE  `user_id` = 1708 LIMIT 1 [ RunTime:0.001041s ]
+---------------------------------------------------------------
+[ 2020-01-09T18:08:00+08:00 ] 61.158.152.49 GET /index/chat/chat/pals_id/1708
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000632s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001092s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000469s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000623s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000208s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000295s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000539s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000292s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=697,`user_name`='jingjing',`user_sex`=0,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20191025/1571968321766_162.jpg',`active_time`=1578564480,`hidden`=0  WHERE  `user_id` = 697 [ RunTime:0.000283s ]
+[ sql ] [ SQL ] SELECT `user_id`,`user_name`,`user_ico` FROM `wy_users` WHERE  `user_id` = 1708 LIMIT 1 [ RunTime:0.000182s ]
+---------------------------------------------------------------
+[ 2020-01-09T18:08:20+08:00 ] 61.158.152.49 GET /index/chat/chat/pals_id/751
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000650s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001093s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000453s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000582s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001041s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000300s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000538s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000258s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=697,`user_name`='jingjing',`user_sex`=0,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20191025/1571968321766_162.jpg',`active_time`=1578564500,`hidden`=0  WHERE  `user_id` = 697 [ RunTime:0.000398s ]
+[ sql ] [ SQL ] SELECT `user_id`,`user_name`,`user_ico` FROM `wy_users` WHERE  `user_id` = 751 LIMIT 1 [ RunTime:0.000244s ]
+---------------------------------------------------------------
+[ 2020-01-09T18:08:42+08:00 ] 61.158.152.49 GET /index/home/index/uid/14547
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000636s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001050s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000437s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000552s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001012s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000279s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000535s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000267s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=697,`user_name`='jingjing',`user_sex`=0,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20191025/1571968321766_162.jpg',`active_time`=1578564522,`hidden`=0  WHERE  `user_id` = 697 [ RunTime:0.000290s ]
+[ sql ] [ SQL ] SELECT `user_id`,`user_name`,`user_sex`,`user_ico`,`birth_year`,`birth_month`,`birth_day`,`country`,`waimao`,`sexual`,`height`,`weight`,`income`,`gerenjieshao` FROM `wy_users` WHERE  `user_id` = 14547 LIMIT 1 [ RunTime:0.000286s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_album` [ RunTime:0.000499s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_album` WHERE  `user_id` = 14547 ORDER BY `add_time` [ RunTime:0.000282s ]
+---------------------------------------------------------------
+[ 2020-01-09T18:08:43+08:00 ] 61.158.152.49 GET /index/home/mood/uid/14547/page/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000621s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001298s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000582s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000767s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000245s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000359s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000718s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000336s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=697,`user_name`='jingjing',`user_sex`=0,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20191025/1571968321766_162.jpg',`active_time`=1578564523,`hidden`=0  WHERE  `user_id` = 697 [ RunTime:0.000501s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_recent_affair` [ RunTime:0.000671s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wy_recent_affair` WHERE  `user_id` = 14547 LIMIT 1 [ RunTime:0.000329s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_recent_affair` WHERE  `user_id` = 14547 ORDER BY id desc LIMIT 0,5 [ RunTime:0.000337s ]
+---------------------------------------------------------------
+[ 2020-01-09T18:08:44+08:00 ] 61.158.152.49 GET /index/chat/chat/pals_id/14547.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000604s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001055s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000429s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000563s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 697  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000202s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000276s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000526s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 697 LIMIT 1 [ RunTime:0.000263s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=697,`user_name`='jingjing',`user_sex`=0,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20191025/1571968321766_162.jpg',`active_time`=1578564524,`hidden`=0  WHERE  `user_id` = 697 [ RunTime:0.000296s ]
+[ sql ] [ SQL ] SELECT `user_id`,`user_name`,`user_ico` FROM `wy_users` WHERE  `user_id` = 14547 LIMIT 1 [ RunTime:0.000249s ]
+---------------------------------------------------------------
+[ 2020-01-09T18:10:36+08:00 ] 106.34.73.253 GET /index/home/index/uid/4075
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000621s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001127s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000452s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000568s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 704  AND `is_read` = 0 LIMIT 1 [ RunTime:0.003774s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000295s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000572s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000270s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=704,`user_name`='PAUZZZ',`user_sex`=0,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190910/1568096892927_162.jpg',`active_time`=1578564636,`hidden`=0  WHERE  `user_id` = 704 [ RunTime:0.000325s ]
+[ sql ] [ SQL ] SELECT `user_id`,`user_name`,`user_sex`,`user_ico`,`birth_year`,`birth_month`,`birth_day`,`country`,`waimao`,`sexual`,`height`,`weight`,`income`,`gerenjieshao` FROM `wy_users` WHERE  `user_id` = 4075 LIMIT 1 [ RunTime:0.000285s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_album` [ RunTime:0.000541s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_album` WHERE  `user_id` = 4075 ORDER BY `add_time` [ RunTime:0.000296s ]
+---------------------------------------------------------------
+[ 2020-01-09T18:10:36+08:00 ] 106.34.73.253 GET /index/home/mood/uid/4075/page/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000629s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001102s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000483s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000565s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 704  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000235s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000289s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000623s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000263s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=704,`user_name`='PAUZZZ',`user_sex`=0,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190910/1568096892927_162.jpg',`active_time`=1578564636,`hidden`=0  WHERE  `user_id` = 704 [ RunTime:0.000281s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_recent_affair` [ RunTime:0.000536s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wy_recent_affair` WHERE  `user_id` = 4075 LIMIT 1 [ RunTime:0.000226s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_recent_affair` WHERE  `user_id` = 4075 ORDER BY id desc LIMIT 0,5 [ RunTime:0.000250s ]
+---------------------------------------------------------------
+[ 2020-01-09T20:01:11+08:00 ] 106.34.73.253 GET /index/main/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000621s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001044s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000593s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000553s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 704  AND `is_read` = 0 LIMIT 1 [ RunTime:0.003595s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000286s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000553s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000248s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=704,`user_name`='PAUZZZ',`user_sex`=0,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190910/1568096892927_162.jpg',`active_time`=1578571271,`hidden`=0  WHERE  `user_id` = 704 [ RunTime:0.000425s ]
+---------------------------------------------------------------
+[ 2020-01-09T20:01:11+08:00 ] 106.34.73.253 GET /index/main/query/page/1.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000616s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001042s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000435s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000545s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 704  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000204s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000266s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000529s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000282s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=704,`user_name`='PAUZZZ',`user_sex`=0,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190910/1568096892927_162.jpg',`active_time`=1578571271,`hidden`=0  WHERE  `user_id` = 704 [ RunTime:0.000258s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wy_users` WHERE  `user_sex` <> 0  AND `is_pass` <> 0 LIMIT 1 [ RunTime:0.010568s ]
+[ sql ] [ SQL ] SELECT `u`.`user_name`,`u`.`user_ico`,`u`.`user_sex`,`u`.`user_group`,`u`.`user_id`,`o`.`online_id` FROM `wy_users` `u` LEFT JOIN `wy_online` `o` ON `u`.`user_id`=`o`.`user_id` WHERE  (  u.user_sex != '0' and u.is_pass!='0' ) ORDER BY u.is_service desc, o.active_time desc LIMIT 0,16 [ RunTime:0.020413s ]
+---------------------------------------------------------------
+[ 2020-01-09T20:01:17+08:00 ] 106.34.73.253 GET /index/main/query/page/2.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000636s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001064s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000450s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000569s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 704  AND `is_read` = 0 LIMIT 1 [ RunTime:0.003665s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000307s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000544s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 704 LIMIT 1 [ RunTime:0.000187s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=704,`user_name`='PAUZZZ',`user_sex`=0,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190910/1568096892927_162.jpg',`active_time`=1578571277,`hidden`=0  WHERE  `user_id` = 704 [ RunTime:0.000453s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wy_users` WHERE  `user_sex` <> 0  AND `is_pass` <> 0 LIMIT 1 [ RunTime:0.000185s ]
+[ sql ] [ SQL ] SELECT `u`.`user_name`,`u`.`user_ico`,`u`.`user_sex`,`u`.`user_group`,`u`.`user_id`,`o`.`online_id` FROM `wy_users` `u` LEFT JOIN `wy_online` `o` ON `u`.`user_id`=`o`.`user_id` WHERE  (  u.user_sex != '0' and u.is_pass!='0' ) ORDER BY u.is_service desc, o.active_time desc LIMIT 16,16 [ RunTime:0.020460s ]
+---------------------------------------------------------------
+[ 2020-01-09T21:02:25+08:00 ] 117.136.104.216 GET /index/main/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000628s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001098s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 10659 LIMIT 1 [ RunTime:0.000565s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000570s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001432s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 10659 LIMIT 1 [ RunTime:0.000295s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000514s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 10659 LIMIT 1 [ RunTime:0.000262s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=10659,`user_name`='xixi',`user_sex`=0,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190217/1550369037831_162.jpg',`active_time`=1578574945,`hidden`=0  WHERE  `user_id` = 10659 [ RunTime:0.000426s ]
+---------------------------------------------------------------
+[ 2020-01-09T21:02:26+08:00 ] 117.136.104.216 GET /index/main/query/page/1.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000642s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001067s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 10659 LIMIT 1 [ RunTime:0.000455s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000578s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000189s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 10659 LIMIT 1 [ RunTime:0.000292s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000538s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 10659 LIMIT 1 [ RunTime:0.000271s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=10659,`user_name`='xixi',`user_sex`=0,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190217/1550369037831_162.jpg',`active_time`=1578574946,`hidden`=0  WHERE  `user_id` = 10659 [ RunTime:0.000443s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wy_users` WHERE  `user_sex` <> 0  AND `is_pass` <> 0 LIMIT 1 [ RunTime:0.010601s ]
+[ sql ] [ SQL ] SELECT `u`.`user_name`,`u`.`user_ico`,`u`.`user_sex`,`u`.`user_group`,`u`.`user_id`,`o`.`online_id` FROM `wy_users` `u` LEFT JOIN `wy_online` `o` ON `u`.`user_id`=`o`.`user_id` WHERE  (  u.user_sex != '0' and u.is_pass!='0' ) ORDER BY u.is_service desc, o.active_time desc LIMIT 0,16 [ RunTime:0.020548s ]
+---------------------------------------------------------------
+[ 2020-01-09T21:02:31+08:00 ] 117.136.104.216 GET /index/chat/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000631s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001059s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 10659 LIMIT 1 [ RunTime:0.000452s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000562s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000192s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 10659 LIMIT 1 [ RunTime:0.000284s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000532s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 10659 LIMIT 1 [ RunTime:0.000276s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=10659,`user_name`='xixi',`user_sex`=0,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190217/1550369037831_162.jpg',`active_time`=1578574951,`hidden`=0  WHERE  `user_id` = 10659 [ RunTime:0.000429s ]
+---------------------------------------------------------------
+[ 2020-01-09T21:02:31+08:00 ] 117.136.104.216 GET /index/chat/getdata.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000601s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001028s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 10659 LIMIT 1 [ RunTime:0.000459s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000589s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000192s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 10659 LIMIT 1 [ RunTime:0.000299s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000532s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 10659 LIMIT 1 [ RunTime:0.000271s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=10659,`user_name`='xixi',`user_sex`=0,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190217/1550369037831_162.jpg',`active_time`=1578574951,`hidden`=0  WHERE  `user_id` = 10659 [ RunTime:0.000270s ]
+[ sql ] [ SQL ] SELECT * FROM `chat_log` WHERE  (  fromid='10659' or toid='10659' ) ORDER BY timeline desc [ RunTime:0.008754s ]
+[ sql ] [ SQL ] SELECT `user_id`,`user_name`,`user_ico`,`user_sex` FROM `wy_users` WHERE  `user_id` IN (14547,11973,1708,4180,14409,14286,14257,812,3445,11559,10656,13029,9246,13996,9251,12896,5938,10905,12464,13597,13176,11348,8736,13219,12836,12873,13199,10835,881,11892,12620,12738,10953,12646,1855,12280,5452,11587,10625,11262,11735,11180,11460,11144,10756,11370,2592,8215,14474,14422,14369,9392,14120,14102,14054,14045,14033,13998,13995,13932,13925,13931,13928,13850,13836,13822,13809,13800,9168,13756,13752,13736,13704,13422,13403,13286,13195,12779,13026,12926,12923,12599,12542,12417,12415,12373,12362,12338,12253,12228,12137,12133,12103,12098,12004,12003,11838,11912,11859,11813,11493,11547,11543,11532,11509,11453,11342,10314,11302,11201,11184,11154,11058,10849,10974,10966,10961,10924) [ RunTime:0.003167s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 812  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001774s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 881  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001529s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 1708  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.009600s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 1855  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000991s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 2592  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001333s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 3445  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001283s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 4180  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001432s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 5452  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000620s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 5938  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001358s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 8215  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001069s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 8736  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001156s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 9168  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000280s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 9246  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001253s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 9251  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001285s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 9392  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001344s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 10314  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000332s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 10625  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001299s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 10656  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001295s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 10756  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001353s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 10835  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001318s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 10849  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000258s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 10905  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001138s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 10924  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000263s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 10953  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001609s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 10961  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000281s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 10966  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000237s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 10974  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000250s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11058  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000240s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11144  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000421s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11154  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000240s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11180  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000999s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11184  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000286s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11201  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000268s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11262  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001424s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11302  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000258s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11342  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000239s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11348  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001288s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11370  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001047s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11453  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000261s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11460  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000422s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11493  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000255s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11509  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001026s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11532  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000268s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11543  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000253s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11547  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000260s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11559  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001298s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11587  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000434s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11735  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000391s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11813  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000280s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11838  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000247s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11859  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000245s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11892  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001140s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11912  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000257s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 11973  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001261s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12003  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000259s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12004  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000267s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12098  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000262s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12103  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000264s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12133  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000519s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12137  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000237s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12228  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000236s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12253  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000233s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12280  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000905s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12338  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000273s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12362  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000258s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12373  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000280s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12415  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000262s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12417  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000243s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12464  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000273s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12542  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000232s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12599  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000236s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12620  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001299s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12646  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000933s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12738  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000944s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12779  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001004s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12836  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001045s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12873  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001210s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12896  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001272s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12923  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000253s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 12926  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000252s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13026  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000561s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13029  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001274s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13176  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001324s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13195  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000269s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13199  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000268s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13219  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001352s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13286  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001133s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13403  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000247s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13422  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001267s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13597  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001173s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13704  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000244s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13736  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000242s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13752  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000250s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13756  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000254s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13800  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000238s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13809  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000249s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13822  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000251s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13836  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000264s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13850  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000297s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13925  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000253s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13928  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000259s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13931  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000259s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13932  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000255s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13995  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000235s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13996  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001337s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 13998  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000246s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 14033  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000260s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 14045  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000276s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 14054  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000252s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 14102  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000238s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 14120  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000510s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 14257  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001455s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 14286  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001296s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 14369  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000252s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 14409  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001256s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 14422  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000243s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 14474  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000288s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `fromid` = 14547  AND `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.001286s ]
+---------------------------------------------------------------
+[ 2020-01-09T21:03:31+08:00 ] 117.136.104.216 GET /index/main/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000621s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001083s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 10659 LIMIT 1 [ RunTime:0.000459s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000569s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000195s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 10659 LIMIT 1 [ RunTime:0.000307s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000524s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 10659 LIMIT 1 [ RunTime:0.000187s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=10659,`user_name`='xixi',`user_sex`=0,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190217/1550369037831_162.jpg',`active_time`=1578575011,`hidden`=0  WHERE  `user_id` = 10659 [ RunTime:0.000481s ]
+---------------------------------------------------------------
+[ 2020-01-09T21:03:31+08:00 ] 117.136.104.216 GET /index/main/query/page/1.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000609s ] mysql:host=127.0.0.1;port=3306;dbname=henimeet;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001043s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 10659 LIMIT 1 [ RunTime:0.000445s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000582s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 10659  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000207s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 10659 LIMIT 1 [ RunTime:0.000292s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000552s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 10659 LIMIT 1 [ RunTime:0.000267s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=10659,`user_name`='xixi',`user_sex`=0,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190217/1550369037831_162.jpg',`active_time`=1578575011,`hidden`=0  WHERE  `user_id` = 10659 [ RunTime:0.000274s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wy_users` WHERE  `user_sex` <> 0  AND `is_pass` <> 0 LIMIT 1 [ RunTime:0.000206s ]
+[ sql ] [ SQL ] SELECT `u`.`user_name`,`u`.`user_ico`,`u`.`user_sex`,`u`.`user_group`,`u`.`user_id`,`o`.`online_id` FROM `wy_users` `u` LEFT JOIN `wy_online` `o` ON `u`.`user_id`=`o`.`user_id` WHERE  (  u.user_sex != '0' and u.is_pass!='0' ) ORDER BY u.is_service desc, o.active_time desc LIMIT 0,16 [ RunTime:0.020573s ]

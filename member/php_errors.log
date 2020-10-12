@@ -1,0 +1,4 @@
+[19-Mar-2015 14:26:44 PRC] PHP Warning:  require(/home/wwwroot/lovelove/member/../foundation/asession.php): failed to open stream: No such file or directory in /home/wwwroot/lovelove/member/includet.php on line 5
+[19-Mar-2015 14:26:44 PRC] PHP Fatal error:  require(): Failed opening required '/home/wwwroot/lovelove/member/../foundation/asession.php' (include_path='.:') in /home/wwwroot/lovelove/member/includet.php on line 5
+[19-Mar-2015 14:26:46 PRC] PHP Warning:  require(/home/wwwroot/lovelove/member/../foundation/asession.php): failed to open stream: No such file or directory in /home/wwwroot/lovelove/member/includet.php on line 5
+[19-Mar-2015 14:26:46 PRC] PHP Fatal error:  require(): Failed opening required '/home/wwwroot/lovelove/member/../foundation/asession.php' (include_path='.:') in /home/wwwroot/lovelove/member/includet.php on line 5

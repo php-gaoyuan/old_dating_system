@@ -1,0 +1,120 @@
+<?php 
+//前台容器页语言包
+class arrayhomelp{
+	var $ah_reply = "返信";
+	var $ah_label = "タグ";
+	var $ah_enable_dress = "これを起用したかどうかの様子だった";
+	var $ah_system_will = "システム意志";
+	var $ah_seconds_return = "秒間トップページに戻る...";
+	var $ah_click_return_home = "お使いのブラウザが自動的に調整されない場合は、ホームページに戻るには、ここをクリックしてください";
+	var $ah_have = "が";
+	var $ah_had_seen = "人々が見てきた";
+	var $ah_more_mood = "もっと気分";
+	var $ah_personal_homepage = "个人主页";
+	var $ah_data = "数据";
+	var $ah_log = "ブログ";
+	var $ah_album = "アルバム";
+	var $ah_share = "分かち合い";
+	var $ah_vote = "投 票";
+	var $ah_groups = "グループ";
+	var $ah_visitors = "訪問者";
+	var $ah_events = "アクティビティ";
+	var $ah_more = "もっと";
+	var $ah_friends_circle = "友人グループ";
+	var $ah_current_online = "オンライン";
+	var $ah_offline = "オフラインで";
+	var $ah_stealth = "隐身";
+	var $ah_friends_add_suc = "友達の追加に成功しました";
+	var $ah_browser_clipboard = "お使いのブラウザは手動で設定、スクリプトがクリップボードにアクセスすることはできません！";
+	var $ah_enter_name = "名前を入力してください...";
+	var $ah_advanced_search = "高度な検索";
+	var $ah_homepage = "ホーム";
+	var $ah_see_who_online = "オンライン状況";
+	var $ah_set_application = "設置応用";
+	var $ah_add_friend = "友達に加える";
+	var $ah_say_hello_to = "挨拶する";
+	var $ah_chongzhi = "TA充電する";
+	var $ah_gift = "ギフト";
+	var $ah_send_letter = "Eメール";
+	var $ah_report_user = "このユーザーを報告する";
+	var $ah_forgot_password = "パスワードを忘れた";
+	var $ah_total = "合計";
+	var $ah_member_events_here = "ここでメンバー活動...";
+	var $ah_personal_space = "パーソナルスペース";
+	var $ah_groups_share = "グループ/分かち合い";
+	var $ah_game_application = "ゲームアプリケーション";
+	var $ah_personal_space_detail = "<dd>自分のスペース、ポストログ、写真の作成，</dd><dd>分かち合いの暮らしの中のだった..</dd>";
+	var $ah_groups_share_detail = "<dd>自分のグループを作成します。，話し合う</dd><dd>トピック、共有と情報の交換に興味...</dd>";
+	var $ah_game_application_detail = "<dd>と友人は涼しいインタラクティブなゲームやアプリケーションと遊ぶ</dd><dd>あなたのエンターテイメントのニーズを満たす...</dd>";
+	var $ah_loading_data = "データのパイロットで...";
+	var $ah_fill_content = "メッセージの内容を入力してください！";
+	var $ah_latest_photos = "最新の写真";
+	var $ah_view_all_my_photos = "すべての写真を表示";
+	var $ah_all_photos = "すべての写真";
+	var $ah_latest_blog = "最新のログ";
+	var $ah_see_all_my_log = "すべてのブログを参照してください。";
+	var $ah_all_logs = "すべてのブログ";
+	var $ah_you_can_enter = "また、入力することができます";
+	var $ah_word = "字";
+	var $ah_to = "に";
+	var $ah_message = "メモ";
+	var $ah_expression = "表情";
+	var $ah_new_nothing = "ュース";
+	var $ah_message_board = "メッセージボード";
+	var $ah_see_more_novelty = "もっと新規性を参照してください。";
+	var $ah_welcome_you = "歓迎:";
+	var $ah_invite_you_friends = "あなたは友人として招待。";
+	var $ah_after_friend = "友人になってきた後は、トピックが一緒にいた議論ができ、互いのアップデートへのタイムリーな注意は、あなたも楽しいゲームをプレイすることができます ... <br />また、迅速かつ簡単に記録し、友人との生活を共有し、写真をアップロード、自分のブログを公開することができます。 <br />何を待っている？さあ、今私たちに参加。";
+	var $ah_times = "次";
+	var $ah_basic_info="基本的な情报";
+	var $ah_birthday="誕生日";
+	var $ah_hometown="故郷";
+	var $ah_residence="住まい";
+}
+//错误机制语言包
+class errorlp{
+	var $er_db_unset="データベースが問題の設定、データベースのテーブルとフィールドが正しいご覧ください";
+	var $er_dont_know="不明なエラーシステム";
+	var $commit_bug="あなたはバグフォーラムに遭遇iwebSNSに質問を提出することができます";
+	var $er_refuse_guest="申し訳ありませんが、現在の期間には、サイトを訪問することを拒否。";
+	var $er_refuse_action="申し訳ありませんが、現在の期間では、サイトと対話することを拒否。";
+	var $er_refuse_ip="申し訳ありませんが、あなたのIPアドレスは、サイトへのアクセスを拒否。";
+}
+//登录系统语言包
+class loginlp{
+	var $l_empty_mail="メールアカウントは、空にすることはできません！";
+	var $l_empty_pass="パスワードは空白にすることはできません!";
+	var $l_empty_repa="繰り返しパスワード入力を空にすることはできません!";	
+	var $l_not_check="アカウントエラーログイン、もう一度試してください";
+	var $l_wrong_pass="ユーザーのパスワードエラー!";
+	var $l_lock_u="申し訳ありませんが、あなたのアカウントがロックされています";
+	var $l_loading="コネクションサインイン...";
+	var $l_email="口座番号";
+	var $l_pass="パスワード";
+	var $l_repass="パスワード再入力";
+	var $l_save_aco="私を覚えている";
+	var $l_hid="隐身登录";
+	var $l_login="ログイン";
+	var $l_r_aco="还没有开通你的聚易网帐号？";
+	var $l_search_result="検索結果";
+	var $l_user_name="ユーザー名";
+	var $l_momber_login="メンバーログイン";
+	var $l_forget_pw="パスワードを忘れました？";
+	var $l_momber_register="登録";
+	var $l_30s_register="新規ユーザーを登録する30秒！";
+	var $l_wel_insert="あなたが参加することを願って";
+	var $l_jooyea_star="注目のメンバー";
+	var $l_new_momber="最新のクールな友達";
+	var $l_sell="私は自分自身を紹介したいと思います";
+	var $l_location="場所";
+	var $l_chose="選択してください";
+	var $l_confirm="決定する";
+	var $l_age="年齢</label>";
+	var $l_sex="性別</label>";
+	var $l_no_restraint="無制限の";
+	var $l_search="検索";
+	var $l_lady="ミズ";
+	var $l_men="男士";
+	var $l_close="クローズ";
+}
+?>

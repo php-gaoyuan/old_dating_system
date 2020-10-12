@@ -1,0 +1,24 @@
+[14-Feb-2015 15:35:38 PRC] PHP Warning:  require(foundation/asession.php): failed to open stream: No such file or directory in /home/wwwroot/lovelove/modules/blog/blog_list.php on line 15
+[14-Feb-2015 15:35:38 PRC] PHP Fatal error:  require(): Failed opening required 'foundation/asession.php' (include_path='.:') in /home/wwwroot/lovelove/modules/blog/blog_list.php on line 15
+[14-Feb-2015 15:35:42 PRC] PHP Warning:  require(foundation/asession.php): failed to open stream: No such file or directory in /home/wwwroot/lovelove/modules/blog/blog_list.php on line 15
+[14-Feb-2015 15:35:42 PRC] PHP Fatal error:  require(): Failed opening required 'foundation/asession.php' (include_path='.:') in /home/wwwroot/lovelove/modules/blog/blog_list.php on line 15
+[14-Feb-2015 15:37:57 PRC] PHP Warning:  require(foundation/asession.php): failed to open stream: No such file or directory in /home/wwwroot/lovelove/modules/blog/blog_list.php on line 15
+[14-Feb-2015 15:37:57 PRC] PHP Fatal error:  require(): Failed opening required 'foundation/asession.php' (include_path='.:') in /home/wwwroot/lovelove/modules/blog/blog_list.php on line 15
+[14-Feb-2015 15:37:59 PRC] PHP Warning:  require(foundation/asession.php): failed to open stream: No such file or directory in /home/wwwroot/lovelove/modules/blog/blog_list.php on line 15
+[14-Feb-2015 15:37:59 PRC] PHP Fatal error:  require(): Failed opening required 'foundation/asession.php' (include_path='.:') in /home/wwwroot/lovelove/modules/blog/blog_list.php on line 15
+[14-Feb-2015 15:38:22 PRC] PHP Warning:  require(foundation/asession.php): failed to open stream: No such file or directory in /home/wwwroot/lovelove/modules/blog/blog_list.php on line 15
+[14-Feb-2015 15:38:22 PRC] PHP Fatal error:  require(): Failed opening required 'foundation/asession.php' (include_path='.:') in /home/wwwroot/lovelove/modules/blog/blog_list.php on line 15
+[15-Feb-2015 09:38:23 PRC] PHP Warning:  require(foundation/asession.php): failed to open stream: No such file or directory in /home/wwwroot/lovelove/modules/blog/blog_list.php on line 15
+[15-Feb-2015 09:38:23 PRC] PHP Fatal error:  require(): Failed opening required 'foundation/asession.php' (include_path='.:') in /home/wwwroot/lovelove/modules/blog/blog_list.php on line 15
+[15-Feb-2015 09:38:46 PRC] PHP Warning:  require(foundation/asession.php): failed to open stream: No such file or directory in /home/wwwroot/lovelove/modules/blog/blog_list.php on line 15
+[15-Feb-2015 09:38:46 PRC] PHP Fatal error:  require(): Failed opening required 'foundation/asession.php' (include_path='.:') in /home/wwwroot/lovelove/modules/blog/blog_list.php on line 15
+[15-Feb-2015 09:41:37 PRC] PHP Warning:  require(foundation/asession.php): failed to open stream: No such file or directory in /home/wwwroot/lovelove/modules/blog/blog_list.php on line 15
+[15-Feb-2015 09:41:37 PRC] PHP Fatal error:  require(): Failed opening required 'foundation/asession.php' (include_path='.:') in /home/wwwroot/lovelove/modules/blog/blog_list.php on line 15
+[15-Feb-2015 09:45:43 PRC] PHP Warning:  require(foundation/asession.php): failed to open stream: No such file or directory in /home/wwwroot/lovelove/modules/blog/blog_list.php on line 15
+[15-Feb-2015 09:45:43 PRC] PHP Fatal error:  require(): Failed opening required 'foundation/asession.php' (include_path='.:') in /home/wwwroot/lovelove/modules/blog/blog_list.php on line 15
+[15-Feb-2015 09:47:46 PRC] PHP Warning:  require(foundation/asession.php): failed to open stream: No such file or directory in /home/wwwroot/lovelove/modules/blog/blog_list.php on line 15
+[15-Feb-2015 09:47:46 PRC] PHP Fatal error:  require(): Failed opening required 'foundation/asession.php' (include_path='.:') in /home/wwwroot/lovelove/modules/blog/blog_list.php on line 15
+[15-Feb-2015 09:47:54 PRC] PHP Warning:  require(foundation/asession.php): failed to open stream: No such file or directory in /home/wwwroot/lovelove/modules/blog/blog_list.php on line 15
+[15-Feb-2015 09:47:54 PRC] PHP Fatal error:  require(): Failed opening required 'foundation/asession.php' (include_path='.:') in /home/wwwroot/lovelove/modules/blog/blog_list.php on line 15
+[15-Feb-2015 09:48:43 PRC] PHP Warning:  require(foundation/asession.php): failed to open stream: No such file or directory in /home/wwwroot/lovelove/modules/blog/blog_list.php on line 15
+[15-Feb-2015 09:48:43 PRC] PHP Fatal error:  require(): Failed opening required 'foundation/asession.php' (include_path='.:') in /home/wwwroot/lovelove/modules/blog/blog_list.php on line 15

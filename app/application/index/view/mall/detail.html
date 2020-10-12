@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title><{:lang("gift detail")}></title>
+    <link rel="stylesheet" type="text/css" href="<{:config('skin_path')}>/css/mui.min.css"/>
+    <link href="<{:config('skin_path')}>/css/mall.css" rel="stylesheet"/>
+    <style>
+	.xq-cont img{
+		width: 100%;
+	}
+    </style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title"><{:lang("gift detail")}></h1>
+	</header>
+	<div class="mui-content">
+		<div class="mainimg">
+			<div class="mui-slider">
+			  <div class="mui-slider-group">
+			    <{volist name="info.imgs" id="vo"}>
+			    <div class="mui-slider-item">
+			      <img src="<{$vo}>" alt="">
+			    </div>
+			    <{/volist}>
+			  </div>
+			</div>
+		</div>
+		<div class="white">
+			<ul class="xq-sm">
+				<li><span><{:lang("gift name")}>：</span><p><{$info.giftname}></p></li>
+				<li><span><{:lang("gift price")}>：</span><p>$<{$info.money}></p></li>
+				<li><span><{:lang("member price")}>：</span><p class="yh-price">$<{$info.money}></p></li>
+				<li><span><{:lang("yunfei")}>：</span><p><{:lang("free")}></p></li>
+			</ul>
+		</div>
+		<a href="<{:url('mall/pay',array('id'=>$info['id']))}>" class="buy-btn"><{:lang("buy")}></a>
+		<div class="white">
+			<div class="xq-cont">
+				<h5 class="xq-cont-title"><{:lang("gift detail")}></h5>
+				<{$info.desc}>
+			</div>
+		</div>
+		
+    
+	</div>
+	<script type="text/javascript" src="<{:config('skin_path')}>/js/jquery.min.js"></script>
+	<script type="text/javascript" src="<{:config('skin_path')}>/js/public.js"></script>
+	<script type="text/javascript" src="<{:config('skin_path')}>/js/mui.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,366 @@
+---------------------------------------------------------------
+[ 2019-07-07T10:32:56+08:00 ] 182.114.150.213 GET /index/index/index.html
+[ info ] app.pauzzz.com/index/index/index.html [运行时间：0.022682s][吞吐率：44.09req/s] [内存消耗：2,438.40kb] [文件加载：50]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'app.pauzzz.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'think_var=en-us',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/www.pauzzz.com/app/application/index/lang/en-us.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /www/wwwroot/www.pauzzz.com/app/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/www.pauzzz.com/app/application/index/view/index/index.html [ array (
+  0 => 'lang',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-07T10:33:02+08:00 ] 182.114.150.213 GET /index/index/index.html
+[ info ] app.pauzzz.com/index/index/index.html [运行时间：0.020338s][吞吐率：49.17req/s] [内存消耗：2,244.76kb] [文件加载：48]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'app.pauzzz.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'think_var=en-us',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/www.pauzzz.com/app/application/index/lang/en-us.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /www/wwwroot/www.pauzzz.com/app/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/www.pauzzz.com/app/application/index/view/index/index.html [ array (
+  0 => 'lang',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-07T10:33:06+08:00 ] 180.163.220.4 GET /index/index/index.html
+[ info ] app.pauzzz.com/index/index/index.html [运行时间：0.019662s][吞吐率：50.86req/s] [内存消耗：2,204.04kb] [文件加载：48]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'app.pauzzz.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.baidu.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/www.pauzzz.com/app/application/index/lang/en-us.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /www/wwwroot/www.pauzzz.com/app/application/index/controller/Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-07T10:33:06+08:00 ] 180.163.220.4 GET /index/index/index.html
+[ info ] app.pauzzz.com/index/index/index.html [运行时间：0.020241s][吞吐率：49.40req/s] [内存消耗：2,245.72kb] [文件加载：48]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'app.pauzzz.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.baidu.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'think_var=en-us',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/www.pauzzz.com/app/application/index/lang/en-us.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /www/wwwroot/www.pauzzz.com/app/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/www.pauzzz.com/app/application/index/view/index/index.html [ array (
+  0 => 'lang',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-07T10:33:17+08:00 ] 182.114.150.213 POST /index/index/login.html
+[ info ] app.pauzzz.com/index/index/login.html [运行时间：0.073154s][吞吐率：13.67req/s] [内存消耗：3,863.16kb] [文件加载：60]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'app.pauzzz.com',
+  'connection' => 'keep-alive',
+  'content-length' => '28',
+  'accept' => '*/*',
+  'origin' => 'http://app.pauzzz.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://app.pauzzz.com/index/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'think_var=en-us',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'chuyang',
+  'pass' => '851107',
+)
+[ info ] [ LANG ] /www/wwwroot/www.pauzzz.com/app/application/index/lang/en-us.php
+[ info ] [ RUN ] app\index\controller\Index->login[ /www/wwwroot/www.pauzzz.com/app/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.014884s ] mysql:host=127.0.0.1;port=3306;dbname=pauzzz;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001183s ]
+[ sql ] [ SQL ] SELECT `is_pass`,`user_id`,`user_email`,`user_name`,`user_pws`,`user_sex`,`user_ico` FROM `wy_users` WHERE  (  user_name='chuyang' or user_email='chuyang' ) LIMIT 1 [ RunTime:0.000742s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000507s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000577s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000549s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_users` [ RunTime:0.000504s ]
+[ sql ] [ SQL ] UPDATE `chat_users`  SET `line_status`=1,`app_online`=1  WHERE  `uid` = 12053 [ RunTime:0.000285s ]
+---------------------------------------------------------------
+[ 2019-07-07T10:33:17+08:00 ] 182.114.150.213 GET /index/main/index.html
+[ info ] app.pauzzz.com/index/main/index.html [运行时间：0.048322s][吞吐率：20.69req/s] [内存消耗：3,975.49kb] [文件加载：60]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'main',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'app.pauzzz.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://app.pauzzz.com/index/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'think_var=en-us; PHPSESSID=sakg0bi21i9qsc6ud091a37e27; user_id=12053; user_name=chuyang; user_sex=1; user_ico=uploadfiles%2Favatar%2F20190408%2F1554704406365_162.jpg',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/www.pauzzz.com/app/application/index/lang/en-us.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Main->index[ /www/wwwroot/www.pauzzz.com/app/application/index/controller/Main.php ]
+[ info ] [ VIEW ] /www/wwwroot/www.pauzzz.com/app/application/index/view/main/index.html [ array (
+  0 => 'userinfo',
+  1 => 'is_h5_plus',
+  2 => 'lang',
+  3 => 'log_messages',
+  4 => 'act',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000323s ] mysql:host=127.0.0.1;port=3306;dbname=pauzzz;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.000995s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000559s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000514s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000217s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000328s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000509s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000275s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=12053,`user_name`='chuyang',`user_sex`=1,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190408/1554704406365_162.jpg',`active_time`=1562466797,`hidden`=0  WHERE  `user_id` = 12053 [ RunTime:0.000378s ]
+---------------------------------------------------------------
+[ 2019-07-07T10:33:18+08:00 ] 182.114.150.213 GET /index/main/query/page/1.html
+[ info ] app.pauzzz.com/index/main/query/page/1.html [运行时间：0.080538s][吞吐率：12.42req/s] [内存消耗：3,713.84kb] [文件加载：58]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'main',
+    2 => 'query',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'app.pauzzz.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'referer' => 'http://app.pauzzz.com/index/main/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'think_var=en-us; PHPSESSID=sakg0bi21i9qsc6ud091a37e27; user_id=12053; user_name=chuyang; user_sex=1; user_ico=uploadfiles%2Favatar%2F20190408%2F1554704406365_162.jpg',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+)
+[ info ] [ LANG ] /www/wwwroot/www.pauzzz.com/app/application/index/lang/en-us.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Main->query[ /www/wwwroot/www.pauzzz.com/app/application/index/controller/Main.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000354s ] mysql:host=127.0.0.1;port=3306;dbname=pauzzz;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_users` [ RunTime:0.001023s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000419s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `chat_log` [ RunTime:0.000511s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `chat_log` WHERE  `toid` = 12053  AND `is_read` = 0 LIMIT 1 [ RunTime:0.000207s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_users` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000306s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wy_online` [ RunTime:0.000509s ]
+[ sql ] [ SQL ] SELECT * FROM `wy_online` WHERE  `user_id` = 12053 LIMIT 1 [ RunTime:0.000283s ]
+[ sql ] [ SQL ] UPDATE `wy_online`  SET `user_id`=12053,`user_name`='chuyang',`user_sex`=1,`user_ico`='http://www.pauzzz.com/uploadfiles/avatar/20190408/1554704406365_162.jpg',`active_time`=1562466798,`hidden`=0  WHERE  `user_id` = 12053 [ RunTime:0.000361s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `wy_users` WHERE  `user_sex` <> 1  AND `is_pass` <> 0 LIMIT 1 [ RunTime:0.021672s ]
+[ sql ] [ SQL ] SELECT `u`.`user_name`,`u`.`user_ico`,`u`.`user_sex`,`u`.`user_group`,`u`.`user_id`,`o`.`online_id` FROM `wy_users` `u` LEFT JOIN `wy_online` `o` ON `u`.`user_id`=`o`.`user_id` WHERE  (  u.user_sex != '1' and u.is_pass!='0' ) ORDER BY u.is_service desc, o.active_time desc LIMIT 0,16 [ RunTime:0.021219s ]
+---------------------------------------------------------------
+[ 2019-07-07T10:33:20+08:00 ] 58.246.221.163 GET /index/index/index.html
+[ info ] app.pauzzz.com/index/index/index.html [运行时间：0.019403s][吞吐率：51.54req/s] [内存消耗：2,223.02kb] [文件加载：49]
+[ info ] [ LANG ] /www/wwwroot/www.pauzzz.com/app/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'app.pauzzz.com',
+  'connection' => 'keep-alive',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/www.pauzzz.com/app/application/index/lang/zh-cn.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /www/wwwroot/www.pauzzz.com/app/application/index/controller/Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-07T10:34:17+08:00 ] 58.246.221.162 GET /index/main/index.html
+[ info ] app.pauzzz.com/index/main/index.html [运行时间：0.020692s][吞吐率：48.33req/s] [内存消耗：2,322.96kb] [文件加载：51]
+[ info ] [ LANG ] /www/wwwroot/www.pauzzz.com/app/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'main',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://app.pauzzz.com/index/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'app.pauzzz.com',
+  'connection' => 'keep-alive',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/www.pauzzz.com/app/application/index/lang/zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-07-07T10:34:22+08:00 ] 210.22.245.226 GET /index/main/query/page/1.html
+[ info ] app.pauzzz.com/index/main/query/page/1.html [运行时间：0.020453s][吞吐率：48.89req/s] [内存消耗：2,323.92kb] [文件加载：51]
+[ info ] [ LANG ] /www/wwwroot/www.pauzzz.com/app/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'main',
+    2 => 'query',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.124 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://app.pauzzz.com/index/main/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'app.pauzzz.com',
+  'connection' => 'keep-alive',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+)
+[ info ] [ LANG ] /www/wwwroot/www.pauzzz.com/app/application/index/lang/zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File

@@ -1,0 +1,35 @@
+/*解决mui冲突问题*/
+.mui-input-group .mui-input-row{
+	padding: 8px 0;
+	height: auto;
+}
+body{
+	    background: #fff;
+}
+.container{
+	margin-top:84px;
+}
+
+.btn-div{
+	margin:15px;
+}
+.btn-block{
+	width: 100%;
+}
+
+
+#sex_man,#sex_woman{
+	display: inline-block;
+    border:1px dashed #F9A837;
+    color:#F9A837;
+    line-height: 10px;
+    padding: 10px 20px;
+    border-radius: 3px;
+    margin: 4px 10px 0 0;
+}
+
+#sex_man.active,#sex_woman.active{
+	background: #007aff;
+    color: #fff;
+    border:1px solid #007aff;
+}

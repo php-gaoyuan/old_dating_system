@@ -1,0 +1,41 @@
+.body{
+	
+}
+.item{
+	width:50%;
+	float: left;
+}
+.item>a{
+	display: block;
+	padding:5px;
+}
+
+
+.item img{
+	width:100%;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+
+.item .user-info{
+	position: relative;
+	padding:10px;
+	margin-top:-5px;
+	border:1px solid #ccc;
+	border-top:0;
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+	color:#7b7b7b;
+}
+
+.item .user-info a{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+	border:1px solid #ccc;
+	position: absolute;
+	right:5px;
+	top:-15px;
+}

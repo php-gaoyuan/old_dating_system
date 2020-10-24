@@ -1,0 +1,79 @@
+.pane .pane-hd{
+	line-height: 45px;
+	padding:0 10px;
+	color:#747474;
+	background: #F5F5F5;
+}
+
+.up-hd{
+	
+	font-size: 1.5em;
+	font-weight: 700;
+}
+.up-hd>i.icon{
+	margin-right:5px;
+	color:#437BDC;
+	
+}
+
+.up-bd .item{
+	margin-left:15px;
+	margin-right:10px;
+	padding:15px 0;
+	border-bottom:1px solid #E6E6E6;
+}
+
+.up-bd .item ul li{
+	float: left;
+	width: 33.33%;
+}
+
+
+.lanzuan{
+	color: #305AA2;
+}
+.huangzuan{
+	color:#F9AD44;
+}
+
+
+.sub-box{
+	margin:10px 20px 10px 25px;
+}
+
+.up-sub{
+	width: 100%;
+	font-size: 16px;
+}
+
+
+.qx-bd li{
+	margin-left:15px;
+	margin-right:10px;
+	padding:15px 0;
+	border-bottom:1px solid #E6E6E6;
+}
+
+
+.li-center{
+	text-align: center;
+	width:33.33%;
+}
+.li-right{
+	
+}
+.li-center,.li-right{
+	line-height: 37px;
+}
+
+@media screen and (max-width:520px) {
+	.li-center{
+		width: 27%;
+	}
+}
+
+@media screen and (max-width:450px) {
+	.li-center{
+		width: 19%;
+	}
+}

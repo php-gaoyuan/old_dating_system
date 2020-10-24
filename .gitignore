@@ -1,6 +1,8 @@
 **/.well-known
 **/.user.ini
-**/.htaccess
+**/nginx.htaccess
+**/Web.Config
+**/runtime
 .idea
 apk
 **/dbconf.php

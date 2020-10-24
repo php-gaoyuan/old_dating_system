@@ -1,0 +1,129 @@
+﻿@charset "utf-8";
+/*表情包*/
+.c2d57a1{ color: #2d57a1;}
+.facePackage-list {display: inline-block;position: relative;font-size: 0;}
+.facePackage-list  li{display:inline-block;width: ;cursor: pointer;font-size: 12px;margin: 0 10px;margin-bottom: 25px; }
+.facePackage-list  dl{width: 156px;height: 183px;border: 1px solid #dadada;overflow: hidden;position: relative;}
+.facePackage-list  dl dd{background: #f4f4f4;text-align: left;padding: 9px 7px 5px 10px;}
+.facePackage-list  dl dt{position: relative;}
+.facePackage-list  dl p{ white-space: nowrap;}
+.face-vipFree{ display: inline-block;width: 56px;height: 56px;background: url(../icon/face-vipFree.png) 0 0 no-repeat;position: absolute;top: 0;left: -1px;}
+.face-vipFree-en{ display: inline-block;width: 56px;height: 56px;background: url(../icon/face-vipFree.png) 0 -70px no-repeat;position: absolute;top: -1px;left: -1px;}
+.face-buyBtn{ display: inline-block;background: #2d57a1;color: #fff; padding: 5px 15px;border-radius: 20px;position: absolute;right: -10px;bottom: 5px;}
+.facePackage-list  dl.checked{border: 2px solid #2d57a1;}
+.facePackage-list  dl .gift_name{font-size: 12px;color: #777;display: inline-block;width: 62px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;}
+.facePackage-list  dt{ width: 156px;height: 130px;text-align: center;vertical-align: middle;display: inline-block;}
+.facePackage-list  dl img{font-size: 0;display: inline-block;vertical-align: middle;width: 88px;height: 88px;margin: 21px auto;}
+.gold_icon{display: inline-block;background: url("../../polish/images/icon-left-nav.png") no-repeat scroll -141px -72px rgba(0, 0, 0, 0);width: 18px;height: 18px;vertical-align: middle;}
+.gold_num{color: #ff9c00;}
+.facePackage-list .gold_num{ display: inline-block;height: 18px;line-height: 18px;max-width: 30px;overflow: hidden;text-overflow: ellipsis;vertical-align: middle; }
+.facePackage-list ul li  a{ display: inline-block;max-width: 80px;height: 18px;line-height: 18px;overflow: hidden;text-overflow: ellipsis;vertical-align: middle;}
+.gift_checked,.price_icon,.price_box li.checked i{display: inline-block;background-image: url(../icon/gift.png); background-repeat: no-repeat;vertical-align: middle;}
+.gift_checked{background-position:-1px -1px ;width: 25px;height: 22px;position: absolute;left: 0;top: 0;}
+
+.price_box li{line-height: 25px;text-align: center;color: #2d57a1;position: relative;}
+.price_box li:hover{background-color: #2d57a1;color: #fff;}
+.price_box li.checked i{position:absolute;left:10px;top:12px;background-position:-37px -10px;width: 4px;height: 4px;vertical-align: middle;}
+.noReceiverInput{border: 1px solid #fac572;padding: 7px 39px 7px 5px;float: left;width: 344px;}
+.noReceiver{display: none;border-left:1px solid #c5cddc;border-right:1px solid #c5cddc;width: 378px;height: 24px;background-color: #fffde2;color: #aea63a;line-height: 24px;padding-left: 10px;position: absolute;left: 0;top: 32px;}
+/*表情包列表页样式覆盖原有样式*/
+#gift_list_index_lf .gift_box_lf { border: none;border-radius: 0;}
+#gift_list_index_lf .gift_box_lf:hover { border: none; }
+/*表情详情*/
+.face-detail-list{ font-size: 0;margin-top: 28px;}
+.face-detail-list img{ width: 88px;height: 88px;}
+
+.face-detail-list li{display: inline-block; width: 128px;height: 145px;font-size: 12px;color: #777777;border: 1px solid #dadada;margin: 0 7px;margin-bottom: 23px;}
+.face-detail-list dl{ text-align: center;}
+/*.face-detail-list dt,.face-detail-list dd{ display: inline-block;}*/
+.face-detail-list dt{width: 128px; height: 112px;display: table-cell;vertical-align: middle;text-align: center}
+.face-detail-list dd{ background: #f4f4f4;height: 31px;line-height: 33px;margin: 1px;overflow: hidden;}
+.face-detail-buyBtn{ position: absolute;bottom: 7px;right: 12px;}
+.face-left-icon,.face-right-icon{ display: inline-block;width: 16px;height: 42px; background: url(../icon/icon.png)  no-repeat;position: absolute;top: 0px;cursor: pointer;}
+.face-left-icon{ background-position: 0 0;left: 5px;}
+.face-right-icon{background-position: -17px 0;right: 5px;}
+/*.face-flip-btn1{ height: 42px; width: 16px; display: inline-block;position: absolute; z-index: 2;left: 0;top: 0;cursor: pointer;}
+.face-flip-btn2{ height: 42px; width: 16px; display: inline-block;position: absolute; z-index: 2;right: 2px;top: 0;cursor: pointer;}*/
+
+/*表情底部分类*/
+
+#face_jqface .facebox_jqface { height: 218px;overflow: hidden; }
+.faceBottom-sort{ display: none; height:40px;overflow: hidden;padding: 0 23px;background: #e9eaea;position: relative;margin-top: 5px;}
+.faceBottom-sort-box{ position: relative;width: 425px;height: 42px;overflow: hidden;display: inline-block;}
+
+.faceBottom-sort ul{ font-size: 0; white-space: nowrap;}
+.faceBottom-sort li{ display: inline-block;cursor: pointer;font-size: 24px;width: 44px;height: 42px;text-align: center;}
+.faceBottom-sort li:hover{ background: #f4f5f5;}
+.faceBottom-sort li.active{ background: #fff;}
+.faceBottom-sort li img{ vertical-align: middle;}
+.faceBottom-sort li img.gray
+{
+    filter:grayscale(100%);
+   -webkit-filter:grayscale(100%);
+   -moz-filter:grayscale(100%);-ms-filter:grayscale(100%);
+   -o-filter:grayscale(100%);
+   filter:url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\"><filter id=\"grayscale\"><feColorMatrix type=\"matrix\" values=\"0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\"/></filter></svg>#grayscale");
+   filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+   filter:gray;
+    -webkit-filter: grayscale(1);
+    border: none;
+    background: none;
+   }
+/*.faceBottom-sort li img.gray {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+     filter: url(gray.svg#grayscale);
+    filter: gray;
+    } */
+    
+/*#face_jqface .facebox_jqface{ background: #ccc;}*/
+.faceContent-list{ font-size: 0;position: absolute;left: 10px;top: 0;width: 435px;}
+.faceContent-list.noDefault{ position: relative;left: 10px;top: 0;width: 436px;min-height: 218px;}
+.faceContent-list img{ font-size: 0;cursor: pointer;}
+
+.faceBottom-sort.boShow{ display: inline-block;}
+#face_jqface{ font-size: 0;}
+#face_jqface .facebox_jqface{ margin: 0 auto;}
+/*#face_jqface .facebox_jqface{ overflow-y: scroll;}*/
+/*米有购买*/
+
+.face-noBuy{ position: absolute;left: 0;top: 0; width: 100%;height: 100%;background: #000;opacity: 0.2;}
+.face-noBuyTips{ position: absolute;margin: 0 auto;top: 90px;height: 38px;width: 100%;font-size: 12px;color: #fffde2;text-align: center;cursor: pointer;}
+.face-noBuyTips label{display: inline-block; width: 100%;height: 7px;position: absolute;top: 30px;left: 0;}
+.face-noBuyTips .down-icon{ display: inline-block;width: 10px;height: 7px;background: url(../icon/icon.png) 0 -48px no-repeat;}
+.face-noBuyTips span{display: inline-block;padding: 0 20px;height: 38px;vertical-align: middle;background: #2d57a1;line-height: 38px;}
+span.face-noBuyprice{ font-size: 14px;color: #f48426;background: #fff;padding: 0 18px;}
+/*滚动条样式覆盖*/
+#face_jqface .facebox_jqface a.mCSB_buttonUp,#face_jqface .facebox_jqface a.mCSB_buttonDown{ position: absolute;height: 20px;width: 100%;overflow: hidden;margin: 0 auto;cursor: pointer;}
+#face_jqface .facebox_jqface a.mCSB_buttonUp:hover,#face_jqface .facebox_jqface a.mCSB_buttonDown:hover{ border: none;}
+
+.mCSB_inside > .mCSB_container{ margin-right: 10px !important;}
+.zengyan{ height: 60px;}
+.mCS-3d-dark.mCSB_scrollTools .mCSB_buttonUp{ background-position: -128px -5px !important;}
+.mCS-3d-dark.mCSB_scrollTools .mCSB_buttonDown{ background-position: -128px -15px !important;}
+.mCSB_scrollTools a + .mCSB_draggerContainer{ margin: 10px 0 !important; }
+.mCSB_dragger .mCSB_dragger_bar, .mCS-3d-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{background-image: none !important; background-color: #929292 !important;}
+
+/*表情背景图*/
+#face_jqface .facebox_jqface{ background:#fff;}
+#face_jqface .facebox_jqface a{ width: 30px;height: 30px;}
+
+#face_jqface .default_face{ font-size: 12px;color: #5f5f5f;}
+
+/**/
+#face_jqface .facebox_jqface a.face-no-default{ display: inline-block;width: 84px;height: 94px;border: 1px solid #f00;}
+#face_jqface .facebox_jqface{ width: 464px;}
+.face-nodefault-list{ padding: 1px 0 0 1px;}
+.face-nodefault-list li{ display: inline-block;width: 86px;height: 71px;border: 1px solid #d3e4f0;text-align: center;margin: -1px 0 0 -1px;overflow: hidden;background: #f6fbfe;cursor: pointer;}
+.face-nodefault-list li:hover{ border: 1px solid #4ca0d9;background: #fff;position: relative;z-index: 2;}
+.face-nodefault-list li img{ margin: 10px 0; }
+.face-nodefault-list li label{ font-size: 12px;color: #5f5f5f;}
+
+.face-toHtml-box{ position: relative;display:inline-block;width: 88px;height: 88px;cursor: pointer;}
+.face-toHtml-box img{ width: 88px;height: 88px;}
+.face-toHtml-mask{ position: absolute;left: 0;top: 0; background:url(../images/mask.png) repeat;width: 100%;height: 100%;display: none;color: #fff;text-align: center;vertical-align: middle;line-height: 88px;}
+.face-toHtml-mask label{}
+.face-toHtml-box:hover .face-toHtml-mask{ display: block;}

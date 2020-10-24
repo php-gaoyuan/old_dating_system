@@ -1,0 +1,100 @@
+@charset "utf-8";
+.w730{ width: 730px;}
+.w728{ width: 728px;}
+.mr5{ margin-right: 5px;}
+.mr15{ margin-right: 15px;}
+.mr16{margin-right: 16px;}
+.ml20{ margin-left: 20px;}
+.ml5{ margin-left: 5px;}
+.ml10{ margin-left: 10px;}
+.ml15{ margin-left: 15px;}
+.ml25{ margin-left: 25px;}
+.ml30{margin-left:30px;}
+.ml75{ margin-left: 75px;}
+.fs22{ font-size: 22px;}
+.pic-content{width:790px;  overflow: hidden; position: relative; font-size: 13px;}
+.show-box{width:730px;height: 285px; position: relative;left:-5px; float: left;overflow: hidden; }
+.scrollw2190{width: 2190px;height: 285px; position: absolute;}
+.picture-box{ }
+.online-member-box{ margin-left: 30px;margin-bottom: 20px;}
+/*װ���li�ĺ���*/
+.pic-box{width: 750px; height:285px; float: left; font-size: 13px;position:relative;}
+.pic-box-1{background: #fff;}
+.pic-box-2{background: #ccc;}
+.pic-box-3{background: #f0f;}
+/*ul 1 2 3 4 5 6*/
+.pic-box-list {overflow: hidden;/* position:absolute; /*width:750px;*/ height:285px;}
+.pblist-li{position: relative; display: inline-block;float: left;list-style: none; width: 231px; height: 285px; }
+.online-member-cols{position: relative; display: inline-block;width: 231px; height: 130px;border: 1px solid #f0f0f0; border-bottom: 3px solid #e2e1e1; margin-bottom: 16px;}
+.newUser {left:750px;}
+/*liͷ��*/
+.picboxli-head{overflow: hidden;padding:12px 0px 2px 16px;}
+.picboxli-head-info{}
+.picboxli-head-info p{display: inline-block; height:25px;}
+.picboxli-head-info p.phi-2 span{ float: left;padding-top: 1px;}
+.picboxli-head-info p .s-country{ display: inline-block;max-width: 69px; overflow: hidden; white-space:nowrap; text-overflow:ellipsis;}
+.picboxli-head-info p.phi-1{width: 137px; overflow: hidden;}
+/*.phi-1 .left-nav-icon.vip_icon1_lq{ line-height: 30px;}
+.phi-1 .left-nav-icon.vip_icon2_lq{ vertical-align: top;}*/
+/*ͷ���*/
+.pic-box-list .avatar-box{display: inline-block;float: left; margin-right: 10px; position:relative; overflow:hidden;}
+.avatar-box a{ display: inline-block;/*overflow: hidden;*/position: relative;}
+.avatar-box img{width: 106px;height: 106px; float: left;}
+.avatar-box .online_icon1_lq{ position: absolute;left:0;bottom:0; width:18px;height:18px;background:url(../images/icon-left-nav.png) -36px -104px no-repeat;}
+.avatar-box .loveLabel{width:78px; height:66px; position:absolute; top:0px; left:0px; background-image:url(../images/love_label_bg.png); padding:20px 14px; cursor:pointer;display: none;}
+.avatar-box:hover .loveLabel{ display: inline-block;}
+.avatar-box .loveLabel label{ color:#ffffff; font-size:13px; display:block; float:left; padding:0px 3px; height:24px; overflow:hidden; max-width:71px;text-overflow:ellipsis; white-space:nowrap;cursor: pointer; }
+.avatar-box .loveLabel .setwh{ height:70px; overflow:hidden;}
+/*ͷ���Ҳ�*/
+.picboxli-head-info{display: inline-block;float: left;max-width: 99px;overflow: hidden; padding-top:18px;}
+.picinfo-name{ overflow: hidden;display: inline-block;max-width: 65px;overflow: hidden; white-space:nowrap; text-overflow:ellipsis;vertical-align: top;}
+.picinfo-name a{color: #2d57a1; text-decoration: none;}
+/*����*/
+.picboxli-content{padding: 0 13px; }
+.picboxli-content p{width:173px;height: 25px; line-height: 25px; white-space:nowrap; overflow: hidden; text-overflow:ellipsis;color:#333333; }
+.picboxli-content p img{vertical-align: middle;}
+/*�ײ�*/
+.picboxli-bottom{}
+/*ul �ײ�icon*/
+.piclib-icon{overflow: hidden;}
+.piclib-icon span{position:relative; display: inline-block;width: 17px;height:15px;text-align: center; list-style: none;float: left;margin-right: 12px;cursor: pointer;border-bottom: 3px solid transparent; }
+/*.piclib-icon span:hover{border-bottom: 3px solid #2d57a1;}*/
+.piclib-icon a{display: inline-block;width: 19px;height: 19px;background:url(../images/icon-left-nav.png) no-repeat;}
+/*.lib-icon-1 a{background-position: -105px -148px;}
+.lib-icon-2 a{background-position: -106px -175px;}
+.lib-icon-3 a{background-position: -106px -193px; }
+.lib-icon-4 a{background-position: -106px -211px;}*/
+.lib-icon-1 a{background-position: -34px -428px;}
+.lib-icon-3 a{background-position: -62px -428px; }
+.lib-icon-4 a{background-position: -93px -426px;}
+.piclib-icon .lib-icon-1:hover a{background-position: -34px -453px;}
+.piclib-icon .lib-icon-3:hover a{background-position: -62px -453px;}
+.piclib-icon .lib-icon-4:hover a{background-position: -93px -451px;}
+/*shu��꾭��ͼ��仯*/
+/*.piclib-icon .lib-icon-1:hover a{background-position: -149px 0;}
+.piclib-icon .lib-icon-2:hover a{background-position: -70px 0;}
+.piclib-icon .lib-icon-3:hover a{background-position: -109px 0;}
+.piclib-icon .lib-icon-4:hover a{background-position: -69px -23px;}*/
+/*ѡ��*/
+.piclib-icon li.active{border-bottom: 3px solid #2d57a1;}
+.piclib-icon .lib-icon-1.active a{background-position: -149px 0;}
+.piclib-icon .lib-icon-2.active a{background-position: -70px 0;}
+.piclib-icon .lib-icon-3.active a{background-position: -109px 0;}
+.piclib-icon .lib-icon-4.active a{background-position: -69px -23px;}
+/*���Ұ�ť*/
+.picbtn{cursor: pointer;position: absolute;}
+.picbtn-1{ top: 160px;left: 0; }
+.picbtn-2{ top: 160px;right: 0;}
+
+.picbtn a{display: inline-block;width: 15px;height: 40px; background: url(../images/icon-left-nav.png) no-repeat;}
+.picbtn-1 a{background-position: -180px -53px;}
+.picbtn-2 a{background-position: -199px -3px;}
+.picbtn-1.disable a{background-position: -180px -4px;}
+.picbtn-2.disable a{background-position: -199px -52px;}
+/*����*/
+.title-class{ line-height: 40px;}
+.title-class span{ vertical-align: middle;}
+
+
+.christmas-adornment.hat{ display: inline-block;width: 46px;height: 63px; background: url(../../christmas2014/images/christmas-hat.png) no-repeat;position: absolute;top: -7px;left:-18px;}
+.christmas-adornmentso.hat{display: inline-block;width: 31px;height: 44px; background: url(../../christmas2014/images/christmas-hats.png) no-repeat;position: absolute;top: -6px;left:-12px;}

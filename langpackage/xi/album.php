@@ -1,0 +1,75 @@
+<?php
+class albumlp{
+	var $a_title="álbum";
+	var $a_mine="Mi álbum";
+	var $a_holder="{holder}álbum";
+	var $a_friend="Amigos álbum";
+	var $a_creat="Nuevo álbum";
+	var $a_upload="Subir Fotos";
+	var $a_name = "nombre del álbum：";
+	var $a_inf = "álbum Descripción：";
+	var $a_secret = "visibilidad：";
+	var $a_all = "todo el mundo";
+	var $a_fri = "Mis amigos";
+	var $a_myself = "yo mismo";
+	var $a_crt_time = "fundado en";
+	var $a_num = "común{holder}Imágenes";
+	var $a_edit="Editar álbum";
+	var $a_del = "Eliminar álbum";
+	var $a_com="respuesta del Usuario";
+	var $a_out_time="Publicado el:";
+	var $a_com_del="borrar";
+	var $a_my_com="Quiero responder";
+	var $a_p_inf="descripción:";
+	var $a_set_cov="Establecer como portada del álbum";
+	var $a_cho="Seleccionar un álbum";
+	var $a_upl_err="Cada no debe ser superior a 1 M, tipo de imagen jpg | png | gif ";
+	var $a_page_up="anterior";
+	var $a_page_down="próximo";
+	var $a_bak_list = "Volver a la lista de fotos";
+	var $a_del_asc = "¿Está seguro que desea eliminarla？";
+	var $a_no_fri = "Lo sentimos, no se puede acceder en la actualidad el álbum";
+	var $a_pht_inf = "Haga clic aquí para editar la información de la imagen";
+	var $a_no_alb = "No tiene álbumes";
+	var $a_crt_alb = "Haga clic en Crear álbum";
+	var $a_fri_alb = "Ver Amigos álbum";
+	var $a_no_upl = "Usted no ha subido fotos";
+	var $a_upl_pht = "Haga clic en Subir Fotos";
+	var $a_ine = "Usted tiene acceso a la foto no existe";
+	var $a_f_no_pht = "El usuario no ha subido fotos";
+	var $a_b_crt = "crear";
+	var $a_b_upd = "actualización";
+	var $a_b_com = "responder";
+	var $a_b_del = "cerca";
+	var $a_b_con = "determinar";
+	var $a_b_upl = "subir";
+	var $a_upd_false = "Actualización fallida, por favor vuelva a subir！";
+	var $a_no_pht = "No hay fotos, por favor vuelva a seleccionar！";
+	var $a_no_jpg = "Cargar un tipo de archivo que no sea la imagen！";
+	var $a_big = "El archivo que has subido más de 1MB！";
+	var $a_add_pvw = "Lo sentimos, usted no tiene permiso！";
+	var $a_inp_err = "Por favor, rellene el nombre del álbum y la descripción correcta！";
+	var $a_alb_cho = "Por favor, seleccione un álbum, o optar por crear un nuevo álbum！";
+	var $a_pht_cho = "Por favor seleccione una foto！";
+	var $a_change_upload="Cambiar archivos";
+	var $a_face="expresión";
+	var $a_send_time="actualización:{date}";
+	var $a_p_name="nombre:";
+	var $a_set_info="Notas a los redactores";
+	var $a_see_pic="ver a tamaño completo";
+	var $a_tip_pri="Haga clic derecho para establecer los derechos de acceso";
+	var $a_pri="competencia";
+	
+	var $a_label="etiqueta";
+	var $a_privacy_set="Configuración de la privacidad";
+	var $a_of_album="álbum";
+	var $a_share="cuota";
+	var $a_report="informe";
+	var $a_update_in="Actualizado el";
+	var $a_in_album="En el álbum";
+	var $a_upload_new_photo="Subir una nueva foto";
+	var $a_upload_maximum = "Puede cargar un máximo de";
+	var $a_attachments = "Adjuntos";
+		
+}
+?>

@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title><{:lang("home_title")}></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="<{:config('skin_path')}>/css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_537983_p50sudb7q2xogvi.css"/>
+		<link rel="stylesheet" type="text/css" href="<{:config('skin_path')}>/css/user.css">
+		<style type="text/css">
+			.user_ico{
+				width: 100%;
+				overflow: hidden;
+				position: relative;
+			}
+			#item2{
+				background:#fff;
+			}
+			.layui-flow-more{text-align: center;}
+			.pals-btn-group{
+				position: absolute;
+				bottom:10px;
+				width:100%;
+				text-align: center;
+			}
+			.pals-btn-group .mui-icon{
+				color:#fff;
+				font-size: 35px;
+				margin:0 18px;
+				border:1px solid #fff;
+				border-radius: 100%;
+				padding:6px;
+			}
+			.pals-btn-group .icon-jiahaoyou{
+				font-size: 30px;
+			}
+
+
+			.mui-tab-item1{
+				display: table-cell;
+				overflow: hidden;
+				width: 1%;
+				height: 50px;
+				text-align: center;
+				vertical-align: middle;
+				white-space: nowrap;
+				text-overflow:ellipsis;
+				color:#929292;
+			}
+			
+			.mui-card-media{
+				width: 100%;
+			}
+			.mui-slider .mui-slider-group .mui-slider-item img{
+				display: block;
+				min-width:187px;
+				min-height:240px;
+			}
+			.mui-card-content.mui-card-media span{
+				display: block;
+				font-size: 170px;
+				line-height: 1.2em;
+			}
+
+
+			.album_name{
+				display: block;
+    position: absolute;
+    bottom: -10px;
+    line-height: 2em;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    width: 100%;
+    padding-left: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<{if !$is_h5_plus }>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title"><{:lang("home_title")}></h1>
+		</header>
+		<{/if}>
+		<div class="mui-content">
+			<div class="user_ico" style="height:251px;">
+				<img src="<{$userinfo.user_ico}>" width="100%"/>
+			</div>
+			<div class="mui-slider">
+			    <div class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+			        <a class="mui-control-item" href="<{:url('profile/index')}>"><{:lang("news")}></a>
+			        <a class="mui-control-item" href="<{:url('profile/mood')}>"><{:lang("mood")}></a>
+			        <a class="mui-control-item" href="javascript:;"><{:lang("photos")}></a>
+			    </div>
+			    <div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-4" style="transform: translate3d(200%, 0px, 0px) translateZ(0px);"></div>
+			    <div class="mui-slider-group">
+			    	
+
+			        <!-- photos -->
+			        <div id="item3" class="mui-slider-item mui-control-content">
+			        	<div class="mui-row">
+			        		<div class="mui-col-sm-6 mui-col-xs-6">
+			        	    	<div class="mui-card" onclick="location.href='<{:url('album/add')}>'">
+									<!--内容区-->
+									<div class="mui-card-content mui-card-media" style="min-width:187px;background:#f1f1f1;text-align:center;">
+										<img src="/public/static/default/add_pic.png" alt="" >
+										<!-- <span>+</span> -->
+									</div>
+									<!--页脚，放置补充信息或支持的操作-->
+									<div class="mui-card-footer">
+										<{:lang('create_album')}>
+										<button class="mui-btn mui-btn-primary" style="float:right;" onclick="location.href='<{:url('album/add')}>'"><{:lang('create_btn')}></button>
+									</div>
+								</div>
+			        	    </div>
+			        		<{volist name="album_list" id="vo"}>
+			        	    <div class="mui-col-sm-6 mui-col-xs-6">
+			        	    	<div class="mui-card" >
+									<!--内容区-->
+									<div class="mui-card-content mui-card-media" onclick="location.href='<{:url('photo/index',['album_id'=>$vo['album_id']])}>'">
+										<img src="<{:config('webconfig.pc_url')}><{$vo.album_skin}>" />
+										<p class="album_name"><{$vo.album_name}>(<{$vo.photo_num}>)</p>
+									</div>
+									<!--页脚，放置补充信息或支持的操作-->
+									<div class="mui-card-footer">
+										
+										<button class="mui-btn mui-btn-primary" style="float:right;" onclick="location.href='<{:url('album/edit',['album_id'=>$vo['album_id']])}>'"><{:lang('edit_btn')}></button>
+										<button class="mui-btn mui-btn-danger del" style="float:right;" data-id="<{$vo['album_id']}>"><{:lang('delete_btn')}></button>
+									</div>
+								</div>
+			        	    </div>
+			        	    <{/volist}>
+			        	</div>
+			        	
+					</div>
+			    </div>
+			</div>
+			<div style="height:60px;"></div>
+			<!-- <nav class="mui-bar mui-bar-tab">
+			    <a class="mui-tab-item1" href="<{:url('upgrade/index')}>">
+			        <span class="mui-icon iconfont icon-crown"></span>
+			    </a>
+			    <a class="mui-tab-item1" href="<{:url('mall/index')}>">
+			        <span class="mui-icon iconfont icon-liwu"></span>
+			    </a>
+			</nav> -->
+		</div>
+
+
+
+
+		<script type="text/javascript" src="<{:config('skin_path')}>/layui/layui.js"></script>
+
+		<script type="text/javascript">
+			layui.use(["flow","laytpl","jquery"],function(){
+				var $=layui.jquery;
+				
+				$(".del").click(function(){
+					var id = $(this).data("id");
+					$.get("<{:url('album/del')}>",{id:id},function(res){
+						window.location.reload();
+					});
+				});
+				//默认返回
+				$(".mui-action-back").click(function(){
+					window.history.back();
+				});
+
+
+			});
+
+		</script>
+
+
+
+		
+	</body>
+</html>

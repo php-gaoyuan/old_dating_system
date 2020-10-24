@@ -1,0 +1,31 @@
+.mt2{ margin-top: 2px;}
+.mt5{ margin-top: 5px;}
+.lady-gift{position: relative;}
+/*圣诞节打折*/
+.christmas-title{ display: inline-block; padding-right: 20px;}
+.list-discount{position: absolute;display: inline-block;bottom: 10px;right: -12px;}
+/*限时打折 detail*/
+.christmas-detail{ position: absolute;top: 0;left: 46px;white-space: nowrap;}
+.christmas-detail img{display: inline-block;}
+.delete-price{display: inline-block; text-decoration: line-through;font-size: 12px;white-space: nowrap;}
+.delete-price var{font-size: 12px;padding-left: 0;}
+.detail-price{display: inline-block;text-align: center;margin-left: 5px;}
+/*限时打折--列表*/
+.limitedtime-2{display: inline-block;position: absolute;left: 19px;top: -23px;}
+.delete-price-2{display: inline-block; text-decoration: line-through;font-size: 12px;}
+.delete-price-2 var{font-size: 12px;padding-left: 0;}
+/*我的订单*/
+.delete-price-3{display: inline-block; text-decoration: line-through;font-size: 12px;position: absolute;top: 68px;left: 10px;min-width: 100px;text-align: left;white-space: nowrap;}
+.delete-price-3 var{font-size: 12px;padding-left: 0;}
+.c303030{color:#303030;}
+.c303030 var{color:#303030;}
+.c333{color: #333333;}
+.c333 var{color: #333333;vertical-align: top;} 
+.c999{ color: #999;}
+.c999 var{ color: #999;}
+/*鼠标经过显示优惠提示标签*/
+.tipsshow-box{ position: relative;display: inline-block;}
+.hover-show{ position: absolute;left: 0;top: -30px;display: none;}
+.flowertable tr:hover .hover-show{ display: block;}
+/*金币数字不折行*/
+td.price{ min-width: 50px;}

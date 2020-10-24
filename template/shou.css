@@ -1,0 +1,16 @@
+@charset "utf-8";
+.weiduduan{ width:735px;height:120px; margin:0 auto;}
+#news{position:relative;width:735px;height:120px;padding:0px;border:0px solid #B0BEC7;z-index:1;}
+#news dl{position:absolute;top:0px;left:0px;width:735px;height:120px;z-index:2;}
+#news dt{width:735px;height:80px;position:absolute;top:0;left:0;z-index:3;}
+#news img{width:735px;height:120px;display:block;border:none}
+#news dd{position:absolute;bottom:0;left:0;width:735px;height:40px;padding-top:5px;color:#FFF;background:#000;opacity:.7;-moz-opacity:.7;filter:alpha(opacity=70);z-index:4;}
+#news h3{margin:0 auto;width:380px;height:20px;line-height:20px;color:#F93;font-size:15px;}
+.newsTitle{margin:0px auto 0 auto;width:380px;height:17px;line-height:17px;}
+.newsTitle a:link,.newsTitle a:visited,.newsTitle a:hover{color:#fff;}
+#newsInfo{position:absolute;bottom:5px;right:5px;width:120px;height:16px;z-index:5;}
+#newsInfo a{float:right;width:12px;height:12px;margin-right:2px;text-align:center;color:#000;line-height:16px;text-decoration:none;background:#555;border-radius:6px;}
+#newsInfo a:hover,#newsInfo a.current:link,#newsInfo a.current:visited,#newsInfo a.current:hover{background:#abcdef;color:#abcdef;width:12px;}
+#news .close{text-align: center;height:16px;width:16px;position: absolute;right: 8px;top: 4px;z-index: 5;cursor:pointer;color:#fff;display:none;border-radius:8px;background:#ff0000;}
+#news .close:hover {background:#ff0000;color:#fff;}
+#news:hover .close{display:block}

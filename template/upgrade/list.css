@@ -1,0 +1,188 @@
+#chat-logs{
+    margin: 10px auto 0;
+}
+#chat-logs .site-nav{
+    border-bottom:1px solid #BFBFBF;
+    line-height: 28px;
+}
+#chat-logs .chat-logo{
+    width: 14px;
+    height:14px;
+    display: inline-block;
+    background: url('../image/chat.png') no-repeat 0 0;
+    vertical-align:middle;
+    margin-right: 6px;
+}
+#chat-logs .chat-member-list li{
+    padding: 15px 10px;
+    border-bottom:1px dashed #D9D9D9;
+}
+#chat-logs .chat-member-list li .avatar{
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+}
+#chat-logs .chat-member-list li .avatar img{
+    width: 40px;
+    height: 40px;
+}
+#chat-logs .chat-member-list .x{
+    font-size: 20px;
+    line-height: 20px;
+    color: #BCBCBC;
+    cursor: pointer;
+}
+#chat-logs .chat-member-list .time{
+    color: #BCBCBC;
+    line-height: 20px;
+    margin:0 8px;
+}
+#chat-logs .chat-member-list .ctn{
+    overflow: hidden;
+}
+#chat-logs .chat-member-list .ctn .name{
+    color: #2A579F;
+}
+#chat-logs .chat-member-list .ctn .ms{
+    line-height: 24px;
+    white-space: nowrap;
+    word-wrap: normal;
+    text-overflow: ellipsis;
+}
+#chat-logs .chat-member-search{
+    border-top:1px solid #E6E6E6;
+    border-bottom: 1px solid #C5CCD1;
+    background: #F5F8F8;
+    height: 28px;
+    line-height: 28px;
+    margin-top: 16px;
+    overflow: hidden;
+    *zoom: 1;
+    padding: 0 10px;
+}
+#chat-logs .chat-search-warp{
+    border: 1px solid #B8B8B8;
+    border-radius: 8px;
+    height: 18px;
+    line-height: 18px;
+    width: 136px;
+    float: left;
+    margin-top:4px;
+}
+#chat-logs .chat-icon-serach{
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    background: url('../image/search.png') no-repeat 0 0;
+    vertical-align: top;
+    margin:3px 2px 0 4px;
+}
+#chat-logs .chat-search-warp input{
+    border: none;
+    background: #F3F3F3;
+    padding: 0;
+    margin: 0;
+    width: 110px;
+}
+#chat-logs .chat-clear-logs{
+    float: left;
+    cursor: pointer;
+
+}
+#chat-logs .chat-back-list{
+    float: right;
+    cursor: pointer;
+}
+#chat-logs .mail_list{
+    padding: 14px 0;
+}
+#chat-logs .mail_list li{
+    margin-bottom: 6px;
+    *zoom:1;
+}
+#chat-logs .mail_list .my{
+    background: #F7FAFA;
+}
+#chat-logs .mail_list .friend{
+    background: #ECF6FE;
+}
+#chat-logs .mail_list .avatar{
+    float: left;
+    width: 48px;
+    height: 48px;
+}
+#chat-logs .mail_list .ebox{
+    margin-left: 80px;
+    position: relative;
+    border: 1px solid #D1D1D1;
+    border-radius: 3px;
+    padding: 8px;
+}
+#chat-logs .mail_list .fwn{
+    font-weight: normal;
+    font-size: 12px;
+}
+#chat-logs .mail_list .ebox .content,
+#chat-logs .mail_list .ebox .original_text{
+    margin: 8px 0;
+    color: #676767;
+}
+#chat-logs .mail_list .ebox .original_text{
+    border-bottom: 1px dashed #C5C5C5;
+    padding-bottom: 8px;
+}
+#chat-logs .mail_list .my .corner,#chat-logs .mail_list .friend .corner{
+    position: absolute;
+    left:-22px;
+    top:10px;
+    width: 22px;
+    height: 16px;
+    background: url('../images/email_bg.png') no-repeat -22px 0 ;
+}
+#chat-logs .mail_list .friend .corner{
+    background: url('../images/email_bg.png') no-repeat -54px 0 ;
+}
+#chat-logs .mail_list .ifo{
+    text-align: right;
+}
+#chat-logs .mail_list .ifo .time{
+    float: left;
+    color: #A5A5A6;
+}
+#chat-logs .mail_list .ifo .no_read{
+    margin: 0 10px;
+}
+#chat-logs .mail_list .ifo .del{
+    margin: 0 10px;
+}
+#chat-logs .reply{
+    background: #EFEFEF;
+    padding: 10px;
+}
+#chat-logs .reply dl{
+    margin-bottom: 10px;
+}
+#chat-logs .reply dl dt{
+    float: left;
+    width: 60px;
+    text-align: right;
+}
+#chat-logs .reply .title_text{
+    width: 350px;
+    height: 22px;
+    border: 1px solid #C5C5C5;
+}
+#chat-logs .reply .avatar{
+    margin-right: 8px;
+    width: 48px;
+    height: 48px;
+}
+#chat-logs .reply .error{
+    color: red;
+}
+#chat-logs .translate_op2{
+    display: none;
+}
+#chat-logs .translate_op2 a{
+    margin: 0 3px;
+}

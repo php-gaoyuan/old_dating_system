@@ -1,0 +1,61 @@
+<?php
+class privacylp{
+	var $pr_conf="Privacy Settings ";
+	var $pr_access="Access permissions";
+	var $pr_inputmess="Message Permissions";
+	var $pr_reqcheck="Anti-disturb Settings";
+	var $pr_qanswer_err="You entered the wrong answer, please confirm again!";
+	var $pr_save_sec="Successful change privacy settings!";
+	var $pr_acc_false="The user sets the privacy rights restrictions!";
+	var $pr_no_data="Please select the setting item！";
+	var $pr_home="Home page access permissions Settings";
+	var $pr_public="Open to all";
+	var $pr_only_reger="Open only to registered users";
+	var $pr_only_pals="Open only to Friends";
+	var $pr_set_ques="All user password access with problem";
+	var $pr_ques1="Question 1";
+	var $pr_ques2="Question 2";
+	var $pr_ques3="Question 3";
+	var $pr_ans1="Answer 1";
+	var $pr_ans2="Answer 2";
+	var $pr_ans3="Answer 3";
+	var $pr_que_limit="Questions or answers up to 20 characters can be entered。";
+	var $pr_example="Example";
+	var $pr_ex_que="Question: What is my nickname？";
+	var $pr_ex_an="Answer: Pig strong";
+	var $pr_button_action="Submit";
+	var $pr_button_cancel="Cancel";
+	var $pr_no_an="Please enter the answer！";
+	var $pr_ans="You need to answer the following questions in order to access the home page!";
+	var $pr_select_que="Selection problem";
+	var $pr_write_ans="Fill in the answer";
+	var $pr_send_set="Home page message and comment the permissions Settings";
+	var $pr_send_public="Any user can leave a message or comment";
+	var $pr_send_pals="Only allow friends leave a message or comment";
+	var $pr_send_pri="Don't allow anyone to leave a message or comment";
+	var $pr_role_check="Authentication";
+	var $pr_pals_public="Allows anyone to add me as a friend";
+	var $pr_pals_check="Need my approval to add me as a friend";
+	var $pr_pals_close="No one can add me as a friend";
+	var $pr_forget_sort="Ignored Category";
+	var $pr_chose="Select";
+	var $pr_add_sort="Add to ignore category";
+	var $pr_shield_sort="Shielded Category";
+	var $pr_del="Remove";
+	var $pr_forget_list="Ignored List";
+	var $pr_add_list="Add to ignore names";
+	var $pr_shield_list="Friends Blocked";
+	var $pr_handle_suc="Successful operation";
+	var	$pr_type_0="Diary";
+	var	$pr_type_1="Groups";
+	var	$pr_type_2="Photo";
+	var	$pr_type_3="Avatar";
+	var	$pr_type_4="投票";
+	var	$pr_type_5="Share";
+	var	$pr_type_6="Mood";
+	var	$pr_rep_screen="Do not repeat the shield";
+	var	$pr_amend_los="Modification fails！";
+	var $pr_affair_set="News Feed Settings";
+	
+}
+?>

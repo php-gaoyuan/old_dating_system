@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="<{:config('skin_path')}>/css/mui.min.css"/>
+	<link rel="stylesheet" type="text/css" href="<{:config('skin_path')}>/layui/css/layui.mobile.css"/>
+	<style>
+		/*解决mui和layui的冲突问题*/
+		.layim-chat-send input{
+			padding:0px;
+			margin-bottom:0px;
+		}
+	</style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title"><{$pals_name}></h1>
+	</header>
+	<div class="content">
+		
+		<div class="layim-chat layim-chat-kefu">
+		    <div class="layim-chat-main">
+		        <!--<div class="layim-chat-system">
+		            <span layim-event="chatLog">
+		                查看更多记录
+		            </span>
+		        </div>
+		        <ul>
+		            <li class="layim-chat-system">
+		                <span>
+		                    02-11 23:10
+		                </span>
+		            </li>
+		            <li class="layim-chat-li layim-chat-mine">
+		                <div class="layim-chat-user">
+		                    <img src="/images/icon/nan/0.jpg">
+		                    <cite>
+		                        访客
+		                    </cite>
+		                </div>
+		                <div class="layim-chat-text">
+		                    <img alt="[可爱]" title="[可爱]" src="https://robot.rszhang.top/plugins/layui/images/face/3.gif">
+		                </div>
+		            </li>
+		            <li class="layim-chat-li">
+		                <div class="layim-chat-user">
+		                    <img src="/images/icon/nv/0.jpg">
+		                    <cite>
+		                        小云
+		                    </cite>
+		                </div>
+		                <div class="layim-chat-text">
+		                    face [英][feɪs] [美][fes]
+		                </div>
+		            </li>
+		        </ul>-->
+		    </div>
+		    <div class="layim-chat-footer">
+		        <div class="layim-chat-send">
+		        	<span style="display: inline-block;width: 26px;height: 26px;border: 1px solid #999;border-radius: 100%;padding: 3px;text-align: center;color: #999;margin: 5px 10px 0 0;">Tr</span>
+		            <input type="text" autocomplete="off">
+		            <button class="layim-send " layim-event="send">
+		            	发送
+		            </button>
+		        </div>
+		        <div class="layim-chat-tool" data-json="" style="    margin-left: 27px;">
+		            <span class="layui-icon layim-tool-face" title="选择表情" layim-event="face" >
+		                
+		            </span>
+		            
+		            <span class="layui-icon layim-tool-image" title="上传图片" layim-event="image"><input type="file" name="file" accept="image/*"></span>
+		            <span class="layui-icon layim-tool-image" title="发送文件" layim-event="image" data-type="file"><input type="file" name="file"></span>
+		        </div>
+		    </div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="<{:config('skin_path')}>/js/jquery.min.js"></script>
+	<script type="text/javascript" src="<{:config('skin_path')}>/js/public.js"></script>
+	<script type="text/javascript" src="<{:config('skin_path')}>/layui/layui.js"></script>
+	<script>
+		layui.config({
+			base:'/public/static/mobile/js/'
+		}).use("chat",function(){
+			var chat = layui.chat;
+			chat.alert("aa");
+		});
+
+
+
+
+	</script>
+
+</body>
+</html>

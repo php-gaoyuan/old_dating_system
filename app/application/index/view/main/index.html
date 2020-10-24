@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title><{:lang('main_title')}></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="<{:config('skin_path')}>/css/mui.min.css" rel="stylesheet" />
+		
+		<style type="text/css">
+			.card-img{
+    			overflow: hidden;
+			}
+			.mui-content{
+				padding-bottom:60px;
+			}
+			.icon-blue{color:#007aff;}
+			@media screen and (max-width: 400px) {
+				.mui-ellipsis{
+					width: 65px;
+	    			display: inline-block;
+				}
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-icon iconfont icon-zuanshi mui-pull-left icon-blue" href="<{:url('upgrade/index')}>"></a>
+<!--		    <{:lang('main_title2')}>-->
+			<h1 class="mui-title">偶遇吧</h1>
+		    <a class="mui-icon mui-icon-search mui-pull-right" href="<{:url('search/index')}>"></a>
+		</header>
+		
+		<div class="mui-content">
+			<div class="mui-row" id="list">
+			    
+			    
+			</div>
+		</div>
+		
+		<!--footer-->
+		<{include file="public:footer" /}>
+		<!--footer end-->
+		<script type="text/javascript" src="<{:config('skin_path')}>/js/jquery.min.js"></script>
+		<script type="text/javascript" src="<{:config('skin_path')}>/js/public.js"></script>
+		<script type="text/javascript" src="<{:config('skin_path')}>/js/function.js"></script>
+		<script type="text/javascript" src="<{:config('skin_path')}>/layui/layui.js"></script>
+		<script type="text/javascript">
+			
+			layui.use(["flow","laytpl","layer"],function(){
+				var flow=layui.flow,
+					laytpl=layui.laytpl,
+					layer=layui.layer,
+					$=layui.jquery;
+				var tpl = $("#tpl-list").html();
+				
+
+
+				var options = {
+					elem:"#list",
+					isAuto:true,
+					done:function(page,next){
+						var html = "";
+						$.getJSON("/index/main/query/page/"+page+".html",{},function(res){
+							if(res.msg){
+								layer.msg(res.msg);
+								setTimeout(function(){
+									window.location.href=res.url;
+								},2000);
+								return false;
+							}
+							laytpl(tpl).render(res,function(_html){
+								html += _html;
+							});
+							next(html, page < res.pages);
+						});
+						
+					}
+				};
+				//加载数据
+				flow.load(options);
+				//flow.lazyimg();
+			});
+
+
+			function imgResize(obj){
+				obj.style.width = "100%";
+				var width = obj.clientWidth;
+				//alert(width);
+				obj.style.height = width+"px";
+				obj.style.maxHeight = width+"px";
+			}
+		</script>
+ 
+
+		<script id="tpl-list" type="text/html">
+			{{# layui.each(d.list,function(index,item){ }}
+			<div class="mui-col-sm-6 mui-col-xs-6">
+				
+		    	<div class="mui-card">
+					<!--内容区-->
+					<style>
+						.headimg a{
+							display: block;
+						}
+						.headimg a img{border-radius: 100%;}
+					</style>
+					<div class="mui-card-content card-img headimg">
+						<a href="/index/home/index/uid/{{ item.user_id }}">
+						<img src="{{ item.user_ico }}" onload="imgResize(this);" style="max-height: 168px;width:100%;"/>
+						</a>
+					</div>
+					<!--页脚，放置补充信息或支持的操作-->
+					<div class="mui-card-footer">
+						<div class="mui-pull-left">
+							{{# if(item.user_group == "3"){ }}
+							<span class="mui-icon iconfont icon-vip" style="color:#fead11;    font-size: 1.5em;"></span>
+							{{# }else if(item.user_group == "4"){ }}
+							<span class="mui-icon iconfont icon-diamond" style="color:#007aff;    font-size: 1.2em;"></span>
+							{{# } }}
+							<span class="mui-ellipsis">{{ item.user_name }}</span>
+						</div>
+						<div class="mui-pull-right">
+							<span class="mui-icon iconfont icon-jiahaoyou" onclick="addFriend('{{ item.user_id }}')" {{# if(item.online_id>0){ }}style="color:#11c111;"{{#  } }}></span>
+						</div>
+					</div>
+				</div>
+				
+		    </div>
+		    {{# }); }}
+		</script>
+	</body>
+</html>

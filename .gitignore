@@ -1,0 +1,19 @@
+**/.well-known
+**/.user.ini
+**/.htaccess
+.idea
+apk
+**/dbconf.php
+**/Db.php
+**/database.php
+# Windows:
+**/Thumbs.db
+**/ehthumbs.db
+**/Desktop.ini
+*.log
+*.txt
+**/*.zip
+**/*.rar
+**/*.tar.gz
+**/*.phpbak
+

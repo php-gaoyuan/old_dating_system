@@ -1,0 +1,12 @@
+*{behavior: url("iepngfix.htc");}
+body{margin:0px; padding:0px; font-size:12px; color:#666666; font-size:14px;}
+dl,dt,dd,ol,ul,li,p,form,h1,h2,h3,h4,h5,h6,img{margin:0px; padding:0px; list-style:none; border:0px;}
+a{text-decoration:none; color:#666666;}
+a:hover{text-decoration:none; color:#990000;}
+
+.Login_Area{width:1000px; height:636px; background:url(../images/login.jpg) no-repeat; margin:0px auto; position:relative;}
+.Login_Form{width:300px; height:220px; position:absolute; bottom:100px; right:55px;}
+.btn_01{width:121px; height:36px; background:url(../images/btn_1.gif) no-repeat; border:0px; outline:none;}
+.btn_zhuce{width:121px; height:36px; background:url(../images/zhuce.jpg) no-repeat; border:0px; outline:none;}
+.input_01{width:210px; border:1px solid #d1d1d1; height:28px; line-height:28px; font-family:Arial; font-weight:bold; font-size:18px; color:#000000;}
+.input_02{width:80px; border:1px solid #d1d1d1; height:28px; line-height:28px; font-family:Arial; font-weight:bold; font-size:18px; text-align:center; color:#FF0000; letter-spacing:5px;}

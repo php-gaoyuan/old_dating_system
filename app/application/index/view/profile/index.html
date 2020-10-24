@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title><{:lang("home_title")}></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="<{:config('skin_path')}>/css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_537983_p50sudb7q2xogvi.css"/>
+		<link rel="stylesheet" type="text/css" href="<{:config('skin_path')}>/css/user.css">
+		<style type="text/css">
+			.user_ico{
+				width: 100%;
+				overflow: hidden;
+				position: relative;
+			}
+			#item2{
+				background:#fff;
+			}
+			.layui-flow-more{text-align: center;}
+			.pals-btn-group{
+				position: absolute;
+				bottom:10px;
+				width:100%;
+				text-align: center;
+			}
+			.pals-btn-group .mui-icon{
+				color:#fff;
+				font-size: 35px;
+				margin:0 18px;
+				border:1px solid #fff;
+				border-radius: 100%;
+				padding:6px;
+			}
+			.pals-btn-group .icon-jiahaoyou{
+				font-size: 30px;
+			}
+
+
+			.mui-tab-item1{
+				display: table-cell;
+				overflow: hidden;
+				width: 1%;
+				height: 50px;
+				text-align: center;
+				vertical-align: middle;
+				white-space: nowrap;
+				text-overflow:ellipsis;
+				color:#929292;
+			}
+		</style>
+	</head>
+
+	<body>
+		<link rel="stylesheet" type="text/css" href="<{:config('skin_path')}>/layui/css/layui.css">
+		<{if !$is_h5_plus }>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title"><{:lang("home_title")}></h1>
+		</header>
+		<{/if}>
+		<div class="mui-content">
+			<div class="user_ico" style="height:251px;">
+				<img src="<{$userinfo.user_ico}>" width="100%"/>
+			</div>
+			<div class="mui-slider">
+			    <div class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+			        <a class="mui-control-item" href="javascript:;"><{:lang("news")}></a>
+			        <a class="mui-control-item" href="<{:url('profile/mood')}>"><{:lang("mood")}></a>
+			        <a class="mui-control-item" href="<{:url('album/index')}>"><{:lang("photos")}></a>
+			    </div>
+			    <div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-4"></div>
+			    <div class="mui-slider-group">
+			    	<!-- tab1 -->
+			        <div id="item1" class="mui-slider-item mui-control-content mui-active">
+			        	<ul class="mui-table-view">
+					        <li class="mui-table-view-cell" onclick="location.href='<{:url('profile/headimg')}>'">
+					            <a class="mui-navigate-right">
+					                <{:lang('headimg')}>
+					            </a>
+					        </li>
+					    </ul>
+			            <form class="mui-input-group" target="partyings" method="post" action="<{:url('profile/index')}>">
+			            	
+						    <div class="mui-input-row">
+						        <label><{:lang("gender")}></label>
+						    	<input type="text" class="mui-input-clear" value="<{if $userinfo.user_sex == 0}><{:lang("female")}><{else/}><{:lang("male")}><{/if}>" disabled>
+						    </div>
+						    <div class="mui-input-row">
+						        <label><{:lang('birth')}></label>
+						        <input type="date" name="birth" class="mui-input-clear" value="<{$userinfo.birth_year|default='1970'}>-<{$userinfo.birth_month|default='01'}>-<{$userinfo.birth_day|default='01'}>" />
+						    </div>
+						    <div class="mui-input-row">
+						        <label><{:lang('country')}></label>
+						        <select name="country" class="mui-input-clear" placeholder="">
+						        	<option value=""><{:lang('select')}></option>
+						        	<{volist name="country_list" id="vo"}>
+						        	<option value="<{$vo.cname}>" <{if $userinfo.country eq $vo.cname}>selected<{/if}>><{$vo.cname}></option>
+						        	<{/volist}>
+						        </select>
+						    </div>
+						    <div class="mui-input-row">
+						        <label><{:lang('waimao')}></label>
+						        <select name="waimao" class="mui-input-clear" placeholder="">
+						        	<option value=""><{:lang('select')}></option>
+						        	<option value="1" <{if $userinfo.waimao eq '1'}>selected<{/if}>>一般</option>
+						        	<option value="2" <{if $userinfo.waimao eq '2'}>selected<{/if}>>好看</option>
+						        	<option value="3" <{if $userinfo.waimao eq '3'}>selected<{/if}>>出众</option>
+						        </select>
+						    </div>
+						    <div class="mui-input-row">
+						        <label><{:lang('sexual')}></label>
+						        <select name="sexual" class="mui-input-clear" placeholder="">
+						        	<option value=""><{:lang('select')}></option>
+						        	<option value="1" <{if $userinfo.sexual eq '1'}>selected<{/if}>>异性</option>
+						        	<option value="2" <{if $userinfo.sexual eq '2'}>selected<{/if}>>同性</option>
+						        	<option value="3" <{if $userinfo.sexual eq '3'}>selected<{/if}>>双性</option>
+						        </select>
+						    </div>
+
+						    <div class="mui-input-row">
+						        <label><{:lang('shengao')}></label>
+						        <select name="height" class="mui-input-clear" placeholder="">
+						        	<option value=""><{:lang('select')}></option>
+						        	<script>
+						        		var height= "<{$userinfo.height}>";
+										for(var i=150;i<200;i++){
+											if(height == i){
+												document.write("<option value="+i+" selected>"+i+"</option>");
+											}else{
+												document.write("<option value="+i+" >"+i+"</option>");
+											}
+											
+										}
+									</script>
+						        </select>
+						    </div>
+						    <div class="mui-input-row">
+						        <label><{:lang('weight')}></label>
+						        <input type="text" name="weight" class="mui-input-clear" value="<{$userinfo.weight}>" placeholder="">kg
+						    </div>
+						    <div class="mui-input-row">
+						        <label><{:lang('income')}></label>
+						        <select name="income" class="mui-input-clear" placeholder="">
+						        	<option value=""><{:lang('select')}></option>
+									<option value="$10,000" <{if $userinfo.income eq '$10,000'}>selected<{/if}>>$10,000</option>
+									<option value="$10,000-30,000" <{if $userinfo.income eq '$10,000-30,000'}>selected<{/if}>>$10,000-30,000</option>
+									<option value="$30,000-50,000" <{if $userinfo.income eq '$30,000-50,000'}>selected<{/if}>>$30,000-50,000</option>
+									<option value="$50,000-80,000" <{if $userinfo.income eq '$50,000-80,000'}>selected<{/if}>>$50,000-80,000</option>
+									<option value="$80,000-120,000" <{if $userinfo.income eq '$120,000-150,000'}>selected<{/if}>>$80,000-120,000</option>
+									<option value="$120,000-150,000" <{if $userinfo.income eq '$120,000-150,000'}>selected<{/if}>>$120,000-150,000</option>
+									<option value="$150,000-200,000" <{if $userinfo.income eq '$150,000-200,000'}>selected<{/if}>>$150,000-200,000</option>
+									<option value="$200,000-300,000" <{if $userinfo.income eq '$200,000-300,000'}>selected<{/if}>>$200,000-300,000</option>
+									<option value="$300,000-800,000" <{if $userinfo.income eq '$300,000-800,000'}>selected<{/if}>>$300,000-800,000</option>
+									<option value="$800,000 Above" <{if $userinfo.income eq '$800,000 Above'}>selected<{/if}>>$800,000 Above</option></select>
+						        </select>
+						    </div>
+						    <div class="mui-input-row" style="height:100px;">
+						        <label><{:lang('intro')}></label>
+						        <textarea name="gerenjieshao"><{$userinfo.gerenjieshao}></textarea>
+						    </div>
+						    <div class="mui-button-row">
+						        <button type="submit" class="mui-btn mui-btn-primary" ><{:lang('submit')}></button>
+						    </div>
+						</form>
+			        </div>
+			    </div>
+			</div>
+			<div style="height:60px;"></div>
+			<!-- footer -->
+		</div>
+
+
+		<iframe  name="partyings" id="partyings" src="" frameborder="0" style="display:none"></iframe>
+
+		<script type="text/javascript" src="<{:config('skin_path')}>/layui/layui.js"></script>
+		<script type="text/javascript">
+
+			
+			layui.use(["jquery","layer"],function(){
+				var $=layui.jquery;
+				var layer = layui.layer;
+				
+				//默认返回
+				$(".mui-action-back").click(function(){
+					window.history.back();
+				});
+			});
+
+		</script>
+
+
+
+		
+	</body>
+</html>

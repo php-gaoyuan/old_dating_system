@@ -1,0 +1,186 @@
+/*
+ * 鲜花商城
+ * 2012-10-15
+*/
+table{table-layout:auto;}
+table,th,td{word-break:normal;word-wrap:normal;}
+var,em{ font-style:normal;}
+.x{width:10px; height:10px; line-height:10px; text-align:center;display:block;color:#C00; font-size:14px;cursor:pointer;}
+.vhid{ visibility:hidden;}.hide{ display:none;}
+.disline{ font-size:0;}.disline *{ font-size:12px;}
+.tinput,textarea{ border:#CCCCCC solid 1px;}
+input[type='text']:focus,textarea:focus,.inputfocus,input.tinput:focus{border-color:#2D57A1;}
+.clear{width:100%; height:1px;line-height:0px; font-size:0px;clear:both; display:block;}
+.clearfix:before,.clearfix:after{content:""; display:table;}.clearfix:after{clear:both;}.clearfix{*zoom:1;}
+.time{ color:#999;}.exp{color:#999;}.exp em{ color:#C00;}
+/*图标*/
+.ico{display:inline-block;*display:inline;*zoom:1;font-size:0px;vertical-align:middle; line-height:normal;
+background-image:url(../images/ico.png); background-repeat:no-repeat;}
+.ico_shop{ width:16px; height:15px;background-position:-16px 0;}
+.ico_price{width:16px; height:16px;background-position:0 0;}
+.ico_flower{ width:16px; height:18px;background-position:-35px 0;}
+
+.flowershop{ margin:0 4px;width: 592px;float: left;}
+/*图片a连接按钮通用样式*/
+/*.ibtn,.ibtn span{ background-image:url(../images/czbtn.png); background-repeat:no-repeat;line-height:normal; 
+display:inline-block;*display:inline;*zoom:1;cursor:pointer;}
+.ibtn{ padding-left:4px;vertical-align:middle;}
+.ibtn span{ padding:0 24px 0 20px; vertical-align:top;}*/
+/*a链接图片按钮1，这是一个橙色的购买按钮*/
+.buybtn{background-position:left -37px;}
+.buybtn span{background-position:right 0; height:37px; line-height:34px; color:#fff;font-size:16px;font-family:"微软雅黑";}
+.simbtn{display:inline-block;*display:inline;*zoom:1; vertical-align:middle;}
+.simbtn1{line-height:22px; padding:0 12px;background-color:#3967B5; border:#3A5685 solid 1px; color:#fff;}
+.simbtn1:hover{ color:#fff;}
+/*tit*/
+.cztit{ height:26px; line-height:26px; overflow:hidden; border-bottom:#E5E5E5 solid 1px; margin-bottom:10px;}
+.cztit strong{ color:#3F3F3F;}
+.cztit .ico{ vertical-align:middle; margin-right:6px;}
+.cztit .more{ float:right;}
+
+.flowertit a{padding-left:8px;float:right;color:#666;}
+.flowertit a:hover{ color:#2C589E;}
+/*选项卡tit*/
+	.tabtit h3{line-height: 40px;height: 40px; font-weight:100; font-size:0;border-bottom: 1px solid #c5cddc;}
+	.tabtit h3 a{display:inline-block;*display:inline;*zoom:1; position:relative;height: 38px;line-height: 38px; color:#404040;border-bottom: 2px solid transparent; font-size:12px; margin-right:4px;display: inline-block;max-width: 75px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;vertical-align: middle;padding: 0 8px;text-align: center;}
+	/*.tabtit h3 a:hover{ color:#2C589E;}*/
+	.tabtit .tabcur{ border-bottom: 2px solid #2d57a1;}
+	.tabtit .tabcur:hover{ text-decoration:none;}
+	
+
+	/*.tabtit1 h3 a{ line-height:26px; border:#E5E5E5 solid 1px; border-botom:#285BB5 solid 1px;margin-bottom:0;}
+	.tabtit1 .tabcur,.tabtit1 .tabcur:visited{ background-color:#285BB5; border-color:#285BB5; color:#fff;}*/
+	/*.tabtit1 .tabcur:hover{color:#ffffff;}*/
+
+.subtit{ font-size:13px; padding:14px 0 8px 0; border-top:#CCC dotted 1px;}
+.st_first{ border-top:none; padding-top:0;}
+/*---------------------------列表---------------------------*/
+/*鲜花列表，也是两端对齐的demo*/
+.flowerlist{ padding-botom:24px; margin-right:-40px; overflow:hidden;_zoom:1;}
+.flowerlist a{ color:#444444;}
+.flowerlist a:hover{ color:#2C589E;}
+.flowerlist li{width:141px; margin:8px 9px 8px 0; text-align:center; float:left;}
+.flowerlist li .ia,.flowerlist li img{ width:133px; height:154px;border-radius:3px;}
+.flowerlist li .ia{padding:3px; border:#DBDBDB solid 1px; display:block;}
+.flowerlist li .ia:hover{border-color:#FF931B;}
+
+.flowerlist li span{ display:block;width:133px; height:32px; white-space:nowrap; overflow:hidden;}
+.flowerlist .flowername{ padding:4px 0 2px 0;}
+.flowerlist var,.flowertable var{ /*vertical-align:middle;*/ padding-left:4px; color:#C71908; font-size:13px;}
+
+/*banner 切换*/
+.flowebanner{ margin-bottom:12px;width:600px; height:65px; overflow:hidden; position:relative;}
+.flowebanner img{ width:600px; height:65px;}
+.flowebanner li{ position:absolute; left:0; top:0;}
+.flowebanner .x{background-color:#fff; display:none;position:absolute; top:2px; right:2px; z-index:100;}
+.flowebanner:hover .x{display:block;}
+
+.listtab{ padding-top:10px;}
+
+/*简介*/
+.intro { line-height:1.7; color:#444;}
+.intro h3{ border-top:#CCC dotted 1px; border-bottom:none; padding-top:6px; font-weight:bold; font-size:13px;color:#153473; }
+.intro .h3_first{ border-top:none; padding-top:0; margin-top:0;}
+.intro p{ margin:8px 0;}
+.flowerintro{ padding:0 6px;}
+.flowerintro img{max-width:560px;}
+/*订单列表页*/
+.flowertable{ border-bottom:#ccc dotted 1px; color:#555;}
+.flowertable th{ text-align:center; height:24px; background-color:#E3EBF8; border-top:#2C56A0 solid 1px;border-bottom:#9AA8C3 solid 1px;}
+.flowertable td{ padding:10px 4px 8px 4px; text-align:center;border-bottom:#CCC dotted 1px;}
+.flowertable .even td{ background-color:#F6F9FF;}
+.flowertable .protit img{ width:65px; height:65px;padding:2px; border:#CCC solid 1px;}
+.flowertable .protit img:hover{ border-color:#FF931B;}
+/*.flowertable .protit span{ display:block; text-align:center; white-space:nowrap; overflow:hidden;}*/
+.flowertable .protit span{ display:block; text-align:center; overflow:hidden;}
+.flowertable .protit a{ color:#666;}
+
+.flowertable .del{ color:#666;}
+.flowertable .del:hover,.flowertable .protit a:hover{ color:#385679;}
+
+.flowershop .promptbox{margin:16px 4px; padding:20px;}
+.flowershop .promptbox cite{ margin-top:20px;}
+/*选择好友*/
+.selectman{ padding-bottom:16px;}
+.selectman th{ font-weight:100;}
+.selectman th,.selectman td{ padding:6px 4px; vertical-align:text-top;}
+.selectman .rinput{ margin-right:4px; vertical-align:-2px;*vertical-align:middle;}
+.selectman .tinput{ width:300px;; height:22px; line-height:22px; padding:0 4px;}
+.selectman .select{ position:relative; display:inline-block;*display:inline;*zoom:1;}
+.selectman .dmshow{top:25px;right:0;*right:5px;border:#3A5685 solid 1px;}
+.selectman .dmshowtit{background-color:#3967B5; color:#fff;}
+.selectman .dmcon{}
+.words textarea{ width:98%; overflow:auto; height:80px; padding:4px; line-height:1.5; font-size:12px; color:#666;}
+.selectman .exp{ display:block;line-height:20px;}
+.selectman .exp em{ font-family:sans-serif; padding-right:2px;}
+/*---------------------------内页---------------------------*/
+.flowershop h1{ font-size:16px; padding:10px 0;}
+
+.proimgwarp{width:260px; min-height:354px; float:left; padding:4px;}
+.proinfo{ margin-left:270px;}
+.proimg{width:250px; height:290px;border:#C1EBFF solid 1px; line-height:normal;}
+.proimg img{ width:250px; height:290px;border:#8AAFF0 solid 1px; 
+position:relative; top:-4px; left:-4px;_top:-2px;_left:-2px;}
+.thums{ width:260px; overflow:hidden; margin-left:-3px; padding-top:5px;}
+.thums ul{ margin-right:-30px;overflow:hidden;}
+.thums li{ width:46px; float:left; margin-right:6px; text-align:center;}
+.thums a{ width:40px; height:40px;display:block; padding:2px; border:#CCC solid 1px;}
+.thums img{ width:40px; height:40px;}
+.thums small{display:block;height:5px; overflow:hidden;}
+.thums .A{vertical-align:top;border-width:5px; margin-left:0; visibility:hidden;}
+.thumcur .TA{ border-bottom-color:#8AAFF0; visibility:visible;}
+.thumcur a{border:#8AAFF0 solid 1px;}
+/*免费贺卡*/
+.free_card ul{padding-top:10px;}
+.free_card li{display:inline-block;border:1px solid #fff;padding:5px;position:relative;cursor:pointer;}
+.bigImg{display:none;width:200px;height:200px;border:1px solid #ccc;position:absolute;top:70px;left:-80px;}
+.free_card li.butSelNo{border:1px solid #a80404;}
+
+.proinfo strong{ color:#999;}
+.proinfo table,.proinfo table td,.proinfo table th{word-break:normal;word-wrap:normal;}
+.proinfo table td,.proinfo table th{ padding:6px 4px;}
+.proinfo th{color:#999; width:30px; text-align:right; overflow:visible; white-space:nowrap;}
+.proinfo var{vertical-align:middle; margin-top:-2px; padding-left:4px;font-size:24px;  color:#FF6500;}
+
+.proinfo .buywarp{ background-color:#FAFAFA; padding:20px; border:#F3F3F3 solid 1px; margin-top:6px;}
+.proinfo .buynumwarp{ font-size:0;}.proinfo .buynumwarp *{ font-size:12px;}
+.proinfo .buynum{ width:32px; height:22px;line-height:22px;padding:0 4px; text-align:center;
+vertical-align:middle;color:#666; margin:0 2px; font-size:13px;}
+.buynuma,.proinfo .buynumwarp strong,.proinfo .buynumwarp span,.proinfo .buynumwarp a{ 
+display:inline-block;*display:inline;*zoom:1; vertical-align:middle;}
+.proinfo .add,.proinfo .cut{ width:18px; height:22px;line-height:22px;text-align:center;border:#FAFAFA solid 1px;
+font-size:16px; color:#666;}
+.proinfo .add:hover,.proinfo .cut:hover{border-color:#2D57A1; color:#2D57A1;}
+.buybtns{ margin:16px 0;}
+.proinfo p{color:#666;}
+.proinfo .warn{border-top:#F3F3F3 solid 1px; padding-top:10px; line-height:22px;}
+.proinfo .warn b{ color:#444444; font-weight:100; font-size:13px;}
+
+.prompt{ padding:4px; border:#C00 solid 1px; margin-top:6px;}
+.proinfo .buynumwarp .prompt{ display:block;}
+/*详情等选项卡*/
+.ptabcon,.problem{color:#666666; line-height:22px;}
+.ptabcon h4,.problem h4{ font-size:13px; color:#444444; padding-bottom:10px;}
+.ptabcon ul li,.problem ul li{margin-bottom:3px; padding:2px 4px;}.tabcon ul li:hover{ color:#2C589E;}
+.ptabcon .ul1 li,.problem .ul1 li{ background-color:#F6F9FF;}
+.ptabcon em,.problem em{ color:#2C589E;}
+.detail img{max-width:560px;border:#EBEBEB solid 1px;padding:5px;margin-right:8px;margin-bottom:8px;vertical-align:top;}
+.detail .parameter{ background-color:#F6F6F6; border:#EBEBEB solid 1px; padding:16px 20px;}
+.ptabcon .tabshow{ padding:16px 4px;}
+.problem .list li{ margin-bottom:10px;}
+.problem strong{ color:#2C589E;}
+.tabshow{display:none;}
+/*---------------------------插件类---------------------------*/
+/*jqzoom*/
+.jqzoom{position:relative;}
+.zoomdiv{z-index:100;position:absolute;top:1px;left:0px;width:400px;height:400px;background:url(images/load.gif) #fff no-repeat center center;border:1px solid #e4e4e4;display:none;text-align:center;overflow: hidden;}
+.bigimg{width:550px;height:590px;}
+.jqZoomPup{z-index:10;visibility:hidden;position:absolute;top:0px;left:0px;width:50px;height:50px;border:1px solid #ffffff;background:#ffffff 50% top no-repeat;opacity:0.5;-moz-opacity:0.5;-khtml-opacity:0.5;filter:alpha(Opacity=50);cursor:move;}
+/*下拉菜单*/
+.dmshow{position:absolute; display:none;}
+.dmcur .dmshow{ display:block;}
+.dmshowtit strong{ padding-left:6px; line-height:22px;}
+.dmshow .dmcon{ padding:10px;}
+
+/*new add*/
+.color7{color:#777;}

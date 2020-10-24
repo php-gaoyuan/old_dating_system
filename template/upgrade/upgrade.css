@@ -1,0 +1,59 @@
+@charset "utf-8";
+/**在线升级优化页面样式**/
+.upgrade{border-bottom: 1px dashed #c5cddc;}
+.upgrade_box{margin-bottom: 30px;}
+.upgrade_box .box_left{background-color: #f8f8f8;width: 144px;height: 60px;float: left;margin-right: 20px;text-align: center;line-height: 60px;}
+.upgrade_box .box_right{display: inline-block;width: 560px;}
+.upgrade_box dd{font-size: 12px;color: #777;}
+.upgrade_box dt{color: #333;font-size: 12px;font-weight: bold;}
+.upgrade_box dt,.upgrade_box dd{line-height: 20px;}
+.upgrade .upgrade_high,.upgrade .upgrade_vip,.upgrade .upgrade_checked{display: inline-block;vertical-align: middle;width: 50px;height: 50px;}
+.upgrade_box .upgrade_high {background: url(../../skin/gaoyuan/images/icon/bgold-user-icon.png) no-repeat;background-size:100%;}
+.upgrade_box .upgrade_vip{background: url(../../skin/gaoyuan/images/icon/zuan-user-icon.png) no-repeat;background-size:100%;}
+.upgrade .upgrade_checked{width: 21px;height: 21px;background-position: 0 0;position: absolute;right: 0;top: 0;}
+.upgrade .upgrade_list{display: inline-block;margin-bottom: 30px;}
+.upgrade li{float: left;width: 175px;height: 65px;border: 1px solid #e5e5e5;position: relative;margin-right: 10px;cursor: pointer;}
+.upgrade li.checked{border: 1px solid #2d57a1;}
+.upgrade li .price{background-color: #f7f7f7;width: 70px;height: 65px;border-right:1px dashed #e5e5e5;text-align: center;line-height: 65px;float: left;}
+.upgrade li .price img{vertical-align: middle;}
+.upgrade .checked .price {background-color: #eff5fe;}
+.upgrade li .price_cont{display: inline-block;text-align: center;width: 100px;padding-top: 5px;}
+.upgrade li .price_cont .cont_text{display: inline-block;line-height: 25px;width: 100%;}
+.upgrade_gold{font-size: 12px;color: #ff9000;font-weight: bold;}
+.upgrade_font{font-size: 12px;color: #777;vertical-align: middle;}
+.upgrade_font s{text-decoration: line-through;}
+
+.pt5{padding-top: 5px;}
+
+/**支付方式**/
+.selpay{padding-top: 30px;}
+.selpay .pay_title{font-size: 13px;color: #333;font-weight: bold;}
+
+.renewArgement{display:none;margin-top: 20px;background-color: #f4f8ff;padding-left: 10px;padding-top: 15px;padding-bottom: 15px;}
+.renewArgement span{}
+.renewArgement a{color: #333;}
+.renewArgement a.protocol{color: #2d57a1;}
+
+
+/*活动 -高级会员一元充*/
+.upgrade li .price.upgrade-activity{ position: relative;background: #ff9000;border-right: none;text-align: center;}
+.upgrade li .price.upgrade-activity .up-activity-icon{ position: absolute;left: -4px;top: -10px;}
+.upgrade .js_oneUpLi .upgrade_checked{width: 21px;height: 21px;background-position: -30px 0;position: absolute;right: 0;top: 0;}
+.upgrade .js_oneUpLi.checked{ border: 1px solid #ff9000; }
+.b-activity{ color: #777777;}
+.one_close{ display: inline-block;width: 38px;height: 38px;position: absolute;right:21px;top: 19px;}
+.love_close{ display: inline-block;width: 25px;height: 25px;position: absolute;right:15px;top: 102px;}
+.buyOneUp{ display: inline-block;width: 131px;height: 43px;position: absolute;bottom: 71px;right: 163px;}
+
+.one-mask{position: fixed;width: 100%;height: 100%;background: #000; z-index: 9999; opacity: 0.3}
+/*.activity-font{ font-size: 18px;color: #fff;display: table-cell;line-height: 20px;word-wrap: break-word;vertical-align: middle;height: 65px;width: 60px;padding: 0 10px;}*/
+
+
+/*永久*/
+.upgrade_box .upgrade_yj{
+width: 53px;
+height:63px;
+display: inline-block;
+background: url(../../skin/default/jooyea/images/xin/vip-yj.gif) center center no-repeat;
+background-size: 30px;
+}

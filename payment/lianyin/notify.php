@@ -1,10 +1,9 @@
 <?php
 header("content-type:text/html;charset=utf-8");
-require("../foundation/asession.php");
-require("../configuration.php");
-require("../includes.php");
+require("../../foundation/asession.php");
+require("../../configuration.php");
+require("../../includes.php");
 $dbo = new dbex;
-//读写分离定义函数
 dbtarget('w',$dbServs);
 
 

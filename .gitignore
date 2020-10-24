@@ -5,9 +5,6 @@
 **/runtime
 .idea
 apk
-**/dbconf.php
-**/Db.php
-**/database.php
 # Windows:
 **/Thumbs.db
 **/ehthumbs.db

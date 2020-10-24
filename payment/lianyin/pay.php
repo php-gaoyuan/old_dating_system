@@ -15,8 +15,41 @@ if(empty($order)){
     header("location:/");exit;
 }
 $lianyinPay = new Lianyin();
-$res = $lianyinPay->pay($dbo);
+$result = $lianyinPay->pay($dbo);
+if($result['status'] == 'success'){
+    $sql = "SELECT * FROM wy_balance WHERE ordernumber = '{$order_no}'";
+    $row = $dbo->getRow($sql,"arr");
+    if(empty($row)){
+        returnJs("订单不存在!");
+    }
+    if ($row['state'] == 2) {
+        returnJs("该订单已经支付过了!");
+    }
+    // if ($result['amount'] != $row['money']) {
+    //     returnJs("支付金额出错!");
+    // }
 
+    if ($row['state'] != '2') {
+        $sql = "UPDATE wy_balance SET `state`='2',`out_trade_no`='{$result['payer_id']}' WHERE ordernumber = '{$order_no}'";
+        if ($dbo->exeUpdate($sql)) {
+            $touid = $row['touid'];
+            $sql = "UPDATE wy_users SET golds=golds+{$row['money']} WHERE user_id='$touid'";
+            if (!$dbo->exeUpdate($sql)) {
+                returnJs("支付成功，添加金币失败!请联系工作人员!");
+            } else {
+                returnJs("支付成功，金币已经到账!");
+            }
+        }
+    }
+}else{
+    returnJs("支付失败:{$result['err_msg']}");
+}
+
+function returnJs($msg,$url=""){
+    $url = !empty($url)?$url:'/main.php';
+    echo "<script>alert('Payment Result:{$msg}');window.location.href='{$url}'</script>";
+    exit();
+}
 
 class Lianyin{
     protected $server_url = "https://gateway.sslonlinepay.com/Payment/payConsole.aspx";

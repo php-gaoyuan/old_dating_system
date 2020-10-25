@@ -233,26 +233,6 @@ function checkAll(form,name) {
 		</div>
 		
 		
-		
-		
-		<!-- Add By Root Time:20141022 Begin -->
-		
-		<?php 
-		
-			$link = mysql_connect("127.0.0.1", "root","mima123456");
-				if(!mysql_select_db("partyings",$link)){
-				
-					echo "连接失败";
-				}else{
-				
-					echo "同步连接成功——获取   礼物图片 处理中.......";
-				}
-		
-		?>
-		<!-- Add By Root Time:20141022 End -->
-		
-		
-		
 <div class="infobox">
     <h3>员工列表</h3>
     <div class="content">

@@ -26,11 +26,11 @@
 <!--        <item title='生成文件校验镜像' target='safe_make_md5.php' default='false'/>-->
     </part>
     <part id='user'>
-<!--        <item title='客服管理' target='servicer_list.php' default='false'/>-->
-<!--        <item title='会员管理' target='member_list.php?order_by=user_id&amp;order_sc=desc' default='true'/>-->
-<!--        <item title='会员等级管理' target='rights/front_group_manager.php' default='false'/>-->
+        <!--<item title='客服管理' target='servicer_list.php' default='false'/>-->
+        <!--<item title='会员管理' target='member_list.php?order_by=user_id&amp;order_sc=desc' default='true'/>-->
+        <!--<item title='会员等级管理' target='rights/front_group_manager.php' default='false'/>-->
         <item title='会员管理' target='view/user/list.html' default='true'/>
-<!--        <item title='会员推荐管理' target='recommend_list.php?order_by=rec_order&amp;order_sc=asc' default='false'/>-->
+        <!--<item title='会员推荐管理' target='recommend_list.php?order_by=rec_order&amp;order_sc=asc' default='false'/>-->
         <item title='相册管理' target='album_list.php?order_by=album_id&amp;order_sc=desc' default='false'/>
         <item title='照片管理' target='photo_list.php?order_by=photo_id&amp;order_sc=desc' default='false'/>
         <!--        <item title='自定义用户资料' target='user_custom.php' default='flase'/>-->

@@ -102,11 +102,11 @@
 				{{# } }}
 			</script>
 
-			<script type="text/html" id="allotedTpl">
-				{{# if(d.is_alloted == '0'){ }}
-				<button type="button" class="layui-btn layui-btn-sm layui-btn-danger" lay-event="fenpei">未分配</button>
+			<script type="text/html" id="tuid">
+				{{# if(d.tuid == '0'){ }}
+				<button type="button" class="layui-btn layui-btn-sm layui-btn-danger" lay-event="tuid">未分配</button>
 				{{# }else{ }}
-				<button type="button" class="layui-btn layui-btn-sm" lay-event="fenpei">重分配</button>
+				<button type="button" class="layui-btn layui-btn-sm" lay-event="tuid">重分配</button>
 				{{# } }}
 			</script>
 
@@ -114,11 +114,11 @@
 				<button type="button" class="layui-btn layui-btn-sm" lay-event="photowall">上照片墙</button>
 			</script>
 
-			<script type="text/html" id="isMemberTpl">
-				{{# if(d.is_member == '1'){ }}
-				<button type="button" class="layui-btn layui-btn-sm" lay-event="isMember">是</button>
+			<script type="text/html" id="userGroup">
+				{{# if(d.user_group > 1){ }}
+				<button type="button" class="layui-btn layui-btn-sm" lay-event="userGroup">是</button>
 				{{# }else{ }}
-				<button type="button" class="layui-btn layui-btn-sm layui-btn-danger" lay-event="isMember">否</button>
+				<button type="button" class="layui-btn layui-btn-sm layui-btn-danger" lay-event="userGroup">否</button>
 				{{# } }}
 			</script>
 
@@ -200,7 +200,7 @@
 				{field:'user_id', title: 'ID',width:80},
 				{title: '会员账号/性别/年龄',width:170,templet:function(d){
 					var user_sex = '男';
-					if(d.user_sex=='2'){
+					if(d.user_sex=='0'){
 						user_sex= '女';
 					}
 					var age = (new Date()).getFullYear()-d.birth_year;
@@ -210,20 +210,20 @@
 						return '<img src="/'+d.user_ico+'" class="layui-circle" style="width:50px;" onerror="this.src=\'/Public/adminnew/images/default_header.png\';">';
 					}},
 				//{field: 'country', title: '国籍'},
-				{title: '推荐人',templet:"#allotedTpl",width:90},
+				{title: '推荐人',templet:"#tuid",width:90},
 				//{title: '照片墙',width:100,templet:"#photoWall"},
 				{field: 'user_email', title: '邮箱',width:200},
 				//{field: 'reg_ip', title: '注册IP',width:150},
 				//{field: 'last_ip', title: '最后登录IP',width:150},
 				{field: 'zhuce_ip', title: 'IP',width:180},
-				{title: '是否会员',templet:"#isMemberTpl",width:100},
+				{title: '是否会员',templet:"#userGroup",width:100},
 				{title: '会员级别',width:190,templet:function(d){
-					if(d.level==0){
+					if(d.user_group==1){
 						return '普通会员';
-					}else if(d.level==1){
-						return '蓝钻会员（'+d.deadline_1+'）';
-					}else if(d.level == 2){
-						return '皇冠会员（'+d.deadline+'）';
+					}else if(d.user_group==2){
+						return '白金会员（'+d.deadline_1+'）';
+					}else if(d.user_group == 3){
+						return '钻石会员（'+d.deadline+'）';
 					}
 					}},
 				{field: 'golds', title: '剩余金币数',width:100,edit:'text'},

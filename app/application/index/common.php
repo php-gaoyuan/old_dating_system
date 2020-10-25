@@ -178,23 +178,6 @@ function is_h5_plus(){
 }
 
 
-function http_post($url,$data){
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_VERBOSE, 1);
-
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
-    //curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-    curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-
-    $res = curl_exec($ch);//halt($res);
-    curl_close($ch);
-    return $res;
-}
-
-
 
 function getAddressByIp($ip=""){
     $ip = !empty($ip)?$ip:"myip";
@@ -203,11 +186,25 @@ function getAddressByIp($ip=""){
         "ip"=>$ip,
         "accessKey"=>"alibaba-inc",
     ];
-    $res = http_post($url,$data);
+    $res = http_post($apiUrl,$data);
     return json_decode($res,true);
 }
 
+function http_post($url,$data){
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_VERBOSE, 1);
 
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+
+    $res = curl_exec($ch);//halt($res);
+    curl_close($ch);
+    return $res;
+}
 
 
 

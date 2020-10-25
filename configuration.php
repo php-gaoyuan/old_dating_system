@@ -1,4 +1,5 @@
 <?php
+//error_reporting(E_ALL || ~E_NOTICE);
 error_reporting(0);
 //判断浏览器语言
 include "lang.php";

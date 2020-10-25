@@ -28,7 +28,7 @@ class Reg extends Controller{
 			
 			
 			$regAdd = getAddressByIp(request()->ip());
-    		$reg_address = $regAdd["country"]."/".$regAdd["region"]."/".$regAdd["city"];
+    		$reg_address = $regAdd['data']["country"]."/".$regAdd['data']["region"]."/".$regAdd['data']["city"];
 
 			//开始数据存入数据库
 			$insert_data=[

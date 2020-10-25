@@ -12,7 +12,7 @@ function gettypes($state)
 	  break;
 	case 2:
 	//升级
-	  return "充值";
+	  return "升级";
 	  break;
 	case 3:
 	//站内信
@@ -20,7 +20,7 @@ function gettypes($state)
 	  break;
 	case 4:
 	//礼物
-	  return "消费";
+	  return "礼物";
 	  break;
 	default:
 	  return "其他";
@@ -132,30 +132,6 @@ $mp_list_rs=$dbo->getRs($sql);
 //print_r($mp_list_rs);exit;
 $page_total=$dbo->totalPage;//分页总数
 
-
-
-//Add By Root Time:20141021 Begin 
-
-
-
-//$sql_by_root="select user_email,user_add_time,lastlogin_datetime from wy_users where user_name=uname";
-//$mp_list_rs_by_root =$dbo->getRs($sql_by_root);
-
-//var_dump($mp_list_rs_by_root);
-
-//Add By Root Time:20141021 End
-
-
-
-
-
-
-
-
-
-
-
-
 ?>
 <html>
 <head>
@@ -228,142 +204,27 @@ $(function (){
   <tr class="t_Haader">
 	<td>账号</td>
 	<td>昵称</td>
-    <td>注册时间</td>
-    <td>登陆时间</td>
     <td>消费类型</td>
+    <td>支付终端</td>
+    <td>支付结果</td>
     <td>消费时间</td>
-	<!--<td>操作</td>
-	<td>全选<input type="checkbox" name="allcheck"/></td>-->
   </tr>
   <?php
   if(empty($uid)){?>
-   <tr>
-	
-	<td colspan="7">暂无数据</td>
-
-	</tr>
-	<?php }else{?>
-	
-	
-	
-	
-	
-	
-	<!--<?php //foreach($mp_list_rs_by_root as $rs_by_root){?>
-	<tr>
-	<td><?php// echo $rs_by_root['user_email'];?></td>
-		<td><?php //echo $rs_by_root['user_name'];?></td>
-		
-		<td><?php //echo $rs_by_root['user_add_time'];?></td>
-    <td><?php// echo $rs_by_root['lastlogin_datetime'];?></td>
-	
-	 </tr>
-	 <?php// }?>-->
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-<?php 
-
-
-
-//Add By Root Time:20141021 Begin 
-
-
-//$link = mysqli_connect("localhost", "root","root","lovelove");
-
-//if($link){
-	
-//	echo "数据同步成功";
-
-//}
- 
-
-//Add By Root Time:20141021 End 
-
-
-?>
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	  <?php foreach($mp_list_rs as $rs){?>
+  <tr>
+      <td colspan="7">暂无数据</td>
+      </tr>
+      <?php 
+      
+  }else{
+  foreach($mp_list_rs as $rs){?>
 	  
 	<tr>
-		
-		
-
-		<td><?php echo $rs['uname'];?></td><!-- wy_balance -->	<!-- 先获取昵称，然后通过wy_balance里面的uname查找wy_users里面的会员信息-->
-		
-		
-		
-		<?php 
-		
-		//Add By Root Time:20141021 Begin 
-
-
-
-		//$sql_by_root="select user_email,user_add_time,lastlogin_datetime from wy_users where user_name=".$rs['uname']."";
-		
-		
-
-		//var_dump($mysqli);
-		
-
-		$link = mysql_connect("127.0.0.1", "root","mima123456");
-				if(!mysql_select_db("partyings",$link)){
-		
-			echo "连接失败";
-		
-		}
-
-		$rootName = $rs['u_id'];
-		echo $rootName;
-		$sql_by_root="select user_name,user_email,user_add_time,lastlogin_datetime from wy_users where user_name='".$rs['uname']."'";
-		 
-		//echo $sql_by_root;
-
-		$result = mysql_query($sql_by_root);
-		
-		$result = mysql_fetch_array($result);
-		
-		//var_dump($result);
-		
-		
-
-
-		//Add By Root Time:20141021 End
-
-			
-		?>
-		
-		
-		
-		
-		
-		
-		
-		<td><?php echo $result['user_email'];?></td><!-- wy_users -->
-		
-		<td><?php echo $result['user_add_time'];?></td><!-- wy_users -->
-    <td><?php echo $result['lastlogin_datetime'];?></td><!-- wy_users -->
-	
-	
-	
-	
-		<td><?php echo $rs['message']?></td><!-- wy_balance -->
-		
-		<td><?php echo $rs['addtime'];?></td><!-- wy_balance -->
-
+	    <td><?php echo $rs['uname'];?></td>
+		<td><?php echo $rs['message']?></td>
+		<td><?php echo $rs['pay_from']?></td>
+		<td><?php echo $rs['pay_msg']?></td>
+		<td><?php echo $rs['addtime'];?></td>
 	  </tr>
 	  <?php }?>
 	  

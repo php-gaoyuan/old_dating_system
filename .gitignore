@@ -6,6 +6,8 @@
 **/*.pid
 .idea
 apk
+iweb_mini_lib/conf/dbconf.php
+nginx.htaccess
 # Windows:
 **/Thumbs.db
 **/ehthumbs.db
@@ -16,4 +18,5 @@ apk
 **/*.rar
 **/*.tar.gz
 **/*.phpbak
+.gitignore
 

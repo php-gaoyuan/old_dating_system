@@ -166,6 +166,7 @@
 				//{field: 'reg_ip', title: '注册IP',width:150},
 				//{field: 'last_ip', title: '最后登录IP',width:150},
 				{field: 'zhuce_ip', title: 'IP',width:180},
+				{field: 'reg_address', title: '注册地址',width:180},
 				{title: '是否会员',templet:"#userGroup",width:100},
 				{title: '会员级别',width:190,templet:function(d){
 					if(d.user_group==1){

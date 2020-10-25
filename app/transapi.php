@@ -15,10 +15,10 @@
  *  
  **/
 
-define("CURL_TIMEOUT",   10); 
-define("URL",            "http://api.fanyi.baidu.com/api/trans/vip/translate"); 
-define("APP_ID",         "20180223000124376"); //替换为您的APPID
-define("SEC_KEY",        "HYrSQ1soybwrYcA5T4lQ");//替换为您的密钥
+define("CURL_TIMEOUT",   10);
+define("URL", "http://api.fanyi.baidu.com/api/trans/vip/translate");
+define("APP_ID", "20201025000598194"); //替换为您的APPID
+define("SEC_KEY", "lCz8Cm1uAAOb2UjMXnqk");//替换为您的密钥
 
 
 //翻译入口

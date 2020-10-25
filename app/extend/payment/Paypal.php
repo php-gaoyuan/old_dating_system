@@ -8,39 +8,22 @@ class Paypal{
 
     function GetCode($order){
     	$payment=config("webconfig.paypal_account");
-
     	$mess='<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
-
 		$mess.='<body><form name="paypal" target="_top" action="https://www.paypal.com/cgi-bin/websc" method="post">';
-
 		$mess.='<input type="hidden" name="business" value="'.$payment.'">';
-
 		$mess.='<input type="hidden" name="item_name" value="golds">';
-
 		$mess.='<input type="hidden" name="amount" value="'.$order['price'].'">';
-
 		$mess.='<input type="hidden" name="no_note" value="1">';
-
 		$mess.='<input type="hidden" name="return" value="'.$this->return_url.'">';
-
 		$mess.='<input type="hidden" name="cancel_return" value="http://www.site.com">';
-
 		$mess.='<input type="hidden" name="custom" value="'.$order['out_trade_no'].'">';
-
 		$mess.='<input type="hidden" name="notify_url" value="'.$this->return_url.'&code=paypal">';
-
 		$mess.='<input type="hidden" name="cmd" value="_xclick">';
-
 		$mess.='<input type="hidden" name="currency_code" value="USD">';
-
 		$mess.='<input type="hidden" name="charset" value="utf-8" />';
-
 		$mess.='<input type="hidden" name="cpp_header_image" value="'.config("webconfig.pc_url").'skin/default/zeal/images/logo2.png">';
-
 		$mess.='</form><script LANGUAGE="javascript">document.paypal.submit();</script></body>';
-
         return $mess;
-
     }
 
 

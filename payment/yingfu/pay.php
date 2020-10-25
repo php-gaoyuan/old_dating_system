@@ -8,6 +8,10 @@ header("content-type:text/html;charset=utf-8");
 require("../../foundation/asession.php");
 require("../../configuration.php");
 require("../../includes.php");
+require("../common.php");
+
+require("../../{$langPackageBasePath}/paymentlp.php");
+$paymentlp = new paymentlp();
 
 //读写分离定义函数
 $dbo = new dbex;
@@ -134,40 +138,23 @@ if(sha256Encrypt($str) != $result['sign_verify']){ //验证返回信息
 }
 
 if($result['status'] == 'paid'){
-    $metadata = json_decode($result["metadata"],true);
-    $ordernumber = $metadata["ordernumlogber"];
-    $sql = "SELECT * FROM wy_balance WHERE ordernumber = '{$order_no}'";
-    $row = $dbo->getRow($sql,"arr");
-    if(empty($row)){
-        returnJs("订单不存在!");
+    $data = array(
+        'status' => 'success',
+        'ordernumber' => $order_no,
+        'amount' => $result['amount_value']/100,
+        'out_trade_no' => $result['order_id'],
+        'err_msg' => $result['message']
+    );
+    if($order['type'] == 1){
+        $payRes = payRecharge($data,$dbo,$paymentlp);
+    }elseif($order['type'] == 2){
+        $payRes = payUpgrade($data,$dbo,$paymentlp);
     }
-    if ($row['state'] == 2) {
-        returnJs("该订单已经支付过了!");
-    }
-    if ($result['amount_value']/100 != $row['money']) {
-        returnJs("支付金额出错!");
-    }
-
-    if ($row['state'] != '2') {
-        $sql = "UPDATE wy_balance SET `state`='2',`out_trade_no`='{$result['order_id']}' WHERE ordernumber = '{$order_no}'";
-        if ($dbo->exeUpdate($sql)) {
-            $touid = $row['touid'];
-            $sql = "UPDATE wy_users SET golds=golds+{$row['money']} WHERE user_id='$touid'";
-            if (!$dbo->exeUpdate($sql)) {
-                returnJs("支付成功，添加金币失败!请联系工作人员!");
-            } else {
-                returnJs("支付成功，金币已经到账!");
-            }
-        }
-    }
+}else{
+    $payRes = $result['message'];
 }
-returnJs($result['message']);//支付成功
+returnJs($payRes);//支付成功
 
-function returnJs($msg,$url=""){
-    $url = !empty($url)?$url:'/main.php';
-    echo "<script>alert('Payment Result:{$msg}');window.location.href='{$url}'</script>";
-    exit();
-}
 
 //获取用户ip
 function getIP(){

@@ -1,351 +1,340 @@
-<?php return array (
+<?php return array(
 
-  "no_trans"=>"Non translation",
+    "no_trans" => "Non translation",
 
-  "zh-cn"=>"简体中文",
+    "zh-cn" => "简体中文",
 
-  "zh-tw"=>"繁体中文",
+    "zh-tw" => "繁体中文",
 
-  "en-us"=>"English",
+    "en-us" => "English",
 
-  "kor"=>"한국어",
+    "kor" => "한국어",
 
-  "jp"=>"日本語",
+    "jp" => "日本語",
 
-  'male' => 'male',
+    'male' => 'male',
 
-  'female' => 'female',
+    'female' => 'female',
 
-  'year' => 'Year',
+    'year' => 'Year',
 
-  'month' => 'Month',
+    'month' => 'Month',
 
-  'day' => 'Day',
+    'day' => 'Day',
 
-  'month2' => 'Months',
+    'month2' => 'Months',
 
-  'footer_nav1' => 'On-line',
+    'footer_nav1' => 'On-line',
 
-  'footer_nav2' => 'news',
+    'footer_nav2' => 'news',
 
-  'footer_nav3' => 'dynamic',
+    'footer_nav3' => 'dynamic',
 
-  'footer_nav4' => 'Friends',
+    'footer_nav4' => 'Friends',
 
-  'footer_nav5' => 'Me',
+    'footer_nav5' => 'Me',
 
-  'ok' => 'Successful operation',
+    'ok' => 'Successful operation',
 
-  'fail' => 'operation failed',
+    'fail' => 'operation failed',
 
-  'submit' => 'Submit',
+    'submit' => 'Submit',
 
-  'yongjiu' => 'permanent',
+    'yongjiu' => 'permanent',
 
-  'need recharge' => 'If the gold coins are not enough, please recharge',
+    'need recharge' => 'If the gold coins are not enough, please recharge',
 
-  'no friend' => 'Good friends do not exist',
+    'no friend' => 'Good friends do not exist',
 
-  'friend_name' => 'name',
+    'friend_name' => 'name',
 
-  'golds' => 'Gold',
+    'golds' => 'Gold',
 
-  'banben' => 'Edition',
+    'banben' => 'Edition',
 
-  'about us' => 'About us',
+    'about us' => 'About us',
 
-  'help center' => 'Help center',
+    'help center' => 'Help center',
 
-  'tiaokuan' => 'Terms of use',
+    'tiaokuan' => 'Terms of use',
 
-  'jiaoyou' => 'Secure friends',
+    'jiaoyou' => 'Secure friends',
 
-  'gengxin' => 'Check the update',
+    'gengxin' => 'Check the update',
 
-  'guanwang' => 'The official website',
+    'guanwang' => 'The official website',
 
-  'login_username_placeholder' => 'Enter your username',
+    'login_username_placeholder' => 'Enter your username',
 
-  'login_pass_placeholder' => 'Enter password',
+    'login_pass_placeholder' => 'Enter password',
 
-  'login_forget_pass' => 'Forget password?',
+    'login_forget_pass' => 'Forget password?',
 
-  'login_reg_account' => 'Sign up',
+    'login_reg_account' => 'Sign up',
 
-  'login_sub_btn' => 'Login',
+    'login_sub_btn' => 'Login',
 
-  'login_footer' => 'The most professional large translation social platform in the world',
+    'login_footer' => 'The most professional large translation social platform in the world',
 
-  
 
+    'reg_title' => 'Sign up',
 
+    'reg_user_name' => 'Username',
 
-  'reg_title' => 'Sign up',
+    'reg_user_name_place' => 'Enter your username',
 
-  'reg_user_name' => 'Username',
+    'reg_pass' => 'Password',
 
-  'reg_user_name_place' => 'Enter your username',
+    'reg_pass_place' => 'Enter password',
 
-  'reg_pass' => 'Password',
+    'reg_email' => 'Email',
 
-  'reg_pass_place' => 'Enter password',
+    'reg_email_place' => 'Enter your email',
 
-  'reg_email' => 'Email',
+    'reg_confirm_pass' => 'Password',
 
-  'reg_email_place' => 'Enter your email',
+    'reg_confirm_pass_place' => 'Confirm the password',
 
-  'reg_confirm_pass' => 'Password',
+    'reg_user_sex' => 'Gender',
 
-  'reg_confirm_pass_place' => 'Confirm the password',
+    'reg_user_birthday' => 'Birthday',
 
-  'reg_user_sex' => 'Gender',
+    'reg_xiyi_tip' => 'Clicking on registration indicates that you have read the terms of service',
 
-  'reg_user_birthday' => 'Birthday',
+    'reg_sub_btn' => 'Sign up',
 
-  'reg_xiyi_tip' => 'Clicking on registration indicates that you have read the terms of service',
 
-  'reg_sub_btn' => 'Sign up',
+    'wj_title' => 'Forget password',
 
+    'wj_input_email' => 'Please enter your e-mail',
 
 
-  'wj_title' => 'Forget password',
+    'main_title' => 'partyings the most professional large translation social platform in the world',
 
-  'wj_input_email' => 'Please enter your e-mail',
+    'main_title2' => 'Online Member',
 
 
+    'search_place' => 'Search for friends',
 
-  'main_title' => 'partyings the most professional large translation social platform in the world',
+    'upgrade_title' => 'Upgrade members',
 
-  'main_title2' => 'Online Member',
+    'vip_member' => 'VIP Member',
 
+    'vip_yj_member' => 'VIP Permanent Member',
 
+    'upgrade_sub_btn' => 'Click upgrades',
 
-  'search_place' => 'Search for friends',
+    'upgrade_desc1' => 'Use most of the whole station function',
 
-  'upgrade_title' => 'Upgrade members',
+    'upgrade_desc2' => 'No restrictions on friends communication, free manual translation, 2 times faster online level',
 
-  'vip_member' => 'VIP Member',
+    'upgrade_desc3' => 'Use all of the station\'s functions',
 
-  'vip_yj_member' => 'VIP Permanent Member',
+    'upgrade_order_title' => 'Upgrade order',
 
-  'upgrade_sub_btn' => 'Click upgrades',
+    'order_info' => 'Order information',
 
-  'upgrade_desc1' => 'Use most of the whole station function',
+    'need_golds' => 'Amount payable',
 
-  'upgrade_desc2' => 'No restrictions on friends communication, free manual translation, 2 times faster online level',
+    'select_upgrade' => 'Choose who to upgrade',
 
-  'upgrade_desc3' => 'Use all of the station\'s functions',
+    'upgrade_foy_youself' => 'For myself',
 
-  'upgrade_order_title' => 'Upgrade order',
+    'upgrade_foy_others' => 'For my friend',
 
-  'order_info' => 'Order information',
+    'select_pay_type' => 'Choice of payment method',
 
-  'need_golds' => 'Amount payable',
+    'upgrade_act_btn' => 'upgrade',
 
-  'select_upgrade' => 'Choose who to upgrade',
+    'need upgrade' => 'You are not VIP users can\'t use instant chat, please recharge the upgrade',
 
-  'upgrade_foy_youself' => 'For myself',
+    'news_title' => 'news',
 
-  'upgrade_foy_others' => 'For my friend',
+    'mood_title' => 'Circle of friends',
 
-  'select_pay_type' => 'Choice of payment method',
+    'fabiao' => 'Publish',
 
-  'upgrade_act_btn' => 'upgrade',
+    'home_title' => 'Personal home page',
 
-  'need upgrade' => 'You are not VIP users can\'t use instant chat, please recharge the upgrade',
+    'news' => 'information',
 
-  'news_title' => 'news',
+    'mood' => 'mood',
 
-  'mood_title' => 'Circle of friends',
+    'photos' => 'Album',
 
-  'fabiao' => 'Publish',
+    'nickname' => 'nickname',
 
-  'home_title' => 'Personal home page',
+    'sex' => 'Gender',
 
-  'news' => 'information',
+    'user_title' => 'Me',
 
-  'mood' => 'mood',
+    'vip' => 'VIP',
 
-  'photos' => 'Album',
+    'gift' => 'Gift',
 
-  'nickname' => 'nickname',
+    'wallet' => 'Wallet',
 
-  'sex' => 'Gender',
+    'help' => 'Help and feedback',
 
-  'user_title' => 'Me',
+    'set' => 'Set up',
 
-  'vip' => 'VIP',
+    'user_cash' => 'Cash',
 
-  'gift' => 'Gift',
+    'gift shop' => 'Gift shop',
 
-  'wallet' => 'Wallet',
+    'real gift' => 'Real gift',
 
-  'help' => 'Help and feedback',
+    'greet card' => 'Greeting card',//Electronic
 
-  'set' => 'Set up',
+    'gift detail' => 'Details of the gift',
 
-  'user_cash'=>'Cash',
+    'gift name' => 'Name',
 
-  'gift shop' => 'Gift shop',
+    'gift price' => 'Price',
 
-  'real gift' => 'Real gift',
+    'member price' => 'Membership price',
 
-  'greet card' => 'Greeting card',//Electronic
+    'yunfei' => 'freight',
 
-  'gift detail' => 'Details of the gift',
+    'free' => 'Free Admission',
 
-  'gift name' => 'Name',
+    'buy' => 'purchase',
 
-  'gift price' => 'Price',
+    'pay' => 'payment',
 
-  'member price' => 'Membership price',
+    'select_pay' => 'Choose who to pay for it',
 
-  'yunfei' => 'freight',
+    'zengyan' => 'Zengyan',
 
-  'free' => 'Free Admission',
+    'balance' => 'Gold coin balance',
 
-  'buy' => 'purchase',
+    'upgrade' => 'Recharge',
 
-  'pay' => 'payment',
+    'pay_record' => 'Payment record',
 
-  'select_pay' => 'Choose who to pay for it',
+    'xiaofei_record' => 'Records of consumption',
 
-  'zengyan' => 'Zengyan',
+    'set pass' => 'Password setting',
 
-  'balance' => 'Gold coin balance',
+    'set lang' => 'Language setting',
 
-  'upgrade' => 'Recharge',
+    'about' => 'About partyings',
 
-  'pay_record' => 'Payment record',
+    'clear cache' => 'Scavenging caching',
 
-  'xiaofei_record' => 'Records of consumption',
+    'logout' => 'Sign out',
 
-  'set pass' => 'Password setting',
+    'old pass' => 'Original cipher',
 
-  'set lang' => 'Language setting',
+    'new pass' => 'New password',
 
-  'about' => 'About partyings',
+    'new pass2' => 'Determine the password',
 
-  'clear cache' => 'Scavenging caching',
+    'no empty' => 'The option can not be empty',
 
-  'logout' => 'Sign out',
+    'recharge' => 'Recharge',
 
-  'old pass' => 'Original cipher',
+    'recharge_way' => 'Recharge method',
 
-  'new pass' => 'New password',
+    'select_recharge' => 'Choice of recharge',
 
-  'new pass2' => 'Determine the password',
+    'recharge golds' => 'Amount of recharge (at least $5)',
 
-  'no empty' => 'The option can not be empty',
+    'recharge low' => 'Minimum recharge amount $5',
 
-  'recharge' => 'Recharge',
 
-  'recharge_way' => 'Recharge method',
+    //pay
+    "pay_title" => "订单支付",
+    "pay_order_no" => "订单号",
+    "pay_amount" => "金额",
+    "pay_bill_info" => "账单信息",
+    "pay_xing" => "姓",
+    "pay_ming" => "名",
+    "pay_name" => "姓名",
+    "pay_email" => "邮箱",
+    "pay_country" => "国家",
+    "pay_province" => "州",
+    "pay_city" => "城市",
+    "pay_address" => "地址",
+    "pay_ship_address" => "其他收货地址",
+    "pay_ship_info" => "收货信息",
+    "pay_phone" => "电话",
+    "pay_zipcode" => "邮编",
+    "pay_card_info" => "信用卡信息",
+    "pay_btn_pay" => "支付",
+    "pay_card_number" => "卡号",
+    "pay_year" => "年",
+    "pay_month" => "月",
+    "pay_msg_paied" => '订单已经支付',
+    "pay_msg_noorder" => '订单不存在',
+    "pay_msg_fail" => "支付失败",
+    "pay_msg_success" => "支付成功",
 
-  'select_recharge' => 'Choice of recharge',
 
-  'recharge golds' => 'Amount of recharge (at least $5)',
+    //profile
 
-  'recharge low' => 'Minimum recharge amount $5',
+    "headimg" => "Headimg",
 
+    "gender" => "Gender",
 
+    "birth" => "Birthday",
 
-  //fht
+    "country" => "Country",
 
-  "fht_card"=>"CardNumber",
+    "waimao" => "Appearance",
 
-  "fht_card_desc"=>"Please enter the card number",
+    "sexual" => "Sexual",
 
-  "fht_yxq"=>"Expire",
+    "shengao" => "Height",
 
-  "fht_cvv"=>"CVV",
+    "weight" => "Weight",
 
-  "fht_cvv_desc"=>"Three bit digital authentication code on the back of a credit card",
+    "income" => "Income",
 
-  "email"=>"Email",
+    "intro" => "Introduction",
 
-  "fht_email_desc"=>"To receive a bill",
-  "fht_name"=>'Name',
-  "fht_country"=>'Country',
-  "fht_province"=>'State/Province',
-  "fht_city"=>'City',
-  "fht_address"=>'Street Address',
-  "fht_email"=>'Email',
-  "fht_telephone"=>'Telephone',
-  "fht_post"=>'Post/Zip Code',
+    "select" => "Choose",
 
+    "fabu_xq" => "Express the mood",
 
+    "create_btn" => "Create",
 
-  //profile
+    "delete_btn" => "Delete",
 
-  "headimg"=>"Headimg",
+    "edit_btn" => "Eidt",
 
-  "gender"=>"Gender",
+    "album_name" => "Album name",
 
-  "birth"=>"Birthday",
+    "album_desc" => "Album Desc",
 
-  "country"=>"Country",
+    "create_album" => "Create Album",
 
-  "waimao"=>"Appearance",
+    "edit_album" => "Edit Album",
 
-  "sexual"=>"Sexual",
 
-  "shengao"=>"Height",
+    "chatlog" => "Chat record",
 
-  "weight"=>"Weight",
 
-  "income"=>"Income",
+    'error_user_lock' => 'The user is in a locked state',
 
-  "intro"=>"Introduction",
+    'error_pass_error' => 'ERROR Incorrect username or password',
 
-  "select"=>"Choose",
+    'error_username_no_empty' => 'The username can not be empty',
 
-  "fabu_xq"=>"Express the mood",
+    'error_pass_no_empty' => 'The password can not be empty',
 
-  "create_btn"=>"Create",
+    'error_user_cunzai' => 'The user has already existed',
 
-  "delete_btn"=>"Delete",
+    'error_user_nocunzai' => 'user does not exist',
 
-  "edit_btn"=>"Eidt",
+    'error_email' => 'Incorrect mailbox format',
 
-  "album_name"=>"Album name",
+    'error_pass2' => 'Two inconsistencies in cipher input',
 
-  "album_desc"=>"Album Desc",
+    'error_select_sex' => 'Please choose sex',
 
-  "create_album"=>"Create Album",
+    'error_conpass_no_empty' => 'Confirm that the password is not empty',
 
-  "edit_album"=>"Edit Album",
-
-
-
-  "chatlog"=>"Chat record",
-
-
-
-
-
-
-
-  'error_user_lock' => 'The user is in a locked state',
-
-  'error_pass_error' => 'ERROR Incorrect username or password',
-
-  'error_username_no_empty' => 'The username can not be empty',
-
-  'error_pass_no_empty' => 'The password can not be empty',
-
-  'error_user_cunzai' => 'The user has already existed',
-
-  'error_user_nocunzai' => 'user does not exist',
-
-  'error_email' => 'Incorrect mailbox format',
-
-  'error_pass2' => 'Two inconsistencies in cipher input',
-
-  'error_select_sex' => 'Please choose sex',
-
-  'error_conpass_no_empty' => 'Confirm that the password is not empty',
-
-  'friend name no empty' => 'Please enter the name of your friend',
+    'friend name no empty' => 'Please enter the name of your friend',
 
 );

@@ -1,347 +1,338 @@
-<?php return array (
+<?php return array(
 
-  "no_trans"=>"번역하지 않다",
+    "no_trans" => "번역하지 않다",
 
-  "zh-cn"=>"简体中文",
+    "zh-cn" => "简体中文",
 
-  "zh-tw"=>"繁体中文",
+    "zh-tw" => "繁体中文",
 
-  "en-us"=>"English",
+    "en-us" => "English",
 
-  "kor"=>"한국어",
+    "kor" => "한국어",
 
-  "jp"=>"日本語",
+    "jp" => "日本語",
 
-  'male' => '남자',
+    'male' => '남자',
 
-  'female' => '여자',
+    'female' => '여자',
 
-  'year' => '년, 해',
+    'year' => '년, 해',
 
-  'month' => '월, 달',
+    'month' => '월, 달',
 
-  'day' => '날',
+    'day' => '날',
 
-  'month2' => '개월.',
+    'month2' => '개월.',
 
-  'footer_nav1' => '온라인',
+    'footer_nav1' => '온라인',
 
-  'footer_nav2' => '소식.',
+    'footer_nav2' => '소식.',
 
-  'footer_nav3' => '동태.',
+    'footer_nav3' => '동태.',
 
-  'footer_nav4' => '친구',
+    'footer_nav4' => '친구',
 
-  'footer_nav5' => '나.',
+    'footer_nav5' => '나.',
 
-  'ok' => '조작이 성공하다.',
+    'ok' => '조작이 성공하다.',
 
-  'fail' => '작업 실패',
+    'fail' => '작업 실패',
 
-  'submit' => '제출',
+    'submit' => '제출',
 
-  'yongjiu' => '영구하다',
+    'yongjiu' => '영구하다',
 
-  'need recharge' => '금화 부족, 값 충만해 주십시오.',
+    'need recharge' => '금화 부족, 값 충만해 주십시오.',
 
-  'no friend' => '나는 존재하지 않는다',
+    'no friend' => '나는 존재하지 않는다',
 
-  'friend_name' => '친구 이름......',
+    'friend_name' => '친구 이름......',
 
-  'golds' => '금화',
+    'golds' => '금화',
 
-  'banben' => '버젼',
+    'banben' => '버젼',
 
-  'about us' => '저희에 대한...',
+    'about us' => '저희에 대한...',
 
-  'help center' => '도움말 센터',
+    'help center' => '도움말 센터',
 
-  'tiaokuan' => '사용 조항',
+    'tiaokuan' => '사용 조항',
 
-  'jiaoyou' => '안전교우',
+    'jiaoyou' => '안전교우',
 
-  'gengxin' => '검사 업데이트',
+    'gengxin' => '검사 업데이트',
 
-  'guanwang' => '관망',
+    'guanwang' => '관망',
 
-  'login_username_placeholder' => '사용자 이름 입력',
+    'login_username_placeholder' => '사용자 이름 입력',
 
-  'login_pass_placeholder' => '비밀번호 입력',
+    'login_pass_placeholder' => '비밀번호 입력',
 
-  'login_forget_pass' => '비밀번호 찾기',
+    'login_forget_pass' => '비밀번호 찾기',
 
-  'login_reg_account' => '등록 계좌 번호',
+    'login_reg_account' => '등록 계좌 번호',
 
-  'login_sub_btn' => '로그인',
+    'login_sub_btn' => '로그인',
 
-  'login_footer' => '세계에서 가장 전문적인 번역 소셜 플랫폼',
+    'login_footer' => '세계에서 가장 전문적인 번역 소셜 플랫폼',
 
 
+    'reg_title' => '책',
 
-  
+    'reg_user_name' => '사용자',
 
-  'reg_title' => '책',
+    'reg_user_name_place' => '사용자 이름 입력',
 
-  'reg_user_name' => '사용자',
+    'reg_pass' => '암호',
 
-  'reg_user_name_place' => '사용자 이름 입력',
+    'reg_pass_place' => '암호',
 
-  'reg_pass' => '암호',
+    'reg_email' => '사서함.',
 
-  'reg_pass_place' => '암호',
+    'reg_email_place' => '사서함',
 
-  'reg_email' => '사서함.',
+    'reg_confirm_pass' => '암호',
 
-  'reg_email_place' => '사서함',
+    'reg_confirm_pass_place' => '비밀번호 확인',
 
-  'reg_confirm_pass' => '암호',
+    'reg_user_sex' => '성별.',
 
-  'reg_confirm_pass_place' => '비밀번호 확인',
+    'reg_user_birthday' => '생일.',
 
-  'reg_user_sex' => '성별.',
+    'reg_xiyi_tip' => '등록된 서비스 조항을 읽으시면 등록을 누르십시오',
 
-  'reg_user_birthday' => '생일.',
+    'reg_sub_btn' => '무료 등록',
 
-  'reg_xiyi_tip' => '등록된 서비스 조항을 읽으시면 등록을 누르십시오',
+    'wj_title' => '비밀번호 찾기',
 
-  'reg_sub_btn' => '무료 등록',
+    'wj_input_email' => '입력 메일박스 입력',
 
-  'wj_title' => '비밀번호 찾기',
+    'main_title' => 'lovel a 세계 전문 대형 번역 소셜 플랫폼',
 
-  'wj_input_email' => '입력 메일박스 입력',
+    'main_title2' => '온라인 사용자',
 
-  'main_title' => 'lovel a 세계 전문 대형 번역 소셜 플랫폼',
+    'search_place' => '절친한 친구.',
 
-  'main_title2' => '온라인 사용자',
+    'upgrade_title' => '업그레이드 회원',
 
-  'search_place' => '절친한 친구.',
+    'vip_member' => '회원',
 
-  'upgrade_title' => '업그레이드 회원',
+    'vip_yj_member' => '영구회원',
 
-  'vip_member' => '회원',
+    'upgrade_sub_btn' => '업그레이드 클릭',
 
-  'vip_yj_member' => '영구회원',
+    'upgrade_desc1' => '모든 역 기능 사용',
 
-  'upgrade_sub_btn' => '업그레이드 클릭',
+    'upgrade_desc2' => '교우 소통 무제한, 인공 무료 번역, 온라인 등급 2 배 가속화',
 
-  'upgrade_desc1' => '모든 역 기능 사용',
+    'upgrade_desc3' => '모든 역 기능 사용',
 
-  'upgrade_desc2' => '교우 소통 무제한, 인공 무료 번역, 온라인 등급 2 배 가속화',
+    'upgrade_order_title' => '업그레이드 주문서',
 
-  'upgrade_desc3' => '모든 역 기능 사용',
+    'order_info' => '주문 정보',
 
-  'upgrade_order_title' => '업그레이드 주문서',
+    'need_golds' => '금액',
 
-  'order_info' => '주문 정보',
+    'select_upgrade' => '누가 업그레이드 선택',
 
-  'need_golds' => '금액',
+    'upgrade_foy_youself' => '나 자신을 위해',
 
-  'select_upgrade' => '누가 업그레이드 선택',
+    'upgrade_foy_others' => '나의 친구',
 
-  'upgrade_foy_youself' => '나 자신을 위해',
+    'select_pay_type' => '지불 방식 선택',
 
-  'upgrade_foy_others' => '나의 친구',
+    'upgrade_act_btn' => '업그레이드',
 
-  'select_pay_type' => '지불 방식 선택',
+    'need upgrade' => '당신 은 VIP 사용자 가 아니기 때문에 이야기 를 할 수 없으니, 업그레이드 를 해 주십시오',
 
-  'upgrade_act_btn' => '업그레이드',
+    'news_title' => '소식.',
 
-  'need upgrade' => '당신 은 VIP 사용자 가 아니기 때문에 이야기 를 할 수 없으니, 업그레이드 를 해 주십시오',
+    'mood_title' => '친구',
 
-  'news_title' => '소식.',
+    'fabiao' => '발표한다',
 
-  'mood_title' => '친구',
+    'home_title' => '개인 홈페이지',
 
-  'fabiao' => '발표한다',
+    'news' => '정보',
 
-  'home_title' => '개인 홈페이지',
+    'mood' => '기분.',
 
-  'news' => '정보',
+    'photos' => '앨범',
 
-  'mood' => '기분.',
+    'nickname' => '별명, 별명',
 
-  'photos' => '앨범',
+    'sex' => '성별.',
 
-  'nickname' => '별명, 별명',
+    'user_title' => '나.',
 
-  'sex' => '성별.',
+    'vip' => 'vip',
 
-  'user_title' => '나.',
+    'gift' => '선물',
 
-  'vip' => 'vip',
+    'wallet' => '지갑',
 
-  'gift' => '선물',
+    'help' => '도움과 피드백',
 
-  'wallet' => '지갑',
+    'set' => '설치',
 
-  'help' => '도움과 피드백',
+    'user_cash' => '현금을 제출하다',
 
-  'set' => '설치',
+    'gift shop' => '선물 상점',
 
-  'user_cash'=>'현금을 제출하다',
+    'real gift' => '선물',
+    "Virtual Gift" => "가상 선물",
 
-  'gift shop' => '선물 상점',
+    'greet card' => '전자 카드',
 
-  'real gift' => '선물',
-  "Virtual Gift"=>"가상 선물",
+    'gift detail' => '선물',
 
-  'greet card' => '전자 카드',
+    'gift name' => '명칭.',
 
-  'gift detail' => '선물',
+    'gift price' => '가격.',
 
-  'gift name' => '명칭.',
+    'member price' => '회원 가격',
 
-  'gift price' => '가격.',
+    'yunfei' => '운임',
 
-  'member price' => '회원 가격',
+    'free' => '공짜',
 
-  'yunfei' => '운임',
+    'buy' => '구입하다.',
 
-  'free' => '공짜',
+    'pay' => '지불하다.',
 
-  'buy' => '구입하다.',
+    'select_pay' => '누구를 위한 지불 선택',
 
-  'pay' => '지불하다.',
+    'zengyan' => '기증하다.',
 
-  'select_pay' => '누구를 위한 지불 선택',
+    'balance' => '금화 잔금',
 
-  'zengyan' => '기증하다.',
+    'upgrade' => '충전',
 
-  'balance' => '금화 잔금',
+    'pay_record' => '지급 기록',
 
-  'upgrade' => '충전',
+    'xiaofei_record' => '소비',
 
-  'pay_record' => '지급 기록',
+    'set pass' => '암호 설정',
 
-  'xiaofei_record' => '소비',
+    'set lang' => '언어 설정',
 
-  'set pass' => '암호 설정',
+    'about' => '关于 partyings',
 
-  'set lang' => '언어 설정',
+    'clear cache' => '캐시 지우기',
 
-  'about' => '关于 partyings',
+    'logout' => '퇴출',
 
-  'clear cache' => '캐시 지우기',
+    'old pass' => '원본 암호',
 
-  'logout' => '퇴출',
+    'new pass' => '새 암호',
 
-  'old pass' => '원본 암호',
+    'new pass2' => '비밀번호 확인',
 
-  'new pass' => '새 암호',
+    'no empty' => '옵션을 선택하면 안 됩니다.',
 
-  'new pass2' => '비밀번호 확인',
+    'recharge' => '충전',
 
-  'no empty' => '옵션을 선택하면 안 됩니다.',
+    'recharge_way' => '충전 방식',
 
-  'recharge' => '충전',
+    'select_recharge' => '선택 충전',
 
-  'recharge_way' => '충전 방식',
+    'recharge golds' => '금액 충전 금액 (최소 5 달러)',
 
-  'select_recharge' => '선택 충전',
+    'recharge low' => '최소 충전 금액 달러 5',
 
-  'recharge golds' => '금액 충전 금액 (최소 5 달러)',
 
-  'recharge low' => '최소 충전 금액 달러 5',
+    //pay
+    "pay_title" => "订单支付",
+    "pay_order_no" => "订单号",
+    "pay_amount" => "金额",
+    "pay_bill_info" => "账单信息",
+    "pay_xing" => "姓",
+    "pay_ming" => "名",
+    "pay_name" => "姓名",
+    "pay_email" => "邮箱",
+    "pay_country" => "国家",
+    "pay_province" => "州",
+    "pay_city" => "城市",
+    "pay_address" => "地址",
+    "pay_ship_address" => "其他收货地址",
+    "pay_ship_info" => "收货信息",
+    "pay_phone" => "电话",
+    "pay_zipcode" => "邮编",
+    "pay_card_info" => "信用卡信息",
+    "pay_btn_pay" => "支付",
+    "pay_card_number" => "卡号",
+    "pay_year" => "年",
+    "pay_month" => "月",
+    "pay_msg_paied" => '订单已经支付',
+    "pay_msg_noorder" => '订单不存在',
+    "pay_msg_fail" => "支付失败",
+    "pay_msg_success" => "支付成功",
 
 
+    //profile
 
-  //fht
+    "headimg" => "두상",
 
-  "fht_card"=>"카드",
+    "gender" => "성별",
 
-  "fht_card_desc"=>"카드번호 입력해주세요",
+    "birth" => "생일",
 
-  "fht_yxq"=>"유효 기간",
+    "country" => "국가",
 
-  "fht_cvv"=>"CVV",
+    "waimao" => "외모",
 
-  "fht_cvv_desc"=>"신용카드 뒷면에 있는 세 개의 디지털 검증 코드",
+    "sexual" => "성향",
 
-  "email"=>"전자 우편",
+    "shengao" => "키",
 
-  "fht_email_desc"=>"수신 명세서",
+    "weight" => "몸무게",
 
-  "fht_name"=>'성명',
-  "fht_country"=>'국가',
-  "fht_province"=>'주 / 성',
-  "fht_city"=>'도시.',
-  "fht_address"=>'주소, 주소',
-  "fht_email"=>'사서함',
-  "fht_telephone"=>'전화',
-  "fht_post"=>'우편번호',
+    "income" => "수입",
 
+    "intro" => "프로필",
 
+    "select" => "골라 주세요",
 
-  //profile
+    "fabu_xq" => "심정을 발표하다",
 
-  "headimg"=>"두상",
+    "create_btn" => "생성",
 
-  "gender"=>"성별",
+    "delete_btn" => "삭제",
 
-  "birth"=>"생일",
+    "edit_btn" => "편집하다",
 
-  "country"=>"국가",
+    "album_name" => "앨범 이름",
 
-  "waimao"=>"외모",
+    "album_desc" => "사진첩",
 
-  "sexual"=>"성향",
+    "create_album" => "앨범",
 
-  "shengao"=>"키",
+    "edit_album" => "앨범 편집",
 
-  "weight"=>"몸무게",
 
-  "income"=>"수입",
+    "chatlog" => "채팅 레코드",
 
-  "intro"=>"프로필",
 
-  "select"=>"골라 주세요",
+    'error_user_lock' => '사용자가 잠금 상태에 있다.',
 
-  "fabu_xq"=>"심정을 발표하다",
+    'error_pass_error' => '사용자 이름 또는 암호 오류',
 
-  "create_btn"=>"생성",
+    'error_username_no_empty' => '사용자 이름 은 빈 틈 으로 할 수 없다',
 
-  "delete_btn"=>"삭제",
+    'error_pass_no_empty' => '비밀번호를 비어서는 안 된다.',
 
-  "edit_btn"=>"편집하다",
+    'error_user_cunzai' => '사용자가 이미 존재합니다.',
 
-  "album_name"=>"앨범 이름",
+    'error_user_nocunzai' => '사용자가 존재하지 않습니다.',
 
-  "album_desc"=>"사진첩",
+    'error_email' => '메일박스 형식이 정확하지 않습니다.',
 
-  "create_album"=>"앨범",
+    'error_pass2' => '2 차 암호 입력 불일치',
 
-  "edit_album"=>"앨범 편집",
+    'error_select_sex' => '성별을 선택하세요.',
 
+    'error_conpass_no_empty' => '암호가 비어 있을 수 없음을 확인합니다.',
 
-
-  "chatlog"=>"채팅 레코드",
-
-
-
-
-
-
-
-  'error_user_lock' => '사용자가 잠금 상태에 있다.',
-
-  'error_pass_error' => '사용자 이름 또는 암호 오류',
-
-  'error_username_no_empty' => '사용자 이름 은 빈 틈 으로 할 수 없다',
-
-  'error_pass_no_empty' => '비밀번호를 비어서는 안 된다.',
-
-  'error_user_cunzai' => '사용자가 이미 존재합니다.',
-
-  'error_user_nocunzai' => '사용자가 존재하지 않습니다.',
-
-  'error_email' => '메일박스 형식이 정확하지 않습니다.',
-
-  'error_pass2' => '2 차 암호 입력 불일치',
-
-  'error_select_sex' => '성별을 선택하세요.',
-
-  'error_conpass_no_empty' => '암호가 비어 있을 수 없음을 확인합니다.',
-
-  'friend name no empty' => '친구 이름을 입력하십시오.',
+    'friend name no empty' => '친구 이름을 입력하십시오.',
 
 );

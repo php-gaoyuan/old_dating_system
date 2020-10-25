@@ -21,7 +21,7 @@
 </header>
 <{/if}>
 <div class="mui-content">
-    <form action="<{:url('recharge/create_pay')}>" method="post" onsubmit="checkForm();">
+    <form action="<{:url('recharge/create_pay')}>" method="post">
         <div class="mui-card">
             <div class="mui-card-header"><{:lang('recharge_way')}></div>
             <div class="mui-card-content">
@@ -75,14 +75,16 @@
             <div class="mui-card-content">
                 <div class="mui-row" id="pay_list">
                     <div class="mui-col-sm-6 mui-col-xs-6">
-                        <img src="<{:config('skin_path')}>/images/papy.jpg" alt="paypal" class="pay_type active" id="pay_paypal">
+                        <img src="<{:config('skin_path')}>/images/vml.png" alt="lianyin" class="pay_type active">
+                    </div>
+                    <div class="mui-col-sm-6 mui-col-xs-6">
+                        <img src="<{:config('skin_path')}>/images/fuHui.png" alt="yingfu" class="pay_type">
                     </div>
                 </div>
             </div>
         </div>
         <input type="hidden" name="select_money" value="200">
-        <!--<input type="hidden"name="pay_way"value="cropay">-->
-        <input type="hidden" name="pay_way" value="paypal">
+        <input type="hidden" name="pay_way" value="lianyin">
         <button type="submit" class="mui-btn mui-btn-blue mui-btn-block" style="width:90%;margin:0 auto;" id="sub">
             <{:lang('submit')}>
         </button>
@@ -91,60 +93,15 @@
 </div>
 <script type="text/javascript" src="<{:config('skin_path')}>/js/jquery.min.js"></script>
 <script type="text/javascript" src="<{:config('skin_path')}>/js/public.js"></script>
-<script type="text/javascript">$(function () {
-    $(".pay_type").click(function () {
-        $(".pay_type").removeClass("active");
-        $(this).addClass("active");
-        var pay_name = $(this).attr("alt");
-        $("input[name='pay_way']").val(pay_name);
-        if (pay_name == "cropay") {
-            $("#fht_cont").show()
-        } else {
-            $("#fht_cont").hide()
-        }
+<script type="text/javascript">
+    $(function () {
+        $(".pay_type").click(function () {
+            $(".pay_type").removeClass("active");
+            $(this).addClass("active");
+            var pay_name = $(this).attr("alt");
+            $("input[name='pay_way']").val(pay_name);
+        });
     });
-    var date = new Date();
-    var year = date.getFullYear();
-    var month = date.getMonth() + 1;
-    for (var i = year; i <= year + 10; i++) {
-        if (year == i) {
-            $("<option value='" + i + "' selected>" + i + "</option>").appendTo($("#exp_year"))
-        } else {
-            $("<option value='" + i + "'>" + i + "</option>").appendTo($("#exp_year"))
-        }
-    }
-    for (var x = 1; x <= 12; x++) {
-        var month_tmp = 1;
-        if (x <= 9) {
-            month_tmp = "0" + x
-        } else {
-            month_tmp = x
-        }
-        if (month == month_tmp) {
-            $("<option value='" + month_tmp + "' selected>" + month_tmp + "</option>").appendTo($("#exp_month"))
-        } else {
-            $("<option value='" + month_tmp + "'>" + month_tmp + "</option>").appendTo($("#exp_month"))
-        }
-    }
-    $("#card_number").keyup(function a(e) {
-        var obj = e;
-        if (obj.keyCode != 8) {
-            var b = $("#card_number").val();
-            var maxValue = 16;
-            b = b.replace(/[^\d\s]/g, "");
-            if (b.length > maxValue) return false;
-            $("#card_number").val(b);
-            for (n = 1; n <= 4; n++) {
-                if (b.length <= 5 * n - 2 || b.length > 5 * n - 1) {
-                    b = b
-                } else {
-                    b = b + " ";
-                    $("#card_number").val(b)
-                }
-            }
-        }
-    })
-});
 $(function () {
     $(".money").click(function () {
         $(".money").removeClass("active");
@@ -180,7 +137,6 @@ $(function () {
         return true
     })
 });
-var checkForm = function () {}
 </script>
 </body>
 </html>

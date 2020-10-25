@@ -3,14 +3,17 @@ header("content-type:text/html;charset=utf-8");
 require("../../foundation/asession.php");
 require("../../configuration.php");
 require("../../includes.php");
+require("../../{$langPackageBasePath}/paymentlp.php");
+$paymentlp = new paymentlp();
 
 //读写分离定义函数
 $dbo = new dbex;
 dbtarget('w', $dbServs);
 $order_no = $_GET["oid"];
+$pt = $_GET["pt"];
 $user_id = get_sess_userid();
 
-$sql = "select * from wy_balance where uid={$user_id} and ordernumber = '{$order_no}'";
+$sql = "select * from wy_balance where uid={$user_id} and ordernumber='{$order_no}' and type='{$pt}'";
 $order = $dbo->getRow($sql,"arr");
 if(empty($order)){
     header("location:/");exit;
@@ -20,14 +23,14 @@ if(empty($order)){
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Payment</title>
+    <title><?php echo $paymentlp->title;?></title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-light">
 <div class="container">
     <div class="py-2 text-center">
-        <h2>Credit card payment</h2>
+        <h2><?php echo $paymentlp->title;?></h2>
     </div>
     <hr class="mb-4">
     <div class="row">
@@ -38,10 +41,11 @@ if(empty($order)){
                         <div class="col-md-6 mb-3 offset-md-3">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">OrderNo</span>
+                                    <span class="input-group-text"><?php echo $paymentlp->order_no;?></span>
                                 </div>
                                 <input type="text" class="form-control" name="product" id="product" value="<?php echo $_REQUEST['oid'];?>" required readonly>
                                 <input type="hidden" name="oid" value="<?php echo $_REQUEST['oid'];?>">
+                                <input type="hidden" name="pt" value="<?php echo $_REQUEST['pt'];?>">
                             </div>
                         </div>
                     </div>
@@ -49,7 +53,7 @@ if(empty($order)){
                         <div class="col-md-6 mb-3 offset-md-3">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">Amount</span>
+                                    <span class="input-group-text"><?php echo $paymentlp->amount;?></span>
                                 </div>
                                 <input type="text" class="form-control" name="amount" id="amount" value="<?php echo $_REQUEST['am'];?>USD"  required readonly>
                                 <input type="hidden" name="currency" value="USD">
@@ -58,13 +62,13 @@ if(empty($order)){
                     </div>
 
                     <div class="col-md-12 mb-3 text-center">
-                        <h4>Billing information</h4>
+                        <h4><?php echo $paymentlp->bill_info;?></h4>
                     </div>
                     <div class="row">
                         <div class="col-md-3 mb-3 offset-md-3">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">First name</span>
+                                    <span class="input-group-text"><?php echo $paymentlp->ming;?></span>
                                 </div>
                                 <input type="text" class="form-control" id="firstname" name="billing_first_name" required>
                             </div>
@@ -72,7 +76,7 @@ if(empty($order)){
                         <div class="col-md-3 mb-3">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">Last name</span>
+                                    <span class="input-group-text"><?php echo $paymentlp->xing;?></span>
                                 </div>
                                 <input type="text" class="form-control" id="lastname" name="billing_last_name" required>
                             </div>
@@ -83,7 +87,7 @@ if(empty($order)){
                         <div class="col-md-6 mb-3 offset-md-3">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">Email</span>
+                                    <span class="input-group-text"><?php echo $paymentlp->email;?></span>
                                 </div>
                                 <input type="text" class="form-control" name="billing_email" id="email" required>
                             </div>
@@ -270,7 +274,7 @@ if(empty($order)){
                         <div class="col-md-3 mb-3">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">State</span>
+                                    <span class="input-group-text"><?php echo $paymentlp->province;?></span>
                                 </div>
                                 <input type="text" class="form-control" name="billing_state" id="state" required>
                             </div>
@@ -280,7 +284,7 @@ if(empty($order)){
                         <div class="col-md-3 mb-3 offset-md-3">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">City</span>
+                                    <span class="input-group-text"><?php echo $paymentlp->city;?></span>
                                 </div>
                                 <input type="text" class="form-control" name="billing_city" id="city" required>
                             </div>
@@ -288,7 +292,7 @@ if(empty($order)){
                         <div class="col-md-3 mb-3">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">Postcode</span>
+                                    <span class="input-group-text"><?php echo $paymentlp->zipcode;?></span>
                                 </div>
                                 <input type="text" class="form-control" name="billing_postal_code" id="postcode" required>
                             </div>
@@ -298,7 +302,7 @@ if(empty($order)){
                         <div class="col-md-6 mb-3 offset-md-3">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">Address</span>
+                                    <span class="input-group-text"><?php echo $paymentlp->address;?></span>
                                 </div>
                                 <input type="text" class="form-control" name="billing_address" id="address" required>
                             </div>
@@ -308,7 +312,7 @@ if(empty($order)){
                         <div class="col-md-6 mb-3 offset-md-3">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">Phone</span>
+                                    <span class="input-group-text"><?php echo $paymentlp->phone;?></span>
                                 </div>
                                 <input type="text" class="form-control" name="billing_phone" id="phone" required>
                             </div>
@@ -319,18 +323,18 @@ if(empty($order)){
                         <div class="custom-control custom-radio">
                             <input id="pro" name="shipping" value="pro"
                                    type="radio" class="custom-control-input">
-                            <label class="custom-control-label" for="pro">Ship to a different address?</label>
+                            <label class="custom-control-label" for="pro"><?php echo $paymentlp->ship_address;?>?</label>
                         </div>
                     </div>
                     <div class="shippinginfo" style="display: none;">
                         <div class="col-md-12 mb-3 text-center">
-                            <h4>Shipping information</h4>
+                            <h4><?php echo $paymentlp->ship_info;?></h4>
                         </div>
                         <div class="row">
                             <div class="col-md-3 mb-3 offset-md-3">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text">First name</span>
+                                        <span class="input-group-text"><?php echo $paymentlp->ming;?></span>
                                     </div>
                                     <input type="text" class="form-control shipping" id="shippingFirstname" name="shipping_first_name">
                                 </div>
@@ -338,7 +342,7 @@ if(empty($order)){
                             <div class="col-md-3 mb-3">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text">Last name</span>
+                                        <span class="input-group-text"><?php echo $paymentlp->xing;?></span>
                                     </div>
                                     <input type="text" class="form-control shipping" id="shippingLastname" name="shipping_last_name">
                                 </div>
@@ -349,7 +353,7 @@ if(empty($order)){
                             <div class="col-md-6 mb-3 offset-md-3">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text">Email</span>
+                                        <span class="input-group-text"><?php echo $paymentlp->email;?></span>
                                     </div>
                                     <input type="text" class="form-control shipping" name="shippingEmail" id="shipping_email">
                                 </div>
@@ -536,7 +540,7 @@ if(empty($order)){
                             <div class="col-md-3 mb-3">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text">State</span>
+                                        <span class="input-group-text"><?php echo $paymentlp->province;?></span>
                                     </div>
                                     <input type="text" class="form-control shipping" name="shipping_state" id="shippingState">
                                 </div>
@@ -546,7 +550,7 @@ if(empty($order)){
                             <div class="col-md-3 mb-3 offset-md-3">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text">City</span>
+                                        <span class="input-group-text"><?php echo $paymentlp->city;?></span>
                                     </div>
                                     <input type="text" class="form-control shipping" name="shipping_city" id="shippingCity">
                                 </div>
@@ -554,7 +558,7 @@ if(empty($order)){
                             <div class="col-md-3 mb-3">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text">Postcode</span>
+                                        <span class="input-group-text"><?php echo $paymentlp->zipcode;?></span>
                                     </div>
                                     <input type="text" class="form-control shipping" name="shippingPostcode" id="shippingPostcode">
                                 </div>
@@ -564,7 +568,7 @@ if(empty($order)){
                             <div class="col-md-6 mb-3 offset-md-3">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text">Address</span>
+                                        <span class="input-group-text"><?php echo $paymentlp->address;?></span>
                                     </div>
                                     <input type="text" class="form-control shipping" name="shipping_address" id="shippingAddress">
                                 </div>
@@ -574,7 +578,7 @@ if(empty($order)){
                             <div class="col-md-6 mb-3 offset-md-3">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text">Phone</span>
+                                        <span class="input-group-text"><?php echo $paymentlp->phone;?></span>
                                     </div>
                                     <input type="text" class="form-control shipping" name="shipping_phone" id="shippingPhone">
                                 </div>
@@ -591,7 +595,7 @@ if(empty($order)){
                                 <div id="pay-invoice" class="card">
                                     <div class="card-body">
                                         <div class="card-title">
-                                            <h3 class="text-center">Credit card payment</h3>
+                                            <h3 class="text-center"><?php echo $paymentlp->card_info;?></h3>
                                         </div>
                                         <hr>
                                         <div class="form-group text-center">
@@ -604,7 +608,7 @@ if(empty($order)){
                                             </ul>
                                         </div>
                                         <div class="form-group">
-                                            <label for="cc-number" class="control-label mb-1">Card number</label>
+                                            <label for="cc-number" class="control-label mb-1"><?php echo $paymentlp->card_number;?></label>
                                             <input id="cc-number" name="cardNum" type="tel" class="form-control cc-number identified visa" required="" onblur="validateCreditCard()" pattern="[0-9]{16}">
                                             <span class="invalid-feedback">Enter a valid 16 digit card number</span>
                                             <span class="invalid-feedback cardnumerror" style="display:none;">Please enter a valid card number</span>
@@ -612,7 +616,7 @@ if(empty($order)){
                                         <div class="row">
                                             <div class="col-6">
                                                 <div class="form-group">
-                                                    <label for="cc-exp" class="control-label mb-1">Year</label>
+                                                    <label for="cc-exp" class="control-label mb-1"><?php echo $paymentlp->year;?></label>
                                                     <select class="custom-select d-block w-100" name="year" id="year" required>
                                                         <?php
                                                         for($i = 0;$i<10;$i++){
@@ -624,7 +628,7 @@ if(empty($order)){
                                                 </div>
                                             </div>
                                             <div class="col-6">
-                                                <label for="cc-exp" class="control-label mb-1">Month</label>
+                                                <label for="cc-exp" class="control-label mb-1"><?php echo $paymentlp->month;?></label>
                                                 <select class="custom-select d-block w-100" name="month" id="month" required>
                                                     <option value="01">1</option>
                                                     <option value="02">2</option>
@@ -648,7 +652,7 @@ if(empty($order)){
                                         <div>
                                             <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
                                                 <i class="fa fa-lock fa-lg"></i>&nbsp;
-                                                <span id="payment-button-amount">Pay</span>
+                                                <span id="payment-button-amount"><?php echo $paymentlp->btn_pay;?></span>
                                                 <span id="payment-button-sending" style="display:none;">Sending…</span>
                                             </button>
                                         </div>

@@ -241,30 +241,32 @@
 
 
 
-  //fht
-
-  "fht_card"=>"カード番号",
-
-  "fht_card_desc"=>"カードを入力してください",
-
-  "fht_yxq"=>"有効期限",
-
-  "fht_cvv"=>"CVV",
-
-  "fht_cvv_desc"=>"クレジットカードの裏の3つの数字の検証コード",
-
-  "email"=>"電子メール",
-
-  "fht_email_desc"=>"請求書の受信に使う",
-
-  "fht_name"=>'名前',
-  "fht_country"=>'国',
-  "fht_province"=>'州/省',
-  "fht_city"=>'都市',
-  "fht_address"=>'アドレス',
-  "fht_email"=>'郵便ポスト',
-  "fht_telephone"=>'電話',
-  "fht_post"=>'郵便番号',
+    //pay
+    "pay_title" => "订单支付",
+    "pay_order_no" => "订单号",
+    "pay_amount" => "金额",
+    "pay_bill_info" => "账单信息",
+    "pay_xing" => "姓",
+    "pay_ming" => "名",
+    "pay_name" => "姓名",
+    "pay_email" => "邮箱",
+    "pay_country" => "国家",
+    "pay_province" => "州",
+    "pay_city" => "城市",
+    "pay_address" => "地址",
+    "pay_ship_address" => "其他收货地址",
+    "pay_ship_info" => "收货信息",
+    "pay_phone" => "电话",
+    "pay_zipcode" => "邮编",
+    "pay_card_info" => "信用卡信息",
+    "pay_btn_pay" => "支付",
+    "pay_card_number" => "卡号",
+    "pay_year" => "年",
+    "pay_month" => "月",
+    "pay_msg_paied" => '订单已经支付',
+    "pay_msg_noorder" => '订单不存在',
+    "pay_msg_fail" => "支付失败",
+    "pay_msg_success" => "支付成功",
 
 
 

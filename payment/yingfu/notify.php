@@ -5,6 +5,10 @@
 header("content-type:text/html;charset=utf-8");
 require("../../configuration.php");
 require("../../includes.php");
+require("../common.php");
+
+require("../../{$langPackageBasePath}/paymentlp.php");
+$paymentlp = new paymentlp();
 
 //读写分离定义函数
 $dbo = new dbex;
@@ -30,6 +34,12 @@ $fail_message= $data['fail_message'];
 $request_id = $data['request_id'];
 $sign_verify= $data['sign_verify']; //加密
 
+$metadata = json_decode($data["metadata"],true);
+$ordernumber = $metadata["ordernumber"];
+//先记录返回的错误信息
+$sql = "UPDATE wy_balance SET `pay_msg`='{$result['message']}' WHERE ordernumber='{$ordernumber}'";
+$dbo->exeUpdate($sql);
+
 $str = $id.$status.$amount_value.$md5key.$merchant_id.$request_id;
 if(sha256Encrypt($str) != $sign_verify){
     returnJs("sign error!");
@@ -38,31 +48,23 @@ if(sha256Encrypt($str) != $sign_verify){
 //https://partyings.com/payment/yingfu/notify.php
 if($status == 'paid'){
     //更新订单状态
-    $metadata = json_decode($data["metadata"],true);
-    $ordernumber = $metadata["ordernumber"];
-    $sql = "SELECT * FROM wy_balance WHERE ordernumber = '{$ordernumber}'";
-    $row = $dbo->getRow($sql,"arr");
-    if(empty($row)){
-        returnJs("订单不存在!");
+    $result = array(
+        'status' => 'success',
+        'ordernumber' => $merch_order_ori_id,
+        'amount' => $price_amount,
+        'out_trade_no' => $order_id,
+        'err_msg' => $message
+    );
+    $sql="SELECT * FROM wy_balance WHERE ordernumber = '{$ordernumber}'";
+    $order=$dbo->getRow($sql,"arr");
+    if($order['type'] == 1){
+        $payRes = payRecharge($result,$dbo,$paymentlp);
+    }elseif($order['type'] == 2){
+        $payRes = payUpgrade($result,$dbo,$paymentlp);
     }
-    if ($row['state'] == 2) {
-        returnJs("该订单已经支付过了!");
-    }else {
-        $sql = "UPDATE wy_balance SET `state`='2',`out_trade_no`='{$data['order_id']}' WHERE ordernumber = '{$ordernumber}'";
-        if ($dbo->exeUpdate($sql)) {
-            $touid = $row['touid'];
-            $sql = "UPDATE wy_users SET golds=golds+{$row['money']} WHERE user_id='$touid'";
-            if (!$dbo->exeUpdate($sql)) {
-                returnJs("支付成功，添加金币失败!请联系工作人员!");
-            } else {
-                returnJs("支付成功，金币已经到账!");
-            }
-        }else{
-            returnJs('[fail]');//支付失败
-        }
-    }
+    exit('[success]');//支付失败
 }else{
-    returnJs($data['message']);//支付失败
+    exit('[fail]');//支付失败
 }
 /**
  * HASH加密
@@ -71,11 +73,4 @@ if($status == 'paid'){
 function sha256Encrypt($str)
 {
     return hash('sha256',$str);
-}
-
-
-function returnJs($msg,$url=""){
-    $url = !empty($url)?$url:'/main.php';
-    echo "<script>alert('Payment Result:{$msg}');window.location.href='{$url}'</script>";
-    exit();
 }

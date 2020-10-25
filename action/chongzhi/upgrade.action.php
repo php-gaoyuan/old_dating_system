@@ -5,6 +5,9 @@ $er_langpackage = new rechargelp;
 $user_group = get_argp("user_group");
 $touser = get_argp("touser");
 $friend_username = get_argp("friend_username");
+$PaymentMethod = $_POST["PaymentMethod"];
+
+
 $money = 0;
 $day = 0;
 $groups = 1;
@@ -50,57 +53,74 @@ switch ($user_group) {
         $groups = '3';
         break;
 }
-//echo "<pre>";print_r($_POST);exit;
+//echo "<pre>";print_r($PaymentMethod);exit;
 $dbo = new dbex;
 dbtarget('w', $dbServs);
 
 $user_id = get_sess_userid();
 $user_name = get_sess_username();
-$sql = "select * from wy_users where user_id={$user_id}";
-$golds = $dbo->getRow($sql);
 
-if ($golds['golds'] - $money < 0) {
-    exit("<script>alert('" . $er_langpackage->er_mess2 . "');location.href='/modules2.0.php?app=user_pay';</script>");
-}
-//扣除金币
-$sql = "UPDATE wy_users SET golds=golds-{$money} WHERE user_id={$user_id}";
-if (!$dbo->exeUpdate($sql)) {
-    exit("<script>alert('" . $er_langpackage->er_rechargewill . "');location.href='/modules2.0.php?app=user_pay';</script>");
-}
-$mid = "";
+
+$touid = 0;
 $ordernumber = 'U' . time() . mt_rand(100, 999);
 if ($touser == 'self') {
-    $mid = $user_id;
-    $sql = "insert into wy_balance set type='2',uid='$user_id',uname='$user_name',touid='$user_id',touname='$user_name',message='会员自己升级消费" . $money . "',state='2',addtime='" . date('Y-m-d H:i:s') . "',funds='$money',ordernumber='$ordernumber'";
+    $touid = $user_id;
+    $sql = "insert into wy_balance set touid='{$user_id}',touname='{$user_name}',message='会员自己升级消费{$money}'";
 } else if ($touser == 'friend') {
     if ($friend_username) {
         $sql = "select * from wy_users where user_name = '{$friend_username}'";
         $touser = $dbo->getRow($sql);
-        $mid = $touser['user_id'];
-        $sql = "insert into wy_balance set type='2',uid='$user_id',uname='$user_name',touid='" . $touser['user_id'] . "',touname='" . $touser['user_name'] . "',message='{$user_name}给{$touser['user_name']}升级，消费" . $money . "',state='2',addtime='" . date('Y-m-d H:i:s') . "',funds='$money',ordernumber='$ordernumber'";
+        $touid = $touser['user_id'];
+        $sql = "insert into wy_balance set touid='{$touser['user_id']}',touname='{$touser['user_name']}',message='{$user_name}给{$touser['user_name']}升级，消费{$money}'";
     } else {
         echo "<script>alert('" . $er_langpackage->er_userrecharge . "');location.href='/modules2.0.php?app=user_pay';</script>";
         exit();
     }
 }
+$sql .= ",day='{$day}',user_group={$groups},type='2',uid={$user_id},uname='{$user_name}',addtime='" . date('Y-m-d H:i:s') . "',funds='{$money}',ordernumber='{$ordernumber}',money='{$money}',pay_method='{$PaymentMethod}',pay_from='PC'";
+//echo "<pre>";print_r($sql);exit;
 $dbo->exeUpdate($sql);
-//echo "<pre>";print_r($touser);exit;
-$upgrade = $dbo->getRow("select * from wy_upgrade_log where mid='$mid' and state='0' order by id desc limit 1");
-if ($upgrade) {
-    if ($groups == $upgrade['groups']) {
-        $nowtime = $upgrade['endtime'];
+
+if ($PaymentMethod == "gold") {
+    $sql = "select * from wy_users where user_id={$user_id}";
+    $userinfo = $dbo->getRow($sql);
+    if ($userinfo['golds'] <$money) {
+        exit("<script>alert('" . $er_langpackage->er_mess2 . "');location.href='/modules2.0.php?app=user_pay';</script>");
+    }
+//扣除金币
+    $sql = "UPDATE wy_users SET golds=golds-{$money} WHERE user_id={$user_id}";
+    if (!$dbo->exeUpdate($sql)) {
+        exit("<script>alert('" . $er_langpackage->er_rechargewill . "');location.href='/modules2.0.php?app=user_pay';</script>");
+    }
+    $dbo->exeUpdate("update wy_balance set state=2 where ordernumber='{$ordernumber}'");
+
+
+//处理升级逻辑
+    $upgrade = $dbo->getRow("select * from wy_upgrade_log where mid='$touid' and state='0' order by id desc limit 1");
+    if ($upgrade) {
+        if ($groups == $upgrade['groups']) {
+            $nowtime = $upgrade['endtime'];
+        } else {
+            $nowtime = date("Y-m-d");
+        }
     } else {
         $nowtime = date("Y-m-d");
     }
-} else {
-    $nowtime = date("Y-m-d");
-}
-$sql = "update wy_upgrade_log set state='1' where mid='$mid'";
-$dbo->exeUpdate($sql);
+    $sql = "update wy_upgrade_log set state='1' where mid='$touid'";
+    $dbo->exeUpdate($sql);
 //$nowtime=date("Y-m-d");
-$end = date("Y-m-d", strtotime($nowtime) + $day * 24 * 3600);
-$sql = "insert into wy_upgrade_log set mid='$mid',groups='$groups',howtime='$day',state='0',addtime='" . date('Y-m-d H:i:s') . "',endtime='$end'";
-$dbo->exeUpdate($sql);
+    $end = date("Y-m-d", strtotime($nowtime) + $day * 24 * 3600);
+    $sql = "insert into wy_upgrade_log set mid='$touid',groups='$groups',howtime='$day',state='0',addtime='" . date('Y-m-d H:i:s') . "',endtime='$end'";
+    $dbo->exeUpdate($sql);
 
-exit("<script>alert('" . $er_langpackage->er_good . "');top.location.href='/main.php';</script>");
+    exit("<script>alert('" . $er_langpackage->er_good . "');top.location.href='/main.php';</script>");
+}elseif ($PaymentMethod == "yingfu") {
+    $payUrl = "/payment/yingfu/index.php?oid={$ordernumber}&am={$money}&pt=2";
+    header("location:{$payUrl}");exit;
+}elseif ($PaymentMethod == "lianyin") {
+    $payUrl = "/payment/lianyin/index.php?oid={$ordernumber}&am={$money}&pt=2";
+    header("location:{$payUrl}");exit;
+}
+
+
 ?>

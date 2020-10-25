@@ -34,7 +34,7 @@ $group_name=$dbo->getRow($sql);
                     <li class="active"><a href="left.php?part_id=default" target="BoardTitle" hidefocus="true"><?php echo $l_langpackage->l_Management_home;?></a></li>
 <!--                    <li><a href="left.php?part_id=base" target="BoardTitle" hidefocus="true">--><?php //echo $l_langpackage->l_global_set;?><!--</a></li>-->
                     <li><a href="left.php?part_id=user" target="BoardTitle" hidefocus="true"><?php echo $l_langpackage->l_user_management;?></a></li>
-                    <li><a href="left.php?part_id=gift" target="BoardTitle" hidefocus="true">卡片礼物</a></li>
+<!--                    <li><a href="left.php?part_id=gift" target="BoardTitle" hidefocus="true">卡片礼物</a></li>-->
                     <li><a href="left.php?part_id=gift_shop" target="BoardTitle" hidefocus="true">礼物商店</a></li>
 					<li><a href="left.php?part_id=employees" target="BoardTitle" hidefocus="true">员工管理</a></li>
                    <!-- <li><a href="left.php?part_id=ui" target="BoardTitle" hidefocus="true">UI<?php echo $l_langpackage->l_administration;?></a></li>

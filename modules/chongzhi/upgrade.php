@@ -100,7 +100,7 @@ if ($uid) {
             <div class="online-updater-main">
 
                 <div class="oum-body" id="js_app_cont">
-                    <form action="do.php?act=upgrade" method="post" >
+                    <form action="do.php?act=upgrade" method="post" target="_blank">
                         <!--升级会员页面优化start-->
                         <div class="upgrade">
                             <p class="ob-1-for-other"></p>
@@ -239,42 +239,41 @@ if ($uid) {
                         </div>
 
                         <!--支付方式-->
+                        <style>
+                            body .ob-0-selpay li{width:250px;}
+                        </style>
                         <div class="ob-0-selpay selpay" id="selplay">
                             <!--支付-->
-                            <!--<div>
+                            <div>
                               <p class="pay_title">选择支付方式</p>
                               <ul>
                                 <li>
                                   <label>
-                                    <input class="radio" name="PaymentMethod" onclick="DpclearHtml()" type="radio" value="PayPal">
-                                    <img src="./template/upgrade/paypal.png" alt="paypal充值"></label>
+                                    <input class="radio" name="PaymentMethod" type="radio" value="lianyin" checked>
+                                    <img src="/skin/<?php echo $skinUrl; ?>/images/vml.png" alt="lianyin"></label>
                                 </li>
                                 <li>
                                   <label>
-                                    <input class="radio" name="PaymentMethod" type="radio" value="Master" onclick="DpclearHtml()">
-                                    <img src="./template/upgrade/mastcar.png" alt="Master"></label>
+                                    <input class="radio" name="PaymentMethod" type="radio" value="yingfu" >
+                                    <img src="/skin/<?php echo $skinUrl; ?>/images/fuHui.png" alt="yingfu"></label>
                                 </li>
-                                <li>
-                                  <label>
-                                    <input class="radio" name="PaymentMethod" type="radio" value="Visa" onclick="DpclearHtml()">
-                                    <img src="./template/upgrade/visa.png" alt="Visa"></label>
-                                </li>
-                                <li>
-                                  <label>
-                                    <input class="radio" name="PaymentMethod" onclick="dpfunction()" type="radio" id="zibiPay" value="zibi">
-                                    <img src="./template/upgrade/dollar-logo.png"></label>
-                                </li>
+                                  <li>
+                                      <label>
+                                          <input class="radio" name="PaymentMethod" type="radio" value="gold" >
+                                          <img src="/template/main/ico/gold-icon.png" alt="gold" style="margin-top:-5px;"></label>
+                                  </li>
+
                               </ul>
-                              <div class="renewArgement" style="display: none;">
-                                  <input type="checkbox" name="Recurring" value="PayPalRecurring">
-                                  <span>
-                                      开通自动循环支付服务，将会在会员到期前一天，自动扣款续费
-                                      <a href="javascript:;" class="protocol" onclick="showRenewArgement();">
-                                          《自动续费服务协议》
-                                      </a>
-                                  </span>
-                              </div>
-                            </div>-->
+<!--                              <div class="renewArgement" style="display: none;">-->
+<!--                                  <input type="checkbox" name="Recurring" value="PayPalRecurring">-->
+<!--                                  <span>-->
+<!--                                      开通自动循环支付服务，将会在会员到期前一天，自动扣款续费-->
+<!--                                      <a href="javascript:;" class="protocol" onclick="showRenewArgement();">-->
+<!--                                          《自动续费服务协议》-->
+<!--                                      </a>-->
+<!--                                  </span>-->
+<!--                              </div>-->
+                            </div>
                             <!--支付 -->
                             <div class="ob-1-upnow">
                                 <p style="position: absolute; top: 12px; left: 18px;">

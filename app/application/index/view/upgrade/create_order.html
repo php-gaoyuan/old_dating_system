@@ -80,8 +80,16 @@
 				</div>
 				<div class="mui-card-content">
 					<div class="mui-input-row mui-radio mui-left" style="margin:10px 0;">
-					    <label><{:lang('golds')}>($<{$balance}>)</label>
-					    <input name="pay_type" type="radio" value="1" checked>
+					    <label for="lianyin">Visa/Localpay</label>
+					    <input name="pay_type" type="radio" value="lianyin" id="lianyin" checked>
+					</div>
+					<div class="mui-input-row mui-radio mui-left" style="margin:10px 0;">
+						<label for="yingfu">Visa/Mastercard/Localpay</label>
+						<input name="pay_type" type="radio" value="yingfu" id="yingfu">
+					</div>
+					<div class="mui-input-row mui-radio mui-left" style="margin:10px 0;">
+						<label for="gold"><{:lang('golds')}>($<{$balance}>)</label>
+						<input name="pay_type" type="radio" value="gold" id="gold">
 					</div>
 				</div>
 			</div>

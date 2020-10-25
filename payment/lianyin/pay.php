@@ -1,55 +1,43 @@
 <?php
 header("content-type:text/html;charset=utf-8");
+error_reporting(E_ALL);
 require("../../foundation/asession.php");
 require("../../configuration.php");
 require("../../includes.php");
+require("../common.php");
+
+require("../../{$langPackageBasePath}/paymentlp.php");
+$paymentlp = new paymentlp();
 
 //读写分离定义函数
 $dbo = new dbex;
 dbtarget('w', $dbServs);
 $order_no = $_POST["oid"];
+
 $user_id = get_sess_userid();
-$sql = "select * from wy_balance where uid={$user_id} and ordernumber = '{$order_no}'";
+$sql = "select * from wy_balance where uid={$user_id} and ordernumber='{$order_no}'";
 $order = $dbo->getRow($sql,"arr");
 if(empty($order)){
     header("location:/");exit;
 }
 $lianyinPay = new Lianyin();
-$result = $lianyinPay->pay($dbo);
+$result = $lianyinPay->pay($order);
+//echo "<pre>";print_r($result);exit;
 if($result['status'] == 'success'){
-    $sql = "SELECT * FROM wy_balance WHERE ordernumber = '{$order_no}'";
-    $row = $dbo->getRow($sql,"arr");
-    if(empty($row)){
-        returnJs("订单不存在!");
-    }
-    if ($row['state'] == 2) {
-        returnJs("该订单已经支付过了!");
-    }
-    // if ($result['amount'] != $row['money']) {
-    //     returnJs("支付金额出错!");
-    // }
-
-    if ($row['state'] != '2') {
-        $sql = "UPDATE wy_balance SET `state`='2',`out_trade_no`='{$result['payer_id']}' WHERE ordernumber = '{$order_no}'";
-        if ($dbo->exeUpdate($sql)) {
-            $touid = $row['touid'];
-            $sql = "UPDATE wy_users SET golds=golds+{$row['money']} WHERE user_id='$touid'";
-            if (!$dbo->exeUpdate($sql)) {
-                returnJs("支付成功，添加金币失败!请联系工作人员!");
-            } else {
-                returnJs("支付成功，金币已经到账!");
-            }
-        }
+    if($order['type'] == 1){
+        $payRes = payRecharge($result,$dbo,$paymentlp);
+    }elseif($order['type'] == 2){
+        $payRes = payUpgrade($result,$dbo,$paymentlp);
     }
 }else{
-    returnJs("支付失败:{$result['err_msg']}");
+    $sql = "UPDATE wy_balance SET `pay_msg`='{$result['err_msg']}' WHERE ordernumber='{$order['ordernumber']}'";
+    $dbo->exeUpdate($sql);
+    $payRes=$result['err_msg'];
 }
+//echo "<pre>";print_r($payRes);exit;
+returnJs("{$payRes}");
 
-function returnJs($msg,$url=""){
-    $url = !empty($url)?$url:'/main.php';
-    echo "<script>alert('Payment Result:{$msg}');window.location.href='{$url}'</script>";
-    exit();
-}
+
 
 class Lianyin{
     protected $server_url = "https://gateway.sslonlinepay.com/Payment/payConsole.aspx";
@@ -103,9 +91,9 @@ class Lianyin{
 
 
         $protocol =((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
-        $url_sync = $protocol."/payment/lianyin/notify.php";
-        $url_succ_back = $protocol."/payment/lianyin/return.php";
-        $url_fail_back = $protocol."/payment/lianyin/return.php";
+        $url_sync = $protocol."partyings.com/payment/lianyin/notify.php";
+        $url_succ_back = $protocol."partyings.com/payment/lianyin/return.php";
+        $url_fail_back = $protocol."partyings.com/payment/lianyin/return.php";
         $data = array(
             //基本信息
             'merchant_id' => urlencode($merchant_id), // 商户号
@@ -147,7 +135,7 @@ class Lianyin{
 
 
             //购物信息
-            'product_name' => $order['goods_type'],
+            'product_name' => $order['type']==1?'Recharge':'Upgrade',
             'product_sn' => 'UOR-' . rand(100,999),
             'quantity' => '1',
             'unit' => $price_amount,
@@ -165,7 +153,7 @@ class Lianyin{
             'hash_sign' => urlencode(trim($cvv)), // CVV
         );
 
-
+        //echo "<pre>";print_r($data);exit;
         return $this->getPayRes($data);
     }
 
@@ -202,18 +190,18 @@ class Lianyin{
             } else if ($status == 'Y') {
                 $data = array(
                     'status' => 'success',
-                    'order_sn' => $merch_order_ori_id,
+                    'ordernumber' => $merch_order_ori_id,
                     'amount' => $price_amount,
-                    'payer_id' => $order_id,
+                    'out_trade_no' => $order_id,
                     'err_msg' => $message
                 );
                 return $data;
             } else {
                 $data = array(
                     'status'=>'fail',
-                    'order_sn'=>$merch_order_ori_id,
+                    'ordernumber'=>$merch_order_ori_id,
                     'amount'=>$price_amount,
-                    'payer_id'=>$order_id,
+                    'out_trade_no'=>$order_id,
                     'err_msg'=>$message
                 );
                 return $data;

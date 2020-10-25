@@ -41,7 +41,7 @@
 		            			<{/if}>
 		            			<{$userinfo.user_name}>
 		            		</span><br>
-		            		<span style="display: inline-block;">$<{:number_format($userinfo.golds,2)}></span>
+		            		<span style="display: inline-block;">(USD)<{:number_format($userinfo.golds,2)}></span>
 		            	</div>
 		            	<div class="clear"></div>
 		            </a>
@@ -54,7 +54,7 @@
 		            <a class="mui-navigate-right" href="<{:url('upgrade/index')}>">
 		                <span class="mui-icon iconfont icon-crown" style="background:#f69b0b"></span>
 		                <{:lang("vip")}>
-		                <span class="cell_desc"><{if $userinfo.user_group == '3'}><{:lang('vip_member')}><{elseif $userinfo.user_group eq '4'/}><{:lang('vip_yj_member')}><{else/}><{:lang('upgrade_sub_btn')}><{/if}></span>
+		                <span class="cell_desc"><{if $userinfo.user_group == '2'}><{:lang('vip_member')}><{elseif $userinfo.user_group eq '3'/}><{:lang('vip_yj_member')}><{else/}><{:lang('upgrade_sub_btn')}><{/if}></span>
 		            </a>
 		        </li>
 		        <li class="mui-table-view-cell">
@@ -69,24 +69,24 @@
 		            	<{:lang("wallet")}>
 		            </a>
 		        </li>
-		        <li class="mui-table-view-cell">
-		            <a class="mui-navigate-right" href="<{:url('Cash/index')}>">
-		            	<span class="mui-icon iconfont icon-tixian1" style="background:#f94d51;"></span>
-		            	<{:lang("user_cash")}>
-		            </a>
-		        </li>
+<!--		        <li class="mui-table-view-cell">-->
+<!--		            <a class="mui-navigate-right" href="<{:url('Cash/index')}>">-->
+<!--		            	<span class="mui-icon iconfont icon-tixian1" style="background:#f94d51;"></span>-->
+<!--		            	<{:lang("user_cash")}>-->
+<!--		            </a>-->
+<!--		        </li>-->
 		    </ul>
 		
 		<div class="line"></div>
 		
 		
 		<ul class="mui-table-view list">
-		        <li class="mui-table-view-cell">
-		            <a class="mui-navigate-right">
-		            	<span class="mui-icon mui-icon-compose" style="background:#3ab5fb;padding:6px;"></span>
-		            	 <{:lang("help")}>
-		            </a>
-		        </li>
+<!--		        <li class="mui-table-view-cell">-->
+<!--		            <a class="mui-navigate-right">-->
+<!--		            	<span class="mui-icon mui-icon-compose" style="background:#3ab5fb;padding:6px;"></span>-->
+<!--		            	 <{:lang("help")}>-->
+<!--		            </a>-->
+<!--		        </li>-->
 		        <li class="mui-table-view-cell">
 		            <a class="mui-navigate-right" href="<{:url('set/index')}>">
 		            	<span class="mui-icon mui-icon-gear" style="background:#3ab5fb;padding:6px;"></span>

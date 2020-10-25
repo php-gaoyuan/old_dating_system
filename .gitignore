@@ -3,6 +3,7 @@
 **/nginx.htaccess
 **/Web.Config
 **/runtime
+**/*.pid
 .idea
 apk
 # Windows:

@@ -45,7 +45,7 @@ if ($userinfo['user_group'] > 1) {
         <li><a href="modules2.0.php?app=user_consumption"><?php echo $er_langpackage->er_consumption_log; ?></a></li>
         <!--        <li  class="active"><a href="modules2.0.php?app=user_introduce">-->
         <?php //echo $er_langpackage->er_introduce; ?><!--</a></li>-->
-        <li><a href="modules2.0.php?app=user_help"><?php echo $er_langpackage->er_help; ?></a></li>
+        <!--<li><a href="modules2.0.php?app=user_help"><?php echo $er_langpackage->er_help; ?></a></li>-->
     </ul>
 </div>
 <div class="tabs" style="border:1px solid #ce1221;text-align:left;background:#F5F5B9;padding-left:15px;">

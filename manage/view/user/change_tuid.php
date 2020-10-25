@@ -69,7 +69,7 @@ $staff_list = $dbo->getALL($sql,'arr');
 			//console.log(res);return;
 			$.post("/manage/controller/User.php?act=changeTuid",{user_id:user_id,tuid:res.field.tuid},function(res){
 				layer.alert(res.msg,function(){
-					top.layui.layer.closeAll();
+					parent.layui.layer.closeAll();
 				});
 			},"json")
 			return false;

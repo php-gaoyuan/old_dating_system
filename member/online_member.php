@@ -55,16 +55,18 @@ $page_total=$dbo->totalPage;//分页总数
   </tr>
   <tr class="t_Haader">
 	<td>会员ID</td>
+	<td>会员昵称</td>
     <td>会员帐号</td>
-    <td>会员昵称</td>
+    
     <td>会员类别</td>
     <td>最后登录时间</td>
   </tr>
   <?php foreach($mp_list_rs as $rs){?>
   <tr>
 	<td><?php echo $rs['user_id'];?></td>
+	<td><?php echo $rs['user_name'];?></td>
     <td><?php echo $rs['user_email'];?></td>
-    <td><?php echo $rs['user_name'];?></td>
+    
     <td><?php if($rs['user_group']=='base'){echo '普通会员';}else {echo $frontgroup[$rs['user_group']];}?></td>
     <td><?php echo $rs['lastlogin_datetime'];?></td>
   </tr>

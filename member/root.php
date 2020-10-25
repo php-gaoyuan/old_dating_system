@@ -87,20 +87,18 @@ if($_GET['y']){
 	
 	//$tiaojian = "and year(OrderDate)=2014 and month(OrderDate)=5";
 	if(empty($uids)){
-		// $sql="select * from wy_balance where funds !=0 and state='2' ".$tiaojian;
-		$sql="select * from wy_balance where touid in(1) and state='2' and funds !=0 ".$tiaojian." order by id desc";
+		$sql="select * from wy_balance where touid in(1)  and funds !=0 ".$tiaojian." order by id desc";
 	}else{
-		//$sql="select * from wy_balance where touid in($uids) and type!='1' and funds !=0 order by id desc";
-		$sql="select * from wy_balance where touid in($uids) and state='2' and funds !=0 ".$tiaojian." order by id desc";
+		$sql="select * from wy_balance where touid in($uids) and funds !=0 ".$tiaojian." order by id desc";
 	}
 }else{	
 	if(empty($uids)){		
 		// $sql="select * from wy_balance where funds !=0 and state='2'";
-		$sql="select * from wy_balance where touid in(1) and state='2' and funds !=0 ".$tiaojian." order by id desc";
+		$sql="select * from wy_balance where touid in(1) and funds !=0 ".$tiaojian." order by id desc";
 	}
 	else{
 		//$sql="select * from wy_balance where touid in($uids) and type!='1' and funds !=0 order by id desc";
-		$sql="select * from wy_balance where touid in($uids) and state='2' and funds !=0  order by id desc";
+		$sql="select * from wy_balance where touid in($uids)  and funds !=0  order by id desc";
 	}
 }
 
@@ -122,10 +120,6 @@ foreach($zongjis as $rs){
 	$zongji+=$cc;
 }
 //echo $sql;exit;
-
-
-
-
 
 $dbo->setPages(15,$page_num);//设置分页
 $mp_list_rs=$dbo->getRs($sql);
@@ -203,8 +197,8 @@ $(function (){
   </tr>
   <tr class="t_Haader">
 	<td>账号</td>
-	<td>昵称</td>
     <td>消费类型</td>
+    <td>支付方式</td>
     <td>支付终端</td>
     <td>支付结果</td>
     <td>消费时间</td>
@@ -222,6 +216,9 @@ $(function (){
 	<tr>
 	    <td><?php echo $rs['uname'];?></td>
 		<td><?php echo $rs['message']?></td>
+		<td>
+			<?php if($rs['pay_method']=='lianyin'){echo "A支付";}elseif($rs["pay_method"] == 'yingfu'){echo "<font style='color:red'>B支付</font>";}else{$rs['pay_method'];} ?>
+        </td>
 		<td><?php echo $rs['pay_from']?></td>
 		<td><?php echo $rs['pay_msg']?></td>
 		<td><?php echo $rs['addtime'];?></td>

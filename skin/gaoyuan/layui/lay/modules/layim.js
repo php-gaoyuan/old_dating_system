@@ -932,8 +932,7 @@ layui.define(['layer', 'laytpl', 'upload'], function(exports){
     var thatChat = thisChat(), ul = thatChat.elem.find('.layim-chat-main ul');
     var maxLength = cache.base.maxLength || 3000;
     data.content = thatChat.textarea.val();
-    if(data.content.replace(/\s/g, '') !== ''){
-      
+    //if(data.content.replace(/\s/g, '') !== ''){
       if(data.content.length > maxLength){
         return layer.msg('内容最长不能超过'+ maxLength +'个字符')
       }
@@ -957,7 +956,7 @@ layui.define(['layer', 'laytpl', 'upload'], function(exports){
       layui.each(call.sendMessage, function(index, item){
         item && item(param);
       });
-    }
+    //}
     chatListMore();
     thatChat.textarea.val('').focus();
   };

@@ -69,7 +69,7 @@
 				{field:'id', title: 'ID',width:80},
 				{field:'fromname', title: '发送方'},
 				{field:'toname', title: '接收方'},
-				{title: '聊天类型',function(d){
+				{title: '聊天类型',templet:function(d){
 					if(d.msg_type==1){
 						return "文本";
 					}else if(d.msg_type==2){
@@ -94,56 +94,12 @@
 			var data = obj.data;
 			var layEvent = obj.event;
 			var tr = obj.tr;
-			if (layEvent == 'tuid') {
-				layui.layer.open({
-					type: 2,
-					title: "分配",
-					fixed: true,
-					maxmin: true,
-					area: ["50%", "50%"],
-					content: "/manage/view/user/change_tuid.php?id=" + data.user_id
-				})
-			} else if (layEvent == 'isMember') {
-				layui.layer.open({
-					type: 2,
-					title: "调整会员级别",
-					fixed: true,
-					maxmin: true,
-					area: ["80%", "95%"],
-					content: "{:U('changeLevel')}?id=" + data.id
-				})
-			}else if (layEvent == 'lookChatLog') {
-				layui.layer.open({
-					type: 2,
-					title: "查看聊天记录",
-					fixed: true,
-					maxmin: true,
-					area: ["80%", "95%"],
-					content: "/manage/view/chat/list_log.php?user_id=" + data.user_id
-				})
-			} else if (layEvent == 'lookImg') {
-				layui.layer.open({
-					type: 2,
-					title: "查看照片",
-					fixed: true,
-					maxmin: true,
-					area: ["80%", "95%"],
-					content: "{:U('Photo/showlist')}?user_id=" + data.id
-				})
-			} else if (layEvent == 'del') {
+			if (layEvent == 'del') {
 				layer.confirm('您确定要删除'+data.user_email+'吗？', function (index) {
-					$.post("/manage/controller/User.php?act=delUser", {user_id: data.user_id}, function (res) {
+					$.post("/manage/controller/Chatlog.php?act=delLog", {id: data.id}, function (res) {
 						layer.alert(res.msg,function(){
 							window.location.reload();
 						});
-						return false;
-					},"json");
-					layer.close(index);
-				})
-			} else if (layEvent == 'resetPass') {
-				layer.confirm('您确定要重置'+data.user_email+'的密码吗？', function (index) {
-					$.post("/manage/controller/User.php?act=resetPass", {user_id: data.user_id}, function (res) {
-						layer.alert(res.msg);
 						return false;
 					},"json");
 					layer.close(index);

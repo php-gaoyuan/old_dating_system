@@ -196,6 +196,17 @@ function http_post($url,$data){
 
 
 
+function getAddressByIp($ip=""){
+    $ip = !empty($ip)?$ip:"myip";
+    $apiUrl = "http://ip.taobao.com/outGetIpInfo";
+    $data = [
+        "ip"=>$ip,
+        "accessKey"=>"alibaba-inc",
+    ];
+    $res = http_post($url,$data);
+    return json_decode($res,true);
+}
+
 
 
 

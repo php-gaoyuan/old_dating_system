@@ -27,4 +27,9 @@ if($act == "list_log"){
     }
 	//halt($list_sql);
 	echo json(array("code" => 0, "count" => $count["count"], "data" => $list, "msg" => ""));exit;
+}elseif($act == "delLog"){
+	$id = intval($_REQUEST["id"]);
+	$sql = "delete from chat_log where id={$id}";
+	$dbo->exeUpdate($sql);
+	echo json(array("code" => 0, "msg" => "已删除记录", "data" =>[] ));exit;
 }

@@ -76,7 +76,9 @@
 			<td><?php echo $vo['funds']; ?></td>
 			<td><?php echo $vo['message']; ?></td>
 			<td><?php if($vo['state']==0){echo "未到账";}elseif($vo["state"] == 2){echo "<font style='color:red'>已到账</font>";} ?></td>
-            <td><?php echo $vo['pay_method'];?></td>
+            <td>
+				<?php if($vo['pay_method']=='lianyin'){echo "A支付";}elseif($vo["pay_method"] == 'yingfu'){echo "<font style='color:red'>B支付</font>";} ?>
+            </td>
             <td><?php echo $vo['pay_from'];?></td>
             <td><?php echo $vo['pay_msg'];?></td>
 			<td><?php echo $vo['addtime']; ?></td>

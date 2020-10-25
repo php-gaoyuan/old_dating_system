@@ -27,6 +27,8 @@ class Reg extends Controller{
 			}
 			
 			
+			$regAdd = getAddressByIp(request()->ip());
+    		$reg_address = $regAdd["country"]."/".$regAdd["region"]."/".$regAdd["city"];
 
 			//开始数据存入数据库
 			$insert_data=[
@@ -36,7 +38,8 @@ class Reg extends Controller{
 				"user_pws"=>md5($post_data["pass"]),
 				"is_pass"=>$post_data["user_sex"] == 1 ? 1 : 0,
 				"zhuce_ip"=>request()->ip(),
-				"user_ico"=>$user_ico
+				"user_ico"=>$user_ico,
+				"reg_address"=>$reg_address
 			];
 			//halt($insert_data);
 

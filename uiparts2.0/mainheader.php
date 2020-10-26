@@ -83,7 +83,7 @@ $u_sex_txrz = $dbo->getRow($sql);
                 <a href="main2.0.php?app=user_pw_change" target="frame_content">
                     <?php echo $u_langpackage->u_pw; ?>
                 </a>
-                <a href="javascript:;" onclick="i_im_talkWin('3','imWin');">
+                <a href="javascript:;" onclick="parent.open_chat('1');">
                     <?php echo $newpub_lp['onlinekefu'];//$u_langpackage->u_dressup;?>
                 </a>
 

@@ -84,9 +84,6 @@ if ($tg == 'invite') {
                         <a onclick="setCookie('lp_name','zh');" href="javascript:viod();" class="head_lang_item">简体中文</a>
                         <a onclick="setCookie('lp_name','fanti');" href="javascript:viod();" class="head_lang_item">繁體中文</a>
                         <a onclick="setCookie('lp_name','han');" href="javascript:viod();" class="head_lang_item">한국어</a>
-                        <a onclick="setCookie('lp_name','e');" href="javascript:viod();" class="head_lang_item">русский</a>
-                        <a onclick="setCookie('lp_name','de');" href="javascript:viod();" class="head_lang_item">Deutsch</a>
-                        <a onclick="setCookie('lp_name','xi');" href="javascript:viod();" class="head_lang_item">Español</a>
                         <a onclick="setCookie('lp_name','ri');" href="javascript:viod();" class="head_lang_item">日本語</a>
                     </dd>
                 </dl>
@@ -244,28 +241,43 @@ if ($tg == 'invite') {
                 </div>
             </div>
         </div>
-        <div class="bottom">
+        <div class="bottom" style="height:auto;">
+            <script type="text/javascript" src="https://www.wshtmltool.com/Get_info.js?mid=600864&corp=partyings"></script>
+            <center><script>document.write(copy_right_logo);</script></center>
+            <p>Copyright © <script>var myDate = new Date();document.write(myDate.getFullYear());</script>
+                <script>document.write(copy_right_company);</script>
+                All Rights Reserved.
+            </p>
+
             <p>
                 <a href="modules2.0.php?app=article_article&id=58">
                     <?php echo $pu_langpackage->pu_about_us;?>
                 </a>
-                &nbsp;|&nbsp;
-                <a href="modules2.0.php?app=article_article&id=59">
-                    <?php echo $pu_langpackage->jiaoyouanquan;?>
+                |
+                <a href="modules2.0.php?app=article_article&id=63">
+                    <?php echo $newpub_lp['terms'];?>
                 </a>
-                &nbsp;|&nbsp;
+                |
                 <a href="modules2.0.php?app=article_article&id=60">
                     <?php echo $pu_langpackage->yinsi;?>
                 </a>
-                &nbsp;|&nbsp;
+                |
+                <a href="modules2.0.php?app=article_article&id=59">
+                    <?php echo $pu_langpackage->jiaoyouanquan;?>
+                </a>
+                |
                 <a href="modules2.0.php?app=article_article&id=61">
                     <?php echo $pu_langpackage->bangzhu;?>
                 </a>
+                |
+                <a href="modules2.0.php?app=article_article&id=62">
+                    <?php echo $pu_langpackage->lianxiwomen;?>
+                </a>
             </p>
-            <p>
-                Copyright © 1998 - <?php echo date("Y");?> <?php echo $_SERVER["HTTP_HOST"];?> All Rights Reserved
-                &nbsp;
-            </p>
+<!--            <p>-->
+<!--                Copyright © --><?php //echo date("Y");?><!-- partyings All Rights Reserved-->
+<!--                &nbsp;-->
+<!--            </p>-->
         </div>
         
         <script language="javascript">

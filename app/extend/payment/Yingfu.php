@@ -12,7 +12,7 @@ class Yingfu
 
     public function pay($order)
     {
-        $website = 'www.demo.com';
+        $website = 'www.partyings.com';
 //持卡人账单信息
         $billing_first_name = isset($_REQUEST['billing_first_name']) ? $_REQUEST['billing_first_name'] : '';
         $billing_last_name = isset($_REQUEST['billing_last_name']) ? $_REQUEST['billing_last_name'] : '';
@@ -48,7 +48,7 @@ class Yingfu
         );
 
         $total = $order['money'];
-        $currency = isset($_REQUEST['currency']) ? $_REQUEST['currency'] : 'USD';
+        $currency = 'USD';
 
 //卡信息
         $card_number = isset($_REQUEST['cardNum']) ? $_REQUEST['cardNum'] : '';
@@ -156,7 +156,7 @@ class Yingfu
     private function payCurlPost($url, $merchant_id, $data, $website)
     {
         //设置referer
-        $website = !empty($website) ? $website : 'www.demo.com';
+        $website = !empty($website) ? $website : 'www.partyings.com';
         //请求头设置
         $headers = array(
             'MerNo:' . $merchant_id,

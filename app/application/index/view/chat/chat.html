@@ -21,11 +21,12 @@
 	<script>
 		var userinfo = <{$userinfo}> ;
 		var pals_userinfo = <{$pals_userinfo}> ;
+		var msg_num = <{$msg_num}>;
 
 		layui.use(["mobile", "jquery", 'layer'], function() {
 		    var mobile = layui.mobile, layim = mobile.layim, $ = layui.jquery, layer = mobile.layer, pclayer = layui.layer;
 		    var socket = new WebSocket("<{:config('webconfig.ws_url')}>");
-		    
+
 		    //初始化聊天
 		    layim.config({
 		        init: {
@@ -96,7 +97,7 @@
 				  		pclayer.close(index);
 					    insert('紅包金額(金幣)：' + text); //将内容插入到编辑器，主要由insert完成
 					    send(); //自动发送
-				  	} 
+				  	}
 				});
 			});
 			//监听点击视频按钮
@@ -122,7 +123,7 @@
 			    	closeBtn:false,
 			    	content:"<{:url('Index/video')}>"
 			  	});
-			  	
+
 			});
 
 
@@ -198,13 +199,12 @@
 		    //监听发送消息
 		    layim.on('sendMessage', function(res) {
               	var group = userinfo.user_group;
-		        if (group == "1") {
+		        if (group == "1" && msg_num>=5) {
 		            $(".layim-chat-send input").attr("disabled", true);
 		            layer.msg("<{:lang('need upgrade')}>");
 		            setTimeout(function() {
 		                window.location.href = "<{:url('upgrade/index')}>";
-		            },
-		            3000);
+		            },2000);
                   return false;
 		        }
 		        var sendMsg = JSON.stringify({type: 'chatMessage', data: res});
@@ -227,11 +227,12 @@
 		    //监听收到的聊天消息，假设你服务端emit的事件名为：chatMessage
 		    socket.onmessage = function(res) {
 		        var data = JSON.parse(res.data);
+				// 服务端ping客户端
+				if(data.type=="ping"){
+					socket.send('{"type":"ping"}');
+					return;
+				}
 		        switch (data['message_type']) {
-		            // 服务端ping客户端
-		        case 'ping':
-		            socket.send('{"type":"ping"}');
-		            break;
 		            // 登录 更新用户列表
 		        case 'init':
 		            auth();
@@ -241,6 +242,13 @@
 		            //如果聊天窗口一直打开，那么更新为已读
 	            	socket.send('{"type":"changeMessage","pals_id":'+data.data.id+'}');
 		            layim.getMessage(data.data,data.message_type);
+					if(data.opt=='msg_num'){
+						layer.msg("<{:lang('need upgrade')}>");
+						$(".layim-send").hide();
+						setTimeout(function(){
+							window.location.href = "<{:url('upgrade/index')}>";
+						},2000)
+					}
 		            break;
 		            // 离线消息推送
 		        case 'logMessage':
@@ -284,7 +292,7 @@
 			            data: res.data
 			        });
 				});
-		        
+
 		    });
 
 		    //监听返回
@@ -300,7 +308,7 @@
 
 		    function auth() {
 		        var group = userinfo.user_group;
-		        if (group == "1") {
+				if (group == "1" && msg_num>=5) {
 		            $(".layim-chat-send input").attr("disabled", true);
 		            layer.msg("<{:lang('need upgrade')}>");
 		            setTimeout(function() {

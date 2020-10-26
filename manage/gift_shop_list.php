@@ -75,32 +75,32 @@ if(empty($info_rs)){
         <div class="wrap">
             <div class="crumbs">当前位置 &gt;&gt; <a href="javascript:void(0);">礼品管理</a> &gt;&gt; <a href="gift_list.php">礼品列表</a></div>
             <hr />
-            <div class="infobox">
-                <h3>筛选条件</h3>
-                <div class="content">
-                    <form action="" method="get" name='form' onsubmit='return check_form();'>
-                    <input type="hidden" name="search" id="search" value="1" />
-                    <table class="form-table">
-                        <tbody>
-                        <tr>
-                            <th width="90">礼品类别</th>
-                            <td>
-								<select name='search_name'>
-									<option value="0">--请选择--</option>
-									<option value="2">普通礼物</option>
-									<option value="3">高级礼物</option>
-									<option value="4">真实礼物</option>
-								</select>
-							</td>
-                        </tr>
-                        <tr>
-                        	<td ><input class="regular-button" type="submit" value="搜索" /></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    </form>
-                </div>
-            </div>           
+<!--            <div class="infobox">-->
+<!--                <h3>筛选条件</h3>-->
+<!--                <div class="content">-->
+<!--                    <form action="" method="get" name='form' onsubmit='return check_form();'>-->
+<!--                    <input type="hidden" name="search" id="search" value="1" />-->
+<!--                    <table class="form-table">-->
+<!--                        <tbody>-->
+<!--                        <tr>-->
+<!--                            <th width="90">礼品类别</th>-->
+<!--                            <td>-->
+<!--								<select name='search_name'>-->
+<!--									<option value="0">--请选择--</option>-->
+<!--									<option value="2">普通礼物</option>-->
+<!--									<option value="3">高级礼物</option>-->
+<!--									<option value="4">真实礼物</option>-->
+<!--								</select>-->
+<!--							</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                        	<td ><input class="regular-button" type="submit" value="搜索" /></td>-->
+<!--                        </tr>-->
+<!--                        </tbody>-->
+<!--                    </table>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </div>           -->
             <div class="infobox">
                 <h3>礼品列表</h3>
                 <div class="content">

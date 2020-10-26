@@ -20,6 +20,7 @@ if($act == "index"){
 
     $count_sql="select count(*) as count from {$t_users} where {$where}";
     $list_sql="select * from {$t_users} where {$where} order by user_id desc limit {$limit_sql}";
+    //exit($list_sql);
     $count = $dbo->getRow($count_sql,'arr');
     $list = $dbo->getALL($list_sql,'arr');
     foreach ($list as $k => $val) {
@@ -58,6 +59,7 @@ if($act == "index"){
     $user_id = intval($_POST["user_id"]);
     $dbo->exeUpdate("delete from wy_users where user_id={$user_id}");
     $dbo->exeUpdate("delete from chat_users where uid={$user_id}");
+    $dbo->exeUpdate("delete from wy_pals_mine where user_id={$user_id} or pals_id={$user_id}");
     echo json(array("code" => 0, "msg" => "操作成功", "data" =>[] ));exit;
 }elseif($act=="changeGold"){
     $user_id = intval($_POST["user_id"]);

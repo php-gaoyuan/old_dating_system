@@ -34,10 +34,13 @@ class Chat extends Base
 
 	//聊天界面
 	public function chat(){
+        $uid = cookie("?user_id") ? cookie("user_id") : session("user_id");
 		$pals_id = input("pals_id");
 		$pals_info = model("Users")->where("user_id",$pals_id)->field("user_id,user_name,user_ico")->find();
 		$pals_info["user_ico"] = img_path($pals_info["user_ico"]);
 		$this->assign("pals_userinfo",json_encode($pals_info));
+		$msg_num = db()->table("chat_log")->where(['fromid'=>$uid])->count();
+		$this->assign("msg_num",$msg_num);
 		return $this->fetch();
 	}
 

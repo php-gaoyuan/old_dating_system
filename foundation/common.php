@@ -16,7 +16,7 @@ function getAddressByIp($ip=""){
 		"ip"=>$ip,
 		"accessKey"=>"alibaba-inc",
 	];
-	$res = http_post($url,$data);
+	$res = http_post($apiUrl,$data);
 	return json_decode($res,true);
 }
 

@@ -78,7 +78,7 @@ function getGifts(type,index)
 <body>
 <div>
     <ul id="zishu">
-        <li class="nav_a" onclick="getGifts(4);changeStyle_gift(this);"><a href="javascript:;"><?php echo $gf_langpackage->gf_zhenshi; ?></a></li>
+        <li class="nav_a" onclick="getGifts(4);changeStyle_gift(this);"><a href="javascript:;"><?php echo $gf_langpackage->gf_xn; ?></a></li>
         <li class="nav_a"><a href="/plugins/gift/gift_box.php"><?php echo $gf_langpackage->gf_putin; ?></a></li>
         <li class="nav_a active"><a href="/plugins/gift/gift_outbox.php"><?php echo $gf_langpackage->gf_putout; ?></a></li>
     </ul>

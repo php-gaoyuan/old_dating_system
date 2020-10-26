@@ -58,7 +58,7 @@ function check_userico($path,$user_sex=false){
 		if(strpos($path, "http") !== false){
 	    	return $path;
 	    }else{
-	    	return "http://jyo.henangaodu.com/".$path;
+	    	return "http://partyings.com/".$path;
 	    }
 	}
 }

@@ -4,8 +4,9 @@ use app\index\controller\Base;
 class Profile extends Base
 {
 	public function index(){
+        $uid = cookie("user_id");
+
 		if(request()->isPost()){
-			$uid = cookie("user_id");
 			$data = input("post.");
 			@$birth = explode("-", $data["birth"]);
 			@$data["birth_year"] = $birth[0];
@@ -15,15 +16,15 @@ class Profile extends Base
 			if(isset($data["user_sex"])){
 				unset($data["user_sex"]);
 			}
+
 			$res = db("users")->where(["user_id"=>$uid])->update($data);
 			if($res){
 				echo "<script>parent.layui.layer.msg('ok',function(){location.reload();});</script>";exit;
 			}
 			//halt($data);
 		}else{
-			$uid = cookie("user_id");
-			$this->assign("uid",$uid);
-			$userinfo = model("Users")->field("user_id,user_name,user_sex,user_ico,birth_year,birth_month,birth_day,country,waimao,sexual,height,weight,income,gerenjieshao")->find($uid);
+            $this->assign("uid",$uid);
+            $userinfo = model("Users")->field("user_id,user_name,user_sex,user_ico,birth_year,birth_month,birth_day,country,waimao,sexual,height,weight,income,gerenjieshao")->find($uid);
 			$userinfo["user_ico"] = img_path($userinfo["user_ico"]);
 			$this->assign("userinfo",$userinfo);
 
@@ -66,16 +67,24 @@ class Profile extends Base
 
 	//上传头像
 	public function headimg(){
+        $uid = cookie("user_id");
+        $userinfo = model("Users")->field("user_id,user_ico")->find($uid);
 		if(request()->isAjax()){
 			$user_ico = input("user_ico");
-			$uid = cookie("user_id");
-			$res = db("users")->where(["user_id"=>$uid])->update(["user_ico"=>$user_ico]);
+            if($user_ico==$userinfo->user_ico || strpos($user_ico,'default')!==false){
+                unset($user_ico);
+                return json(["code"=>0, "msg"=>"ok"]);
+            }elseif(strpos($user_ico,'default')!==false){
+                db("avater")->insert([
+                    "user_id"=>$uid,
+                    "avater"=>$user_ico,
+                    "create_time"=>date("Y-m-d H:i:s")
+                ]);
+            }
+			//$res = db("users")->where(["user_id"=>$uid])->update(["user_ico"=>$user_ico]);
 			return json(["code"=>0, "msg"=>"ok"]);
 		}else{
-			$uid = cookie("user_id");
-			$info = db("users")->field("user_ico")->find($uid);
-			$user_ico = img_add_pcUrl($info["user_ico"]);
-			
+			$user_ico = img_add_pcUrl($userinfo["user_ico"]);
 			$this->assign("user_ico",$user_ico);
 			//halt($info);
 			return $this->fetch();

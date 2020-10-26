@@ -44,7 +44,6 @@ if($gift_types){
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" type="text/css" media="all" href="css/admin.css">
-	
 </head>
 <body>
     <div id="maincontent">
@@ -59,32 +58,12 @@ if($gift_types){
 				  <input type="hidden" name="id" value="<?php echo $id;?>" />
                     <table class="form-table">
                         <tr>
-                            <th width="90">排序</th>
-                            <td><input type="text" class="small-text" name='info_sort' value="<?php echo $info_sort;?>" />默认为0</td>
-                        </tr>
-                        <tr>
                             <th width="90">名称</th>
-                            <td><input type="text" class="small-text" name='info_giftname' value="<?php echo $info_giftname;?>" /></td>
-                        </tr>
-                         <tr>
-                            <th width="90">礼品类别</th>
-                            <td><select name="info_type" onchange="document.getElementById('val_hidden').style.display='none';if(this.value==4){document.getElementById('val_hidden').style.display=''}">
-                                 <option value="2" <?php if($info_type == 2){echo 'selected';} ?>>普通礼物</option>
-                                 <option value="3" <?php if($info_type == 3){echo 'selected';} ?>>高级礼物</option>
-                                 <option value="4" <?php if($info_type == 4){echo 'selected';} ?>>真实礼物</option>
-                             	</select>                      
-                            </td>
-                        </tr>
-						 <tr id="val_hidden" style="<?php if($info_type != 4){echo 'display:none';}?>">
-                            <th width="90">情人节分类</th>
                             <td>
-								<label><input type="radio" name="valentine" value="1" <?php if($info_row['valentine'] == 1){echo 'checked';} ?>/>鲜花</label>
-								<label><input type="radio" name="valentine" value="2" <?php if($info_row['valentine'] == 2){echo 'checked';} ?>/>巧克力</label>
-								<label><input type="radio" name="valentine" value="3" <?php if($info_row['valentine'] == 3){echo 'checked';} ?>/>套餐</label>
-								<label><input type="radio" name="valentine" value="4"  <?php if($info_row['valentine'] == 4){echo 'checked';} ?>/>精美礼品</label>
-								<span style="color:#ff0000">如果是情人礼物，名称不能大于6个汉字（12个英文字符）</span>
+                                <input type="text" class="small-text" name='info_giftname' value="<?php echo $info_giftname;?>" />
                             </td>
                         </tr>
+
                          <tr>
                             <th width="90">礼品图片</th>
                             <td>
@@ -103,18 +82,21 @@ if($gift_types){
                         </tr>
                          <tr>
                             <th width="90"></th>
-                            <td><input type="submit" class="regular-button" value="<?php echo $submit_str;?>"/></td>
+                            <td>
+                                <input type="submit" class="regular-button" value="<?php echo $submit_str;?>"/>
+                                <input type="hidden" name="info_type" value="4">
+                                <input type="hidden" name="info_sort" value="0">
+                            </td>
                         </tr>
                     </table>
                   </form>
                 </div>
 				<script type="text/javascript" src="../ueditor/editor_config.js"></script>
-	<script type="text/javascript" src="../ueditor/editor_all_min.js"></script>
-	<script type="text/javascript">
-
-var edit = new UE.ui.Editor({initialContent:'',initialFrameWidth:750});
-edit.render("content");
-</script>
+                <script type="text/javascript" src="../ueditor/editor_all_min.js"></script>
+                <script type="text/javascript">
+                var edit = new UE.ui.Editor({initialContent:'',initialFrameWidth:750});
+                edit.render("content");
+                </script>
             </div>  
         </div>
     </div>

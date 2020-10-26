@@ -80,16 +80,23 @@
 				</div>
 				<div class="mui-card-content">
 					<div class="mui-input-row mui-radio mui-left" style="margin:10px 0;">
-					    <label for="lianyin">Visa/Localpay</label>
-					    <input name="pay_type" type="radio" value="lianyin" id="lianyin" checked>
+					    <label for="lianyin">
+					    <input name="pay_type" type="radio" value="lianyin" id="lianyin" checked style="margin-top:15px;">
+						<img src="<{:config('skin_path')}>/images/vml.png" alt="lianyin" class="pay_type">
+						</label>
 					</div>
 					<div class="mui-input-row mui-radio mui-left" style="margin:10px 0;">
-						<label for="yingfu">Visa/Mastercard/Localpay</label>
-						<input name="pay_type" type="radio" value="yingfu" id="yingfu">
+						<label for="yingfu">
+						<input name="pay_type" type="radio" value="yingfu" id="yingfu" style="margin-top:15px;">
+							<img src="<{:config('skin_path')}>/images/fuHui.png" alt="lianyin" class="pay_type">
+						</label>
 					</div>
 					<div class="mui-input-row mui-radio mui-left" style="margin:10px 0;">
-						<label for="gold"><{:lang('golds')}>($<{$balance}>)</label>
-						<input name="pay_type" type="radio" value="gold" id="gold">
+						<label for="gold">
+						<input name="pay_type" type="radio" value="gold" id="gold" style="margin-top:22px;">
+							<img src="<{:config('skin_path')}>/images/gold-icon.png" alt="lianyin" class="pay_type" style="vertical-align: middle;">
+							<span style="font-size:1.3rem;">$<{$balance}></span>
+						</label>
 					</div>
 				</div>
 			</div>

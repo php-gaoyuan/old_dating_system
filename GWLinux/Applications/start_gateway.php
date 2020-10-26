@@ -31,32 +31,31 @@ $gateway->count = 4;
 $gateway->lanIp = '127.0.0.1';
 // 内部通讯起始端口，假如$gateway->count=4，起始端口为4000
 // 则一般会使用4000 4001 4002 4003 4个端口作为内部通讯端口 
-$gateway->startPort = 2900;
+$gateway->startPort = 4000;
 // 服务注册地址
 $gateway->registerAddress = '127.0.0.1:1239';
 
 // 心跳间隔
-//$gateway->pingInterval = 10;
+$gateway->pingInterval = 15;
+$gateway->pingNotResponseLimit = 1; //心跳检测的时间间隔数
 // 心跳数据
-//$gateway->pingData = '{"type":"ping"}';
+$gateway->pingData = '{"type":"ping"}';
 
-/* 
+
 // 当客户端连接上来时，设置连接的onWebSocketConnect，即在websocket握手时的回调
 $gateway->onConnect = function($connection)
 {
     $connection->onWebSocketConnect = function($connection , $http_header)
     {
+        //echo $_SERVER['HTTP_ORIGIN'];
         // 可以在这里判断连接来源是否合法，不合法就关掉连接
         // $_SERVER['HTTP_ORIGIN']标识来自哪个站点的页面发起的websocket链接
-        if($_SERVER['HTTP_ORIGIN'] != 'http://kedou.workerman.net')
+        if(strpos($_SERVER['HTTP_ORIGIN'],"partyings.com")===false)
         {
             $connection->close();
         }
-        // onWebSocketConnect 里面$_GET $_SERVER是可用的
-        // var_dump($_GET, $_SERVER);
     };
-}; 
-*/
+};
 
 // 如果不是在根目录启动，则运行runAll方法
 if(!defined('GLOBAL_START')) {

@@ -99,9 +99,10 @@ class Events {
                     $db1->query("UPDATE `wy_users` SET `golds`=`golds`+{$money} where `user_id`='{$to_id}'");
                 }else{
                     //判断聊天权限
-                    if($userinfo['user_group']<3){
-                        Gateway::sendToUid($to_id, json_encode(
-                            ['message_type' => 'chatMessage', 'data' => ['system'=>true, 'id' => (int)$uid, 'username' => $_SESSION['username'], 'avatar' => check_userico($_SESSION['avatar']), 'type' => $type, 'content' => '無許可權；請升級！', 'timestamp' => time() * 1000]]
+                    $msg_num = $db1->select('count(*) as msg_num')->from('chat_log')->where("fromid= '{$uid}' ")->single();
+                    if($userinfo['user_group']<2 && $msg_num>=5){
+                        Gateway::sendToUid($uid, json_encode(
+                            ['message_type' => 'chatMessage','opt'=>'msg_num', 'data' => ['system'=>true, 'id' => (int)$uid, 'username' => $_SESSION['username'], 'avatar' => check_userico($_SESSION['avatar']), 'type' => $type, 'content' => '無許可權；請升級！', 'timestamp' => time() * 1000]]
                         ));
                         return false;
                     }
@@ -122,6 +123,7 @@ class Events {
 
                 //聊天记录数组
                 $param = ['fromid' => $uid, 'toid' => $to_id, 'fromname' => $_SESSION['username'], 'fromavatar' => $_SESSION['avatar'], 'content' => $content, 'tr_content' => $tr_content, 'timeline' => time(), 'pcsend' => 1, 'appsend' => 1, 'type' => "friend", ];
+                //print_r($param);
                 // 插入
                 $insert_id=$db1->insert('chat_log')->cols($param)->query();
                 //如果是女号直接翻译成中文
@@ -164,8 +166,7 @@ class Events {
                 $db1->update("chat_log")->cols(["is_read" => "1"])->where("fromid='{$pals_id}' and toid='{$uid}'")->query();
             break;
             case 'ping':
-                //!Gateway::isOnline($client_id)//更新用户不在线了
-                return;
+                return false;
             default:
                 echo "unknown message $data" . PHP_EOL;
         }

@@ -4,12 +4,17 @@ require_once($webRoot . $langPackageBasePath . "chat.php");
 $chatlp = new chatlp;
 
 /******************查询出用户信息*****************************/
-$chat_user_id = $_SESSION["isns_user_id"];
+$chat_user_id = $_SESSION["user_id"];
 if (empty($userinfo)) {
     $userinfo = $dbo->getRow("select user_id,user_name,user_sex,user_group,golds from wy_users where user_id='$chat_user_id'");
 }
+//如果是普通会员查询出已经发送信息条数
+if($userinfo['user_group']<2){
+    $msg_num = $dbo->getRow("select count(*) as num from chat_log where fromid='{$chat_user_id}'","arr");
+    $msg_num = $msg_num['num'];
+}
 if (empty($userinfo["user_ico"])) {
-    $userinfo["user_ico"] = "https://{$_SERVER['HTTP_HOST']}/skin/default/jooyea/images/d_ico_{$userinfo['user_sex']}.gif";
+    $userinfo["user_ico"] = "/skin/default/jooyea/images/d_ico_{$userinfo['user_sex']}.gif";
 }
 
 //查询出签名
@@ -17,6 +22,8 @@ $sign = $dbo->getRow("select u_intro from chat_users where uid='{$chat_user_id}'
 $userinfo["sign"] = $sign["u_intro"];
 /***********************查询出用户信息 end************************/
 ?>
+
+
 <link rel="stylesheet" type="text/css" href="/skin/gaoyuan/layui/css/layui.css">
 <script type="text/javascript" src="/skin/gaoyuan/layui/layui.js"></script>
 <style type="text/css">
@@ -27,13 +34,19 @@ $userinfo["sign"] = $sign["u_intro"];
     body .layim-chat-tool span.layim-tool-redpacket{background: url(/skin/gaoyuan/images/redpacket.png) center center no-repeat;background-size: 32px 28px;width: 32px;height: 38px;}
     body .layui-layim-status,body .layui-layim-remark{display:none;}
     body .layui-layim-info{height: 26px;}
+    .layim-chat-mine .layim-chat-text{min-height:22px;}
+    <?php if($msg_num>5){echo '.layim-chat-send{display:none;}';}?>
 </style>
 <script type="text/javascript">
+    var socket=null;
+    var limit_msg_num=5;
+    var msg_num = "<?php echo $msg_num;?>";
     layui.use(["layim", "layer", "form"], function () {
         var layim = layui.layim, form = layui.form, layer = layui.layer;
 
         //初始化websocket链接
-        var socket = new WebSocket("<?=$ws_url; ?>");
+        socket = new WebSocket("<?=$ws_url; ?>");
+        //console.log(socket.readyState);
         //初始化配置
         var chat = {
             userinfo: {
@@ -107,8 +120,7 @@ $userinfo["sign"] = $sign["u_intro"];
         });
         //监听点击视频按钮
         layim.on('tool(video)', function (insert, send, obj) { //事件中的tool为固定字符，而code则为过滤器，对应的是工具别名（alias）
-            //提示男士升级
-            if (chat.userinfo.user_sex == '1' && chat.userinfo.user_group < 3) {
+            if (chat.userinfo.user_sex == '1' && chat.userinfo.user_group < 3) {//提示男士升级
                 //弹出升级提示
                 layer.msg("Your level does not match, Please upgrade.");
                 // setTimeout(function(){
@@ -127,6 +139,12 @@ $userinfo["sign"] = $sign["u_intro"];
             }
         });
 
+        //心跳
+        setInterval(function(){
+            if(socket==null){
+                socket = new WebSocket("<?=$ws_url; ?>");
+            }
+        },5000);
 
         //监听发送消息
         layim.on('sendMessage', function (res) {
@@ -141,8 +159,9 @@ $userinfo["sign"] = $sign["u_intro"];
 
         //每次窗口打开或切换，即更新对方的状态
         layim.on('chatChange', function (res) {
+            //console.log(res);
             //判断权限
-            if (chat.userinfo.user_group ==1) {
+            if (chat.userinfo.user_group <2 && msg_num>=5) {
                 $(".layui-show .layim-chat-textarea textarea").attr("disabled", true);
                 //layer.msg("您不是VIP用户不能使用即时聊天，请充值升级");
                 layer.msg("<?php echo $chatlp->nomianfeichat;?>");
@@ -230,7 +249,7 @@ $userinfo["sign"] = $sign["u_intro"];
             //***********************************************加入翻译列表end***********************************************
 
             //判断权限
-            if (chat.userinfo.user_group == 1) {
+            if (chat.userinfo.user_group <= 1 && msg_num>=5) {
                 $(".layui-show .layim-chat-textarea textarea").attr("disabled", true);
                 //layer.msg("您不是VIP用户不能使用即时聊天，请充值升级");
                 layer.msg("<?php echo $chatlp->nomianfeichat;?>");
@@ -272,12 +291,15 @@ $userinfo["sign"] = $sign["u_intro"];
 
 
         socket.onclose = function () {
+            socket=null;
             //layui.layer.msg("通讯已经断开");
-            layer.msg("Communication has been closed");
+            //layer.msg("Communication has been closed");
+            console.log("通讯已经断开");
         };
         socket.onerror = function (evt) {
-            //layer.msg("通讯错误，已经中断");
-            layer.msg("Communication error has been interrupted");
+            socket=null;
+            console.log("通讯错误，已经中断");
+            //layer.msg("Communication error has been interrupted");
             socket.close();
         };
 
@@ -285,11 +307,12 @@ $userinfo["sign"] = $sign["u_intro"];
         socket.onmessage = function (res) {
             var data = JSON.parse(res.data);
             //console.log(data);
+            // 服务端ping客户端
+            if(data.type=="ping"){
+                socket.send('{"type":"ping"}');
+                return;
+            }
             switch (data.message_type) {
-                // 服务端ping客户端
-                case 'ping':
-                    socket.send('{"type":"ping"}');
-                    break;
                 // 登录 更新用户列表
                 case 'init':
                     console.log("----开始初始化");
@@ -298,11 +321,18 @@ $userinfo["sign"] = $sign["u_intro"];
                 // 检测聊天数据
                 case 'chatMessage':
                     //console.log("info");
-                    //如果聊天窗口一直打开，那么更新为已读
-                    if ($(".layim-chat-list .layim-this").length > 0) {
-                        thatChat = layim.thisChat();
-                        //console.log(thatChat);
-                        socket.send('{"type":"changeMessage","pals_id":' + thatChat.data.id + '}');
+                    if(data.opt=='msg_num'){
+                        $(".layim-send-btn").hide();
+                        layer.msg("<?php echo $chatlp->nomianfeichat;?>",{time:2000},function(){
+                            window.location.href = "/main2.0.php?app=user_upgrade";
+                        });
+                    }else{
+                        //如果聊天窗口一直打开，那么更新为已读
+                        if ($(".layim-chat-list .layim-this").length > 0) {
+                            thatChat = layim.thisChat();
+                            //console.log(thatChat);
+                            socket.send('{"type":"changeMessage","pals_id":' + thatChat.data.id + '}');
+                        }
                     }
                     layim.getMessage(data.data);
                     break;

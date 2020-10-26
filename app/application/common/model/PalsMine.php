@@ -11,7 +11,7 @@ class PalsMine extends Model{
 
     //读取好友列表
     public function get_pals($uid){
-    	$list = $this->where(["user_id"=>$uid])->select();
+    	$list = $this->where(["user_id"=>$uid])->order("is_service desc")->select();
     	foreach ($list as $key => &$value) {
     		$value["pals_ico"] = model("Users")->get_user_info(["user_id"=>$value['pals_id']],"user_ico");
     	}

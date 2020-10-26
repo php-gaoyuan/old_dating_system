@@ -23,7 +23,7 @@ class Reg extends Controller{
 				$user_ico = saveBase64Image($post_data["user_ico"], "../uploadfiles/avatar/");
 				$user_ico = $user_ico["url"];
 			}else{
-				$user_ico = "skin/default/jooyea/images/d_ico_".$post_data["user_sex"].".gif";
+				$user_ico = "skin/default/jooyea/images/d_ico_".$post_data["user_sex"]."_small.gif";
 			}
 			
 			
@@ -44,7 +44,7 @@ class Reg extends Controller{
 			//halt($insert_data);
 
 			$res = model("Users")->save($insert_data);
-			$info = db("users")->find($res);
+			$info = model("Users")->where(["user_name"=>$post_data["username"]])->find();
 
 			//存入session
             session("user_id",$info["user_id"]);
@@ -56,7 +56,29 @@ class Reg extends Controller{
             cookie("user_name",$info["user_name"],30*24*3600);
             cookie("user_sex",$info["user_sex"],30*24*3600);
             cookie("user_ico",$info["user_ico"],30*24*3600);
-            
+
+            //插入chat_users数据
+            db()->table("chat_users")->insert([
+                "uid"=>$info["user_id"],
+                "u_name"=>$insert_data['user_name'],
+                "u_ico"=>$insert_data['user_ico'],
+                "line_status"=>1,
+                "contacted"=>"1"
+            ]);
+
+            //默认插入客服
+            $kefu = db("users")->where(["is_service"=>1])->find();
+            model("PalsMine")->save([
+                "user_id"=>$info["user_id"],
+                "pals_id"=>$kefu['user_id'],
+                "pals_name"=>$kefu['user_name'],
+                "pals_sex"=>$kefu['user_sex'],
+                "pals_ico"=>$kefu['user_ico'],
+                "accepted"=>1,
+                "is_service"=>1,
+                "add_time"=>date("Y-m-d H:i:s"),
+                "active_time"=>date("Y-m-d H:i:s"),
+            ]);
 			if($res){
 				return json(["msg"=>lang("ok"),"url"=>url("main/index")]);
 			}else{

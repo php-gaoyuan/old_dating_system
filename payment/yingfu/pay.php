@@ -33,7 +33,7 @@ if(empty($order)){
 //商户配置信息
 $merchant_id = '70204';
 $md5key      = 'Ak(SKe]rB2Yj';
-$website = 'www.demo.com';
+$website = 'www.partyings.com';
 $wintopayUrl = 'https://stg-gateway.wintopay.com/api/v2/gateway/payment';  //请求网关地址，查看接口文档
 
 //持卡人账单信息
@@ -70,8 +70,8 @@ $products[] = array(
     'currency'=>'USD'
 );
 
-$total    = isset($_REQUEST['amount'])?$_REQUEST['amount']:'';
-$currency = isset($_REQUEST['currency'])?$_REQUEST['currency']:'';
+$total    = $order['money'];;
+$currency = 'USD';
 
 //卡信息
 $card_number = isset($_REQUEST['cardNum'])?$_REQUEST['cardNum']:'';
@@ -184,7 +184,7 @@ function getIP(){
 function payCurlPost($url,$merchant_id, $data,$website)
 {
     //设置referer
-    $website = !empty($website)?$website:'www.demo.com';
+    $website = !empty($website)?$website:'www.partyings.com';
     //请求头设置
     $headers = array(
         'MerNo:'.$merchant_id,

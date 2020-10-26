@@ -67,7 +67,7 @@ dbplugin('r');
   <tr>
 	<td>
 		<ul id="zishu">
-		  <li class="nav_a active"><a href="javascript:;" onclick="getGifts(4);"><?php echo $gf_langpackage->gf_zhenshi;?></a></li>
+		  <li class="nav_a active"><a href="javascript:;" onclick="getGifts(4);"><?php echo $gf_langpackage->gf_xn;?></a></li>
 		  <li class="nav_a"><a href="/plugins/gift/gift_box.php"><?php echo $gf_langpackage->gf_putin;?></a></li>
 		  <li class="nav_a"><a href="/plugins/gift/gift_outbox.php"><?php echo $gf_langpackage->gf_putout;?></a></li>
 		</ul>

@@ -18,6 +18,8 @@ dbtarget('w', $dbServs);
 $merchant_id = '70204';
 $md5key      = 'Ak(SKe]rB2Yj';
 
+
+//https://partyings.com/payment/yingfu/notify.php
 $result = file_get_contents('php://input','r');
 $data = json_decode($result,true);
 file_put_contents("yingfu_pc_notify.log", var_export($data, 1) . "\n\n", FILE_APPEND);
@@ -45,7 +47,6 @@ if(sha256Encrypt($str) != $sign_verify){
     returnJs("sign error!");
 }
 
-//https://partyings.com/payment/yingfu/notify.php
 if($status == 'paid'){
     //更新订单状态
     $result = array(

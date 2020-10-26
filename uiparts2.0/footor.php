@@ -36,18 +36,6 @@
                     한국어
                 </a>
                 |
-                <!-- <a href="javascript:setCookie('lp_name','e')">
-                    Pусский
-                </a>
-                |
-                <a href="javascript:setCookie('lp_name','de')">
-                    Deutsch
-                </a>
-                |
-                <a href="javascript:setCookie('lp_name','xi')">
-                    Español
-                </a>
-                | -->
                 <a href="javascript:setCookie('lp_name','ri')">
                     日本語
                 </a>

@@ -1,5 +1,5 @@
 <style>
-    #kefu{position:fixed;right:300px;bottom:30px;}
+    #kefu{position:fixed;right:300px;bottom:30px;cursor: pointer;}
     #kefu .circle{
         background: url("/skin/gaoyuan/images/icon/kefu-icon.png") no-repeat #03a0d7;
         background-size:100%;
@@ -8,5 +8,5 @@
     }
 </style>
 <div id="kefu">
-    <div class="circle"></div>
+    <div class="circle" onclick="parent.open_chat('1');"></div>
 </div>

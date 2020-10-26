@@ -92,7 +92,8 @@ if ($PaymentMethod == "gold") {
     if (!$dbo->exeUpdate($sql)) {
         exit("<script>alert('" . $er_langpackage->er_rechargewill . "');location.href='/modules2.0.php?app=user_pay';</script>");
     }
-    $dbo->exeUpdate("update wy_balance set state=2 where ordernumber='{$ordernumber}'");
+//更新订单为成功
+    $dbo->exeUpdate("update wy_balance set `state`='2' where ordernumber='{$ordernumber}'");
 
 
 //处理升级逻辑

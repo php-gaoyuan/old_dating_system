@@ -7,7 +7,7 @@ class UpgradeLog extends Model{
 	    $order = (new Balance())->where(['ordernumber'=>$pay_res['ordernumber']])->find();
 	    //halt($pay_res);
         $order->save([
-            'state'=>2,
+            'state'=>'2',
             'pay_msg'=>$pay_res['err_msg'],
             'out_trade_no'=>$pay_res['out_trade_no'],
         ]);

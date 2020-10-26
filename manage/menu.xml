@@ -14,8 +14,8 @@
 <!--        <item title='添加幻灯' target='huandeng_add.php' default='false'/>-->
 <!--        <item title='喇叭发送记录' target='laba_list.php' default='false'/>-->
 <!--        <item title='非法登陆记录' target='feifa_list.php' default='false'/>-->
-        <item title='充值记录' target='paylog.php' default='false'/>
-        <item title='会员升级记录' target='ticheng_list.php' default='false'/>
+        <item title='消费记录' target='paylog.php' default='false'/>
+        <item title='消费成功记录' target='ticheng_list.php' default='false'/>
     </part>
     <part id='base'>
         <item title='站点设置' target='basic_set.php' default='true'/>

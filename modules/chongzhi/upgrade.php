@@ -252,11 +252,11 @@ if ($uid) {
                                     <input class="radio" name="PaymentMethod" type="radio" value="lianyin" checked>
                                     <img src="/skin/<?php echo $skinUrl; ?>/images/vml.png" alt="lianyin"></label>
                                 </li>
-                                <li>
-                                  <label>
-                                    <input class="radio" name="PaymentMethod" type="radio" value="yingfu" >
-                                    <img src="/skin/<?php echo $skinUrl; ?>/images/fuHui.png" alt="yingfu"></label>
-                                </li>
+                                <!--<li>-->
+                                <!--  <label>-->
+                                <!--    <input class="radio" name="PaymentMethod" type="radio" value="yingfu" >-->
+                                <!--    <img src="/skin/<?php echo $skinUrl; ?>/images/fuHui.png" alt="yingfu"></label>-->
+                                <!--</li>-->
                                   <li>
                                       <label>
                                           <input class="radio" name="PaymentMethod" type="radio" value="gold" >
@@ -264,15 +264,6 @@ if ($uid) {
                                   </li>
 
                               </ul>
-<!--                              <div class="renewArgement" style="display: none;">-->
-<!--                                  <input type="checkbox" name="Recurring" value="PayPalRecurring">-->
-<!--                                  <span>-->
-<!--                                      开通自动循环支付服务，将会在会员到期前一天，自动扣款续费-->
-<!--                                      <a href="javascript:;" class="protocol" onclick="showRenewArgement();">-->
-<!--                                          《自动续费服务协议》-->
-<!--                                      </a>-->
-<!--                                  </span>-->
-<!--                              </div>-->
                             </div>
                             <!--支付 -->
                             <div class="ob-1-upnow">

@@ -231,10 +231,10 @@ $userinfo["sign"] = $sign["u_intro"];
                 } else {
                     if (txt.trim() != "") {
                         $.get("fanyi.php", {fid: chat.userinfo.user_id, lan: txt, tos: val}, function (res) {
-                            if (res == 0) {
-                                layer.msg("<?php echo $chatlp->money_buzu;?>");
-                                return false;
-                            }
+                            // if (res == 0) {
+                            //     layer.msg("<?php echo $chatlp->money_buzu;?>");
+                            //     return false;
+                            // }
                             $(".layui-show .layim-chat-textarea textarea").val(trims(res));
                         });
                     }

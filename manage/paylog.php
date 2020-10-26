@@ -63,7 +63,7 @@
 				<th>到账状态</th>
 				<th>支付方式</th>
 				<th>支付终端</th>
-				<th>支付结果</th>
+				<th>通道支付结果</th>
 				<th>充值时间</th>
 				<th>时间差</th>
 			</tr>
@@ -75,9 +75,17 @@
 			<td><?php echo $vo['uname']; ?></td>
 			<td><?php echo $vo['funds']; ?></td>
 			<td><?php echo $vo['message']; ?></td>
-			<td><?php if($vo['state']==0){echo "未到账";}elseif($vo["state"] == 2){echo "<font style='color:red'>已到账</font>";} ?></td>
+			<td><?php if($vo['state']==0){echo "未支付";}elseif($vo["state"] == 2){echo "<font style='color:#00d000'>已支付</font>";}else{echo "<font style='color:red;'>失败</font>";} ?></td>
             <td>
-				<?php if($vo['pay_method']=='lianyin'){echo "A支付";}elseif($vo["pay_method"] == 'yingfu'){echo "<font style='color:red'>B支付</font>";}else{$vo['pay_method'];} ?>
+				<?php 
+				if($vo['pay_method']=='lianyin'){
+				    echo "A支付";
+				}elseif($vo["pay_method"] == 'yingfu'){
+				    echo "<font style='color:red'>B支付</font>";
+				}elseif($vo["pay_method"] == 'gold'){
+				    echo "<font style='color:#129ec9;'>金币支付</font>";
+				} 
+				?>
             </td>
             <td><?php echo $vo['pay_from'];?></td>
             <td><?php echo $vo['pay_msg'];?></td>

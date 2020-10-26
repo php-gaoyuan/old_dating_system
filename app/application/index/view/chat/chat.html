@@ -155,42 +155,33 @@
 		            return false;
 		        }
 
-		        if (userinfo.user_sex == "1") {
-		            layer.open({
-		                type: 0,
-		                content: "翻译会扣1金币",
-		                btn: ["确定", "取消"],
-		                yes: function(index) {
-		                    $.get("<{:url('fanyi/index')}>", {
-		                        txt: txt,
-		                        lang: lang
-		                    },
-		                    function(res) {
-		                        if (res.code == 0) {
-		                            $(".layim-chat-send input").val(res.msg);
-		                        } else {
-		                            layer.msg(res.msg);
-		                        }
-		                    },
-		                    "json");
-		                    layer.close(index);
-		                }
-		            });
-		        } else {
-		            $.get("<{:url('fanyi/index')}>", {
-		                uid: userinfo.user_id,
-		                txt: txt,
-		                lang: lang
-		            },
-		            function(res) {
+		      //  if (userinfo.user_sex == "1") {
+		      //    layer.open({
+		      //          type: 0,
+		      //          content: "翻译会扣1金币",
+		      //          btn: ["确定", "取消"],
+		      //          yes: function(index) {
+		      //              $.get("<{:url('fanyi/index')}>", {txt: txt,lang: lang},function(res) {
+		      //                  if (res.code == 0) {
+		      //                      $(".layim-chat-send input").val(res.msg);
+		      //                  } else {
+		      //                      layer.msg(res.msg);
+		      //                  }
+		      //              },"json");
+		      //              layer.close(index);
+		      //          }
+		      //      });
+		          
+		      //  } else {
+		            
+		      //  }
+		           $.get("<{:url('fanyi/index')}>", {uid: userinfo.user_id,txt: txt,lang: lang},function(res) {
 		                if (res.code == 0) {
 		                    $(".layim-chat-send input").val(res.msg);
 		                } else {
 		                    layer.msg(res.msg);
 		                }
-		            },
-		            "json");
-		        }
+		            },"json");
 
 		        $("#tr_select").hide();
 		    });

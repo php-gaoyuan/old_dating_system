@@ -256,13 +256,13 @@ function mypals_add_callback(content,other_id){
                         <?php echo $rf_langpackage->rf_jiahaoyou;?>
                     </span>
                 </p>
-                <p>
-                    <span class="email_icon1_lq mr5">
-                    </span>
-                    <span class="text_box1_lf" onclick="<?php if(1){ ?> window.location.href='modules.php?app=msg_creator&2id=<?php echo $user_id;?> ';return false; <?php } else { ?> alert('<?php echo $u_langpackage->readmore; ?>');<?php } ?>">
-                        <?php echo $rf_langpackage->rf_fayoujian;?>
-                    </span>
-                </p>
+                <!--<p>-->
+                <!--    <span class="email_icon1_lq mr5">-->
+                <!--    </span>-->
+                <!--    <span class="text_box1_lf" onclick="<?php if(1){ ?> window.location.href='modules.php?app=msg_creator&2id=<?php echo $user_id;?> ';return false; <?php } else { ?> alert('<?php echo $u_langpackage->readmore; ?>');<?php } ?>">-->
+                <!--        <?php echo $rf_langpackage->rf_fayoujian;?>-->
+                <!--    </span>-->
+                <!--</p>-->
                 <p>
                     <span class="zxchat" style="margin-right: 4px;"></span>
                     <!-- <a style="font-size:12px;color:#000;" member="fuzhi" data-hito="fuzhi" onclick="window.i_im_talkWin('<?php echo $user_id;?>','imWin');">

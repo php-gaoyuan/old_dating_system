@@ -13,7 +13,7 @@ class Balance extends Model{
         if ($order['state'] != '2') {
             //先更新状态
             $res = $order->save([
-                "state" => 2,
+                "state" => '2',
                 'pay_msg'=>$pay_res['err_msg'],
                 'out_trade_no'=>$pay_res['out_trade_no']
             ]);

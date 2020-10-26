@@ -6,7 +6,10 @@ require("configuration.php");
 require("includes.php");
 //初始化数据库连接
 $dbo = new dbex;
-$translate = new translate;
+dbtarget('r', $dbServs);//定义读操作
+
+
+
 
 $user_id = get_sess_userid() ? get_sess_userid() : '';
 $fid = $_REQUEST['fid'];//对方ID
@@ -16,10 +19,22 @@ $tos = $_REQUEST['tos'];//翻译为何种语言
 $txt = strip_tags(trim($_REQUEST['lan']));//接收需要翻译的文本
 
 
-dbtarget('r', $dbServs);//定义读操作
-$arr = $dbo->getRow("select user_sex,golds,user_name from wy_users where user_id='$user_id' ");
 
-//print_r($_POST);exit;
+
+$fanyi_res = translate($txt, 'auto', $tos);
+$fanyi_res = $fanyi_res["trans_result"][0]["dst"];
+if ($fanyi_res) {//返回翻译后文本
+    exit($fanyi_res);
+} else {
+    exit($txt);
+}
+
+
+
+
+
+//以下代码弃用
+$arr = $dbo->getRow("select user_sex,golds,user_name from wy_users where user_id='$user_id' ");
 if ($arr["user_sex"] == 0) {
     $fanyi_res = $translate->translate($txt, 'auto', $tos);
     $fanyi_res = $fanyi_res["trans_result"][0]["dst"];

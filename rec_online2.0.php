@@ -39,6 +39,34 @@ if(empty($user_info)){
      echo "<script type='text/javascript'>alert('{$pu_langpackage->pu_lockdel}');location.href='do.php?act=logout';</script>";
 }
 */
+
+
+
+//判断chat_users有没有信息
+$chat_users_info = $dbo->getRow("select * from chat_users where uid='{$user_id}'");
+if(empty($chat_users_info)){
+    if(empty($user_ico)){
+        $user_ico = "skin/default/jooyea/images/d_ico_".$user_sex."_small.gif";
+    }
+    //插入数据
+    $time = time();
+    $sql = "INSERT INTO `chat_users` (`uid`,`u_name`,`u_ico`,`last_time`,`contacted`) VALUES ('{$user_id}','{$user_name}','{$user_ico}','{$time}','1')";
+    //echo "<pre>";print_r($sql);exit;
+    $dbo->exeUpdate($sql);
+}
+//插入默认客服
+$kefu = $dbo->getRow("select * from wy_users where is_service=1","arr");
+$pals_mine_info = $dbo->getRow("select * from wy_pals_mine where user_id='{$user_id}' and pals_id='{$kefu['user_id']}'");
+if(empty($pals_mine_info)){
+    $date = date("Y-m-d H:i;s");
+    $sql="insert into wy_pals_mine (user_id,pals_id,pals_name,pals_sex,pals_ico,is_service,add_time,active_time) values('{$user_id}','{$kefu['user_id']}','{$kefu['user_name']}','{$kefu['user_sex']}','{$kefu['user_ico']}','1','{$date}','{$date}')";
+    //echo "<pre>";print_r($sql);exit;
+    $dbo->exeUpdate($sql);
+}
+
+
+
+
 //男性  删除
 if (empty($isNull)) {
     echo "<script type='text/javascript'>alert('I\'m Sorry,Your account is delete by Root.Please do not do hacked work.[你的账号被删除了！] You can send email to ky.service@yahoo.com ask for why.');location.href='do.php?act=logout';</script>";

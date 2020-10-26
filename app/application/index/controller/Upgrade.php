@@ -125,7 +125,7 @@ class Upgrade extends Base
         if ($pay_type == 'gold') {
             //扣除金币
             $res2 = model("Users")->where(["user_id" => $uid])->setDec("golds", $money);
-            model("Balance")->where(['ordernumber' => $ordernumber])->update(['state' => 2]);
+            model("Balance")->where(['ordernumber' => $ordernumber])->update(['state' => '2']);
             //更新到期时间
             $res3 = model("UpgradeLog")->upgrade_change_date([
                 'ordernumber' => $ordernumber,

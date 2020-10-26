@@ -208,14 +208,14 @@
 					area: ["50%", "50%"],
 					content: "/manage/view/user/change_tuid.php?id=" + data.user_id
 				})
-			} else if (layEvent == 'isMember') {
+			} else if (layEvent == 'userGroup') {
 				layui.layer.open({
 					type: 2,
 					title: "调整会员级别",
 					fixed: true,
 					maxmin: true,
-					area: ["80%", "95%"],
-					content: "{:U('changeLevel')}?id=" + data.id
+					area: ["50%", "50%"],
+					content: "/manage/view/user/change_group.php?id=" + data.user_id
 				})
 			}else if (layEvent == 'lookChatLog') {
 				layui.layer.open({

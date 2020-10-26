@@ -6,8 +6,12 @@
 **/*.pid
 .idea
 apk
+app/public/uploads
 iweb_mini_lib/conf/dbconf.php
 nginx.htaccess
+uploadfiles/album
+uploadfiles/avatar
+uploadfiles/gift
 # Windows:
 **/Thumbs.db
 **/ehthumbs.db

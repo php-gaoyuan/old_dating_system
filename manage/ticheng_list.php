@@ -94,7 +94,7 @@
 	$sql="select * from wy_balance where funds !=0 and state='2' " .$condition. " order by addtime desc";
 
 
-	
+
 
 	
 	$dbo->setPages($c_perpage,$page_num);//设置分页

@@ -86,14 +86,14 @@ ul#small_pic li img{width: 60px;height: 60px;}
 		</ul></div>
 	<div class="giftitem_right">
 		<div class="giftitem_right_s"><b><?php echo $gf_langpackage->gf_jiage;?>:</b><span><i></i><?php echo $gifts['money'];?></span></div>
-		<div class="giftitem_right_s"><b><?php echo $gf_langpackage->gf_caizhi;?>:</b><?php echo $gifts['caizhi'];?></div>
+		<!--<div class="giftitem_right_s"><b><?php echo $gf_langpackage->gf_caizhi;?>:</b><?php echo $gifts['caizhi'];?></div>-->
 		<div class="giftitem_right_num">
 			<div><b><?php echo $gf_langpackage->gf_shuliang;?>:</b><big onclick="check_item_num(-1)">-</big><input id="item_num" type="text" value="1" size="3" /><big onclick="check_item_num(1)">+</big></div>
 			<div><button id="gobuy"><?php echo $gf_langpackage->gf_goumai;?></button></div>
 			<input type="hidden" id="itemid" value="<?php echo $_GET['id']; ?>" />
 		</div>
 	</div>
-	<div  class="giftitem_name" style="border-bottom:1px solid #A33F3F;height:25px;margin-top:10px;"><span style="display:inline-block;padding:0px 15px;color:#fff;background:#A33F3F;margin-left:10px;height:25px;line-height:27px"><?php echo $gf_langpackage->gf_xiangqing;?></span></div>
+	<!--<div  class="giftitem_name" style="border-bottom:1px solid #A33F3F;height:25px;margin-top:10px;"><span style="display:inline-block;padding:0px 15px;color:#fff;background:#A33F3F;margin-left:10px;height:25px;line-height:27px"><?php echo $gf_langpackage->gf_xiangqing;?></span></div>
 	<div style="width:100%;float:left;padding:10px;color:#666;" id="xiangqing">
         <?php
         $contentByRoot = $gifts['desc'];    //获取文章内容
@@ -122,7 +122,7 @@ ul#small_pic li img{width: 60px;height: 60px;}
         $contentByRoot = preg_replace_callback($pattern, "reImage", $contentByRoot);
         echo $contentByRoot;
         ?>
-	</div>
+	</div>-->
 <script>
 //放大镜
 $(function(){

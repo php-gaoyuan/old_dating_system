@@ -4,7 +4,7 @@ $agent = $_SERVER['HTTP_USER_AGENT'];
 if (strpos($agent, "comFront") || strpos($agent, "iPhone") || strpos($agent, "MIDP-2.0") || strpos($agent, "Opera Mini") || strpos($agent, "UCWEB") || strpos($agent, "Android") || strpos($agent, "Windows CE") || strpos($agent, "SymbianOS")) {
     $rootUrl = str_replace("www.","",$_SERVER['HTTP_HOST']);
     $protocol =((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
-    header("Location:{$protocol}m.{$rootUrl}/");
+    header("Location:{$protocol}m.{$rootUrl}/index/main/index.html");
     exit;
 }
 

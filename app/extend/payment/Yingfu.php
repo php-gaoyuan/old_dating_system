@@ -107,7 +107,7 @@ class Yingfu
         $paymentResult = $this->payCurlPost($this->wintopayUrl, $this->merchant_id, $data, $website);
 //对返回结果进行解析处理,返回结果为json类型
         $result = json_decode($paymentResult, true);
-        file_put_contents("yingfu_pc_return.log", var_export($result, 1) . "\n\n", FILE_APPEND);
+        file_put_contents("yingfu_wap_return.log", var_export($result, 1) . "\n\n", FILE_APPEND);
 //echo "<pre>";print_r($result);exit;
         $str = $result['id'] . $result['status'] . $result['amount_value'] . $this->md5key . $this->merchant_id . $result['request_id'];
         if ($this->sha256Encrypt($str) != $result['sign_verify']) { //验证返回信息

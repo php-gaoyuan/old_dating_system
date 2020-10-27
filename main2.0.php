@@ -107,7 +107,7 @@ if(!$user['user_ico'] && !$_COOKIE['uico']){
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta http-equiv="Content-Language" content="zh-cn">
 		<title>
-			<?php echo $user_name;?>的个人首页-<?php echo $siteName;?>
+			<?php echo $user_name;?>-partyings
 		</title>
 		<base href='<?php echo $siteDomain;?>' />
 

@@ -358,7 +358,7 @@ $userinfo["sign"] = $sign["u_intro"];
     //打开一个临时会话窗口
     function open_chat(id, name, user_ico) {
         var layim = layui.layim;
-        console.log(layui.layim);
+        //console.log(layui.layim);
         //获取个人信息
         $.getJSON("chat.php?act=get_userinfo", {user_id: id}, function (res) {
             layim.chat({

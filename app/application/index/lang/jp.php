@@ -52,13 +52,15 @@
 
   'banben' => 'バージョン',
 
-  'about us' => '私たちについて',
-
-  'help center' => 'ヘルプセンター',
-
-  'tiaokuan' => '使用条項',
-
-  'jiaoyou' => '安全な交友',
+    "about us"=>"私達について",
+	"tiaokuan"=>"利用規約",
+	"privacy"=>"プライバシーポリシー",
+	"jysafe"=>"安全なデート",
+	"help center"=>"ヘルプセンター",
+	"contact us"=>"お問い合わせ",
+	
+	
+	
 
   'gengxin' => 'チェックアップ',
 
@@ -114,9 +116,9 @@
 
   'upgrade_title' => '会員を進級する',
 
-  'vip_member' => 'VIP会員',
+  'vip_member' => 'プラチナ会員',
 
-  'vip_yj_member' => 'VIP永久会員',
+  'vip_yj_member' => 'ダイヤモンド会員',
 
   'upgrade_sub_btn' => 'アップグレードをクリック',
 
@@ -167,6 +169,8 @@
   'vip' => 'ビップ',
 
   'gift' => 'プレゼント',
+  
+  'giftbox' => 'プレゼント箱',
 
   'wallet' => '財布',
 

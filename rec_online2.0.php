@@ -77,35 +77,10 @@ if (empty($isNull)) {
     session_destroy();
     echo '<script language=javascript>top.location="/";</script>';
 }
-/*强制上传头像
-    $user_ico=end(explode('/',$user_info['user_ico']));
-    if($user_ico=='d_ico_0_small.gif'||$user_ico=='d_ico_1_small.gif'){
-        echo "<script type='text/javascript'>alert('请上传头像');window.open('modules.php?app=user_ico','user_ico','left=300,top=120');</script>";
-        exit;
-    }
-*/
-//照片数量
-$sql = "select photo_num from wy_album where user_id=$user_id";
-$p_num = $dbo->getRow($sql);
-$photo_num = $p_num['photo_num'];
-//金币邮票个数
-$sqlg = "select golds,stamps_num from wy_users where user_id=$user_id";
-$golds = $dbo->getRow($sqlg);
-$golds_num = $golds['golds'];
-$stamps_num = $golds['stamps_num'];
-//获取用户自定义属性列表
-//$information_rs=array();
-//$information_rs=userInformationGetList($dbo,'*');
-//好友速配推荐
-//$friends_list=$dbo->getRs("select user_id,user_name,user_ico from wy_users order by rand() limit 0,12");
-//获取推荐群组
-$group_recommend_list = $dbo->getRs("select * from wy_groups where recommed_time is not null order by recommed_time desc limit 6");
 //读取幻灯片
 $sql = "select * from wy_hd where cat_id=4 order by ord desc , id desc limit 5";
 $xhd_list = $dbo->getRs($sql);
-//用户资料
-$sql = "select user_sex,is_txrz from wy_users where user_id='$user_id' ";
-$u_sex_txrz = $dbo->getRow($sql);
+
 
 
 
@@ -139,7 +114,7 @@ $u_sex_txrz = $dbo->getRow($sql);
     //gaoyuanadd判断tiaozhuan
     if($_GET["page"]>1){
     	//echo "<pre>";print_r($user_info);exit;
-    	if($user_info["user_group"] == 1 || $user_info["user_group"] == "base"){
+    	if($user_info["user_group"] == 1 ){
     		echo "<script>parent.location.href='/main2.0.php?app=user_upgrade';</script>";exit;
     	}
     }
@@ -165,19 +140,14 @@ $u_sex_txrz = $dbo->getRow($sql);
     //page end
 
 
-
-    $sqlg="select * from wy_users where user_id=$user_id"; 
-    $userinfo=$dbo->getRow($sqlg);
+    $userinfo=$dbo->getRow("select * from wy_users where user_id={$user_id}");
 
 
     
-    if($userinfo['user_sex'] == 1){ 
-        //$sql = "select * from wy_users where user_id != '$user_id' and user_sex != '$user_sex' and is_pass!='0' order by lastlogin_datetime desc limit $page, $pagesize"; 
-        $sql = "select * from wy_users as u left join wy_online as o on u.user_id=o.user_id where u.user_sex != '$user_sex' and u.is_pass!='0' order by u.is_service desc,o.active_time desc"; 
-        //$sql = "select * from wy_users where user_sex != 1 and is_pass !=0";
-    }else{ 
-        //$sql="select * from wy_online where user_id != '$user_id' and user_sex != '$user_sex' order by active_time limit $page, $pagesize";
-        $sql = "select * from wy_users as u left join wy_online as o on u.user_id=o.user_id where u.user_sex != '$user_sex' order by o.active_time desc"; 
+    if($userinfo['user_sex'] == 1){
+        $sql = "select * from wy_users as u left join wy_online as o on u.user_id=o.user_id where (u.user_sex != '{$user_sex}' and u.is_pass!='0') or u.is_service=1 order by u.is_service desc,o.active_time desc";
+    }else{
+        $sql = "select * from wy_users as u left join wy_online as o on u.user_id=o.user_id where u.user_sex != '{$user_sex}' order by u.is_service desc,o.active_time desc";
     } 
 
 
@@ -191,62 +161,40 @@ $u_sex_txrz = $dbo->getRow($sql);
         $none_data="";
         $isNull=1;
     }
-    //echo $page_total;exit;
-
     // 结束新版分页
-    //echo $sql;exit; 
-    $ra_rs=$dbo->getRs($sql);
+
     
     $ra_rs0519=array(); 
-    foreach($ra_rs as $rss){ 
-        //删除客服
-        // if($rss["is_service"] == 1){
-        //     unset($rss);
-        //     continue;
-        // }
-        //$sql="select integral,user_ico,country,reside_province,reside_city,birth_year,birth_month,birth_day,user_group,is_txrz from wy_users where user_id = '$rss[user_id]' "; 
-        $sql="select * from wy_users where user_id = '$rss[0]' "; 
-        $arr=$dbo->getRow($sql); 
+    foreach($ra_rs as $k=>$rss){
+        $sql="select * from wy_users where user_id = '$rss[0]' ";
+        $arr=$dbo->getRow($sql);
 
-        $rs=array_merge($rss,$arr); 
-        $sql="select mood,mood_pic from wy_mood where user_id='$rss[user_id]' order by mood_id desc limit 1 "; 
+        $rs=array_merge($rss,$arr);
+        $sql="select mood,mood_pic from wy_mood where user_id='$rss[user_id]' order by mood_id desc limit 1 ";
         $arrmood=$dbo->getRow($sql);
         //echo "<pre>";print_r($rs);exit;
 
-        
-        if($arrmood) $rs=array_merge($rs,$arrmood); 
-        if(!$rs['user_ico']){ 
-            $rs[10]=$rs['user_ico']='skin/default/jooyea/images/d_ico_'.$rs[4].'.gif';
-        } if($rs[4]==0){
-            $rs[4]=$rs['user_sex']=$rf_langpackage->rf_woman;
+
+        if($arrmood) $rs=array_merge($rs,$arrmood);
+        if(empty($rs['user_ico'])){
+            $rs['user_ico']='skin/default/jooyea/images/d_ico_'.$rs['user_sex'].'.gif';
+        } if($rs['user_sex']==0){
+            $rs['user_sex']=$rf_langpackage->rf_woman;
         }else{
-            $rs[4]=$rs['user_sex']=$rf_langpackage->rf_man;
+            $rs['user_sex']=$rf_langpackage->rf_man;
         }
-        if($rs['user_group']==3){ 
-            $rs['user_tt']='VIP'; 
-        }else if($rs['user_group']==2){
-            $rs['user_tt']='Senior Membe'; 
-        }else{ 
-            $rs['user_tt']=''; 
-        } 
+
         if(empty($rs['mood'])){
             $rs['mood']=$rf_langpackage->rf_lan;
         }
-        $ra_rs0519[]=$rs; 
+        $ra_rs0519[]=$rs;
     } 
     if(empty($ra_rs0519)){ 
         $p1=$_GET['page']-1; 
         $url="/rec_online2.0.php?page=$p1";
         //echo "<script>alert('抱歉，已经没有用户了!');window.location.href = '$url'</script>"; 
     }
-    /* $sql ="select * from wy_online where 1"; 
-    $arr_id = $dbo->getRs($sql);
-    foreach($arr_id as $k=>$v) { 
-        $str.=$v['user_id'].','; 
-    } 
-    $ex = substr($str,0,-1);
-    $exp = explode(',',$ex);*/ 
-
+    /*
     //取出客服
     //$kefu_info = $dbo->getRow("select * from wy_users where is_service='1'");
     //echo "<pre>";print_r($kefu_info);exit;
@@ -268,42 +216,6 @@ $u_sex_txrz = $dbo->getRow($sql);
         <div class="samle_tu">
             <div class="staff">
                 <ul>
-
-
-                    <!-- <li>
-                        <a href="home2.0.php?h=<?php echo $kefu_info['user_id'];?>" target="_blank">
-                            <img src="<?php echo $kefu_info['user_ico'];?>" alt="" width="178" height="178" />
-                        </a>
-                        <div class="mid">
-                            <div class="mid_left">
-                                <img src="./skin/gaoyuan/images/zx.png" />
-                                <?php echo $kefu_info['user_name']; ?>
-                            </div>
-                            <div class="mid_right">
-                                <?php if($kefu_info["user_group"] == 2){ ?>
-                                <img src="/skin/default/jooyea/images/xin/gaoji.png" width="23" />
-                                <?php }elseif($kefu_info["user_group"] == 3){ ?>
-                                <img src="/skin/default/jooyea/images/xin/vip.gif" width="23" />
-                                <?php }elseif($kefu_info["user_group"] == 4){ ?>
-                                <img src="/skin/default/jooyea/images/xin/vip-yj.gif" width="23" />
-                                <?php } ?>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="notes">
-                            <p style="width:140px;white-space:nowrap; overflow:hidden;">
-                                <?php echo $kefu_info["user_sex"]; ?> &nbsp; <?php echo date("Y")-$kefu_info[13]; ?> &nbsp;&nbsp;
-                            </p>
-                        </div>
-                        <div class="way">
-                            <i class="xin" id="collect" onclick="top.mypals_add('<?php echo $kefu_info['user_id'];?>');" title="Collect" name="83"></i>
-                            <i class="email" onclick="<?php if(1){ ?> window.open ('modules.php?app=msg_creator&2id=<?php echo $kefu_info['user_id'];?>','新邮件','height=800,width=800,top=0,left=0,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no');return false; <?php } else { ?> alert('<?php echo $u_langpackage->readmore; ?>');<?php } ?>" title="Email"></i>
-                            
-                            <i class="dope" onclick="parent.open_chat('<?php echo $kefu_info['user_id'];?>','<?php echo $kefu_info['user_name'];?>','<?php echo $kefu_info['user_ico'];?>');" title="Say hello">
-                            </i>
-                        </div>
-                    </li> -->
-
                     <style>
                         .staff ul li a{display: block;}
                         .staff ul li a img{border-radius: 100%;}
@@ -328,15 +240,9 @@ $u_sex_txrz = $dbo->getRow($sql);
                             <div class="clear">
                             </div>
                         </div>
-<!--                        <div class="notes">-->
-<!--                            <p style="width:140px;white-space:nowrap; overflow:hidden;">-->
-<!---->
-<!--                            </p>-->
-<!--                        </div>-->
+
                         <div class="way">
                             <i class="xin" id="collect" onclick="top.mypals_add('<?php echo $hd['user_id'];?>');" title="Collect" name="83"></i>
-                            <!--<i class="email" onclick="<?php if(1){ ?> window.open ('modules.php?app=msg_creator&2id=<?php echo $hd['user_id'];?>','新邮件','height=800,width=800,top=0,left=0,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no');return false; <?php } else { ?> alert('<?php echo $u_langpackage->readmore; ?>');<?php } ?>"></i>-->
-                            <!-- <i class="dope" onclick="top.i_im_talkWin('<?php echo $hd['user_id'];?>','imWin');" title="Say hello"> -->
                             <i class="dope" onclick="parent.open_chat('<?php echo $hd['user_id'];?>');" title="Say hello"></i>
                         </div>
                     </li>
@@ -371,7 +277,6 @@ $u_sex_txrz = $dbo->getRow($sql);
 
                 //左按钮
                 $(".picbtn-1").click(function() {
-
                     if (index == 1) {
                         window.location.href = 'rec_online2.0.php?page=<?php echo $_GET["page"] ?$_GET["page"]-1:1; ?>';
                         return;

@@ -178,66 +178,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title></title>
 <base href='<?php echo $siteDomain;?>' />
@@ -277,19 +217,17 @@ function mypals_add(other_id){
 
 
 
-			<div class="right">
+			<div class="right" style="margin-top:20px;">
                <p id='operate_<?php echo $rs["user_id"];?>'>
                         <a href='javascript:<?php echo str_replace("{uid}",$rs['user_id'],$send_join_js);?>'><?php echo "&nbsp;&nbsp;";?><?php echo str_replace("{he}",get_TP_pals_sex($rs['user_sex']),$mp_langpackage->mp_add_mypals);?></a>
                 </p>
 				
-				<div class="content_ch1" style="background:url(skin/default/jooyea/images/ch.jpg) ">
-				<a style="width:22px;height:22px;float:left;display:block" href="javascript:;" title="<?php echo $rf_langpackage->rf_liaotian;?>" onclick="top.i_im_talkWin('<?php echo $rs[user_id];?>','imWin');"></a>
-				<a style="width:22px;height:22px;float:left;display:block" href="javascript:;" title="<?php echo $rf_langpackage->rf_dazhaohu;?>" onclick="top.hi_action(<?php echo $rs[user_id];?>)"></a>
-				<a style="width:22px;height:22px;float:left;display:block" href="javascript:;" title="<?php echo $rf_langpackage->rf_fayoujian;?>" onclick="top.frame_content.location.href='modules2.0.php?app=msg_creator&2id=<?php echo $rs[user_id];?>';return false;"></a>
-				<a style="width:22px;height:22px;float:left;display:block" href="plugins/gift/giftshop.php" title="<?php echo $rf_langpackage->rf_songliwu;?>"></a>
-
-				
-			</div>
+				<div class="content_ch1" style="background:url(skin/default/jooyea/images/ch.jpg);display:none;">
+    				<a style="width:22px;height:22px;float:left;display:block" href="javascript:;" title="<?php echo $rf_langpackage->rf_liaotian;?>" onclick="top.i_im_talkWin('<?php echo $rs[user_id];?>','imWin');"></a>
+    				<a style="width:22px;height:22px;float:left;display:block" href="javascript:;" title="<?php echo $rf_langpackage->rf_dazhaohu;?>" onclick="top.hi_action(<?php echo $rs[user_id];?>)"></a>
+    				<a style="width:22px;height:22px;float:left;display:block" href="javascript:;" title="<?php echo $rf_langpackage->rf_fayoujian;?>" onclick="top.frame_content.location.href='modules2.0.php?app=msg_creator&2id=<?php echo $rs[user_id];?>';return false;"></a>
+    				<a style="width:22px;height:22px;float:left;display:block" href="plugins/gift/giftshop.php" title="<?php echo $rf_langpackage->rf_songliwu;?>"></a>
+    			</div>
 
 	
             </div>

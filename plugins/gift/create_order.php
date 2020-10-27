@@ -90,7 +90,7 @@
                     echo "<script>top.location.reload();</script>";
                     exit;
                 }
-                $sql="insert into gift_order(send_id,accept_id,send_name,accept_name,msg,gift,send_time,gifttype,accept_address) values('$send_id','$send_id','$send_name','$send_name','$msg','$gift_path','$send_time','$gifttype','$address')";
+                $sql="insert into gift_order(send_id,accept_id,send_name,accept_name,msg,gift,send_time,gifttype,accept_address,gift_id) values('$send_id','$send_id','$send_name','$send_name','$msg','$gift_path','$send_time','$gifttype','$address','$gift_id')";
                 //echo $sql;exit;
                 if($dbo->exeUpdate($sql)){
                     echo "<script>top.Dialog.alert('$gf_langpackage->gf_mess_4');</script>";
@@ -106,8 +106,7 @@
             }
 
             if(!empty($_POST['tofriends'])){
-
-                $sql="insert into gift_order(send_id,accept_id,send_name,accept_name,msg,gift,send_time,gifttype) values('$send_id','$accept_id','$send_name','$accept_name','$msg','$gift_path','$send_time','$gifttype')";
+                $sql="insert into gift_order(send_id,accept_id,send_name,accept_name,msg,gift,send_time,gifttype,gift_id) values('$send_id','$accept_id','$send_name','$accept_name','$msg','$gift_path','$send_time','$gifttype','$gift_id')";
                 if($dbo->exeUpdate($sql)){
                     echo "<script>top.Dialog.alert('$gf_langpackage->gf_mess_4');</script>";
                     $sql="update wy_users set golds=$golds-$score where user_id=$send_id";

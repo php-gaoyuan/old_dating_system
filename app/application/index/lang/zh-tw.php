@@ -33,49 +33,35 @@
     'footer_nav4' => '好友',
 
     'footer_nav5' => '我',
-
     'ok' => '操作成功',
-
     'fail' => '操作失敗',
-
     'submit' => '提交',
-
     'yongjiu' => '永久',
-
     'need recharge' => '金幣不足，請充值',
-
     'no friend' => '好友不存在',
-
     'friend_name' => '好友名稱',
-
     'golds' => '金幣',
-
     'banben' => '版本',
+    
+    
 
-    'about us' => '關於我們',
-
-    'help center' => '幫助中心',
-
-    'tiaokuan' => '使用條款',
-
-    'jiaoyou' => '安全交友',
-
+    "about us"=>"關於我們",
+	"tiaokuan"=>"使用條款",
+	"privacy"=>"隱私政策",
+	"jysafe"=>"交友安全",
+	"help center"=>"幫助中心",
+	"contact us"=>"聯繫我們",
+	
+	
+	
     'gengxin' => '檢查更新',
-
     'guanwang' => '官網',
-
     'login_username_placeholder' => '請輸入您的用戶名',
-
     'login_pass_placeholder' => '請輸入密碼',
-
     'login_forget_pass' => '忘記密碼？',
-
     'login_reg_account' => '註冊帳號',
-
     'login_sub_btn' => '登入',
-
     'login_footer' => '全球最專業的大型翻譯社交平臺',
-
     'reg_title' => '用戶註冊',
 
     'reg_user_name' => '用戶名',
@@ -114,9 +100,9 @@
 
     'upgrade_title' => '陞級會員',
 
-    'vip_member' => 'VIP會員',
+    'vip_member' => '白金會員',
 
-    'vip_yj_member' => 'VIP永久會員',
+    'vip_yj_member' => '鑽石會員',
 
     'upgrade_sub_btn' => '點擊陞級',
 
@@ -167,6 +153,7 @@
     'vip' => '貴賓',
 
     'gift' => '禮物',
+    "giftbox"=>"禮物盒子",
 
     'wallet' => '錢包',
 

@@ -65,29 +65,22 @@ return [
 
 
 	"yongjiu"=>"永久",
-
 	"need recharge"=>"金币不足，请充值",
-
 	"no friend"=>"好友不存在",
-
 	"friend_name"=>"好友名称",
-
 	"golds"=>"金币",
-
 	"banben"=>"版本",
 
 	"about us"=>"关于我们",
-
-	"help center"=>"帮助中心",
-
 	"tiaokuan"=>"使用条款",
+	"privacy"=>"隐私条款",
+	"jysafe"=>"交友安全",
+	"help center"=>"帮助中心",
+	"contact us"=>"联系我们",
 
-	"jiaoyou"=>"安全交友",
 
 	"gengxin"=>"检查更新",
-
 	"guanwang"=>"官网",
-
 /*******************************************************/
 
 
@@ -180,9 +173,9 @@ return [
 
 	"upgrade_title"=>"升级会员",
 
-	"vip_member"=>"VIP会员",
+	"vip_member"=>"白金会员",
 
-	"vip_yj_member"=>"VIP永久会员",
+	"vip_yj_member"=>"钻石会员",
 
 	"upgrade_sub_btn"=>"点击升级",
 
@@ -255,6 +248,7 @@ return [
 	"vip"=>"VIP",
 
 	"gift"=>"礼物",
+	"giftbox"=>"礼物盒子",
 
 	"wallet"=>"钱包",
 

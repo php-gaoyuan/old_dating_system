@@ -42,12 +42,12 @@ class Events {
                 if (!empty($resMsg)) {
                     foreach ($resMsg as $key => $vo) {
                         $content = htmlspecialchars($vo['content']);
-                        $to_userinfo = get_user_info($db1, $vo["toid"]);
-                        if ($to_userinfo["user_sex"] == "0" && (strpos($content, "http") === false)) {
-                            $tr_content = translate($content, "auto", "zh");
-                            $tr_content = $tr_content["trans_result"][0]["dst"];
-                            $content = "原文：" . $content . "\n\n译文：" . $tr_content;
-                        }
+                        //$to_userinfo = get_user_info($db1, $vo["toid"]);
+                        // if ($to_userinfo["user_sex"] == "0" && (strpos($content, "http") === false)) {
+                        //     $tr_content = translate($content, "auto", "zh");
+                        //     $tr_content = $tr_content["trans_result"][0]["dst"];
+                        //     $content = "原文：" . $content . "\n\n译文：" . $tr_content;
+                        // }
                         $log_message = ['message_type' => 'logMessage', 'data' => ['id' => (int)$vo['fromid'], 'logid'=>(string)$vo['id'], 'username' => $vo['fromname'], 'avatar' => check_userico($vo['fromavatar']), 'content' => $content, 'type' => 'friend', 'timestamp' => $vo['timeline'] * 1000, ]];
                         //echo json_encode($log_message),"\n";
                         Gateway::sendToUid($uid, json_encode($log_message));
@@ -107,18 +107,16 @@ class Events {
                         return false;
                     }
                 }
-                
-
 
 
 
                 //$from = $_SESSION["from"];
                 $tr_content = "";
-                if (strpos($content, "http") === false) {
-                    //翻译
-                    $tr_content = translate($content, "auto", "zh");
-                    $tr_content = isset($tr_content["trans_result"][0]["dst"]) ? $tr_content["trans_result"][0]["dst"] : $content;
-                }
+                // if (strpos($content, "http") === false) {
+                //     //翻译
+                //     $tr_content = translate($content, "auto", "zh");
+                //     $tr_content = isset($tr_content["trans_result"][0]["dst"]) ? $tr_content["trans_result"][0]["dst"] : $content;
+                // }
 
 
                 //聊天记录数组
@@ -127,21 +125,14 @@ class Events {
                 // 插入
                 $insert_id=$db1->insert('chat_log')->cols($param)->query();
                 //如果是女号直接翻译成中文
-                $to_userinfo = get_user_info($db1, $to_id);
-                if ($to_userinfo["user_sex"] == "0" && !empty($tr_content)) {
-                    $content = "原文：" . $content . "\n\n译文：" . $tr_content;
-                }
+                // $to_userinfo = get_user_info($db1, $to_id);
+                // if ($to_userinfo["user_sex"] == "0" && !empty($tr_content)) {
+                //     $content = "原文：" . $content . "\n\n译文：" . $tr_content;
+                // }
 
 
                 $chat_message = ['message_type' => 'chatMessage', 'data' => ['id' => (int)$uid, 'logid'=>$insert_id, 'username' => $_SESSION['username'], 'avatar' => check_userico($_SESSION['avatar']), 'type' => $type, 'content' => $content, 'timestamp' => time() * 1000, ]];
                 Gateway::sendToUid($to_id, json_encode($chat_message));
-
-                //如果对方在线，更新消息为已读
-                if (Gateway::isUidOnline($to_id)) {
-                    //$db1->update("chat_log")->cols(["is_read" => "1"])->where("fromid='{$to_id}' and toid='{$uid}'")->query();
-                    //$db1->update("chat_log")->cols(["is_read" => "1"])->where("id='{$insert_id}'")->query();
-                }
-
 
                 //检查如果对方不是好友发送列表到陌生人
                 $info = $db1->select()->from("wy_pals_mine")->where("user_id='$uid' and pals_id='$to_id'")->row();
@@ -162,7 +153,7 @@ class Events {
             case "changeMessage":
                 $uid = $_SESSION["id"];
                 $pals_id = $message["pals_id"];
-                //设置推送状态为已经推送
+                //更新消息为已读
                 $db1->update("chat_log")->cols(["is_read" => "1"])->where("fromid='{$pals_id}' and toid='{$uid}'")->query();
             break;
             case 'ping':
@@ -176,22 +167,22 @@ class Events {
      * @param int $client_id 连接id
      */
     public static function onClose($client_id) {
-        // $db1 = Db::instance('db1'); //数据库链接
-        // $uid = $_SESSION['id'];
-        // //$from = $_SESSION['from'];
-        // $update_data = ["line_status" => 0];
-        // if ($from) {
-        //     $update_data[$from . "_online"] = 0;
-        // } else {
-        //     $update_data["pc_online"] = 0;
-        //     $update_data["app_online"] = 0;
-        // }
-        // //断开后通知所有用户该用户离线
-        // $db1->update("chat_users")->cols($update_data)->where("uid='{$uid}'")->query();
-        // $logout_message = ["message_type" => "logout", "id" => $uid];
-        // Gateway::sendToAll(json_encode($logout_message));
+        $db1 = Db::instance('db1'); //数据库链接
+        $uid = $_SESSION['id'];
+        //$from = $_SESSION['from'];
+        $update_data = ["line_status" => 0];
+        if ($from) {
+            $update_data[$from . "_online"] = 0;
+        } else {
+            $update_data["pc_online"] = 0;
+            $update_data["app_online"] = 0;
+        }
+        //断开后通知所有用户该用户离线
+        $db1->update("chat_users")->cols($update_data)->where("uid='{$uid}'")->query();
+        $logout_message = ["message_type" => "logout", "id" => $uid];
+        Gateway::sendToAll(json_encode($logout_message));
     }
     public static function onWorkerStop() {
-        //echo "worker stop";
+        echo "worker stop";
     }
 }

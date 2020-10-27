@@ -53,23 +53,24 @@
 		            //图标字体的unicode，可不填
 		            iconClass: 'tool-redpacket' //图标字体的class类名
 		        },
-		        {
-		            alias: 'video',
-		            //工具别名
-		            title: '視訊',
-		            //工具名称
-		            iconUnicode: '&#xe6ed;',
-		            //图标字体的unicode，可不填
-		            iconClass: '' //图标字体的class类名
-		        },{
-		            alias: 'phone',
-		            //工具别名
-		            title: 'phone',
-		            //工具名称
-		            iconUnicode: '&#xe63b;',
-		            //图标字体的unicode，可不填
-		            iconClass: '' //图标字体的class类名
-		        }],
+		      //  {
+		      //      alias: 'video',
+		      //      //工具别名
+		      //      title: '視訊',
+		      //      //工具名称
+		      //      iconUnicode: '&#xe6ed;',
+		      //      //图标字体的unicode，可不填
+		      //      iconClass: '' //图标字体的class类名
+		      //  },{
+		      //      alias: 'phone',
+		      //      //工具别名
+		      //      title: 'phone',
+		      //      //工具名称
+		      //      iconUnicode: '&#xe63b;',
+		      //      //图标字体的unicode，可不填
+		      //      iconClass: '' //图标字体的class类名
+		      //  }
+		        ],
 		        title: 'partyings-IM',
 		        //应用名，默认：我的IM
 		        brief: true,
@@ -175,13 +176,13 @@
 		      //  } else {
 		            
 		      //  }
-		           $.get("<{:url('fanyi/index')}>", {uid: userinfo.user_id,txt: txt,lang: lang},function(res) {
-		                if (res.code == 0) {
-		                    $(".layim-chat-send input").val(res.msg);
-		                } else {
-		                    layer.msg(res.msg);
-		                }
-		            },"json");
+	           $.get("<{:url('fanyi/index')}>", {uid: userinfo.user_id,txt: txt,lang: lang},function(res) {
+	                if (res.code == 0) {
+	                    $(".layim-chat-send input").val(res.msg);
+	                } else {
+	                    layer.msg(res.msg);
+	                }
+	            },"json");
 
 		        $("#tr_select").hide();
 		    });
@@ -190,16 +191,20 @@
 		    //监听发送消息
 		    layim.on('sendMessage', function(res) {
               	var group = userinfo.user_group;
-		        if (group == "1" && msg_num>=5) {
+		        if (group <= "1" && msg_num>="5") {
 		            $(".layim-chat-send input").attr("disabled", true);
 		            layer.msg("<{:lang('need upgrade')}>");
 		            setTimeout(function() {
 		                window.location.href = "<{:url('upgrade/index')}>";
 		            },2000);
-                  return false;
+                    return false;
+		        }else{
+		            if(group <= "1"){
+		                msg_num++;
+		            }
+		            var sendMsg = JSON.stringify({type: 'chatMessage', data: res});
+		            socket.send(sendMsg);
 		        }
-		        var sendMsg = JSON.stringify({type: 'chatMessage', data: res});
-		        socket.send(sendMsg);
 		    });
 
 		    //连接成功时触发
@@ -218,53 +223,47 @@
 		    //监听收到的聊天消息，假设你服务端emit的事件名为：chatMessage
 		    socket.onmessage = function(res) {
 		        var data = JSON.parse(res.data);
-				// 服务端ping客户端
-				if(data.type=="ping"){
-					socket.send('{"type":"ping"}');
-					return;
-				}
+		        
 		        switch (data['message_type']) {
 		            // 登录 更新用户列表
-		        case 'init':
-		            auth();
-		            break;
-		            // 检测聊天数据
-		        case 'chatMessage':
-		            //如果聊天窗口一直打开，那么更新为已读
-	            	socket.send('{"type":"changeMessage","pals_id":'+data.data.id+'}');
-		            layim.getMessage(data.data,data.message_type);
-					if(data.opt=='msg_num'){
-						layer.msg("<{:lang('need upgrade')}>");
-						$(".layim-send").hide();
-						setTimeout(function(){
-							window.location.href = "<{:url('upgrade/index')}>";
-						},2000)
-					}
-		            break;
-		            // 离线消息推送
-		        case 'logMessage':
-		            layim.getMessage(data.data,data.message_type);
-		            break;
-		            // 用户退出 更新用户列表
-		        case 'logout':
-		            break;
-		            //聊天还有不在线
-		        case 'ctUserOutline':
-		            console.log('11111');
-		            layer.msg('好友不在线', {
-		                'time': 1000
-		            });
-		            break;
-		        }
+        	        case 'init':
+        	            auth();
+        	            break;
+        	            // 检测聊天数据
+        	        case 'chatMessage':
+        	            //如果聊天窗口一直打开，那么更新为已读
+                    	socket.send('{"type":"changeMessage","pals_id":'+data.data.id+'}');
+        	            layim.getMessage(data.data,data.message_type);
+        				if(data.opt=='msg_num'){
+        					layer.msg("<{:lang('need upgrade')}>");
+        					$(".layim-send").hide();
+        					setTimeout(function(){
+        						window.location.href = "<{:url('upgrade/index')}>";
+        					},2000)
+        				}
+        	            break;
+        	            // 离线消息推送
+        	        case 'logMessage':
+        	            layim.getMessage(data.data,data.message_type);
+        	            break;
+        	            //聊天还有不在线
+        	        case 'ctUserOutline':
+        	            layer.msg('好友不在线', {
+        	                'time': 1000
+        	            });
+        	            break;
+        	        }
 		    };
 
 
 		    socket.onclose = function() {
-		        layer.msg("网络已经断开");
-		    };
-		    socket.onerror = function() {
-		        layer.msg("网络链接错误");
-		    };
+                //layer.msg("网络已经断开");
+                console.log("网络已经断开");
+            };
+            socket.onerror = function() {
+                //layer.msg("网络链接错误");
+                console.log("网络链接错误");
+            };
 
 
 

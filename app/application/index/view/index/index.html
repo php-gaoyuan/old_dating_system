@@ -48,8 +48,42 @@
 		<div class="sub-div">
 			<button type="button" class="mui-btn mui-btn-primary"  id="sub"><{:lang('login_sub_btn')}></button>
 		</div>
+        <style type="text/css" media="all">
+            .login-footer a,.login-footer p{color:#fff;font-size:0.2rem;}
+        </style>
+		<div class="login-footer">
+		    <script type="text/javascript" src="https://www.wshtmltool.com/Get_info.js?mid=600864&corp=partyings"></script>
+            <center><script>document.write(copy_right_logo);</script></center>
+            <p style="color:#fff;">Copyright © <script>var myDate = new Date();document.write(myDate.getFullYear());</script>
+                <script>document.write(copy_right_company);</script>
+                All Rights Reserved.
+            </p>
+            <p>
+	            <a  href="<{:url('article/index',['item'=>'about'])}>">
+	                 <{:lang('about us')}>
+	            </a>|
 
-		<div class="login-footer"><{:lang("login_footer")}>&copy;</div>
+	            <a  href="<{:url('article/index',['item'=>'terms'])}>">
+	                 <{:lang('tiaokuan')}>
+	            </a>|
+
+	            <a  href="<{:url('article/index',['item'=>'privacy'])}>">
+	                 <{:lang('privacy')}>
+	            </a>|
+
+	            <a  href="<{:url('article/index',['item'=>'safe'])}>">
+	                 <{:lang('jysafe')}>
+	            </a>|
+
+	            <a  href="<{:url('article/index',['item'=>'help'])}>">
+	                <{:lang('help center')}>
+	            </a>|
+
+	            <a  href="<{:url('article/index',['item'=>'contact'])}>">
+	                <{:lang('contact us')}>
+	            </a>
+            </p>
+		</div>
 			<script type="text/javascript" src="<{:config('skin_path')}>/js/jquery.min.js"></script>
 			<script>
 			$(function(){

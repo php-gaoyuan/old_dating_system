@@ -217,7 +217,7 @@ $mo_langpackage = new moodlp;
     <meta name="author" content="<?php echo $holder_name; ?>"/>
     <meta name="robots" content="all"/>
     <title>
-        <?php echo $holder_name; ?>的个人主页-<?php echo $siteName; ?>
+        <?php echo $holder_name; ?>-<?php echo $user_name;?>-partyings
     </title>
     <link rel="shortcut icon" href="favicon.ico">
     <link href="./template/her/base_icon-min.css" rel="stylesheet" type="text/css">

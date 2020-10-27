@@ -31,23 +31,51 @@
 		                <{:lang("set lang")}>
 		            </a>
 		        </li>
+		        <li class="mui-table-view-cell">
+	                <a class="mui-navigate-right" id="clear_cache">
+	                    <{:lang("clear cache")}>
+	                </a>
+	            </li>
 		    </ul>
 		    
 		    
 		    <div class="line"></div>
 		    
 		    <ul class="mui-table-view">
-		            <li class="mui-table-view-cell">
-		                <a class="mui-navigate-right" href="<{:url('set/about')}>">
-		                    <{:lang("about")}>
-		                </a>
-		            </li>
-		            <li class="mui-table-view-cell">
-		                <a class="mui-navigate-right" id="clear_cache">
-		                    <{:lang("clear cache")}>
-		                </a>
-		            </li>
-		        </ul>
+	            
+		        <li class="mui-table-view-cell">
+		            <a class="mui-navigate-right" href="<{:url('article/index',['item'=>'about'])}>">
+		                 <{:lang('about us')}>
+		            </a>
+		        </li>
+		        <li class="mui-table-view-cell">
+		            <a class="mui-navigate-right" href="<{:url('article/index',['item'=>'terms'])}>">
+		                 <{:lang('tiaokuan')}>
+		            </a>
+		        </li>
+		        <li class="mui-table-view-cell">
+		            <a class="mui-navigate-right" href="<{:url('article/index',['item'=>'privacy'])}>">
+		                 <{:lang('privacy')}>
+		            </a>
+		        </li>
+		        
+		        <li class="mui-table-view-cell">
+		            <a class="mui-navigate-right" href="<{:url('article/index',['item'=>'safe'])}>">
+		                 <{:lang('jysafe')}>
+		            </a>
+		        </li>
+		        <li class="mui-table-view-cell">
+		            <a class="mui-navigate-right" href="<{:url('article/index',['item'=>'help'])}>">
+		                <{:lang('help center')}>
+		            </a>
+		        </li>
+		        <li class="mui-table-view-cell">
+		            <a class="mui-navigate-right" href="<{:url('article/index',['item'=>'contact'])}>">
+		                <{:lang('contact us')}>
+		            </a>
+		        </li>
+	            
+	        </ul>
 		    <div style="padding:10px;">
 		    <button class="mui-btn mui-btn-primary" style="display: block;width: 100%;" id="logout"><{:lang("logout")}></button>
 		    </div>

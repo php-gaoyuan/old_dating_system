@@ -49,6 +49,7 @@
     $ref_langpackage=new gobacklp;
 
 
+
     $dbo = new dbex;    //连接数据库执行
     dbtarget('r',$dbServs);
 
@@ -244,12 +245,12 @@
                     <div class="tabs_box1_lq no-hidden" style="width:810px;">
                         <div class="tabs_lq" style="width:auto">
                             <a class="active1_tab_lq first_child_lq">
-                                在线用户
+                                <?php echo $newpub_lp['u_online_user'];?>
                             </a>
                         </div>
                         <div class="tabs_lq" style="width:auto">
                             <a class="first_child_lq">
-                                心情
+                                <?php echo $newpub_lp['u_online_user'];?>
                             </a>
                         </div>
                     </div>

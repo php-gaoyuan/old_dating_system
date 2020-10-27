@@ -52,13 +52,12 @@
 
     'banben' => '버젼',
 
-    'about us' => '저희에 대한...',
-
-    'help center' => '도움말 센터',
-
-    'tiaokuan' => '사용 조항',
-
-    'jiaoyou' => '안전교우',
+    "about us"=>"회사 소개",
+	"tiaokuan"=>"이용 약관",
+	"privacy"=>"개인 정보 보호 정책",
+	"jysafe"=>"데이트 안전",
+	"help center"=>"도움말 센터",
+	"contact us"=>"문의",
 
     'gengxin' => '검사 업데이트',
 
@@ -115,9 +114,9 @@
 
     'upgrade_title' => '업그레이드 회원',
 
-    'vip_member' => '회원',
+    'vip_member' => '화이트 골 드 회원',
 
-    'vip_yj_member' => '영구회원',
+    'vip_yj_member' => '다이아몬드 회원',
 
     'upgrade_sub_btn' => '업그레이드 클릭',
 
@@ -168,6 +167,7 @@
     'vip' => 'vip',
 
     'gift' => '선물',
+    'giftbox' => '선물 상자',
 
     'wallet' => '지갑',
 

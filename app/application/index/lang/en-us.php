@@ -51,29 +51,25 @@
     'golds' => 'Gold',
 
     'banben' => 'Edition',
-
-    'about us' => 'About us',
-
-    'help center' => 'Help center',
-
-    'tiaokuan' => 'Terms of use',
-
-    'jiaoyou' => 'Secure friends',
+    
+    
+    
+    "about us"=>"About us",
+	"tiaokuan"=>"Terms of use",
+	"privacy"=>"Privacy Policy",
+	"jysafe"=>"Dating Safety",
+	"help center"=>"Help Center",
+	"contact us"=>"Contact Us",
+	
+	
 
     'gengxin' => 'Check the update',
-
     'guanwang' => 'The official website',
-
     'login_username_placeholder' => 'Enter your username',
-
     'login_pass_placeholder' => 'Enter password',
-
     'login_forget_pass' => 'Forget password?',
-
     'login_reg_account' => 'Sign up',
-
     'login_sub_btn' => 'Login',
-
     'login_footer' => 'The most professional large translation social platform in the world',
 
 
@@ -118,9 +114,9 @@
 
     'upgrade_title' => 'Upgrade members',
 
-    'vip_member' => 'VIP Member',
+    'vip_member' => 'Platinum member',
 
-    'vip_yj_member' => 'VIP Permanent Member',
+    'vip_yj_member' => 'Diamond members',
 
     'upgrade_sub_btn' => 'Click upgrades',
 
@@ -171,6 +167,8 @@
     'vip' => 'VIP',
 
     'gift' => 'Gift',
+    
+    'giftbox' => 'Gift box',
 
     'wallet' => 'Wallet',
 

@@ -18,7 +18,7 @@ class Payment extends Base
         $payRes = $payObj->pay($order);
         //halt($payRes);
 
-        if($payRes['status']=="success"){
+        if(isset($payRes['status']) && $payRes['status']=="success"){
             if($order->type==1){
                 $res = (new Balance())->payRecharge($payRes);
             }elseif($order->type==2){
@@ -30,7 +30,7 @@ class Payment extends Base
                 }
             }
         }else{
-            $res = !empty($payRes)?$payRes:lang('pay_fail') ;
+            $res = lang('pay_fail').":".(isset($payRes['err_msg'])?$payRes['err_msg']:'');
         }
         echo "<script>alert('{$res}');window.history.back();</script>";exit;
     }

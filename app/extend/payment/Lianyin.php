@@ -143,6 +143,7 @@ class Lianyin{
 
 
             $str = "<br>支付网关反馈信息如下：<br>商户号：" . $merchant_id . "<br>商户订单号：" . $merch_order_ori_id . "<br>商户订单号：" . $merch_order_id . "<br>交易币种：" . $price_currency . "<br>交易金额：" . $price_amount . "<br>签名：" . $signature . "<br>系统流水号：" . $order_id . "<br>商户原始订单号：" . $order_id . "<br>订单状态：" . $status . "<br>payment_url：" . $payment_url . "<br>check_bill_name_status：" . $check_bill_name_status . "<br>返回信息：" . $message . "<br>allow1：" . $allow1;
+            file_put_contents("lianyin_wap_return.log", var_export($str, 1) . "\n\n", FILE_APPEND);
             //echo $str;exit;
 
             if ($status == "T" || $status == 'T') {
@@ -160,14 +161,14 @@ class Lianyin{
                 );
                 return $data;
             } else {
-//                $data = array(
-//                    'status'=>'fail',
-//                    'ordernumber'=>$merch_order_ori_id,
-//                    'amount'=>$price_amount,
-//                    'out_trade_no'=>$order_id,
-//                    'err_msg'=>$message
-//                );
-                return $message;
+                $data = array(
+                    'status'=>'fail',
+                    'ordernumber'=>$merch_order_ori_id,
+                    'amount'=>$price_amount,
+                    'out_trade_no'=>$order_id,
+                    'err_msg'=>$message
+                );
+                return $data;
             }
         } else { // 支付网关反馈的参数为空时
             //echo "支付网关返回的参数为空，请联系商家，请不要重复提交。";

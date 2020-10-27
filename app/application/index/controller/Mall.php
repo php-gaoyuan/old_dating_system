@@ -6,10 +6,10 @@ class Mall extends Base
 	public function index(){
 		//获取普通礼物
 		$model = model("Gift");
-		$putong_list = $model->get_list(2);
-		$this->assign("putong_list",$putong_list);
-		$gaoji_list = $model->get_list(3);
-		$this->assign("gaoji_list",$gaoji_list);
+// 		$putong_list = $model->get_list(2);
+// 		$this->assign("putong_list",$putong_list);
+// 		$gaoji_list = $model->get_list(3);
+// 		$this->assign("gaoji_list",$gaoji_list);
 		$zhenshi_list = $model->get_list(4);
 		$this->assign("zhenshi_list",$zhenshi_list);
 		return $this->fetch();
@@ -40,8 +40,8 @@ class Mall extends Base
 
 		$model = model("Gift");
 		$info = $model->find($id);
-		$imgs = explode("|", $info["yuanpatch"]);
-		$gift_img = $imgs[0];
+		//$imgs = explode("|", $info["yuanpatch"]);
+		//$gift_img = $imgs[0];
 		$userinfo = db("users")->field("user_id,user_name,golds")->find($this->userinfo["user_id"]);
 		//halt($userinfo);
 		if($info["money"] > $userinfo["golds"]){
@@ -72,7 +72,8 @@ class Mall extends Base
 			"accept_id"=>$accept_id,
 			"accept_name"=>$accept_name,
 			"msg"=>$note,
-			"gift"=>$gift_img,
+			"gift"=>$info['patch'],
+			"gift_id"=>$info["id"],
 			"gifttype"=>$info["typeid"],
 			"is_see"=>"0",
 			"send_time"=>date('Y-m-d H:i:s',time()),

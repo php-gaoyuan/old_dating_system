@@ -120,7 +120,7 @@ class publiclp{
 
 	var $pu_name="用户名";
 	var $pu_zibi="金币";
-	var $pu_levl="等级";
+	var $pu_levl="Level";
 	var $pu_onstate="状态";
     var $pu_friendsearch="好友速配推荐";
     var $pu_loveyou="缘来是你";

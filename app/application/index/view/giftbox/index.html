@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>礼物</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="<{:config('skin_path')}>/css/mui.min.css" rel="stylesheet" />
+		<style>
+		.mui-control-content{background: #fff;}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">礼物</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-slider">
+			    <div class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+			        <a class="mui-control-item" href="#item1">收到礼物</a>
+			        <a class="mui-control-item" href="#item2">送出礼物</a>
+			    </div>
+			    <div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-6"></div>
+			    <div class="mui-slider-group">
+			        <div id="item1" class="mui-slider-item mui-control-content mui-active">
+			           	<div class="mui-row">
+			            <{volist name="accept_list" id="vo"}>
+		            	<div class="mui-col-sm-6  mui-col-xs-6">
+		            		<div class="mui-card">
+		            			<div class="mui-card-header mui-card-media">
+									<img src="<{$vo.user_ico}>" style="width:34px;"/>
+									<div class="mui-media-body">
+										<{$vo.user_name}>
+										<p><{$vo.send_time}></p>
+									</div>
+								</div>
+								<!--内容区-->
+								<div class="mui-card-content">
+									<a href="<{:url('gift/detail',array('id'=>$vo['id']))}>">
+									<img src="<{$vo.gift}>" alt="">
+									</a>
+								</div>
+								<!--页脚，放置补充信息或支持的操作-->
+								<div class="mui-card-footer">
+									<p>赠言：<{$vo.msg}></p>
+									
+								</div>
+							</div>
+		            	</div>
+		            	<{/volist}>
+		            	</div>
+			        </div>
+			        <div id="item2" class="mui-slider-item mui-control-content">
+			            <div class="mui-row">
+			            <{volist name="send_list" id="vo"}>
+		            	<div class="mui-col-sm-6  mui-col-xs-6">
+		            		<div class="mui-card">
+		            			<div class="mui-card-header mui-card-media">
+									<img src="<{$vo.user_ico}>" style="width:34px;"/>
+									<div class="mui-media-body">
+										<{$vo.user_name}>
+										<p><{$vo.send_time}></p>
+									</div>
+								</div>
+								<!--内容区-->
+								<div class="mui-card-content">
+									<a href="<{:url('gift/detail',array('id'=>$vo['id']))}>">
+									<img src="<{$vo.gift}>" alt="">
+									</a>
+								</div>
+								<!--页脚，放置补充信息或支持的操作-->
+								<div class="mui-card-footer">
+									<p>赠言：<{$vo.msg}></p>
+								</div>
+							</div>
+		            	</div>
+		            	<{/volist}>
+		            	</div>
+			        </div>
+			    </div>
+			</div>
+		</div>
+		<script type="text/javascript" src="<{:config('skin_path')}>/js/jquery.min.js"></script>
+		<script type="text/javascript" src="<{:config('skin_path')}>/js/public.js"></script>
+		<script type="text/javascript" src="<{:config('skin_path')}>/js/mui.min.js"></script>
+		<script>
+		$(function(){
+			$(".mui-card-content img").height($(".mui-card-content img").width());
+		});
+		</script>
+	</body>
+
+</html>

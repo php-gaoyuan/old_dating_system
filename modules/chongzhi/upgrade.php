@@ -245,7 +245,9 @@ if ($uid) {
                         <div class="ob-0-selpay selpay" id="selplay">
                             <!--支付-->
                             <div>
-                              <p class="pay_title">选择支付方式</p>
+                              <p class="pay_title">
+                                  <?php echo $er_langpackage->er_change;?>
+                              </p>
                               <ul>
                                 <li>
                                   <label>
@@ -270,7 +272,7 @@ if ($uid) {
                                 <p style="position: absolute; top: 12px; left: 18px;">
                                     <label id="dp_lable"></label>
                                 </p>
-                                <input type="submit" class="blue_submitbtn1_lq" id="Paysenior" value="立即升级">
+                                <input type="submit" class="blue_submitbtn1_lq" id="Paysenior" value="<?php echo $er_langpackage->js_sj;?>">
                             </div>
                         </div>
                         <!--升级会员页面优化-end-->

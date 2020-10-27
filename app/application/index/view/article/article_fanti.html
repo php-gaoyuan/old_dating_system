@@ -4,51 +4,34 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <meta name="Keywords" content="{$Think.lang.Keywords}"/>
-    <meta name="description" content="{$Think.lang.description}"/>
     <title>partyings全球最專業的大型社交，翻譯平臺，數百萬美女帥哥在這裡等著你</title>
-    <link rel="Bookmark" type="image/x-icon" href="favicon.ico">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" type="text/css" href="/modules/article/us.css">
+    <link rel="Bookmark" type="image/x-icon" href="https://partyings.com/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="https://partyings.com/favicon.ico">
+    <link href="<{:config('skin_path')}>/css/mui.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="<{:config('skin_path')}>/article/us.css">
+    
+    <script type="text/javascript" src="<{:config('skin_path')}>/js/mui.min.js"></script>
 </head>
 <body>
-<div class="head">
-    <div class="wrp">
-        <a href="/" target="_self">
-            <em class="head_logo" id="head_logo">
-                <img width="180px" height="45px" src="/skin/default/jooyea/images/snslogo.png">  
-            </em>
-        </a>
-        <a href="/" target="_self" id="head_login">Login</a>
-    </div>
-</div>
-<div class="wrp" style="background: white">
-    <div class="west">
-        <div class="west_item" id="link_about" onclick="opening('link_about','about')">
-            <em class="west_item_point">&bull;</em>關於我們</div>
-        <div class="west_item" id="link_terms" onclick="opening('link_terms','terms')">
-            <em class="west_item_point">&bull;</em>使用條款</div>
-        <div class="west_item" id="link_privacy" onclick="opening('link_privacy','privacy')">
-            <em class="west_item_point">&bull;</em>隱私政策</div>
-        <div class="west_item" id="link_safe" onclick="opening('link_safe','safe')">
-            <em class="west_item_point">&bull;</em>交友安全</div>
-        <div class="west_item" id="link_help" onclick="opening('link_help','help')">
-            <em class="west_item_point">&bull;</em>幫助中心</div>
-        <div class="west_item" id="link_contact" onclick="opening('link_contact','contact')">
-            <em class="west_item_point">&bull;</em>聯繫我們</div>
-    </div>
-    <div class="east">
+    <{if !$is_h5_plus }>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title"><{:lang($title)}></h1>
+	</header>
+	<{/if}>
+    <div class="mui-content">
+    <div class="east" style="width:100%;margin:0;padding:20px;">
         <div id="about" style="display: none">
             <div class="east_title">公司簡介</div>
             <div class="east_section">partyings致力於在230多個國家和地區開拓網上交友服務產業，並管理多種不同語言的網站。在這裡您可以盡情的和朋友分享趣事和喜悅，為您提供一個全世界最快捷、最好玩的交友平台，每天都有成千上百新會員加入。
                 <script type="text/javascript" src="https://www.wshtmltool.com/Get_info.js?mid=600864&corp=partyings"></script>
                 <script>document.write(other_page_remark);</script>
             </div>
-            <img src="/modules/article/us1.jpg">
+            <img src="<{:config('skin_path')}>/article/us1.jpg">
 
             <div class="east_title">我們的使命是什麼？</div>
             <div class="east_section">我們的使命很簡單：幫助大家認識來自全世界的朋友。我們認為：這方面我們做得相當不錯。每個月我們都收到全世界各地的來信，與我們分享他們與在partyings上認識的朋友的故事。</div>
-            <img src="/modules/article/us2.jpg">
+            <img src="<{:config('skin_path')}>/article/us2.jpg">
 
             <div class="east_title">怎樣操作？</div>
             <div class="east_section">我們為用戶提供認識及了解全世界朋友的機會，通過不同的自由編寫版塊，讓他們在其檔案中詳細介紹他們自己。可以上傳多張圖片，以及有關他們的興趣愛好。我們知道隱私保護的重要性，所以，會員間所有的聯繫都是通過匿名郵件網絡進行的。我們對所有會員的姓名和聯繫信息都保密，除非會員自己想與對方分享個人信息的情況除外，一旦註冊完成，會員可以立即瀏覽潛在朋友的照片與日誌，並與其聯繫。</div>
@@ -168,47 +151,19 @@
         </div>
     </div>
 </div>
-<input type="hidden" id="item" name="item" value="<?php echo $item; ?>">
+<input type="hidden" id="item" name="item" value="<{$item}>">
 <script type="text/javascript" charset="utf-8">
-	/*   原来的代码
-    var $=function(id){
-        return document.getElementById(id);
-    };
-    $("about").style.display = "block";
-    $("link_about").className += " west_item_focus";
-    var arr = ["about", "terms", "privacy", "safe", "help", "contact"];
-    for (var i = 0; i < arr.length; i++) {
-        var type = arr[i];
-        var link = $("link_" + type);
-        link.type = type;
-        link.onclick = function () {
-            top.location = "us.do?" + this.type;
-        }
-    }
-    */
-	/*		返回登录页面
-    $("head_logo").onclick=$("head_login").onclick=function(){
-        top.location="/";
-    }*/
 	var $=function(id){
         return document.getElementById(id);
     };
-	//$("about").style.display = "block";
-    //$("link_about").className += " west_item_focus";
-    
     var id2 = document.getElementById('item').value;
-    var id1 = 'link_'+id2;
-    opening(id1,id2);
-	function opening(id1,id2){
-		var arr = ["about", "terms", "privacy", "safe", "help", "contact"];
-   		 for (var i = 0; i < arr.length; i++) {
-		 	var closed = arr[i];
-		 	$(closed).style.display = "none";
-			var linked = $("link_" + closed);
-			linked.className = "";
-			linked.className = "west_item";
-		 }
-		$(id1).className += " west_item_focus";
+    opening(id2);
+	function opening(id2){
+	    var arr = ["about", "terms", "privacy", "safe", "help", "contact"];
+        for (var i = 0; i < arr.length; i++) {
+            var closed = arr[i];
+            $(closed).style.display = "none";
+        }
 		$(id2).style.display = "block";
 	}
 </script>

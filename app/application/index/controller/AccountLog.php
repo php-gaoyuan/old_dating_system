@@ -1,6 +1,5 @@
 <?php 
 namespace app\index\controller;
-use app\index\controller\Base;
 class AccountLog extends Base
 {
 	//支付记录

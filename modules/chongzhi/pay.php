@@ -29,11 +29,11 @@ if ($userinfo['user_group'] > 1) {
 		$sql = "update wy_users set  user_group='1'   where  user_id='$user_id'";
 		$dbo->exeUpdate($sql);
 	}
-	$groups = $dbo->getRow("select name from wy_frontgroup where gid='$userinfo[user_group]'");
+	$groups = $dbo->getRow("select name from wy_frontgroup where gid='{$userinfo['user_group']}'");
 	if ($langPackagePara != 'zh') {
-		$groups['name'] = str_replace('普通会员', '', $groups['name']);
-		$groups['name'] = str_replace('高级会员', $er_langpackage->js_8, $groups['name']);
-		$groups['name'] = str_replace('星级会员', $er_langpackage->js_10, $groups['name']);
+		$groups['name'] = str_replace('普通会员', 'normal', $groups['name']);
+		$groups['name'] = str_replace('白金会员', $er_langpackage->er_gj, $groups['name']);
+		$groups['name'] = str_replace('钻石会员', $er_langpackage->er_vip, $groups['name']);
 	}
 	if ($days > 0) {
 		$userinfo = Api_Proxy("user_self_by_uid", "*", $user_id);

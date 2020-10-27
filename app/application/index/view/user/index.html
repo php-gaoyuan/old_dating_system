@@ -34,9 +34,9 @@
 		                <img src="<{$userinfo.user_ico}>" class="user_ico"/>
 		            	<div class="user_txt">
 		            		<span style="display: inline-block;">
-		            			<{if $userinfo.user_group eq '3'}>
+		            			<{if $userinfo.user_group eq '2'}>
 		            			<span class="mui-icon iconfont icon-vip" style="color:#fead11;    font-size: 1.2em;"></span>
-		            			<{elseif $userinfo.user_group eq '4'/}>
+		            			<{elseif $userinfo.user_group eq '3'/}>
 								<span class="mui-icon iconfont icon-diamond" style="color:#007aff;    font-size: 1.1em;"></span>
 		            			<{/if}>
 		            			<{$userinfo.user_name}>
@@ -61,6 +61,12 @@
 		            <a class="mui-navigate-right" href="<{:url('mall/index')}>">
 		            	<span class="mui-icon iconfont icon-liwu" style="background:#f94d51"></span>
 		            	<{:lang("gift")}>
+		            </a>
+		        </li>
+		        <li class="mui-table-view-cell">
+		            <a class="mui-navigate-right" href="<{:url('giftbox/index')}>">
+		            	<span class="mui-icon iconfont icon-liwu" style="background:#f94d51"></span>
+		            	<{:lang("giftbox")}>
 		            </a>
 		        </li>
 		        <li class="mui-table-view-cell">

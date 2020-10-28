@@ -250,7 +250,7 @@
                         </div>
                         <div class="tabs_lq" style="width:auto">
                             <a class="first_child_lq">
-                                <?php echo $newpub_lp['u_online_user'];?>
+                                <?php echo $newpub_lp['u_mood'];?>
                             </a>
                         </div>
                     </div>

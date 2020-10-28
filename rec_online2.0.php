@@ -145,7 +145,7 @@ $xhd_list = $dbo->getRs($sql);
 
     
     if($userinfo['user_sex'] == 1){
-        $sql = "select * from wy_users as u left join wy_online as o on u.user_id=o.user_id where (u.user_sex != '{$user_sex}' and u.is_pass!='0') or u.is_service=1 order by u.is_service desc,o.active_time desc";
+        $sql = "select * from wy_users as u left join wy_online as o on u.user_id=o.user_id where (u.user_sex != '{$user_sex}' and u.is_pass!='0') or u.is_service=1 order by u.is_service desc, rand()";
     }else{
         $sql = "select * from wy_users as u left join wy_online as o on u.user_id=o.user_id where u.user_sex != '{$user_sex}' order by u.is_service desc,o.active_time desc";
     } 

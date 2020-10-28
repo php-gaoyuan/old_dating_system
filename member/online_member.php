@@ -2,11 +2,11 @@
 require("includet.php");
 require("../foundation/fpages_bar.php");
 
-$page_num = trim(get_argg('page'));
-
 $dbo = new dbex;
 dbplugin('r');
 
+
+$page_num = trim(get_argg('page'));
 $sql = "select * from wy_frontgroup";
 $frontgroups = $dbo->getRs($sql);
 $frontgroup = array();

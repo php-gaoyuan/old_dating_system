@@ -7,311 +7,234 @@
 	<link rel="stylesheet" type="text/css" href="<{:config('skin_path')}>/layui/css/layui.mobile.css"/>
 	<link rel="stylesheet" href="<{:config('skin_path')}>/css/chat.css">
 	<style>
-		.layim-chat-tool span.layim-tool-phone:active{
-			background: #d4d4d4;
-			padding:0 5px;
-		}
-
+		.layim-chat-tool span.layim-tool-phone:active{background: #d4d4d4;padding:0 5px;}
 		body .layim-chat-tool span.layim-tool-redpacket{background: url("<{:config('skin_path')}>/images/redpacket.png") center center no-repeat;background-size: 32px 28px;width:32px;height: 38px;}
 	</style>
 </head>
 <body>
-	<script type="text/javascript" src="<{:config('skin_path')}>/js/jquery.min.js"></script>
-	<script type="text/javascript" src="<{:config('skin_path')}>/layui/layui.js"></script>
-	<script>
-		var userinfo = <{$userinfo}> ;
-		var pals_userinfo = <{$pals_userinfo}> ;
-		var msg_num = <{$msg_num}>;
-
-		layui.use(["mobile", "jquery", 'layer'], function() {
-		    var mobile = layui.mobile, layim = mobile.layim, $ = layui.jquery, layer = mobile.layer, pclayer = layui.layer;
-		    var socket = new WebSocket("<{:config('webconfig.ws_url')}>");
-
-		    //初始化聊天
-		    layim.config({
-		        init: {
-		            mine: {
-		                id: userinfo.user_id,
-		                username: userinfo.user_name,
-		                avatar: userinfo.user_ico,
-		                sign: ""
-		            }
-		        },
-
-		        //上传图片接口
-		        uploadImage: {
-		            url: "<{:url('Api/upload_img')}>"
-		        },
-
-		        //可同时配置多个
-		        tool: [{
-		            alias: 'redpacket',
-		            //工具别名
-		            title: '紅包',
-		            //工具名称
-		            iconUnicode: '',
-		            //图标字体的unicode，可不填
-		            iconClass: 'tool-redpacket' //图标字体的class类名
-		        },
-		      //  {
-		      //      alias: 'video',
-		      //      //工具别名
-		      //      title: '視訊',
-		      //      //工具名称
-		      //      iconUnicode: '&#xe6ed;',
-		      //      //图标字体的unicode，可不填
-		      //      iconClass: '' //图标字体的class类名
-		      //  },{
-		      //      alias: 'phone',
-		      //      //工具别名
-		      //      title: 'phone',
-		      //      //工具名称
-		      //      iconUnicode: '&#xe63b;',
-		      //      //图标字体的unicode，可不填
-		      //      iconClass: '' //图标字体的class类名
-		      //  }
-		        ],
-		        title: 'partyings-IM',
-		        //应用名，默认：我的IM
-		        brief: true,
-		        notice: true,
-		        copyright: true
-		    });
+<script type="text/javascript" src="<{:config('skin_path')}>/js/jquery.min.js"></script>
+<script type="text/javascript" src="<{:config('skin_path')}>/layui/layui.js"></script>
+<script>
+	var userinfo = <{$userinfo}> ;
+	userinfo.msg_num = <{$msg_num}>;
+	var pals_userinfo = <{$pals_userinfo}> ;
+	var ws_url = "<{:config('webconfig.ws_url')}>";
+	var ws = null;
+	var heartTimer = null;
+	var limit_msg_num = 5;
+	var open_chat = null;
 
 
+	layui.use(["mobile", "jquery", 'layer'], function () {
+		var mobile = layui.mobile, layim = mobile.layim, $ = layui.jquery, layer = mobile.layer, pclayer = layui.layer;
 
-		    //监听点击红包按钮
-			layim.on('tool(redpacket)', function(insert, send, obj){
-				pclayer.prompt({
-				    title: '紅包金額(金幣)',
-				    shade: 0,
-				    btn:['發送','取消']
-				}, function(text, index){
-					if(parseFloat(text) <= 0){
-				  		layer.msg("請填寫大於0的金額！");
-				  		return false;
-				  	}
-				  	if(parseFloat(userinfo.golds) < parseFloat(text)){
-				  		pclayer.msg("餘額不足，請充值！");
-				  		return false;
-				  	}else{
-				  		pclayer.close(index);
-					    insert('紅包金額(金幣)：' + text); //将内容插入到编辑器，主要由insert完成
-					    send(); //自动发送
-				  	}
+		//初始化聊天
+		layim.config({
+			title: 'Partyings',
+			brief: true,
+			notice: true,
+			copyright: true,
+			init: {
+				mine: {
+					id: userinfo.user_id,
+					username: userinfo.user_name,
+					avatar: userinfo.user_ico,
+					sign: ""
+				}
+			},
+			//上传图片接口
+			uploadImage: {
+				url: "<{:url('Api/upload_img')}>"
+			},
+			//可同时配置多个
+			tool: [{
+				alias: 'redpacket',
+				title: '紅包',
+				iconUnicode: '',
+				iconClass: 'tool-redpacket' //图标字体的class类名
+			}]
+		});
+		//监听点击红包按钮
+		layim.on('tool(redpacket)', function (insert, send, obj) {
+			pclayer.prompt({
+				title: '紅包金額(金幣)',
+				shade: 0,
+				btn: ['發送', '取消']
+			}, function (text, index) {
+				if (parseFloat(text) <= 0) {
+					layer.msg("請填寫大於0的金額！");
+					return false;
+				}
+				if (parseFloat(userinfo.golds) < parseFloat(text)) {
+					pclayer.msg("餘額不足，請充值！");
+					return false;
+				} else {
+					pclayer.close(index);
+					insert('紅包金額(金幣)：' + text); //将内容插入到编辑器，主要由insert完成
+					send(); //自动发送
+				}
+			});
+		});
+		//监听发送消息
+		layim.on('sendMessage', function(res) {
+			if (userinfo.user_group < 2 && userinfo.msg_num>= limit_msg_num) {
+				$(".layim-chat-send input").attr("disabled", true);
+				layer.msg("<{:lang('need upgrade')}>");
+				setTimeout(function(){
+					window.location.href = "<{:url('upgrade/index')}>";
+				},2000);
+				return false;
+			}else{
+				if(userinfo.user_group < 2){
+					userinfo.msg_num++;
+				}
+				doReq("chatMsg",res);
+			}
+		});
+
+
+
+		var freshSocket = function () {
+			var bindEvent = function () {
+				ws.onclose = doClose;
+				ws.onopen = doOpen;
+				ws.onmessage = doAck;
+			};
+			if ('WebSocket' in window) {
+				ws = new WebSocket(ws_url);
+				bindEvent();
+			} else if ('MozWebSocket' in window) {
+				ws = new window["MozWebSocket"](ws_url);
+				bindEvent();
+			}
+		};
+		//连接成功时触发
+		var doOpen = function (e) {
+			console.log('链接成功');
+			doReq("init", {
+				id: userinfo.user_id, //我的ID
+				username: userinfo.user_name, //我的昵称
+				avatar: userinfo.user_ico, //我的头像
+				from: "app",
+			});
+			doReq("logMsg",{user_id:userinfo.user_id});
+			doHeart();
+		};
+		var doHeart = function () {
+			doReq("ping", {user_id:userinfo.user_id});
+			heartTimer = setTimeout(doHeart, 3000);
+		};
+		var doClose = function (event) {
+			console.log("通讯已经断开");
+			setTimeout(freshSocket, 1000);
+			if (heartTimer != null) {
+				clearTimeout(heartTimer);
+				heartTimer = null;
+			}
+		};
+		//监听收到的聊天消息，假设你服务端emit的事件名为：chatMessage
+		var doAck = function (res) {
+			var msg = JSON.parse(res.data);
+			switch (msg.type) {
+					// 服务端ping客户端
+				case "ping":
+					doReq("ping", {user_id:userinfo.user_id});
+					break;
+					// 登录 更新用户列表
+				case 'init':
+					layim.setFriendStatus(msg.id, 'online');
+					break;
+					// 检测聊天数据
+				case 'chatMsg':
+					//如果聊天窗口一直打开，那么更新为已读
+					doReq("readMsg", {user_id:userinfo.user_id,fid: pals_userinfo.user_id});
+					layim.getMessage(msg.data,msg.type);
+					break;
+					// 离线消息推送
+				case 'logMsg':
+					layui.each(msg.data, function (index, item) {
+						layim.getMessage(item);
+					})
+					break;
+					// 用户退出 更新用户列表
+				case 'logout':
+					layim.setFriendStatus(msg.id, 'offline');
+					break;
+					//动态添加好友
+				case 'addlist':
+					layim.addList(msg.data);
+					break;
+			}
+		};
+		//发送消息
+		var doReq = function (type, msg) {
+			var msg = msg || {};
+			switch (type) {
+				case "init":
+					break;
+				case "chatMsg":
+					break;
+				case "readMsg":
+					break;
+			}
+			var data = $.extend({type: type}, msg);
+			//console.log(data);
+			ws.send(JSON.stringify(data));
+		}
+
+
+
+		//初始化websocket链接
+		freshSocket();
+		//创建会话
+		layim.chat({
+			id: pals_userinfo.user_id,
+			name: pals_userinfo.user_name,
+			avatar: pals_userinfo.user_ico,
+			type: "friend"
+		});
+		//打开页面就开始判断权限
+		if (userinfo.user_group < 2 && userinfo.msg_num>= limit_msg_num) {
+			$(".layim-chat-send input").attr("disabled", true);
+			layer.msg("<{:lang('need upgrade')}>");
+			// setTimeout(function(){
+			// 	window.location.href = "<{:url('upgrade/index')}>";
+			// },5000);
+			return false;
+		}
+		$(".layim-chat-send input").focus();
+
+
+
+		//判断并添加聊天记录按钮
+		if ($(".layim-chat-system>span").attr("layim-event") != "chatLog") {
+			$(".layim-chat-main").prepend('<div class="layim-chat-system"><span layim-event="chatLog"><{:lang('chatlog')}></span></div>');
+		}
+		//监听查看更多记录
+		layim.on('chatlog', function (data, ul) {
+			console.log(data); //得到当前会话对象的基本信息
+			console.log(ul); //得到当前聊天列表所在的ul容器，比如可以借助他来实现往上插入更多记录
+			$.getJSON("<{:url('chat/chat_log')}>", {pals_id: pals_userinfo.user_id}, function (res) {
+				layim.panel({
+					//标题
+					title: 'Chat with ' + data.name,
+					//模版
+					tpl: $("#chatlog_tpl").val(),
+					//数据
+					data: res.data
 				});
 			});
-			//监听点击视频按钮
-			layim.on('tool(video)', function(insert, send, obj){
-			  	if(userinfo.user_sex == '0' && userinfo.user_group<3){
-			  		//弹出升级提示
-			  		pclayer.msg("Your level does not match, Please upgrade.");
-					//setTimeout(function(){
-					//	window.location.href="<{:url('upgrade/index')}>";
-					//},2000);
-					return false;
-			  	}else if(userinfo.user_sex == '1' && userinfo.user_group < 4){
-			  		//弹出升级提示
-			  		pclayer.msg("Your level does not match, Please upgrade.");
-					return false;
-			  	}
-			  	//console.log(userinfo);
-		  		pclayer.open({
-			  		type:2,
-			    	title: false,
-			    	area: ['100%','100%'],
-			    	skin : 'video-class',
-			    	closeBtn:false,
-			    	content:"<{:url('Index/video')}>"
-			  	});
-
-			});
-
-
-		    //创建会话
-		    layim.chat({
-		        id: pals_userinfo.user_id,
-		        name: pals_userinfo.user_name,
-		        avatar: pals_userinfo.user_ico,
-		        type: "friend"
-		    });
-
-		    $(".layim-chat-send input").focus();
-		    //判断并添加聊天记录按钮
-		    if($(".layim-chat-system>span").attr("layim-event")!="chatLog"){
-		    	$(".layim-chat-main").prepend('<div class="layim-chat-system"><span layim-event="chatLog"><{:lang('chatlog')}></span></div>');
-		    }
-
-		    /*********************翻译开始********************/
-		    //追加翻译按钮
-		    $(".layim-chat-send").prepend('<div id="tr_box"><span id="tr_btn">Tr</span><div id="tr_select"><span data-lang="no">不翻译</span><span data-lang="zh">简体中文</span><span data-lang="cht">繁体中文</span><span data-lang="en">English</span><span data-lang="kor">한국어</span><span data-lang="jp">日本語</span></div></div>');
-		    $("#tr_btn").click(function() {
-		        $("#tr_select").show();
-		    });
-
-		    $("#tr_select span").click(function() {
-		        var txt = $(".layim-chat-send>input[type='text']").val();
-		        var lang = $(this).data("lang");
-		        if (lang == "no") {
-		            return false;
-		        }
-
-		      //  if (userinfo.user_sex == "1") {
-		      //    layer.open({
-		      //          type: 0,
-		      //          content: "翻译会扣1金币",
-		      //          btn: ["确定", "取消"],
-		      //          yes: function(index) {
-		      //              $.get("<{:url('fanyi/index')}>", {txt: txt,lang: lang},function(res) {
-		      //                  if (res.code == 0) {
-		      //                      $(".layim-chat-send input").val(res.msg);
-		      //                  } else {
-		      //                      layer.msg(res.msg);
-		      //                  }
-		      //              },"json");
-		      //              layer.close(index);
-		      //          }
-		      //      });
-		          
-		      //  } else {
-		            
-		      //  }
-	           $.get("<{:url('fanyi/index')}>", {uid: userinfo.user_id,txt: txt,lang: lang},function(res) {
-	                if (res.code == 0) {
-	                    $(".layim-chat-send input").val(res.msg);
-	                } else {
-	                    layer.msg(res.msg);
-	                }
-	            },"json");
-
-		        $("#tr_select").hide();
-		    });
-		    /*********************翻译结束********************/
-
-		    //监听发送消息
-		    layim.on('sendMessage', function(res) {
-              	var group = userinfo.user_group;
-		        if (group <= "1" && msg_num>="5") {
-		            $(".layim-chat-send input").attr("disabled", true);
-		            layer.msg("<{:lang('need upgrade')}>");
-		            setTimeout(function() {
-		                window.location.href = "<{:url('upgrade/index')}>";
-		            },2000);
-                    return false;
-		        }else{
-		            if(group <= "1"){
-		                msg_num++;
-		            }
-		            var sendMsg = JSON.stringify({type: 'chatMessage', data: res});
-		            socket.send(sendMsg);
-		        }
-		    });
-
-		    //连接成功时触发
-		    socket.onopen = function() {
-		        socket.send(JSON.stringify({
-		            "type": "init",
-		            "id": userinfo.user_id,
-		            "username": userinfo.user_name,
-		            "avatar": userinfo.user_ico,
-		            "sign": "",
-		            "pals_id": pals_userinfo.user_id,
-		            "from": "app"
-		        }));
-		    };
-
-		    //监听收到的聊天消息，假设你服务端emit的事件名为：chatMessage
-		    socket.onmessage = function(res) {
-		        var data = JSON.parse(res.data);
-		        
-		        switch (data['message_type']) {
-		            // 登录 更新用户列表
-        	        case 'init':
-        	            auth();
-        	            break;
-        	            // 检测聊天数据
-        	        case 'chatMessage':
-        	            //如果聊天窗口一直打开，那么更新为已读
-                    	socket.send('{"type":"changeMessage","pals_id":'+data.data.id+'}');
-        	            layim.getMessage(data.data,data.message_type);
-        				if(data.opt=='msg_num'){
-        					layer.msg("<{:lang('need upgrade')}>");
-        					$(".layim-send").hide();
-        					setTimeout(function(){
-        						window.location.href = "<{:url('upgrade/index')}>";
-        					},2000)
-        				}
-        	            break;
-        	            // 离线消息推送
-        	        case 'logMessage':
-        	            layim.getMessage(data.data,data.message_type);
-        	            break;
-        	            //聊天还有不在线
-        	        case 'ctUserOutline':
-        	            layer.msg('好友不在线', {
-        	                'time': 1000
-        	            });
-        	            break;
-        	        }
-		    };
-
-
-		    socket.onclose = function() {
-                //layer.msg("网络已经断开");
-                console.log("网络已经断开");
-            };
-            socket.onerror = function() {
-                //layer.msg("网络链接错误");
-                console.log("网络链接错误");
-            };
-
-
-
-
-		    //监听查看更多记录
-		    layim.on('chatlog',function(data, ul) {
-		        console.log(data); //得到当前会话对象的基本信息
-		        console.log(ul); //得到当前聊天列表所在的ul容器，比如可以借助他来实现往上插入更多记录
-		        $.getJSON("<{:url('chat/chat_log')}>",{pals_id:pals_userinfo.user_id},function(res){
-		        	layim.panel({
-			        	//标题
-			            title: 'Chat with ' + data.name,
-			            //模版
-			            tpl: $("#chatlog_tpl").val(),
-			            //数据
-			            data: res.data
-			        });
-				});
-
-		    });
-
-		    //监听返回
-		    layim.on('back',function() {
-		        //window.location.href = "<{:url('chat/index')}>";
-		        //window.history.back();
-		        window.location.href = "<{:url('chat/index')}>";
-		    });
-		    $("#layui-m-layer0 .layim-chat-back").click(function(){
-		    	//window.history.go(-2);
-		    	window.location.href = "<{:url('chat/index')}>";
-		    });
-
-		    function auth() {
-		        var group = userinfo.user_group;
-				if (group == "1" && msg_num>=5) {
-		            $(".layim-chat-send input").attr("disabled", true);
-		            layer.msg("<{:lang('need upgrade')}>");
-		            setTimeout(function() {
-		                window.location.href = "<{:url('upgrade/index')}>";
-		            },
-		            3000);
-		        }
-		    }
 
 		});
-	</script>
+		//监听返回
+		layim.on('back', function () {
+			history.back();
+			//window.location.href = "<{:url('chat/index')}>";
+		});
+	});
+</script>
 
-	<textarea title="聊天记录" id="chatlog_tpl" style="display:none;">
+<textarea title="聊天记录" id="chatlog_tpl" style="display:none;">
 		<div class="layim-chat layim-chat-friend"><div class="layim-chat-main">
 		{{# if(d.data.length>0){ }}
 			<ul>

@@ -4,22 +4,22 @@ require_once($webRoot . $langPackageBasePath . "chat.php");
 $chatlp = new chatlp;
 
 /******************查询出用户信息*****************************/
-$chat_user_id = $_SESSION["user_id"];
 if (empty($userinfo)) {
-    $userinfo = $dbo->getRow("select user_id,user_name,user_sex,user_group,golds from wy_users where user_id='$chat_user_id'");
+    $user_id = $_SESSION["user_id"];
+    $userinfo = $dbo->getRow("select user_id,user_name,user_sex,user_group,golds from wy_users where user_id='{$user_id}'","arr");
 }
 //如果是普通会员查询出已经发送信息条数
 if($userinfo['user_group']<2){
-    $msg_num = $dbo->getRow("select count(*) as num from chat_log where fromid='{$chat_user_id}'","arr");
-    $msg_num = $msg_num['num'];
+    $msg_num = $dbo->getAll("select count(id) as msg_num from chat_log where fromid='{$user_id}'","arr");
+    $msg_num = $msg_num[0]['msg_num']?$msg_num[0]['msg_num']:0;
 }
 if (empty($userinfo["user_ico"])) {
     $userinfo["user_ico"] = "/skin/default/jooyea/images/d_ico_{$userinfo['user_sex']}.gif";
 }
 
 //查询出签名
-$sign = $dbo->getRow("select u_intro from chat_users where uid='{$chat_user_id}'");
-$userinfo["sign"] = $sign["u_intro"];
+//$sign = $dbo->getRow("select u_intro from chat_users where uid='{$chat_user_id}'");
+//$userinfo["sign"] = $sign["u_intro"];
 /***********************查询出用户信息 end************************/
 ?>
 
@@ -35,33 +35,36 @@ $userinfo["sign"] = $sign["u_intro"];
     body .layui-layim-status,body .layui-layim-remark{display:none;}
     body .layui-layim-info{height: 26px;}
     .layim-chat-mine .layim-chat-text{min-height:22px;}
-    <?php if($msg_num>5){echo '.layim-chat-send{display:none;}';}?>
 </style>
 <script type="text/javascript">
-    var socket=null;
+    var ws_url = "<?php echo $ws_url;?>";
+    var ws=null;
+    var heartTimer=null;
     var limit_msg_num=5;
-    var msg_num = "<?php echo $msg_num;?>";
+    var open_chat=null;
+    //初始化配置
+    var userinfo = {
+        user_id: "<?= $userinfo['user_id']?>",
+        user_name: "<?= $userinfo['user_name']?>",
+        user_ico: "<?= $userinfo['user_ico']?>",
+        user_sex: "<?= $userinfo['user_sex']?>",
+        user_group: "<?= $userinfo['user_group']?>",
+        golds: "<?= $userinfo['golds']?>",
+        msg_num:"<?php echo $msg_num;?>"
+    };
+
     layui.use(["layim", "layer", "form"], function () {
         var layim = layui.layim, form = layui.form, layer = layui.layer;
-
-        //初始化websocket链接
-        socket = new WebSocket("<?=$ws_url; ?>");
-        //console.log(socket.readyState);
-        //初始化配置
-        var chat = {
-            userinfo: {
-                user_id: "<?= $userinfo['user_id']?>",
-                user_name: "<?= $userinfo['user_name']?>",
-                user_ico: "<?= $userinfo['user_ico']?>",
-                user_sex: "<?= $userinfo['user_sex']?>",
-                user_group: "<?= $userinfo['user_group']?>",
-                golds: "<?= $userinfo['golds']?>",
-                sign: "<?= $userinfo['sign']?>"
-            }
-        };
-
         //初始化聊天窗口基础配置
         layim.config({
+            title: 'Partying',
+            isgroup: false,
+            copyright: true,
+            //isAudio:true,
+            //isVideo:true,
+            notice:true,
+            maxLength: 6000,
+            chatLog: '/uiparts2.0/chat_log.php', //聊天记录页面地址，若不开启，剔除该项即可
             init: {
                 url: "/chat.php?act=init",
             },
@@ -70,28 +73,70 @@ $userinfo["sign"] = $sign["u_intro"];
                 url: '/app/index.php/index/Api/upload_img.html', //接口地址
                 type: 'post' //默认post
             },
-            title: 'Partying-IM',
-            isgroup: false,
-            copyright: true,
-            //isAudio:true,
-            //isVideo:true,
-            maxLength: 6000,
-            //可同时配置多个
-            tool: [
-                {
-                    alias: 'redpacket', //工具别名
-                    title: 'redpacket', //工具名称
-                    icon: '' //工具图标，参考图标文档
-                }
-                // ,{
-                //     alias: 'video', //工具别名
-                //     title: 'video', //工具名称
-                //     icon: '&#xe6ed;' //工具图标，参考图标文档
-                // }
-            ],
-            chatLog: '/uiparts2.0/chat_log.php' //聊天记录页面地址，若不开启，剔除该项即可
+            tool: [{
+                alias: 'redpacket', //工具别名
+                title: 'redpacket', //工具名称
+                icon: '' //工具图标，参考图标文档
+            }],
         });
-
+        //打开一个临时会话窗口
+        open_chat = function (id, name, user_ico) {
+            //判断权限
+            if (userinfo.user_group <2 && userinfo.msg_num>=limit_msg_num) {
+                layer.msg("<?php echo $chatlp->nomianfeichat;?>",{time:2000},function(){
+                    window.location.href = "/main2.0.php?app=user_upgrade";
+                });
+                return false;
+            }
+            //获取个人信息
+            $.getJSON("chat.php?act=get_userinfo", {user_id: id}, function (res) {
+                layim.chat({
+                    id: id, //好友id
+                    name: res.username, //名称
+                    avatar: res.avatar, //头像
+                    type: 'friend', //聊天类型
+                    status: "online",
+                    sign: res.sign,
+                    username: res.username
+                });
+            });
+        }
+        //阻止发送并撤回消息
+        var refundMsg = function(fid){
+            var thatChat = layim.thisChat();
+            thatChat.elem.find(".layim-chat-main>ul li:last-child").remove();
+            //清除本地缓存的消息
+            var cache =  layui.layim.cache();
+            var local = layui.data('layim')[cache.mine.id]; //获取当前用户本地数据
+            var logs = local.chatlog["friend"+fid];
+            var newLogs = [];
+            for(var x in logs){
+                if(x<logs.length-1){
+                    newLogs[x] = logs[x];
+                }
+            }
+            //这里以删除本地聊天记录为例
+            local.chatlog["friend"+fid]=newLogs;
+            //向localStorage同步数据
+            layui.data('layim', {
+                key: cache.mine.id
+                ,value: local
+            });
+        }
+        //监听发送消息
+        layim.on('sendMessage', function (res) {
+            if (userinfo.user_group <2 && userinfo.msg_num>=limit_msg_num) {
+                //阻止发送并撤回消息
+                refundMsg(res.to.id);
+                layer.msg("<?php echo $chatlp->nomianfeichat;?>",{time:2000},function(){
+                    window.location.href = "/main2.0.php?app=user_upgrade";
+                });
+                return;
+            }else if (userinfo.user_group <2){
+                userinfo.msg_num++;
+            }
+            doReq("chatMsg",res);
+        });
         //监听点击红包按钮
         layim.on('tool(redpacket)', function (insert, send, obj) {
             layer.prompt({
@@ -100,14 +145,12 @@ $userinfo["sign"] = $sign["u_intro"];
                 shade: 0,
                 btn: ['<?php echo $chatlp->send;?>', '<?php echo $chatlp->cancle;?>']
             }, function (text, index) {
-                // console.log(chat.userinfo.golds);
-                // console.log(text);
                 var regPos = /^\d+(\.\d+)?$/; //非负浮点数
                 if(!regPos.test(text) || parseFloat(text)<=0){
                     layer.msg("<?php echo $chatlp->money_error;?>");
                     return false;
                 }
-                if (parseFloat(chat.userinfo.golds) < parseFloat(text)) {
+                if (parseFloat(userinfo.golds) < parseFloat(text)) {
                     layer.msg("<?php echo $chatlp->money_buzu;?>");
                     return false;
                 } else {
@@ -118,258 +161,123 @@ $userinfo["sign"] = $sign["u_intro"];
 
             });
         });
-        //监听点击视频按钮
-        layim.on('tool(video)', function (insert, send, obj) { //事件中的tool为固定字符，而code则为过滤器，对应的是工具别名（alias）
-            if (chat.userinfo.user_sex == '1' && chat.userinfo.user_group < 3) {//提示男士升级
-                //弹出升级提示
-                layer.msg("Your level does not match, Please upgrade.");
-                // setTimeout(function(){
-                // 	window.location.href="/main2.0.php?app=user_upgrade";
-                // },2000);
-                return false;
-            } else {
-                layer.open({
-                    type: 2,
-                    title: false,
-                    area: ['884px', '417px'],
-                    skin: 'video-class',
-                    closeBtn: false,
-                    content: '/uiparts2.0/video.php'
-                });
-            }
-        });
-
-        //心跳
-        setInterval(function(){
-            if(socket==null){
-                socket = new WebSocket("<?=$ws_url; ?>");
-            }
-        },5000);
-
-        //监听发送消息
-        layim.on('sendMessage', function (res) {
-            var sendMsg = JSON.stringify({
-                type: 'chatMessage', //随便定义，用于在服务端区分消息类型
-                data: res
-            });
-            $(".layui-show .tr_select option:first").attr('selected', true);
-            socket.send(sendMsg);
-        });
-
-
         //每次窗口打开或切换，即更新对方的状态
-        layim.on('chatChange', function (res) {
-            //console.log(res);
+        layim.on('chatChange', function (thatChat) {
+            //console.log(thatChat);
+            //打开窗口后更新消息状态为已读
+            doReq("readMsg",{user_id:userinfo.user_id,fid:thatChat.data.id});
             //判断权限
-            if (chat.userinfo.user_group <2 && msg_num>=5) {
-                $(".layui-show .layim-chat-textarea textarea").attr("disabled", true);
-                //layer.msg("您不是VIP用户不能使用即时聊天，请充值升级");
-                layer.msg("<?php echo $chatlp->nomianfeichat;?>");
-                setTimeout(function () {
+            if (userinfo.user_group <2 && userinfo.msg_num>=limit_msg_num) {
+                thatChat.textarea.attr("disabled", true);
+                thatChat.elem.find(".layim-chat-send").remove();
+                layer.msg("<?php echo $chatlp->nomianfeichat;?>",{time:2000},function(){
                     window.location.href = "/main2.0.php?app=user_upgrade";
-                }, 2000);
+                });
                 return false;
             }
-
-            //*****************************************修正非法用户问题；打开窗口如果是临时会话判断是否在历史会员中********************************************
-            // var history_data = JSON.parse(localStorage.getItem("layim"));
-            // console.log(history_data["undefined"]);
-            // var linshi_user_info=new Array();
-            // linshi_user_info["friend"+res.id]={
-            // 		avatar:res.avatar,
-            // 		historyTime:new Date().getTime(),
-            // 		id:res.id,
-            // 		name:res.username,
-            // 		sign:"",
-            // 		status:"online",
-            // 		type:"friend",
-            // 		username:res.username,
-            // 	};
-
-            // if(typeof history_data[chat.userinfo.user_id]["history"]["friend"+res.id] == "undefined"){
-            // 	// var new_friend = {
-            // 	// 	new_friend_key:linshi_user_info
-            // 	// }
-            // 	// history_data[chat.userinfo.user_id]["history"].push(new_friend);
-            // 	history_data[chat.userinfo.user_id]["history"].push(linshi_user_info);
-            // }
-            // //插入缓存
-            // console.log(history_data);
-            // localStorage.setItem("layim",JSON.stringify(history_data));
-            //*******************************修正非法用户end***********************************************************
-
-            //输入框自动获取焦点
-            $(".layui-show .layim-chat-send input").focus();
-
-
             //更新当前会话状态
-            if (res.data.status == "online") {
+            if (thatChat.data.status == "online") {
                 layim.setChatStatus('<span style="color:#FF5722;">online</span>');
-            } else if (res.data.status == "offline") {
+            } else if (thatChat.data.status == "offline") {
                 layim.setChatStatus('<span style="color:#ccc;">offline</span>');
             }
-
-
-            var pals_id = res.data.id;
-            //打开窗口后更新消息状态为已读
-            socket.send('{"type":"changeMessage","pals_id":' + res.data.id + '}');
             //更新最近聊天数据
-            $.get("chat.php?act=chatChange", {pals_id: pals_id}, function (res) {
-            });
-
-
-            //***********************************************加入翻译列表***********************************************
-            if ($(".layui-show .tr").length <= 0) {
-                $(".layui-show .layim-chat-bottom").prepend("<div class='tr'><select name='tr' class='tr_select'><option value='0'>不翻译</option><option value='en'>English</option><option value='zh'>简体中文</option><option value='cht'>繁体中文</option><option value='kor'>한국어</option><option value='jp'>Japanese</option></select></div>");
-            }
-            //翻译事件
-            $(".layui-show .tr_select").change(function () {
-                var val = $(this).val();
-                var txt = $(".layui-show .layim-chat-textarea textarea").val();
-                if (val == "0") {
-                    return;
-                } else {
-                    if (txt.trim() != "") {
-                        $.get("fanyi.php", {fid: chat.userinfo.user_id, lan: txt, tos: val}, function (res) {
-                            // if (res == 0) {
-                            //     layer.msg("<?php echo $chatlp->money_buzu;?>");
-                            //     return false;
-                            // }
-                            $(".layui-show .layim-chat-textarea textarea").val(trims(res));
-                        });
-                    }
-                }
-            });
-            function trims(testStr) {
-                var resultStr = testStr.replace(/\ +/g, ""); //去掉空格
-                resultStr = testStr.replace(/[ ]/g, "");    //去掉空格
-                resultStr = testStr.replace(/[\r\n]/g, ""); //去掉回车换行
-                return resultStr;
-            }
-            //***********************************************加入翻译列表end***********************************************
-
-            //判断权限
-            if (chat.userinfo.user_group <= 1 && msg_num>=5) {
-                $(".layui-show .layim-chat-textarea textarea").attr("disabled", true);
-                //layer.msg("您不是VIP用户不能使用即时聊天，请充值升级");
-                layer.msg("<?php echo $chatlp->nomianfeichat;?>");
-                setTimeout(function () {
-                    window.location.href = "/main2.0.php?app=user_upgrade";
-                }, 2000);
-            }
+            $.get("chat.php?act=chatChange", {pals_id: thatChat.data.id}, function (res) {});
         });
 
 
-        //监听在线状态切换
-        layim.on('online', function (status) {
-            //获得online或者hide
-            $.get("chat.php?act=change_online", {status: status}, function (res) {
-            });
-        });
 
-        //监听修改签名
-        layim.on('sign', function (value) {
-            //获得新的签名
-            $.get("chat.php?act=change_sign", {sign: value}, function (res) {
-            });
-        });
-
-
+        var freshSocket=function(){
+            var bindEvent = function () {
+                ws.onclose = doClose;
+                ws.onopen = doOpen;
+                ws.onmessage = doAck;
+            };
+            if ('WebSocket' in window) {
+                ws = new WebSocket(ws_url);
+                bindEvent();
+            } else if ('MozWebSocket' in window) {
+                ws = new window["MozWebSocket"](ws_url);
+                bindEvent();
+            }
+        };
         //连接成功时触发
-        socket.onopen = function () {
-            socket.send(JSON.stringify({
-                "type": "init",
-                "from": "pc",
-                "is_read": "0",
-                "id": chat.userinfo.user_id, //我的ID
-                "username": chat.userinfo.user_name, //我的昵称
-                "avatar": chat.userinfo.user_ico, //我的头像
-                "sign": chat.userinfo.sign,
-                "pals_id": 0
-            }));
+        var doOpen = function(e){
+            console.log('链接成功');
+            doReq("init",{
+                id: userinfo.user_id, //我的ID
+                username: userinfo.user_name, //我的昵称
+                avatar: userinfo.user_ico, //我的头像
+                from: "pc",
+            });
+            doReq("logMsg",{user_id:userinfo.user_id});
+            doHeart();
         };
-
-
-        socket.onclose = function () {
-            socket=null;
-            //layui.layer.msg("通讯已经断开");
-            //layer.msg("Communication has been closed");
+        var doHeart = function () {
+            doReq("ping", {user_id:userinfo.user_id});
+            heartTimer = setTimeout(doHeart, 3000);
+        };
+        var doClose = function (event) {
             console.log("通讯已经断开");
-        };
-        socket.onerror = function (evt) {
-            socket=null;
-            console.log("通讯错误，已经中断");
-            //layer.msg("Communication error has been interrupted");
-            socket.close();
-        };
-
-        //监听收到的聊天消息，假设你服务端emit的事件名为：chatMessage
-        socket.onmessage = function (res) {
-            var data = JSON.parse(res.data);
-            //console.log(data);
-            // 服务端ping客户端
-            if(data.type=="ping"){
-                socket.send('{"type":"ping"}');
-                return;
+            setTimeout(freshSocket, 1000);
+            if (heartTimer != null) {
+                clearTimeout(heartTimer);
+                heartTimer = null;
             }
-            switch (data.message_type) {
+        };
+        //监听收到的聊天消息，假设你服务端emit的事件名为：chatMessage
+        var doAck = function (res) {
+            var msg = JSON.parse(res.data);
+            switch (msg.type) {
+                // 服务端ping客户端
+                case "ping":
+                    doReq("ping",{user_id:userinfo.user_id});
+                    break;
                 // 登录 更新用户列表
                 case 'init':
-                    console.log("----开始初始化");
-                    layim.setFriendStatus(data.id, 'online');
+                    layim.setFriendStatus(msg.id, 'online');
                     break;
                 // 检测聊天数据
-                case 'chatMessage':
-                    //console.log("info");
-                    if(data.opt=='msg_num'){
-                        $(".layim-send-btn").hide();
-                        layer.msg("<?php echo $chatlp->nomianfeichat;?>",{time:2000},function(){
-                            window.location.href = "/main2.0.php?app=user_upgrade";
-                        });
-                    }else{
-                        //如果聊天窗口一直打开，那么更新为已读
-                        if ($(".layim-chat-list .layim-this").length > 0) {
-                            thatChat = layim.thisChat();
-                            //console.log(thatChat);
-                            socket.send('{"type":"changeMessage","pals_id":' + thatChat.data.id + '}');
-                        }
+                case 'chatMsg':
+                    //如果聊天窗口一直打开，那么更新为已读
+                    thatChat = layim.thisChat();
+                    if (thatChat != undefined) {
+                        doReq("readMsg", {user_id:userinfo.user_id,fid: thatChat.data.id});
                     }
-                    layim.getMessage(data.data);
+                    layim.getMessage(msg.data);
                     break;
                 // 离线消息推送
-                case 'logMessage':
-                    console.log("logMessage");
-                    //setTimeout(function(){layim.getMessage(data.data);}, 1000);
-                    layim.getMessage(data.data);
+                case 'logMsg':
+                    layui.each(msg.data,function(index,item){
+                        layim.getMessage(item);
+                    })
                     break;
                 // 用户退出 更新用户列表
                 case 'logout':
-                    layim.setFriendStatus(data.id, 'offline');
+                    layim.setFriendStatus(msg.id, 'offline');
                     break;
                 //动态添加好友
                 case 'addlist':
-                    layim.addList(data.data);
+                    layim.addList(msg.data);
                     break;
             }
         };
+        //发送消息
+        var doReq = function(type,msg){
+            var msg = msg||{};
+            switch (type) {
+                case "init":
+                    break;
+                case "chatMsg":
+                    break;
+                case "readMsg":
+                    break;
+            }
+            var data = $.extend({type:type},msg);
+            //console.log(data);
+            ws.send(JSON.stringify(data));
+        }
+        //初始化websocket链接
+        freshSocket();
     });
-
-
-    //打开一个临时会话窗口
-    function open_chat(id, name, user_ico) {
-        var layim = layui.layim;
-        //console.log(layui.layim);
-        //获取个人信息
-        $.getJSON("chat.php?act=get_userinfo", {user_id: id}, function (res) {
-            layim.chat({
-                id: id, //好友id
-                name: res.username, //名称
-                avatar: res.avatar, //头像
-                type: 'friend', //聊天类型
-                status: "online",
-                sign: res.sign,
-                username: res.username
-            });
-        });
-    }
 </script>

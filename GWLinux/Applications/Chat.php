@@ -35,12 +35,28 @@ function imUpdateContactedUser(&$dbo, $uid, $pals_id){
 
 
 //查询有无需要推送的离线信息
-function offline_message(&$dbo, $uid, $from=""){
-	$where = " fromid!='0' and toid='$uid' and type='friend' and is_read='0' ";
-	$resMsg = $dbo->select('id,fromid,fromname,fromavatar,timeline,content,tr_content,toid')->from('chat_log')
-                   ->where($where)
-                   ->query();
-    return $resMsg;
+function offline_message($dbo, $uid, $from = "")
+{
+    $where = " fromid!='0' and toid='$uid' and type='friend' and is_read='0' ";
+    $resMsg = $dbo->select('id,fromid,fromname,fromavatar,timeline,content,tr_content,toid')->from('chat_log')
+        ->where($where)
+        ->query();
+    if (!empty($resMsg)) {
+        foreach ($resMsg as $key => $vo) {
+            $content = htmlspecialchars($vo['content']);
+            $log_message[] = [
+                'id' => (int)$vo['fromid'],
+                'logid' => (string)$vo['id'],
+                'username' => $vo['fromname'],
+                'avatar' => check_userico($vo['fromavatar']),
+                'content' => $content,
+                'type' => 'friend',
+                'timestamp' => $vo['timeline'] * 1000,
+            ];
+        }
+        return $log_message;
+    }
+    return false;
 }
 
 

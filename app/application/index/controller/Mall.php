@@ -74,6 +74,7 @@ class Mall extends Base
 			"msg"=>$note,
 			"gift"=>$info['patch'],
 			"gift_id"=>$info["id"],
+			"gift_num"=>1,
 			"gifttype"=>$info["typeid"],
 			"is_see"=>"0",
 			"send_time"=>date('Y-m-d H:i:s',time()),

@@ -55,6 +55,12 @@
 						</div>
 					</div>
 
+                    <div class="layui-inline">
+                        <div class="layui-input-inline">
+                            <input type="text" name="reg_date" id="reg_date" class="layui-input" placeholder="注册日期" readonly>
+                        </div>
+                    </div>
+
 					<div class="layui-inline">
 						<div class="layui-input-inline">
 							<button class="layui-btn" lay-submit lay-filter="search" id="search">搜索</button>
@@ -124,20 +130,8 @@
 		var laydate = layui.laydate;
 		var table = layui.table;
 		laydate.render({
-			elem: "#search_created_start",
-			//range: true
-		});
-		laydate.render({
-			elem: "#search_created_end",
-			//range: true
-		});
-		laydate.render({
-			elem: "#search_updated_start",
-			//range: true
-		});
-		laydate.render({
-			elem: "#search_updated_end",
-			//range: true
+			elem: "#reg_date",
+			range: true
 		});
 
 
@@ -184,6 +178,7 @@
 				//{title: '禁言',width:100,templet:"#jinyanTpl",width:110},
 				{title: '查看聊天记录',width:130,templet:"#lookChatRecordTpl"},
 				//{title: '查看照片',width:100,templet:"#lookImgTpl"},
+				{field: 'reg_from',title: '终端',width:80},
 				{field: 'user_add_time', title: '注册时间',width:170},
 				{title:"操作",templet:"#bar",width:160,fixed: "right"}
 			]],

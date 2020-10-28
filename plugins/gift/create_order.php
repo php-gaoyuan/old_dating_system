@@ -55,6 +55,7 @@
 	$send_time=date('Y-m-d H:i:s',time());
 	$address=$_POST['toself'];
 	$score=$money*$_GET[num];
+	$gift_num=$_GET[num];
 	//echo "<pre>";print_r($_REQUEST);
 
 
@@ -67,7 +68,7 @@
             $accept_info=$dbo->getRow($sql);
             if(empty($accept_info)){
                 if($_COOKIE['lp_name'] == 'zh') echo "<script>top.Dialog.alert('找不到礼物接受人');</script>";
-                if($_COOKIE['lp_name'] == 'en') echo "<script>top.Dialog.alert('Can't find a gift recipient');</script>";
+                if($_COOKIE['lp_name'] == 'en') echo "<script>top.Dialog.alert('Can\'t find a gift recipient');</script>";
                 echo "<script>top.location.href='/main2.0.php?app=giftshop';</script>";
                 exit;
             }
@@ -90,7 +91,7 @@
                     echo "<script>top.location.reload();</script>";
                     exit;
                 }
-                $sql="insert into gift_order(send_id,accept_id,send_name,accept_name,msg,gift,send_time,gifttype,accept_address,gift_id) values('$send_id','$send_id','$send_name','$send_name','$msg','$gift_path','$send_time','$gifttype','$address','$gift_id')";
+                $sql="insert into gift_order(send_id,accept_id,send_name,accept_name,msg,gift,send_time,gifttype,accept_address,gift_id,gift_num) values('$send_id','$send_id','$send_name','$send_name','$msg','$gift_path','$send_time','$gifttype','$address','$gift_id','{$gift_num}')";
                 //echo $sql;exit;
                 if($dbo->exeUpdate($sql)){
                     echo "<script>top.Dialog.alert('$gf_langpackage->gf_mess_4');</script>";
@@ -106,7 +107,7 @@
             }
 
             if(!empty($_POST['tofriends'])){
-                $sql="insert into gift_order(send_id,accept_id,send_name,accept_name,msg,gift,send_time,gifttype,gift_id) values('$send_id','$accept_id','$send_name','$accept_name','$msg','$gift_path','$send_time','$gifttype','$gift_id')";
+                $sql="insert into gift_order(send_id,accept_id,send_name,accept_name,msg,gift,send_time,gifttype,gift_id,gift_num) values('$send_id','$accept_id','$send_name','$accept_name','$msg','$gift_path','$send_time','$gifttype','$gift_id','{$gift_num}')";
                 if($dbo->exeUpdate($sql)){
                     echo "<script>top.Dialog.alert('$gf_langpackage->gf_mess_4');</script>";
                     $sql="update wy_users set golds=$golds-$score where user_id=$send_id";

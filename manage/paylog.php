@@ -57,6 +57,8 @@
 		<thead>
 			<tr>
 				<th>充值编号</th>
+				<th>商户单号</th>
+				<th>通道单号</th>
 				<th>会员账号</th>
 				<th>充值金额</th>
 				<th>充值备注</th>
@@ -65,13 +67,14 @@
 				<th>支付终端</th>
 				<th>通道支付结果</th>
 				<th>充值时间</th>
-				<th>时间差</th>
 			</tr>
 		</thead>
         <tbody>
 		<?php if(!empty($info_rs)){foreach($info_rs as $k=>$vo): ?>
-		<tr>
+		<tr <?php if($vo['state']==2){echo "style='color:#00d000'";}?>>
 			<td><?php echo $vo['id']; ?></td>
+			<td style="width:130px;"><?php echo $vo['ordernumber']; ?></td>
+			<td style="width:130px;"><?php echo $vo['out_trade_no']; ?></td>
 			<td><?php echo $vo['uname']; ?></td>
 			<td><?php echo $vo['funds']; ?></td>
 			<td><?php echo $vo['message']; ?></td>
@@ -88,9 +91,8 @@
 				?>
             </td>
             <td><?php echo $vo['pay_from'];?></td>
-            <td><?php echo $vo['pay_msg'];?></td>
+            <td style="width:230px;"><?php echo $vo['pay_msg'];?></td>
 			<td><?php echo $vo['addtime']; ?></td>
-			<td><?php echo getAgoTime($vo["addtime"]); ?>m以前</td>
 		</tr>
 		<?php endforeach; }else{?>
 			<tr>

@@ -39,6 +39,7 @@ class Reg extends Controller{
 				"is_pass"=>$post_data["user_sex"] == 1 ? 1 : 0,
 				"zhuce_ip"=>request()->ip(),
 				"user_ico"=>$user_ico,
+				"user_add_time"=>date("Y-m-d H:i:s"),
 				"reg_address"=>$reg_address,
 				"reg_from"=>"WAP"
 			];

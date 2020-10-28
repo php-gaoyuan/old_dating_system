@@ -8,6 +8,7 @@ class Giftbox extends Base
 		foreach ($accept_list as $key => &$value) {
 			$value["gift"] = config("webconfig.pc_url").($value["gift"]);
 			$value["user_ico"] = img_path($value["user_ico"],$value["user_sex"]);
+			$value["gift_name"] =db()->table("gift_shop")->where(['id'=>$value["gift_id"]])->value("giftname");
 		}
 		//halt($accept_list);
 		$this->assign("accept_list",$accept_list);
@@ -16,7 +17,9 @@ class Giftbox extends Base
 		foreach ($send_list as $key => &$value) {
 			$value["gift"] = config("webconfig.pc_url").($value["gift"]);
 			$value["user_ico"] = img_path($value["user_ico"],$value["user_sex"]);
+            $value["gift_name"] =db()->table("gift_shop")->where(['id'=>$value["gift_id"]])->value("giftname");
 		}
+        //halt($send_list);
 		$this->assign("send_list",$send_list);
 		return $this->fetch();
 	}

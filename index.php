@@ -1,5 +1,4 @@
 <?php
-
 if (@$_GET['tuid']) {
 	$tuid = $_GET['tuid'];
 	setcookie('tuid', $tuid);

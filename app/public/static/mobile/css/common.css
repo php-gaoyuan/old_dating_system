@@ -1,0 +1,106 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+ul,li{
+	list-style: none;
+}
+.fl{
+	display: block;
+	float: left;
+}
+.fr{
+	display: block;
+	float: right;
+}
+
+.cl{
+	clear: both;
+}
+
+.text-left{
+	text-align: left;
+}
+.text-center{
+	text-align: center;
+}
+.text-right{
+	text-align: right;
+}
+
+
+header{
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	font-size: 20px;
+	border-bottom:1px solid #ccc;
+	position: relative;
+}
+header>a>i.icon{
+	font-size: 1.3em;
+}
+
+header .header-left{
+	display: inline-block;
+	margin-left:15px;
+	position: absolute;
+	left:0;
+	color:#efc634;
+}
+
+header .header-right{
+	margin-right:15px;
+	display: inline-block;
+	position: absolute;
+	right:0;
+	color:#999;
+}
+
+
+
+/*footer*/
+footer{
+	display: block;
+	width: 100%;
+	position: fixed;
+	bottom:0;
+	left: 0;
+	border-top:1px solid #ccc;
+}
+footer ul{
+	    padding: 10px 0;
+}
+footer ul li{
+	float:left;
+	width: 20%;
+	text-align: center;
+	/*border-right:1px solid #333;*/
+}
+
+
+footer ul li.active{
+	color: #2a83e0;
+}
+
+footer ul li i.icon{
+	display: block;
+	font-size: 2em;
+}
+
+.btn {
+	display: inline-block;
+	padding:10px;
+	text-align: center;
+	border:none;
+	border-radius: 5px;
+
+}
+
+.btn-blue{
+	background: #437BDC;
+	color: #fff;
+}

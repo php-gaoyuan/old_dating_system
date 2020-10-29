@@ -1,0 +1,18 @@
+**/.well-known
+**/.user.ini
+**/nginx.htaccess
+**/Web.Config
+**/runtime
+**/*.pid
+.idea
+apk
+# Windows:
+**/Thumbs.db
+**/ehthumbs.db
+**/Desktop.ini
+*.log
+*.txt
+**/*.zip
+**/*.rar
+**/*.tar.gz
+**/*.phpbak

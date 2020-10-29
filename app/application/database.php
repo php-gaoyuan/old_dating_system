@@ -15,11 +15,11 @@ return [
     // 服务器地址
     'hostname'        => '127.0.0.1',
 	// 数据库名
-	'database'        => 'jyo_com',
+	'database'        => 'www_pouvip_com',
 	// 用户名
-	'username'        => 'jyo_com',
+	'username'        => 'www_pouvip_com',
 	// 密码
-	'password'        => 'jyo_com',
+	'password'        => 'BHeEaerxp5rZY5bn',
     // 端口
     'hostport'        => '3306',
     // 连接dsn

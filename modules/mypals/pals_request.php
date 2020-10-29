@@ -60,8 +60,8 @@
         <ul class="menu">
           <li><a href="modules2.0.php?app=mypals" title="<?php echo $mp_langpackage->mp_list;?>"><?php echo $mp_langpackage->mp_list;?></a></li>
           <li class="active"><a href="modules2.0.php?app=mypals_request" title="<?php echo $mp_langpackage->mp_req;?>"><?php echo $mp_langpackage->mp_req;?></a></li>
-          <li><a href="modules2.0.php?app=mypals_invite" title="<?php echo $mp_langpackage->mp_invite;?>"><?php echo $mp_langpackage->mp_invite;?></a></li>
-         <!-- <li><a href="modules2.0.php?app=mypals_sort" title="<?php echo $mp_langpackage->mp_m_sort;?>"><?php echo $mp_langpackage->mp_m_sort;?></a></li>-->
+            <!-- <li><a href="modules2.0.php?app=mypals_invite" title="<?php echo $mp_langpackage->mp_invite;?>"><?php echo $mp_langpackage->mp_invite;?></a></li>
+         <li><a href="modules2.0.php?app=mypals_sort" title="<?php echo $mp_langpackage->mp_m_sort;?>"><?php echo $mp_langpackage->mp_m_sort;?></a></li>-->
         </ul>
     </div>
 <div class="clear mt20"></div>

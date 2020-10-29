@@ -118,6 +118,7 @@
 				from: "app",
 			});
 			doReq("logMsg",{user_id:userinfo.user_id});
+			doReq("readMsg", {user_id:userinfo.user_id,fid: pals_userinfo.user_id});
 			doHeart();
 		};
 		var doHeart = function () {

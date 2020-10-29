@@ -1,8 +1,8 @@
 /*!
 
- @Title: Layui
- @Description：经典模块化前端框架
- @Site: www.layui.com
+ @Name: layui
+ @Description：经典模块化前端 UI 框架
+ @Homepage: www.layui.com
  @Author: 贤心
  @License：MIT
 
@@ -19,7 +19,7 @@
   }
 
   ,Layui = function(){
-    this.v = '2.3.0'; //版本号
+    this.v = '2.5.6'; //版本号
   }
 
   //获取layui所在目录
@@ -56,10 +56,13 @@
     ,layedit: 'modules/layedit' //富文本编辑器
     ,form: 'modules/form' //表单集
     ,upload: 'modules/upload' //上传
+    ,transfer: 'modules/transfer' //上传
     ,tree: 'modules/tree' //树结构
     ,table: 'modules/table' //表格
     ,element: 'modules/element' //常用元素操作
     ,rate: 'modules/rate'  //评分组件
+    ,colorpicker: 'modules/colorpicker' //颜色选择器
+    ,slider: 'modules/slider' //滑块
     ,carousel: 'modules/carousel' //轮播
     ,flow: 'modules/flow' //流加载
     ,util: 'modules/util' //工具块
@@ -96,7 +99,7 @@
       deps = []
     );
     
-    if(layui['layui.all'] || (!layui['layui.all'] && layui['layui.mobile'])){
+    if((!layui['layui.all'] && layui['layui.mobile'])){
       return callback.call(that);
     }
 
@@ -112,7 +115,7 @@
 
     apps = typeof apps === 'string' ? [apps] : apps;
     
-    //如果页面已经存在jQuery1.7+库且所定义的模块依赖jQuery，则不加载内部jquery模块
+    //如果页面已经存在 jQuery 1.7+ 库且所定义的模块依赖 jQuery，则不加载内部 jquery 模块
     if(window.jQuery && jQuery.fn.on){
       that.each(apps, function(index, item){
         if(item === 'jquery'){
@@ -152,27 +155,33 @@
       : ( typeof callback === 'function' && callback.apply(layui, exports) );
     }
     
-    //如果使用了 layui.all.js
+    //如果引入了完整库（layui.all.js），内置的模块则不必再加载
     if(apps.length === 0 
     || (layui['layui.all'] && modules[item]) 
     || (!layui['layui.all'] && layui['layui.mobile'] && modules[item])
     ){
       return onCallback(), that;
     }
+    
+    //获取加载的模块 URL
+    //如果是内置模块，则按照 dir 参数拼接模块路径
+    //如果是扩展模块，则判断模块路径值是否为 {/} 开头，
+    //如果路径值是 {/} 开头，则模块路径即为后面紧跟的字符。
+    //否则，则按照 base 参数拼接模块路径
+    var url = ( modules[item] ? (dir + 'lay/') 
+      : (/^\{\/\}/.test(that.modules[item]) ? '' : (config.base || ''))
+    ) + (that.modules[item] || item) + '.js';
+    
+    url = url.replace(/^\{\/\}/, '');
+    
+    //如果扩展模块（即：非内置模块）对象已经存在，则不必再加载
+    if(!config.modules[item] && layui[item]){
+      config.modules[item] = url; //并记录起该扩展模块的 url
+    }
 
     //首次加载模块
     if(!config.modules[item]){
-      var node = doc.createElement('script')
-      
-      //如果是内置模块，则按照 dir 参数拼接模块路径
-      //如果是扩展模块，则判断模块路径值是否为 {/} 开头，
-      //如果路径值是 {/} 开头，则模块路径即为后面紧跟的字符。
-      //否则，则按照 base 参数拼接模块路径
-      ,url = ( modules[item] ? (dir + 'lay/') 
-        : (/^\{\/\}/.test(that.modules[item]) ? '' : (config.base || ''))
-      ) + (that.modules[item] || item) + '.js';
-      
-      url = url.replace(/^\{\/\}/, '');
+      var node = doc.createElement('script');
       
       node.async = true;
       node.charset = 'utf-8';
@@ -320,7 +329,7 @@
     return that;
   };
 
-  //路由解析
+  // location.hash 路由解析
   Layui.prototype.router = function(hash){
     var that = this
     ,hash = hash || location.hash
@@ -335,13 +344,71 @@
     data.href = '/' + hash;
     hash = hash.replace(/([^#])(#.*$)/, '$1').split('/') || [];
     
-    //提取Hash结构
+    //提取 Hash 结构
     that.each(hash, function(index, item){
       /^\w+=/.test(item) ? function(){
         item = item.split('=');
         data.search[item[0]] = item[1];
       }() : data.path.push(item);
     });
+    
+    return data;
+  };
+  
+  //URL 解析
+  Layui.prototype.url = function(href){
+    var that = this
+    ,data = {
+      //提取 url 路径
+      pathname: function(){
+        var pathname = href
+          ? function(){
+            var str = (href.match(/\.[^.]+?\/.+/) || [])[0] || '';
+            return str.replace(/^[^\/]+/, '').replace(/\?.+/, '');
+          }()
+        : location.pathname;
+        return pathname.replace(/^\//, '').split('/');
+      }()
+      
+      //提取 url 参数
+      ,search: function(){
+        var obj = {}
+        ,search = (href 
+          ? function(){
+            var str = (href.match(/\?.+/) || [])[0] || '';
+            return str.replace(/\#.+/, '');
+          }()
+          : location.search
+        ).replace(/^\?+/, '').split('&'); //去除 ?，按 & 分割参数
+        
+        //遍历分割后的参数
+        that.each(search, function(index, item){
+          var _index = item.indexOf('=')
+          ,key = function(){ //提取 key
+            if(_index < 0){
+              return item.substr(0, item.length);
+            } else if(_index === 0){
+              return false;
+            } else {
+              return item.substr(0, _index);
+            }
+          }(); 
+          //提取 value
+          if(key){
+            obj[key] = _index > 0 ? item.substr(_index + 1) : null;
+          }
+        });
+        
+        return obj;
+      }()
+      
+      //提取 Hash
+      ,hash: that.router(function(){
+        return href 
+          ? ((href.match(/#.+/) || [])[0] || '')
+        : location.hash;
+      }())
+    };
     
     return data;
   };
@@ -420,6 +487,7 @@
     //移动设备
     result.android = /android/.test(agent);
     result.ios = result.os === 'ios';
+    result.mobile = (result.android || result.ios) ? true : false;
     
     return result;
   };
@@ -533,7 +601,7 @@
       
       //执行指定事件
       key === '' && layui.each(item, callback);
-      key === filterName && layui.each(item, callback);
+      (filterName && key === filterName) && layui.each(item, callback);
     });
     
     return result;

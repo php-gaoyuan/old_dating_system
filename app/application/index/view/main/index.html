@@ -23,13 +23,37 @@
 			}
 
 			.layui-flow-more{text-align: center;display: none;}
-			
+			.change-lang{
+				position: absolute;
+				padding: 0 10px;
+				background: #f7f7f7;
+			}
+			.select-lang{
+				display: none;
+			}
+			.select-lang a{
+				display:block;
+				line-height:2em;
+				border-top:1px solid #007aff;
+			}
+			body .mui-content{background: url("/public/static/mobile/images/page_bg2.jpg") 0 0 repeat;background-size:100%;background-attachment: fixed;min-height:700px;}
+			body .mui-card{background: rgba(255,255,255,0.75)}
 		</style>
 	</head>
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-		    <a class="mui-icon iconfont icon-zuanshi mui-pull-left icon-blue" href="<{:url('upgrade/index')}>"></a>
+		    <div class="mui-pull-left icon-blue change-lang" href="javascript:;">
+					<{$lang}>
+					<span class="mui-icon mui-icon-arrowdown"></span>
+					<div class="select-lang">
+						<a href="<{:url('index/lang',array('lang'=>'zh'))}>"><{:lang("zh-cn")}></a>
+						<a href="<{:url('index/lang',array('lang'=>'tw'))}>"><{:lang("zh-tw")}></a>
+						<a href="<{:url('index/lang',array('lang'=>'en'))}>"><{:lang("en-us")}></a>
+						<a href="<{:url('index/lang',array('lang'=>'kor'))}>"><{:lang("kor")}></a>
+						<a href="<{:url('index/lang',array('lang'=>'jp'))}>"><{:lang("jp")}></a>
+					</div>
+			</div>
 <!--		    <{:lang('main_title2')}>-->
 			<h1 class="mui-title">偶遇吧</h1>
 		    <a class="mui-icon mui-icon-search mui-pull-right" href="<{:url('search/index')}>"></a>
@@ -57,8 +81,10 @@
 					layer=layui.layer,
 					$=layui.jquery;
 				var tpl = $("#tpl-list").html();
-				
 
+				$(".change-lang").click(function(){
+					$(".select-lang").toggle();
+				});
 
 				var options = {
 					elem:"#list",

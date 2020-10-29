@@ -28,6 +28,8 @@ $rf_langpackage = new recaffairlp;
 $dbo = new dbex; //连接数据库执行
 dbtarget('r', $dbServs);
 $user_id = get_sess_userid(); //删除之后客户机获取缓存中的id，
+$search_uname = get_argg("user_name");
+
 $sqlg = "select * from wy_users where user_id=$user_id";
 $userinfo = $dbo->getRow($sqlg);
 $sql = "select * from wy_users where user_id=$user_id"; //与服务器进行比较
@@ -122,19 +124,19 @@ $xhd_list = $dbo->getRs($sql);
 
 
     if($_GET['page']){
-        $page=($page_num-1)*$pagesize; 
+        $page=($page_num-1)*$pagesize;
         if($page<0) $page=0;
-    }else{ 
-        $page=0; 
-    } 
-    if($page_num<=1){ 
-        $page_num=1; 
-    } 
+    }else{
+        $page=0;
+    }
+    if($page_num<=1){
+        $page_num=1;
+    }
     $pre=$page_num-1;
-    $next=$page_num+1; 
-    if($pre<0)$pre=0; 
-    if($next>ceil($page_total/$pagesize)) 
-    $next=ceil($page_total/$pagesize); 
+    $next=$page_num+1;
+    if($pre<0)$pre=0;
+    if($next>ceil($page_total/$pagesize))
+    $next=ceil($page_total/$pagesize);
     //if($page_total<=10) $next=1;
     //var_dump($_SESSION);
     //page end
@@ -145,10 +147,22 @@ $xhd_list = $dbo->getRs($sql);
 
     
     if($userinfo['user_sex'] == 1){
-        $sql = "select * from wy_users as u left join wy_online as o on u.user_id=o.user_id where (u.user_sex != '{$user_sex}' and u.is_pass!='0') or u.is_service=1 order by u.is_service desc, rand()";
+        $sql = "select * from wy_users as u left join wy_online as o on u.user_id=o.user_id where  ";
+        if(!empty($search_uname)){
+            $sql .=" (u.user_sex != '{$user_sex}' and u.is_pass!='0' and u.user_name like '%{$search_uname}%') ";
+        }else{
+            $sql .=" (u.user_sex != '{$user_sex}' and u.is_pass!='0') or u.is_service=1 ";
+        }
+        $sql .= " order by u.is_service desc, rand() ";
     }else{
-        $sql = "select * from wy_users as u left join wy_online as o on u.user_id=o.user_id where u.user_sex != '{$user_sex}' order by u.is_service desc,o.active_time desc";
-    } 
+        $sql = "select * from wy_users as u left join wy_online as o on u.user_id=o.user_id where u.user_sex != '{$user_sex}' ";
+        if(!empty($search_uname)){
+            $sql .=" and u.user_name like '%{$search_uname}%' ";
+        }
+        $sql .= " order by u.is_service desc,o.active_time desc ";
+    }
+
+//print_r($sql);
 
 
     // 开始新版分页
@@ -162,7 +176,7 @@ $xhd_list = $dbo->getRs($sql);
         $isNull=1;
     }
     // 结束新版分页
-
+//print_r($ra_rs);
     
     $ra_rs0519=array(); 
     foreach($ra_rs as $k=>$rss){
@@ -208,9 +222,34 @@ $xhd_list = $dbo->getRs($sql);
         <meta http-equiv="Content-Language" content="zh-cn">
         <title></title>
         <link href="./skin/gaoyuan/css/online.css" rel="stylesheet" type="text/css">
+        <script src="./template/main/jquery-1.7.min.js"></script>
     </head>
     <body class="lan_cn" style=" background:none;text-align:left">
-        
+    <style>
+        .search_box{display: flex;justify-content: center;align-items: center;border: 1px solid #ccc; width:222px;margin: 25px auto 0;}
+        .search_box  input{border-radius: 3px;padding: 5px 10px;border:0;}
+        .search_box .search_icon{}
+        .search_box  img{width:32px;border-left: 1px solid #ccc;
+            cursor: pointer;}
+    </style>
+    <script>
+        function search(){
+            var user_name = $("#user_name").val();
+            if(user_name == ""){
+                return false;
+            }
+            var href = window.location.href;
+            if(href.indexOf("?")==-1){
+                window.location.href = href+"?user_name="+user_name;
+            }else{
+                window.location.href = href+"&user_name="+user_name;
+            }
+        }
+    </script>
+        <div class="search_box">
+            <input type="text" name="user_name" id="user_name" value="<?php echo $_GET["user_name"];?>">
+            <img src="/skin/gaoyuan/images/search-icon.png" alt="" onclick="search();">
+        </div>
 
         <!-- 在线用户 -->
         <div class="samle_tu">
@@ -262,7 +301,7 @@ $xhd_list = $dbo->getRs($sql);
 
 
 
-        <script src="./template/main/jquery-1.7.min.js"></script>
+
         <script>
             jQuery(function() {
                 var $ = jQuery;

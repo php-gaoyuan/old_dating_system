@@ -60,8 +60,8 @@ $upgrade_log = $dbo->getRow("select endtime from wy_upgrade_log where mid={$user
 <style>
 	body .layui-table-cell{height: 50px;}
 </style>
-<link rel="stylesheet" href="/manage/static/plus/layui/css/layui.css">
-<script src="/manage/static/plus/layui/layui.js"></script>
+<link rel="stylesheet" href="/skin/gaoyuan/layui/css/layui.css">
+<script src="/skin/gaoyuan/layui/layui.js"></script>
 <script>
 	var user_id="<?php echo $user_id; ?>";
 	layui.use(["jquery", "form", "layer", "laydate"], function () {

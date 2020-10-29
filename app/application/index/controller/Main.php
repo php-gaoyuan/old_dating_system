@@ -6,6 +6,8 @@ class Main extends Base
 
     public function index()
     {
+        $lang = cookie("think_var");
+        $this->assign("lang",lang($lang));
         return $this->fetch();
     }
 

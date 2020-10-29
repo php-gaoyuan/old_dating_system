@@ -1,19 +1,16 @@
 /**
 
- @Name：layim mobile 2.1.0
- @Author：贤心
- @Site：http://layim.layui.com
+ @Name：layim mobile 2.5.0
  @License：LGPL
     
  */
  
-layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(exports){
+layui.define(['laytpl', 'upload', 'layer-mobile', 'zepto'], function(exports){
   
-  var v = '2.1.0';
+  var v = '2.5.0';
   var $ = layui.zepto;
   var laytpl = layui.laytpl;
   var layer = layui['layer-mobile'];
-  var upload = layui['upload-mobile'];
   var device = layui.device();
   
   var SHOW = 'layui-show', THIS = 'layim-this', MAX_ITEM = 20;
@@ -332,7 +329,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
   };
   
   var elemChatMain = ['<li class="layim-chat-li{{ d.mine ? " layim-chat-mine" : "" }}">'
-    ,'<div class="layim-chat-user"><img src="{{ d.avatar }}"><cite>'
+    ,'<div class="layim-chat-user"><img src="{{ d.avatar }}" alt="{{ d.uid || d.id }}"><cite>'
       ,'{{ d.username||"佚名" }}'
     ,'</cite></div>'
     ,'<div class="layim-chat-text">{{ layui.data.content(d.content||"&nbsp;") }}</div>'
@@ -597,7 +594,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
     
     data.content = textarea.val();
     
-    if(data.content === '') return;
+    //if(data.content === '') return;
 
     if(data.content.length > maxLength){
       return layer.msg('内容最长不能超过'+ maxLength +'个字符')
@@ -651,6 +648,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
     
     data.timestamp = data.timestamp || new Date().getTime();
     data.system || pushChatlog(data);
+    console.log(data)
     messageNew = JSON.parse(JSON.stringify(data));
     
     if(cache.base.voice){
@@ -995,7 +993,10 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
       });
       var doc = $(document);
       if(isTouch){
-        doc.off('touchend', events.faceHide).on('touchend', events.faceHide);
+        touch(doc, function(){
+          events.faceHide();
+        })
+        //doc.off('touchend', events.faceHide).on('touchend', events.faceHide);
       } else {
         doc.off('click', events.faceHide).on('click', events.faceHide);
       }
@@ -1013,13 +1014,14 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
         ,file: 'uploadFile'
       }
       ,thatChat = thisChat(), conf = cache.base[api[type]] || {};
-      upload({
+      
+      //执行上传
+      layui.upload.render({
         url: conf.url || ''
         ,method: conf.type
         ,elem: othis.find('input')[0]
-        ,unwrap: true
-        ,type: type
-        ,success: function(res){
+        ,accept: type
+        ,done: function(res){
           if(res.code == 0){
             res.data = res.data || {};
             if(type === 'images'){
@@ -1149,7 +1151,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
     //关于
     ,about: function(){
       layer.open({
-        content: '<p style="padding-bottom: 5px;">LayIM属于付费产品，欢迎通过官网获得授权，促进良性发展！</p><p>当前版本：layim mobile v'+ v + '</p><p>版权所有：<a href="http://layim.layui.com" target="_blank">layim.layui.com</a></p>'
+        content: '<p style="padding-bottom: 5px;">版本：layim mobile v'+ v + '</p>'
         ,className: 'layim-about'
         ,shadeClose: false
         ,btn: '我知道了'
@@ -1162,6 +1164,6 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
   exports('layim-mobile', new LAYIM());
 
 }).addcss(
-  'modules/layim/mobile/layim.css?v=2.10'
+  'modules/layim/mobile/layim.css?v=2.50'
   ,'skinlayim-mobilecss'
 );

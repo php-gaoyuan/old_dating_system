@@ -70,7 +70,7 @@ h1, h2, h3, h4, h5, h6 { font-size: 12px }
 #nav_lq a.expand_a1_lq .white_tarrow1_lq { margin-top: 17px }
 /*#nav_lq a.expand_a1_lq.active, #nav_lq a.expand_a1_lq:hover { background: #fff }*/
 /*#nav_lq a.expand_a1_lq.active .white_tarrow1_lq, #nav_lq a.expand_a1_lq:hover .white_tarrow1_lq { background: url(../images/icon_01.png) no-repeat scroll -53px 0 }*/
-#expand_nav_lq { position: absolute; top: 43px; right: 13px;z-index:10; background: #fff; border: solid 1px #d9d9d9; border-top: 0; padding-top:10px; border-radius: 0 0 3px 3px }
+#expand_nav_lq { position: absolute; top: 43px; right: -27px;z-index:10; background: #fff; border: solid 1px #d9d9d9; border-top: 0; padding-top:10px; border-radius: 0 0 3px 3px }
 #expand_nav_lq .triggle-top{z-index: -1;position: absolute;top: -9px;right: 45px;}
 #msglist .triggle-top{z-index: -1;position: absolute;top: -9px;left:14px;}
 

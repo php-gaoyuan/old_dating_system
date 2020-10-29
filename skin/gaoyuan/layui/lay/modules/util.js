@@ -100,7 +100,7 @@ layui.define('jquery', function(exports){
       ,stamp = new Date().getTime() - new Date(time).getTime();
       
       //返回具体日期
-      if(stamp > 1000*60*60*24*8){
+      if(stamp > 1000*60*60*24*31){
         stamp =  new Date(time);
         arr[0][0] = that.digit(stamp.getFullYear(), 4);
         arr[0][1] = that.digit(stamp.getMonth() + 1);
@@ -120,7 +120,7 @@ layui.define('jquery', function(exports){
         return ((stamp/1000/60/60/24)|0) + '天前';
       } else if(stamp >= 1000*60*60){
         return ((stamp/1000/60/60)|0) + '小时前';
-      } else if(stamp >= 1000*60*2){ //2分钟以内为：刚刚
+      } else if(stamp >= 1000*60*3){ //3分钟以内为：刚刚
         return ((stamp/1000/60)|0) + '分钟前';
       } else if(stamp < 0){
         return '未来';
@@ -171,7 +171,36 @@ layui.define('jquery', function(exports){
       .replace(/</g, '&lt;').replace(/>/g, '&gt;')
       .replace(/'/g, '&#39;').replace(/"/g, '&quot;');
     }
+    
+    //批量事件
+    ,event: function(attr, obj, eventType){
+      var _body = $('body');
+      eventType = eventType || 'click';
+      
+      //记录事件回调集合
+      obj = util.event[attr] = $.extend(true, util.event[attr], obj) || {};
+      
+      //清除委托事件
+      util.event.UTIL_EVENT_CALLBACK = util.event.UTIL_EVENT_CALLBACK || {};
+      _body.off(eventType, '*['+ attr +']', util.event.UTIL_EVENT_CALLBACK[attr])
+      
+      //绑定委托事件
+      util.event.UTIL_EVENT_CALLBACK[attr] = function(){
+        var othis = $(this)
+        ,key = othis.attr(attr);
+        (typeof obj[key] === 'function') && obj[key].call(this, othis);
+      };
+
+      //清除旧事件，绑定新事件
+      _body.on(eventType, '*['+ attr +']', util.event.UTIL_EVENT_CALLBACK[attr]);
+      
+      return obj;
+    }
   };
   
+  //监听 DOM 尺寸变化，该创意来自：http://benalman.com/projects/jquery-resize-plugin/
+  !function(a,b,c){"$:nomunge";function l(){f=b[g](function(){d.each(function(){var b=a(this),c=b.width(),d=b.height(),e=a.data(this,i);(c!==e.w||d!==e.h)&&b.trigger(h,[e.w=c,e.h=d])}),l()},e[j])}var f,d=a([]),e=a.resize=a.extend(a.resize,{}),g="setTimeout",h="resize",i=h+"-special-event",j="delay",k="throttleWindow";e[j]=250,e[k]=!0,a.event.special[h]={setup:function(){if(!e[k]&&this[g])return!1;var b=a(this);d=d.add(b),a.data(this,i,{w:b.width(),h:b.height()}),1===d.length&&l()},teardown:function(){if(!e[k]&&this[g])return!1;var b=a(this);d=d.not(b),b.removeData(i),d.length||clearTimeout(f)},add:function(b){function f(b,e,f){var g=a(this),h=a.data(this,i)||{};h.w=e!==c?e:g.width(),h.h=f!==c?f:g.height(),d.apply(this,arguments)}if(!e[k]&&this[g])return!1;var d;return a.isFunction(b)?(d=b,f):(d=b.handler,b.handler=f,void 0)}}}($,window);
+  
+  //暴露接口
   exports('util', util);
 });

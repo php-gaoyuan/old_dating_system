@@ -108,10 +108,6 @@ $u_sex_txrz = $dbo->getRow($sql);
                     <?php echo $mn_langpackage->mn_out; ?>
                 </a>
             </div>
-            <a href="main2.0.php?app=mypals_search" style="width:15px;">
-                <i class="allSearch-icon">
-                </i>
-            </a>
         </div>
         <!--顶部导航-->
     </div>

@@ -3,9 +3,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>充值记录</title>
-    <link rel="stylesheet" type="text/css" media="all" href="css/admin.css">
-    <script src="../../static/plus/layui/layui.js"></script>
-    <link rel="stylesheet" href="../../static/plus/layui/css/layui.css">
+    <script src="/skin/gaoyuan/layui/layui.js"></script>
+    <link rel="stylesheet" href="/skin/gaoyuan/layui/css/layui.css">
 </head>
 <body>
 <div class="layui-fluid">

@@ -6,7 +6,6 @@
 <script>
 
     <{if request()->action()!="chat"}>
-    if(window.location.pathname.indexOf("chat/chat")==-1){
         var ws_url = "<{:config('webconfig.ws_url')}>";
         var ws = null;
         var userinfo = <{$userinfo}>;
@@ -51,24 +50,15 @@
                     break;
                 case 'logMsg':
                     //console.log(msg.data);
-                    layui.each(msg.data,function(index,item){
-                        showBadge(item);
-                    })
+                    // layui.each(msg.data,function(index,item){
+                    //     showBadge(item);
+                    // })
                     break;
             }
         };
         var doReq = function(type,msg){
             var msg = msg||{};
-            switch (type) {
-                case "init":
-                    break;
-                case "chatMsg":
-                    break;
-                case "readMsg":
-                    break;
-            }
             var data = $.extend({type:type},msg);
-            //console.log(data);
             ws.send(JSON.stringify(data));
         }
         var doClose = function (event) {
@@ -80,7 +70,6 @@
             }
         };
         freshSocket();
-    }
     <{/if}>
 
     var showBadge = function(msg){

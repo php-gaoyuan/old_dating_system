@@ -1,92 +1,96 @@
 <?php
 require("includet.php");
-require("../foundation/fpages_bar.php");
-
-$dbo = new dbex;
-dbplugin('r');
-
-if ($_GET["act"] == "act_bang") {
-    $wz_user_id = get_session('wz_userid');
-    $user_id = intval($_GET["id"]);
-    $userInfo = $dbo->getRow("select tuid from wy_users where user_id='{$user_id}'", "arr");
-    //echo "<pre>";print_r($userInfo);exit;
-    if ($userInfo["tuid"] > 0) {
-        echo "<script>alert('该用户已经绑定过上级！');window.reload();</script>";
-        exit;
-    }
-    $sql = "update wy_users set tuid = '{$wz_user_id}' where user_id='{$user_id}'";
-    $res = $dbo->exeUpdate($sql);
-    if ($res) {
-        echo "<script>alert('绑定成功！');window.reload();</script>";
-    } else {
-        echo "<script>alert('绑定失败！');window.reload();</script>";
-    }
-    exit;
-} else if ($_GET["act"] == "search") {
-    $user_name = $_GET["user_name"];
-    $sql = "select user_id,user_name,tuid from wy_users where user_name like '{$user_name}%' or user_name = '{$user_name}'";
-    $userList = $dbo->getRs($sql);
-}
+$url = "https://partyings.com?tuid=".get_session("wz_userid");
 ?>
-
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="en">
+<!DOCTYPE html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>个人业绩管理系统</title>
-    <link href="css/Guest.css" rel="stylesheet" type="text/css"/>
-    <script src="js/system.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <style>
-        table {
-            border: 1px solid #ccc;
-        }
-
-        table th {
-            text-align: center;
-            line-height: 36px;
-        }
-
-        table td {
-            border: 1px solid #ccc;
-            line-height: 36px;
-            text-align: center;
-        }
-    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>
+        后台管理系统
+    </title>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body style="padding:10px 20px;">
-<div style="margin:20px 0;">
-    <form action="">
-        请输入用户名：<input type="text" name="user_name" value="<?php echo $_GET['user_name']; ?>">
-        <input type="hidden" name="act" value="search">
-        <input type="submit" value="搜索">
-    </form>
+<body>
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <div class="layui-form layui-form-pane">
+                <div class="layui-form-item">
+
+                    <div class="layui-inline">
+                        <div class="layui-input-inline">
+                            <input type="text" name="user_name" autocomplete="off" class="layui-input" placeholder="会员账号">
+                        </div>
+                    </div>
+
+                    <div class="layui-inline">
+                        <div class="layui-input-inline">
+                            <button class="layui-btn" lay-submit lay-filter="search" id="search">搜索</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <table id="table" lay-filter="table"></table>
+        </div>
+    </div>
 </div>
+<link rel="stylesheet" href="/skin/gaoyuan/layui/css/layui.css">
+<script type="text/javascript" src="/skin/gaoyuan/layui/layui.js"></script>
+<script>
+    layui.use(["jquery","form","table"],function(){
+        var $ = layui.jquery;
+        var form = layui.form;
+        var table = layui.table;
+        var options = {
+            elem: '#table',
+            url: "api/bang.php",
+            where: {},
+            cols: [[
+                {field:'user_id', title: '会员ID'},
+                {field:'user_name', title: '会员账号'},
+                {title: '操作',templet:function(d){
+                        if(d.tuid>'0'){
+                            return "该会员已经绑定";
+                        }else if(d.tuid=='0'){
+                            return "<button class=\"layui-btn layui-btn-danger layui-btn-sm\" lay-event='bang'>绑定会员</butotn>";
+                        }
+                    }},
+            ]],
+            page: true,
+            limit:10,
+            loading: true,
+            done: function (res, cur, pages) {
 
-<div>
-    <table width="100%" cellspacing="0" cellpadding="0" class="table_01">
-        <tr>
-            <th>ID</th>
-            <th>用户名</th>
-            <th>操作</th>
-        </tr>
-        <?php foreach ($userList as $k => $v) { ?>
+            }
+        };
+        var tableIns = table.render(options);
 
+        table.on('tool(table)', function (obj) {
+            var data = obj.data;
+            var layEvent = obj.event;
+            var tr = obj.tr;
+            if (layEvent == 'bang') {
+                layer.confirm('您确定要绑定'+data.user_name+'吗？', function (index) {
+                    $.post("api/bang.php?act=act_bang", {user_id: data.user_id}, function (res) {
+                        layer.alert(res.msg,function(){
+                            window.location.reload();
+                        });
+                        return false;
+                    },"json");
+                    layer.close(index);
+                })
+            }
+        })
 
-            <tr>
-                <td><?php echo $v["user_id"]; ?></td>
-                <td><?php echo $v["user_name"]; ?></td>
-                <td>
-                    <?php if ($v["tuid"] > 0) { ?>
-                        该会员已经绑定
-                    <?php } else { ?>
-                        <a href="bang.php?act=act_bang&id=<?php echo $v['user_id']; ?>">绑定该会员到名下</a>
-                    <?php } ?>
-                </td>
-            </tr>
-        <?php } ?>
-    </table>
-</div>
+        form.on("submit(search)", function (res) {
+            var data = res.field;
+            options["where"] = data;
+            tableIns.reload(options);
+            return false;
+        });
+    })
+</script>
 </body>
-</html>

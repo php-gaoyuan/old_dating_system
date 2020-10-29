@@ -271,7 +271,7 @@ class footerlp{
 
     var $f_lfetad1="Uno en un servicio personalizado！";
     var $f_lfetad2="Yang Cheng opción común de la pareja!";
-    var $f_lfetad3="Love Collection E-mail: pauzzz@Yahoo.com";
+    var $f_lfetad3="Love Collection E-mail: puivip@Yahoo.com";
     var $f_newman="Newbie";
     var $f_serve="Tipo de Servicio";
     var $f_help="Centro de Ayuda";

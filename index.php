@@ -191,7 +191,7 @@ if ($tg == 'invite') {
 
             <div class="reg_caption">
 
-                Welcome to pauzzz.com
+                Welcome to puivip.com
 
             </div>
 
@@ -408,7 +408,7 @@ if ($tg == 'invite') {
             <div class="download-left">
                 <img src="apk/ewm.png" alt="" style="width:160px;">
                 <div>
-                    <button class="android">pauzzz for Android</button>
+                    <button class="android">puivip for Android</button>
                 </div>
             </div>
         </div>

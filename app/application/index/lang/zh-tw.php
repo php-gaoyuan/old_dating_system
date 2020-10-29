@@ -106,7 +106,7 @@
 
   'wj_input_email' => '輸入注册郵箱',
 
-  'main_title' => 'pauzzz全球最專業的大型翻譯社交平臺',
+  'main_title' => 'puivip全球最專業的大型翻譯社交平臺',
 
   'main_title2' => '線上用戶',
 
@@ -215,7 +215,7 @@
 
   'set lang' => '語言設定',
 
-  'about' => '關於pauzzz',
+  'about' => '關於puivip',
 
   'clear cache' => '清除緩存',
 

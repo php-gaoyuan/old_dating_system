@@ -51,7 +51,7 @@ $userinfo["sign"] = $sign["u_intro"];
                 url: '/app/index.php/index/Api/upload_img.html', //接口地址
                 type: 'post' //默认post
             },
-            title: 'pauzzz-IM',
+            title: 'puivip-IM',
             isgroup: false,
             copyright: true,
             //isAudio:true,

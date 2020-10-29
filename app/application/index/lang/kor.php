@@ -219,7 +219,7 @@
 
   'set lang' => '언어 설정',
 
-  'about' => '关于 pauzzz',
+  'about' => '关于 puivip',
 
   'clear cache' => '캐시 지우기',
 

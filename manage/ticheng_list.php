@@ -240,7 +240,7 @@ function checkAll(form,name) {
 		<?php 
 		
 			$link = mysql_connect("127.0.0.1", "root","mima123456");
-				if(!mysql_select_db("pauzzz",$link)){
+				if(!mysql_select_db("puivip",$link)){
 				
 					echo "连接失败";
 				}else{
@@ -314,7 +314,7 @@ function checkAll(form,name) {
 				$result = mysql_query($sql_by_root);
 				$result = mysql_fetch_array($result);
 				$result['gift'] = explode('|', $result['gift']);
-				echo "<img src='http://www.pauzzz.com/rootimg.php?src=".$result['gift'][0]."&h=43&w=43&zc=1'>";
+				echo "<img src='http://www.puivip.com/rootimg.php?src=".$result['gift'][0]."&h=43&w=43&zc=1'>";
 			}
 		
 		?>

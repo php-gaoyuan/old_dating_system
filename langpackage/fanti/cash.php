@@ -1,6 +1,6 @@
 <?php 
 class cashlp{
-	var $title="pauzzz提現";
+	var $title="puivip提現";
 	var $h2="提現金幣";
 	var $h2_small="請放心輸入，我們不會透漏你的財務資料";
 	var $input_txt1 = "國家或地區";
@@ -9,7 +9,7 @@ class cashlp{
 	var $money = "提現金幣數量";
 	var $sub_title="確認提現";
 	var $tip = "提示";
-	var $tip_success="尊敬的{name}pauzzz會員，恭喜您：成功提現{money}USB已經到達您的帳戶，感謝您使用pauzzz!";
-	var $tip_fail="尊敬的{name}pauzzz會員，非常抱歉您提現{money}金幣失败，感謝您使用pauzzz！";
+	var $tip_success="尊敬的{name}puivip會員，恭喜您：成功提現{money}USB已經到達您的帳戶，感謝您使用puivip!";
+	var $tip_fail="尊敬的{name}puivip會員，非常抱歉您提現{money}金幣失败，感謝您使用puivip！";
 }
 ?>

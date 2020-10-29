@@ -320,7 +320,7 @@ $(function (){
 		
 
 		$link = mysql_connect("127.0.0.1", "root","mima123456");
-				if(!mysql_select_db("pauzzz",$link)){
+				if(!mysql_select_db("puivip",$link)){
 		
 			echo "连接失败";
 		

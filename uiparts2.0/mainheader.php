@@ -20,12 +20,12 @@ $u_sex_txrz = $dbo->getRow($sql);
         <h1 style="padding-top:0 !important;">
 			<?php if ($u_sex_txrz['is_pass'] == 1) { ?>
                 <a href="main.php">
-                    <img src="skin/<?php echo $skinUrl; ?>/images/snslogo.png" / style=" height:32px;margin-top: 6px;">
+                    <img src="/template/index/images/logo.png" / style=" height:32px;margin-top: 6px;">
                 </a>
 			<?php } else { ?>
                 <a href="javascript:;"
                    onclick="top.Dialog.alert('<?php echo $l_langpackage->l_lock_u; ?>');setTimeout(function(){window.location.href='main2.0.php?app=user_info'},2000)">
-                    <img src="skin/<?php echo $skinUrl; ?>/images/snslogo.png" / style=" height:32px;margin-top: 6px;">
+                    <img src="/template/index/images/logo.png" / style=" height:32px;margin-top: 6px;">
                 </a>
 			<?php } ?>
         </h1>

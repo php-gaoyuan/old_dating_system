@@ -8,7 +8,7 @@
 	//接收支付结果的页面地址，该参数一般置为空即可。
 	$pageUrl = "";
 	//服务器接收支付结果的后台地址，该参数务必填写，不能为空。
-	$bgUrl = "http://www.pauzzz.com/kuaipay/recieve.php";
+	$bgUrl = "http://www.puivip.com/kuaipay/recieve.php";
 	//网关版本，固定值：v2.0,该参数必填。
 	$version =  "v2.0";
 	//语言种类，1代表中文显示，2代表英文显示。默认为1,该参数必填。

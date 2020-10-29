@@ -164,7 +164,7 @@ return [
 
 	//main
 
-	"main_title"=>"pauzzz全球最专业的大型翻译社交平台",
+	"main_title"=>"puivip全球最专业的大型翻译社交平台",
 
 	"main_title2"=>"在线用户",
 
@@ -315,7 +315,7 @@ return [
 
 	"set lang"=>"语言设置",
 
-	"about"=>"关于pauzzz",
+	"about"=>"关于puivip",
 
 	"clear cache"=>"清除缓存",
 

@@ -114,7 +114,7 @@
 
 
 
-  'main_title' => 'pauzzz the most professional large translation social platform in the world',
+  'main_title' => 'puivip the most professional large translation social platform in the world',
 
   'main_title2' => 'Online Member',
 
@@ -224,7 +224,7 @@
 
   'set lang' => 'Language setting',
 
-  'about' => 'About pauzzz',
+  'about' => 'About puivip',
 
   'clear cache' => 'Scavenging caching',
 

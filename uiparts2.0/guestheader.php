@@ -12,8 +12,8 @@
  */
 ?><?php
 require("foundation/fdnurl_aget.php");
-if($_SERVER['HTTP_HOST']=='www.loveybible.com' || $_SERVER['HTTP_HOST']=='loveybible.com'||$_SERVER['HTTP_HOST']=='pauzzz.com'){
-	echo "<script>window.location.href='http://www.pauzzz.com'</script>";
+if($_SERVER['HTTP_HOST']=='www.loveybible.com' || $_SERVER['HTTP_HOST']=='loveybible.com'||$_SERVER['HTTP_HOST']=='puivip.com'){
+	echo "<script>window.location.href='http://www.puivip.com'</script>";
 }
 //语言包引入
 $l_langpackage=new loginlp;

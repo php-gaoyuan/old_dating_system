@@ -38,7 +38,7 @@ if($user_sex == '0'){
         $info['mess_title'] = "好友的".$uinfo['user_email']."消息";
     }
     
-    $res = sendMail($uinfo['user_email'], $uinfo['email_passwd'], 'pauzzz好友'.$uinfo['user_name'], $to_uinfo['user_email'], $to_uinfo['user_name'], $info['mess_title'], $info['mess_content']);
+    $res = sendMail($uinfo['user_email'], $uinfo['email_passwd'], 'puivip好友'.$uinfo['user_name'], $to_uinfo['user_email'], $to_uinfo['user_name'], $info['mess_title'], $info['mess_content']);
     if($res !== false){
         echo "<script>alert('真实邮件发送成功');window.close();//location.href='modules.php?app=msg_moutbox';</script>";exit();
     }else{

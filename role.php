@@ -235,7 +235,7 @@ $blogcount = $dbo -> getRow($sqlg);
 <meta name="author" content="xiaosu" />
 <meta name="robots" content="all" />
 <title>xiaosu的个人主页-lovelove亚洲国际交友中心网站－You match with single girls by dating_单身男女的爱情公寓</title>
-<base href='http://www.pauzzz.com/' />
+<base href='http://www.puivip.com/' />
 <link rel="stylesheet" href="skin/default/jooyea/css/layout.css" />
 <script type='text/javascript' src="skin/default/js/jy.js"></script>
 <script type='text/javascript' src="servtools/imgfix.js"></script>
@@ -255,7 +255,7 @@ $blogcount = $dbo -> getRow($sqlg);
 
 <script type='text/javascript'>
 function goLogin(){
-	Dialog.confirm("After logging in to perform operations, login now？",function(){top.location="http://www.pauzzz.comn/index.php";});
+	Dialog.confirm("After logging in to perform operations, login now？",function(){top.location="http://www.puivip.comn/index.php";});
 }
 //取得评论内容
 	function get_mod_com(type_id,mod_id,start_num,end_num){
@@ -580,7 +580,7 @@ function send_hi(uid){
       <div class="moodlist">
         <ul>
           <li>
-            <div class="li_avatar"><img src="http://www.pauzzz.com/rootimg.php?src=http://www.pauzzz.com/uploadfiles/avatar/20141105/1415171817194_162.jpg&h=200&w=200&z=1" /></div>
+            <div class="li_avatar"><img src="http://www.puivip.com/rootimg.php?src=http://www.puivip.com/uploadfiles/avatar/20141105/1415171817194_162.jpg&h=200&w=200&z=1" /></div>
             <div class="li_info">
               <div class="li_info_t"><em><!-- × --></em><span><a href="#">liner</a> Uploaded Photo: 3 Day Ago</span></div>
               <div class="li_info_n">

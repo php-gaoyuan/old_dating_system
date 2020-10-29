@@ -94,7 +94,7 @@ if($dbo->exeUpdate($sql))
 		require("payment/paypal.php");
 		$pay=new Paypal;
 		$pay->dsql=$dbo;
-		$pay->return_url='http://www.pauzzz.com/do.php?act=paynotify';
+		$pay->return_url='http://www.puivip.com/do.php?act=paynotify';
 		$button=$pay->GetCode($order,'annimeet@outlook.com');
 		echo $button;
 		echo "<script>location.href='/modules.php?app=user_pay';</script>";
@@ -109,11 +109,11 @@ if($dbo->exeUpdate($sql))
 				$payment_type = "1";
 				//必填，不能修改
 				//服务器异步通知页面路径
-				$notify_url = "http://www.pauzzz.com";
+				$notify_url = "http://www.puivip.com";
 				//需http://格式的完整路径，不能加?id=123这类自定义参数
 
 				//页面跳转同步通知页面路径
-				$return_url = "http://www.pauzzz.com/alipay_return.php";
+				$return_url = "http://www.puivip.com/alipay_return.php";
 				//需http://格式的完整路径，不能加?id=123这类自定义参数，不能写成http://localhost/
 
 				//卖家支付宝帐户
@@ -137,7 +137,7 @@ if($dbo->exeUpdate($sql))
 
 				$body = $_POST['WIDbody'];
 				//商品展示地址
-				$show_url = 'http://www.pauzzz.com';
+				$show_url = 'http://www.puivip.com';
 				//需以http://开头的完整路径，例如：http://www.xxx.com/myorder.html
 
 				//防钓鱼时间戳
@@ -186,7 +186,7 @@ if($dbo->exeUpdate($sql))
 		$key = "657486f7ca712c34b831e31cadcd62ee";
 
 		/* 返回处理地址 */
-		$return_url = "http://www.pauzzz.com/do.php?act=tenpay_url";
+		$return_url = "http://www.puivip.com/do.php?act=tenpay_url";
 
 		//date_default_timezone_set(PRC);
 		$strDate = date("Ymd");
@@ -251,7 +251,7 @@ if($dbo->exeUpdate($sql))
         //接收支付结果的页面地址，该参数一般置为空即可。
         $pageUrl = "";
         //服务器接收支付结果的后台地址，该参数务必填写，不能为空。
-        $bgUrl = "http://www.pauzzz.com/do.php?act=krecieve";
+        $bgUrl = "http://www.puivip.com/do.php?act=krecieve";
         //网关版本，固定值：v2.0,该参数必填。
         $version =  "v2.0";
         //语言种类，1代表中文显示，2代表英文显示。默认为1,该参数必填。

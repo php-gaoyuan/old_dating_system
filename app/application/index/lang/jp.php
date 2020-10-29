@@ -106,7 +106,7 @@
 
   'wj_input_email' => '登録メールを入力する',
 
-  'main_title' => 'pauzzz世界で最も専門の大翻訳ソーシャルプラットフォーム',
+  'main_title' => 'puivip世界で最も専門の大翻訳ソーシャルプラットフォーム',
 
   'main_title2' => 'オンラインユーザー',
 
@@ -215,7 +215,7 @@
 
   'set lang' => '言語の設定',
 
-  'about' => '关于pauzzz',
+  'about' => '关于puivip',
 
   'clear cache' => 'キャッシュ',
 

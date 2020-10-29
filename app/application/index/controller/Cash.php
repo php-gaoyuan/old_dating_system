@@ -17,8 +17,8 @@ class Cash extends Base
 					'sub_title'=>"Submit",
 					'cash_cancel'=>'Cancel',
 					'tip' => "Tip",
-					'tip_success'=>"Dear {name} pauzzz member, congratulations: {money}USB has arrived in your account successfully. Thank you for using pauzzz!",
-					'tip_fail'=>"Dear {name} pauzzz member, I am very sorry for your failure to mention {money} gold coins. Thank you for using pauzzz",
+					'tip_success'=>"Dear {name} puivip member, congratulations: {money}USB has arrived in your account successfully. Thank you for using puivip!",
+					'tip_fail'=>"Dear {name} puivip member, I am very sorry for your failure to mention {money} gold coins. Thank you for using puivip",
 				];
 				break;
 			case 'jp':
@@ -32,7 +32,7 @@ class Cash extends Base
 					'cash_cancel'=>'取り消す',
 					'tip' => "ヒント",
 					'tip_success'=>"尊敬している {name} L0VELINGA 会員、おめでとうございます。成功提現の{money}USDはすでにあなたの口座に到着して、あなたが L0VELINGA を使用することに感謝します",
-					'tip_fail'=>"尊敬する{name} pauzzz会員、申し訳ございませんが{money}金貨に失敗しました！",
+					'tip_fail'=>"尊敬する{name} puivip会員、申し訳ございませんが{money}金貨に失敗しました！",
 				];
 				break;
 			case 'kor':
@@ -45,7 +45,7 @@ class Cash extends Base
 					'sub_title'=>"확정하다",
 					'cash_cancel'=>'취소',
 					'tip' => "제시",
-					'tip_success'=>"존경{name}축하합니다：성공으로 현금을 제기하다{money}USD계정 에 이미 도착했습니다，써줘서 고마워요 pauzzz!",
+					'tip_success'=>"존경{name}축하합니다：성공으로 현금을 제기하다{money}USD계정 에 이미 도착했습니다，써줘서 고마워요 puivip!",
 					'tip_fail'=>"존경하는 {name} 회원, 대단히 죄송합니다, 당신이 현금으로 {money} 금전을 제시할 수 없습니다, 감사합니다!",
 				];
 				break;
@@ -59,8 +59,8 @@ class Cash extends Base
 					'sub_title'=>"確認提現",
 					'cash_cancel'=>"取消",
 					'tip' => "提示",
-					'tip_success'=>"尊敬的{name}pauzzz會員，恭喜您：成功提現{money}USB已經到達您的帳戶，感謝您使用pauzzz!",
-					'tip_fail'=>"尊敬的{name}pauzzz會員，非常抱歉您提現{money}金幣失败，感謝您使用pauzzz！",
+					'tip_success'=>"尊敬的{name}puivip會員，恭喜您：成功提現{money}USB已經到達您的帳戶，感謝您使用puivip!",
+					'tip_fail'=>"尊敬的{name}puivip會員，非常抱歉您提現{money}金幣失败，感謝您使用puivip！",
 				];
 				break;
 			case 'zh-cn':
@@ -73,8 +73,8 @@ class Cash extends Base
 					'sub_title'=>"确认提现",
 					'cash_cancel'=>'取消',
 					'tip' => "提示",
-					'tip_success'=>"尊敬的{name}pauzzz会员，恭喜您：成功提现{money}USB已经到达您的帐户，感谢您使用pauzzz！",
-					'tip_fail'=>"尊敬的{name}pauzzz会员，非常抱歉您提现{money}金币失败，感谢您使用pauzzz！",
+					'tip_success'=>"尊敬的{name}puivip会员，恭喜您：成功提现{money}USB已经到达您的帐户，感谢您使用puivip！",
+					'tip_fail'=>"尊敬的{name}puivip会员，非常抱歉您提现{money}金币失败，感谢您使用puivip！",
 				];
 				break;
 		}

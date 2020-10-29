@@ -85,7 +85,7 @@ class Tr extends Controller{
 		"wj_input_email"=>"输入注册邮箱",
 
 		//main
-		"main_title"=>"pauzzz全球最专业的大型翻译社交平台",
+		"main_title"=>"puivip全球最专业的大型翻译社交平台",
 		"main_title2"=>"在线用户",
 
 		//search
@@ -159,7 +159,7 @@ class Tr extends Controller{
 		//set
 		"set pass"=>"密码设置",
 		"set lang"=>"语言设置",
-		"about"=>"关于pauzzz",
+		"about"=>"关于puivip",
 		"clear cache"=>"清除缓存",
 		"logout"=>"退出",
 		"old pass"=>"原密码",

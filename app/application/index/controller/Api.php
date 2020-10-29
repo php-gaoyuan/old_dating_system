@@ -24,9 +24,9 @@ class Api extends Controller{
 	}
 
 
-    //http://app.pauzzz.com/index/api/do_send_email
+    //http://app.puivip.com/index/api/do_send_email
     public function do_send_email(){
-        $flag = $this->sendMail('meng_a_happy@outlook.com','xgaoyuan1224','我是发件人','347356860@qq.com','我是收件人','pauzzz好友消息','好久没联系，还好吗？请打开<a href="http://www.pauzzz.com" target="_blank">打开网站，聊天吧！</a>');
+        $flag = $this->sendMail('meng_a_happy@outlook.com','xgaoyuan1224','我是发件人','347356860@qq.com','我是收件人','puivip好友消息','好久没联系，还好吗？请打开<a href="http://www.puivip.com" target="_blank">打开网站，聊天吧！</a>');
         if($flag){
             echo "发送邮件成功！";
         }else{

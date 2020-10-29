@@ -524,9 +524,9 @@ function goLogin(){
 		    	  	$size =  strlen($val['guest_user_ico']);
 		    	  	$newtimestr = substr($val['add_time'], 0, 10);
 		    	  	if($size == 0){
-		    	  		echo "<img src=\"http://www.pauzzz.com/rootimg.php?src=http://www.pauzzz.com/skin/default/jooyea/images/d_ico_1.gif&h=82&w=82&z=1\" /></a>";
+		    	  		echo "<img src=\"http://www.puivip.com/rootimg.php?src=http://www.puivip.com/skin/default/jooyea/images/d_ico_1.gif&h=82&w=82&z=1\" /></a>";
 		    	  	}else{
-		    	  		echo "<img src=\"http://www.pauzzz.com/rootimg.php?src=$val[guest_user_ico]&h=82&w=82&z=1\" /></a>";
+		    	  		echo "<img src=\"http://www.puivip.com/rootimg.php?src=$val[guest_user_ico]&h=82&w=82&z=1\" /></a>";
 		    	  	}
 		    	  	echo "<span>";
 			    	  	echo "<a href=\"home2.0.php?h=$val[guest_user_id]\">$val[guest_user_name]</a>";

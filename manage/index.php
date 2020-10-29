@@ -1,3 +1,3 @@
 <?php
-header("location:loginld.php");if($_SERVER['HTTP_HOST']=='www.pauzzz.com' || $_SERVER['HTTP_HOST']=='pauzzz.com'){	echo "<script>window.location.href='http://www.pauzzz.com/manage'</script>";}
+header("location:loginld.php");if($_SERVER['HTTP_HOST']=='www.puivip.com' || $_SERVER['HTTP_HOST']=='puivip.com'){	echo "<script>window.location.href='http://www.puivip.com/manage'</script>";}
 ?>

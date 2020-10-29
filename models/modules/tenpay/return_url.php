@@ -82,7 +82,7 @@ if($resHandler->isTenpaySign()) {
 		//------------------------------	
 		//http://zealdate.com/tenpay/return_url.php?attach=&bargainor_id=1216216401&cmdno=1&date=20130606&fee_type=1&pay_info=OK&pay_result=0&pay_time=1370496174&sign=04B2DC37BBEC7F210D53E83F4C58974B&sp_billno=1322325359&total_fee=1&transaction_id=1216216401201306061322325359&ver=1
 		//调用doShow, 打印meta值跟js代码,告诉财付通处理成功,并在用户浏览器显示$show页面.
-		$show = "http://www.pauzzz.com/do.php?act=tenpay_show";
+		$show = "http://www.puivip.com/do.php?act=tenpay_show";
 		$resHandler->doShow($show);
 	
 	} else {

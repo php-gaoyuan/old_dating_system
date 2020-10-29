@@ -169,7 +169,7 @@
 	<style>
 	
 	</style>
-	<span><a href='http://www.pauzzz.com/main.php?app=user_upgrade' target='_blank'>$u_langpackage->readmore</a></span>";
+	<span><a href='http://www.puivip.com/main.php?app=user_upgrade' target='_blank'>$u_langpackage->readmore</a></span>";
 }
 
 ?>

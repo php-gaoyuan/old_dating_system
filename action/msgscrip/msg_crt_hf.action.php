@@ -60,7 +60,7 @@
 		if($uinfo['mail_num']>2){
 			if ($uinfo['golds'] <1) {
 				echo "<script>top.Dialog.alert('".$u_langpackage->fy_tishi1."');</script>";
-				echo "<script>top.location.href='http://www.pauzzz.com/main2.0.php?app=user_pay';</script>";exit;
+				echo "<script>top.location.href='http://www.puivip.com/main2.0.php?app=user_pay';</script>";exit;
     			//action_return(0,,"main2.0.php?app=user_pay");exit;
     		}
 		}else{
@@ -87,7 +87,7 @@
 		if($uinfo['email_num']>$nnnn && $uinfo['email_time']==date("Y-m-d")){
 			if ($uinfo['golds'] <1) {
 			echo "<script>alert('".$u_langpackage->fy_tishi1."');</script>";
-			echo "<script>top.location.href='http://www.pauzzz.com/main2.0.php?app=user_pay';</script>";exit;}
+			echo "<script>top.location.href='http://www.puivip.com/main2.0.php?app=user_pay';</script>";exit;}
 			//action_return(0,$b_langpackage->b_xianzhi,-1);exit;
 		}else{
 			$dbo->exeUpdate("update wy_users set email_num='$new_num',email_time='".date('Y-m-d')."' where user_id='$user_id'");

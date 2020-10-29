@@ -72,7 +72,7 @@ if ($dbo->exeUpdate($sql)) {
 		require("payment/paypal.php");
 		$pay = new Paypal;
 		$pay->dsql = $dbo;
-		$pay->return_url = 'http://www.pauzzz.com/do.php?act=paynotify';
+		$pay->return_url = 'http://www.puivip.com/do.php?act=paynotify';
 		$button = $pay->GetCode($order, 'annimeet@outlook.com');
 		echo $button;
 	} else if (get_argp("zhifu") == '2') { //Corpay支付接口

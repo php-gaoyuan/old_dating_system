@@ -4,11 +4,11 @@ error_reporting(0);
 include "lang.php";
 //配置信息
 $webRoot = strtr(dirname(__FILE__), "\\", "/") . "/";
-$metaDesc="pauzzz－亞洲最大的跨語言愛情在綫互動交友公寓網站,love makes through games, shares interests and hobbies, friends advice, you browse the personal data and more way to get to know and make new friends. It is an international dating service";
+$metaDesc="puivip－亞洲最大的跨語言愛情在綫互動交友公寓網站,love makes through games, shares interests and hobbies, friends advice, you browse the personal data and more way to get to know and make new friends. It is an international dating service";
 $metaKeys="single girls,Single dating,Dating site, free personals,love國際交友,亞洲交友,海外交友";
 $metaAuthor="";
-$siteName="pauzzz亚洲国际交友中心网站－You match with single girls by dating_单身男女的爱情公寓";
-$copyright="CopyRight 2017 pauzzz 2.0";
+$siteName="puivip亚洲国际交友中心网站－You match with single girls by dating_单身男女的爱情公寓";
+$copyright="CopyRight 2017 puivip 2.0";
 $domainRemark="";
 $offLine=0;
 $adminEmail="";

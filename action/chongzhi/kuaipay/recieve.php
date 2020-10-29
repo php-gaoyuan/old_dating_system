@@ -4,47 +4,47 @@ require("api/base_support.php");
 $er_langpackage=new rechargelp;
 
 $dbo = new dbex;
-//¶ÁÐ´·ÖÀë¶¨Òåº¯Êý
+//ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ë¶¨ï¿½åº¯ï¿½ï¿½
 dbtarget('w',$dbServs);
 
 	print_r($dbo);
 
 	function kq_ck_null($kq_va,$kq_na){if($kq_va == ""){return $kq_va="";}else{return $kq_va=$kq_na.'='.$kq_va.'&';}}
-	//ÈËÃñ±ÒÍø¹ØÕËºÅ£¬¸ÃÕËºÅÎª11Î»ÈËÃñ±ÒÍø¹ØÉÌ»§±àºÅ+01,¸ÃÖµÓëÌá½»Ê±ÏàÍ¬¡£
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ËºÅ£ï¿½ï¿½ï¿½ï¿½Ëºï¿½Îª11Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì»ï¿½ï¿½ï¿½ï¿½+01,ï¿½ï¿½Öµï¿½ï¿½ï¿½á½»Ê±ï¿½ï¿½Í¬ï¿½ï¿½
 	$kq_check_all_para=kq_ck_null($_REQUEST[merchantAcctId],'merchantAcctId');
-	//Íø¹Ø°æ±¾£¬¹Ì¶¨Öµ£ºv2.0,¸ÃÖµÓëÌá½»Ê±ÏàÍ¬¡£
+	//ï¿½ï¿½ï¿½Ø°æ±¾ï¿½ï¿½ï¿½Ì¶ï¿½Öµï¿½ï¿½v2.0,ï¿½ï¿½Öµï¿½ï¿½ï¿½á½»Ê±ï¿½ï¿½Í¬ï¿½ï¿½
 	$kq_check_all_para.=kq_ck_null($_REQUEST[version],'version');
-	//ÓïÑÔÖÖÀà£¬1´ú±íÖÐÎÄÏÔÊ¾£¬2´ú±íÓ¢ÎÄÏÔÊ¾¡£Ä¬ÈÏÎª1,¸ÃÖµÓëÌá½»Ê±ÏàÍ¬¡£
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½à£¬1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½2ï¿½ï¿½ï¿½ï¿½Ó¢ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ä¬ï¿½ï¿½Îª1,ï¿½ï¿½Öµï¿½ï¿½ï¿½á½»Ê±ï¿½ï¿½Í¬ï¿½ï¿½
 	$kq_check_all_para.=kq_ck_null($_REQUEST[language],'language');
-	//Ç©ÃûÀàÐÍ,¸ÃÖµÎª4£¬´ú±íPKI¼ÓÃÜ·½Ê½,¸ÃÖµÓëÌá½»Ê±ÏàÍ¬¡£
+	//Ç©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ÖµÎª4ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½PKIï¿½ï¿½ï¿½Ü·ï¿½Ê½,ï¿½ï¿½Öµï¿½ï¿½ï¿½á½»Ê±ï¿½ï¿½Í¬ï¿½ï¿½
 	$kq_check_all_para.=kq_ck_null($_REQUEST[signType],'signType');
-	//Ö§¸¶·½Ê½£¬Ò»°ãÎª00£¬´ú±íËùÓÐµÄÖ§¸¶·½Ê½¡£Èç¹ûÊÇÒøÐÐÖ±Á¬ÉÌ»§£¬¸ÃÖµÎª10,¸ÃÖµÓëÌá½»Ê±ÏàÍ¬¡£
+	//Ö§ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½Ò»ï¿½ï¿½Îª00ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Ö§ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½Ì»ï¿½ï¿½ï¿½ï¿½ï¿½ÖµÎª10,ï¿½ï¿½Öµï¿½ï¿½ï¿½á½»Ê±ï¿½ï¿½Í¬ï¿½ï¿½
 	$kq_check_all_para.=kq_ck_null($_REQUEST[payType],'payType');
-	//ÒøÐÐ´úÂë£¬Èç¹ûpayTypeÎª00£¬¸ÃÖµÎª¿Õ£»Èç¹ûpayTypeÎª10,¸ÃÖµÓëÌá½»Ê±ÏàÍ¬¡£
+	//ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½payTypeÎª00ï¿½ï¿½ï¿½ï¿½ÖµÎªï¿½Õ£ï¿½ï¿½ï¿½ï¿½payTypeÎª10,ï¿½ï¿½Öµï¿½ï¿½ï¿½á½»Ê±ï¿½ï¿½Í¬ï¿½ï¿½
 	$kq_check_all_para.=kq_ck_null($_REQUEST[bankId],'bankId');
-	//ÉÌ»§¶©µ¥ºÅ£¬,¸ÃÖµÓëÌá½»Ê±ÏàÍ¬¡£
+	//ï¿½Ì»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿½,ï¿½ï¿½Öµï¿½ï¿½ï¿½á½»Ê±ï¿½ï¿½Í¬ï¿½ï¿½
 	$kq_check_all_para.=kq_ck_null($_REQUEST[orderId],'orderId');
-	//¶©µ¥Ìá½»Ê±¼ä£¬¸ñÊ½£ºyyyyMMddHHmmss£¬Èç£º20071117020101,¸ÃÖµÓëÌá½»Ê±ÏàÍ¬¡£
+	//ï¿½ï¿½ï¿½ï¿½ï¿½á½»Ê±ï¿½ä£¬ï¿½ï¿½Ê½ï¿½ï¿½yyyyMMddHHmmssï¿½ï¿½ï¿½ç£º20071117020101,ï¿½ï¿½Öµï¿½ï¿½ï¿½á½»Ê±ï¿½ï¿½Í¬ï¿½ï¿½
 	$kq_check_all_para.=kq_ck_null($_REQUEST[orderTime],'orderTime');
-	//¶©µ¥½ð¶î£¬½ð¶îÒÔ¡°·Ö¡±Îªµ¥Î»£¬ÉÌ»§²âÊÔÒÔ1·Ö²âÊÔ¼´¿É£¬ÇÐÎðÒÔ´ó½ð¶î²âÊÔ,¸ÃÖµÓëÖ§¸¶Ê±ÏàÍ¬¡£
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½î£¬ï¿½ï¿½ï¿½ï¿½Ô¡ï¿½ï¿½Ö¡ï¿½Îªï¿½ï¿½Î»ï¿½ï¿½ï¿½Ì»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½Ö²ï¿½ï¿½Ô¼ï¿½ï¿½É£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½Öµï¿½ï¿½Ö§ï¿½ï¿½Ê±ï¿½ï¿½Í¬ï¿½ï¿½
 	$kq_check_all_para.=kq_ck_null($_REQUEST[orderAmount],'orderAmount');
-	// ¿ìÇ®½»Ò×ºÅ£¬ÉÌ»§Ã¿Ò»±Ê½»Ò×¶¼»áÔÚ¿ìÇ®Éú³ÉÒ»¸ö½»Ò×ºÅ¡£
+	// ï¿½ï¿½Ç®ï¿½ï¿½ï¿½×ºÅ£ï¿½ï¿½Ì»ï¿½Ã¿Ò»ï¿½Ê½ï¿½ï¿½×¶ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½Ç®ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½×ºÅ¡ï¿½
 	$kq_check_all_para.=kq_ck_null($_REQUEST[dealId],'dealId');
-	//ÒøÐÐ½»Ò×ºÅ £¬¿ìÇ®½»Ò×ÔÚÒøÐÐÖ§¸¶Ê±¶ÔÓ¦µÄ½»Ò×ºÅ£¬Èç¹û²»ÊÇÍ¨¹ýÒøÐÐ¿¨Ö§¸¶£¬ÔòÎª¿Õ
+	//ï¿½ï¿½ï¿½Ð½ï¿½ï¿½×ºï¿½ ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½Ê±ï¿½ï¿½Ó¦ï¿½Ä½ï¿½ï¿½×ºÅ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Ð¿ï¿½Ö§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½
 	$kq_check_all_para.=kq_ck_null($_REQUEST[bankDealId],'bankDealId');
-	//¿ìÇ®½»Ò×Ê±¼ä£¬¿ìÇ®¶Ô½»Ò×½øÐÐ´¦ÀíµÄÊ±¼ä,¸ñÊ½£ºyyyyMMddHHmmss£¬Èç£º20071117020101
+	//ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä£¬ï¿½ï¿½Ç®ï¿½Ô½ï¿½ï¿½×½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½,ï¿½ï¿½Ê½ï¿½ï¿½yyyyMMddHHmmssï¿½ï¿½ï¿½ç£º20071117020101
 	$kq_check_all_para.=kq_ck_null($_REQUEST[dealTime],'dealTime');
-	//ÉÌ»§Êµ¼ÊÖ§¸¶½ð¶î ÒÔ·ÖÎªµ¥Î»¡£±È·½10Ôª£¬Ìá½»Ê±½ð¶îÓ¦Îª1000¡£¸Ã½ð¶î´ú±íÉÌ»§¿ìÇ®ÕË»§×îÖÕÊÕµ½µÄ½ð¶î¡£
+	//ï¿½Ì»ï¿½Êµï¿½ï¿½Ö§ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½Îªï¿½ï¿½Î»ï¿½ï¿½ï¿½È·ï¿½10Ôªï¿½ï¿½ï¿½á½»Ê±ï¿½ï¿½ï¿½Ó¦Îª1000ï¿½ï¿½ï¿½Ã½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì»ï¿½ï¿½ï¿½Ç®ï¿½Ë»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õµï¿½ï¿½Ä½ï¿½î¡£
 	$kq_check_all_para.=kq_ck_null($_REQUEST[payAmount],'payAmount');
-	//·ÑÓÃ£¬¿ìÇ®ÊÕÈ¡ÉÌ»§µÄÊÖÐø·Ñ£¬µ¥Î»Îª·Ö¡£
+	//ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½Ç®ï¿½ï¿½È¡ï¿½Ì»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ£ï¿½ï¿½ï¿½Î»Îªï¿½Ö¡ï¿½
 	$kq_check_all_para.=kq_ck_null($_REQUEST[fee],'fee');
-	//À©Õ¹×Ö¶Î1£¬¸ÃÖµÓëÌá½»Ê±ÏàÍ¬
+	//ï¿½ï¿½Õ¹ï¿½Ö¶ï¿½1ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½á½»Ê±ï¿½ï¿½Í¬
 	$kq_check_all_para.=kq_ck_null($_REQUEST[ext1],'ext1');
-	//À©Õ¹×Ö¶Î2£¬¸ÃÖµÓëÌá½»Ê±ÏàÍ¬¡£
+	//ï¿½ï¿½Õ¹ï¿½Ö¶ï¿½2ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½á½»Ê±ï¿½ï¿½Í¬ï¿½ï¿½
 	$kq_check_all_para.=kq_ck_null($_REQUEST[ext2],'ext2');
-	//´¦Àí½á¹û£¬ 10Ö§¸¶³É¹¦£¬11 Ö§¸¶Ê§°Ü£¬00¶©µ¥ÉêÇë³É¹¦£¬01 ¶©µ¥ÉêÇëÊ§°Ü
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 10Ö§ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½11 Ö§ï¿½ï¿½Ê§ï¿½Ü£ï¿½00ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½01 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½
 	$kq_check_all_para.=kq_ck_null($_REQUEST[payResult],'payResult');
-	//´íÎó´úÂë £¬Çë²ÎÕÕ¡¶ÈËÃñ±ÒÍø¹Ø½Ó¿ÚÎÄµµ¡·×îºó²¿·ÖµÄÏêÏ¸½âÊÍ¡£
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø½Ó¿ï¿½ï¿½Äµï¿½ï¿½ï¿½ï¿½ï¿½ó²¿·Öµï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½Í¡ï¿½
 	$kq_check_all_para.=kq_ck_null($_REQUEST[errCode],'errCode');
 
 	$ordernumber=$_REQUEST[orderId];
@@ -63,7 +63,7 @@ dbtarget('w',$dbServs);
 	if ($ok == 1) { 
 		switch($_REQUEST[payResult]){
 				case '10':
-						//´Ë´¦×öÉÌ»§Âß¼­´¦Àí
+						//ï¿½Ë´ï¿½ï¿½ï¿½ï¿½Ì»ï¿½ï¿½ß¼ï¿½ï¿½ï¿½ï¿½ï¿½
 						
 						 $sql2="SELECT * FROM wy_balance WHERE ordernumber = '".$ordernumber."'";
                         //$row = $this->dsql->getRow($sql);
@@ -93,33 +93,33 @@ dbtarget('w',$dbServs);
                             }
                             if(!$dbo->exeUpdate($sql)){
                         
-								$msg="Ìí¼Ó½ð±ÒÊ§°Ü";
+								$msg="ï¿½ï¿½Ó½ï¿½ï¿½Ê§ï¿½ï¿½";
                               
                             }else{
-								$msg="¹ºÂò½ð±Ò³É¹¦";
+								$msg="ï¿½ï¿½ï¿½ï¿½ï¿½Ò³É¹ï¿½";
 							}
         
                         } else {
                            
-							$msg="sqlÓï¾äÖ´ÐÐÊ§°Ü£¡";
+							$msg="sqlï¿½ï¿½ï¿½Ö´ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
                         }
 						
 						$rtnOK=1;
-						//ÒÔÏÂÊÇÎÒÃÇ¿ìÇ®ÉèÖÃµÄshowÒ³Ãæ£¬ÉÌ»§ÐèÒª×Ô¼º¶¨Òå¸ÃÒ³Ãæ¡£
-						$rtnUrl="http://www.pauzzz.com/do.php?act=kshow&msg=$msg";
+						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¿ï¿½Ç®ï¿½ï¿½ï¿½Ãµï¿½showÒ³ï¿½æ£¬ï¿½Ì»ï¿½ï¿½ï¿½Òªï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³ï¿½æ¡£
+						$rtnUrl="http://www.puivip.com/do.php?act=kshow&msg=$msg";
 						break;
 				default:
 						$rtnOK=1;
-						//ÒÔÏÂÊÇÎÒÃÇ¿ìÇ®ÉèÖÃµÄshowÒ³Ãæ£¬ÉÌ»§ÐèÒª×Ô¼º¶¨Òå¸ÃÒ³Ãæ¡£
-						$rtnUrl="http://www.pauzzz.com/do.php?act=kshow&msg=false";
+						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¿ï¿½Ç®ï¿½ï¿½ï¿½Ãµï¿½showÒ³ï¿½æ£¬ï¿½Ì»ï¿½ï¿½ï¿½Òªï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³ï¿½æ¡£
+						$rtnUrl="http://www.puivip.com/do.php?act=kshow&msg=false";
 						break;	
 		
 		}
 
 	}else{
 						$rtnOK=1;
-						//ÒÔÏÂÊÇÎÒÃÇ¿ìÇ®ÉèÖÃµÄshowÒ³Ãæ£¬ÉÌ»§ÐèÒª×Ô¼º¶¨Òå¸ÃÒ³Ãæ¡£
-						$rtnUrl="http://www.pauzzz.com/do.php?act=kshow&msg=error";
+						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¿ï¿½Ç®ï¿½ï¿½ï¿½Ãµï¿½showÒ³ï¿½æ£¬ï¿½Ì»ï¿½ï¿½ï¿½Òªï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³ï¿½æ¡£
+						$rtnUrl="http://www.puivip.com/do.php?act=kshow&msg=error";
 							
 	}
 

@@ -10,7 +10,7 @@ $usid=get_sess_userid();
 $sql="select is_pass from wy_users where user_id='$usid'";
 $user_info=$dbo->getRow($sql);
 if($user_info['is_pass']==0){
-	echo "<script>".$l_langpackage->l_lock_u."location.href='http://www.pauzzz.com/main.php'</script>";
+	echo "<script>".$l_langpackage->l_lock_u."location.href='http://www.puivip.com/main.php'</script>";
 	exit();
 }
 ?>

@@ -16,9 +16,9 @@ class Db
     public static $db1 = array(
         'host'    => '127.0.0.1',
         'port'    => 3306,
-        'user'    => 'henimeet',
-        'password' => 'DFWRWH4hxsJrTbJS',
-        'dbname'  => 'henimeet',
+        'user'    => 'www_puivip_com',
+        'password' => 'XszMBr3s8G3jTc3j',
+        'dbname'  => 'www_puivip_com',
         'charset'    => 'utf8'
     );
 }

@@ -15,11 +15,11 @@ return [
     // 服务器地址
     'hostname'        => '127.0.0.1',
 	// 数据库名
-	'database'        => 'www_pouvip_com',
+	'database'        => 'www_puivip_com',
 	// 用户名
-	'username'        => 'www_pouvip_com',
+	'username'        => 'www_puivip_com',
 	// 密码
-	'password'        => 'BHeEaerxp5rZY5bn',
+	'password'        => 'XszMBr3s8G3jTc3j',
     // 端口
     'hostport'        => '3306',
     // 连接dsn

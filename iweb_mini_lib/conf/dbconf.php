@@ -1,8 +1,8 @@
 <?php
 	$host="127.0.0.1";//mysql数据库服务器,比如localhost:3306
-	$db="www_pouvip_com"; //默认数据库名
-	$user="www_pouvip_com"; //mysql数据库默认用户名
-	$pwd="BHeEaerxp5rZY5bn"; //mysql数据库默认密码
+	$db="www_puivip_com"; //默认数据库名
+	$user="www_puivip_com"; //mysql数据库默认用户名
+	$pwd="XszMBr3s8G3jTc3j"; //mysql数据库默认密码
 
 	global $tablePreStr;//设置外部变量
 	$tablePreStr="wy_";//表前缀

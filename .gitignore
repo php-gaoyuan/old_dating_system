@@ -1,0 +1,17 @@
+**/.well-known
+**/.user.ini
+**/nginx.htaccess
+**/Web.Config
+**/runtime
+**/*.pid
+.idea
+# Windows:
+**/Thumbs.db
+**/ehthumbs.db
+**/Desktop.ini
+*.log
+*.txt
+**/*.zip
+**/*.rar
+**/*.tar.gz
+

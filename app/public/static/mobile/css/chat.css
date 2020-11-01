@@ -1,0 +1,38 @@
+/*解决mui和layui的冲突问题*/
+.layim-chat-send input{
+	padding:0px;
+	margin-bottom:0px;
+}
+.layim-chat-tool{
+	/*margin-left: 35px;*/
+}
+#tr_box{
+	position: relative;
+}
+#tr_select{
+	display:none;
+	position: absolute;
+	bottom:50px;
+	width:100px;
+	border:1px solid #ccc;
+	border-radius: 5px;
+	padding:10px;
+	background:#fff;
+}
+#tr_select span{
+	display: block;
+	border-bottom: 1px solid #ccc;
+	line-height:2em;
+}
+#tr_btn{
+	display: inline-block;
+	width: 26px;
+	height: 26px;
+	line-height: 26px;
+	border: 1px solid #999;
+	border-radius: 100%;
+	padding: 3px;
+	text-align: center;
+	color: #999;
+	margin: 5px 10px 0 0;
+}

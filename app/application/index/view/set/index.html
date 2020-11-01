@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title><{:lang("set")}></title>
+	<link rel="stylesheet" type="text/css" href="<{:config('skin_path')}>/css/mui.min.css"/>
+	<style>
+		.line{
+			height: 10px;
+		}
+	</style>
+</head>
+<body>
+	<{if !$is_h5_plus }>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title"><{:lang("set")}></h1>
+	</header>
+	<{/if}>
+	<div class="mui-content">
+		<ul class="mui-table-view">
+		        <li class="mui-table-view-cell">
+		            <a class="mui-navigate-right" href="<{:url('set/pass')}>">
+		                <{:lang("set pass")}>
+		            </a>
+		        </li>
+		        <li class="mui-table-view-cell">
+		            <a class="mui-navigate-right" href="<{:url('set/lang')}>">
+		                <{:lang("set lang")}>
+		            </a>
+		        </li>
+		        <li class="mui-table-view-cell">
+	                <a class="mui-navigate-right" id="clear_cache">
+	                    <{:lang("clear cache")}>
+	                </a>
+	            </li>
+		    </ul>
+		    
+		    
+		    <div class="line"></div>
+		    
+		    <ul class="mui-table-view">
+	            
+		        <li class="mui-table-view-cell">
+		            <a class="mui-navigate-right" href="<{:url('article/index',['item'=>'about'])}>">
+		                 <{:lang('about us')}>
+		            </a>
+		        </li>
+		        <li class="mui-table-view-cell">
+		            <a class="mui-navigate-right" href="<{:url('article/index',['item'=>'terms'])}>">
+		                 <{:lang('tiaokuan')}>
+		            </a>
+		        </li>
+		        <li class="mui-table-view-cell">
+		            <a class="mui-navigate-right" href="<{:url('article/index',['item'=>'privacy'])}>">
+		                 <{:lang('privacy')}>
+		            </a>
+		        </li>
+		        
+		        <li class="mui-table-view-cell">
+		            <a class="mui-navigate-right" href="<{:url('article/index',['item'=>'safe'])}>">
+		                 <{:lang('jysafe')}>
+		            </a>
+		        </li>
+		        <li class="mui-table-view-cell">
+		            <a class="mui-navigate-right" href="<{:url('article/index',['item'=>'help'])}>">
+		                <{:lang('help center')}>
+		            </a>
+		        </li>
+		        <li class="mui-table-view-cell">
+		            <a class="mui-navigate-right" href="<{:url('article/index',['item'=>'contact'])}>">
+		                <{:lang('contact us')}>
+		            </a>
+		        </li>
+	            
+	        </ul>
+		    <div style="padding:10px;">
+		    <button class="mui-btn mui-btn-primary" style="display: block;width: 100%;" id="logout"><{:lang("logout")}></button>
+		    </div>
+	</div>
+
+	<script type="text/javascript" src="<{:config('skin_path')}>/js/jquery.min.js"></script>
+	<script type="text/javascript" src="<{:config('skin_path')}>/js/public.js"></script>
+	<script type="text/javascript" src="<{:config('skin_path')}>/js/mui.min.js"></script>
+	<script>
+	$(function(){
+		$("#clear_cache").click(function(){
+			mui.toast("清除缓存成功！");
+		});
+		$("#logout").click(function(){
+			$.get("<{:url('index/logout')}>",{},function(res){
+				mui.toast(res);
+				window.location.href="<{:url('index/index')}>";
+			});
+		});
+	});
+	</script>
+</body>
+</html>

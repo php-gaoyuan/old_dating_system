@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title><{:lang('news_title')}></title>
+	<link rel="stylesheet" type="text/css" href="<{:config('skin_path')}>/css/mui.min.css"/>
+	<style>
+		.line{height: 10px;}
+		.mui-media-object{height:42px;width:42px;border-radius: 100%;vertical-align: middle;}
+		.layui-flow-more{display: none;}
+		body .mui-content{background: url("/public/static/mobile/images/page_bg2.jpg") 0 0 repeat;background-size:100%;background-attachment: fixed;min-height:700px;}
+		body .mui-table-view{background: rgba(255,255,255,0.75)}
+	</style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title"><{:lang('news_title')}></h1>
+	</header>
+	<div class="mui-content">
+		<ul class="mui-table-view" id="pals_list"></ul>
+	</div>
+
+	<!--footer-->
+	
+	<{include file="public:footer" /}>
+	<!--footer end-->
+	
+
+	<!-- 模板部分 s -->
+	<script type="text/html" id="list">
+		{{# layui.each(d, function(index,item){ }}
+			<li class="mui-table-view-cell mui-media" data-fid="{{ item.user_id }}" data-name="{{ item.user_name }}" data-avatar="{{ item.user_ico }}">
+		        <a class="mui-navigate-right" href="/index/chat/chat/pals_id/{{ item.user_id }}">
+	                <img class="mui-media-object" id="pals_ico" src="{{ item.user_ico }}">
+	                {{ item.user_name }}
+	                
+	                <span class="mui-badge mui-badge-danger" {{# if (item.logMessageNums <= 0){ }}style="display:none;"{{# } }}>{{ item.logMessageNums }}</span>
+	                
+	            </a>
+		    </li>
+		{{# }); }}
+	</script>
+	<!-- 模板部分 e -->
+	
+	<script type="text/javascript" src="<{:config('skin_path')}>/layui/layui.js"></script>
+	<!-- js部分 s -->
+	<script>
+		layui.use(["flow","laytpl","jquery"],function(){
+			var flow = layui.flow,
+				laytpl = layui.laytpl,
+				$ = layui.jquery;
+			var options = {
+				elem:"#pals_list",
+				isAuto:false,
+				done:function(page,next){
+					$.getJSON("<{:url('chat/getData')}>",{},function(res){
+						laytpl($("#list").html()).render(res,function(html){
+							next(html,page<res.page);
+						});
+						$("#pals_list li").each(function(){
+							var num_obj = $(this).find(".mui-badge");
+		        			var num = parseInt(num_obj.text());
+							if(num>0){
+								$("#pals_list").prepend($(this));
+							}
+		        			
+		        		});
+					});
+				}
+			};
+			flow.load(options);
+		});
+	</script>
+</body>
+</html>

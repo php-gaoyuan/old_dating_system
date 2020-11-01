@@ -1,0 +1,28 @@
+@charset "utf-8";/* 默认装扮*/body{background: #B2E1FB url(../images/blog.png) no-repeat center 45px;}
+#maincontent_lf{background-color:#E1F3FD;}
+#topbar_lq{background: #03a0d7;box-shadow: 0 0 4px #333;}
+#nav_lq .nav_charge_lq,
+#nav_lq a.nav_charge_lq:hover{background: #4c70af;}
+/*链接 加粗等字体颜色*/a,a:visited,#left_nav_lf .first_dd_lf span,#content_index_lf .top_content_lf .title_lf,.app_title_lq,.app_title_lf{color:#2d57a1;}
+/*导航底线*/#container_lf .tabs_box1_lf{border-bottom:solid 1px #153A7D;}
+#container_lf .tabs_box1_lf a{background:#A7D1F7;color:#153A7D;border: #C3F1FD solid 1px;border-bottom: none;}
+/*导航链接*/#container_lf .tabs_box1_lf a.active1_tab_lf{/*当前链接*/border: #153A7D solid 1px;border-bottom: none;background:#B2E0F9;}
+/*心情窗口样式*//*.mood_submitbox_lq{border:2px solid #6682B3;}*//*由主题颜色来显示左边栏颜色*/#left_nav_lf .first_dd_lf span{border-right: 1px solid #C0CDD9;color:#153A7D;}
+#left_nav_lf .first_dd_lf a{color :#153A7D;}
+#left_nav_lf dd,#left_nav_lf dd{border-bottom:#CEDFEE solid 1px;}
+/*翻译菜单划过颜色*/.pop_menu_translate{border:#153A7D solid 1px;}
+.pop_menu1_lq .menu_title_lq{background-color:#153A7D;border-bottom:#153A7D solid 1px;}
+#container_lf .pop_menu_translate a:hover,.pop_menu1_lq a:hover{background-color:#153A7D;border-top:#153A7D solid 1px;border-bottom:#153A7D solid 1px;}
+/*右栏字颜色*/right_info_lq .more1_lq{color:#153A7D;}
+/**/#my_groups_index_lf .creat_btn1_lf,#groups_hot_index_lf .add_btn1_lf{border: 1px solid #446DAD;background-color: #446DAB;color: #fff;}
+/*分页*/.pagination .current,.pagination a:hover{background-color:#5A76B0;border:#263449 solid 1px;}
+/*按钮*//*.mood_submitbox_lq a.mood_submitbtn1_lq,
+.blue_submitbtn1_lq, a.blue_submitbtn1_lq:hover,
+#creat_fun1_lf .logo_box1_lf .choose_btn1_lf{background-image:none;background:-moz-linear-gradient(-90deg, #497bd2 0, #274f96 90%);渐变 background:-webkit-gradient(linear, 0 0, 0 90%, from(#497bd2), to(#274f96));filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#497bd2', endColorstr='#274f96', GradientType="0");background :linear-gradient(top, #497bd2 0,#274f96 90%);border:#153A7D solid 1px;border-radius:4px;color:#fff;}*//*标头颜色*/#content_box1_lf .app_opbox1_lq a{color:#153a7d;}
+/*装扮字颜色*/#content_box1_lf h2{color:#153a7d;}
+/*图标*/.msg_icon1_lq, .friend_requests1_lq, .public_icon_lf, .friend_icon_lf, .thisfriend_icon_lf, .myself_icon_lf, .down_icon1_lf, .up_icon1_lf, .right_icon1_lf, .bcorner_icon1_lq, .pencial_icon_lf, .questions_icon2_lq, .success_icon1_lq, .alert_icon1_lq, .blue_myself_icon_lf, .blue_public_icon_lf, .blue_thisfriend_icon_lf, .blue_friend_icon_lf, .search_icon1_lq, .mood_submitbox_lq .left_arrow1_lq, #mood_show_lf .mood_submitbox_lq .left_arrow1_lq, #content_index_lf .frame2_arrow_icon_lf{background-image: url(../images/icon.png);background-repeat: no-repeat;display: inline-block;vertical-align: middle;cursor: pointer;overflow: hidden;}
+#mood_show_lf .mood_submitbox_lq .left_arrow1_lq,
+.mood_submitbox_lq .left_arrow1_lq{background-position:0 -450px;}
+.mood_submitbox_lq .left_arrow1_lq{width: 13px;height: 20px;overflow: hidden;position: absolute;top: 29px;left: -12px;background: url(../../../../polish/images/icon-left-nav.png) no-repeat scroll -106px -123px}
+/*我的主页的心情*/#content_index_lf .mood_submitbox_lq .left_arrow1_lq{position:absolute;left:-13px !important;}
+/*我的主页 心情*/#maincontent_lf .mood_submitbox_lq .left_arrow1_lq{position:absolute;left:-13px !important;}

@@ -1,0 +1,37 @@
+<{include file="public:chat" /}>
+<!-- <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_537983_p50sudb7q2xogvi.css"/> -->
+<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_537983_m0uxbgjfqg.css"/>
+<style>
+	.mui-bar a.mui-tab-item{position: relative;}
+    .tabbar-icon{}
+    .tabbar-icon.icon1{background: url("/public/static/mobile/images/icon/nav-icon1.png") no-repeat;background-size:87%;}
+    .tabbar-icon.icon2{background: url("/public/static/mobile/images/icon/nav-icon2.png") no-repeat;background-size:100%;}
+    .tabbar-icon.icon3{background: url("/public/static/mobile/images/icon/nav-icon3.png") no-repeat;background-size:115%;}
+    .tabbar-icon.icon4{background: url("/public/static/mobile/images/icon/nav-icon4.png") no-repeat;background-size:110%;}
+    .tabbar-icon.icon5{background: url("/public/static/mobile/images/icon/nav-icon5.png") no-repeat;background-size:100%;}
+</style>
+<div style="height:60px;"></div>
+<nav class="mui-bar mui-bar-tab">
+    <a class="mui-tab-item <{if $act == 'main'}> mui-active <{/if}>" href="<{:url('main/index')}>">
+        <span class="mui-icon tabbar-icon icon1"></span>
+        <span class="mui-tab-label"><{:lang("footer_nav1")}></span>
+    </a>
+    <a class="mui-tab-item <{if $act == 'chat'}> mui-active <{/if}>" href="<{:url('chat/index')}>">
+    	<span class="mui-badge mui-badge-danger" style="position: absolute;right: 14px;z-index: 999;" id="msg_nums"><{$log_messages}></span>
+        <span class="mui-icon tabbar-icon icon2"></span>
+        <span class="mui-tab-label"><{:lang("footer_nav2")}></span>
+    </a>
+    <a class="mui-tab-item <{if $act == 'mood'}> mui-active <{/if}>" href="<{:url('mood/index')}>">
+        <span class="mui-icon tabbar-icon icon3"></span>
+        <span class="mui-tab-label"><{:lang("footer_nav3")}></span>
+    </a>
+    <a class="mui-tab-item <{if $act == 'pals'}> mui-active <{/if}>" href="<{:url('pals/index')}>">
+        <span class="mui-icon tabbar-icon icon4"></span>
+        <span class="mui-tab-label"><{:lang("footer_nav4")}></span>
+    </a>
+    
+    <a class="mui-tab-item <{if $act == 'user'}> mui-active <{/if}>" href="<{:url('user/index')}>">
+        <span class="mui-icon tabbar-icon icon5"></span>
+        <span class="mui-tab-label"><{:lang("footer_nav5")}></span>
+    </a>
+</nav>

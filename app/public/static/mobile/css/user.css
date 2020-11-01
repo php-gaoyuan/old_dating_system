@@ -1,0 +1,99 @@
+.fm-info{
+	width: 100%;
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+}
+.fm-info .fm-add{
+	position: absolute;
+	bottom: 15px;
+	width: 100%;
+	text-align: center;
+}
+
+.fm-info .fm-add span{
+	color: #fff;
+	display: inline-block;
+	border-radius: 100%;
+	border:2px solid #fff;
+	width: 40px;
+    height: 40px;
+	
+}
+.fm-info .fm-add span i.icon{
+	font-size: 2em;
+}
+
+.nav-cont .nav{
+	border-bottom:1px solid #c9c9c9;
+}
+.nav-cont .nav li{
+	display: block;
+	float: left;
+	width: 33.33%;
+	text-align: center;
+	line-height: 50px;
+	background: #EBEBEB;
+	font-weight: 700;
+}
+.nav-cont .nav li.active{
+	color:#557CC9;
+	border-bottom:2px solid #557CC9;
+	margin-bottom:-2px;
+}
+
+
+.user-info .item{
+	padding:12px 0;
+	margin-left:15px;
+	border-bottom:1px solid #f2f2f2;
+	font-size: 1.5em
+}
+
+.user-info .item span{
+	color:#696969;
+	margin-right:15px;
+}
+
+
+.user-news .item{
+	padding:10px;
+	border-top:10px solid #F2F2F2;
+}
+
+.user-news-info>img{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	float: left;
+	margin-right: 10px;
+}
+.user-news-info-txt{
+	font-weight: 700;
+	line-height: 2em;
+}
+.user-news-info-txt .user-name{
+	color:#5F83CF;
+	margin-right: 5px;
+}
+
+.user-news-info-txt .user-news-time{
+	color: #A2A2A2;
+
+}
+
+.user-news-cont{
+	margin-left:50px;
+	line-height: 2em;
+}
+
+.user-news-cont img{
+	width:33.33%;
+}
+
+.user-news-cont .user-news-txt{
+	font-size: 15px;
+    line-height: 1.8em;
+    color: #555;
+}

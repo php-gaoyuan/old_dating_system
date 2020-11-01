@@ -1,0 +1,74 @@
+<?php
+class arrayhomelp{
+	var $ah_reply = "responder";
+	var $ah_label = "etiqueta";
+	var $ah_enable_dress = "Este vestido está habilitado";
+	var $ah_system_will = "Voluntad System";
+	var $ah_seconds_return = "Segundos Back Home...";
+	var $ah_click_return_home = "Si el navegador no se ajusta automáticamente, haga clic aquí para volver a la página principal";
+	var $ah_have = "tener";
+	var $ah_had_seen = "La gente ha visto";
+	var $ah_more_mood = "Más humor";
+	var $ah_personal_homepage = "página principal";
+	var $ah_data = "INFORMACIÓN";
+	var $ah_log = "Iniciar sesión";
+	var $ah_album = "álbum";
+	var $ah_share = "Compartir";
+	var $ah_vote = "voto";
+	var $ah_groups = "Grupos";
+	var $ah_visitors = "Visitantes";
+	var $ah_more = "más";
+	var $ah_friends_circle = "círculo de los amigos";
+	var $ah_current_online = "línea actual";
+	var $ah_offline = "desconectado";
+	var $ah_stealth = "sigilo";
+	var $ah_friends_add_suc = "Amigos agregado con éxito";
+	var $ah_browser_clipboard = "Su navegador no permite scripts acceder Portapapeles, establezca manualmente！";
+	var $ah_enter_name = "Introduzca el nombre...";
+	var $ah_advanced_search = "Búsqueda avanzada";
+	var $ah_homepage = "casa";
+	var $ah_see_who_online = "Quién Está En línea";
+	var $ah_set_application = "Conjunto de aplicaciones";
+	var $ah_add_friend = "Añadir como amigo";
+	var $ah_say_hello_to = "Da la bienvenida a la TA";
+	var $ah_chongzhi = "TA para recargar";
+	var $ah_gift = "TA de enviar un regalo";
+	var $ah_send_letter = "Centro de Faxes";
+	var $ah_report_user = "Señalar este usuario";
+	var $ah_forgot_password = "Olvidé mi contraseña";
+	var $ah_total = "total";
+	var $ah_member_events_here = "Miembros actividades aquí...";
+	var $ah_personal_space = "espacio personal";
+	var $ah_groups_share = "Grupo / Compartir";
+	var $ah_game_application = "aplicación de juego";
+	var $ah_personal_space_detail = "<dd>
+Crea tu propio espacio, los registros de correos, las fotografías, las letras </ dd> <dd> disfrutar de la vida poco a poco..</dd>";
+	var $ah_groups_share_detail = "<dd>Crea tus propias discusiones de grupo con sentido de ideas afines </ dd> <dd> interés en el tema, el compartir y el intercambio de información...</dd>";
+	var $ah_game_application_detail = "<dd>Y los amigos para jugar con juegos y aplicaciones interactivas frescas </ dd> <dd> satisfacer sus necesidades de recreación...</dd>";
+	var $ah_loading_data = "Loading...";
+	var $ah_fill_content = "Por favor introduce el contenido del mensaje！";
+	var $ah_latest_photos = "últimas fotos";
+	var $ah_view_all_my_photos = "Ver todas las fotos";
+	var $ah_all_photos = "Todas las fotos";
+	var $ah_latest_blog = "Último registro";
+	var $ah_see_all_my_log = "Ver todas las revistas";
+	var $ah_all_logs = "Todos los Diarios";
+	var $ah_you_can_enter = "También puede introducir";
+	var $ah_word = "palabra";
+	var $ah_to = "a";
+	var $ah_message = "Deja un mensaje";
+	var $ah_expression = "expresión";
+	var $ah_new_nothing = "Nada nuevo";
+	var $ah_message_board = "Tablón de Mensajes";
+	var $ah_see_more_novelty = "Ver más novedad";
+	var $ah_welcome_you = "bienvenido:";
+	var $ah_invite_you_friends = "Te invitamos como amigo。";
+	var $ah_after_friend = "Después de convertirse en amigos, se puede discutir temas son la atención oportuna a las actualizaciones de los demás, también se puede jugar juegos divertidos ... <br /> También puede rápida y fácilmente publicar su propio registro, subir fotos, la vida poco a poco récord con un amigo Compartir. ¿Qué <br /> estás esperando? Ven y únete a nosotros ahora。";
+	var $ah_times = "secundario";
+	var $ah_basic_info="Datos Básicos";
+	var $ah_birthday="fecha de nacimiento";
+	var $ah_hometown="Procedencia";
+	var $ah_residence="residencia";
+	
+}
+?>

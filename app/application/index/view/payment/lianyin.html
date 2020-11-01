@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title><{:lang('pay_title')}></title>
+    <link rel="stylesheet" href="/public/static/mobile/payment/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/static/mobile/payment/css/style.css">
+</head>
+<body class="bg-light">
+<div class="container">
+    <div class="py-2 text-center">
+        <h2>
+            <script type="text/javascript" src="https://www.wshtmltool.com/get_payment_info.js?mid=600864"></script>
+            <script>document.write(payment_info);</script>
+        </h2>
+    </div>
+    <hr class="mb-4">
+    <div class="row">
+        <div class="col-md-12 order-md-1">
+            <form class="needs-validation" method="post" id="payForm" action="<{:url('payment/pay')}>" novalidate>
+                <div class="info-wrap">
+                    <div class="row">
+                        <div class="col-md-6 mb-3 offset-md-3">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><{:lang('pay_order_no')}></span>
+                                </div>
+                                <input type="text" class="form-control" name="product" id="product" value="<{$order.oid}>" required readonly>
+                                <input type="hidden" name="oid" value="<{$order.oid}>">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3 offset-md-3">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><{:lang('pay_amount')}></span>
+                                </div>
+                                <input type="text" class="form-control" name="amount" id="amount" value="<{$order.am}>USD"  required readonly>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mb-3 text-center">
+                        <h4><{:lang('pay_bill_info')}></h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3 offset-md-3">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><{:lang('pay_name')}></span>
+                                </div>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                        </div>
+                    </div>
+                    <!--                -->
+                    <div class="row">
+                        <div class="col-md-6 mb-3 offset-md-3">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><{:lang('pay_email')}></span>
+                                </div>
+                                <input type="text" class="form-control" name="email" id="email" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3 offset-md-3">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><{:lang('pay_phone')}></span>
+                                </div>
+                                <input type="text" class="form-control" name="phone" id="phone" required>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="container-fluid py-3">
+                        <div class="row">
+                            <div class="col-12 col-sm-8 col-md-6 col-lg-4 mx-auto">
+                                <div>
+                                    <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                                        <i class="fa fa-lock fa-lg"></i>&nbsp;
+                                        <span id="payment-button-amount"><{:lang('pay_btn_pay')}></span>
+                                        <span id="payment-button-sending" style="display:none;">Sending…</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<script src="/public/static/mobile/payment/js/jquery-3.4.1.min.js"></script>
+<script src="/public/static/mobile/payment/js/bootstrap.min.js"></script>
+<script src="/public/static/mobile/payment/js/bootstrap.bundle.js"></script>
+<script type="text/javascript">
+    $("#payment-button").click(function(e) {
+        // Fetch form to apply Bootstrap validation
+        var form = $(this).parents('form');
+
+        if (form[0].checkValidity() === false) {
+            e.preventDefault();
+            e.stopPropagation();
+        }else {
+            // Perform ajax submit here
+            form.submit();
+        }
+
+        form.addClass('was-validated');
+    });
+</script>
+</body>
+</html>

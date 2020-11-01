@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+	<meta name="apple-mobile-web-app-capable" content="no" />
+	<meta name="format-detection" content="telephone=no,email=no,adress=no"/>
+	<title>我的好友</title>
+	<link href="<{:config('skin_path')}>/css/mui.min.css" rel="stylesheet" />
+	<link href="<{:config('skin_path')}>/css/iconfont.css" rel="stylesheet" />
+	<style type="text/css">
+		.mui-icon-plus{
+			position: absolute;
+		    right: 15px;
+		    top: 20px;
+		}
+		.mui-search .mui-placeholder{
+			line-height: 43px;
+		}
+		.mui-bar .mui-search:before{
+			margin-top: -22px;
+		}
+		.mui-bar .mui-input-row .mui-input-clear~.mui-icon-clear, .mui-bar .mui-input-row .mui-input-speech~.mui-icon-speech{
+			top:11px;
+		}
+
+		.mui-table-view img#pals_ico{
+			width:42px;
+			height:42px;
+			border-radius: 100%;
+    		vertical-align: middle;
+		}
+		.layui-flow-more{
+			display: none;
+		}
+		body .mui-content{background: url("/public/static/mobile/images/page_bg2.jpg") 0 0 repeat;background-size:100%;background-attachment: fixed;min-height:700px;}
+		body .mui-table-view{background: rgba(255,255,255,0.75)}
+	</style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"  href="javascript:;"></a>
+	    <h1 class="mui-title">
+    		<div class="mui-input-row mui-search">
+	    	    <input type="search" class="mui-input-clear" id="keyword" placeholder="<{:lang('search_place')}>">
+	    	</div>
+	    </h1>
+	    <a class="mui-icon mui-icon-search mui-pull-right" id="search" href="javascript:;"></a>
+	</header>
+
+	<div class="mui-content">
+		<ul class="mui-table-view" id="pals_list">
+		    
+		</ul>
+	</div>
+	
+	
+	<!--footer-->
+	<{include file="public:footer" /}>
+	<!--footer end-->
+	<!--<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>-->
+	<script type="text/javascript" src="<{:config('skin_path')}>/layui/layui.js"></script>
+	<!--<script src="<{:config('skin_path')}>/js/mui.min.js"></script>-->
+
+	<script type="text/javascript">
+		layui.use(['flow','layer','jquery','laytpl'],function(){
+			var layer = layui.layer,
+				flow = layui.flow,
+				laytpl = layui.laytpl,
+				$ = layui.jquery;
+
+
+			var options = {
+				elem:"#pals_list",
+				done:function(page,next){
+					$.getJSON("<{:url('pals/get_pals_data')}>",{},function(res){
+						laytpl($("#list").html()).render(res,function(html){
+							next(html,page<res.pages);
+						});
+					});
+				}
+			};
+
+			flow.load(options);
+
+
+
+
+			$("#search").click(function(){
+				var keyword = $("#keyword").val();
+				$.getJSON("<{:url('pals/search')}>",{keyword:keyword},function(res){
+					//res = JSON.parse(res);
+					if(res){
+						laytpl($("#list").html()).render(res,function(html){
+							$("#pals_list").html(html);
+						});
+					}
+				});
+			});
+
+		});
+
+
+
+	</script>
+	<script id="list" type="text/html">
+		{{# layui.each(d, function(index,item){ }}
+
+			<li class="mui-table-view-cell">
+	            <a class="mui-navigate-right" href="/index/chat/chat/pals_id/{{ item.pals_id }}">
+	                <img class="mui-media-object" id="pals_ico" src="{{ item.pals_ico }}">
+	                {{ item.pals_name }}
+	            </a>
+	        </li>
+		{{# }); }}
+	</script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+.hide{ display:none; }
+.w310{ width:310px; }
+.w260{ width:260px; }
+.w218{ width:218px; }
+.w210{ width:210px; }
+.w180{ width:180px; }
+.w168{ width:168px; }
+.w125{ width:125px; }
+.w120{ width:120px; }
+.w100{ width:135px; }
+.mr10{margin-right:10px; }
+.mr20{margin-right:20px; }
+.mr25{ margin-right: 25px !important;}
+.ml25{ margin-left: 25px !important;}
+.ml-40{ margin-left:-40px !important; }
+.ml-25{ margin-left:-25px !important; }
+.pl0{ padding-left:0 !important; }
+.pl25{ padding-left: 25px !important;}
+.pl40{ padding-left:40px !important; }
+.cff4200{ color: #ff4200;}
+/*在线升级*/
+.online-updater-main{ width:100%; height:100%; margin:0 auto;}
+/*在线升级-顶部导航*/ 
+/*覆盖原来样式（公用js中用到class名，坑）*/
+.oum-nav .tabs_lq{ position:relative; left:0; height:auto; }
+.oum-nav .tabs_lq a { padding: 0; height:auto; line-height:normal; display: inline-block; vertical-align: middle; background:none; border:none; }
+.oum-nav .tabs_lq .active1_tab_lq {height: auto;}
+/*坑 以下采用相同html布局*/
+.oum-nav{ height:45px; margin-top:10px;border-bottom:1px solid #d8d8d8; }
+.oum-nav .tabs_lq{ display:inline-block;width: 100%; font-size:12px; color:#333;}
+.oum-nav .tabs_lq a{ cursor:pointer; min-width:60px; height:42px; line-height:42px;color:#333;width:100px; }
+.oum-nav .tabs_lq a:hover{ color:#2c589e;}
+.oum-nav .tabs_lq a.active1_tab_lq{ border-bottom:3px solid #2d57a1; color:#2c589e; font-weight:700; }
+/*在线升级-导航内容*/
+.oum-body{ padding:0 !important; }
+.ob-1-for-other{ height:20px; line-height:20px; color:#f00; margin-bottom:8px; }
+/*在线升级-会员升级*/
+.oum-body-1{ padding:12px 35px 35px;text-align:left;background:#fafafa;  }
+/*在线升级-高级会员*/
+/*.ob-1-ticon1{display:inline-block; width:28px; margin-left:2px; height:38px; line-height:38px; background:url(../images/ou_icon.png) no-repeat 0px 0px; text-align:center; vertical-align:middle; }
+.ob-1-ticon1 i{ display:inline-block; width:24px; height:20px; margin-bottom:4px; background:url(../images/icon_01.png) no-repeat -27px -154px; vertical-align:middle;}*/
+/*在线升级-vip会员*/
+/*.ob-1-ticon2{display:inline-block; width:28px; margin-left:2px; height:38px; line-height:38px; background:url(../images/ou_icon.png) no-repeat 0px 0px; text-align:center; vertical-align:middle; }
+.ob-1-ticon2 i{ display:inline-block; width:24px; height:20px; margin-bottom:4px; background:url(../images/icon_01.png) no-repeat 0px -53px; vertical-align:middle;}*/
+/*在线升级-选择金额*/
+.ob-1-box{ margin-bottom:30px; overflow:hidden; }
+/*在线升级-左-等级说明*/
+.ob-left{ float:left; width:260px; background:#fff; }
+.ob-left dl{ line-height:52px; color:#333; font-size:13px; border-bottom:2px solid #e3eaf3; background:#f2f6fa; text-align:left; }
+.ob-left dl dt{ height:52px; line-height: 70px; padding-left:12px; border-bottom:1px solid #dee5eb; font-size:14px; font-weight:700; }
+.ob-left dl dd{ height:150px; border-top:1px solid #fff; padding:10px 0 0 45px; }
+.ob-left dl dd span{ display:block; line-height:36px; }
+.ob-left dl dd.en{ padding:10px 0 0 35px; }
+.ob-left dl dd.en span{ line-height:18px; margin-top:8px; }
+.ob-left dl dd.es{ padding:10px 0 0 35px; }
+.ob-left dl dd.ko{ padding:10px 0 0 15px; }
+.ob-left dl dd.ko span{ line-height:20px; margin-top:10px;} 
+/*在线升级-右-金额说明*/
+.ob-right{ float:right; width:470px; background:#fff; }
+.ob-right dl{ line-height:52px; color:#333; font-size:13px; border-bottom:2px solid #f2f2f2; background:#fff; text-align:left; }
+.ob-right dl dt{ height:52px; padding-left:45px; border-bottom:1px solid #f2f2f2;}
+.ob-right dl dd{ height:52px; padding-left:45px; border-top:1px solid #fff; border-bottom:1px solid #f2f2f2;  }
+.bb0{ border-bottom:0px solid transparent !important;  }
+.ob-right span{ display:inline-block; width:65px; }
+.ob-right .yp-gold{width:auto; color:#eb8d06; margin-left:30px; }
+/*特权明细-列表*/
+.ob-1-deta{ overflow:hidden; padding-bottom: 30px; }
+.ob-1-deta .ob-1-tip{ height:50px; line-height:50px;color:#333; font-size:12px; }
+.ob-1-deta .deta-list{ overflow:hidden;;}
+.deta-list .a-man{ color:#808080; padding:0 2px; }
+.deta-list .a-woman{color:#ff9723;padding:0 2px;}
+.deta-list .deta-head{ height:58px; background:#e1edfa; border-top-left-radius:8px; border-top-right-radius:8px; color:#333; font-size:12px; font-weight:700; text-align:center; overflow:hidden; }
+.deta-head li{ display:inline-block; float:left; line-height:58px; }
+.deta-head li dt{ display:inline-block; line-height:42px; margin-bottom:-10px; }
+.deta-head li dd{ display:inline-block; line-height:16px; font-weight:500; }
+.deta-list .deta-head-es{ height:58px; background:#e1edfa; border-top-left-radius:8px; border-top-right-radius:8px; color:#333; font-size:12px; font-weight:700; text-align:center; overflow:hidden; }
+.deta-head-es td{ line-height:12px; }
+.deta-head-es td.a-bottom{ vertical-align:bottom; padding-bottom:5px; }
+.deta-head-es td.fw500{ vertical-align:top; width:120px; font-weight:500; }
+.deta-body{ margin-top:1px; margin-bottom:2px; border:1px solid #c5cfd8; border-bottom-width:2px; border-bottom-left-radius:8px; border-bottom-right-radius:8px; color:#333; }
+.deta-body .deta-scroll{ /*height:450px;*/ margin-bottom:2px; overflow-x:auto; }
+.deta-scroll table{ width:100%; text-align:center; border-collapse:collapse; }
+.deta-scroll td,.deta-scroll th{ height:45px; padding:0 5px; font-size:12px; font-family:'Arial'; }
+.deta-scroll thead tr{background-color: #fafcff;}
+.deta-scroll tbody tr:nth-child(2n-1){ background:#f6f8fa; }
+.deta-scroll tr:nth-child(2n){ background:#fff; }
+.deta-scroll tr td:last-child{ text-align:left; padding-left:5px; }
+.deta-scroll td label{ color:#ff9822; }
+
+ /*充值金币*/
+.oum-body-2{ text-align:left; padding:0 30px 0 0; }
+.ob-2-tip{ height:27px; line-height:27px; margin:22px 0 25px 0; padding-left:18px; background:#fff7ee; font-size:12px; color:#666666; }
+.ob-2-tit{ height:30px; line-height:28px; padding-left:18px; font-size:13px; font-weight:700;  overflow:hidden; border-bottom:1px solid #e0e0e0; }
+.ob-2-tit .t-left{ float:left; color:#333;  }
+.ob-2-tit .t-right{ float:right; color:#ff9500; }
+.ob-2-tit .t-right label{ font-size:18px; }
+/*充值金币-选择金额*/
+.ob-2-money{ height:250px; background:#fcfcfc;padding:25px 0 55px 5px; }
+.ob-2-money ul{ overflow:hidden; text-align:center; }
+.ob-2-money li{position:relative; float:left; width:140px; height:110px;  margin:0 15px 30px 15px;  border:1px solid #e0e0e0; background:#fff; cursor:pointer;}
+.ob-2-money li.active, .ob-2-money li:hover{ background:#fff; border:1px solid #ff9500; color:#ff9500; }
+.ob-2-money li.active .m-sel{ position:absolute; top:0px; right:0px; display:inline-block; width:30px; height:30px; background:url(../images/ou_icon.png) no-repeat -1px -41px; }
+#selMoney dl{ }
+#selMoney dt{ line-height:16px; padding-top:15px; margin:0; color:#c48653; font-size:12px; font-weight:500; }
+#selMoney dd{ line-height:18px; padding-top:12px; margin:0;color: #c48653; }
+#selMoney dd span { color:#ff8a00; font-size:30px; font-weight:700; font-family:'Arial Regular'; }
+#css-other-money{ width:320px; }
+#css-other-money dl{  }
+#css-other-money dt{ margin:0; padding-top:35px; color:#636363; font-size:12px; font-weight:500; }
+#css-other-money dt input{ width:160px; height:30px; line-height:18px; border:1px solid #e0e0e0; padding-left:8px; margin-right:5px;}
+#css-other-money dt img{ display:inline-block; vertical-align:middle; }
+#css-other-money dd{ line-height:16px; padding-top:5px; margin:0; color:#c48653; font-size:12px; font-weight:500; }
+/*交易记录*/
+.oum-body-3{ text-align:center;width: 705px;margin-left: 12px;margin-top: 21px; }
+.ob-3-title{ background: #f1f2f6;padding: 11px;width: 683px;margin: 17px 0 0 12px;text-align: center;}
+.ob-3-title-word{ color: #717171;font-size: 13px;background: #fff;padding: 25px 0;border-radius: 5px;border-right: 1px solid #dedfe6;border-bottom: 1px solid #dedfe6;}
+.on-quotes,.under-quotes{display: inline-block;width: 20px;height: 15px;background: url(/Content/upgrade/icon/upgrade.png) no-repeat;}
+.on-quotes{ background-position: 0 -142px;vertical-align: top; margin-top: -5px;}
+.under-quotes{ background-position: -1px -177px;vertical-align: bottom;margin-bottom: -2px;}
+.ob-3-tab{  }
+.ob-3-tab ul{ height:27px; border-bottom:1px solid #d9d9d9; overflow:hidden; }
+.ob-3-tab li{ float:left; min-width:70px; padding:0 10px; height:27px; line-height:27px; font-size:12px; color:#333; cursor:pointer; }
+.ob-3-tab li:hover{ color:#2c589e; }
+.ob-3-tab li.active{ color:#2c589e; background:#f7f7f7; border:1px solid #d9d9d9; border-bottom:none; }
+/*记录列表*/
+.ob-3-cont{ text-align:center; padding-top:20px; }
+.ob-3-cont-1{ overflow:hidden; border:1px solid #b9c5d0; }
+.ob-3-cont-1 table{ width:100%; border-collapse:collapse; }
+.ob-3-cont-1 thead{ background:#e1edfa; color:#333; font-size:12px; }
+.ob-3-cont-1 thead th{ height:38px; border-bottom:1px solid #b9c5d0; font-weight:500; }
+.ob-3-cont-1 tbody td{ height:45px; line-height:45px; font-size:13px; color:#333; }
+.ob-3-cont-1 tbody tr:nth-child(2n-1){ background:#f6f8fa; }
+.ob-3-cont-1 tbody tr:nth-child(2n){ background:#fff; }
+/*充值帮助*/
+.oum-body-4{ padding:0 0px 30px 18px; }
+.ob-recharge-help{ margin:15px 25px 0 12px; font-size:13px; color:#333; }
+.ob-recharge-help dt{ font-size:13px; font-weight:700; line-height:32px; }
+.ob-recharge-help dd{ padding-left:12px; line-height:20px; }
+
+/*选择支付方式*/
+.ob-0-tit{ height:50px; line-height:58px; padding:0 20px 0 25px; border-bottom:1px solid #d9d9d9; background:#f1f1f1; overflow:hidden; }
+.ob-0-tit .t-left{ float:left; color:#333; font-size:14px; font-weight:700;  }
+.ob-0-tit .t-right{ float:right; color:#3d6bbc; font-size:12px; }
+.ob-0-selpay{ }
+.ob-0-selpay ul{ overflow:hidden; width:100%; margin:25px 0 0 0; }
+.ob-0-selpay li{ float:left; height:48px; width:175px; line-height:44px; vertical-align:middle; }
+.ob-0-selpay li input{ display:inline-block;margin-right:6px; margin-left:2px; vertical-align:middle; }
+.ob-0-selpay li img{ display:inline-block; vertical-align:middle; }
+/*在线升级btn*/
+.ob-1-upnow{ padding-top:35px; position:relative; }
+.up-now-btn{ height:26px; line-height:26px; display:inline-block; padding:0 15px; overflow:hidden; border-radius:3px; text-align:center; font-weight:bold; cursor:pointer; color:#fff; border:1px solid #3a5585; background:-moz-linear-gradient(-90deg, #497bd2 0, #274f96 90%);background:-webkit-gradient(linear, 0 0, 0 90%, from(#497bd2), to(#274f96));filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#497bd2', endColorstr='#274f96', GradientType="0");background:-ms-linear-gradient(top, #497bd2 0, #274f96 90%);background:linear-gradient(top, #497bd2 0, #274f96 90%); }
+/*在线升级弹出框-新样式*/
+/*.new-dialog-skin{ border:1px solid #094B7B; }
+.new-dialog-skin .d-inner{ border:0 none; margin:0; padding:0; }
+.new-dialog-skin .d-dialog{border-collapse: collapse;table-layout: auto;width: 100%; }
+.new-dialog-skin .d-header{ display:inline-block; width:100%; margin:0; padding:0; }
+.new-dialog-skin .d-header .d-titleBar{ height:45px; line-height:45px; color:#fff; font-size:14px;background:#094b7b; border-bottom:1px solid #103D5E;padding: 0 30px; }
+.new-dialog-skin .d-main{padding: 0; padding-bottom:15px;}
+.new-dialog-skin .d-content{width:340px; min-height:10px; padding:30px; line-height: 30px;color:#424242;background:#fff;}
+.new-dialog-skin .d-content .fr_lq{ width:300px; }
+.new-dialog-skin .d-close{ cursor:pointer; right:15px; font-size:16px; font-family:'lucida grande',tahoma,verdana,arial,sans-serif; }
+.new-dialog-skin .d-footer .d-buttons{background:#fff; margin:0px 0 25px 0; }
+.new-dialog-skin .dbtn{ display:inline-block; margin-left:15px; min-width:90px; padding:0 5px; height:32px; line-height:32px; cursor:pointer; font-size:12px; font-weight:700; border-radius:3px; }
+.new-dialog-skin .btn-ok{ background:#4169b0; border-bottom:1px solid #204d9c; }
+.new-dialog-skin .btn-ok:hover{ background:#2d57a1; border-bottom:1px solid #0b3989; }
+.new-dialog-skin .btn-ok:active{ background:#274b8a; border-bottom:1px solid #204d9c; }
+.new-dialog-skin .btn-cancel{ background:#969696; border-bottom:1px solid #626262; }
+.new-dialog-skin .btn-cancel:hover{ background:#a2a2a2; border-bottom:1px solid #828282; }
+.new-dialog-skin .btn-cancel:active{ background:#828282; border-bottom:1px solid #5d5d5d; }*/

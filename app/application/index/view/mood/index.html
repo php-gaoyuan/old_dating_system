@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title><{:lang('mood_title')}></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="<{:config('skin_path')}>/css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="<{:config('skin_path')}>/css/user.css">
+		<style type="text/css">
+			.layui-flow-more{text-align: center;display:none;}
+			.item{
+				background-color: #fff;
+			}
+			body .mui-content{background: url("/public/static/mobile/images/page_bg2.jpg") 0 0 repeat;background-size:100%;background-attachment: fixed;min-height:700px;}
+			body .item{background: rgba(255,255,255,0.75)}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="<{:url('chat/index')}>"></a>
+		    <h1 class="mui-title"><{:lang('mood_title')}></h1>
+		    <a class="mui-pull-right" style="line-height:44px;font-size:14px;" href="<{:url('mood/add')}>"><{:lang("fabiao")}></a>
+		</header>
+		<div class="mui-content">
+            <div class="user-news" id="newsList"></div> 
+		</div>
+		<!--footer-->
+		<{include file="public:footer" /}>
+		<!--footer end-->
+		<!-- <script src="<{:config('skin_path')}>/js/mui.min.js"></script> -->
+		<script type="text/javascript" src="<{:config('skin_path')}>/layui/layui.js"></script>
+		<script type="text/javascript">
+			layui.use(["flow","laytpl","jquery","layer"],function(){
+				var flow=layui.flow,
+					laytpl=layui.laytpl,
+					layer = layui.layer,
+					$=layui.jquery;
+
+				var options = {
+					elem:"#newsList",
+					isAuto:true,
+					done:function(page,next){
+						$.getJSON("<{:url('mood/index')}>",{page:page},function(res){
+							laytpl($("#userNews").html()).render(res,function(html){
+								next(html,page<res.pages);
+							});
+
+
+							$(".user-news-txt img").click(function(){
+								layer.open({
+									type:1,
+									title:false,
+									area:"90%",
+									content:"<img src="+$(this).attr("src")+" width='100%'/>",
+									cancel:function(){
+										layer.closeAll();
+									}
+								});
+							});
+							$(".user-news-info-txt a").click(function(){
+								return false;
+							});
+
+							$(".user-news-txt a").click(function(){
+								return false;
+							});
+						});
+					}
+				};
+
+				flow.load(options);
+
+
+				
+			});
+		</script>
+
+
+
+		<script type="text/html" id="userNews">
+			{{# layui.each(d.list,function(index,item){ }}
+			{{# if(item.user_name!="" && item.user_name!="undefined" && item.user_name!=undefined){ }}
+				<div class="item">
+					<div class="user-news-info">
+						<img src="{{ item.user_ico }}" style="width:50px;">
+						<div class="user-news-info-txt mui-ellipsis" style="    font-size: 13px;">
+							<span class="user-name">{{ item.user_name }}</span>
+							{{ item.title }}
+							<div class="user-news-time" style="font-weight:400;font-size:12px;">
+								<i class="icon iconfont icon-clock" style="font-size:14px;"></i>
+								{{ item.update_time }}
+							</div>
+						</div>
+					</div>
+					<div class="user-news-cont">
+						<div class="user-news-txt">{{ item.content }}</div>
+						<!-- <div class="user-news-imgs">
+							<img src="<{:config('skin_path')}>/images/fengmian.png">
+						</div> -->
+					</div>
+				</div>
+			{{# } }}
+			{{# }); }}
+		</script>
+	</body>
+</html>

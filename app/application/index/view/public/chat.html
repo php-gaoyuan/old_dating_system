@@ -1,0 +1,100 @@
+
+<link rel="stylesheet" href="<{:config('skin_path')}>/css/chat.css">
+<script type="text/javascript" src="<{:config('skin_path')}>/js/jquery.min.js"></script>
+<script type="text/javascript" src="<{:config('skin_path')}>/js/public.js"></script>
+<script type="text/javascript" src="<{:config('skin_path')}>/layui/layui.js"></script>
+<script>
+
+    <{if request()->action()!="chat"}>
+        var ws_url = "<{:config('webconfig.ws_url')}>";
+        var ws = null;
+        var userinfo = <{$userinfo}>;
+
+        var freshSocket=function(){
+            var bindEvent = function () {
+                ws.onclose = doClose;
+                ws.onopen = doOpen;
+                ws.onmessage = doAck;
+            };
+            if ('WebSocket' in window) {
+                ws = new WebSocket(ws_url);
+                bindEvent();
+            } else if ('MozWebSocket' in window) {
+                ws = new window["MozWebSocket"](ws_url);
+                bindEvent();
+            }
+        };
+        //连接成功时触发
+        var doOpen = function() {
+            doHeart();
+            doReq("init",{
+                "id": userinfo.user_id,
+                "username": userinfo.user_name,
+                "avatar": userinfo.user_ico,
+                "from": "app"
+            });
+            doReq("logMsg",{user_id:userinfo.user_id});
+        };
+        var doHeart = function () {
+            doReq("ping", {user_id:userinfo.user_id});
+            heartTimer = setTimeout(doHeart, 3000);
+        };
+        //监听收到的聊天消息，假设你服务端emit的事件名为：chatMessage
+        var doAck = function(res) {
+            var msg = JSON.parse(res.data);
+            switch (msg['type']) {
+                // 检测聊天数据
+                case 'chatMsg':
+                    //console.log(msg.data);
+                    showBadge(msg.data);
+                    break;
+                case 'logMsg':
+                    //console.log(msg.data);
+                    // layui.each(msg.data,function(index,item){
+                    //     showBadge(item);
+                    // })
+                    break;
+            }
+        };
+        var doReq = function(type,msg){
+            var msg = msg||{};
+            var data = $.extend({type:type},msg);
+            ws.send(JSON.stringify(data));
+        }
+        var doClose = function (event) {
+            console.log("通讯已经断开");
+            setTimeout(freshSocket, 1000);
+            if (heartTimer != null) {
+                clearTimeout(heartTimer);
+                heartTimer = null;
+            }
+        };
+        freshSocket();
+    <{/if}>
+
+    var showBadge = function(msg){
+        $("#pals_list li").each(function(){
+            if($(this).data("fid") == msg.id){
+                var num_obj = $(this).find(".mui-badge");
+                var num = num_obj.text();
+                if(num == ""){
+                    num = 1;
+                }else{
+                    num = parseInt(num)+1;
+                }
+                //alert($(this).data("fid"));
+                num_obj.text(num);
+                num_obj.show();
+                $("#pals_list").prepend($(this));
+            }
+        });
+        //底部菜单追加消息数量
+        var nums = $("#msg_nums").text();
+        $("#msg_nums").text(parseInt(nums)+1);
+        //追加声音
+        $("body").append("<audio autoplay='true' src='/public/static/default/default.mp3'></audio>");
+        setTimeout(function(){
+            $("audio").remove();
+        }, 2000);
+    }
+</script>

@@ -1,0 +1,120 @@
+<?php 
+//前台容器页语言包
+class arrayhomelp{
+	var $ah_reply = "ответ";
+	var $ah_label = "тег";
+	var $ah_enable_dress = "Разрешен ли этот приодеться";
+	var $ah_system_will = "Система будет в";
+	var $ah_seconds_return = "Секунды Назад Главная...";
+	var $ah_click_return_home = "Если ваш браузер не настраивается автоматически, нажмите здесь, чтобы вернуться на главную страницу";
+	var $ah_have = "иметь";
+	var $ah_had_seen = "читать";
+	var $ah_more_mood = "Более настроение";
+	var $ah_personal_homepage = "домашняя страница";
+	var $ah_data = "данные";
+	var $ah_log = "журнал";
+	var $ah_album = "альбом";
+	var $ah_share = "доля";
+	var $ah_vote = "投 票";
+	var $ah_groups = "руппы";
+	var $ah_visitors = "посетители";
+	var $ah_events = "деятельность";
+	var $ah_more = "более";
+	var $ah_friends_circle = "Круг друзей";
+	var $ah_current_online = "онлайн";
+	var $ah_offline = "оффлайне";
+	var $ah_stealth = "隐身";
+	var $ah_friends_add_suc = "Друзья успешно добавлен";
+	var $ah_browser_clipboard = "Ваш браузер не поддерживает скрипты для доступа к буферу обмена, ручная установка！";
+	var $ah_enter_name = "Введите имя...";
+	var $ah_advanced_search = "Расширенный поиск";
+	var $ah_homepage = "домой";
+	var $ah_see_who_online = "Кто в онлайне";
+	var $ah_set_application = "Набор приложений";
+	var $ah_add_friend = "Добавить в друзья";
+	var $ah_say_hello_to = "Чтобы поприветствовать его";
+	var $ah_chongzhi = "Чтобы другие перезарядить";
+	var $ah_gift = "Дайте кому-то подарок";
+	var $ah_send_letter = "сообщение";
+	var $ah_report_user = "Доложить об этом пользователе";
+	var $ah_forgot_password = "Забыли пароль";
+	var $ah_total = "общий";
+	var $ah_member_events_here = "Деятельность участников здесь...";
+	var $ah_personal_space = "Личное пространство";
+	var $ah_groups_share = "руппы/доля";
+	var $ah_game_application = "приложение игры";
+	var $ah_personal_space_detail = "<dd>Создайте свой собственный пространства, почтовый журналы, фотографии，</dd><dd>Обмен кусочки жизни..</dd>";
+	var $ah_groups_share_detail = "<dd>Создать собственную группу，обсуждать</dd><dd>Заинтересованы в этой теме, совместного использования и обмена информацией...</dd>";
+	var $ah_game_application_detail = "<dd>И друзья играть с прохладной интерактивных игр и приложений</dd><dd>Удовлетворить ваши потребности развлечений...</dd>";
+	var $ah_loading_data = "Загрузка...";
+	var $ah_fill_content = "Пожалуйста, введите текст сообщения！";
+	var $ah_latest_photos = "Последние фотографии";
+	var $ah_view_all_my_photos = "Посмотреть все фотографии";
+	var $ah_all_photos = "Все фото";
+	var $ah_latest_blog = "Последний блог";
+	var $ah_see_all_my_log = "Смотрите все мой блог";
+	var $ah_all_logs = "Все блог";
+	var $ah_you_can_enter = "Вы также можете ввести";
+	var $ah_word = "слово";
+	var $ah_to = "к";
+	var $ah_message = "Оставьте сообщение";
+	var $ah_expression = "выражение";
+	var $ah_new_nothing = "Ничего нового";
+	var $ah_message_board = "Сообщение";
+	var $ah_see_more_novelty = "Посмотреть более подробную новинку";
+	var $ah_welcome_you = "добро пожаловать:";
+	var $ah_invite_you_friends = "Приглашаем Вас как друга。";
+	var $ah_after_friend = "Став друзьями, Вы можете обсудить темы были вместе, и своевременное внимание на обновления друг друга, вы также можете играть в веселые игры ... <br />Вы также можете быстро и легко опубликовать свой ​​собственный блог, загружать фотографии, записи и обмена жизнь с друзьями。 <br />Что же вы ждете? Ну и присоединиться к нам прямо сейчас。";
+	var $ah_times = "раз";
+	var $ah_basic_info="Основная информация";
+	var $ah_birthday="день рождения";
+	var $ah_hometown="Родной город";
+	var $ah_residence="резиденция";
+}
+//错误机制语言包
+class errorlp{
+	var $er_db_unset="Настройки базы данных проблемы, пожалуйста, просмотра таблиц базы данных и поля корректны";
+	var $er_dont_know="Неизвестный системная ошибка";
+	var $commit_bug="Вы можете задавать вопросы, чтобы iwebSNS столкнулись с ошибкой Форум";
+	var $er_refuse_guest="К сожалению, на текущий период времени отказался посетить сайт。";
+	var $er_refuse_action="К сожалению, на текущий период времени отказались взаимодействовать с сайтом。";
+	var $er_refuse_ip="К сожалению, Ваш IP-адрес запретить доступ к сайту。";
+}
+//登录系统语言包
+class loginlp{
+	var $l_empty_mail="Учетные записи электронной почты не может быть пустым！";
+	var $l_empty_pass="Пароль не может быть пустым!";
+	var $l_empty_repa="Повторите ввод пароля не может быть пустым!";	
+	var $l_not_check="Вход ошибку счета, попробуйте еще раз";
+	var $l_wrong_pass="Об ошибке ввода пароля пользователя!";
+	var $l_lock_u="К сожалению, ваш аккаунт был заблокирован";
+	var $l_loading="Соединение для входа в систему, в...";
+	var $l_email="номер счета";
+	var $l_pass="пароль";
+	var $l_repass="Повторить пароль";
+	var $l_save_aco="Запомнить меня";
+	var $l_hid="隐身登录";
+	var $l_login="Войти";
+	var $l_r_aco="还没有开通你的聚易网帐号？";
+	var $l_search_result="Результаты поиска";
+	var $l_user_name="имя пользователя";
+	var $l_momber_login="Войти";
+	var $l_forget_pw="Забыли пароль？";
+	var $l_momber_register="регистрация";
+	var $l_30s_register="30 секунд, чтобы зарегистрировать нового пользователя！";
+	var $l_wel_insert="Надеюсь, что вы можете присоединиться";
+	var $l_jooyea_star="Наши участники";
+	var $l_new_momber="Последние Прохладный Друзья";
+	var $l_sell="Я хотел бы представить себя";
+	var $l_location="расположение";
+	var $l_chose="Пожалуйста, выберите";
+	var $l_confirm="определять";
+	var $l_age="возраст</label>";
+	var $l_sex="Пол</label>";
+	var $l_no_restraint="неограниченный";
+	var $l_search="поиск";
+	var $l_lady="мисс";
+	var $l_men="люди";
+	var $l_close="близко";
+}
+?>

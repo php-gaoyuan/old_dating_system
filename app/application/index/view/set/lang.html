@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="<{:config('skin_path')}>/css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<{if !$is_h5_plus }>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title"><{:lang('set lang')}></h1>
+		</header>
+		<{/if}>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+			        <li class="mui-table-view-cell">
+			            <div class="mui-input-row mui-radio">
+							<label><{:lang('zh-cn')}></label>
+							<input name="lang" value="zh-cn" type="radio" <{if $lang == "zh-cn"}>checked<{/if}> >
+						</div>
+			        </li>
+			        <li class="mui-table-view-cell">
+			            <div class="mui-input-row mui-radio">
+							<label><{:lang('zh-tw')}></label>
+							<input name="lang" value="zh-tw" type="radio" <{if $lang == "zh-tw"}>checked<{/if}> >
+						</div>
+			        </li>
+			        <li class="mui-table-view-cell">
+			            <div class="mui-input-row mui-radio">
+							<label><{:lang('en-us')}></label>
+							<input name="lang" value="en-us" type="radio" <{if $lang == "en-us"}>checked<{/if}> >
+						</div>
+			        </li>
+			        <li class="mui-table-view-cell">
+			            <div class="mui-input-row mui-radio">
+							<label><{:lang('kor')}></label>
+							<input name="lang" value="kor" type="radio" <{if $lang == "kor"}>checked<{/if}> >
+						</div>
+			        </li>
+			        <li class="mui-table-view-cell">
+			            <div class="mui-input-row mui-radio">
+							<label><{:lang('jp')}></label>
+							<input name="lang" value="jp" type="radio" <{if $lang == "jp"}>checked<{/if}> >
+						</div>
+			        </li>
+			    </ul>
+			    <div style="margin:15px;">
+			    <button class="mui-btn mui-btn-primary mui-btn-block" id="sub"><{:lang('submit')}></button></div>
+		</div>
+		<script type="text/javascript" src="<{:config('skin_path')}>/js/jquery.min.js"></script>
+		<script type="text/javascript" src="<{:config('skin_path')}>/js/public.js"></script>
+		<script type="text/javascript" src="<{:config('skin_path')}>/js/function.js"></script>
+		<script type="text/javascript" src="<{:config('skin_path')}>/js/mui.min.js"></script>
+		<script>
+		$(function(){
+			$("#sub").click(function(){
+				var lang = $("input[type='radio']:checked").val();
+				setCookie("think_var",lang,"365");
+				mui.toast("<{:lang('ok')}>");
+				setTimeout(function(){
+					window.location.href="/";
+				},"2000");
+			});
+		});
+		</script>
+	</body>
+
+</html>

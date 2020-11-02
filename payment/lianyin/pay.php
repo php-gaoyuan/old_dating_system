@@ -20,6 +20,15 @@ $order = $dbo->getRow($sql,"arr");
 if(empty($order)){
     header("location:/");exit;
 }
+
+if(!empty($order['pay_userinfo'])){
+    returnJs("不要重複提交訂單(Do not repeat orders)","/");
+}
+$pay_userinfo = json_encode($_REQUEST,JSON_UNESCAPED_UNICODE);
+$sql = "UPDATE wy_balance SET `pay_userinfo`='{$pay_userinfo}' WHERE ordernumber='{$order_no}'";
+$dbo->exeUpdate($sql);
+
+
 $lianyinPay = new Lianyin();
 $result = $lianyinPay->pay($order);
 //echo "<pre>";print_r($result);exit;

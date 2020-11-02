@@ -1155,7 +1155,7 @@ layui.define(['layer', 'laytpl', 'upload'], function(exports){
                 return has = true
               }
             });
-            if(has) return layer.msg('好友 ['+ (data.username||'') +'] 已经存在列表中',{anim: 6});
+            if(has) return ;//layer.msg('好友 ['+ (data.username||'') +'] 已经存在列表中',{anim: 6});
             cache.friend[index].list = cache.friend[index].list || [];
             obj[cache.friend[index].list.length] = data;
             data.groupIndex = index;

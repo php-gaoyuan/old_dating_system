@@ -64,10 +64,8 @@ if($status == 'paid'){
     }elseif($order['type'] == 2){
         $payRes = payUpgrade($result,$dbo,$paymentlp);
     }
-    exit('[success]');//支付失败
-}else{
-    exit('[fail]');//支付失败
 }
+exit('[success]');
 /**
  * HASH加密
  * @param $str

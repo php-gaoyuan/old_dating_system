@@ -13,6 +13,11 @@ class Payment extends Base
     public function pay($oid){
         $data = input("post.");
         $order = (new Balance())->where(["ordernumber"=>$oid])->find();
+        if(!empty($order['pay_userinfo'])){
+            echo "<script>alert('不要重複提交訂單(Do not repeat orders)');window.location.href='/';</script>";exit;
+        }
+        (new Balance)->where(['ordernumber'=>$order['ordernumber']])->update(['pay_userinfo'=>json_encode($_REQUEST,JSON_UNESCAPED_UNICODE)]);
+
         $payMethod = "\\payment\\".ucfirst($order['pay_method']);
         $payObj = new $payMethod();
         $payRes = $payObj->pay($order);

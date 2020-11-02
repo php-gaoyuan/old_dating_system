@@ -13,6 +13,7 @@ class Yingfu
     public function pay($order)
     {
         $website = 'www.partyings.com';
+        
 //持卡人账单信息
         $billing_first_name = isset($_REQUEST['billing_first_name']) ? $_REQUEST['billing_first_name'] : '';
         $billing_last_name = isset($_REQUEST['billing_last_name']) ? $_REQUEST['billing_last_name'] : '';
@@ -29,6 +30,7 @@ class Yingfu
         $shipping_last_name = !empty($_REQUEST['shipping_last_name']) ? $_REQUEST['shipping_last_name'] : $billing_last_name;
         $shipping_email = !empty($_REQUEST['shipping_email']) ? $_REQUEST['shipping_email'] : $billing_email;
         $shipping_country = !empty($_REQUEST['shipping_country']) ? $_REQUEST['shipping_country'] : $billing_country;
+        //$shipping_country = $billing_country;
         $shipping_state = !empty($_REQUEST['shipping_state']) ? $_REQUEST['shipping_state'] : $billing_state;
         $shipping_city = !empty($_REQUEST['shipping_city']) ? $_REQUEST['shipping_city'] : $billing_city;
         $shipping_postal_code = !empty($_REQUEST['shipping_postal_code']) ? $_REQUEST['shipping_postal_code'] : $billing_postal_code;

@@ -21,6 +21,17 @@
 
 
                     <div class="layui-inline">
+                        <label class="layui-form-label">在线状态</label>
+                        <div class="layui-input-inline">
+                            <select name="is_online">
+                                <option value="all">全部</option>
+                                <option value="1">在线</option>
+                                <option value="0">离线</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="layui-inline">
                         <label class="layui-form-label">用户级别</label>
                         <div class="layui-input-inline">
                             <select name="user_group">
@@ -75,6 +86,13 @@
                         return "钻石会员（"+d.end_date+"）";
                     }
                     }},
+                {field:'is_online', title: '在线状态',templet:function(d){
+                    if(d.is_online==1){
+                        return "<button class='layui-btn layui-btn-xs'>在线</button>";
+                    }
+                    return "离线";
+                    }},
+                {field:'online_update_time', title: '最后在线时间'},
                 {field:'user_add_time', title: '注册时间'},
                 {field:'lastlogin_datetime', title: '最后登录时间'},
             ]],

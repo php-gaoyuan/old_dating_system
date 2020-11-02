@@ -25,7 +25,7 @@
 			.layui-flow-more{text-align: center;display: none;}
 			.change-lang{
 				position: absolute;
-				padding: 0 10px;
+				/*padding: 0 10px;*/
 				background: #f7f7f7;
 			}
 			.select-lang{
@@ -38,6 +38,11 @@
 			}
 			body .mui-content{background: url("/public/static/mobile/images/page_bg2.jpg") 0 0 repeat;background-size:100%;background-attachment: fixed;min-height:700px;}
 			body .mui-card{background: rgba(255,255,255,0.75)}
+
+			 .headimg a{
+				 display: block;
+			 }
+			.headimg a img{border-radius: 100%;}
 		</style>
 	</head>
 
@@ -129,12 +134,6 @@
 				
 		    	<div class="mui-card">
 					<!--内容区-->
-					<style>
-						.headimg a{
-							display: block;
-						}
-						.headimg a img{border-radius: 100%;}
-					</style>
 					<div class="mui-card-content card-img headimg">
 						<a href="/index/home/index/uid/{{ item.user_id }}">
 						<img src="{{ item.user_ico }}" onload="imgResize(this);" style="max-height: 168px;width:100%;"/>

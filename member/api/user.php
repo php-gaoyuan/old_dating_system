@@ -24,6 +24,11 @@ if ($act == "index") {
         $where .= " and user_group='{$user_group}' ";
     }
 
+    $is_online = isset($_GET["is_online"]) ? $_GET["is_online"] : 'all';
+    if (in_array($is_online,['1','0'])) {
+        $where .= " and is_online='{$is_online}' ";
+    }
+
     if ($where != " tuid='{$wz_userid}' ") {
         $page = 1;
         $limit_sql = ($page - 1) * $limit . "," . $limit;
@@ -37,6 +42,7 @@ if ($act == "index") {
     foreach ($list as $k => $val) {
         $upgrade_log = $dbo->getRow("select endtime from wy_upgrade_log where mid='{$val['user_id']}'");
         $list[$k]['end_date'] = $upgrade_log['endtime'];
+        $list[$k]['online_update_time'] = date("Y-m-d H:i:s",$val['online_update_time']);
     }
     echo json(array("code" => 0, "count" => $count["count"], "data" => $list, "msg" => ""));
     exit;

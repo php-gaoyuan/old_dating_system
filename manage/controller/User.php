@@ -36,6 +36,11 @@ if ($act == "index") {
         $where .= " and user_group<2 ";
     }
 
+    $is_online = isset($_GET["is_online"]) ? $_GET["is_online"] : 'all';
+    if (in_array($is_online,['1','0'])) {
+        $where .= " and is_online='{$is_online}' ";
+    }
+
     $reg_date = isset($_GET["reg_date"]) ? $_GET["reg_date"] : '';
     if (!empty($reg_date)) {
         $reg_date = explode(" - ", $reg_date);

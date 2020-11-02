@@ -6,9 +6,9 @@ use app\common\model\UpgradeLog;
 
 class Yingfu
 {
-    protected $wintopayUrl = "https://stg-gateway.wintopay.com/api/v2/gateway/payment";//请求网关地址，查看接口文档
-    protected $merchant_id = '70204';//商户号
-    protected $md5key = 'Ak(SKe]rB2Yj';//密钥key
+    protected $wintopayUrl = "https://api.win4mall.com/api/v2/gateway/payment";//请求网关地址，查看接口文档
+    protected $merchant_id = '5825';//商户号
+    protected $md5key = 'PmB!hHiYOc=u';//密钥key
 
     public function pay($order)
     {
@@ -107,11 +107,16 @@ class Yingfu
         $paymentResult = $this->payCurlPost($this->wintopayUrl, $this->merchant_id, $data, $website);
 //对返回结果进行解析处理,返回结果为json类型
         $result = json_decode($paymentResult, true);
-        file_put_contents("yingfu_wap_return.log", var_export($result, 1) . "\n\n", FILE_APPEND);
-//echo "<pre>";print_r($result);exit;
+        file_put_contents("yingfu_wap_return.log", date("Y-m-d H:i:s").PHP_EOL.var_export($result, 1) .PHP_EOL, FILE_APPEND);
+        //echo "<pre>";print_r($result);exit;
+
+
+
+        $err_msg = htmlspecialchars($result['message']);
+        (new Balance)->where(['ordernumber'=>$order['ordernumber']])->update(['pay_msg'=>$err_msg]);
         $str = $result['id'] . $result['status'] . $result['amount_value'] . $this->md5key . $this->merchant_id . $result['request_id'];
         if ($this->sha256Encrypt($str) != $result['sign_verify']) { //验证返回信息
-            returnJs("sign error!");
+            return "sign error!".$err_msg;
         }
 
         if ($result['status'] == 'paid') {
@@ -120,10 +125,10 @@ class Yingfu
                 'ordernumber' => $order['ordernumber'],
                 'amount' => $order['money'],
                 'out_trade_no' => $result['order_id'],
-                'err_msg' => $result['message']
+                'err_msg' => $err_msg
             );
         } else {
-            $payRes = $result['message'];
+            $payRes = $err_msg;
         }
         return $payRes;//支付成功
     }

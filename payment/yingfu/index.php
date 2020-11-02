@@ -97,6 +97,13 @@ if(empty($order)){
                         <div class="col-md-3 mb-3 offset-md-3">
                             <select class="custom-select d-block w-100" name="billing_country" id="country" required>
                                 <option value="CN">China</option>
+                                <option value="TW">Taiwan</option>
+                                <option value="HK">Hong Kong</option>
+                                <option value="SG">Singapore</option>
+                                <option value="MY">Malaysia</option>
+                                <option value="JP">Japan</option>
+                                <option value="KR">Korea</option>
+
                                 <option value="AF">Afghanistan</option>
                                 <option value="AL">Albania</option>
                                 <option value="AD">Andorra</option>
@@ -169,7 +176,7 @@ if(empty($order)){
                                 <option value="GB">United Kingdom</option>
                                 <option value="HT">Haiti</option>
                                 <option value="HN">Honduras</option>
-                                <option value="HK">Hong Kong</option>
+
                                 <option value="HU">Hungary</option>
                                 <option value="ID">The Republic of Indonesia</option>
                                 <option value="IE">Ireland</option>
@@ -178,12 +185,12 @@ if(empty($order)){
                                 <option value="IS">Iceland</option>
                                 <option value="IT">Italy</option>
                                 <option value="JM">Jamaica</option>
-                                <option value="JP">Japan</option>
+
                                 <option value="JO">Jordan</option>
                                 <option value="KZ">Kazakhstan</option>
                                 <option value="KE">Kenya</option>
                                 <option value="KG">Kyrgyzstan</option>
-                                <option value="KR">Korea</option>
+
                                 <option value="KW">Kuwait</option>
                                 <option value="KN">Saint Kitts and Nevis</option>
                                 <option value="LB">Lebanon</option>
@@ -206,7 +213,7 @@ if(empty($order)){
                                 <option value="MR">Mauritania</option>
                                 <option value="MU">Mauritius</option>
                                 <option value="MX">Mexico</option>
-                                <option value="MY">Malaysia</option>
+
                                 <option value="MD">Moldova</option>
                                 <option value="MN">Mongolia</option>
                                 <option value="MA">Morocco</option>
@@ -243,7 +250,7 @@ if(empty($order)){
                                 <option value="SO">Somalia</option>
                                 <option value="SR">Suriname</option>
                                 <option value="SE">Sweden</option>
-                                <option value="SG">Singapore</option>
+
                                 <option value="SK">Slovakia</option>
                                 <option value="SI">Slovenia</option>
                                 <option value="SV">El Salvador</option>
@@ -255,7 +262,7 @@ if(empty($order)){
                                 <option value="TN">Tunisia</option>
                                 <option value="TR">Turkey</option>
                                 <option value="TT">Trinidad and Tobago</option>
-                                <option value="TW">Taiwan, Province of China</option>
+
                                 <option value="TM">Turkmenistan</option>
                                 <option value="TC">Turks and Caicos Islands</option>
                                 <option value="UG">Uganda</option>
@@ -362,6 +369,7 @@ if(empty($order)){
                         <div class="row">
                             <div class="col-md-3 mb-3 offset-md-3">
                                 <select class="custom-select d-block w-100 shipping" name="shipping_country" id="shippingCountry">
+                                    <option value="">==Select Countfy==</option>
                                     <option value="CN">China</option>
                                     <option value="AF">Afghanistan</option>
                                     <option value="AL">Albania</option>
@@ -672,7 +680,7 @@ if(empty($order)){
 <script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap.bundle.js"></script>
-<script src="https://stage-js.wintopay.com/js/shield"></script>
+<script src="https://api.win4mall.com/js/shield"></script>
 <script type="text/javascript">
 
     let session_id = wintopayShield.getSessionId();

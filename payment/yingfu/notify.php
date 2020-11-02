@@ -15,15 +15,14 @@ $dbo = new dbex;
 dbtarget('w', $dbServs);
 
 
-$merchant_id = '70204';
-$md5key      = 'Ak(SKe]rB2Yj';
+$merchant_id = '5825';
+$md5key      = 'PmB!hHiYOc=u';
 
 
 //https://partyings.com/payment/yingfu/notify.php
 $result = file_get_contents('php://input','r');
 $data = json_decode($result,true);
-file_put_contents("yingfu_pc_notify.log", var_export($data, 1) . "\n\n", FILE_APPEND);
-
+file_put_contents("yingfu_pc_notify.log", date("Y-m-d H:i:s").PHP_EOL.var_export($data, 1) .PHP_EOL, FILE_APPEND);
 
 $id         = $data['id']; 			//流水号
 $order_id   = $data['order_id'];	//订单号
@@ -39,7 +38,8 @@ $sign_verify= $data['sign_verify']; //加密
 $metadata = json_decode($data["metadata"],true);
 $ordernumber = $metadata["ordernumber"];
 //先记录返回的错误信息
-$sql = "UPDATE wy_balance SET `pay_msg`='{$result['message']}' WHERE ordernumber='{$ordernumber}'";
+$err_msg = htmlspecialchars($result['message']);
+$sql = "UPDATE wy_balance SET `pay_msg`='{$err_msg}' WHERE ordernumber='{$ordernumber}'";
 $dbo->exeUpdate($sql);
 
 $str = $id.$status.$amount_value.$md5key.$merchant_id.$request_id;
@@ -48,13 +48,14 @@ if(sha256Encrypt($str) != $sign_verify){
 }
 
 if($status == 'paid'){
+    $metadata = json_decode($metadata,true);
     //更新订单状态
     $result = array(
         'status' => 'success',
-        'ordernumber' => $merch_order_ori_id,
-        'amount' => $price_amount,
+        'ordernumber' => $metadata['ordernumber'],
+        'amount' => $amount_value/100,
         'out_trade_no' => $order_id,
-        'err_msg' => $message
+        'err_msg' => $err_msg
     );
     $sql="SELECT * FROM wy_balance WHERE ordernumber = '{$ordernumber}'";
     $order=$dbo->getRow($sql,"arr");

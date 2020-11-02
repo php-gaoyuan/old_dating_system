@@ -53,7 +53,7 @@ class Chat extends Base
 			$user_id = cookie("user_id");
 			$pals_id = input("pals_id");
 			$where = " (fromid='$user_id' and toid='$pals_id') or (fromid='$pals_id' and toid='$user_id') ";
-	        $log_list = db()->table("chat_log")->where($where)->order("timeline desc")->select();
+	        $log_list = db()->table("chat_log")->where($where)->order("timeline asc")->select();
 
 	        $list=array();
 	        if(!empty($log_list)){

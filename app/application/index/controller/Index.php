@@ -17,6 +17,7 @@ class Index extends Controller
             return $this->redirect("index/index");
         }
         $this->assign("lang",lang($lang));
+        $this->assign("is_h5_plus",is_h5_plus());
         return $this->fetch();
     }
 

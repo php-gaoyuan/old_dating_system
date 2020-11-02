@@ -30,7 +30,7 @@ class Payment extends Base
                 }
             }
         }else{
-            $res = lang('pay_fail').":".(isset($payRes['err_msg'])?$payRes['err_msg']:'');
+            $res = lang('pay_fail').":".$payRes;
         }
         echo "<script>alert('{$res}');window.history.back();</script>";exit;
     }

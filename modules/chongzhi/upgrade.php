@@ -254,11 +254,11 @@ if ($uid) {
                                     <input class="radio" name="PaymentMethod" type="radio" value="lianyin" checked>
                                     <img src="/skin/<?php echo $skinUrl; ?>/images/vml.png" alt="lianyin"></label>
                                 </li>
-                                <!--<li>-->
-                                <!--  <label>-->
-                                <!--    <input class="radio" name="PaymentMethod" type="radio" value="yingfu" >-->
-                                <!--    <img src="/skin/<?php echo $skinUrl; ?>/images/fuHui.png" alt="yingfu"></label>-->
-                                <!--</li>-->
+                                <li>
+                                  <label>
+                                    <input class="radio" name="PaymentMethod" type="radio" value="yingfu" >
+                                    <img src="/skin/<?php echo $skinUrl; ?>/images/fuHui.png" alt="yingfu"></label>
+                                </li>
                                   <li>
                                       <label>
                                           <input class="radio" name="PaymentMethod" type="radio" value="gold" >

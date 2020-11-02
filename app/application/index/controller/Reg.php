@@ -48,17 +48,6 @@ class Reg extends Controller{
 			$res = model("Users")->save($insert_data);
 			$info = model("Users")->where(["user_name"=>$post_data["username"]])->find();
 
-			//存入session
-            session("user_id",$info["user_id"]);
-            session("user_name",$info["user_name"]);
-            session("user_sex",$info["user_sex"]);
-            session("user_ico",$info["user_ico"]);
-            //存入cookie
-            cookie("user_id",$info["user_id"],30*24*3600);
-            cookie("user_name",$info["user_name"],30*24*3600);
-            cookie("user_sex",$info["user_sex"],30*24*3600);
-            cookie("user_ico",$info["user_ico"],30*24*3600);
-
             //插入chat_users数据
             db()->table("chat_users")->insert([
                 "uid"=>$info["user_id"],
@@ -82,7 +71,20 @@ class Reg extends Controller{
                 "active_time"=>date("Y-m-d H:i:s"),
             ]);
 			if($res){
-				return json(["msg"=>lang("ok"),"url"=>url("main/index")]);
+			    if($info["user_sex"]==1){
+                    //存入session
+                    session("user_id",$info["user_id"]);
+                    session("user_name",$info["user_name"]);
+                    session("user_sex",$info["user_sex"]);
+                    session("user_ico",$info["user_ico"]);
+                    //存入cookie
+                    cookie("user_id",$info["user_id"],30*24*3600);
+                    cookie("user_name",$info["user_name"],30*24*3600);
+                    cookie("user_sex",$info["user_sex"],30*24*3600);
+                    cookie("user_ico",$info["user_ico"],30*24*3600);
+                    return json(["msg"=>lang("ok"),"url"=>url("main/index")]);
+                }
+				return json(["msg"=>lang("ok"),"url"=>url("index/index")]);
 			}else{
 				return json(["msg"=>lang("fail"),"url"=>url("reg/index")]);
 			}

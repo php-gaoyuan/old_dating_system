@@ -33,6 +33,17 @@
 						</div>
 					</div>
 
+                    <div class="layui-inline">
+                        <label class="layui-form-label">在线状态</label>
+                        <div class="layui-input-inline">
+                            <select name="is_online">
+                                <option value="all">全部</option>
+                                <option value="1">在线</option>
+                                <option value="0">离线</option>
+                            </select>
+                        </div>
+                    </div>
+
 					<div class="layui-inline">
 						<label class="layui-form-label">性别：</label>
 						<div class="layui-input-inline">
@@ -178,6 +189,13 @@
 				//{title: '禁言',width:100,templet:"#jinyanTpl",width:110},
 				{title: '查看聊天记录',width:130,templet:"#lookChatRecordTpl"},
 				//{title: '查看照片',width:100,templet:"#lookImgTpl"},
+                {field:'is_online', title: '在线状态',width:80,templet:function(d){
+                        if(d.is_online==1){
+                            return "<button class='layui-btn layui-btn-xs'>在线</button>";
+                        }
+                        return "离线";
+                    }},
+                {field:'online_update_time', title: '最后在线时间',width:170},
 				{field: 'reg_from',title: '终端',width:80},
 				{field: 'user_add_time', title: '注册时间',width:170},
 				{title:"操作",templet:"#bar",width:160,fixed: "right"}

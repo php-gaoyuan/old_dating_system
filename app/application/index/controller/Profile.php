@@ -93,7 +93,7 @@ class Profile extends Base
 
 
 	public function upimg(){
-		$file = request()->file('file');
+        $file = request()->file('file');
         if( $file->getInfo()['size'] > 3145728){
             // 上传失败获取错误信息
             return json( ['code' => -2, 'msg' => '文件超过3M', 'data' => ''] );

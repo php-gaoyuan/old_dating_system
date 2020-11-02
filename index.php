@@ -199,6 +199,50 @@ if ($tg == 'invite') {
                     </div>
                 </form>
             </div>
+
+            <!-- 下载二维码 -->
+            <style>
+                .download {
+                    /*width: 400px;margin-right: 125px;
+                    margin-right: 450px;
+                    margin-top: 20px;
+                    border-radius: 10px;*/
+                    width:318px;
+                    float: right;
+                    background: rgba(0, 0, 0, 0.3);
+                    padding: 15px;
+                    border-top:1px dashed #ccc;
+                    display: ;
+                }
+                .download .download-left {
+                    text-align: center;
+                    float: left;
+                    width:100%;
+                }
+                .download .download-right {
+                    text-align: center;
+                    float: right;
+                }
+                .download button {
+                    border: 0;
+                    border-radius: 3px;
+                    padding: 10px 15px;
+                    background: #437bdc;
+                    color: #fff;
+                    margin: 15px 0;
+                }
+            </style>
+
+            <div class="wrp">
+                <div class="download">
+                    <div class="download-left">
+                        <img src="apk/ewm.png" alt="" style="width:160px;">
+                        <div>
+                            <button class="android">Partyings for Android</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <!--注册-->

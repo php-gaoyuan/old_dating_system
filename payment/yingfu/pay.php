@@ -31,10 +31,15 @@ if(empty($order)){
 
 
 //商户配置信息
-$merchant_id = '70204';
-$md5key      = 'Ak(SKe]rB2Yj';
+//$merchant_id = '70204';
+//$md5key      = 'Ak(SKe]rB2Yj';
+//$website = 'www.partyings.com';
+//$wintopayUrl = 'https://stg-gateway.wintopay.com/api/v2/gateway/payment';  //请求网关地址，查看接口文档
+
+$merchant_id = '5825';
+$md5key      = 'PmB!hHiYOc=u';
 $website = 'www.partyings.com';
-$wintopayUrl = 'https://stg-gateway.wintopay.com/api/v2/gateway/payment';  //请求网关地址，查看接口文档
+$wintopayUrl = 'https://api.win4mall.com/api/v2/gateway/payment';  //请求网关地址，查看接口文档
 
 //持卡人账单信息
 $billing_first_name = isset($_REQUEST['billing_first_name'])?$_REQUEST['billing_first_name']:'';
@@ -130,11 +135,16 @@ $data = [
 $paymentResult = payCurlPost($wintopayUrl,$merchant_id,$data,$website);
 //对返回结果进行解析处理,返回结果为json类型
 $result = json_decode($paymentResult,true);
-file_put_contents("yingfu_pc_return.log", var_export($result, 1) . "\n\n", FILE_APPEND);
+file_put_contents("yingfu_pc_return.log", date("Y-m-d H:i:s").PHP_EOL.var_export($result, 1) .PHP_EOL, FILE_APPEND);
 //echo "<pre>";print_r($result);exit;
+
+
+$err_msg = htmlspecialchars($result['message']);
+$sql = "UPDATE wy_balance SET `pay_msg`='{$err_msg}' WHERE ordernumber='{$order_no}'";
+$dbo->exeUpdate($sql);
 $str = $result['id'].$result['status'].$result['amount_value'].$md5key.$merchant_id.$result['request_id'];
 if(sha256Encrypt($str) != $result['sign_verify']){ //验证返回信息
-    returnJs("sign error!");
+    returnJs("sign error!".$err_msg);
 }
 
 if($result['status'] == 'paid'){
@@ -143,7 +153,7 @@ if($result['status'] == 'paid'){
         'ordernumber' => $order_no,
         'amount' => $result['amount_value']/100,
         'out_trade_no' => $result['order_id'],
-        'err_msg' => $result['message']
+        'err_msg' => $err_msg
     );
     if($order['type'] == 1){
         $payRes = payRecharge($data,$dbo,$paymentlp);
@@ -151,7 +161,7 @@ if($result['status'] == 'paid'){
         $payRes = payUpgrade($data,$dbo,$paymentlp);
     }
 }else{
-    $payRes = $result['message'];
+    $payRes = $err_msg;
 }
 returnJs($payRes);//支付成功
 

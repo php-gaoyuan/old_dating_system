@@ -180,9 +180,9 @@ if ($uid) {
                     <label><input name="pay_type" type="radio" value="lianyin" checked="checked"/><img
                                 src="/skin/<?php echo $skinUrl; ?>/images/vml.png"
                                 style="width:220px;vertical-align:middle;"/>&nbsp;&nbsp;</label>
-                    <!--<label><input name="pay_type" type="radio" value="yingfu"/><img-->
-                    <!--            src="/skin/<?php echo $skinUrl; ?>/images/fuHui.png"-->
-                    <!--            style="width:220px;vertical-align:middle;"/>&nbsp;&nbsp;</label>-->
+                    <label><input name="pay_type" type="radio" value="yingfu"/><img
+                                src="/skin/<?php echo $skinUrl; ?>/images/fuHui.png"
+                                style="width:220px;vertical-align:middle;"/>&nbsp;&nbsp;</label>
                 </div>
 
                 <div class="gold_list">

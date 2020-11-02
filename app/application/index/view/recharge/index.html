@@ -55,7 +55,7 @@
             <div class="mui-card-footer">
                 <div class="mui-input-row">
                     <label><{:lang('golds')}></label>
-                    <input type="text" class="mui-input-clear"  name="money"  placeholder="<{:lang('recharge golds')}>">
+                    <input type="text" class="mui-input-clear"  name="money"  >
                 </div>
             </div>
         </div>
@@ -77,9 +77,9 @@
                     <div class="mui-col-sm-6 mui-col-xs-6">
                         <img src="<{:config('skin_path')}>/images/vml.png" alt="lianyin" class="pay_type active">
                     </div>
-                    <!--<div class="mui-col-sm-6 mui-col-xs-6">-->
-                    <!--    <img src="<{:config('skin_path')}>/images/fuHui.png" alt="yingfu" class="pay_type">-->
-                    <!--</div>-->
+                    <div class="mui-col-sm-6 mui-col-xs-6">
+                        <img src="<{:config('skin_path')}>/images/fuHui.png" alt="yingfu" class="pay_type">
+                    </div>
                 </div>
             </div>
         </div>
@@ -109,20 +109,25 @@ $(function () {
         $("input[name='select_money']").val($(".active").data("val"))
     });
     $("input[name='money']").bind('input propertychange', function () {
-        $(".money").removeClass("active");
-        if ($(this).val() < 5) {
-            $(this).val(5)
-        }
+        // $(".money").removeClass("active");
+        // if ($(this).val() < 5) {
+        //     $(this).val(5)
+        // }
     });
     $("#sub").click(function () {
         var money = $(".money.active").data("val");
         var input_money = $("input[name='money']").val();
-        if (parseInt(input_money) > 0 && parseInt(input_money) < 5) {
+        // if (parseInt(input_money) > 0 && parseInt(input_money) < 5) {
+        //     mui.toast("<{:lang('recharge low')}>");
+        //     $("input[name='money']").val(5);
+        //     return false
+        // } else if (input_money >= 1000) {
+        //     mui.toast('單筆交易金額最大不能超過1000USD');
+        //     return false
+        // }
+        if (parseInt(input_money) <= 0) {
             mui.toast("<{:lang('recharge low')}>");
-            $("input[name='money']").val(5);
-            return false
-        } else if (input_money >= 1000) {
-            mui.toast('單筆交易金額最大不能超過1000USD');
+            $("input[name='money']").val(1);
             return false
         }
         var friend = $("input[name='friend']");

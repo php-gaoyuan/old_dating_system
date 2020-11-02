@@ -181,6 +181,13 @@ class Lianyin{
 
             $str = "<br>支付网关反馈信息如下：<br>商户号：" . $merchant_id . "<br>商户订单号：" . $merch_order_ori_id . "<br>商户订单号：" . $merch_order_id . "<br>交易币种：" . $price_currency . "<br>交易金额：" . $price_amount . "<br>签名：" . $signature . "<br>系统流水号：" . $order_id . "<br>商户原始订单号：" . $order_id . "<br>订单状态：" . $status . "<br>payment_url：" . $payment_url . "<br>check_bill_name_status：" . $check_bill_name_status . "<br>返回信息：" . $message . "<br>allow1：" . $allow1;
             //echo $str;exit;
+            file_put_contents("lianyin_pc_return.log", date("Y-m-d H:i:s").PHP_EOL.var_export($str, 1) .PHP_EOL, FILE_APPEND);
+
+            $strVale = $this->hashkey . $merchant_id . $merch_order_id . $price_currency . $price_amount . $order_id . $status;
+            $getsignature = md5 ( $strVale );
+            if ($getsignature != $signature) {
+                die ( 'Signature error!' );
+            }
 
             if ($status == "T" || $status == 'T') {
                 if (!empty($payment_url)) {

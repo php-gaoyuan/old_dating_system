@@ -35,6 +35,12 @@ if (empty($userinfo["user_ico"])) {
     body .layui-layim-status,body .layui-layim-remark{display:none;}
     body .layui-layim-info{height: 26px;}
     .layim-chat-mine .layim-chat-text{min-height:22px;}
+
+
+    .layim-chat-text .trans{display: flex;justify-content: space-between;display: none;}
+    .layim-chat-text:hover .trans{display: flex;}
+    .layim-chat-text hr{margin:2px 0;}
+    .trans span{display: inline-block;background: #03a0d7;color: #fff;padding: 0 3px;margin-right: 2px;border-radius: 2px;cursor: pointer;}
 </style>
 <script type="text/javascript">
     var ws_url = "<?php echo $ws_url;?>";
@@ -231,7 +237,7 @@ if (empty($userinfo["user_ico"])) {
             switch (msg.type) {
                 // 服务端ping客户端
                 case "ping":
-                    doReq("ping",{user_id:userinfo.user_id});
+                    doReq("heart",{user_id:userinfo.user_id});
                     break;
                 // 登录 更新用户列表
                 case 'init':
@@ -279,5 +285,13 @@ if (empty($userinfo["user_ico"])) {
         }
         //初始化websocket链接
         freshSocket();
+
+        //显示聊天翻译
+        layim.on('trans', function (obj,content, lang) {
+            var txt_div = obj.parent().parent();
+            $.post("/fanyi.php",{tos:lang,lan:content},function(res){
+                txt_div.find(".trans_txt").html("<hr>"+res);
+            })
+        });
     });
 </script>

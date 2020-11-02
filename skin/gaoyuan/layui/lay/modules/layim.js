@@ -276,21 +276,16 @@ layui.define(['layer', 'laytpl', 'upload'], function(exports){
         ,'<span class="layui-icon layim-tool-{{item.alias}}" title="{{item.title}}" layim-event="extend" lay-filter="{{ item.alias }}">{{item.icon}}</span>'
          ,'{{# }); }}'
         ,'{{# if(d.base && d.base.chatLog){ }}'
-        ,'<span class="layim-tool-log" layim-event="chatLog"><i class="layui-icon">&#xe60e;</i>聊天记录</span>'
+        ,'<span class="layim-tool-log" layim-event="chatLog"><i class="layui-icon">&#xe60e;</i>Record</span>'
         ,'{{# }; }}'
       ,'</div>'
       ,'<div class="layim-chat-textarea"><textarea></textarea></div>'
       ,'<div class="layim-chat-bottom">'
         ,'<div class="layim-chat-send">'
           ,'{{# if(!d.base.brief){ }}'
-          ,'<span class="layim-send-close" layim-event="closeThisChat">关闭</span>'
+          ,'<span class="layim-send-close" layim-event="closeThisChat">Close</span>'
           ,'{{# } }}'
-          ,'<span class="layim-send-btn" layim-event="send">发送</span>'
-          ,'<span class="layim-send-set" layim-event="setSend" lay-type="show"><em class="layui-edge"></em></span>'
-          ,'<ul class="layui-anim layim-menu-box">'
-            ,'<li {{d.local.sendHotKey !== "Ctrl+Enter" ? "class=layim-this" : ""}} layim-event="setSend" lay-type="Enter"><i class="layui-icon">&#xe605;</i>按Enter键发送消息</li>'
-            ,'<li {{d.local.sendHotKey === "Ctrl+Enter" ? "class=layim-this" : ""}} layim-event="setSend"  lay-type="Ctrl+Enter"><i class="layui-icon">&#xe605;</i>按Ctrl+Enter键发送消息</li>'
-          ,'</ul>'
+          ,'<span class="layim-send-close" layim-event="send">Send</span>'
         ,'</div>'
       ,'</div>'
     ,'</div>'
@@ -326,7 +321,7 @@ layui.define(['layer', 'laytpl', 'upload'], function(exports){
       ,'{{ d.username||"佚名" }}<i>{{ layui.data.date(d.timestamp) }}</i>'
      ,'{{# } }}'
       ,'</cite></div>'
-    ,'<div class="layim-chat-text">{{ layui.data.content(d.content||"&nbsp") }}</div>'
+    ,'{{# if(d.mine){ }}<div class="layim-chat-text">{{ layui.data.content(d.content||"") }}</div>{{# }else{ }}<div class="layim-chat-text">{{ layui.data.content(d.content||"") }}<hr><div class="trans"  data-cont="{{ layui.data.content(d.content||"") }}"><span layim-event="trans" data-lang="en">English</span><span layim-event="trans" data-lang="zh">简体</span><span layim-event="trans" data-lang="cht">繁体</span><span layim-event="trans" data-lang="kor">한국어</span><span layim-event="trans" data-lang="jp">日本語</span></div><div class="trans_txt"></div></div>{{# } }}'
   ,'</li>'].join('');
   
   var elemChatList = '<li class="layim-{{ d.data.type }}{{ d.data.id }} layim-chatlist-{{ d.data.type }}{{ d.data.id }} layim-this" layim-event="tabChat"><img src="{{ d.data.avatar }}"><span>{{ d.data.name||"佚名" }}</span>{{# if(!d.base.brief){ }}<i class="layui-icon" layim-event="closeChat">&#x1007;</i>{{# } }}</li>';
@@ -1253,7 +1248,7 @@ layui.define(['layer', 'laytpl', 'upload'], function(exports){
     if(length >= MAX_ITEM){
       var first = ul.find('li').eq(0);
       if(!ul.prev().hasClass('layim-chat-system')){
-        ul.before('<div class="layim-chat-system"><span layim-event="chatLog">查看更多记录</span></div>');
+        ul.before('<div class="layim-chat-system"><span layim-event="chatLog">More Record</span></div>');
       }
       if(length > MAX_ITEM){
         first.remove();
@@ -1318,6 +1313,14 @@ layui.define(['layer', 'laytpl', 'upload'], function(exports){
   
   //事件
   var anim = 'layui-anim-upbit', events = {
+    //翻译内容
+    trans:function(othis,e){
+        var lang = othis.data("lang");
+        var content = othis.parent().data("cont");
+        layui.each(call.trans, function(index, item){
+          item && item(othis,content,lang);
+        });
+    },
     //在线状态
     status: function(othis, e){
       var hide = function(){

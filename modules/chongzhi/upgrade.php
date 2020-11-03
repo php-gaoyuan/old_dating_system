@@ -251,17 +251,22 @@ if ($uid) {
                               <ul>
                                 <li>
                                   <label>
-                                    <input class="radio" name="PaymentMethod" type="radio" value="lianyin" checked>
+                                    <input class="radio" name="pay_method" type="radio" value="lianyin" checked>
                                     <img src="/skin/<?php echo $skinUrl; ?>/images/vml.png" alt="lianyin"></label>
                                 </li>
+                                  <li>
+                                      <label>
+                                          <input class="radio" name="pay_method" type="radio" value="lianyin2">
+                                          <img src="/skin/<?php echo $skinUrl; ?>/images/vm.png" alt="lianyin2"></label>
+                                  </li>
                                 <li>
                                   <label>
-                                    <input class="radio" name="PaymentMethod" type="radio" value="yingfu" >
+                                    <input class="radio" name="pay_method" type="radio" value="yingfu" >
                                     <img src="/skin/<?php echo $skinUrl; ?>/images/fuHui.png" alt="yingfu"></label>
                                 </li>
                                   <li>
                                       <label>
-                                          <input class="radio" name="PaymentMethod" type="radio" value="gold" >
+                                          <input class="radio" name="pay_method" type="radio" value="gold" >
                                           <img src="/template/main/ico/gold-icon.png" alt="gold" style="margin-top:-5px;"></label>
                                   </li>
 

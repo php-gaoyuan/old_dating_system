@@ -56,6 +56,7 @@ if(empty($order)){
                                 <input type="text" class="form-control" name="product" id="product" value="<?php echo $_REQUEST['oid'];?>" required readonly>
                                 <input type="hidden" name="oid" value="<?php echo $_REQUEST['oid'];?>">
                                 <input type="hidden" name="pt" value="<?php echo $_REQUEST['pt'];?>">
+                                <input type="hidden" name="pay_type" value="<?php echo $_REQUEST['pay_type'];?>">
                             </div>
                         </div>
                     </div>

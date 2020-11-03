@@ -5,7 +5,12 @@ $er_langpackage = new rechargelp;
 $user_group = get_argp("user_group");
 $touser = get_argp("touser");
 $friend_username = get_argp("friend_username");
-$PaymentMethod = $_POST["PaymentMethod"];
+$pay_method = $_POST["pay_method"];
+$pay_type=1;
+if($pay_method=='lianyin2'){
+    $pay_type=2;
+    $pay_method="lianyin";
+}
 
 
 $money = 0;
@@ -53,7 +58,7 @@ switch ($user_group) {
         $groups = '3';
         break;
 }
-//echo "<pre>";print_r($PaymentMethod);exit;
+//echo "<pre>";print_r($pay_method);exit;
 $dbo = new dbex;
 dbtarget('w', $dbServs);
 
@@ -77,11 +82,11 @@ if ($touser == 'self') {
         exit();
     }
 }
-$sql .= ",day='{$day}',user_group={$groups},type='2',uid={$user_id},uname='{$user_name}',addtime='" . date('Y-m-d H:i:s') . "',funds='{$money}',ordernumber='{$ordernumber}',money='{$money}',pay_method='{$PaymentMethod}',pay_from='PC'";
+$sql .= ",day='{$day}',user_group={$groups},type='2',uid={$user_id},uname='{$user_name}',addtime='" . date('Y-m-d H:i:s') . "',funds='{$money}',ordernumber='{$ordernumber}',money='{$money}',pay_method='{$pay_method}',pay_from='PC'";
 //echo "<pre>";print_r($sql);exit;
 $dbo->exeUpdate($sql);
 
-if ($PaymentMethod == "gold") {
+if ($pay_method == "gold") {
     $sql = "select * from wy_users where user_id={$user_id}";
     $userinfo = $dbo->getRow($sql);
     if ($userinfo['golds'] <$money) {
@@ -115,11 +120,11 @@ if ($PaymentMethod == "gold") {
     $dbo->exeUpdate($sql);
 
     exit("<script>alert('" . $er_langpackage->er_good . "');top.location.href='/main.php';</script>");
-}elseif ($PaymentMethod == "yingfu") {
+}elseif ($pay_method == "yingfu") {
     $payUrl = "/payment/yingfu/index.php?oid={$ordernumber}&am={$money}&pt=2";
     header("location:{$payUrl}");exit;
-}elseif ($PaymentMethod == "lianyin") {
-    $payUrl = "/payment/lianyin/index.php?oid={$ordernumber}&am={$money}&pt=2";
+}elseif ($pay_method == "lianyin") {
+    $payUrl = "/payment/lianyin/index.php?oid={$ordernumber}&am={$post_gold}&pt=2&pay_type={$pay_type}";
     header("location:{$payUrl}");exit;
 }
 

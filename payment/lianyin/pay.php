@@ -13,6 +13,8 @@ $paymentlp = new paymentlp();
 $dbo = new dbex;
 dbtarget('w', $dbServs);
 $order_no = $_POST["oid"];
+$pay_type = $_POST["pay_type"];
+//print_r($pay_type);exit;
 
 $user_id = get_sess_userid();
 $sql = "select * from wy_balance where uid={$user_id} and ordernumber='{$order_no}'";
@@ -30,7 +32,7 @@ $dbo->exeUpdate($sql);
 
 
 $lianyinPay = new Lianyin();
-$result = $lianyinPay->pay($order);
+$result = $lianyinPay->pay($order,$pay_type);
 //echo "<pre>";print_r($result);exit;
 if($result['status'] == 'success'){
     if($order['type'] == 1){

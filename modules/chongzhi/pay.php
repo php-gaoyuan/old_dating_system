@@ -85,8 +85,8 @@ if ($uid) {
     <ul class="menu">
         <li class="active"><a href="modules2.0.php?app=user_pay"><?php echo $er_langpackage->er_recharge; ?></a></li>
         <li><a href="modules2.0.php?app=user_upgrade"><?php echo $er_langpackage->er_upgrade; ?></a></li>
-        <li><a href="modules2.0.php?app=user_consumption" ><?php echo $er_langpackage->er_consumption_log; ?></a></li>
-        <!--        <li><a href="modules2.0.php?app=user_introduce">--><?php //echo $er_langpackage->er_introduce; ?><!--</a></li>-->
+        <!--<li><a href="modules2.0.php?app=user_consumption" ><?php echo $er_langpackage->er_consumption_log; ?></a></li>
+                <li><a href="modules2.0.php?app=user_introduce">--><?php //echo $er_langpackage->er_introduce; ?><!--</a></li>-->
         <!--<li><a href="modules2.0.php?app=user_help"><?php echo $er_langpackage->er_help; ?></a></li>-->
     </ul>
 </div>
@@ -177,10 +177,13 @@ if ($uid) {
                     </span>
                 </div>
                 <div class="gold_list" style="margin-top:20px;">
-                    <label><input name="pay_type" type="radio" value="lianyin" checked="checked"/><img
+                    <label><input name="pay_method" type="radio" value="lianyin" checked="checked"/><img
                                 src="/skin/<?php echo $skinUrl; ?>/images/vml.png"
                                 style="width:220px;vertical-align:middle;"/>&nbsp;&nbsp;</label>
-                    <label><input name="pay_type" type="radio" value="yingfu"/><img
+                    <label><input name="pay_method" type="radio" value="lianyin2"/><img
+                                src="/skin/<?php echo $skinUrl; ?>/images/vm.png"
+                                style="width:220px;vertical-align:middle;"/>&nbsp;&nbsp;</label>
+                    <label><input name="pay_method" type="radio" value="yingfu"/><img
                                 src="/skin/<?php echo $skinUrl; ?>/images/fuHui.png"
                                 style="width:220px;vertical-align:middle;"/>&nbsp;&nbsp;</label>
                 </div>

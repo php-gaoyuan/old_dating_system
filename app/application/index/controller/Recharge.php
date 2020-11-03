@@ -13,7 +13,12 @@ class Recharge extends Base {
             $to_user = input("to_user");
             $friend = input("friend");
             $select_money = input("select_money"); //用户选择的金额
-            $pay_way = input("pay_way");
+            $pay_method = input("pay_method");
+            $pay_type=1;
+            if($pay_method=='lianyin2'){
+                $pay_type=2;
+                $pay_method="lianyin";
+            }
             if (empty($money)) {
                 $money = $select_money;
             }
@@ -21,20 +26,20 @@ class Recharge extends Base {
             $uname = cookie("user_name");
             //insert into wy_balance set type='1',uid='695',uname='chuyang',touid='695',touname='chuyang',message='给自己充值100金币',state='0',addtime='2018-02-12 23:31:51',funds='100',ordernumber='S-P1518449511455',money='100'
             if ($money > 0) {
-                $ordernumber = 'S-P' . time() . mt_rand(100, 999);
+                $ordernumber = 'RE' . time() . mt_rand(100, 999);
                 if ($to_user == "1") { //给自己充值
-                    $data = ["type" => 1, "uid" => $uid, "uname" => $uname, "touid" => $uid, "touname" => $uname, "message" => "给自己充值{$money}金币", "state" => 0, "funds" => $money, "ordernumber" => $ordernumber, "money" => $money, "addtime" => date("Y-m-d H:i:s"),'pay_method'=>$pay_way, 'pay_from'=>'WAP' ];
+                    $data = ["type" => 1, "uid" => $uid, "uname" => $uname, "touid" => $uid, "touname" => $uname, "message" => "给自己充值{$money}金币", "state" => 0, "funds" => $money, "ordernumber" => $ordernumber, "money" => $money, "addtime" => date("Y-m-d H:i:s"),'pay_method'=>$pay_method, 'pay_from'=>'WAP' ];
                 } elseif ($to_user == "2") { //给其他人充值
                     $to_user_info = model("Users")->where(["user_name" => $friend])->field("user_id,user_name")->find();
                     if (empty($to_user_info)) {
                         echo "<script>alert('没有找到充值对象');window.history.back();</script>";
                         exit;
                     }
-                    $data = ["type" => 1, "uid" => $uid, "uname" => $uname, "touid" => $to_user_info["user_id"], "touname" => $to_user_info["user_name"], "message" => "给{$to_user_info["user_name"]}充值{$money}金币", "state" => 0, "funds" => $money, "ordernumber" => $ordernumber, "money" => $money, "addtime" => date("Y-m-d H:i:s"),'pay_method'=>$pay_way, 'pay_from'=>'WAP' ];
+                    $data = ["type" => 1, "uid" => $uid, "uname" => $uname, "touid" => $to_user_info["user_id"], "touname" => $to_user_info["user_name"], "message" => "给{$to_user_info["user_name"]}充值{$money}金币", "state" => 0, "funds" => $money, "ordernumber" => $ordernumber, "money" => $money, "addtime" => date("Y-m-d H:i:s"),'pay_method'=>$pay_method, 'pay_from'=>'WAP' ];
                 }
 
                 $res = model("Balance")->save($data);
-                if ($pay_way == "paypal") {
+                if ($pay_method == "paypal") {
                     //开始paypal充值
                     $account = config("webconfig.paypal_account");
                     $base_url = 'http://' . $_SERVER['HTTP_HOST'];
@@ -58,8 +63,9 @@ class Recharge extends Base {
                     //file_put_contents("paypal_str.txt", var_export($str,1)."\n\n",FILE_APPEND);
                     return $str;
                 }
-                $this->assign("order",["pay_type"=>$pay_way,"oid"=>$ordernumber,"am"=>$money]);
-                return $this->fetch("payment/{$pay_way}");
+
+                $this->assign("order",["pay_method"=>$pay_method,"oid"=>$ordernumber,"am"=>$money,'pay_type'=>$pay_type]);
+                return $this->fetch("payment/{$pay_method}");
             }
         }
     }

@@ -233,6 +233,15 @@ if (empty($userinfo["user_ico"])) {
         };
         //监听收到的聊天消息，假设你服务端emit的事件名为：chatMessage
         var doAck = function (res) {
+            //清除本地缓存的消息
+            var cache =  layui.layim.cache();
+            var local = layui.data('layim')[cache.mine.id];
+            delete local.chatlog; //获取当前用户本地数据
+            //向localStorage同步数据
+            layui.data('layim', {
+                key: cache.mine.id
+                ,value: local
+            });
             var msg = JSON.parse(res.data);
             switch (msg.type) {
                 // 服务端ping客户端

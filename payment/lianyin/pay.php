@@ -12,8 +12,8 @@ $paymentlp = new paymentlp();
 //读写分离定义函数
 $dbo = new dbex;
 dbtarget('w', $dbServs);
-$order_no = $_POST["oid"];
-$pay_type = $_POST["pay_type"];
+$order_no = $_REQUEST["oid"];
+$pay_type = !empty($_REQUEST["pay_type"])?$_REQUEST["pay_type"]:2;
 //print_r($pay_type);exit;
 
 $user_id = get_sess_userid();
@@ -24,7 +24,7 @@ if(empty($order)){
 }
 
 if(!empty($order['pay_userinfo'])){
-    returnJs("不要重複提交訂單(Do not repeat orders)","/");
+    //returnJs("不要重複提交訂單(Do not repeat orders)","/");
 }
 $pay_userinfo = json_encode($_REQUEST,JSON_UNESCAPED_UNICODE);
 $sql = "UPDATE wy_balance SET `pay_userinfo`='{$pay_userinfo}' WHERE ordernumber='{$order_no}'";
@@ -61,7 +61,7 @@ class Lianyin{
         if($pay_method==2){
             $this->server_url="https://gateway.sslonlinepay.com/Payment/payConsoleSingle.aspx";
         }
-        //p($this->server_url);
+        //print_r($this->server_url);exit;
         $card_number = str_replace(" ","",$_POST["card_no"]);
         $exp_year = $_POST["exp_year"];
         $exp_month = $_POST["exp_month"];
@@ -191,9 +191,8 @@ class Lianyin{
 
 
             $str = "<br>支付网关反馈信息如下：<br>商户号：" . $merchant_id . "<br>商户订单号：" . $merch_order_ori_id . "<br>商户订单号：" . $merch_order_id . "<br>交易币种：" . $price_currency . "<br>交易金额：" . $price_amount . "<br>签名：" . $signature . "<br>系统流水号：" . $order_id . "<br>商户原始订单号：" . $order_id . "<br>订单状态：" . $status . "<br>payment_url：" . $payment_url . "<br>check_bill_name_status：" . $check_bill_name_status . "<br>返回信息：" . $message . "<br>allow1：" . $allow1;
-            //echo $str;exit;
             file_put_contents("lianyin_pc_return.log", date("Y-m-d H:i:s").PHP_EOL.var_export($str, 1) .PHP_EOL, FILE_APPEND);
-
+            //echo $str;exit;
             $strVale = $this->hashkey . $merchant_id . $merch_order_id . $price_currency . $price_amount . $order_id . $status;
             $getsignature = md5 ( $strVale );
             if ($getsignature != $signature) {

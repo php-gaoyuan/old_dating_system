@@ -6,9 +6,9 @@ $user_group = get_argp("user_group");
 $touser = get_argp("touser");
 $friend_username = get_argp("friend_username");
 $pay_method = $_POST["pay_method"];
-$pay_type=1;
+$pay_type=2;//single
 if($pay_method=='lianyin2'){
-    $pay_type=2;
+    $pay_type=1;
     $pay_method="lianyin";
 }
 
@@ -123,8 +123,11 @@ if ($pay_method == "gold") {
 }elseif ($pay_method == "yingfu") {
     $payUrl = "/payment/yingfu/index.php?oid={$ordernumber}&am={$money}&pt=2";
     header("location:{$payUrl}");exit;
-}elseif ($pay_method == "lianyin") {
-    $payUrl = "/payment/lianyin/index.php?oid={$ordernumber}&am={$post_gold}&pt=2&pay_type={$pay_type}";
+}elseif ($pay_method == "lianyin" && $pay_type==2) {//本地
+    $payUrl = "/payment/lianyin/pay.php?oid={$ordernumber}&am={$money}&pt=2&pay_type={$pay_type}";
+    header("location:{$payUrl}");exit;
+}elseif ($pay_method == "lianyin" && $pay_type==1) {//全通道
+    $payUrl = "/payment/lianyin/index.php?oid={$ordernumber}&am={$money}&pt=2&pay_type={$pay_type}";
     header("location:{$payUrl}");exit;
 }
 

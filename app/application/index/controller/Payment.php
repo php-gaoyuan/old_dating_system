@@ -22,7 +22,7 @@ class Payment extends Base
         $payMethod = "\\payment\\".ucfirst($order['pay_method']);
         $payObj = new $payMethod();
         if($order['pay_method']=="lianyin"){
-            $pay_type = input("pay_type",1,"intval");
+            $pay_type = input("pay_type",2,"intval");
             //halt($pay_type);
             $payRes = $payObj->pay($order,$pay_type);
         }else{

@@ -12,7 +12,7 @@ class Lianyin{
         if($pay_method==2){
             $this->server_url="https://gateway.sslonlinepay.com/Payment/payConsoleSingle.aspx";
         }
-        //p($this->server_url);
+        //print_r($this->server_url);exit;
         $card_number = "";
         $exp_year = "";
         $exp_month = "";

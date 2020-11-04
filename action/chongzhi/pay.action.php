@@ -11,15 +11,15 @@ $touser = get_argp("touser");
 $post_gold = intval(get_argp("custom_gold"));
 $friend_username = get_argp("friend_username");
 $pay_method = get_argp("pay_method");
-$pay_type=1;
+$pay_type=2;//single
 if($pay_method=='lianyin2'){
-    $pay_type=2;
+    $pay_type=1;
     $pay_method="lianyin";
 }
 
 $user_id = get_sess_userid();
 $user_name = get_sess_username();
-$ordernumber = 'E' . time() . mt_rand(100, 999);
+$ordernumber = 'R' . time() . mt_rand(100, 999);
 //echo "<pre>";print_r($_POST);exit;
 
 if ($touser == 'self') {//给自己充值
@@ -50,8 +50,13 @@ if ($pay_method == 'paypal') {
 } else if ($pay_method == 'yingfu') {//上海赢付
     $payUrl = "/payment/yingfu/index.php?oid={$ordernumber}&am={$post_gold}&pt=1";
     header("location:{$payUrl}");exit;
-} else if ($pay_method == 'lianyin') {//联银支付
+} else if ($pay_method == 'lianyin' && $pay_type==2) {//联银支付本地
+    $payUrl = "/payment/lianyin/pay.php?oid={$ordernumber}&am={$post_gold}&pt=1&pay_type={$pay_type}";
+    //print_r($payUrl);exit;
+    header("location:{$payUrl}");exit;
+} else if ($pay_method == 'lianyin' && $pay_type==1) {//联银支付
     $payUrl = "/payment/lianyin/index.php?oid={$ordernumber}&am={$post_gold}&pt=1&pay_type={$pay_type}";
+    //print_r($payUrl);exit;
     header("location:{$payUrl}");exit;
 }
 ?>

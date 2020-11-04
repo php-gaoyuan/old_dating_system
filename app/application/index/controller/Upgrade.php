@@ -36,9 +36,9 @@ class Upgrade extends Base
         $to_user = input("to_user");
         $friend = input("friend");
         $pay_method = input("pay_method");
-        $pay_type=1;
+        $pay_type=2;//single
         if($pay_method=='lianyin2'){
-            $pay_type=2;
+            $pay_type=1;
             $pay_method="lianyin";
         }
 
@@ -143,6 +143,9 @@ class Upgrade extends Base
                 return json(["msg" => lang("fail"), "url" => url("upgrade/index")]);
             }
         }
-        return json(["msg" => 'ok', "url" => url("payment/index", ['pay_method'=>$pay_method,'pay_type' => $pay_type, 'oid' => $ordernumber, 'am' => $money])]);
+        if($pay_method=='lianyin' && $pay_type==2){
+            return json(["msg" => 'Jump Pay', "url" => url("payment/pay", ['pay_method'=>$pay_method,'pay_type' => $pay_type, 'oid' => $ordernumber, 'am' => $money])]);
+        }
+        return json(["msg" => 'Jump Pay', "url" => url("payment/index", ['pay_method'=>$pay_method,'pay_type' => $pay_type, 'oid' => $ordernumber, 'am' => $money])]);
     }
 }

@@ -137,6 +137,16 @@
 		};
 		//监听收到的聊天消息，假设你服务端emit的事件名为：chatMessage
 		var doAck = function (res) {
+			//清除本地缓存的消息
+			var cache =  layim.cache();
+			var local = layui.data('layim-mobile')[cache.mine.id];
+			//console.log(local);
+			delete local.chatlog; //获取当前用户本地数据
+			// //向localStorage同步数据
+			layui.data('layim-mobile', {
+				key: cache.mine.id
+				,value: local
+			});
 			var msg = JSON.parse(res.data);
 			switch (msg.type) {
 					// 服务端ping客户端
@@ -218,7 +228,9 @@
 		//监听查看更多记录
 		layim.on('chatlog', function (data, ul) {
 			window.location.hash ="";
+			$(".layim-chat-system>span[layim-event='chatLog']").removeAttr("layim-event").text("loading");
 			$.getJSON("<{:url('chat/chat_log')}>", {pals_id: data.id}, function (res) {
+				$(".layim-chat-system>span[layim-event='chatLog']").text("Chat Record");
 				$(".layim-chat-system>span[layim-event='chatLog']").hide();
 				if(res.data.length>0){
 					laytpl($("#chatlog_li_tpl").html()).render(res.data, function(html){

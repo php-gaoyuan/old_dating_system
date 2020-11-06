@@ -61,7 +61,7 @@ if ($act == "index") {
     foreach ($list as $k => $val) {
         $tuinfo = $dbo->getRow("select name from wy_wangzhuan where id='{$val['tuid']}'");
         $list[$k]['tuname'] = $tuinfo['name'];
-        $upgrade_log = $dbo->getRow("select endtime from wy_upgrade_log where mid='{$val['user_id']}'");
+        $upgrade_log = $dbo->getRow("select endtime from wy_upgrade_log where mid='{$val['user_id']}' and state='0'");
         $list[$k]['end_date'] = $upgrade_log['endtime'];
     }
     echo json(array("code" => 0, "count" => $count["count"], "data" => $list, "msg" => ""));

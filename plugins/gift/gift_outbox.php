@@ -104,7 +104,7 @@ if(get_sess_userid())
 			//分别取出接收和未接收的礼品
 			
 			if($row['is_see']==0)$no_accept.="<div style='clear:both;height:85px;border-bottom:1px #ccc solid;line-height:25px;margin-bottom:5px;'><img style='display:block;float:left' src='/{$row['gift']}'/><span style='float:left;display:block;padding-left:10px;'>".$gf_langpackage->gf_mess_16.$row['send_time'].$gf_langpackage->gf_mess_17."<b>[{$row['accept_name']}]</b>".$gf_langpackage->gf_mess_18."<br />".$gf_langpackage->gf_zengyan."：$row[msg]</span></div>";
-			else $accept.="<div style='clear:both;height:85px;border-bottom:1px #ccc solid;line-height:25px;margin-bottom:5px;'><img style='display:block;float:left' src='/{$row['gift']}'/><span style='float:left;display:block;padding-left:10px;'>".$gf_langpackage->gf_mess_16.$row['send_time'].$gf_langpackage->gf_mess_17."<b>[{$row['send_name']}]</b>".$gf_langpackage->gf_mess_18."<br />".$gf_langpackage->gf_zengyan."：$row[msg]</span></div>";
+			else $accept.="<div style='clear:both;height:85px;border-bottom:1px #ccc solid;line-height:25px;margin-bottom:5px;'><img style='display:block;float:left' src='/{$row['gift']}'/><span style='float:left;display:block;padding-left:10px;'>".$gf_langpackage->gf_mess_16.$row['send_time'].$gf_langpackage->gf_mess_17."<b>[{$row['accept_name']}]</b>".$gf_langpackage->gf_mess_18."<br />".$gf_langpackage->gf_zengyan."：$row[msg]</span></div>";
 		}
 	}
 	echo $no_accept;

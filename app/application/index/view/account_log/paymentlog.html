@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title><{:lang('main_title')}></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="<{:config('skin_path')}>/css/mui.min.css" rel="stylesheet" />
+		<style>
+			.text-center{text-align: center;}
+			.text-right{text-align: right;}
+			.layui-flow-more{display: none;}
+		</style>
+	</head>
+
+	<body>
+		<{if !$is_h5_plus }>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title"><{:lang("pay_record")}></h1>
+		</header>
+		<{/if}>
+		
+		<div class="mui-content">
+			<div class="mui-row" id="list">
+			    
+			</div>
+		</div>
+		
+		<!--footer-->
+		<{include file="public:footer" /}>
+		<!--footer end-->
+		<script type="text/javascript" src="<{:config('skin_path')}>/js/jquery.min.js"></script>
+		<script type="text/javascript" src="<{:config('skin_path')}>/js/public.js"></script>
+		<script type="text/javascript" src="<{:config('skin_path')}>/js/function.js"></script>
+		<script type="text/javascript" src="<{:config('skin_path')}>/layui/layui.js"></script>
+		<script type="text/javascript">
+			
+			layui.use(["flow","laytpl","layer"],function(){
+				var flow=layui.flow, laytpl=layui.laytpl, layer=layui.layer, $=layui.jquery;
+				var tpl = $("#tpl-list").html();
+				
+
+				var options = {
+					elem:"#list",
+					isAuto:true,
+					done:function(page,next){
+						var html = "";
+						$.getJSON("/index/account_log/paymentlog/page/"+page+".html",{},function(res){
+							if(res.msg){
+								layer.msg(res.msg);
+								setTimeout(function(){
+									window.location.href=res.url;
+								},2000);
+								return false;
+							}
+							laytpl(tpl).render(res,function(_html){
+								html += _html;
+							});
+							next(html, page < res.pages);
+						});
+						
+					}
+				};
+				//加载数据
+				flow.load(options);
+			});
+		</script>
+ 
+
+		<script id="tpl-list" type="text/html">
+			<ul class="mui-table-view">
+			    <li class="mui-table-view-cell">
+			    	<div class="mui-row">
+				    	<div class="mui-col-xs-4">類型</div> 
+				    	<div class="mui-col-xs-4 text-center">金額</div> 
+				    	<div class="mui-col-xs-4 text-right">時間</div>
+				    </div>
+			    </li>
+			
+				{{# layui.each(d.list,function(index,item){ }}
+					<li class="mui-table-view-cell">
+				    	<div class="mui-row">
+					    	<div class="mui-col-xs-4">类型</div> 
+					    	<div class="mui-col-xs-4 text-center">金额</div> 
+					    	<div class="mui-col-xs-4 text-right">时间</div>
+					    </div>
+				    </li>
+			    {{# }); }}
+			</ul>
+		</script>
+	</body>
+</html>

@@ -1,0 +1,338 @@
+.mt2{ margin-top: 2px;}
+.mt5{ margin-top: 5px;}
+.lady-gift{position: relative;}
+body.christmas-pager{background:#fde9ce;margin: 0;}
+/*圣诞节打折*/
+.christmas-title{ display: inline-block; padding-right: 20px;}
+.list-discount{position: absolute;display: inline-block;bottom: 10px;right: -8px;}
+/*限时打折 detail*/
+.christmas-detail{ position: absolute;top: 0;left: 46px;white-space: nowrap;}
+.christmas-detail img{display: inline-block;}
+.delete-price{display: inline-block; text-decoration: line-through;font-size: 12px;white-space: nowrap;}
+.delete-price var{font-size: 12px;padding-left: 0;}
+.detail-price{display: inline-block;text-align: center;margin-left: 5px;}
+/*限时打折--列表*/
+.limitedtime-2{display: inline-block;position: absolute;left: 19px;top: -23px;}
+.delete-price-2{display: inline-block; text-decoration: line-through;font-size: 12px;}
+.delete-price-2 var{font-size: 12px;padding-left: 0;}
+/*我的订单*/
+.delete-price-3{display: inline-block; text-decoration: line-through;font-size: 12px;position: absolute;top: 68px;left: 10px;min-width: 100px;text-align: left;white-space: nowrap;}
+.delete-price-3 var{font-size: 12px;padding-left: 0;}
+.c303030{color:#303030;}
+.c303030 var{color:#303030;}
+.c333{color: #333333;}
+.c333 var{color: #333333;vertical-align: top;} 
+.c999{ color: #999;}
+.c999 var{ color: #999;}
+/*鼠标经过显示优惠提示标签*/
+.tipsshow-box{ position: relative;display: inline-block;}
+.hover-show{ position: absolute;left: 0;top: -35px;display: none;}
+.flowertable tr:hover .hover-show{ display: block;}
+/*金币数字不折行*/
+td.price{ min-width: 50px;}
+/*装饰品-帽子和鹿角*/
+.christmas-adornment.hat{ display: inline-block;width: 46px;height: 63px; background: url(../images/christmas-hat.png) no-repeat;position: absolute;top: -7px;left:-18px;}
+.christmas-adornments.hat{display: inline-block;width: 31px;height: 44px; background: url(../images/christmas-hats.png) no-repeat;position: absolute;top: -6px;left:-12px;}
+.christmas-adornment.antlers{ display: inline-block;width: 55px;height: 37px; background: url(../images/christmas-antlers.png) no-repeat;position: absolute;top: -21px;left:33px;}
+#maincontent_lf .christmas-adornment.antlers{ display: inline-block;width: 55px;height: 37px; background: url(../images/christmas-antlers.png) no-repeat;position: absolute;top: -14px;left:50px;}
+.christmas-adornments.antlers{display: inline-block;width: 42px;height: 29px; background: url(../images/christmas-antlerss.png) no-repeat;position: absolute;top: -16px;left:7px;}
+.christmas-adornmentso.antlers{display: inline-block;width: 42px;height: 29px; background: url(../images/christmas-antlersss.png) no-repeat;position: absolute;top: -11px;left:10px;}
+/*袜子*/
+.christmas-stockings{ margin-left: 10px;}
+.christmas-stockings,.christmas-stockings img{ display: inline-block;width: 164px;height: 196px;font-size: 0;}
+
+/*添加帽子时其他样式影响改*/
+#home_list_box1_lf dt{ overflow: visible;position: relative;}
+#home_list_box1_lf dd{ width: 650px;}
+#home_list_box1_lf dl{padding-top: 19px;}
+.personal-info{padding-top:8px;height: 160px;overflow: visible;}
+.gift-notree-box{ margin-left: 40px;position: relative;}
+.gift-notree-info{margin-left: 40px;margin-top: 50px;min-width: 300px;max-width: 400px;display: inline-block;}
+/*圣诞树*/
+.christmas-trees-index{ width: 720px;height: 374px;margin-top: -10px;margin-bottom: 17px; background: url(../images/trees/christmas-tree-dressUpbg.png) no-repeat;position: relative;}
+.cdt-diswidgets{ display: inline-block;background: url(../images/trees/chrsitmas-widgets.png) no-repeat; position: absolute;}
+.cdt-diswidgets:hover{ display: inline-block;background: url(../images/trees/chrsitmas-able-widgets.png) no-repeat; position: absolute;}
+.cdt-diswidgets.cdt-ling{top: 223px; left:164px;width: 25px;height: 33px;background-position:-164px -223px;}
+.cdt-diswidgets.cdt-ling{top: 223px; left:164px;width: 26px;height: 40px;background-position:-108px -139px;}
+
+.cdt-diswidgets.cdt-circle{top: 141px; left:144px;width: 58px;height: 64px;background-position:-144px -141px;}
+.cdt-diswidgets.cdt-grapes{top: 265px; left:115px;width: 52px;height: 35px;background-position:-115px -265px;}
+.cdt-diswidgets.cdt-socket{top: 92px; left:178px;width: 35px;height: 41px;background-position:-178px -92px;}
+.cdt-diswidgets.cdt-snowman{top: 293px; left:208px;width: 49px;height: 58px;background-position:-70px -388px;}
+.cdt-diswidgets.cdt-snowman1{top: 286px; left:241px;width: 58px;height: 70px;background-position:-241px -286px;}
+.cdt-diswidgets.cdt-ling1{top: 139px; left:108px;width: 24px;height: 37px;background-position:-108px -139px;}
+
+.cdt-diswidgets.cdt-ling2{top: 219px; left:214px;width: 26px;height: 40px;background-position:-214px -219px;}
+.cdt-diswidgets.cdt-crutch{top: 191px; left:118px;width: 28px;height: 46px;background-position:-118px -191px;}
+.cdt-diswidgets.cdt-bell{top: 82px; left:120px;width: 42px;height: 36px;background-position:-120px -82px;}
+.cdt-diswidgets.cdt-bell1{top: 269px; left:181px;width: 36px;height: 45px;background-position:-181px -269px;}
+.cdt-diswidgets.cdt-people{top: 266px; left:36px;width: 104px;height: 79px;background-position:-140px -370px;}
+/*点亮*/
+.cdt-widgets{ display: inline-block;background: url(../images/trees/chrsitmas-able-widgets.png) no-repeat; position: absolute;}
+.cdt-widgets.cdt-ling{top: 223px; left:164px;width: 25px;height: 33px;background-position:-164px -223px;}
+.cdt-widgets.cdt-ling{top: 223px; left:164px;width: 24px;height: 37px;background-position:-108px -139px;}
+
+.cdt-widgets.cdt-circle{top: 141px; left:144px;width: 58px;height: 64px;background-position:-144px -141px;}
+.cdt-widgets.cdt-grapes{top: 265px; left:115px;width: 52px;height: 35px;background-position:-115px -265px;}
+.cdt-widgets.cdt-socket{top: 92px; left:178px;width: 35px;height: 41px;background-position:-178px -92px;}
+.cdt-widgets.cdt-snowman{top: 293px; left:208px;width: 49px;height: 58px;background-position:-70px -388px;}
+.cdt-widgets.cdt-snowman1{top: 286px; left:241px;width: 58px;height: 70px;background-position:-241px -286px;}
+.cdt-widgets.cdt-ling1{top: 139px; left:108px;width: 24px;height: 37px;background-position:-108px -139px;}
+
+.cdt-widgets.cdt-ling2{top: 219px; left:214px;width: 26px;height: 40px;background-position:-214px -219px;}
+.cdt-widgets.cdt-crutch{top: 191px; left:118px;width: 28px;height: 46px;background-position:-118px -191px;}
+.cdt-widgets.cdt-bell{top: 82px; left:120px;width: 42px;height: 36px;background-position:-120px -82px;}
+.cdt-widgets.cdt-bell1{top: 269px; left:181px;width: 36px;height: 45px;background-position:-181px -269px;}
+.cdt-widgets.cdt-people{top: 266px; left:36px;width: 104px;height: 84px;background-position:-140px -370px;}
+
+/*操作区*/
+.christmas-dress-box .christmas-clickbling-box{background:url(../images/trees/christmas-bling.png) no-repeat;width: 398px;height: 245px;position: relative; left:295px;top:110px;}
+.christmas-clickbling-box{background:url(../images/trees/christmas-bling.png);width: 398px;height: 245px;position: relative; }
+.christmas-clickbling-box ul{ width: 100%;height: 100%;overflow: hidden;}
+/*.christmas-clickbling-box li{ position: relative;}*/
+.ccb-widgets {display: inline-block;width: 80px;height: 80px;position: absolute;cursor: pointer;}
+/*.ccb-socket{ left: 336px ; top: 163px;}
+.ccb-crutch{ left: 423px ; top: 163px;}
+.ccb-people{left: 508px ; top: 163px;}
+.ccb-snowman{left: 594px ; top: 163px;}
+.ccb-bell{left: 337px ; top: 257px;}
+.ccb-grapes{left: 424px ; top: 257px;}
+.ccb-ling{left: 508px ; top: 257px;}
+.ccb-circle{left: 595px ; top: 257px;}*/
+.ccb-widgets img:hover
+{
+    transform:scale(1.2,1.2);
+    -ms-transform:scale(1.2,1.2); /* IE 9 */
+    -moz-transform:scale(1.2,1.2); /* Firefox */
+    -webkit-transform:scale(1.2,1.2); /* Safari and Chrome */
+    -o-transform:scale(1.2,1.2); /* Opera */
+    }
+    
+.ccb-socket{ left: 44px ; top: 57px;}
+.ccb-socket img{ position: absolute;top: 13px;left: 23px;}
+
+.ccb-crutch{ left: 129px ; top: 57px;}
+.ccb-crutch img{ position: absolute;top: 13px;left: 23px;}
+
+.ccb-people{left: 214px ; top: 57px;}
+.ccb-people img{ position: absolute;top: 14px;left: 13px;}
+
+.ccb-snowman{left: 300px ; top: 57px;}
+.ccb-snowman img{ position: absolute;top: 15px;left: 17px;}
+
+.ccb-bell{left: 42px ; top: 150px;}
+.ccb-bell img{ position: absolute;top: 18px;left: 19px;}
+
+.ccb-grapes{left: 127px ; top: 150px;}
+.ccb-grapes img{ position: absolute;top: 26px;left: 18px;}
+
+.ccb-ling{left: 214px ; top: 150px;}
+.ccb-ling img{ position: absolute;top: 16px;left: 23px;}
+
+.ccb-circle{left: 300px ; top: 150px;}
+.ccb-circle img{ position: absolute;top: 18px;left: 20px;}
+
+.num-tips{ display: inline-block;width: 30px;height: 27px;position: absolute;top: 6px;right: 1px;font-style: normal;color: #fff;text-align: right;overflow: hidden;text-align: center;}
+.ling-tips{ background-position: 1px 0;}
+.bell-tips{ background-position: -70px 0;}
+.snowman-tips{background-position: -34px 0;}
+/*文字*/
+.christmas-word{ position: absolute;top: 50px;left:250px;}
+.christmas-wordPage img{ vertical-align: middle; }/*活动页面*/
+/*.christmas-word{ position: relative;}*/
+.christmas-word img{ vertical-align: middle;}
+/*.christmas-word-btn{background: url(../images/trees/christmas-send-btn.png) no-repeat; width: 132px; height: 88px;position: absolute;top: 55px;left: 456px;cursor: pointer;}*/
+.christmas-word-btn{position: absolute;top: 60px;left: 425px;cursor: pointer;z-index: 5;}
+.christmas-word-btnPage{background: url(../images/trees/christmas-send-btn.png) no-repeat;width: 132px; height: 88px;cursor: pointer;margin: 0 auto;margin-bottom: -25px;}
+/*圣诞数字*/
+.christmas-num-box{ display: inline-block;}
+.christmas-num{display: inline-block;width: 25px;height: 30px; background: url(../images/trees/christmas-num.png) no-repeat;vertical-align: middle;/*margin: 0 5px;*/font-size: 0;}
+.christmas-taword .christmas-num{display: inline-block;width: 25px;height: 30px; background: url(../images/trees/christmas-num.png) no-repeat;vertical-align: text-bottom;font-size: 0;}
+.christmas-num.cnum0{width: 23px; background-position: -6px -10px;}
+.christmas-num.cnum1{width: 14px;  background-position: -34px -10px;}
+.christmas-num.cnum2{width: 25px;  background-position: -53px -10px;}
+.christmas-num.cnum3{ width: 21px;  background-position: -81px -10px;}
+.christmas-num.cnum4{width: 23px;  background-position: -107px -10px;}
+.christmas-num.cnum5{width: 23px;  background-position: -132px -10px;}
+.christmas-num.cnum6{width: 19px;  background-position: -161px -10px;}
+.christmas-num.cnum7{width: 24px;  background-position: -184px -10px;}
+.christmas-num.cnum8{width: 19px;  background-position: -210px -10px;}
+.christmas-num.cnum9{width: 23px;  background-position: -231px -10px;}
+/*.christmas-num.cnum10{background-position: -119px -53px;width: 40px;}*/
+/*body{background:#fde9ce;}*/
+.w940{width: 940px;}
+.christmas-bg{background:url(../images/trees/christmas-bg.png) no-repeat;}
+.christmas-bg2{background:url(../images/trees/christmas-bgn2.png) no-repeat;}
+/*页面上半部分*/
+.christmas-contBox{margin: 0 auto; position: relative;/*height: 927px;*/}
+/*.christmas-cont1{height: 650px; }*/
+.christmas-cont1-left{display: inline-block; width:429px;height:518px;margin-top: 90px;margin-left: 30px; background:url(../images/trees/christmas-treeBig.png) no-repeat;}
+.christmas-dress-treesb{width: 100%;height: 100%;position: relative;}
+.christmas-cont1-right{display: inline-block;margin-bottom: 70px;vertical-align: bottom;}
+.christmas-word-bbtn{width: 132px;height: 88px;margin: 0 auto;margin-bottom: -30px; cursor: pointer; background:url(../images/trees/christmas-send-btn.png) no-repeat}
+.christmas-bling{background:url(../images/trees/christmas-bling.png);width: 398px;height: 245px;position: relative; /*position: absolute; top:304px;left: 488px;*/}
+.christmas-cont2{position: relative;}
+.christmas-titlec{display: inline-block;width: 75px;height: 113px; position: absolute;left: 0;top:-40px;background: url(../images/trees/christmas-title.png) no-repeat;}
+.christmas-rule-box{margin: 68px 0 20px 88px;  line-height: 18px; font-size: 13px;color: #3a3a3a;/*position: absolute;bottom: 60px;left: 90px;*/}
+.christmas-rule-box td{padding: 10px 10px 10px 0;}
+.christmas-rule-box b{color: #ed7660; vertical-align: top;}
+.ctd-left{white-space: nowrap;}
+.ctd-right{ max-width: 650px;}
+/*页面下半部分*/
+.christmas-contBox2{margin: 0 auto; position: relative;/*overflow: hidden;/*padding-bottom: 40px;*/}
+
+.christmas-title2{display: inline-block;width: 75px;height: 113px; position: absolute;left: 0;top:16px;background: url(../images/trees/christmas-title.png) no-repeat;}
+.christmas-title-word{ font-size: 14px;display: table-cell;color: #ffffff; word-wrap: break-word;vertical-align: middle;width: 75px;height: 75px;padding-top: 40px;text-align: center;}
+.christmas-contb{ /*overflow: hidden;*/}
+/*信息流*/
+.christmas-contb-left{width: 584px; margin-left: 80px;float: left; margin-top: 40px; display: inline-block;text-align: left;}
+.christmas-contb-left #home_list_box1_lf{ width: 580px;padding-left: 10px; }
+/*.christmas-contb-left #home_list_box1_lf a{ color: #ed7660;  }*/
+.christmas-contb-left #home_list_box1_lf .translate_op1_lf,
+.christmas-contb-left #home_list_box1_lf .recomment_op1_lf,
+.christmas-contb-left #home_list_box1_lf .share_title_sun a
+{color: #ed7660; }
+.christmas-contb-left #home_list_box1_lf dd{ width: 500px;}
+.christmas-contb-left #home_list_box1_lf dd dd{ width: 420px;} 
+.christmas-contb-left #home_list_box1_lf dd dd dd{ width: 350px;} 
+.christmas-contb-left  .small-mood-input { margin-left: 0;}
+.christmas-contb-left .mood_submitbox_lq{margin-left: 0}
+ .small-mood-input{ margin-left: 10px;}
+.christmas-contb-right{width:234px; background: #fef4ea;display: inline-block;float: right;margin-right: 20px;padding-bottom: 10px; }
+.christmas-lineT label{display: inline-block; width: 100%; color:#ed7660;font-size: 14px;font-weight: 700;margin-top:30px;text-align: center;}
+.christmas-lineT{display:inline-block; width: 234px;height:81px; background:url(../images/trees/christmas-lineT.png) no-repeat;}
+.christmas-cright-list{width: 212px;border: 1px dashed #f9c988; margin: 0 auto; border-top: 0;}
+.christmas-cright-list li{list-style: none;margin: 10px 0; font-size: 0;}
+
+.christmas-cright-list div{display: inline-block;vertical-align: top;}
+.ccright-list-num{height: 50px; line-height: 50px;width: 45px;text-align: center;font-size: 12px;}
+.ccright-list-nums{display: inline-block;width: 22px;height: 50px;color: #e89a8c;}
+.ccright-list-nums.christmas-rank1{background:url(../images/trees/christmas-rank.png) no-repeat 0 0;color: #fff; }
+.ccright-list-nums.christmas-rank2{background:url(../images/trees/christmas-rank.png) no-repeat -32px 0;color: #fff;   }
+.ccright-list-nums.christmas-rank3{background:url(../images/trees/christmas-rank.png) no-repeat -63px 0; color: #fff;  }
+.ccright-list-img{ vertical-align: bottom;}
+.ccright-list-img img{width: 50px;height: 50px;}
+.ccright-list-detail{width: 95px;margin-left: 8px; font-size: 12px;vertical-align: bottom;text-align: left;}
+.ccright-list-detail a{max-width: 95px; display: block;line-height: 24px;white-space: nowrap;text-overflow:ellipsis;overflow: hidden;color: #000;}
+.ccright-list-detail label{color: #ed7660; line-height: 24px;}
+/*分页按钮*/
+.christmas-page{ text-align: right;width: 100%;margin-top: 20px; margin-bottom: 25px;}
+.christmas-page .cp-left,.christmas-page .cp-right{ display: inline-block;cursor: pointer;background: url(../images/trees/christmas-page.png) no-repeat;width: 7px;height: 12px;}
+.christmas-page .cp-left{ background-position: 0 0;margin-right: 25px; }
+.christmas-page .cp-left.disable{ background-position: 0 -13px; cursor: default; }
+.christmas-page .cp-right{background-position: -11px 0; margin-right: 23px;}
+.christmas-page .cp-right.disable{background-position: -11px -13px; cursor: default; }
+/*活动页面大圣诞树*/
+/*灰色暗图标*/
+.cdtb-diswidgets{display: inline-block; background: url('../images/trees/chrsitmas-widgetsbig.png') no-repeat;position:absolute; }
+.cdtb-diswidgets:hover{display: inline-block; background: url('../images/trees/chrsitmas-able-widgetsbig.png') no-repeat;position:absolute; }
+.cdtb-diswidgets.cdtb-bell {top:85px;left:142px;width:62px;height:59px;background-position: 0px 0px;}
+.cdtb-diswidgets.cdtb-bell1 {top:374px;left:236px;width:61px;height:77px;background-position: 0px -61px;}
+.cdtb-diswidgets.cdtb-circle {top:178px;left:177px;width:96px;height:99px;background-position: 0px -140px;}
+.cdtb-diswidgets.cdtb-crutch {top:255px;left:135px;width:47px;height:72px;background-position: 0px -241px;}
+.cdtb-diswidgets.cdtb-grapes {top:373px;left:136px;width:76px;height:50px;background-position: 0px -315px;}
+.cdtb-diswidgets.cdtb-ling {top:306px;left:212px;width:40px;height:52px;background-position: 0px -367px;}
+.cdtb-diswidgets.cdtb-ling {top:306px;left:212px;width:39px;height:58px;background-position: 0px -421px;}
+
+.cdtb-diswidgets.cdtb-ling1 {top:174px;left:120px;width:39px;height:58px;background-position: 0px -421px;}
+.cdtb-diswidgets.cdtb-ling2 {top:301px;left:292px;width:42px;height:62px;background-position: 0px -481px;}
+.cdtb-diswidgets.cdtb-people {top:368px;left:0px;width:167px;height:129px;background-position: 0px -545px;}
+.cdtb-diswidgets.cdtb-snowman {top:415px;left:283px;width:79px;height:93px;background-position: 0px -676px;}
+.cdtb-diswidgets.cdtb-snowman1 {top:396px;left:330px;width:99px;height:120px;background-position: 0px -771px;}
+.cdtb-diswidgets.cdtb-socket {top:101px;left:235px;width:53px;height:62px;background-position: 0px -893px;}
+/*彩色图标*/
+.cdtb-widgets{display: inline-block; background: url('../images/trees/chrsitmas-able-widgetsbig.png') no-repeat;position: absolute;}
+.cdtb-widgets.cdtb-bell {top:85px;left:142px;width:62px;height:59px;background-position: 0px 0px;}
+.cdtb-widgets.cdtb-bell1 {top:374px;left:236px;width:61px;height:77px;background-position: 0px -61px;}
+.cdtb-widgets.cdtb-circle {top:178px;left:177px;width:96px;height:99px;background-position: 0px -140px;}
+.cdtb-widgets.cdtb-crutch {top:255px;left:135px;width:47px;height:72px;background-position: 0px -241px;}
+.cdtb-widgets.cdtb-grapes {top:373px;left:136px;width:76px;height:50px;background-position: 0px -315px;}
+.cdtb-widgets.cdtb-ling {top:306px;left:212px;width:40px;height:52px;background-position: 0px -367px;}
+.cdtb-widgets.cdtb-ling {top:306px;left:212px;width:39px;height:58px;background-position: 0px -421px;}
+
+.cdtb-widgets.cdtb-ling1 {top:174px;left:120px;width:39px;height:58px;background-position: 0px -421px;}
+.cdtb-widgets.cdtb-ling2 {top:301px;left:292px;width:42px;height:62px;background-position: 0px -481px;}
+.cdtb-widgets.cdtb-people {top:368px;left:0px;width:167px;height:129px;background-position: 0px -545px;}
+.cdtb-widgets.cdtb-snowman {top:415px;left:283px;width:79px;height:93px;background-position: 0px -676px;}
+.cdtb-widgets.cdtb-snowman1 {top:396px;left:330px;width:99px;height:120px;background-position: 0px -771px;}
+.cdtb-widgets.cdtb-socket {top:101px;left:235px;width:53px;height:62px;background-position: 0px -893px;}
+.christmas-trees-index #gift_list_index_lf .gift_box_lf:hover {
+    border: none;
+}
+
+/*t弹窗*/
+.gift-tree-box .gift_img {float: none;margin: 0 auto;}
+.gift-tree-box table{ min-width: 500px;text-align: center;}
+.tree-done-info{ padding: 10px 0;}
+/*他人主页*/
+.chirstmas-ta{ width: 580px;height: 120px;background: url(../images/trees/christmas-taindex.png) no-repeat;margin: 25px auto;position: relative;}
+.christmas-taword{ position: absolute;top: 20px;left: 30px;}
+.christmas-taword img{ vertical-align: middle;}
+.chc-num{ position: absolute;top: 24px; left:156px;}
+.chirstmas-ta .christmas-word-btn{ top: 33px;left: 110px;}
+.gift-notree-box .blue_submitbtn1_lq{ border-radius: 0;margin-top: 20px;margin-left: 20px;} 
+
+/*page*/
+.christmas-page-bottom{ clear: both;margin: 0 auto;padding-top: 25px;}
+.christmas-page-bottom #bottom_lq {background-color: #fde9ce}
+.christmas-page-bottom #bottom_lq .width980_lq{ width: 940px;background: #fde9ce;border-top:none; }
+.christmas-page-bottom .copy_right_lq a{ color: #ed7660; }
+
+.christmas-dress-trees span:hover{transform:rotate(15deg);}
+.christmas-dress-treesb span:hover{transform:rotate(15deg);}
+/*已装扮晃动*/
+.christmas-dress-treesb span.active,.christmas-dress-trees span.active {
+  /*  transition: 1s;transform:rotate(15deg);*/
+    -webkit-animation-name: move;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-direction: normal;
+    -webkit-animation-fill-mode: none;
+    -webkit-animation-play-state: initial;
+    
+    animation-name: move;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;/*infinite;*/
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: initial;
+                               } 
+                              
+@keyframes  move
+{
+      0%{
+            transform: rotate(15deg);
+            -webkit-transform: rotate(15deg);
+    }
+    50%{
+           transform: rotate(-15deg);
+           -webkit-transform: rotate(-15deg);
+    }
+    100%{
+            transform: rotate(15deg);
+       -webkit-transform: rotate(15deg);
+    }
+    }
+    
+@-webkit-keyframes  move{
+    0%{
+       transform: rotate(15deg);
+       -webkit-transform: rotate(5deg);
+    }
+    50%{
+      transform: rotate(-15deg);
+      -webkit-transform: rotate(-15deg);
+    }
+    100%{
+        transform: rotate(15deg);
+        -webkit-transform: rotate(15deg);
+    }
+}
+.cdt-diswidgets:hover{}
+.search_icon .checkBt.christmas-search-icon{ margin-top: 5px;}
+.zengyan.christmas-z{ height: 60px;}
+.christmas-blueColor{ color: #2d57a1;}

@@ -1,0 +1,12 @@
+#topbar_lq{
+    background: #9b74eb;
+    box-shadow: 0 0 4px #333;
+}
+.gold_list #button,body input[type='submit']{
+    border-radius: 3px;
+    padding:10px;
+    background: #9b74eb;
+    min-width:150px;
+    height: auto;
+    line-height: auto;
+}

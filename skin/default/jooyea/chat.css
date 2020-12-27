@@ -1,0 +1,59 @@
+﻿
+#head{width:1420px;height:46px;background-image:url(../image/head.png);background-repeat:repeat-x;position:relative;margin:0 auto;padding:0px;}
+#head .logo1{width:154px;height:45px;margin-left:210px;position:absolute;}
+#head .logo2{width:31px;height:31px;margin-left:1005px;position:absolute;margin-top:8px;}
+#head a{width:40px;height:12px;font-size:14px;font-weight:bold;color:#fff;margin-left:1041px;position:absolute;margin-top:13px;text-align:center;}
+#head .oprate{width:120px;height:15px;font-size:12px;color:#FEFFFF;margin-left:1090px;position:absolute;margin-top:16px;cursor:pointer;display:block;}
+#head .oprate ul li{width:30px;height:15px;margin-right:8px;float:left; list-style-type:none;}
+#center1{width:1000px;height:auto;margin:0 auto;}
+#center1 .pic{width:1000px;height:106px;margin-top:30px;}
+#center1 .pic a{width:237px;height:106px;margin-right:6px;float:left;}
+#center1 .pic a img{border-width:0px;}
+#best{width:980px;height:300px;margin:40px 0 0 0;}
+#best .title{width:100px;height:35px;float:left;}
+#best .title img{width:24px;height:35px;float:left;}
+#best .title h1{font-size:18px;font-weight:bold;font-family:楷体;padding-top:8px;}
+#best .menu{width:550px;height:35px;font-size:14px;float:left;margin-left:35px;text-align:center;}
+#best .menu ul li{cursor:pointer;width:100px;height:30px;padding-top:9px;float:left;display:block;}
+#best .menu ul .selected{font-size:16px;font-weight:bold;}
+#best hr{width:99%;background-color:#B0B0B0;height:2px;margin-top:4px;border:1px solid #B0B0B0;}
+#best .box{overflow:hidden;width:968px;height:250px;border:2px solid #B0B0B0;margin:10px 0 0 1px;border-radius:12px;}
+#best .box .display1{width:964px;height:246px;background-color:#E6E2E1;margin:2px 0 0 2px;}
+#best .box .display1 .content{width:964px;height:230px;}
+#best .box .display1 a{font-size:18px;font-weight:bold;font-family:楷体;}
+#best .hide{display:none;}
+.clear{clear:both;overflow:hidden;}
+#service{width:980px;height:490px;margin:40px 0 0 0;}
+#service .title{width:120px;height:35px;float:left;}
+#service .title img{width:34px;height:35px;float:left;}
+#service .title h1{font-size:18px;font-weight:bold;font-family:楷体;padding-top:8px;}
+#service hr{width:99%;background-color:#B0B0B0;height:2px;margin-top:4px;border:1px solid #B0B0B0;}
+#service .content{width:980px;height:450px;font-size:12px;}
+#service .content table{border-width:0px;font-size:12px;text-align:center;margin-top:0px;}
+#service .content td{width:190px;border-right:1px dashed #E6E2E1;}
+#service .content td hr{width:96%;color:#E6E2E1;height:0px;}
+#service .content td img{margin-bottom:-8px;}
+#problem{width:980px;height:350px;margin:0px 0 0 0;}
+#problem .title{width:120px;height:40px;float:left;}
+#problem .title img{width:30px;height:40px;float:left;}
+#problem .title h1{font-size:18px;font-weight:bold;font-family:楷体;padding-top:8px;}
+#problem .menu2{width:550px;height:35px;font-size:14px;float:left;margin-left:35px;text-align:center;}
+#problem .menu2 ul li{cursor:pointer;width:100px;height:30px;padding-top:9px;float:left;display:block;}
+#problem .menu2 ul .selected{font-size:16px;font-weight:bold;}
+#problem hr{width:99%;background-color:#B0B0B0;height:2px;margin-top:4px;border:1px solid #B0B0B0;}
+#problem .content{overflow:hidden;width:980px;height:310px;font-size:12px;margin:5px 0 0 40px;}
+#problem .content .index table{border-width:0px;font-size:12px;text-align:left;}
+#problem .hide{display:none;}
+#user{width:980px;height:250px;margin:40px 0 0 0;}
+#user .title{width:120px;height:25px;float:left;}
+#user .title img{width:23px;height:24px;float:left;}
+#user .title h1{font-size:18px;font-weight:bold;font-family:楷体;padding-top:2px;}
+#user hr{width:99%;background-color:#B0B0B0;height:2px;margin-top:4px;border:1px solid #B0B0B0;}
+#user .content{width:980px;height:220px;font-size:12px;}
+#user .content table{border-width:0px;font-size:12px;text-align:center;margin-top:0px;}
+#user .content td{width:190px;border-right:1px dashed #E6E2E1;}
+#user .content td hr{width:96%;color:#E6E2E1;height:0px;}
+#user .content td img{margin-bottom:-6px;}
+#footer{background-color:#E4E2E3;width:1420px;height:50px;font-size:12px;font-weight:bold;}
+#footer p{margin:30px 0px 0 120px; padding-top: 20px;}
+    

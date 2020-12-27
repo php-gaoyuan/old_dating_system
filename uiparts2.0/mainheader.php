@@ -13,6 +13,7 @@ $horn_list = $dbo->getRs($sql);
 $sql = "select user_sex,is_txrz,is_pass from wy_users where user_id='$user_id' ";
 $u_sex_txrz = $dbo->getRow($sql);
 ?>
+<link rel="stylesheet" href="/skin/gaoyuan/css/theme.css">
 <div id="topbar_lq">
     <div class="width980_lq">
         <h1 style="padding-top:0 !important;">

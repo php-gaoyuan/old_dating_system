@@ -63,17 +63,11 @@ if ($tg == 'invite') {
                                     echo "繁體中文";
                                 }elseif($_COOKIE['lp_name'] == 'han'){
                                     echo "한국어";
-                                }elseif($_COOKIE['lp_name'] == 'e'){
-                                    echo "русский";
-                                }elseif($_COOKIE['lp_name'] == 'de'){
-                                    echo "Deutsch";
-                                }elseif($_COOKIE['lp_name'] == 'xi'){
-                                    echo "Español";
                                 }elseif($_COOKIE['lp_name'] == 'ri'){
                                     echo "日本語";
                                 }
                             }else{
-                                echo "English";
+                                echo "繁體中文";
                             }
                         ?>
                     </dd>
@@ -242,7 +236,7 @@ if ($tg == 'invite') {
             </div>
         </div>
         <div class="bottom" style="height:auto;">
-            <script type="text/javascript" src="https://www.wshtmltool.com/Get_info.js?mid=600864&corp=missinglovelove"></script>
+            <script type="text/javascript" src="https://www.wshtmltool.com/Get_info.js?mid=600880&corp=missinglovelove"></script>
             <center><script>document.write(copy_right_logo);</script></center>
             <p>Copyright © <script>var myDate = new Date();document.write(myDate.getFullYear());</script>
                 <script>document.write(copy_right_company);</script>

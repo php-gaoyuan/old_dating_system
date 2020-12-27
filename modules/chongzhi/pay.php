@@ -14,7 +14,7 @@ $uname = get_args('uname');
 limit_time($limit_action_time);
 $friends = Api_Proxy("pals_self_by_paid", "pals_name,pals_id,pals_ico");
 $userinfo = Api_Proxy("user_self_by_uid", "*", $user_id);
-$info = "<font color='#ce1221' style='font-weight:bold;'>" . $er_langpackage->er_currency . "</font>：" . $userinfo['golds'];
+$info = "<font style='font-weight:bold;color:#fff;'>" . $er_langpackage->er_currency . "</font>：" . $userinfo['golds'];
 if ($userinfo['user_group'] > 1) {
 	$groups = $dbo->getRow("select endtime from wy_upgrade_log where mid='$user_id' and state='0' order by id desc limit 1");
 	//print_r($groups);
@@ -62,6 +62,7 @@ if ($uid) {
 
 
 <link rel="stylesheet" type="text/css" href="skin/<?php echo $skinUrl; ?>/css/iframe.css"/>
+<link rel="stylesheet" type="text/css" href="skin/gaoyuan/css/theme.css"/>
 <script src="skin/default/js/jooyea.js"></script>
 <SCRIPT src="servtools/ajax_client/ajax.js"></SCRIPT>
 <script src="servtools/dialog/zDrag.js"></script>
@@ -80,17 +81,19 @@ if ($uid) {
 </script>
 <body>
 
-
+<style>
+    .gold_list label img{width:18px;margin:0;}
+</style>
 <div class="tabs">
     <ul class="menu">
         <li class="active"><a href="modules2.0.php?app=user_pay"><?php echo $er_langpackage->er_recharge; ?></a></li>
         <li><a href="modules2.0.php?app=user_upgrade"><?php echo $er_langpackage->er_upgrade; ?></a></li>
-        <li><a href="modules2.0.php?app=user_consumption" ><?php echo $er_langpackage->er_consumption_log; ?></a></li>
-        <!--        <li><a href="modules2.0.php?app=user_introduce">--><?php //echo $er_langpackage->er_introduce; ?><!--</a></li>-->
+        <!--<li><a href="modules2.0.php?app=user_consumption" ><?php echo $er_langpackage->er_consumption_log; ?></a></li>
+               <li><a href="modules2.0.php?app=user_introduce">--><?php //echo $er_langpackage->er_introduce; ?><!--</a></li>-->
         <!--<li><a href="modules2.0.php?app=user_help"><?php echo $er_langpackage->er_help; ?></a></li>-->
     </ul>
 </div>
-<div class="tabs" style="border:1px solid #ce1221;text-align:left;background:#F5F5B9;padding-left:15px;line-height:45px;margin-top:20px;">
+<div class="tabs" style="border:1px solid #9b74eb;text-align:left;background:#9b74eb;color:#fff;padding-left:15px;line-height:45px;margin-top:20px;">
     <?php echo $info; ?>
 </div>
 <div class="feedcontainer">
@@ -122,42 +125,42 @@ if ($uid) {
                 <div class="gold_list">
                     <label>
                         <input name="gold" type="radio" value="30" onclick="getdollar(this,'radio')"/>
-                        <img src="/template/main/ico/gold-icon.png" style="width:40px;margin:0;" />
+                        <img src="/skin/gaoyuan/images/svg/gold.svg" />
 						<?php echo $er_langpackage->er_20jinbi; ?>
                     </label>
                 </div>
                 <div class="gold_list">
                     <label>
                         <input name="gold" type="radio" value="50" onclick="getdollar(this,'radio')"/>
-                        <img src="/template/main/ico/gold-icon.png" style="width:40px;margin:0;" />
+                        <img src="/skin/gaoyuan/images/svg/gold.svg" />
 						<?php echo $er_langpackage->er_50jinbi; ?>
                     </label>
                 </div>
                 <div class="gold_list">
                     <label>
                         <input name="gold" type="radio" value="100" onclick="getdollar(this,'radio')"/>
-                        <img src="/template/main/ico/gold-icon.png" style="width:40px;margin:0;" />
+                        <img src="/skin/gaoyuan/images/svg/gold.svg" />
 						<?php echo $er_langpackage->er_100jinbi; ?>
                     </label>
                 </div>
                 <div class="gold_list">
                     <label>
                         <input name="gold" type="radio" value="200" onclick="getdollar(this,'radio')" checked="checked"/>
-                        <img src="/template/main/ico/gold-icon.png" style="width:40px;margin:0;" />
+                        <img src="/skin/gaoyuan/images/svg/gold.svg" />
 						<?php echo $er_langpackage->er_200jinbi; ?>
                     </label>
                 </div>
                 <div class="gold_list">
                     <label>
                         <input name="gold" type="radio" value="500" onclick="getdollar(this,'radio')"/>
-                        <img src="/template/main/ico/gold-icon.png" style="width:40px;margin:0;" />
+                        <img src="/skin/gaoyuan/images/svg/gold.svg" />
 						<?php echo $er_langpackage->er_500jinbi; ?>
                     </label>
                 </div>
                 <div class="gold_list">
                     <label>
                         <input name="gold" type="radio" value="1000" onclick="getdollar(this,'radio')"/>
-                        <img src="/template/main/ico/gold-icon.png" style="width:40px;margin:0;" />
+                        <img src="/skin/gaoyuan/images/svg/gold.svg" />
 						<?php echo $er_langpackage->er_1000jinbi; ?>
                     </label>
                 </div>
@@ -177,12 +180,11 @@ if ($uid) {
                     </span>
                 </div>
                 <div class="gold_list" style="margin-top:20px;">
-                    <label><input name="pay_type" type="radio" value="lianyin" checked="checked"/><img
+                    <label><input name="pay_method" type="radio" value="lianyin2" checked="checked"/><img
                                 src="/skin/<?php echo $skinUrl; ?>/images/vml.png"
                                 style="width:220px;vertical-align:middle;"/>&nbsp;&nbsp;</label>
-                    <!--<label><input name="pay_type" type="radio" value="yingfu"/><img-->
-                    <!--            src="/skin/<?php echo $skinUrl; ?>/images/fuHui.png"-->
-                    <!--            style="width:220px;vertical-align:middle;"/>&nbsp;&nbsp;</label>-->
+                    <label><input name="pay_method" type="radio" value="lianyin" />
+                        <img src="/skin/<?php echo $skinUrl; ?>/images/vm.png" style="width:220px;vertical-align:middle;"/>&nbsp;&nbsp;</label>
                 </div>
 
                 <div class="gold_list">

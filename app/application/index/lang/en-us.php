@@ -178,7 +178,8 @@
 
     'user_cash' => 'Cash',
 
-    'gift shop' => 'Gift shop',
+    //'gift shop' => 'Gift shop',
+    'gift shop' => 'Virtual Gift',
 
     'real gift' => 'Real gift',
 

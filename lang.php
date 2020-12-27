@@ -29,5 +29,4 @@ if (preg_match("/zh-c/i", $lang)) {
 
 } else {
     $langPackagePara = "fanti"; //英语
-
 }

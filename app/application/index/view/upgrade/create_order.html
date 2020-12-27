@@ -81,20 +81,20 @@
 				<div class="mui-card-content">
 					<div class="mui-input-row mui-radio mui-left" style="margin:10px 0;">
 					    <label for="lianyin">
-					    <input name="pay_type" type="radio" value="lianyin" id="lianyin" checked style="margin-top:15px;">
-						<img src="<{:config('skin_path')}>/images/vml.png" alt="lianyin" class="pay_type">
+					    <input name="pay_method" type="radio" value="lianyin2" id="lianyin2" checked style="margin-top:15px;">
+						<img src="<{:config('skin_path')}>/images/vml.png">
 						</label>
 					</div>
-					<!--<div class="mui-input-row mui-radio mui-left" style="margin:10px 0;">-->
-					<!--	<label for="yingfu">-->
-					<!--	<input name="pay_type" type="radio" value="yingfu" id="yingfu" style="margin-top:15px;">-->
-					<!--		<img src="<{:config('skin_path')}>/images/fuHui.png" alt="lianyin" class="pay_type">-->
-					<!--	</label>-->
-					<!--</div>-->
+					<div class="mui-input-row mui-radio mui-left" style="margin:10px 0;">
+						<label for="lianyin">
+							<input name="pay_method" type="radio" value="lianyin" id="lianyin" style="margin-top:15px;">
+							<img src="<{:config('skin_path')}>/images/vm.png">
+						</label>
+					</div>
 					<div class="mui-input-row mui-radio mui-left" style="margin:10px 0;">
 						<label for="gold">
-						<input name="pay_type" type="radio" value="gold" id="gold" style="margin-top:22px;">
-							<img src="<{:config('skin_path')}>/images/gold-icon.png" alt="lianyin" class="pay_type" style="vertical-align: middle;">
+						<input name="pay_method" type="radio" value="gold" id="gold" style="margin-top:22px;">
+							<img src="<{:config('skin_path')}>/images/gold-icon.png" style="vertical-align: middle;">
 							<span style="font-size:1.3rem;">$<{$balance}></span>
 						</label>
 					</div>
@@ -110,7 +110,7 @@
 					var money = $("#money").text();
 					var to_user = $("input[name='to_user']:checked").val();
 					var friend = $("input[name='friend']").val();
-					var pay_type = $("input[name='pay_type']:checked").val();
+					var pay_method = $("input[name='pay_method']:checked").val();
 					if(to_user == "2" && friend == ""){
 						$("input[name='friend']").focus();
 						alert("<{:lang('friend name no empty')}>");
@@ -120,11 +120,11 @@
 						money:money,
 						to_user:to_user,
 						friend:friend,
-						pay_type:pay_type
+						pay_method:pay_method
 					};
 					$.post("<{:url('upgrade/create_pay')}>",data,function(res){
 						if(res.msg){
-							alert(res.msg);
+							if(res.msg!='ok')alert(res.msg);
 							window.location.href=res.url;
 						}
 					},"json")

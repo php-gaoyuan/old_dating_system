@@ -10,7 +10,7 @@
 	//变量获得
 	$ses_uid=get_sess_userid();
 	$url_uid=intval(get_argg('user_id')?get_argg('user_id'):$ses_uid);
-	
+
 	$show_type=intval(get_argg('single'));
 	$is_finish=intval(get_argg('is_finish'));
 
@@ -18,40 +18,39 @@
 	$is_self_mode='partLimit';
 	$is_login_mode='';
 	require("foundation/auser_validate.php");
-	
+
 	//数据表定义
 	$t_user_information=$tablePreStr."user_information";
 
 	dbtarget('r',$dbServs);
 	$dbo=new dbex;
-	
+
 	//获取用户自定义属性列表
 	$information_rs=array();
 	$information_rs=userInformationGetList($dbo,'*');
-	
+
 	//用户自定义资料预定义
 	$info_c_rs=array();
 	$info_c_rs=userInformationCombine($dbo,$userid);
-	
+
 	//用户已定义资料
 	/*$user_row = api_proxy("user_self_by_uid","*",$userid);*/
 	$user_row=$dbo->getRow("select * from wy_users where user_id='$url_uid'");
-	
+
 	//性别预定义
 	$woman_c=$user_row['user_sex'] ? "checked=checked":"";
 	$man_c=$user_row['user_sex'] ? "":"checked=checked";
-	
+
 	$county = $dbo->getRs("select id,cname from wy_country");
-	
+
 	$uinfo=$dbo->getRow("select height,weight,income,birth_year,birth_month,birth_day,waimao,sexual,birth_city,country from wy_users where user_id='$ses_uid'");
 	//print_r($county);
-	
+
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
-<base href='<?php echo $siteDomain;?>' />
 <link rel="stylesheet" type="text/css" href="skin/<?php echo $skinUrl;?>/css/iframe.css">
 <script src="servtools/area.js" type="text/javascript"></script>
 <script src="servtools/ajax_client/ajax.js"></script>
@@ -63,167 +62,99 @@
 		var income=document.getElementById('income').value;
 		var height=document.getElementById('height').value;
 		var weight=document.getElementById('weight').value;
-		
-		if(!birth_year || !cou || !income || !height || !weight ){
-			parent.Dialog.alert("<?php echo $u_langpackage->u_fill;?>");
-			return false;
-		}
+		//if(!birth_year || !cou || !income || !height || !weight ){
+		//	parent.Dialog.alert("<?php //echo $u_langpackage->u_fill;?>//");
+		//	return false;
+		//}
 	}
 </script>
 <script type="text/javascript">
-	
 	//定义一个http_request
 	var http_request;
 	//发送请求到服务器[用户名]
 	function sendRequest(){
-	
 			//得到用户选择的是哪个省
 			var sheng=document.getElementById('sheng').value;
-			
-			//window.alert("用户选择的是:"+sheng);
-			
 			//创建ajax引擎.
 			if(window.ActiveXObject){
-				
-			//	window.alert("ie");
 				//说明用户是ie浏览器
 				http_request=new ActiveXObject("Microsoft.XMLHTTP");
 			}else{
-				
-				//window.alert("no ie");
 				//别的浏览器
 				http_request=new XMLHttpRequest();
 			}
-			
-			
 			//如果ajax引擎创建ok
 			if(http_request){
-				
 				var url="user_city.php?sheng="+sheng;
 				//alert(url);
 				http_request.open("GET",url,true);
-				
 				http_request.onreadystatechange=chuli;
-				
 				http_request.send();
-				
 			}
-		
-		
-		
 	}
-	
+
 	//处理函数
 	function chuli(){
-		
 		//成功返回
 		if(http_request.readyState==4){
-			
 			if(http_request.status==200){
-
-
-					
 				//取出结果
 				var cities=http_request.responseXML.getElementsByTagName("city");
-
-				
-				
-				//把返回的城市动态添加到city控件 
+				//把返回的城市动态添加到city控件
 				var mycity=document.getElementById('city');
 				//清空一下select
 				mycity.options.length=0;
 				for(var i=0;i<cities.length;i++){
-					
-					
 					mycity.options[i]=new Option(cities[i].firstChild.data,cities[i].firstChild.data);
-					
 					//window.alert(cities[i].firstChild.data);
 				}
 			}
-			
+
 		}
 	}
-	
-	
-	-->
 </script>
 <script type="text/javascript">
-	
 	//定义一个http_request
 	var http_request;
 	//发送请求到服务器[用户名]
 	function sendProvince(){
-	
 			//得到用户选择的是哪个省
 			var citys=document.getElementById('city').value;
-			
-			//window.alert("用户选择的是:"+citys);
-			
 			//创建ajax引擎.
 			if(window.ActiveXObject){
-				
-			//	window.alert("ie");
 				//说明用户是ie浏览器
 				http_request=new ActiveXObject("Microsoft.XMLHTTP");
 			}else{
-				
-				//window.alert("no ie");
 				//别的浏览器
 				http_request=new XMLHttpRequest();
 			}
-			
-			
+
 			//如果ajax引擎创建ok
 			if(http_request){
-				
 				var url="user_province.php?citys="+citys;
-				//alert(url);
 				http_request.open("GET",url,true);
-				
 				http_request.onreadystatechange=citychuli;
-				
 				http_request.send();
-				
 			}
-		
-		
-		
 	}
-	
+
 	//处理函数
 	function citychuli(){
-		
 		//成功返回
 		if(http_request.readyState==4){
-			
 			if(http_request.status==200){
-
-
-					
 				//取出结果
 				var country=http_request.responseXML.getElementsByTagName("citys");
-
-				
-				//alert(country.length);
-				//把返回的城市动态添加到city控件 
+				//把返回的城市动态添加到city控件
 				var mycity=document.getElementById('country');
-				//alert(mycity.length);
 				//清空一下select
 				mycity.options.length=0;
-				for(var i=0;i<country.length;i++){
-					
-					
+				for(var i=0;i < country.length;i++){
 					mycity.options[i]=new Option(country[i].firstChild.data,country[i].firstChild.data);
-					
-					//window.alert(country[i].firstChild.data);
 				}
 			}
-			
 		}
 	}
-	
-	
-	-->
 </script>
 <style>
 .form_table img{max-width:480px}
@@ -272,21 +203,21 @@
 
 					<td>
 						<div >
-						
+
 							<select onchange="document.getElementById('cou').value=this.value">
 							<?php if($user_row['country']){?>
 							<option value="<?php echo $user_row['country'];?>" checked><?php echo $user_row["country"];?></option>
 							<?php }?>
 							<option value="">-<?php echo $u_langpackage->u_select;?>-</option>
-							
+
 							<?php foreach($county as $c){ ?>
-							
+
 							<option value="<?php echo $c['cname']; ?>"><?php echo $c['cname'];?></option>
 							<?php }?>
 							</select>
 							<input type='hidden' name='country' id="cou" value='<?php echo $uinfo["country"];?>' />
-							
-						
+
+
 						</div>
 					</td>
 				</tr>
@@ -328,11 +259,11 @@
 						<input type="text" class="small-text" name="weight" id="weight" value="<?php echo $uinfo['weight'];?>" />kg
 					</td>
 				</tr>
-				
+
 				<tr>
 					<th><?php echo $u_langpackage->shouru;?></th>
 					<td>
-						
+
 						<select name="income" id="income">
 						<?php if($uinfo['income']){?>
 						<option value="<?php echo $uinfo['income'];?>"><?php echo $uinfo['income'];?></option>
@@ -350,7 +281,7 @@
 						<option value="$800,000 Above">$800,000 Above</option></select>
 					</td>
 				</tr>
-				
+
 				<!--
 				<tr style="display:none;">
 					<th><?php echo $u_langpackage->u_res;?></th>
@@ -389,9 +320,9 @@
 						</div>
 					</td>
 				</tr>
-				
-			
-			
+
+
+
 				<tr>
 					<th><?php echo $u_langpackage->u_outline;?></th>
 					<td><textarea id="msContent" maxlength="150" name="gerenjieshao" ><?php echo $user_row['gerenjieshao'];?></textarea></td>
@@ -404,7 +335,7 @@
 			allowFileManager : true,
 			width : '380px',
 			height:'200px',
-			items : [ 
+			items : [
 				'fontname', 'fontsize', '|','forecolor','hilitecolor','|',   'bold',
 				'italic', 'underline', '|', 'emoticons',  'image',
 			],
@@ -432,18 +363,18 @@
 			<tr><th><?php echo $u_langpackage->u_sex;?>：</th><td><?php echo $man_c ? $u_wen : $u_man;?></td></tr>
 			<tr><th><?php echo $u_langpackage->u_bird;?>：</th><td><?php echo $user_row["birth_year"]&&$user_row["birth_month"]&&$user_row["birth_day"]?$user_row["birth_year"].$u_langpackage->u_year.$user_row["birth_month"].$u_langpackage->u_month.$user_row["birth_day"].$u_langpackage->u_day:$u_langpackage->u_set;?></td></tr>
 			<tr><th><?php echo $u_langpackage->u_res;?>：</th><td><?php echo $user_row['country']?$user_row['country']:$u_langpackage->u_set;?></td></tr>
-			<tr><th><?php echo $u_langpackage->waimao;?>：</th><td><?php if($user_row['waimao']==1){echo $u_langpackage->yiban;}elseif($user_row['waimao']==2){echo $u_langpackage->haokan;}elseif($user_row['waimao']==3){echo $u_langpackage->chuzhong;}else{echo $u_langpackage->u_set;}?></td></tr>			<tr><th><?php echo $u_langpackage->xingquxiang;?>：</th><td><?php if($user_row['sexual']==1){echo $u_langpackage->yixing;}elseif($user_row['sexual']==2){echo $u_langpackage->tongxing;}elseif($user_row['sexual']==3){echo $u_langpackage->shuangxing;}else{echo $u_langpackage->u_set;}?></td></tr>			<tr><th><?php echo $u_langpackage->shengao;?>：</th><td><?php echo $user_row['height']?$user_row['height']:$u_langpackage->u_set;?>cm</td></tr>			<tr><th><?php echo $u_langpackage->tizhong;?>：</th><td><?php echo $user_row['weight']?$user_row['weight']:$u_langpackage->u_set;?>kg</td></tr>			
+			<tr><th><?php echo $u_langpackage->waimao;?>：</th><td><?php if($user_row['waimao']==1){echo $u_langpackage->yiban;}elseif($user_row['waimao']==2){echo $u_langpackage->haokan;}elseif($user_row['waimao']==3){echo $u_langpackage->chuzhong;}else{echo $u_langpackage->u_set;}?></td></tr>			<tr><th><?php echo $u_langpackage->xingquxiang;?>：</th><td><?php if($user_row['sexual']==1){echo $u_langpackage->yixing;}elseif($user_row['sexual']==2){echo $u_langpackage->tongxing;}elseif($user_row['sexual']==3){echo $u_langpackage->shuangxing;}else{echo $u_langpackage->u_set;}?></td></tr>			<tr><th><?php echo $u_langpackage->shengao;?>：</th><td><?php echo $user_row['height']?$user_row['height']:$u_langpackage->u_set;?>cm</td></tr>			<tr><th><?php echo $u_langpackage->tizhong;?>：</th><td><?php echo $user_row['weight']?$user_row['weight']:$u_langpackage->u_set;?>kg</td></tr>
 			<tr><th><?php echo $u_langpackage->shouru;?>：</th><td><?php echo $user_row['income']?$user_row['income']:$u_langpackage->u_set;?></td></tr>
 			<tr>
 				<th><?php echo $u_langpackage->u_outline;?></th>
 				<td><div style="width:300px;border:1px solid #D3D3D3;border-radius:5px;padding:10px;min-height:100px;" ><?php if($user_row['gerenjieshao']){echo $user_row['gerenjieshao'];}else{echo $u_langpackage->u_set;}?></div></td>
 			</tr>
 
-			
-			
+
+
 		</table>
 	<?php }?>
-	
-	
+
+
 </body>
 </html>

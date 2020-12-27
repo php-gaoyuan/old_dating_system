@@ -117,7 +117,7 @@ if(empty($info_rs)){
                         <?php foreach($info_rs as $rs){ $yuanpatchs=explode("|", $rs['yuanpatch']);?>
                         <tr>
                             <td><?php echo $rs['giftname'];?></td>
-                            <td style="text-align:center"><?php if($rs['typeid']==2) echo '普通礼物'; elseif($rs['typeid']==3){echo '高级礼物';}elseif($rs['typeid']==4){echo '真实礼物';} ?></td>
+                            <td style="text-align:center"><?php if($rs['typeid']==1) echo '虚拟礼物'; elseif($rs['typeid']==2){echo '真实礼物';} ?></td>
                             <td style="text-align:center"><img src='/<?php echo $yuanpatchs[0];?>' width=70 height=70/></td>
                             <td style="text-align:center"><?php echo $rs['money'];?></td>
                             <td align="center">

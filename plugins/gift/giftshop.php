@@ -22,11 +22,16 @@ $gf_langpackage=new giftlp;
 //创建系统对数据库进行操作的对象
 $dbo=new dbex();
 dbplugin('r');
+$user_id = get_sess_userid();
+$sql="select is_view_gift from wy_users where user_id='$user_id'";
+$userinfo=$dbo->getRow($sql,"arr");
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="/template/main/jquery-1.7.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="/plugins/gift/Common.js"></script>
 <script type="text/javascript" src="/servtools/dialog/zDrag.js"></script>
 <script type="text/javascript" src="/servtools/dialog/zDialog.js"></script>
@@ -34,10 +39,10 @@ dbplugin('r');
 <style type="text/css">
 #zishu{margin-bottom: -1px;margin-top:0;}
 #zishu li{list-style:none;display:inline-block;}
-#zishu .nav_a a{font-size:14px;text-decoration:none;display:block;background:#03a0d7;color:#fff;border:1px solid #C2D9F2;padding:5px 15px;}
-#zishu .nav_a.active a{color:#03a0d7;background:#fff;margin-top:3px;}
-#gift_list{width: 805px;border:#C2D9F2 solid 1px;margin-bottom:10px;padding:5px;}
-#gift_friends{clear:both;border:1px solid #C2D9F2;position:absolute;display:none;left: 68px;*left: 70px;top: 45px;width: 86%;background:#FFFFFF;}
+#zishu .nav_a a{font-size:14px;text-decoration:none;display:block;background:#9b74eb;color:#fff;border:1px solid #9b74eb;padding:5px 15px;}
+#zishu .nav_a.active a{color:#9b74eb;background:#fff;margin-top:3px;}
+#gift_list{width: 805px;border:#9b74eb solid 1px;margin-bottom:10px;padding:5px;}
+#gift_friends{clear:both;border:1px solid #9b74eb;position:absolute;display:none;left: 68px;*left: 70px;top: 45px;width: 86%;background:#FFFFFF;}
 #gift_info{background:none repeat scroll 0 0 #ce1221;border:1px solid #EBDBA5;margin-bottom:10px;display:none;padding:9px 100px;width:62%;color:#fff;}
 #gift_list .giftbox{width:185px;float:left;text-align:center;font-size:12px;margin-left:7px;height: 210px;}
 #gift_list .giftbox:after{display:block;clear:both;}
@@ -67,9 +72,12 @@ dbplugin('r');
   <tr>
 	<td>
 		<ul id="zishu">
-		  <li class="nav_a active"><a href="javascript:;" onclick="getGifts(4);"><?php echo $gf_langpackage->gf_xn;?></a></li>
-		  <li class="nav_a"><a href="/plugins/gift/gift_box.php"><?php echo $gf_langpackage->gf_putin;?></a></li>
-		  <li class="nav_a"><a href="/plugins/gift/gift_outbox.php"><?php echo $gf_langpackage->gf_putout;?></a></li>
+		  <li class="nav_a active" onclick='$("#zishu li").removeClass("active");$(this).addClass("active");'><a href="javascript:;" onclick="getGifts(1);"><?php echo $gf_langpackage->gf_xn;?></a></li>
+            <?php if($userinfo['is_view_gift']){ ?>
+		  <li class="nav_a" onclick='$("#zishu li").removeClass("active");$(this).addClass("active");'><a href="javascript:;" onclick="getGifts(2);"><?php echo $gf_langpackage->gf_zhenshi;?></a></li>
+            <?php } ?>
+		  <li class="nav_a" onclick='$("#zishu li").removeClass("active");$(this).addClass("active");'><a href="/plugins/gift/gift_box.php"><?php echo $gf_langpackage->gf_putin;?></a></li>
+		  <li class="nav_a" onclick='$("#zishu li").removeClass("active");$(this).addClass("active");'><a href="/plugins/gift/gift_outbox.php"><?php echo $gf_langpackage->gf_putout;?></a></li>
 		</ul>
 		<div id="gift_list"></div>
 	</td>
@@ -78,6 +86,7 @@ dbplugin('r');
 
 <script>
 function getGifts(type, index) {
+
     ajax = new Ajax();
     ajax.getInfo("/plugins/gift/giftshop_list.php?r=<?php echo rand();?>", "post", "get", "type=" + type + "&index=" + index, "gift_list");
 }
@@ -90,7 +99,7 @@ function calcPageHeight(doc) {
 window.onload = function() {
     var height = calcPageHeight(document);
     parent.document.getElementById('ifr').style.height = height + 800 + 'px';
-    getGifts(4);
+    getGifts(1);
 }
 </script>
 </body>

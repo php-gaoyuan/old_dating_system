@@ -57,7 +57,7 @@ if (empty($userinfo["user_ico"])) {
         var layim = layui.layim, form = layui.form, layer = layui.layer;
         //初始化聊天窗口基础配置
         layim.config({
-            title: 'Partying',
+            title: 'MissLove',
             isgroup: false,
             copyright: true,
             //isAudio:true,

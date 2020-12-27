@@ -23,7 +23,7 @@ body {
     width: 100%;
     min-width: 1000px;
     height: 59px;
-    background-color: #4084CF;
+    background-color: #9b74eb;
 }
 
 .head a {
@@ -52,9 +52,9 @@ body {
     font-weight: bold;
     padding: 0 13px;
     outline-style: none;
-    background-color: #43abf2;
+    background-color: #7633ff;
 }
 
 #head_login:hover {
-    background-color: #3acdf2;
+    background-color: #7633ffbf;
 }

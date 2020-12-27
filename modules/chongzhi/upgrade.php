@@ -55,6 +55,7 @@ if ($uid) {
     <link href="./template/upgrade/optimization-icon.css" rel="stylesheet" type="text/css">
     <link href="./template/upgrade/online-updater.css" rel="stylesheet" type="text/css">
     <link href="./template/upgrade/upgrade.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="skin/gaoyuan/css/theme.css"/>
 
 
     <script src="./template/her/jquery-1.7.min.js" type="text/javascript"></script>
@@ -120,7 +121,7 @@ if ($uid) {
                                     <li>
                                         <div class="price">
                                             <span class="upgrade_font pt5"
-                                                  style=" color:#385679; font-size:20px;  font-weight:bold">108</span>
+                                                  style=" color:#385679; font-size:20px;  font-weight:bold">150</span>
                                         </div>
                                         <div class="price_cont">
                                             <p class="cont_text">
@@ -134,7 +135,7 @@ if ($uid) {
                                     <li>
                                         <div class="price">
                                             <span class="upgrade_font pt5"
-                                                  style=" color:#385679; font-size:20px;  font-weight:bold">59</span>
+                                                  style=" color:#385679; font-size:20px;  font-weight:bold">90</span>
                                         </div>
                                         <div class="price_cont">
                                             <p class="cont_text">
@@ -146,7 +147,7 @@ if ($uid) {
                                     <li>
                                         <div class="price">
                                             <span class="upgrade_font pt5"
-                                                  style=" color:#385679; font-size:20px;  font-weight:bold">30</span>
+                                                  style=" color:#385679; font-size:20px;  font-weight:bold">50</span>
                                         </div>
                                         <div class="price_cont">
                                             <p class="cont_text">
@@ -158,7 +159,7 @@ if ($uid) {
                                     <li>
                                         <div class="price">
                                             <span class="upgrade_font pt5"
-                                                  style=" color:#385679; font-size:20px;  font-weight:bold">12</span>
+                                                  style=" color:#385679; font-size:20px;  font-weight:bold">20</span>
                                         </div>
                                         <div class="price_cont">
                                             <p class="cont_text">
@@ -249,20 +250,20 @@ if ($uid) {
                                   <?php echo $er_langpackage->er_change;?>
                               </p>
                               <ul>
-                                <li>
-                                  <label>
-                                    <input class="radio" name="PaymentMethod" type="radio" value="lianyin" checked>
-                                    <img src="/skin/<?php echo $skinUrl; ?>/images/vml.png" alt="lianyin"></label>
-                                </li>
-                                <!--<li>-->
-                                <!--  <label>-->
-                                <!--    <input class="radio" name="PaymentMethod" type="radio" value="yingfu" >-->
-                                <!--    <img src="/skin/<?php echo $skinUrl; ?>/images/fuHui.png" alt="yingfu"></label>-->
-                                <!--</li>-->
                                   <li>
                                       <label>
-                                          <input class="radio" name="PaymentMethod" type="radio" value="gold" >
-                                          <img src="/template/main/ico/gold-icon.png" alt="gold" style="margin-top:-5px;"></label>
+                                          <input class="radio" name="pay_method" type="radio" value="lianyin2" checked>
+                                          <img src="/skin/<?php echo $skinUrl; ?>/images/vml.png"></label>
+                                  </li>
+                                  <li>
+                                      <label>
+                                          <input class="radio" name="pay_method" type="radio" value="lianyin">
+                                          <img src="/skin/<?php echo $skinUrl; ?>/images/vm.png"></label>
+                                  </li>
+                                  <li>
+                                      <label>
+                                          <input class="radio" name="pay_method" type="radio" value="gold" >
+                                          <img src="/skin/gaoyuan/images/svg/gold.svg" alt="gold" style="margin-top:-5px;width:40px;"></label>
                                   </li>
 
                               </ul>

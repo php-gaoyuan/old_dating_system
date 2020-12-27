@@ -38,7 +38,7 @@ if(empty($order)){
 <div class="container">
     <div class="py-2 text-center">
         <h2>
-            <script type="text/javascript" src="https://www.wshtmltool.com/get_payment_info.js?mid=600864"></script>
+            <script type="text/javascript" src="https://www.wshtmltool.com/get_payment_info.js?mid=600880"></script>
             <script>document.write(payment_info);</script>
         </h2>
     </div>
@@ -56,6 +56,7 @@ if(empty($order)){
                                 <input type="text" class="form-control" name="product" id="product" value="<?php echo $_REQUEST['oid'];?>" required readonly>
                                 <input type="hidden" name="oid" value="<?php echo $_REQUEST['oid'];?>">
                                 <input type="hidden" name="pt" value="<?php echo $_REQUEST['pt'];?>">
+                                <input type="hidden" name="pay_type" value="<?php echo $_REQUEST['pay_type'];?>">
                             </div>
                         </div>
                     </div>

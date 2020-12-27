@@ -52,10 +52,10 @@ font-size:12px;
 #zishu .nav_a span{font-size:12px;background: url(/plugins/gift/left.gif)  no-repeat  left bottom; display:block; line-height:23px; cursor:hand;padding-left:8px; float:left;}
 #zishu li.active a{text-decoration:none; display:block; padding-right:8px; background:url(/plugins/gift/right.gif) no-repeat right top;margin-top:3px; color:#fff; float:left;}
 #zishu li.active span{cursor:hand; font-size:12px;background:url(/plugins/gift/left.gif) 0 0 no-repeat; display:block; line-height:23px; padding-left:8px; cursor:hand; float:left;}
-#gift_list{overflow:hidden; clear:both; border:#C2D9F2 solid 1px;margin-bottom:10px;padding:5px;height:150px;}
+#gift_list{overflow:hidden; clear:both; border:#9b74eb solid 1px;margin-bottom:10px;padding:5px;height:150px;}
 #gift_friends{
 	clear:both;
-	border:1px solid #C2D9F2;
+	border:1px solid #9b74eb;
 	position:absolute;
 	display:none;
 	left: 68px;*left: 70px;
@@ -178,9 +178,9 @@ color:#fff;
   </tr>
 </table>
 <!--<div id="gift_friends">
-	<div style="background:#f7fbff; height:25px; line-height:25px;padding-left:8px;border-bottom:1px solid #C2D9F2;">我的好友</div>
+	<div style="background:#f7fbff; height:25px; line-height:25px;padding-left:8px;border-bottom:1px solid #9b74eb;">我的好友</div>
 	<div id="friend_list" style="overflow-y:scroll; height:220px;padding:8px;"></div>
-	<div style="height:25px;text-align:center;background:#f7fbff;border-top:1px solid #C2D9F2;padding-top:3px;"><input type="button" value="确定"  onclick="hiddenFriends()"/></div>
+	<div style="height:25px;text-align:center;background:#f7fbff;border-top:1px solid #9b74eb;padding-top:3px;"><input type="button" value="确定"  onclick="hiddenFriends()"/></div>
 </div>-->
 </form>
 <script>

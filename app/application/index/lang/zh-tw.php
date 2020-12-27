@@ -163,7 +163,7 @@
 
     'user_cash' => '提現',
 
-    'gift shop' => '禮物商城',
+    'gift shop' => '虛擬禮物',
 
     'real gift' => '真實禮物',
     'Virtual Gift' => '虛擬禮物',

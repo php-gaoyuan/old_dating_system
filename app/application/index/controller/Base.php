@@ -5,7 +5,7 @@ use think\Db;
 class Base extends Controller{
 	public $userinfo=[];
 	public function _initialize(){
-		$no_login = ["Recharge","upload_img"];
+		$no_login = ["upload_img"];
 		if(!in_array(request()->controller(), $no_login)){
 			if(!in_array(request()->action(), $no_login)){
 				$user_id=0;
@@ -26,17 +26,16 @@ class Base extends Controller{
 						"user_group"=>$this->userinfo["user_group"],
 						"golds"=>$this->userinfo["golds"],
 					];
-					//p($userinfo);
 					$this->assign("userinfo", json_encode($userinfo));
 				}
+                //$this->get_log_message();
+                $this->insert_online();
 			}
 				
 		}
 		$this->assign("is_h5_plus",is_h5_plus());
 
 		$this->get_lang();
-		$this->get_log_message();
-		$this->insert_online();
 		$this->assign("act",strtolower(request()->controller()));
 	}
 

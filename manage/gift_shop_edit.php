@@ -64,6 +64,16 @@ if($gift_types){
                             </td>
                         </tr>
 
+                        <tr>
+                            <th width="90">礼品类别</th>
+                            <td>
+                                <select name="info_type">
+                                    <option value="1" <?php if($info_type == 1){echo 'selected';} ?>>虚拟礼物</option>
+                                    <option value="2" <?php if($info_type == 2){echo 'selected';} ?>>真实礼物</option>
+                                </select>
+                            </td>
+                        </tr>
+
                          <tr>
                             <th width="90">礼品图片</th>
                             <td>
@@ -84,7 +94,7 @@ if($gift_types){
                             <th width="90"></th>
                             <td>
                                 <input type="submit" class="regular-button" value="<?php echo $submit_str;?>"/>
-                                <input type="hidden" name="info_type" value="4">
+<!--                                <input type="hidden" name="info_type" value="4">-->
                                 <input type="hidden" name="info_sort" value="0">
                             </td>
                         </tr>

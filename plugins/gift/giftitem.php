@@ -32,6 +32,9 @@ $sql="select * from gift_shop where  id='$id'";
 $gifts=$dbo->getRow($sql);
 $yuanpatchs = explode("|", $gifts["yuanpatch"]);
 $patchs = explode("|", $gifts["patch"]);
+if($_COOKIE['lp_name']=='en'){
+    $gifts['giftname'] = $gifts['giftname_en'];
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -73,7 +76,9 @@ ul#small_pic li img{width: 60px;height: 60px;}
 	<div class="giftitem_top">
 		<i></i><span><?php echo $gf_langpackage->gf_xiangqing;?></span><a href="giftshop.php"><?php echo $gf_langpackage->gf_fanhui;?></a>
 	</div>
-	<div class="giftitem_name"><?php echo $gifts['giftname'];?></div>
+	<div class="giftitem_name">
+        <?php echo $gifts['giftname'];?>
+    </div>
 	<div style="float: left;">
 	<div class="giftitem_img" id="enlarge" src="/<?php echo $yuanpatchs[0];?>">
 		<img src="/rootimg.php?src=/<?php echo $yuanpatchs[0];?>&h=256&w=256&zc=1" />

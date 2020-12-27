@@ -1,7 +1,6 @@
 .login-body{
 	width: 100%;
-
-	background: url("../images/logo-bg.jpg") 0 0 no-repeat;
+	background: url("../images/logo-bg.jpg") 0 0 no-repeat #000;
 	background-size: 100%;
 	padding-top: 70%;
 }

@@ -12,8 +12,8 @@ class Index extends Controller
         
         $lang = cookie("think_var");
         if(empty($lang)){
-            $lang = "en-us";
-            cookie("think_var","en-us");
+            $lang = "zh-tw";
+            cookie("think_var",$lang);
             return $this->redirect("index/index");
         }
         $this->assign("lang",lang($lang));

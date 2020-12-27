@@ -1,9 +1,10 @@
 <?php
 namespace payment;
+use app\common\model\Balance;
 class Lianyin{
     protected $server_url = "https://gateway.sslonlinepay.com/Payment/payConsole.aspx";
-    protected $mch_id = '600864';
-    protected $hashkey = 'hCmThCjUpLRI6nmimJaQalckHEdzU7Nca8OJ8tce1b7HrAiZQTEi84t4zcmMzTaq7OI7HLi1G5Y7nE2gvmRbCFdfPSj6gzOibQJL1kreKMKdfuR4igqmb7WBLCrYCkVg';
+    protected $mch_id = '600880';
+    protected $hashkey = 'uHj1dRlO28ihan1wV0cjsFxrE2kcVXl6CH2writiPnlGD3UgJBwqkvnYj1xkHi1fWlNCuFeMH2Ceu0WJhdCuA3WhtemzUiJGufSsqsVewTSq1iDseWcDPHN2xFiqsO1y';
 
     public function pay($order,$pay_method=1)
     {
@@ -11,7 +12,7 @@ class Lianyin{
         if($pay_method==2){
             $this->server_url="https://gateway.sslonlinepay.com/Payment/payConsoleSingle.aspx";
         }
-        //p($this->server_url);
+        //print_r($this->server_url);exit;
         $card_number = "";
         $exp_year = "";
         $exp_month = "";
@@ -143,7 +144,7 @@ class Lianyin{
 
 
             $str = "<br>支付网关反馈信息如下：<br>商户号：" . $merchant_id . "<br>商户订单号：" . $merch_order_ori_id . "<br>商户订单号：" . $merch_order_id . "<br>交易币种：" . $price_currency . "<br>交易金额：" . $price_amount . "<br>签名：" . $signature . "<br>系统流水号：" . $order_id . "<br>商户原始订单号：" . $order_id . "<br>订单状态：" . $status . "<br>payment_url：" . $payment_url . "<br>check_bill_name_status：" . $check_bill_name_status . "<br>返回信息：" . $message . "<br>allow1：" . $allow1;
-            file_put_contents("lianyin_wap_return.log", var_export($str, 1) . "\n\n", FILE_APPEND);
+            file_put_contents("lianyin_wap_return.log", date("Y-m-d H:i:s").PHP_EOL.var_export($str, 1) .PHP_EOL, FILE_APPEND);
             //echo $str;exit;
 
             if ($status == "T" || $status == 'T') {
@@ -168,69 +169,70 @@ class Lianyin{
                     'out_trade_no'=>$order_id,
                     'err_msg'=>$message
                 );
-                return $data;
+                (new Balance)->where(['ordernumber'=>$merch_order_ori_id])->update(['pay_msg'=>$message]);
+                return $message;
             }
         } else { // 支付网关反馈的参数为空时
             //echo "支付网关返回的参数为空，请联系商家，请不要重复提交。";
-            echo 'The parameters returned by the payment gateway are empty. Please contact the merchant and do not submit them repeatedly.';
+            return 'The parameters returned by the payment gateway are empty. Please contact the merchant and do not submit them repeatedly.';
         }
     }
 
-    public function notify(){
-        if (!empty($_GET) && empty($_POST)) {
-            $_POST = $_GET;
-        }
-        unset($_GET);
-        if (empty($_POST)) {
-            echo $this->return_js_msg("Data error!");
-        }
-        $_GET = $_POST;
-        $merchant_id = $_GET ['merchant_id'];
-        $merch_order_id = $_GET ['merch_order_id'];
-        $price_currency = $_GET ['price_currency'];
-        $price_amount = $_GET ['price_amount'];
-        $merch_order_ori_id = $_GET ['merch_order_ori_id'];
-        $order_id = $_GET ['order_id'];
-        $status = $_GET ['status'];
-        $message = $_GET ['message'];
-        $signature = $_GET ['signature'];
-        $this->pay_logs($_GET,"lianyin2/notify");
-
-        //先记录返回的错误信息
-        M('order_record')->where(array("order_sn" => $merch_order_ori_id))->save(array("back_msg"=>$message));
-
-
-        $strVale = $this->hashkey . $merchant_id . $merch_order_id . $price_currency . $price_amount . $order_id . $status;
-        $getsignature = md5($strVale);
-        if ($getsignature != $signature) {
-            echo $this->return_js_msg("Signature error!");
-        }
-        //根据得到的数据  进行相对应的操作
-        if ($status == 'Y') {
-            $data = array(
-                'status' => $status,
-                'order_sn' => $merch_order_ori_id,
-                'amount' => $price_amount,
-                'payer_id' => $order_id,
-                'err_msg' => $message
-            );
-            $res = D("Order")->notify($data);
-            echo $this->return_js_msg($res);
-        } else{
-            echo 'ISRESPONSION!';
-        }
-    }
-
-    public function fail_url(){
-        header("Content-type:text/html; charset=utf-8");
-        $data = $_GET;
-        $this->pay_logs($data,"lianyin2/fail");
-        //先记录返回的错误信息
-        $merch_order_ori_id = $data["merch_order_ori_id"];
-        $message = $data["message"];
-        M('order_record')->where(array("order_sn" => $merch_order_ori_id))->save(array("back_msg" => $message));
-        echo $this->return_js_msg("Pay Fail:".$_GET["message"]);
-    }
+//    public function notify(){
+//        if (!empty($_GET) && empty($_POST)) {
+//            $_POST = $_GET;
+//        }
+//        unset($_GET);
+//        if (empty($_POST)) {
+//            echo $this->return_js_msg("Data error!");
+//        }
+//        $_GET = $_POST;
+//        $merchant_id = $_GET ['merchant_id'];
+//        $merch_order_id = $_GET ['merch_order_id'];
+//        $price_currency = $_GET ['price_currency'];
+//        $price_amount = $_GET ['price_amount'];
+//        $merch_order_ori_id = $_GET ['merch_order_ori_id'];
+//        $order_id = $_GET ['order_id'];
+//        $status = $_GET ['status'];
+//        $message = $_GET ['message'];
+//        $signature = $_GET ['signature'];
+//        $this->pay_logs($_GET,"lianyin2/notify");
+//
+//        //先记录返回的错误信息
+//        M('order_record')->where(array("order_sn" => $merch_order_ori_id))->save(array("back_msg"=>$message));
+//
+//
+//        $strVale = $this->hashkey . $merchant_id . $merch_order_id . $price_currency . $price_amount . $order_id . $status;
+//        $getsignature = md5($strVale);
+//        if ($getsignature != $signature) {
+//            echo $this->return_js_msg("Signature error!");
+//        }
+//        //根据得到的数据  进行相对应的操作
+//        if ($status == 'Y') {
+//            $data = array(
+//                'status' => $status,
+//                'order_sn' => $merch_order_ori_id,
+//                'amount' => $price_amount,
+//                'payer_id' => $order_id,
+//                'err_msg' => $message
+//            );
+//            $res = D("Order")->notify($data);
+//            echo $this->return_js_msg($res);
+//        } else{
+//            echo 'ISRESPONSION!';
+//        }
+//    }
+//
+//    public function fail_url(){
+//        header("Content-type:text/html; charset=utf-8");
+//        $data = $_GET;
+//        $this->pay_logs($data,"lianyin2/fail");
+//        //先记录返回的错误信息
+//        $merch_order_ori_id = $data["merch_order_ori_id"];
+//        $message = $data["message"];
+//        M('order_record')->where(array("order_sn" => $merch_order_ori_id))->save(array("back_msg" => $message));
+//        echo $this->return_js_msg("Pay Fail:".$_GET["message"]);
+//    }
 
     private function filter_code($str)
     {

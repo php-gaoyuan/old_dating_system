@@ -10,7 +10,12 @@ class Mall extends Base
 // 		$this->assign("putong_list",$putong_list);
 // 		$gaoji_list = $model->get_list(3);
 // 		$this->assign("gaoji_list",$gaoji_list);
-		$zhenshi_list = $model->get_list(4);
+        $cateId=1;
+        if($this->userinfo->is_view_gift==1){
+            $cateId=2;
+        }
+        $zhenshi_list = $model->get_list($cateId);
+
 		$this->assign("zhenshi_list",$zhenshi_list);
 		return $this->fetch();
 	}

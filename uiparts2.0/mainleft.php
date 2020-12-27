@@ -178,11 +178,12 @@ if ($days <= 0 && !$group) {
         </dd>
     </dl>
 
+
     <ul style="overflow: hidden;margin: 10px 6px 10px 10px;padding-bottom: 8px;border-bottom: solid 1px #eee;">
         <li class="left-nav-li">
             <a href="/main2.0.php?app=user_pay">
                 <span><?php echo $userinfo['golds'];?></span>
-                <span class="left-nav-icon ln-gold-icon"></span>
+                <span class="left-nav-icon ln-gold-icon" style="width:20px;background: url('/skin/gaoyuan/images/svg/gold.svg') 0 0 no-repeat;background-size: 100%;"></span>
             </a>
         </li>
     </ul>

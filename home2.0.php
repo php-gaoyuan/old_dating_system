@@ -357,7 +357,7 @@ $mo_langpackage = new moodlp;
 <!--头部-->
 
 
-<div id="container_lf" style=" background:url(skin/default/jooyea/images/banner.png) no-repeat  ">
+<div id="container_lf" style=" background:url(skin/default/jooyea/images/banner.png) 0 -100px no-repeat  ">
     <div class="topside_info1_lf">
         <a class="name_box1_lf">
             <?php echo $user_info['user_name']; ?>

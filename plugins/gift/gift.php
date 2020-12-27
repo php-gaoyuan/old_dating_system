@@ -45,10 +45,10 @@ if($_GET['user_id']){
 <style type="text/css">
     #zishu{margin-bottom: -1px;margin-top:0;}
     #zishu li{list-style:none;display:inline-block;}
-    #zishu .nav_a a{font-size:14px;text-decoration:none;display:block;background:#03a0d7;color:#fff;border:1px solid #C2D9F2;padding:5px 15px;}
-    #zishu .nav_a.active a{color:#03a0d7;background:#fff;}
-    #gift_list{width: 805px;border:#C2D9F2 solid 1px;margin-bottom:10px;padding:5px;}
-    #gift_friends{clear:both;border:1px solid #C2D9F2;position:absolute;display:none;left: 68px;*left: 70px;top: 45px;width: 86%;background:#FFFFFF;}
+    #zishu .nav_a a{font-size:14px;text-decoration:none;display:block;background:#9b74eb;color:#fff;border:1px solid #9b74eb;padding:5px 15px;}
+    #zishu .nav_a.active a{color:#9b74eb;background:#fff;}
+    #gift_list{width: 805px;border:#9b74eb solid 1px;margin-bottom:10px;padding:5px;}
+    #gift_friends{clear:both;border:1px solid #9b74eb;position:absolute;display:none;left: 68px;*left: 70px;top: 45px;width: 86%;background:#FFFFFF;}
     #gift_info{background:none repeat scroll 0 0 #ce1221;border:1px solid #EBDBA5;margin-bottom:10px;display:none;padding:9px 100px;width:62%;color:#fff;}
     #gift_list .giftbox{width:150px;float:left;text-align:center;font-size:12px;margin-left:7px;}
     #gift_list .giftbox img:hover{cursor:pointer;filter:alpha(opacity=50);-moz-opacity:0.5;opacity: 0.5;}
@@ -56,8 +56,8 @@ if($_GET['user_id']){
     #gift_page_list{float:right;text-align:center;margin:10px 0 5px 0;width:100%;}
     #gift_page_list a{display:block;width:20px;height:20px;line-height:20px;float:left;border:1px #0096c6 solid;text-decoration:none;margin:0 5px;background-color:#dee7f7;color:#000;}
     #gift_page_list a.active{background-color:#0096c6;color:#fff;}
-    .tabs{border-bottom: 1px solid #03a0d7;height: 26px;margin-top: 20px;position: relative;outline: medium none;}
-    .tabs li.active{-moz-border-bottom-colors: none;-moz-border-left-colors: none;-moz-border-right-colors: none;-moz-border-top-colors: none;background-color: #FFFFFF;border-color: #03a0d7 #03a0d7 -moz-use-text-color;border-image: none;border-style: solid solid none;border-width: 1px 1px 0;color: #03a0d7;font-weight: bold;text-decoration: none;word-break: keep-all;}
+    .tabs{border-bottom: 1px solid #9b74eb;height: 26px;margin-top: 20px;position: relative;outline: medium none;}
+    .tabs li.active{-moz-border-bottom-colors: none;-moz-border-left-colors: none;-moz-border-right-colors: none;-moz-border-top-colors: none;background-color: #FFFFFF;border-color: #9b74eb #9b74eb -moz-use-text-color;border-image: none;border-style: solid solid none;border-width: 1px 1px 0;color: #9b74eb;font-weight: bold;text-decoration: none;word-break: keep-all;}
     .tabs li{background-color: #ce1221;color: #FFFFFF;float: left;height: 26px;margin-right: 8px;}
     .tabs li.active a{color: #ce1221;text-decoration: none;}
     .tabs li a{color: #FFFFFF;display: block;height: 18px;padding: 6px 19px 0;text-decoration: none;}

@@ -133,7 +133,7 @@ layui.define(['layer', 'laytpl', 'upload'], function(exports){
     var nodata = {
       friend: "该分组下暂无好友"
       ,group: "暂无群组"
-      ,history: "暂无历史会话"
+      ,history: "No Data"
     };
 
     options = options || {};
@@ -276,21 +276,16 @@ layui.define(['layer', 'laytpl', 'upload'], function(exports){
         ,'<span class="layui-icon layim-tool-{{item.alias}}" title="{{item.title}}" layim-event="extend" lay-filter="{{ item.alias }}">{{item.icon}}</span>'
          ,'{{# }); }}'
         ,'{{# if(d.base && d.base.chatLog){ }}'
-        ,'<span class="layim-tool-log" layim-event="chatLog"><i class="layui-icon">&#xe60e;</i>聊天记录</span>'
+        ,'<span class="layim-tool-log" layim-event="chatLog"><i class="layui-icon">&#xe60e;</i>Record</span>'
         ,'{{# }; }}'
       ,'</div>'
       ,'<div class="layim-chat-textarea"><textarea></textarea></div>'
       ,'<div class="layim-chat-bottom">'
         ,'<div class="layim-chat-send">'
           ,'{{# if(!d.base.brief){ }}'
-          ,'<span class="layim-send-close" layim-event="closeThisChat">关闭</span>'
+          ,'<span class="layim-send-close" layim-event="closeThisChat">Close</span>'
           ,'{{# } }}'
-          ,'<span class="layim-send-btn" layim-event="send">发送</span>'
-          ,'<span class="layim-send-set" layim-event="setSend" lay-type="show"><em class="layui-edge"></em></span>'
-          ,'<ul class="layui-anim layim-menu-box">'
-            ,'<li {{d.local.sendHotKey !== "Ctrl+Enter" ? "class=layim-this" : ""}} layim-event="setSend" lay-type="Enter"><i class="layui-icon">&#xe605;</i>按Enter键发送消息</li>'
-            ,'<li {{d.local.sendHotKey === "Ctrl+Enter" ? "class=layim-this" : ""}} layim-event="setSend"  lay-type="Ctrl+Enter"><i class="layui-icon">&#xe605;</i>按Ctrl+Enter键发送消息</li>'
-          ,'</ul>'
+          ,'<span class="layim-send-close" layim-event="send">Send</span>'
         ,'</div>'
       ,'</div>'
     ,'</div>'
@@ -932,33 +927,33 @@ layui.define(['layer', 'laytpl', 'upload'], function(exports){
     var thatChat = thisChat(), ul = thatChat.elem.find('.layim-chat-main ul');
     var maxLength = cache.base.maxLength || 3000;
     data.content = thatChat.textarea.val();
-    //if(data.content.replace(/\s/g, '') !== ''){
+    if(data.content.replace(/\s/g, '') !== '') {
 
 
-      if(data.content.length > maxLength){
-        return layer.msg('内容最长不能超过'+ maxLength +'个字符')
+      if (data.content.length > maxLength) {
+        return layer.msg('内容最长不能超过' + maxLength + '个字符')
       }
-      
+
       ul.append(laytpl(elemChatMain).render(data));
-      
+
       var param = {
         mine: data
-        ,to: thatChat.data
+        , to: thatChat.data
       }, message = {
         username: param.mine.username
-        ,avatar: param.mine.avatar
-        ,id: param.to.id
-        ,type: param.to.type
-        ,content: param.mine.content
-        ,timestamp: new Date().getTime()
-        ,mine: true
+        , avatar: param.mine.avatar
+        , id: param.to.id
+        , type: param.to.type
+        , content: param.mine.content
+        , timestamp: new Date().getTime()
+        , mine: true
       };
       pushChatlog(message);
-      
-      layui.each(call.sendMessage, function(index, item){
+
+      layui.each(call.sendMessage, function (index, item) {
         item && item(param);
       });
-
+    }
     chatListMore();
     thatChat.textarea.val('').focus();
   };

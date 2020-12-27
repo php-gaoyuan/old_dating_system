@@ -262,7 +262,7 @@ return [
 
 	//gift shop
 
-	"gift shop"=>"礼物商城",
+	"gift shop"=>"虚拟礼物",
 
 	"real gift"=>"真实礼物",
 	"Virtual Gift"=>"虚拟礼物",

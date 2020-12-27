@@ -28,10 +28,10 @@ dbplugin('r');
 <style type="text/css">
     #zishu{margin-bottom: -1px;}
     #zishu li{list-style:none;display:inline-block;}
-    #zishu .nav_a a{font-size:14px;text-decoration:none;display:block;background:#03a0d7;color:#fff;border:1px solid #C2D9F2;padding:5px 15px;}
-    #zishu .nav_a.active a{color:#03a0d7;background:#fff;margin-top:3px;}
-    #gift_list{width: 805px;border:#C2D9F2 solid 1px;margin-bottom:10px;padding:5px;}
-    #gift_friends{clear:both;border:1px solid #C2D9F2;position:absolute;display:none;left: 68px;*left: 70px;top: 45px;width: 86%;background:#FFFFFF;}
+    #zishu .nav_a a{font-size:14px;text-decoration:none;display:block;background:#9b74eb;color:#fff;border:1px solid #9b74eb;padding:5px 15px;}
+    #zishu .nav_a.active a{color:#9b74eb;background:#fff;margin-top:3px;}
+    #gift_list{width: 805px;border:#9b74eb solid 1px;margin-bottom:10px;padding:5px;}
+    #gift_friends{clear:both;border:1px solid #9b74eb;position:absolute;display:none;left: 68px;*left: 70px;top: 45px;width: 86%;background:#FFFFFF;}
     #gift_info{background:none repeat scroll 0 0 #ce1221;border:1px solid #EBDBA5;margin-bottom:10px;display:none;padding:9px 100px;width:62%;color:#fff;}
     #gift_list .giftbox{width:185px;float:left;text-align:center;font-size:12px;margin-left:7px;height: 210px;}
     #gift_list .giftbox *{border:none}
@@ -78,7 +78,7 @@ function getGifts(type,index)
 <body>
 <div>
     <ul id="zishu">
-        <li class="nav_a" onclick="getGifts(4);changeStyle_gift(this);"><a href="javascript:;"><?php echo $gf_langpackage->gf_xn; ?></a></li>
+        <li class="nav_a" onclick="getGifts(1);changeStyle_gift(this);"><a href="javascript:;"><?php echo $gf_langpackage->gf_xn; ?></a></li>
         <li class="nav_a"><a href="/plugins/gift/gift_box.php"><?php echo $gf_langpackage->gf_putin; ?></a></li>
         <li class="nav_a active"><a href="/plugins/gift/gift_outbox.php"><?php echo $gf_langpackage->gf_putout; ?></a></li>
     </ul>
@@ -104,7 +104,7 @@ if(get_sess_userid())
 			//分别取出接收和未接收的礼品
 			
 			if($row['is_see']==0)$no_accept.="<div style='clear:both;height:85px;border-bottom:1px #ccc solid;line-height:25px;margin-bottom:5px;'><img style='display:block;float:left' src='/{$row['gift']}'/><span style='float:left;display:block;padding-left:10px;'>".$gf_langpackage->gf_mess_16.$row['send_time'].$gf_langpackage->gf_mess_17."<b>[{$row['accept_name']}]</b>".$gf_langpackage->gf_mess_18."<br />".$gf_langpackage->gf_zengyan."：$row[msg]</span></div>";
-			else $accept.="<div style='clear:both;height:85px;border-bottom:1px #ccc solid;line-height:25px;margin-bottom:5px;'><img style='display:block;float:left' src='/{$row['gift']}'/><span style='float:left;display:block;padding-left:10px;'>".$gf_langpackage->gf_mess_16.$row['send_time'].$gf_langpackage->gf_mess_17."<b>[{$row['send_name']}]</b>".$gf_langpackage->gf_mess_18."<br />".$gf_langpackage->gf_zengyan."：$row[msg]</span></div>";
+			else $accept.="<div style='clear:both;height:85px;border-bottom:1px #ccc solid;line-height:25px;margin-bottom:5px;'><img style='display:block;float:left' src='/{$row['gift']}'/><span style='float:left;display:block;padding-left:10px;'>".$gf_langpackage->gf_mess_16.$row['send_time'].$gf_langpackage->gf_mess_17."<b>[{$row['accept_name']}]</b>".$gf_langpackage->gf_mess_18."<br />".$gf_langpackage->gf_zengyan."：$row[msg]</span></div>";
 		}
 	}
 	echo $no_accept;

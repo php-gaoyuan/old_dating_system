@@ -56,7 +56,8 @@ if ($act == "index") {
     foreach ($list as $k => $val) {
         $tuinfo = $dbo->getRow("select name from wy_wangzhuan where id='{$val['tuid']}'");
         $list[$k]['tuname'] = $tuinfo['name'];
-        $upgrade_log = $dbo->getRow("select endtime from wy_upgrade_log where mid='{$val['user_id']}'");
+        $upgrade_log = $dbo->getRow("select endtime from wy_upgrade_log where mid='{$val['user_id']}' and  state='0'");
+        //print_r($upgrade_log);
         $list[$k]['end_date'] = $upgrade_log['endtime'];
     }
     echo json(array("code" => 0, "count" => $count["count"], "data" => $list, "msg" => ""));
@@ -81,6 +82,18 @@ if ($act == "index") {
         $is_pass = 0;
     }
     $dbo->exeUpdate("update wy_users set is_pass='{$is_pass}' where user_id='{$user_id}'");
+    echo json(array("code" => 0, "msg" => "操作成功", "data" => []));
+    exit;
+} elseif ($act == "changeIsViewGift") {
+    $user_id = intval($_POST["user_id"]);
+    $userinfo = $dbo->getRow("select * from wy_users where user_id={$user_id}", "arr");
+    //halt($userinfo);
+    if ($userinfo['is_view_gift'] == 0) {
+        $is_view_gift = 1;
+    } else {
+        $is_view_gift = 0;
+    }
+    $dbo->exeUpdate("update wy_users set is_view_gift='{$is_view_gift}' where user_id='{$user_id}'");
     echo json(array("code" => 0, "msg" => "操作成功", "data" => []));
     exit;
 } elseif ($act == "resetPass") {

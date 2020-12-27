@@ -200,7 +200,7 @@ p .left-nav-icon.vip_icon2_lq{ vertical-align: middle;}
 /*发布按钮*/
 .mood_submitbtn1_lq{background:#2d57a1;border: none;font: normal; }
 /*各种蓝色按钮*/
-.blue_submitbtn1_lq, .grey_submitbtn1_lq,.btn_primary,.d-button,.gray_btn1_lq,.gradbtn,.addmorephoto.inb_lq,.finishupload.bg_img2_icon_lf{background:#2d57a1;color: #fff;height: 24px;line-height: 24px;padding: 0 10px;display: inline-block;cursor: pointer;border: none;text-align: center;}
+.blue_submitbtn1_lq, .grey_submitbtn1_lq,.btn_primary,.d-button,.gray_btn1_lq,.gradbtn,.addmorephoto.inb_lq,.finishupload.bg_img2_icon_lf{background:#9b74eb;color: #fff;min-width:150px;padding: 0 10px;display: inline-block;cursor: pointer;border: none;text-align: center;}
 .blue_submitbtn1_lq:hover, .grey_submitbtn1_lq:hover,.btn_primary:hover,.search_btn1_lf:hover,.d-button:hover,.gray_btn1_lq:hover,.cancle_btn1_lf:hover{ color: #fff;background: #3F76D8;}
 .send_btn1_lq{ padding: 0 20px;}
 /*已认证*/

@@ -26,7 +26,7 @@ dd {
 
 .head {
     width: 100%;
-    background-color: #3aa6c2;
+    background-color: #9b74eb;
 }
 
 .wrp {
@@ -154,7 +154,7 @@ dd {
 }
 
 #head_login:hover {
-    background-color: #3acdf2;
+    background-color: #7633ffbf;
 }
 #loginsubm {
     font-size: 13px;
@@ -169,11 +169,11 @@ dd {
     font-weight: bold;
     padding: 0 13px;
     outline-style: none;
-    background-color: #43abf2;
+    background-color: #7633ff;
 }
 
 #loginsubm:hover {
-    background-color: #3acdf2;
+    background-color: #7633ffbf;
 }
 .reg {
     overflow: hidden;
@@ -301,12 +301,12 @@ dd {
     font-weight: bolder;
     border: none;
 
-    background-color: #3aa6c2;
+    background-color: #9b74eb;
 }
 
 #reg_btn:hover {
 
-    background-color: #4fbad6;
+    background-color: #ac8cef;
 }
 
 .reg_bar {
@@ -518,7 +518,7 @@ dd {
     color:#fff;
     line-height: 20px;
     text-align: center;
-    background: #444546;
+    background: #9b74eb;
     padding: 10px 0;
 	height:80px;
 }

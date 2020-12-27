@@ -231,7 +231,7 @@
                         <!--广告-->
                         <?php foreach($hd_list as $hd){ ?>
                             <a target="_blank" href="/main2.0.php?app=user_pay">
-                                <img src="<?php echo $hd['ad_pic'];?>" alt="<?php echo $hd['title'];?>" style="width:100%;height:150px;"/>
+                                <img src="<?php echo $hd['ad_pic'];?>" alt="<?php echo $hd['title'];?>" style="width:100%;height:250px;"/>
                             </a>
                         <?php }?>
                         <!--广告-->

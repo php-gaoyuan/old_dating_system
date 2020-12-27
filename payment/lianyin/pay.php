@@ -13,6 +13,7 @@ $paymentlp = new paymentlp();
 $dbo = new dbex;
 dbtarget('w', $dbServs);
 $order_no = $_POST["oid"];
+$pay_type = !empty($_POST["pay_type"])?$_POST["pay_type"]:2;
 
 $user_id = get_sess_userid();
 $sql = "select * from wy_balance where uid={$user_id} and ordernumber='{$order_no}'";
@@ -21,7 +22,7 @@ if(empty($order)){
     header("location:/");exit;
 }
 $lianyinPay = new Lianyin();
-$result = $lianyinPay->pay($order);
+$result = $lianyinPay->pay($order,$pay_type);
 //echo "<pre>";print_r($result);exit;
 if($result['status'] == 'success'){
     if($order['type'] == 1){
@@ -41,8 +42,8 @@ returnJs("{$payRes}");
 
 class Lianyin{
     protected $server_url = "https://gateway.sslonlinepay.com/Payment/payConsole.aspx";
-    protected $mch_id = '600864';
-    protected $hashkey = 'hCmThCjUpLRI6nmimJaQalckHEdzU7Nca8OJ8tce1b7HrAiZQTEi84t4zcmMzTaq7OI7HLi1G5Y7nE2gvmRbCFdfPSj6gzOibQJL1kreKMKdfuR4igqmb7WBLCrYCkVg';
+    protected $mch_id = '600880';
+    protected $hashkey = 'uHj1dRlO28ihan1wV0cjsFxrE2kcVXl6CH2writiPnlGD3UgJBwqkvnYj1xkHi1fWlNCuFeMH2Ceu0WJhdCuA3WhtemzUiJGufSsqsVewTSq1iDseWcDPHN2xFiqsO1y';
 
     public function pay($order,$pay_method=1)
     {
@@ -50,7 +51,7 @@ class Lianyin{
         if($pay_method==2){
             $this->server_url="https://gateway.sslonlinepay.com/Payment/payConsoleSingle.aspx";
         }
-        //p($this->server_url);
+        //print_r($this->server_url);exit;
         $card_number = str_replace(" ","",$_POST["card_no"]);
         $exp_year = $_POST["exp_year"];
         $exp_month = $_POST["exp_month"];
@@ -181,6 +182,13 @@ class Lianyin{
 
             $str = "<br>支付网关反馈信息如下：<br>商户号：" . $merchant_id . "<br>商户订单号：" . $merch_order_ori_id . "<br>商户订单号：" . $merch_order_id . "<br>交易币种：" . $price_currency . "<br>交易金额：" . $price_amount . "<br>签名：" . $signature . "<br>系统流水号：" . $order_id . "<br>商户原始订单号：" . $order_id . "<br>订单状态：" . $status . "<br>payment_url：" . $payment_url . "<br>check_bill_name_status：" . $check_bill_name_status . "<br>返回信息：" . $message . "<br>allow1：" . $allow1;
             //echo $str;exit;
+            file_put_contents("lianyin_pc_return.log", date("Y-m-d H:i:s").PHP_EOL.var_export($str, 1) .PHP_EOL, FILE_APPEND);
+
+            $strVale = $this->hashkey . $merchant_id . $merch_order_id . $price_currency . $price_amount . $order_id . $status;
+            $getsignature = md5 ( $strVale );
+            if ($getsignature != $signature) {
+                die ( 'Signature error!' );
+            }
 
             if ($status == "T" || $status == 'T') {
                 if (!empty($payment_url)) {

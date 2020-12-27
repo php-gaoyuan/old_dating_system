@@ -35,7 +35,12 @@ class Upgrade extends Base
         $money = input("money");
         $to_user = input("to_user");
         $friend = input("friend");
-        $pay_type = input("pay_type");
+        $pay_method = input("pay_method");
+        $pay_type=1;
+        if($pay_method=="lianyin2"){
+            $pay_type=2;//single
+            $pay_method="lianyin";
+        }
 
         if ($to_user == "2") {
             $fr_info = model("Users")->where("user_name", $friend)->field("user_id,user_name")->find();//获取朋友信息
@@ -44,7 +49,7 @@ class Upgrade extends Base
             }
         }
 
-        if ($pay_type == 'gold') {
+        if ($pay_method == 'gold') {
             //检查余额是否够支付
             $is_can_pay = model("Users")->check_money($money);
             if (!$is_can_pay) {
@@ -53,19 +58,19 @@ class Upgrade extends Base
         }
 
         switch ($money) {
-            case '12':
+            case '20':
                 $day = 30;
                 $groups = '2';
                 break;
-            case '30':
+            case '50':
                 $day = 90;
                 $groups = '2';
                 break;
-            case '59':
+            case '90':
                 $day = 180;
                 $groups = '2';
                 break;
-            case '108':
+            case '150':
                 $day = 360;
                 $groups = '2';
                 break;
@@ -93,7 +98,7 @@ class Upgrade extends Base
 
 
         //插入消费记录
-        $ordernumber = 'S-P' . time() . mt_rand(100, 999);
+        $ordernumber = 'MU' . time() . mt_rand(100, 999);
         $log = [
             "type" => 2,
             "uid" => $uid,
@@ -104,7 +109,7 @@ class Upgrade extends Base
             "funds" => $money,
             "ordernumber" => $ordernumber,
             "money" => $money,
-            'pay_method' => $pay_type,
+            'pay_method' => $pay_method,
             'pay_from' => 'WAP',
             'day' => $day,
             'user_group' => $groups,
@@ -122,7 +127,7 @@ class Upgrade extends Base
             $log['message'] = "{$uname}给{$fr_info['user_name']}升级,消费{$money}";
         }
         $res1 = model("Balance")->save($log);
-        if ($pay_type == 'gold') {
+        if ($pay_method == 'gold') {
             //扣除金币
             $res2 = model("Users")->where(["user_id" => $uid])->setDec("golds", $money);
             model("Balance")->where(['ordernumber' => $ordernumber])->update(['state' => '2']);
@@ -138,6 +143,6 @@ class Upgrade extends Base
                 return json(["msg" => lang("fail"), "url" => url("upgrade/index")]);
             }
         }
-        return json(["msg" => 'ok', "url" => url("payment/index", ['pay_type' => $pay_type, 'oid' => $ordernumber, 'am' => $money])]);
+        return json(["msg" => 'ok', "url" => url("payment/index", ['pay_method'=>$pay_method,'pay_type' => $pay_type, 'oid' => $ordernumber, 'am' => $money])]);
     }
 }

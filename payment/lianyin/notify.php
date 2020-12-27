@@ -11,7 +11,7 @@ $paymentlp = new paymentlp();
 $dbo = new dbex;
 dbtarget('w',$dbServs);
 
-$hashkey = 'hCmThCjUpLRI6nmimJaQalckHEdzU7Nca8OJ8tce1b7HrAiZQTEi84t4zcmMzTaq7OI7HLi1G5Y7nE2gvmRbCFdfPSj6gzOibQJL1kreKMKdfuR4igqmb7WBLCrYCkVg'; // 测试商户证书
+$hashkey = 'uHj1dRlO28ihan1wV0cjsFxrE2kcVXl6CH2writiPnlGD3UgJBwqkvnYj1xkHi1fWlNCuFeMH2Ceu0WJhdCuA3WhtemzUiJGufSsqsVewTSq1iDseWcDPHN2xFiqsO1y'; // 测试商户证书
 
 
 if (!empty($_GET) && empty($_POST)) {
@@ -35,6 +35,7 @@ $signature = $_GET ['signature'];
 //先记录返回的错误信息
 $sql = "UPDATE wy_balance SET `pay_msg`='{$message}' WHERE ordernumber='{$merch_order_ori_id}'";
 $dbo->exeUpdate($sql);
+file_put_contents("lianyin_pc_notify.log", date("Y-m-d H:i:s").PHP_EOL.var_export($_GET, 1) .PHP_EOL, FILE_APPEND);
 
 $strVale = $hashkey . $merchant_id . $merch_order_id . $price_currency . $price_amount . $order_id . $status;
 $getsignature = md5 ( $strVale );

@@ -40,6 +40,8 @@ class Events
                 $_SESSION = ['user_id' => $user_id, 'username' => $message['username'], 'avatar' => $message['avatar'],"from"=>$from];
                 // 将当前链接与uid绑定
                 Gateway::bindUid($client_id, $user_id);
+
+                $db1->update('wy_users')->where("user_id='{$user_id}'")->cols(['is_online' => 1,'online_update_time'=>time()])->query();
                 //通知所有人该用户上线
                 Gateway::sendToAll(json_encode([
                     'type' => 'init',
@@ -166,39 +168,39 @@ class Events
                 Gateway::sendToUid($fid, json_encode($chat_message));
 
                 //检查如果对方不是好友发送列表到陌生人
-                $pals_info = $db1->select()->from("wy_pals_mine")->where("user_id='$user_id' and pals_id='$fid'")->row();
+                $pals_info = $db1->select()->from("wy_pals_mine")->where("(user_id='$user_id' and pals_id='$fid') or (user_id='$fid' and pals_id='$user_id')")->row();
                 if (empty($pals_info)) {
                     $finfo = $db1->select()->from("wy_users")->where("user_id='$fid'")->row();
-                    echo $fid;
+                    //echo $fid;
                     //推送陌生人到列表
                     $data = [
                         "type" => "addlist",
                         "data" => [
-                            "id" => $finfo["uid"],
-                            "username" => $finfo["u_name"],
+                            "id" => $finfo["user_id"],
+                            "username" => $finfo["user_name"],
                             "groupid" => 3,
                             "type" => "friend",
-                            "avatar" => $finfo["u_ico"],
+                            "avatar" => $finfo["user_ico"],
                             "sign" => ""
                         ]];
                     Gateway::sendToUid($user_id, json_encode($data));
                     return false;
                 }
-//                else {
-//                    $data = [
-//                        "type" => "addlist",
-//                        "data" => [
-//                            "id" => $info["pals_id"],
-//                            "username" => $info["pals_name"],
-//                            "groupid" => 2, "type" => "friend",
-//                            "avatar" => $info["pals_ico"],
-//                            "sign" => ""
-//                        ]];
-//                    //推送好友到列表
-//                    Gateway::sendToUid($user_id, json_encode($data));
-//                    Gateway::sendToUid($fid, json_encode($data));
-//                    return false;
-//                }
+                else {
+                    $data = [
+                        "type" => "addlist",
+                        "data" => [
+                            "id" => $pals_info["pals_id"],
+                            "username" => $pals_info["pals_name"],
+                            "groupid" => 2, "type" => "friend",
+                            "avatar" => $pals_info["pals_ico"],
+                            "sign" => ""
+                        ]];
+                    //推送好友到列表
+                    Gateway::sendToUid($user_id, json_encode($data));
+                    Gateway::sendToUid($fid, json_encode($data));
+                    return false;
+                }
                 break;
             case "readMsg":
                 $user_id = $message["user_id"];
@@ -224,20 +226,14 @@ class Events
      */
     public static function onClose($client_id)
     {
-//        $db1 = Db::instance('db1'); //数据库链接
-//        $user_id = $_SESSION['user_id'];
-//        $from = $_SESSION['from'];
-//        $update_data = ["line_status" => 0];
-//        if ($from) {
-//            $update_data[$from . "_online"] = 0;
-//        } else {
-//            $update_data["pc_online"] = 0;
-//            $update_data["app_online"] = 0;
-//        }
-//        //断开后通知所有用户该用户离线
-//        $db1->update("chat_users")->cols($update_data)->where("uid='{$user_id}'")->query();
-//        $logout_message = ["type" => "logout", "id" => $user_id];
-//        Gateway::sendToAll(json_encode($logout_message));
+        $db1 = Db::instance('db1'); //数据库链接
+        $user_id = $_SESSION["user_id"];
+        //echo $user_id;
+        $db1->update('wy_users')->where("user_id='{$user_id}'")->cols(['is_online' => 0,'online_update_time'=>time()])->query();
+        //断开后通知所有用户该用户离线
+        $db1->update("chat_users")->cols(["line_status" => 0])->where("uid='{$user_id}'")->query();
+        $logout_message = ["type" => "logout", "id" => $user_id];
+        Gateway::sendToAll(json_encode($logout_message));
     }
 
     public static function onWorkerStop()

@@ -90,7 +90,7 @@
         });
         //底部菜单追加消息数量
         var nums = $("#msg_nums").text();
-        $("#msg_nums").text(parseInt(nums)+1);
+        $("#msg_nums").text(parseInt(nums)+1).css("display","block");
         //追加声音
         $("body").append("<audio autoplay='true' src='/public/static/default/default.mp3'></audio>");
         setTimeout(function(){

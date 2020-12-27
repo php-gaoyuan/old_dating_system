@@ -21,13 +21,13 @@
 
 .west_item:hover {
     border-radius: 5px;
-    background: #ade4ff;
+    background: #bc9bff;
 }
 
 .west_item_focus {
     border-radius: 5px;
     color: #ffffff;
-    background: #95b1ea;
+    background: #9b74eb;
 }
 
 .west_item_point {

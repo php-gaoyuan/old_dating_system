@@ -225,31 +225,7 @@ $xhd_list = $dbo->getRs($sql);
         <script src="./template/main/jquery-1.7.min.js"></script>
     </head>
     <body class="lan_cn" style=" background:none;text-align:left">
-    <style>
-        .search_box{display: flex;justify-content: center;align-items: center;border: 1px solid #ccc; width:222px;margin: 25px auto 0;}
-        .search_box  input{border-radius: 3px;padding: 5px 10px;border:0;}
-        .search_box .search_icon{}
-        .search_box  img{width:32px;border-left: 1px solid #ccc;
-            cursor: pointer;}
-    </style>
-    <script>
-        function search(){
-            var user_name = $("#user_name").val();
-            if(user_name == ""){
-                return false;
-            }
-            var href = window.location.href;
-            if(href.indexOf("?")==-1){
-                window.location.href = href+"?user_name="+user_name;
-            }else{
-                window.location.href = href+"&user_name="+user_name;
-            }
-        }
-    </script>
-        <div class="search_box">
-            <input type="text" name="user_name" id="user_name" value="<?php echo $_GET["user_name"];?>">
-            <img src="/skin/gaoyuan/images/search-icon.png" alt="" onclick="search();">
-        </div>
+
 
         <!-- 在线用户 -->
         <div class="samle_tu">

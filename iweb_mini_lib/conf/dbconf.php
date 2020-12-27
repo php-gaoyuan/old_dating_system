@@ -7,7 +7,7 @@ $pwd = "sM4eNSGdfLHmN2xm"; //mysql数据库默认密码
 global $tablePreStr;//设置外部变量
 $tablePreStr = "wy_";//表前缀
 
-$ws_url = "wss://{$_SERVER['HTTP_HOST']}/socket";
+$ws_url = "wss://{$_SERVER['HTTP_HOST']}/socket.io";
 //当前提供服务的mysql数据库
 global $dbServs;
 $dbServs = array(

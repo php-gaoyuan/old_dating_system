@@ -93,6 +93,11 @@
 				<button type="button" class="layui-btn layui-btn-sm layui-btn-danger" lay-event="userGroup">否</button>
 				{{# } }}
 			</script>
+
+            <script type="text/html" id="view_gift">
+                <input type="checkbox" value="{{d.user_id}}" lay-skin="switch" lay-text="开启|关闭"
+                       lay-filter="is_view_gift" {{ d.is_view_gift== 1 ? 'checked' : '' }}>
+            </script>
 		
 
 
@@ -159,8 +164,10 @@
 				{field: 'user_email', title: '邮箱',width:200},
 				//{field: 'reg_ip', title: '注册IP',width:150},
 				//{field: 'last_ip', title: '最后登录IP',width:150},
-				{field: 'zhuce_ip', title: 'IP',width:180},
-				{field: 'reg_address', title: '注册地址',width:180},
+				{field: 'is_view_gift', title: '礼物权限',templet:"#view_gift",width:110},
+				{field: 'reg_address', title: '注册地址',width:180,templet:function(d){
+				    return d.reg_address+'('+d.zhuce_ip+')';
+                    }},
 				{title: '是否会员',templet:"#userGroup",width:100},
 				{title: '会员级别',width:190,templet:function(d){
 					if(d.user_group==1){
@@ -269,6 +276,15 @@
 				}
 			},"json");
 		});
+        form.on('switch(is_view_gift)', function (obj) {
+            var user_id = this.value;
+            $.post("/manage/controller/User.php?act=changeIsViewGift", {user_id: user_id}, function (res) {
+                if (res.msg != "") {
+                    layer.msg(res.msg);
+                    return false;
+                }
+            },"json");
+        });
 
 
 

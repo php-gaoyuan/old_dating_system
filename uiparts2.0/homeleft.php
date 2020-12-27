@@ -295,7 +295,7 @@ function mypals_add_callback(content,other_id){
             <dd class="last_dd_lf">
                 <p>
                     <?php echo $ah_langpackage->ah_residence;?>:
-                    <?php echo $uinfo[ 'country']?$uinfo[ 'country']:$u_langpackage->u_set;?>
+                    <?php echo $user_info['country']?$user_info[ 'country']:$u_langpackage->u_set;?>
                 </p>
                 <p>
                     <?php echo $ah_langpackage->ah_birthday;?>:

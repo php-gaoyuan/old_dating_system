@@ -71,4 +71,3 @@
     </div>
 </div>
 <?php require("uiparts2.0/chat.php");?>
-<?php require("uiparts2.0/kefu.php");?>

@@ -2,10 +2,10 @@
 namespace app\index\controller;
 use think\Controller;
 class Update extends Controller{
-	protected $appid = "__W2A__app.missinglovelove.com";
+	protected $appid = "__W2A__app.dsrramtcys.com";
 	//protected $appid = "HBuilder";
 	protected $version="1.0.0";
-	protected $appName="missinglovelove-1.0.0";
+	protected $appName="dsrramtcys-1.0.0";
 	public function index(){
 		header("Content-type:text/json");
 		$oldappid = input("appid");
@@ -30,8 +30,8 @@ class Update extends Controller{
 	}
 
 
-	//http://app.missinglovelove.com/index/update/down.html
-	//http://jyo.henangaodu.com/apk/missinglovelove-1.1.5.apk
+	//http://app.dsrramtcys.com/index/update/down.html
+	//http://jyo.henangaodu.com/apk/dsrramtcys-1.1.5.apk
 	public function down(){
 		if(strpos($_SERVER['HTTP_USER_AGENT'], 'iPhone') !== false || strpos($_SERVER['HTTP_USER_AGENT'], 'iPad') !== false){
 			$this->redirect("Index/index");exit;

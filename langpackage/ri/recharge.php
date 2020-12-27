@@ -222,19 +222,19 @@ class rechargelp{
 
 
 
-	var $er_gj="プラチナ会員";
-	var $er_gj_1y="一ヶ月（12 USD）";
-	var $er_gj_3y="三ヶ月（30 USD）";
-	var $er_gj_6y="六ヶ月（59 USD）";
-	var $er_gj_1n="一年間（108 USD）";
+	var $er_gj="ブルーダイヤモンド会員";
+	var $er_gj_1y="一ヶ月";
+	var $er_gj_3y="三ヶ月";
+	var $er_gj_6y="六ヶ月";
+	var $er_gj_1n="一年間";
 
 
 
-	var $er_vip="ダイヤモンド会員";
-	var $er_vip_1y="一ヶ月（100 USD）";
-	var $er_vip_3y="三ヶ月（288 USD）";
-	var $er_vip_6y="六ヶ月（521 USD）";
-	var $er_vip_1n="一年間（999 USD）";
+	var $er_vip="クラウン会員";
+	var $er_vip_1y="一ヶ月";
+	var $er_vip_3y="三ヶ月";
+	var $er_vip_6y="六ヶ月";
+	var $er_vip_1n="一年間";
 
 
 

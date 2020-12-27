@@ -33,7 +33,8 @@
     		$json["data"]="";
     		echo json_encode($json);exit;
     	}else{
-    		$user_info=$dbo->getRow("select c.uid,c.u_name,u.user_ico as u_ico,c.u_intro,c.line_status from chat_users as c,wy_users as u where c.uid=u.user_id and uid='$user_id'");
+    		$user_info=$dbo->getRow("select c.uid,c.u_name,u.user_ico as u_ico,c.u_intro,c.line_status from chat_users as c,wy_users as u where c.uid=u.user_id and u.user_id='$user_id'");
+    		//print_r($user_info);exit;
     		if(empty($user_info["u_ico"])){$user_info["u_ico"] = "skin/default/jooyea/images/d_ico_{$user_sex}.gif";}
     		$user_info["line_status"] = get_online_status($dbo, $user_info["uid"]);
     		$mine=array(

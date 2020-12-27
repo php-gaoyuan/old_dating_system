@@ -224,19 +224,19 @@ class rechargelp{
 
 
 
-	var $er_gj=" Platinum Member";
-	var $er_gj_1y="1 month (12 USD)";
-	var $er_gj_3y="3 months (30 USD)";
-	var $er_gj_6y="6 months (59 USD)";
-	var $er_gj_1n="1 year (108 USD)";
+	var $er_gj=" Blue diamond member";
+	var $er_gj_1y="1 month";
+	var $er_gj_3y="3 months";
+	var $er_gj_6y="6 months";
+	var $er_gj_1n="1 year";
 
 
 
-	var $er_vip="Diamond Member";
-	var $er_vip_1y="1 month (100 USD)";
-	var $er_vip_3y="3 months (288 USD)";
-	var $er_vip_6y="6 months(521 USD)";
-	var $er_vip_1n="1 year (999 USD)";
+	var $er_vip="Crown member";
+	var $er_vip_1y="1 month";
+	var $er_vip_3y="3 months";
+	var $er_vip_6y="6 months";
+	var $er_vip_1n="1 year";
 
 
 

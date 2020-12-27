@@ -157,7 +157,7 @@ return [
 
 	//main
 
-	"main_title"=>"missinglovelove全球最专业的大型翻译社交平台",
+	"main_title"=>"dsrramtcys全球最专业的大型翻译社交平台",
 
 	"main_title2"=>"在线用户",
 
@@ -173,9 +173,9 @@ return [
 
 	"upgrade_title"=>"升级会员",
 
-	"vip_member"=>"白金会员",
+	"vip_member"=>"蓝钻会员",
 
-	"vip_yj_member"=>"钻石会员",
+	"vip_yj_member"=>"皇冠会员",
 
 	"upgrade_sub_btn"=>"点击升级",
 
@@ -309,7 +309,7 @@ return [
 
 	"set lang"=>"语言设置",
 
-	"about"=>"关于missinglovelove",
+	"about"=>"关于dsrramtcys",
 
 	"clear cache"=>"清除缓存",
 

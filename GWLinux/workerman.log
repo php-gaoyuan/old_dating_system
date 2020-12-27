@@ -1,0 +1,10 @@
+2020-12-27 15:42:41 pid:4432 Workerman[GWLinux/start.php] start in DEBUG mode
+2020-12-27 15:46:56 pid:4432 Workerman[start.php] Stopping ...
+2020-12-27 15:46:56 pid:4432 Workerman[start.php] has been stopped
+2020-12-27 15:47:08 pid:4716 Workerman[GWLinux/start.php] start in DEBUG mode
+2020-12-27 16:41:08 pid:4716 Workerman[start.php] Stopping ...
+2020-12-27 16:41:08 pid:4716 Workerman[start.php] has been stopped
+2020-12-27 16:41:09 pid:8069 Workerman[GWLinux/start.php] start in DEBUG mode
+2020-12-27 18:58:09 pid:8069 Workerman[start.php] Stopping ...
+2020-12-27 18:58:09 pid:8069 Workerman[start.php] has been stopped
+2020-12-27 18:58:12 pid:16683 Workerman[GWLinux/start.php] start in DAEMON mode

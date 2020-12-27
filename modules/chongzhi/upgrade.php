@@ -13,7 +13,7 @@ limit_time($limit_action_time);
 $friends = Api_Proxy("pals_self_by_paid", "pals_name,pals_id,pals_ico");
 $userinfo = Api_Proxy("user_self_by_uid", "*", $user_id);
 $info = "<font color='#ce1221' style='font-weight:bold;'>" . $er_langpackage->er_currency . "</font>：" . $userinfo['zibis'];
-if ($userinfo['user_group'] > 1 && $userinfo['user_group'] != '1') {
+if ($userinfo['user_group'] > 1) {
     $groups = $dbo->getRow("select endtime from wy_upgrade_log where mid='$user_id' and state='0' order by id desc limit 1");
     //print_r($groups);
     $startdate = strtotime(date("Y-m-d"));
@@ -30,8 +30,8 @@ if ($userinfo['user_group'] > 1 && $userinfo['user_group'] != '1') {
     $groups = $dbo->getRow("select name from wy_frontgroup where gid='$userinfo[user_group]'");
     if ($langPackagePara != 'zh') {
         $groups['name'] = str_replace('普通会员', '', $groups['name']);
-        $groups['name'] = str_replace('高级会员', $er_langpackage->js_8, $groups['name']);
-        $groups['name'] = str_replace('星级会员', $er_langpackage->js_10, $groups['name']);
+        $groups['name'] = str_replace('蓝钻会员', $er_langpackage->js_8, $groups['name']);
+        $groups['name'] = str_replace('皇冠会员', $er_langpackage->js_10, $groups['name']);
     }
     if ($days > 0) {
         $userinfo = Api_Proxy("user_self_by_uid", "*", $user_id);
@@ -42,8 +42,9 @@ $uid = get_argg('user_id');
 if ($uid) {
     $u = $dbo->getRow("select user_name from wy_users where user_id='$uid'");
 }
+//读取会员级别价格
+$groupList = $dbo->getAll("select * from wy_frontgroup where id>1");
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -107,7 +108,7 @@ if ($uid) {
                             <p class="ob-1-for-other"></p>
                             <!--升级高级会员-->
                             <div class="upgrade_box">
-                                <div class="box_left"><i class="upgrade_high"></i></div>
+                                <div class="box_left"><i class="upgrade_vip"></i></div>
                                 <div class="box_right">
                                     <dl>
                                         <dt>&nbsp;&nbsp;<?php echo $er_langpackage->er_gj; ?></dt>
@@ -121,12 +122,12 @@ if ($uid) {
                                     <li>
                                         <div class="price">
                                             <span class="upgrade_font pt5"
-                                                  style=" color:#385679; font-size:20px;  font-weight:bold">150</span>
+                                                  style=" color:#385679; font-size:20px;  font-weight:bold"><?php echo $groupList[0]['month12'];?></span>
                                         </div>
                                         <div class="price_cont">
                                             <p class="cont_text">
                                                 <span class="upgrade_font">
-                                                    <?php echo $er_langpackage->er_gj_1n; ?>
+                                                    <?php echo $er_langpackage->er_gj_1n; ?><br>(<?php echo $groupList[0]['month12'];?> USD)
                                                 </span>
                                             </p>
                                             <input type="radio" value="bj4" name="user_group" style="display: none"></div>
@@ -135,36 +136,36 @@ if ($uid) {
                                     <li>
                                         <div class="price">
                                             <span class="upgrade_font pt5"
-                                                  style=" color:#385679; font-size:20px;  font-weight:bold">90</span>
+                                                  style=" color:#385679; font-size:20px;  font-weight:bold"><?php echo $groupList[0]['month6'];?></span>
                                         </div>
                                         <div class="price_cont">
                                             <p class="cont_text">
                             <span class="upgrade_font">
-                              <?php echo $er_langpackage->er_gj_6y; ?></span></p>
+                              <?php echo $er_langpackage->er_gj_6y; ?><br>(<?php echo $groupList[0]['month6'];?> USD)</span></p>
                                             <input type="radio" value="bj3" name="user_group" style="display: none"></div>
                                         <i class=""></i>
                                     </li>
                                     <li>
                                         <div class="price">
                                             <span class="upgrade_font pt5"
-                                                  style=" color:#385679; font-size:20px;  font-weight:bold">50</span>
+                                                  style=" color:#385679; font-size:20px;  font-weight:bold"><?php echo $groupList[0]['month3'];?></span>
                                         </div>
                                         <div class="price_cont">
                                             <p class="cont_text">
                             <span class="upgrade_font">
-                              <?php echo $er_langpackage->er_gj_3y; ?></span></p>
+                              <?php echo $er_langpackage->er_gj_3y; ?><br>(<?php echo $groupList[0]['month3'];?> USD)</span></p>
                                             <input type="radio" value="bj2" name="user_group" style="display: none"></div>
                                         <i class=""></i>
                                     </li>
                                     <li>
                                         <div class="price">
                                             <span class="upgrade_font pt5"
-                                                  style=" color:#385679; font-size:20px;  font-weight:bold">20</span>
+                                                  style=" color:#385679; font-size:20px;  font-weight:bold"><?php echo $groupList[0]['month1'];?></span>
                                         </div>
                                         <div class="price_cont">
                                             <p class="cont_text">
                             <span class="upgrade_font">
-                              <?php echo $er_langpackage->er_gj_1y; ?></span></p>
+                              <?php echo $er_langpackage->er_gj_1y; ?><br>(<?php echo $groupList[0]['month1'];?> USD)</span></p>
                                             <input type="radio" value="bj1" name="user_group" style="display: none"></div>
                                         <i class=""></i>
                                     </li>
@@ -175,7 +176,8 @@ if ($uid) {
 
                             <!-- vip会员 -->
                             <div class="upgrade_box">
-                                <div class="box_left"><i class="upgrade_vip"></i></div>
+                                <div class="box_left"><i class="upgrade_high"></i></div>
+
                                 <div class="box_right">
                                     <dl>
                                         <dt>&nbsp;&nbsp;<?php echo $er_langpackage->er_vip; ?></dt>
@@ -188,11 +190,11 @@ if ($uid) {
                                 <ul>
                                     <li class="checked">
                                         <div class="price"><span class="upgrade_font pt5"
-                                                                 style=" color:#385679; font-size:20px;  font-weight:bold">999</span>
+                                                                 style=" color:#385679; font-size:20px;  font-weight:bold"><?php echo $groupList[1]['month12'];?></span>
                                         </div>
                                         <div class="price_cont">
                                             <p class="cont_text"><span
-                                                        class="upgrade_font"><?php echo $er_langpackage->er_vip_1n; ?></span>
+                                                        class="upgrade_font"><?php echo $er_langpackage->er_vip_1n; ?><br>(<?php echo $groupList[1]['month12'];?> USD)</span>
                                             </p>
                                             <input type="radio" value="zs4" name="user_group" style="display: none" checked>
                                         </div>
@@ -200,11 +202,11 @@ if ($uid) {
                                     </li>
                                     <li>
                                         <div class="price"><span class="upgrade_font pt5"
-                                                                 style=" color:#385679; font-size:20px;  font-weight:bold">521</span>
+                                                                 style=" color:#385679; font-size:20px;  font-weight:bold"><?php echo $groupList[1]['month6'];?></span>
                                         </div>
                                         <div class="price_cont">
                                             <p class="cont_text"><span
-                                                        class="upgrade_font"><?php echo $er_langpackage->er_vip_6y; ?></span>
+                                                        class="upgrade_font"><?php echo $er_langpackage->er_vip_6y; ?><br>(<?php echo $groupList[1]['month6'];?> USD)</span>
                                             </p>
                                             <input type="radio" value="zs3" name="user_group" style="display: none">
                                         </div>
@@ -212,11 +214,11 @@ if ($uid) {
                                     </li>
                                     <li>
                                         <div class="price"><span class="upgrade_font pt5"
-                                                                 style=" color:#385679; font-size:20px;  font-weight:bold">288</span>
+                                                                 style=" color:#385679; font-size:20px;  font-weight:bold"><?php echo $groupList[1]['month3'];?></span>
                                         </div>
                                         <div class="price_cont">
                                             <p class="cont_text"><span
-                                                        class="upgrade_font"><?php echo $er_langpackage->er_vip_3y; ?></span>
+                                                        class="upgrade_font"><?php echo $er_langpackage->er_vip_3y; ?><br>(<?php echo $groupList[1]['month3'];?> USD)</span>
                                             </p>
                                             <input type="radio" value="zs2" name="user_group" style="display: none">
                                         </div>
@@ -224,11 +226,11 @@ if ($uid) {
                                     </li>
                                     <li>
                                         <div class="price"><span class="upgrade_font pt5"
-                                                                 style=" color:#385679; font-size:20px;  font-weight:bold">100</span>
+                                                                 style=" color:#385679; font-size:20px;  font-weight:bold"><?php echo $groupList[1]['month1'];?></span>
                                         </div>
                                         <div class="price_cont">
                                             <p class="cont_text"><span
-                                                        class="upgrade_font"><?php echo $er_langpackage->er_vip_1y; ?></span>
+                                                        class="upgrade_font"><?php echo $er_langpackage->er_vip_1y; ?><br>(<?php echo $groupList[1]['month3'];?> USD)</span>
                                             </p>
                                             <input type="radio" value="zs1" name="user_group" style="display: none">
                                         </div>

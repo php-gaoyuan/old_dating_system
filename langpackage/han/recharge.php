@@ -222,19 +222,19 @@ class rechargelp{
 
 
 
-	var $er_gj="화이트 골 드 회원";
-	var $er_gj_1y="1달 (12 USD)";
-	var $er_gj_3y="=3달 (30 USD)";
-	var $er_gj_6y="6달 (59 USD)";
-	var $er_gj_1n="1년 (108 USD)";
+	var $er_gj="블 루 다이 아 회원";
+	var $er_gj_1y="1달";
+	var $er_gj_3y="=3달";
+	var $er_gj_6y="6달";
+	var $er_gj_1n="1년";
 
 
 
-	var $er_vip="다이아몬드 회원";
-	var $er_vip_1y="1달 (100 USD)";
-	var $er_vip_3y="3달 (288 USD)";
-	var $er_vip_6y="6달 (521 USD)";
-	var $er_vip_1n="1년 (999 USD)";
+	var $er_vip="크라운 멤버";
+	var $er_vip_1y="1달";
+	var $er_vip_3y="3달";
+	var $er_vip_6y="6달";
+	var $er_vip_1n="1년";
 
 	//gaoyuanadd
 

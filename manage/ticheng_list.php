@@ -294,7 +294,7 @@ function checkAll(form,name) {
 				$result = mysql_query($sql_by_root);
 				$result = mysql_fetch_array($result);
 				$result['gift'] = explode('|', $result['gift']);
-				echo "<img src='http://www.missinglovelove.com/rootimg.php?src=".$result['gift'][0]."&h=43&w=43&zc=1'>";
+				echo "<img src='http://www.dsrramtcys.com/rootimg.php?src=".$result['gift'][0]."&h=43&w=43&zc=1'>";
 			}
 		
 		?>

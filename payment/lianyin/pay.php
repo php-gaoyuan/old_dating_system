@@ -92,9 +92,9 @@ class Lianyin{
 
 
         $protocol =((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
-        $url_sync = $protocol."missinglovelove.com/payment/lianyin/notify.php";
-        $url_succ_back = $protocol."missinglovelove.com/payment/lianyin/return.php";
-        $url_fail_back = $protocol."missinglovelove.com/payment/lianyin/return.php";
+        $url_sync = $protocol."dsrramtcys.com/payment/lianyin/notify.php";
+        $url_succ_back = $protocol."dsrramtcys.com/payment/lianyin/return.php";
+        $url_fail_back = $protocol."dsrramtcys.com/payment/lianyin/return.php";
         $data = array(
             //基本信息
             'merchant_id' => urlencode($merchant_id), // 商户号

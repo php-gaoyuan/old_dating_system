@@ -16,9 +16,9 @@ class Db
     public static $db1 = array(
         'host'    => '127.0.0.1',
         'port'    => 3306,
-        'dbname'  => 'www_missinglovel',
-        'user'    => 'www_missinglovel',
-        'password' => 'sM4eNSGdfLHmN2xm',
+        'dbname'  => 'www_dsrramtcys_c',
+        'user'    => 'www_dsrramtcys_c',
+        'password' => 'NAdtkAed6wLXYdJs',
         'charset'    => 'utf8'
     );
 }

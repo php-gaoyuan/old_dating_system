@@ -92,7 +92,7 @@
 
     'wj_input_email' => '輸入注册郵箱',
 
-    'main_title' => 'missinglovelove全球最專業的大型翻譯社交平臺',
+    'main_title' => 'dsrramtcys全球最專業的大型翻譯社交平臺',
 
     'main_title2' => '線上用戶',
 
@@ -100,9 +100,9 @@
 
     'upgrade_title' => '陞級會員',
 
-    'vip_member' => '白金會員',
+    'vip_member' => '藍鑽會員',
 
-    'vip_yj_member' => '鑽石會員',
+    'vip_yj_member' => '皇冠會員',
 
     'upgrade_sub_btn' => '點擊陞級',
 
@@ -202,7 +202,7 @@
 
     'set lang' => '語言設定',
 
-    'about' => '關於missinglovelove',
+    'about' => '關於dsrramtcys',
 
     'clear cache' => '清除緩存',
 

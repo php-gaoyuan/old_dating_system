@@ -24,9 +24,9 @@ class Api extends Controller{
 	}
 
 
-    //http://app.missinglovelove.com/index/api/do_send_email
+    //http://app.dsrramtcys.com/index/api/do_send_email
     public function do_send_email(){
-        $flag = $this->sendMail('meng_a_happy@outlook.com','xgaoyuan1224','我是发件人','347356860@qq.com','我是收件人','missinglovelove好友消息','好久没联系，还好吗？请打开<a href="http://jyo.henangaodu.com" target="_blank">打开网站，聊天吧！</a>');
+        $flag = $this->sendMail('meng_a_happy@outlook.com','xgaoyuan1224','我是发件人','347356860@qq.com','我是收件人','dsrramtcys好友消息','好久没联系，还好吗？请打开<a href="http://jyo.henangaodu.com" target="_blank">打开网站，聊天吧！</a>');
         if($flag){
             echo "发送邮件成功！";
         }else{

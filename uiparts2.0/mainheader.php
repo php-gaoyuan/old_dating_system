@@ -16,10 +16,10 @@ $u_sex_txrz = $dbo->getRow($sql);
 <link rel="stylesheet" href="/skin/gaoyuan/css/theme.css">
 <div id="topbar_lq">
     <div class="width980_lq">
-        <h1 style="padding-top:0 !important;">
+        <h1 style="padding-top:0 !important;width:200px;">
             <?php if ($u_sex_txrz['is_pass'] == 1) { ?>
                 <a href="main.php">
-                    <img src="/template/index/images/logo.png" / style=" height:32px;margin-top: 6px;">
+                    <img src="/template/index/images/logo.png" style=" height:50px;margin-top: -3px;" />
                 </a>
             <?php } else { ?>
                 <a href="javascript:;"

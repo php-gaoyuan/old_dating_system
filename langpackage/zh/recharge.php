@@ -222,19 +222,19 @@ class rechargelp{
 
 
 
-	var $er_gj="白金会员";
-	var $er_gj_1y="1 个月<br>（12 USD）";
-	var $er_gj_3y="3 个月<br>（30 USD）";
-	var $er_gj_6y="6 个月<br>（59 USD）";
-	var $er_gj_1n="1 年<br>（108 USD）";
+	var $er_gj="蓝钻会员";
+	var $er_gj_1y="1 个月";
+	var $er_gj_3y="3 个月";
+	var $er_gj_6y="6 个月";
+	var $er_gj_1n="1 年";
 
 
 
-	var $er_vip="钻石会员";
-	var $er_vip_1y="1 个月<br>（100 USD）";
-	var $er_vip_3y="3 个月<br>（288 USD）";
-	var $er_vip_6y="6 个月<br>（521 USD）";
-	var $er_vip_1n="1 年<br>（999 USD）";
+	var $er_vip="皇冠会员";
+	var $er_vip_1y="1 个月";
+	var $er_vip_3y="3 个月";
+	var $er_vip_6y="6 个月";
+	var $er_vip_1n="1 年";
 
 
 

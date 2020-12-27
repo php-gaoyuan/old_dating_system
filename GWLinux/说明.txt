@@ -1,0 +1,19 @@
+sed -i s/dsrramtcys/dsrramtcys/g `grep dsrramtcys -rl ./`
+=================================================
+#启动
+php /www/wwwroot/www.dsrramtcys.com/GWLinux/start.php start -d
+=================================================
+#PHP启用函数
+pcntl_fork
+pcntl_signal
+pcntl_signal_dispatch
+pcntl_wait
+pcntl_alarm
+=================================================
+#nginx配置ssl
+location /socket {
+    proxy_pass http://127.0.0.1:7272/;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+}

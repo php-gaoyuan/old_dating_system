@@ -271,12 +271,12 @@ class footerlp{
 
     var $f_lfetad1="一对一贴心服务！";
     var $f_lfetad2="扬诚新人的共同选择！";
-    var $f_lfetad3="missinglovelove邮箱：missinglovelove@Yahoo.com";
+    var $f_lfetad3="dsrramtcys邮箱：dsrramtcys@Yahoo.com";
     var $f_newman="新手上路";
     var $f_serve="服务类型";
     var $f_help="帮助中心";
     var $f_about="关于我们";
-    var $f_copyright="missinglovelove　Copyright 版权所有";
+    var $f_copyright="dsrramtcys　Copyright 版权所有";
     var $f_stamps="邮票兑换";
     var $f_hlpe2="使用指南";
     var $f_pay="支付方式";

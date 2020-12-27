@@ -10,6 +10,9 @@ class Upgrade extends Base
             $to_user_id = cookie("user_id");
         }
         $this->assign("to_user_id", $to_user_id);
+        $groupList = db("frontgroup")->where("id>1")->select();
+        //halt($groupList[0]['month1']);
+        $this->assign("groupList",$groupList);
         return $this->fetch();
     }
 
@@ -56,37 +59,37 @@ class Upgrade extends Base
                 return json(["msg" => lang("need recharge"), "url" => url("recharge/index")]);
             }
         }
-
+        $groupList = db("frontgroup")->where("id>1")->select();
         switch ($money) {
-            case '20':
+            case $groupList[0]['month1']:
                 $day = 30;
                 $groups = '2';
                 break;
-            case '50':
+            case $groupList[0]['month3']:
                 $day = 90;
                 $groups = '2';
                 break;
-            case '90':
+            case $groupList[0]['month6']:
                 $day = 180;
                 $groups = '2';
                 break;
-            case '150':
+            case $groupList[0]['month12']:
                 $day = 360;
                 $groups = '2';
                 break;
-            case '100':
+            case $groupList[1]['month1']:
                 $day = 30;
                 $groups = '3';
                 break;
-            case '288':
+            case $groupList[1]['month3']:
                 $day = 90;
                 $groups = '3';
                 break;
-            case '521':
+            case $groupList[1]['month6']:
                 $day = 180;
                 $groups = '3';
                 break;
-            case '999':
+            case $groupList[1]['month12']:
                 $day = 360;
                 $groups = '3';
                 break;

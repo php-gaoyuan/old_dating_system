@@ -1,7 +1,7 @@
 .login-body{
 	width: 100%;
-	background: url("../images/logo-bg.jpg") 0 0 no-repeat #000;
-	background-size: 100%;
+	background: url("../images/logo-bg.jpg") center center no-repeat #000;
+	background-size: 120%;
 	padding-top: 70%;
 }
 .logo{

@@ -33,7 +33,7 @@
 			<!--页眉，放置标题-->
 			<div class="mui-card-header">
 				<div>
-					<span class="mui-icon iconfont icon-vip" style="color:#fead11;    font-size: 1.3em;"></span>
+					<span class="mui-icon iconfont icon-diamond" style="color:#007aff;    font-size: 1.2em;"></span>
 					<span class="div"><{:lang('vip_member')}></span>
 				</div>
 			</div>
@@ -42,38 +42,38 @@
 				<ul class="mui-table-view">
 			        <li class="mui-table-view-cell">
 			        	<div class="mui-input-row mui-radio mui-left mui-pull-left">
-			        	    <label>1<{:lang('month2')}></label>
-			        	    <input name="vip" type="radio" value="20">
+			        	    <label>1<{:lang('month2')}>
+			        	    <input name="vip" type="radio" value="<{$groupList[0]['month1']}>"></label>
 			        	</div>
 <!--		                <div class="mui-pull-left li-center" >USD20</div>-->
-		                <div class="mui-pull-right li-right">USD20</div>
+		                <div class="mui-pull-right li-right">USD<{$groupList[0]['month1']}></div>
 			        </li>
 
 			        <li class="mui-table-view-cell">
 			        	<div class="mui-input-row mui-radio mui-left mui-pull-left">
-			        	    <label>3<{:lang('month2')}></label>
-			        	    <input name="vip" type="radio" value="50" checked>
+			        	    <label>3<{:lang('month2')}>
+			        	    <input name="vip" type="radio" value="<{$groupList[0]['month3']}>" checked></label>
 			        	</div>
 
-		                <div class="mui-pull-right li-right">USD50</div>
+		                <div class="mui-pull-right li-right">USD<{$groupList[0]['month3']}></div>
 			        </li>
 
 			        <li class="mui-table-view-cell">
 			        	<div class="mui-input-row mui-radio mui-left mui-pull-left">
-			        	    <label>6<{:lang('month2')}></label>
-			        	    <input name="vip" type="radio" value="90">
+			        	    <label>6<{:lang('month2')}>
+			        	    <input name="vip" type="radio" value="<{$groupList[0]['month6']}>"></label>
 			        	</div>
 
-		                <div class="mui-pull-right li-right">USD90</div>
+		                <div class="mui-pull-right li-right">USD<{$groupList[0]['month6']}></div>
 			        </li>
 
 			        <li class="mui-table-view-cell">
 			        	<div class="mui-input-row mui-radio mui-left mui-pull-left">
-			        	    <label>12<{:lang('month2')}></label>
-			        	    <input name="vip" type="radio" value="150" >
+			        	    <label>12<{:lang('month2')}>
+			        	    <input name="vip" type="radio" value="<{$groupList[0]['month12']}>" ></label>
 			        	</div>
 
-		                <div class="mui-pull-right li-right">USD150</div>
+		                <div class="mui-pull-right li-right">USD<{$groupList[0]['month12']}></div>
 			        </li>
 			    </ul>
 			</div>
@@ -85,7 +85,7 @@
 			<!--页眉，放置标题-->
 			<div class="mui-card-header">
 				<div>
-					<span class="mui-icon iconfont icon-diamond" style="color:#007aff;    font-size: 1.2em;"></span>
+					<span class="mui-icon iconfont icon-vip" style="color:#fead11;    font-size: 1.3em;"></span>
 					<span class="vip"><{:lang('vip_yj_member')}></span>
 				</div>
 			</div>
@@ -94,35 +94,35 @@
 				<ul class="mui-table-view">
 			        <li class="mui-table-view-cell">
 			        	<div class="mui-input-row mui-radio mui-left mui-pull-left">
-			        	    <label>1<{:lang('month2')}></label>
-			        	    <input name="vip" type="radio" value="100">
+			        	    <label>1<{:lang('month2')}>
+			        	    <input name="vip" type="radio" value="<{$groupList[1]['month1']}>"></label>
 			        	</div>
 
-		                <div class="mui-pull-right li-right">USD100</div>
+		                <div class="mui-pull-right li-right">USD<{$groupList[1]['month1']}></div>
 			        </li>
 					<li class="mui-table-view-cell">
 						<div class="mui-input-row mui-radio mui-left mui-pull-left">
-							<label>3<{:lang('month2')}></label>
-							<input name="vip" type="radio" value="288">
+							<label>3<{:lang('month2')}>
+							<input name="vip" type="radio" value="<{$groupList[1]['month3']}>"></label>
 						</div>
 
-						<div class="mui-pull-right li-right">USD288</div>
+						<div class="mui-pull-right li-right">USD<{$groupList[1]['month3']}></div>
 					</li>
 					<li class="mui-table-view-cell">
 						<div class="mui-input-row mui-radio mui-left mui-pull-left">
-							<label>6<{:lang('month2')}></label>
-							<input name="vip" type="radio" value="521">
+							<label>6<{:lang('month2')}>
+							<input name="vip" type="radio" value="<{$groupList[1]['month6']}>"></label>
 						</div>
 
-						<div class="mui-pull-right li-right">USD521</div>
+						<div class="mui-pull-right li-right">USD<{$groupList[1]['month6']}></div>
 					</li>
 					<li class="mui-table-view-cell">
 						<div class="mui-input-row mui-radio mui-left mui-pull-left">
-							<label>12<{:lang('month2')}></label>
-							<input name="vip" type="radio" value="999">
+							<label>12<{:lang('month2')}>
+							<input name="vip" type="radio" value="<{$groupList[1]['month12']}>"></label>
 						</div>
 						
-						<div class="mui-pull-right li-right">USD999</div>
+						<div class="mui-pull-right li-right">USD<{$groupList[1]['month12']}></div>
 					</li>
 
 			    </ul>
@@ -142,7 +142,8 @@
 			<!--页眉，放置标题-->
 			<div class="mui-card-header">
 				<div>
-					<span class="mui-icon iconfont icon-vip" style="color:#fead11;    font-size: 1.3em;"></span>
+					<span class="mui-icon iconfont icon-diamond" style="color:#007aff;    font-size: 1.2em;"></span>
+
 					<{:lang('vip_member')}>
 				</div>
 			</div>
@@ -162,7 +163,7 @@
 			<!--页眉，放置标题-->
 			<div class="mui-card-header">
 				<div>
-					<span class="mui-icon iconfont icon-diamond" style="color:#007aff;    font-size: 1.2em;"></span>
+					<span class="mui-icon iconfont icon-vip" style="color:#fead11;    font-size: 1.3em;"></span>
 					<{:lang('vip_yj_member')}>
 				</div>
 			</div>

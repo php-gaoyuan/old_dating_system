@@ -114,9 +114,9 @@
 
     'upgrade_title' => '업그레이드 회원',
 
-    'vip_member' => '화이트 골 드 회원',
+    'vip_member' => '블 루 다이 아 회원',
 
-    'vip_yj_member' => '다이아몬드 회원',
+    'vip_yj_member' => '크라운 멤버',
 
     'upgrade_sub_btn' => '업그레이드 클릭',
 
@@ -216,7 +216,7 @@
 
     'set lang' => '언어 설정',
 
-    'about' => '关于 missinglovelove',
+    'about' => '关于 dsrramtcys',
 
     'clear cache' => '캐시 지우기',
 

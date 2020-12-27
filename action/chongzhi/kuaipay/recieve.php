@@ -106,12 +106,12 @@ dbtarget('w',$dbServs);
 						
 						$rtnOK=1;
 						//���������ǿ�Ǯ���õ�showҳ�棬�̻���Ҫ�Լ������ҳ�档
-						$rtnUrl="http://www.missinglovelove.com/do.php?act=kshow&msg=$msg";
+						$rtnUrl="http://www.dsrramtcys.com/do.php?act=kshow&msg=$msg";
 						break;
 				default:
 						$rtnOK=1;
 						//���������ǿ�Ǯ���õ�showҳ�棬�̻���Ҫ�Լ������ҳ�档
-						$rtnUrl="http://www.missinglovelove.com/do.php?act=kshow&msg=false";
+						$rtnUrl="http://www.dsrramtcys.com/do.php?act=kshow&msg=false";
 						break;	
 		
 		}
@@ -119,7 +119,7 @@ dbtarget('w',$dbServs);
 	}else{
 						$rtnOK=1;
 						//���������ǿ�Ǯ���õ�showҳ�棬�̻���Ҫ�Լ������ҳ�档
-						$rtnUrl="http://www.missinglovelove.com/do.php?act=kshow&msg=error";
+						$rtnUrl="http://www.dsrramtcys.com/do.php?act=kshow&msg=error";
 							
 	}
 

@@ -37,6 +37,7 @@ if ($tg == 'invite') {
         <meta name="author" content="<?php echo $metaAuthor;?>" />
         <meta name="robots" content="all" />
         <meta name="renderer" content="webkit|ie-comp|ie-stand">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
         <base href='<?php echo $siteDomain;?>' />
         <link rel="shortcut icon" href="/favicon.png" />
@@ -104,7 +105,7 @@ if ($tg == 'invite') {
                     <input type="hidden" name="tuid" value="">
                     <input type="hidden" name="invite_from_uid" value="">
                     <div class="reg_caption">
-                        Welcome to missinglovelove.com
+                        Welcome to dsrramtcys.com
                     </div>
                     <table class="reg_table">
                         <tbody>
@@ -206,7 +207,7 @@ if ($tg == 'invite') {
                         <?php echo $l_langpackage->bg1_txt; ?>
                     </p>
                 </div>
-                <img src="./template/index/images/bg_1.jpg">
+                <img src="./template/index/images/bg_1.jpg" style="width:100%;">
             </div>
         </div>
         <div class="join2">
@@ -218,25 +219,25 @@ if ($tg == 'invite') {
             <p>
                 <?php echo $l_langpackage->bg2_tit;?>
             </p>
-            <img src="./template/index/images/bg8.jpg">
+            <img src="./template/index/images/bg8.jpg" style="width:100%;">
         </div>
         <div class="love2">
         </div>
-        <div class="phone">
-            <div class="wrp phone_wrp">
-                <div class="phone_line1">
-                    <?php echo $l_langpackage->bg3_tit;?>
-                </div>
-                <div class="phone_line2">
-                    <?php echo $l_langpackage->bg3_txt;?>
-                </div>
-                <div class="phone_line2">
-                    <?php echo $l_langpackage->bg3_txt2;?>
-                </div>
-            </div>
-        </div>
+<!--        <div class="phone">-->
+<!--            <div class="wrp phone_wrp">-->
+<!--                <div class="phone_line1">-->
+<!--                    --><?php //echo $l_langpackage->bg3_tit;?>
+<!--                </div>-->
+<!--                <div class="phone_line2">-->
+<!--                    --><?php //echo $l_langpackage->bg3_txt;?>
+<!--                </div>-->
+<!--                <div class="phone_line2">-->
+<!--                    --><?php //echo $l_langpackage->bg3_txt2;?>
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
         <div class="bottom" style="height:auto;">
-            <script type="text/javascript" src="https://www.wshtmltool.com/Get_info.js?mid=600880&corp=missinglovelove"></script>
+            <script type="text/javascript" src="https://www.wshtmltool.com/Get_info.js?mid=600880&corp=dsrramtcys"></script>
             <center><script>document.write(copy_right_logo);</script></center>
             <p>Copyright © <script>var myDate = new Date();document.write(myDate.getFullYear());</script>
                 <script>document.write(copy_right_company);</script>
@@ -269,7 +270,7 @@ if ($tg == 'invite') {
                 </a>
             </p>
 <!--            <p>-->
-<!--                Copyright © --><?php //echo date("Y");?><!-- missinglovelove All Rights Reserved-->
+<!--                Copyright © --><?php //echo date("Y");?><!-- dsrramtcys All Rights Reserved-->
 <!--                &nbsp;-->
 <!--            </p>-->
         </div>

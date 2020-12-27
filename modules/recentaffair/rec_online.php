@@ -169,7 +169,7 @@
 	<style>
 	
 	</style>
-	<span><a href='http://www.missinglovelove.com/main.php?app=user_upgrade' target='_blank'>$u_langpackage->readmore</a></span>";
+	<span><a href='http://www.dsrramtcys.com/main.php?app=user_upgrade' target='_blank'>$u_langpackage->readmore</a></span>";
 }
 
 ?>

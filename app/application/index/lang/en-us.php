@@ -105,7 +105,7 @@
     'wj_input_email' => 'Please enter your e-mail',
 
 
-    'main_title' => 'missinglovelove the most professional large translation social platform in the world',
+    'main_title' => 'dsrramtcys the most professional large translation social platform in the world',
 
     'main_title2' => 'Online Member',
 
@@ -114,9 +114,9 @@
 
     'upgrade_title' => 'Upgrade members',
 
-    'vip_member' => 'Platinum member',
+    'vip_member' => 'Blue diamond member',
 
-    'vip_yj_member' => 'Diamond members',
+    'vip_yj_member' => 'Crown member',
 
     'upgrade_sub_btn' => 'Click upgrades',
 
@@ -217,7 +217,7 @@
 
     'set lang' => 'Language setting',
 
-    'about' => 'About missinglovelove',
+    'about' => 'About dsrramtcys',
 
     'clear cache' => 'Scavenging caching',
 

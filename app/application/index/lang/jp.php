@@ -108,7 +108,7 @@
 
   'wj_input_email' => '登録メールを入力する',
 
-  'main_title' => 'missinglovelove世界で最も専門の大翻訳ソーシャルプラットフォーム',
+  'main_title' => 'dsrramtcys世界で最も専門の大翻訳ソーシャルプラットフォーム',
 
   'main_title2' => 'オンラインユーザー',
 
@@ -116,9 +116,9 @@
 
   'upgrade_title' => '会員を進級する',
 
-  'vip_member' => 'プラチナ会員',
+  'vip_member' => 'ブルーダイヤモンド会員',
 
-  'vip_yj_member' => 'ダイヤモンド会員',
+  'vip_yj_member' => 'クラウン会員',
 
   'upgrade_sub_btn' => 'アップグレードをクリック',
 
@@ -219,7 +219,7 @@
 
   'set lang' => '言語の設定',
 
-  'about' => '关于missinglovelove',
+  'about' => '关于dsrramtcys',
 
   'clear cache' => 'キャッシュ',
 

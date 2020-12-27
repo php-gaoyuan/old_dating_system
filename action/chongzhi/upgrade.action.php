@@ -11,56 +11,59 @@ if($pay_method=='lianyin2'){
     $pay_type=2;//single
     $pay_method="lianyin";
 }
-
+$dbo = new dbex;
+dbtarget('w', $dbServs);
 
 $money = 0;
 $day = 0;
 $groups = 1;
+//读取会员级别价格
+$groupList = $dbo->getAll("select * from wy_frontgroup where id>1");
+//print_r($user_group);exit;
 switch ($user_group) {
     case 'bj1':
-        $money = 20;
+        $money = $groupList[0]['month1'];
         $day = 30;
         $groups = '2';
         break;
     case 'bj2':
-        $money = 50;
+        $money = $groupList[0]['month3'];
         $day = 90;
         $groups = '2';
         break;
     case 'bj3':
-        $money = 90;
+        $money = $groupList[0]['month6'];
         $day = 180;
         $groups = '2';
         break;
     case 'bj4':
-        $money = 150;
+        $money = $groupList[0]['month12'];
         $day = 360;
         $groups = '2';
         break;
     case 'zs1':
-        $money = 100;
+        $money = $groupList[1]['month1'];
         $day = 30;
         $groups = '3';
         break;
     case 'zs2':
-        $money = 288;
+        $money = $groupList[1]['month3'];
         $day = 90;
         $groups = '3';
         break;
     case 'zs3':
-        $money = 521;
+        $money = $groupList[1]['month6'];
         $day = 180;
         $groups = '3';
         break;
     case 'zs4':
-        $money = 999;
+        $money = $groupList[1]['month12'];
         $day = 360;
         $groups = '3';
         break;
 }
-//echo "<pre>";print_r($PaymentMethod);exit;
-$dbo = new dbex;
-dbtarget('w', $dbServs);
+//echo "<pre>";print_r($money);exit;
+
 
 $user_id = get_sess_userid();
 $user_name = get_sess_username();

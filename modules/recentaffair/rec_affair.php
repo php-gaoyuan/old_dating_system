@@ -121,10 +121,10 @@
 <!-- JiaThis Button BEGIN --> 
 <script "text/javascript"> 
 var jiathis_config = { 
-	url: "http://www.missinglovelove.com/home2.0.php?h=<?php echo $user_id; ?>",
+	url: "http://www.dsrramtcys.com/home2.0.php?h=<?php echo $user_id; ?>",
 	title: "<?php echo strip_tags($rs['title']); ?>", 
-	summary:"missinglovelove亚洲国际交友中心网站－You match with single girls by dating_单身男女的爱情公寓:" ,
-	pic:"http://www.missinglovelove.com/<?php echo $rs["user_ico"]; ?>"
+	summary:"dsrramtcys亚洲国际交友中心网站－You match with single girls by dating_单身男女的爱情公寓:" ,
+	pic:"http://www.dsrramtcys.com/<?php echo $rs["user_ico"]; ?>"
 } 
 </script> 
 <script src="http://v2.jiathis.com/code/jiathis_r.js?move=0"></script> 

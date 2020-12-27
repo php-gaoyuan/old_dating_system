@@ -1,6 +1,6 @@
 <?php
 require("includet.php");
-$url = "https://missinglovelove.com?tuid=".get_session("wz_userid");
+$url = "https://dsrramtcys.com?tuid=".get_session("wz_userid");
 ?>
 <!DOCTYPE html>
 <head>

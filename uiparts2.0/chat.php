@@ -40,7 +40,7 @@ if (empty($userinfo["user_ico"])) {
     var ws_url = "<?php echo $ws_url;?>";
     var ws=null;
     var heartTimer=null;
-    var limit_msg_num=5;
+    var limit_msg_num=4;
     var open_chat=null;
     //初始化配置
     var userinfo = {
@@ -74,9 +74,9 @@ if (empty($userinfo["user_ico"])) {
                 type: 'post' //默认post
             },
             tool: [{
-                alias: 'redpacket', //工具别名
-                title: 'redpacket', //工具名称
-                icon: '' //工具图标，参考图标文档
+                alias: 'gift', //工具别名
+                title: 'gift', //工具名称
+                icon: '&#xe627;' //工具图标，参考图标文档
             }],
         });
         //打开一个临时会话窗口
@@ -123,6 +123,9 @@ if (empty($userinfo["user_ico"])) {
                 ,value: local
             });
         }
+        layim.on('tool(gift)', function (insert, send, obj) {
+            window.open('/main2.0.php?app=giftshop','gift',"height=800, width=1200, top=100,left=200, toolbar=no, menubar=no, scrollbars=no,resizable=no, location=no, status=no");
+        })
         //监听发送消息
         layim.on('sendMessage', function (res) {
             if (userinfo.user_group <2 && userinfo.msg_num>=limit_msg_num) {
@@ -137,30 +140,31 @@ if (empty($userinfo["user_ico"])) {
             }
             doReq("chatMsg",res);
         });
-        //监听点击红包按钮
-        layim.on('tool(redpacket)', function (insert, send, obj) {
-            layer.prompt({
-                title: '<?php echo $chatlp->hongbao;?>',
-                //formType: 2,
-                shade: 0,
-                btn: ['<?php echo $chatlp->send;?>', '<?php echo $chatlp->cancle;?>']
-            }, function (text, index) {
-                var regPos = /^\d+(\.\d+)?$/; //非负浮点数
-                if(!regPos.test(text) || parseFloat(text)<=0){
-                    layer.msg("<?php echo $chatlp->money_error;?>");
-                    return false;
-                }
-                if (parseFloat(userinfo.golds) < parseFloat(text)) {
-                    layer.msg("<?php echo $chatlp->money_buzu;?>");
-                    return false;
-                } else {
-                    layer.close(index);
-                    insert('紅包金額(金幣)：' + text); //将内容插入到编辑器，主要由insert完成
-                    send(); //自动发送
-                }
 
-            });
-        });
+        //监听点击红包按钮
+        //layim.on('tool(redpacket)', function (insert, send, obj) {
+        //    layer.prompt({
+        //        title: '<?php //echo $chatlp->hongbao;?>//',
+        //        //formType: 2,
+        //        shade: 0,
+        //        btn: ['<?php //echo $chatlp->send;?>//', '<?php //echo $chatlp->cancle;?>//']
+        //    }, function (text, index) {
+        //        var regPos = /^\d+(\.\d+)?$/; //非负浮点数
+        //        if(!regPos.test(text) || parseFloat(text)<=0){
+        //            layer.msg("<?php //echo $chatlp->money_error;?>//");
+        //            return false;
+        //        }
+        //        if (parseFloat(userinfo.golds) < parseFloat(text)) {
+        //            layer.msg("<?php //echo $chatlp->money_buzu;?>//");
+        //            return false;
+        //        } else {
+        //            layer.close(index);
+        //            insert('紅包金額(金幣)：' + text); //将内容插入到编辑器，主要由insert完成
+        //            send(); //自动发送
+        //        }
+        //
+        //    });
+        //});
         //每次窗口打开或切换，即更新对方的状态
         layim.on('chatChange', function (thatChat) {
             //console.log(thatChat);

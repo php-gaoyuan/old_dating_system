@@ -76,7 +76,6 @@
 		<script type="text/javascript" src="<{:config('skin_path')}>/js/function.js"></script>
 		<script type="text/javascript" src="<{:config('skin_path')}>/layui/layui.js"></script>
 		<script type="text/javascript">
-			
 			layui.use(["flow","laytpl","layer"],function(){
 				var flow=layui.flow,
 					laytpl=layui.laytpl,
@@ -113,8 +112,6 @@
 				flow.load(options);
 				//flow.lazyimg();
 			});
-
-
 			function imgResize(obj){
 				obj.style.width = "100%";
 				var width = obj.clientWidth;
@@ -126,17 +123,29 @@
  
 
 		<script id="tpl-list" type="text/html">
+			<style>
+				.headimg a{display: block;}
+				.headimg a img{border-radius: 100%;}
+				.mui-card-footer{
+					display: flex;
+					flex-direction: column;
+					align-content: space-between;
+				}
+				.footer-top,.footer-bottom{
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					width:100%;
+
+				}
+				.footer-top{
+					margin-bottom: 10px;
+				}
+			</style>
 			{{# layui.each(d.list,function(index,item){ }}
 			<div class="mui-col-sm-6 mui-col-xs-6">
-				
 		    	<div class="mui-card">
 					<!--内容区-->
-					<style>
-						.headimg a{
-							display: block;
-						}
-						.headimg a img{border-radius: 100%;}
-					</style>
 					<div class="mui-card-content card-img headimg">
 						<a href="/index/home/index/uid/{{ item.user_id }}">
 						<img src="{{ item.user_ico }}" onload="imgResize(this);" style="max-height: 168px;width:100%;"/>
@@ -144,16 +153,22 @@
 					</div>
 					<!--页脚，放置补充信息或支持的操作-->
 					<div class="mui-card-footer">
-						<div class="mui-pull-left">
-							{{# if(item.user_group == "3"){ }}
-							<span class="mui-icon iconfont icon-vip" style="color:#fead11;    font-size: 1.5em;"></span>
-							{{# }else if(item.user_group == "4"){ }}
-							<span class="mui-icon iconfont icon-diamond" style="color:#007aff;    font-size: 1.2em;"></span>
-							{{# } }}
-							<span class="mui-ellipsis">{{ item.user_name }}</span>
+						<div class="footer-top">
+							<div class="mui-pull-left">
+								{{# if(item.user_group == "2"){ }}
+								<span class="mui-icon iconfont icon-vip" style="color:#fead11;    font-size: 1.5em;"></span>
+								{{# }else if(item.user_group == "3"){ }}
+								<span class="mui-icon iconfont icon-diamond" style="color:#007aff;    font-size: 1.2em;"></span>
+								{{# } }}
+								<span class="mui-ellipsis">{{ item.user_name }}</span>
+							</div>
+							<div class="mui-pull-right">
+							</div>
 						</div>
-						<div class="mui-pull-right">
-							<span class="mui-icon iconfont icon-jiahaoyou" onclick="addFriend('{{ item.user_id }}')" {{# if(item.online_id>0){ }}style="color:#11c111;"{{#  } }}></span>
+						<div  class="footer-bottom">
+							<a href="/index/chat/chat/pals_id/{{ item.user_id }}.html" class="mui-icon iconfont icon-dazhaohu"  ></a>
+							<a href="/index/mall/index.html" class="mui-icon iconfont icon-liwu"></a>
+							<a class="mui-icon iconfont icon-jiahaoyou" onclick="addFriend('{{ item.user_id }}')" {{# if(item.online_id>0){ }}style="color:#11c111;"{{#  } }}></a>
 						</div>
 					</div>
 				</div>

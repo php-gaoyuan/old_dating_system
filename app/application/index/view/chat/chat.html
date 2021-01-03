@@ -5,10 +5,11 @@
 	<title>chat</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 	<link rel="stylesheet" type="text/css" href="<{:config('skin_path')}>/layui/css/layui.mobile.css"/>
+	<link rel="stylesheet" type="text/css" href="<{:config('skin_path')}>/layui/css/layui.css"/>
 	<link rel="stylesheet" href="<{:config('skin_path')}>/css/chat.css">
 	<style>
 		.layim-chat-tool span.layim-tool-phone:active{background: #d4d4d4;padding:0 5px;}
-		body .layim-chat-tool span.layim-tool-redpacket{background: url("<{:config('skin_path')}>/images/redpacket.png") center center no-repeat;background-size: 32px 28px;width:32px;height: 38px;}
+		/*body .layim-chat-tool span.layim-tool-redpacket{background: url("<{:config('skin_path')}>/images/redpacket.png") center center no-repeat;background-size: 32px 28px;width:32px;height: 38px;}*/
 	</style>
 </head>
 <body>
@@ -16,21 +17,27 @@
 <script type="text/javascript" src="<{:config('skin_path')}>/layui/layui.js"></script>
 <script>
 	var userinfo = <{$userinfo}> ;
+	var msg_num = localStorage.getItem('msg_num')
+	if(msg_num<=<{$msg_num}>){
+		localStorage.setItem("msg_num", <{$msg_num}>);
+	}
+
 	userinfo.msg_num = <{$msg_num}>;
 	var pals_userinfo = <{$pals_userinfo}> ;
 	var ws_url = "<{:config('webconfig.ws_url')}>";
 	var ws = null;
 	var heartTimer = null;
-	var limit_msg_num = 5;
+	var limit_msg_num = 4;
 	var open_chat = null;
 
 
-	layui.use(["mobile", "jquery", 'layer'], function () {
+	layui.use(["mobile", "jquery", 'layer','laytpl'], function () {
 		var mobile = layui.mobile, layim = mobile.layim, $ = layui.jquery, layer = mobile.layer, pclayer = layui.layer;
+		var laytpl = layui.laytpl;
 
 		//初始化聊天
 		layim.config({
-			title: 'dsrramtcys',
+			title: userinfo.user_name,
 			brief: true,
 			notice: true,
 			copyright: true,
@@ -48,36 +55,41 @@
 			},
 			//可同时配置多个
 			tool: [{
-				alias: 'redpacket',
-				title: '紅包',
+				alias: 'gift',
+				title: 'Gift',
 				iconUnicode: '',
-				iconClass: 'tool-redpacket' //图标字体的class类名
+				iconClass: 'layui-icon-gift' //图标字体的class类名
 			}]
 		});
+		//监听点击礼物
+		layim.on('tool(gift)', function (insert, send, obj) {
+			window.location.href='/index/mall/index.html';
+		})
 		//监听点击红包按钮
-		layim.on('tool(redpacket)', function (insert, send, obj) {
-			pclayer.prompt({
-				title: '紅包金額(金幣)',
-				shade: 0,
-				btn: ['發送', '取消']
-			}, function (text, index) {
-				if (parseFloat(text) <= 0) {
-					layer.msg("請填寫大於0的金額！");
-					return false;
-				}
-				if (parseFloat(userinfo.golds) < parseFloat(text)) {
-					pclayer.msg("餘額不足，請充值！");
-					return false;
-				} else {
-					pclayer.close(index);
-					insert('紅包金額(金幣)：' + text); //将内容插入到编辑器，主要由insert完成
-					send(); //自动发送
-				}
-			});
-		});
+		// layim.on('tool(redpacket)', function (insert, send, obj) {
+		// 	pclayer.prompt({
+		// 		title: '紅包金額(金幣)',
+		// 		shade: 0,
+		// 		btn: ['發送', '取消']
+		// 	}, function (text, index) {
+		// 		if (parseFloat(text) <= 0) {
+		// 			layer.msg("請填寫大於0的金額！");
+		// 			return false;
+		// 		}
+		// 		if (parseFloat(userinfo.golds) < parseFloat(text)) {
+		// 			pclayer.msg("餘額不足，請充值！");
+		// 			return false;
+		// 		} else {
+		// 			pclayer.close(index);
+		// 			insert('紅包金額(金幣)：' + text); //将内容插入到编辑器，主要由insert完成
+		// 			send(); //自动发送
+		// 		}
+		// 	});
+		// });
 		//监听发送消息
 		layim.on('sendMessage', function(res) {
-			if (userinfo.user_group < 2 && userinfo.msg_num>= limit_msg_num) {
+			var msg_num = localStorage.getItem('msg_num')
+			if (userinfo.user_group < 2 && msg_num>= limit_msg_num) {
 				$(".layim-chat-send input").attr("disabled", true);
 				layer.msg("<{:lang('need upgrade')}>");
 				setTimeout(function(){
@@ -87,8 +99,10 @@
 			}else{
 				if(userinfo.user_group < 2){
 					userinfo.msg_num++;
+					localStorage.setItem('msg_num',userinfo.msg_num)
 				}
 				doReq("chatMsg",res);
+				return true;
 			}
 		});
 
@@ -135,6 +149,16 @@
 		};
 		//监听收到的聊天消息，假设你服务端emit的事件名为：chatMessage
 		var doAck = function (res) {
+			//清除本地缓存的消息
+			// var cache =  layim.cache();
+			// var local = layui.data('layim-mobile')[cache.mine.id];
+			// //console.log(local);
+			// delete local.chatlog; //获取当前用户本地数据
+			// // //向localStorage同步数据
+			// layui.data('layim-mobile', {
+			// 	key: cache.mine.id
+			// 	,value: local
+			// });
 			var msg = JSON.parse(res.data);
 			switch (msg.type) {
 					// 服务端ping客户端
@@ -149,6 +173,13 @@
 				case 'chatMsg':
 					//如果聊天窗口一直打开，那么更新为已读
 					doReq("readMsg", {user_id:userinfo.user_id,fid: pals_userinfo.user_id});
+					if(msg.opt=='msg_num'){
+						layer.msg("<{:lang('need upgrade')}>");
+						setTimeout(()=>{
+							window.location.href = "<{:url('upgrade/index')}>";
+						},2000)
+						return false;
+					}
 					layim.getMessage(msg.data,msg.type);
 					break;
 					// 离线消息推送
@@ -185,25 +216,28 @@
 
 
 
-		//初始化websocket链接
-		freshSocket();
-		//创建会话
-		layim.chat({
-			id: pals_userinfo.user_id,
-			name: pals_userinfo.user_name,
-			avatar: pals_userinfo.user_ico,
-			type: "friend"
-		});
+
 		//打开页面就开始判断权限
 		if (userinfo.user_group < 2 && userinfo.msg_num>= limit_msg_num) {
 			$(".layim-chat-send input").attr("disabled", true);
 			layer.msg("<{:lang('need upgrade')}>");
-			// setTimeout(function(){
-			// 	window.location.href = "<{:url('upgrade/index')}>";
-			// },5000);
+			setTimeout(()=>{
+				window.location.href = "<{:url('upgrade/index')}>";
+			},2000)
 			return false;
+		}else{
+			//初始化websocket链接
+			freshSocket();
+			//创建会话
+			layim.chat({
+				id: pals_userinfo.user_id,
+				name: pals_userinfo.user_name,
+				avatar: pals_userinfo.user_ico,
+				type: "friend"
+			});
+			$(".layim-chat-send input").focus();
 		}
-		$(".layim-chat-send input").focus();
+
 
 
 
@@ -213,17 +247,19 @@
 		}
 		//监听查看更多记录
 		layim.on('chatlog', function (data, ul) {
-			console.log(data); //得到当前会话对象的基本信息
-			console.log(ul); //得到当前聊天列表所在的ul容器，比如可以借助他来实现往上插入更多记录
-			$.getJSON("<{:url('chat/chat_log')}>", {pals_id: pals_userinfo.user_id}, function (res) {
-				layim.panel({
-					//标题
-					title: 'Chat with ' + data.name,
-					//模版
-					tpl: $("#chatlog_tpl").val(),
-					//数据
-					data: res.data
-				});
+			window.location.hash ="";
+			$(".layim-chat-system>span[layim-event='chatLog']").text("loading");
+			$.getJSON("<{:url('chat/chat_log')}>", {pals_id: data.id}, function (res) {
+				$(".layim-chat-system>span[layim-event='chatLog']").text("Chat Record");
+				$(".layim-chat-system>span[layim-event='chatLog']").hide();
+				if(res.data.length>0){
+					laytpl($("#chatlog_li_tpl").html()).render(res.data.reverse(), function(html){
+						ul.before(html);
+						window.location.hash ="bottom";
+					});
+				}else{
+					layer.msg("No Record");
+				}
 			});
 
 		});
@@ -235,22 +271,17 @@
 	});
 </script>
 
-<textarea title="聊天记录" id="chatlog_tpl" style="display:none;">
-		<div class="layim-chat layim-chat-friend"><div class="layim-chat-main">
-		{{# if(d.data.length>0){ }}
-			<ul>
-			{{# layui.each(d.data, function(index, item){ }}
-				{{# if(item.id == userinfo.user_id){ }}
-			    	<li class="layim-chat-li layim-chat-mine"><div class="layim-chat-user"><img src="{{ item.avatar }}"><cite><i>{{ (item.timestamp) }}</i>{{ item.username }}</cite></div><div class="layim-chat-text">{{ layui.mobile.layim.content(item.content) }}</div></li>
-			  	{{# } else { }}
-			    	<li calss="layim-chat-li"><div class="layim-chat-user"><img src="{{ item.avatar }}"><cite>{{ item.username }}<i>{{ (item.timestamp) }}</i></cite></div><div class="layim-chat-text">{{ layui.mobile.layim.content(item.content) }}</div></li>
-			  	{{# } }}
-			{{# }); }}
-			</ul>
-		{{# }else{ }}
-			<div class="layim-chat-system"><span >No Data</span></div>
+<script type="text/html" title="聊天记录" id="chatlog_li_tpl">
+	<ul>
+		{{# layui.each(d, function(index, item){ }}
+		{{# if(item.id == userinfo.user_id){ }}
+		<li class="layim-chat-li layim-chat-mine"><div class="layim-chat-user"><img src="{{ item.avatar }}"><cite><i>{{ (item.timestamp) }}</i>{{ item.username }}</cite></div><div class="layim-chat-text">{{ layui.mobile.layim.content(item.content) }}</div></li>
+		{{# } else { }}
+		<li calss="layim-chat-li"><div class="layim-chat-user"><img src="{{ item.avatar }}"><cite>{{ item.username }}<i>{{ (item.timestamp) }}</i></cite></div><div class="layim-chat-text">{{ layui.mobile.layim.content(item.content) }}</div></li>
 		{{# } }}
-		</div></div>
-	</textarea>
+		{{# }); }}
+	</ul>
+	<a href="#bottom" name="bottom"></a>
+</script>
 </body>
 </html>

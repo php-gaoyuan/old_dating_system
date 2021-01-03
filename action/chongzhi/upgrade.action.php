@@ -129,6 +129,10 @@ if ($pay_method == "gold") {
 }elseif ($pay_method == "lianyin") {
     $payUrl = "/payment/lianyin/index.php?oid={$ordernumber}&am={$post_gold}&pt=2&pay_type={$pay_type}";
     header("location:{$payUrl}");exit;
+} else if ($pay_method == 'ipasspay') {//ipasspay
+    $payUrl = "/payment/ipasspay/pay.php?oid={$ordernumber}";
+    //echo "<pre>";print_r($payUrl);exit;
+    header("location:{$payUrl}");exit;
 }
 
 

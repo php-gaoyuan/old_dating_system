@@ -33,8 +33,8 @@ $upgrade_log = $dbo->getRow("select endtime from wy_upgrade_log where mid={$user
 						<div class="layui-input-inline">
 							<select id="user_group" name="user_group">
 								<option value="1" <?php if($userinfo['user_group']==1){echo "selected";}?>>==普通会员==</option>
-								<option value="2" <?php if($userinfo['user_group']==2){echo "selected";}?>>==白金会员==</option>
-								<option value="3" <?php if($userinfo['user_group']==3){echo "selected";}?>>==钻石会员==</option>
+								<option value="2" <?php if($userinfo['user_group']==2){echo "selected";}?>>==蓝钻会员==</option>
+								<option value="3" <?php if($userinfo['user_group']==3){echo "selected";}?>>==皇冠会员==</option>
 							</select>
 						</div>
 					</div>

@@ -77,7 +77,7 @@ $userinfo=$dbo->getRow($sql,"arr");
 		  <li class="nav_a" onclick='$("#zishu li").removeClass("active");$(this).addClass("active");'><a href="javascript:;" onclick="getGifts(2);"><?php echo $gf_langpackage->gf_zhenshi;?></a></li>
             <?php } ?>
 		  <li class="nav_a" onclick='$("#zishu li").removeClass("active");$(this).addClass("active");'><a href="/plugins/gift/gift_box.php"><?php echo $gf_langpackage->gf_putin;?></a></li>
-		  <li class="nav_a" onclick='$("#zishu li").removeClass("active");$(this).addClass("active");'><a href="/plugins/gift/gift_outbox.php"><?php echo $gf_langpackage->gf_putout;?></a></li>
+<!--		  <li class="nav_a" onclick='$("#zishu li").removeClass("active");$(this).addClass("active");'><a href="/plugins/gift/gift_outbox.php">--><?php //echo $gf_langpackage->gf_putout;?><!--</a></li>-->
 		</ul>
 		<div id="gift_list"></div>
 	</td>

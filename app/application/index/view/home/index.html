@@ -1,117 +1,58 @@
 <!doctype html>
-
 <html>
-
-
-
 	<head>
-
 		<meta charset="UTF-8">
-
 		<title><{:lang("home_title")}></title>
-
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-
 		<link href="<{:config('skin_path')}>/css/mui.min.css" rel="stylesheet" />
-
 		<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_537983_p50sudb7q2xogvi.css"/>
-
 		<link rel="stylesheet" type="text/css" href="<{:config('skin_path')}>/css/user.css">
-
 		<style type="text/css">
-
-			.user_ico{
-
-				width: 100%;
-
-				overflow: hidden;
-
-				position: relative;
-
-			}
-
-			#item2{
-
-				background:#fff;
-
-			}
-
-			.layui-flow-more{text-align: center;}
-
-			.pals-btn-group{
-
-				position: absolute;
-
-				bottom:10px;
-
+			.user_ico {
 				width:100%;
-
-				text-align: center;
-
+				overflow:hidden;
+				position:relative;
 			}
-
-			.pals-btn-group .mui-icon{
-
+			#item2 {
+				background:#fff;
+			}
+			.layui-flow-more {
+				text-align:center;
+			}
+			.pals-btn-group {
+				position:absolute;
+				bottom:10px;
+				width:100%;
+				text-align:center;
+			}
+			.pals-btn-group .mui-icon {
 				color:#fff;
-
-				font-size: 35px;
-
+				font-size:35px;
 				margin:0 18px;
-
 				border:1px solid #fff;
-
-				border-radius: 100%;
-
+				border-radius:100%;
 				padding:6px;
-
 			}
-
-			.pals-btn-group .icon-jiahaoyou{
-
-				font-size: 30px;
-
+			.pals-btn-group .icon-jiahaoyou {
+				font-size:30px;
 			}
-
-
-
-
-
-			.mui-tab-item1{
-
-				display: table-cell;
-
-				overflow: hidden;
-
-				width: 1%;
-
-				height: 50px;
-
-				text-align: center;
-
-				vertical-align: middle;
-
-				white-space: nowrap;
-
+			.mui-tab-item1 {
+				display:table-cell;
+				overflow:hidden;
+				width:1%;
+				height:50px;
+				text-align:center;
+				vertical-align:middle;
+				white-space:nowrap;
 				text-overflow:ellipsis;
-
 				color:#929292;
-
 			}
-
-
-
-			.mui-slider .mui-slider-group .mui-slider-item img{
-
-				display: block;
-
+			.mui-slider .mui-slider-group .mui-slider-item img {
+				display:block;
 			}
 
 		</style>
-
 	</head>
-
-
-
 	<body>
 		
 		<{if !$is_h5_plus }>
@@ -122,73 +63,43 @@
 		<{/if}>
 
 		<div class="mui-content">
-
 			<div class="user_ico" style="height:251px;background:url('<{$userinfo.user_ico}>') center center no-repeat;background-size:100% auto;">
-
 				<!-- <img src="<{$userinfo.user_ico}>" width="100%"/> -->
-
 				<div class="pals-btn-group">
-
 					<span class="mui-icon iconfont icon-dazhaohu" onclick="window.location.href='<{:url('chat/chat',['pals_id'=>$Request.param.uid])}>'"></span>
-
 					<span class="mui-icon iconfont icon-jiahaoyou" onclick="addFriend('<{$uid}>')"></span>
-
 				</div>
-
 			</div>
 
 			<div class="mui-slider">
-
 			    <div class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
-
 			        <a class="mui-control-item" href="#item1"><{:lang("news")}></a>
-
 			        <a class="mui-control-item" href="#item2"><{:lang("mood")}></a>
-
 			        <a class="mui-control-item" href="#item3"><{:lang("photos")}></a>
-
 			    </div>
 
 			    <div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-4"></div>
 
 			    <div class="mui-slider-group">
-
 			    	<!-- tab1 -->
-
 			        <div id="item1" class="mui-slider-item mui-control-content mui-active">
-
 			            <ul class="mui-table-view">
-
 			                <li class="mui-table-view-cell"><{:lang("nickname")}><span class="mui-pull-right"><{$userinfo.user_name}></span></li>
-
 			                <li class="mui-table-view-cell"><{:lang("sex")}>
-
 			                	<span class="mui-pull-right">
-
 			                	<{if $userinfo.user_sex == 0}><{:lang("female")}><{else/}><{:lang("man")}><{/if}>
-
 			                	</span>
-
 			                </li>
 
 			                <li class="mui-table-view-cell">生日<span class="mui-pull-right"><{$userinfo.birth_year}>-<{$userinfo.birth_month}>-<{$userinfo.birth_day}></span></li>
-
 			                <li class="mui-table-view-cell">国家<span class="mui-pull-right"><{$userinfo.country}></span></li>
-
 			                <li class="mui-table-view-cell">外貌<span class="mui-pull-right"><{$userinfo.waimao}></span></li>
-
 			                <li class="mui-table-view-cell">性取向<span class="mui-pull-right"><{$userinfo.sexual}></span></li>
-
 			                <li class="mui-table-view-cell">身高<span class="mui-pull-right"><{if $userinfo.height}><{$userinfo.height}>cm<{/if}></span></li>
-
 			                <li class="mui-table-view-cell">体重<span class="mui-pull-right"><{if $userinfo.weight}><{$userinfo.weight}>kg<{/if}></span></li>
-
 			                <li class="mui-table-view-cell">收入<span class="mui-pull-right"><{if $userinfo.income}><{$userinfo.income}><{/if}></span></li>
-
 			                <li class="mui-table-view-cell">简介<span class="mui-pull-right"><{$userinfo.gerenjieshao}></span></li>
-
 			            </ul>
-
 			        </div>
 
 

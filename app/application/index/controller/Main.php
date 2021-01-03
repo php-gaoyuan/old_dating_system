@@ -21,6 +21,7 @@ class Main extends Base
         //检查权限
         require_once "extend/Auth.php";
         $auth = new \Auth;
+
         $auth->group=$this->userinfo->getData("user_group");
         $auth_res = $auth->look_member();
         if(!$auth_res && $cur_page == "2"){

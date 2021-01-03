@@ -176,15 +176,21 @@ if ($uid) {
 						<?php echo $er_langpackage->er_currency; ?>&nbsp;&nbsp;
 						<?php echo $er_langpackage->er_need; ?>
                         (<span style="color:red;" id="dollar"><?php echo $sumoney; ?>USD</span>)
-                    <?php echo $er_langpackage->er_dollars; ?>
                     </span>
                 </div>
                 <div class="gold_list" style="margin-top:20px;">
-                    <label><input name="pay_method" type="radio" value="lianyin2" checked="checked"/><img
-                                src="/skin/<?php echo $skinUrl; ?>/images/vml.png"
-                                style="width:220px;vertical-align:middle;"/>&nbsp;&nbsp;</label>
-                    <label><input name="pay_method" type="radio" value="lianyin" />
-                        <img src="/skin/<?php echo $skinUrl; ?>/images/vm.png" style="width:220px;vertical-align:middle;"/>&nbsp;&nbsp;</label>
+<!--                    <label>-->
+<!--                        <input name="pay_method" type="radio" value="lianyin2" checked="checked"/>-->
+<!--                        <img src="/skin/--><?php //echo $skinUrl; ?><!--/images/vml.png" style="width:220px;vertical-align:middle;"/>-->
+<!--                    </label>-->
+<!--                    <label>-->
+<!--                        <input name="pay_method" type="radio" value="lianyin" />-->
+<!--                        <img src="/skin/--><?php //echo $skinUrl; ?><!--/images/vm.png" style="width:220px;vertical-align:middle;"/>-->
+<!--                    </label>-->
+                    <label>
+                        <input name="pay_method" type="radio" value="ipasspay" checked="checked"/>
+                        <img src="/skin/<?php echo $skinUrl; ?>/images/jcb.png" style="width:220px;vertical-align:middle;"/>
+                    </label>
                 </div>
 
                 <div class="gold_list">

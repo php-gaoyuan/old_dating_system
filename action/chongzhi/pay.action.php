@@ -13,7 +13,7 @@ $friend_username = get_argp("friend_username");
 $pay_method = get_argp("pay_method");
 //echo "<pre>";print_r($_POST);exit;
 $pay_type=1;
-if($pay_method=='lianyin2'){
+if($pay_method=='lianyin2'){//2是本地
     $pay_type=2;//single
     $pay_method="lianyin";
 }
@@ -53,6 +53,10 @@ if ($pay_method == 'paypal') {
     header("location:{$payUrl}");exit;
 } else if ($pay_method == 'lianyin') {//联银支付
     $payUrl = "/payment/lianyin/index.php?oid={$ordernumber}&am={$post_gold}&pt=1&pay_type={$pay_type}";
+    //echo "<pre>";print_r($payUrl);exit;
+    header("location:{$payUrl}");exit;
+} else if ($pay_method == 'ipasspay') {//ipasspay
+    $payUrl = "/payment/ipasspay/pay.php?oid={$ordernumber}";
     //echo "<pre>";print_r($payUrl);exit;
     header("location:{$payUrl}");exit;
 }

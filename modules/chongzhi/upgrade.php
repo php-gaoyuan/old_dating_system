@@ -252,20 +252,29 @@ $groupList = $dbo->getAll("select * from wy_frontgroup where id>1");
                                   <?php echo $er_langpackage->er_change;?>
                               </p>
                               <ul>
+<!--                                  <li>-->
+<!--                                      <label>-->
+<!--                                          <input class="radio" name="pay_method" type="radio" value="lianyin2" checked>-->
+<!--                                          <img src="/skin/--><?php //echo $skinUrl; ?><!--/images/vml.png">-->
+<!--                                      </label>-->
+<!--                                  </li>-->
+<!--                                  <li>-->
+<!--                                      <label>-->
+<!--                                          <input class="radio" name="pay_method" type="radio" value="lianyin">-->
+<!--                                          <img src="/skin/--><?php //echo $skinUrl; ?><!--/images/vm.png">-->
+<!--                                      </label>-->
+<!--                                  </li>-->
                                   <li>
                                       <label>
-                                          <input class="radio" name="pay_method" type="radio" value="lianyin2" checked>
-                                          <img src="/skin/<?php echo $skinUrl; ?>/images/vml.png"></label>
-                                  </li>
-                                  <li>
-                                      <label>
-                                          <input class="radio" name="pay_method" type="radio" value="lianyin">
-                                          <img src="/skin/<?php echo $skinUrl; ?>/images/vm.png"></label>
+                                          <input class="radio" name="pay_method" type="radio" value="ipasspay" checked>
+                                          <img src="/skin/<?php echo $skinUrl; ?>/images/jcb.png">
+                                      </label>
                                   </li>
                                   <li>
                                       <label>
                                           <input class="radio" name="pay_method" type="radio" value="gold" >
-                                          <img src="/skin/gaoyuan/images/svg/gold.svg" alt="gold" style="margin-top:-5px;width:40px;"></label>
+                                          <img src="/skin/gaoyuan/images/svg/gold.svg" alt="gold" style="margin-top:-5px;width:40px;">
+                                      </label>
                                   </li>
 
                               </ul>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"/www/wwwroot/www.dsrramtcys.com/app/application/index/view/upgrade/create_order.html";i:1609051846;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"/www/wwwroot/www.dsrramtcys.com/app/application/index/view/upgrade/create_order.html";i:1609145098;}*/ ?>
 <!doctype html>
 <html>
 
@@ -80,16 +80,22 @@
 					<?php echo lang('select_pay_type'); ?>
 				</div>
 				<div class="mui-card-content">
+<!--					<div class="mui-input-row mui-radio mui-left" style="margin:10px 0;">-->
+<!--					    <label for="lianyin">-->
+<!--					    <input name="pay_method" type="radio" value="lianyin2" id="lianyin2" checked style="margin-top:15px;">-->
+<!--						<img src="<?php echo config('skin_path'); ?>/images/vml.png">-->
+<!--						</label>-->
+<!--					</div>-->
+<!--					<div class="mui-input-row mui-radio mui-left" style="margin:10px 0;">-->
+<!--						<label for="lianyin">-->
+<!--							<input name="pay_method" type="radio" value="lianyin" id="lianyin" style="margin-top:15px;">-->
+<!--							<img src="<?php echo config('skin_path'); ?>/images/vm.png">-->
+<!--						</label>-->
+<!--					</div>-->
 					<div class="mui-input-row mui-radio mui-left" style="margin:10px 0;">
-					    <label for="lianyin">
-					    <input name="pay_method" type="radio" value="lianyin2" id="lianyin2" checked style="margin-top:15px;">
-						<img src="<?php echo config('skin_path'); ?>/images/vml.png">
-						</label>
-					</div>
-					<div class="mui-input-row mui-radio mui-left" style="margin:10px 0;">
-						<label for="lianyin">
-							<input name="pay_method" type="radio" value="lianyin" id="lianyin" style="margin-top:15px;">
-							<img src="<?php echo config('skin_path'); ?>/images/vm.png">
+						<label for="ipasspay">
+							<input name="pay_method" type="radio" value="ipasspay" id="ipasspay" checked style="margin-top:15px;">
+							<img src="<?php echo config('skin_path'); ?>/images/jcb.png">
 						</label>
 					</div>
 					<div class="mui-input-row mui-radio mui-left" style="margin:10px 0;">

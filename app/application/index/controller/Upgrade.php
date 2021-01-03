@@ -146,6 +146,12 @@ class Upgrade extends Base
                 return json(["msg" => lang("fail"), "url" => url("upgrade/index")]);
             }
         }
+        if ($pay_method == "ipasspay") {
+            $payUrl = "/index/payment/pay?oid={$ordernumber}";
+            return json(["msg" => 'ok', "url" => $payUrl]);
+            //echo "<pre>";print_r($payUrl);exit;
+            //header("location:{$payUrl}");exit;
+        }
         return json(["msg" => 'ok', "url" => url("payment/index", ['pay_method'=>$pay_method,'pay_type' => $pay_type, 'oid' => $ordernumber, 'am' => $money])]);
     }
 }

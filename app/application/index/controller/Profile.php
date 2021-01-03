@@ -71,17 +71,17 @@ class Profile extends Base
         $userinfo = model("Users")->field("user_id,user_ico")->find($uid);
 		if(request()->isAjax()){
 			$user_ico = input("user_ico");
-            if($user_ico==$userinfo->user_ico || strpos($user_ico,'default')!==false){
-                unset($user_ico);
-                return json(["code"=>0, "msg"=>"ok"]);
-            }elseif(strpos($user_ico,'default')!==false){
-                db("avater")->insert([
-                    "user_id"=>$uid,
-                    "avater"=>$user_ico,
-                    "create_time"=>date("Y-m-d H:i:s")
-                ]);
-            }
-			//$res = db("users")->where(["user_id"=>$uid])->update(["user_ico"=>$user_ico]);
+//            if($user_ico==$userinfo->user_ico || strpos($user_ico,'default')!==false){
+//                unset($user_ico);
+//                return json(["code"=>0, "msg"=>"ok"]);
+//            }elseif(strpos($user_ico,'default')!==false){
+//                db("avater")->insert([
+//                    "user_id"=>$uid,
+//                    "avater"=>$user_ico,
+//                    "create_time"=>date("Y-m-d H:i:s")
+//                ]);
+//            }
+			$res = db("users")->where(["user_id"=>$uid])->update(["user_ico"=>$user_ico]);
 			return json(["code"=>0, "msg"=>"ok"]);
 		}else{
 			$user_ico = img_add_pcUrl($userinfo["user_ico"]);

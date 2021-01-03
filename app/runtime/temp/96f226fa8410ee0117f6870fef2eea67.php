@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"/www/wwwroot/www.dsrramtcys.com/app/application/index/view/recharge/index.html";i:1609051846;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"/www/wwwroot/www.dsrramtcys.com/app/application/index/view/recharge/index.html";i:1609145697;}*/ ?>
 <!doctype html>
 <html>
 <head>
@@ -75,17 +75,20 @@
             <!--内容区-->
             <div class="mui-card-content">
                 <div class="mui-row" id="pay_list">
+<!--                    <div class="mui-col-sm-6 mui-col-xs-6">-->
+<!--                        <img src="<?php echo config('skin_path'); ?>/images/vml.png" alt="lianyin2" class="pay_type active">-->
+<!--                    </div>-->
+<!--                    <div class="mui-col-sm-6 mui-col-xs-6">-->
+<!--                        <img src="<?php echo config('skin_path'); ?>/images/vm.png" alt="lianyin" class="pay_type">-->
+<!--                    </div>-->
                     <div class="mui-col-sm-6 mui-col-xs-6">
-                        <img src="<?php echo config('skin_path'); ?>/images/vml.png" alt="lianyin2" class="pay_type active">
-                    </div>
-                    <div class="mui-col-sm-6 mui-col-xs-6">
-                        <img src="<?php echo config('skin_path'); ?>/images/vm.png" alt="lianyin" class="pay_type">
+                        <img src="<?php echo config('skin_path'); ?>/images/jcb.png" alt="ipasspay" class="pay_type active">
                     </div>
                 </div>
             </div>
         </div>
         <input type="hidden" name="select_money" value="200">
-        <input type="hidden" name="pay_method" value="lianyin2">
+        <input type="hidden" name="pay_method" value="ipasspay">
         <button type="submit" class="mui-btn mui-btn-blue mui-btn-block" style="width:90%;margin:0 auto;" id="sub">
             <?php echo lang('submit'); ?>
         </button>

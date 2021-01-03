@@ -247,9 +247,9 @@ a:hover{
 
 
 .way i{ background:url(../images/bg_ce.png) no-repeat;}
-.way i.xin{ background-position:0 0; width:38px; height:38px; display:inline-block;  cursor:pointer; margin-right:10px;}
+.way i.xin{ background-position:0 0; width:38px; height:38px; display:inline-block;  cursor:pointer; }
 .way i.xin:hover{ background-position:0 -41px;}
-.way i.email{ background-position:-43px 0; width:38px; height:39px; display:inline-block;  cursor:pointer;margin-right:10px;}
+.way i.email{ background-position:-43px 0; width:38px; height:39px; display:inline-block;  cursor:pointer;}
 .way i.email:hover{ background-position:-43px -41px;}
 .way i.dope{ background-position:-87px 0; width:38px; height:39px; display:inline-block;  cursor:pointer}
 .way i.dope:hover{ background-position:-87px -40px;}

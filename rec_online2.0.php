@@ -258,6 +258,7 @@ $xhd_list = $dbo->getRs($sql);
 
                         <div class="way">
                             <i class="xin" id="collect" onclick="top.mypals_add('<?php echo $hd['user_id'];?>');" title="Collect" name="83"></i>
+                            <i class="email" onclick="top.location.href='/main2.0.php?app=giftshop'" title="Say hello"></i>
                             <i class="dope" onclick="parent.open_chat('<?php echo $hd['user_id'];?>');" title="Say hello"></i>
                         </div>
                     </li>

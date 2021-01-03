@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:74:"/www/wwwroot/www.dsrramtcys.com/app/application/index/view/main/index.html";i:1609051846;s:77:"/www/wwwroot/www.dsrramtcys.com/app/application/index/view/public/footer.html";i:1609051846;s:75:"/www/wwwroot/www.dsrramtcys.com/app/application/index/view/public/chat.html";i:1609051846;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:74:"/www/wwwroot/www.dsrramtcys.com/app/application/index/view/main/index.html";i:1609385666;s:77:"/www/wwwroot/www.dsrramtcys.com/app/application/index/view/public/footer.html";i:1609051846;s:75:"/www/wwwroot/www.dsrramtcys.com/app/application/index/view/public/chat.html";i:1609328193;}*/ ?>
 <!doctype html>
 <html>
 
@@ -164,10 +164,9 @@
         var nums = $("#msg_nums").text();
         $("#msg_nums").text(parseInt(nums)+1).css("display","block");
         //追加声音
-        $("body").append("<audio autoplay='true' src='/public/static/default/default.mp3'></audio>");
-        setTimeout(function(){
-            $("audio").remove();
-        }, 2000);
+        var audio = new Audio();
+        audio.src="/public/static/default/default.mp3";
+        audio.play();
     }
 </script>
 <!-- <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_537983_p50sudb7q2xogvi.css"/> -->
@@ -213,7 +212,6 @@
 		<script type="text/javascript" src="<?php echo config('skin_path'); ?>/js/function.js"></script>
 		<script type="text/javascript" src="<?php echo config('skin_path'); ?>/layui/layui.js"></script>
 		<script type="text/javascript">
-			
 			layui.use(["flow","laytpl","layer"],function(){
 				var flow=layui.flow,
 					laytpl=layui.laytpl,
@@ -250,8 +248,6 @@
 				flow.load(options);
 				//flow.lazyimg();
 			});
-
-
 			function imgResize(obj){
 				obj.style.width = "100%";
 				var width = obj.clientWidth;
@@ -263,17 +259,29 @@
  
 
 		<script id="tpl-list" type="text/html">
+			<style>
+				.headimg a{display: block;}
+				.headimg a img{border-radius: 100%;}
+				.mui-card-footer{
+					display: flex;
+					flex-direction: column;
+					align-content: space-between;
+				}
+				.footer-top,.footer-bottom{
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					width:100%;
+
+				}
+				.footer-top{
+					margin-bottom: 10px;
+				}
+			</style>
 			{{# layui.each(d.list,function(index,item){ }}
 			<div class="mui-col-sm-6 mui-col-xs-6">
-				
 		    	<div class="mui-card">
 					<!--内容区-->
-					<style>
-						.headimg a{
-							display: block;
-						}
-						.headimg a img{border-radius: 100%;}
-					</style>
 					<div class="mui-card-content card-img headimg">
 						<a href="/index/home/index/uid/{{ item.user_id }}">
 						<img src="{{ item.user_ico }}" onload="imgResize(this);" style="max-height: 168px;width:100%;"/>
@@ -281,16 +289,22 @@
 					</div>
 					<!--页脚，放置补充信息或支持的操作-->
 					<div class="mui-card-footer">
-						<div class="mui-pull-left">
-							{{# if(item.user_group == "3"){ }}
-							<span class="mui-icon iconfont icon-vip" style="color:#fead11;    font-size: 1.5em;"></span>
-							{{# }else if(item.user_group == "4"){ }}
-							<span class="mui-icon iconfont icon-diamond" style="color:#007aff;    font-size: 1.2em;"></span>
-							{{# } }}
-							<span class="mui-ellipsis">{{ item.user_name }}</span>
+						<div class="footer-top">
+							<div class="mui-pull-left">
+								{{# if(item.user_group == "2"){ }}
+								<span class="mui-icon iconfont icon-vip" style="color:#fead11;    font-size: 1.5em;"></span>
+								{{# }else if(item.user_group == "3"){ }}
+								<span class="mui-icon iconfont icon-diamond" style="color:#007aff;    font-size: 1.2em;"></span>
+								{{# } }}
+								<span class="mui-ellipsis">{{ item.user_name }}</span>
+							</div>
+							<div class="mui-pull-right">
+							</div>
 						</div>
-						<div class="mui-pull-right">
-							<span class="mui-icon iconfont icon-jiahaoyou" onclick="addFriend('{{ item.user_id }}')" {{# if(item.online_id>0){ }}style="color:#11c111;"{{#  } }}></span>
+						<div  class="footer-bottom">
+							<a href="/index/chat/chat/pals_id/{{ item.user_id }}.html" class="mui-icon iconfont icon-dazhaohu"  ></a>
+							<a href="/index/mall/index.html" class="mui-icon iconfont icon-liwu"></a>
+							<a class="mui-icon iconfont icon-jiahaoyou" onclick="addFriend('{{ item.user_id }}')" {{# if(item.online_id>0){ }}style="color:#11c111;"{{#  } }}></a>
 						</div>
 					</div>
 				</div>

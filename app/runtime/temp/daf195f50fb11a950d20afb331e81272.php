@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:74:"/www/wwwroot/www.dsrramtcys.com/app/application/index/view/chat/index.html";i:1609051846;s:77:"/www/wwwroot/www.dsrramtcys.com/app/application/index/view/public/footer.html";i:1609051846;s:75:"/www/wwwroot/www.dsrramtcys.com/app/application/index/view/public/chat.html";i:1609051846;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:74:"/www/wwwroot/www.dsrramtcys.com/app/application/index/view/chat/index.html";i:1609051846;s:77:"/www/wwwroot/www.dsrramtcys.com/app/application/index/view/public/footer.html";i:1609051846;s:75:"/www/wwwroot/www.dsrramtcys.com/app/application/index/view/public/chat.html";i:1609328193;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -120,10 +120,9 @@
         var nums = $("#msg_nums").text();
         $("#msg_nums").text(parseInt(nums)+1).css("display","block");
         //追加声音
-        $("body").append("<audio autoplay='true' src='/public/static/default/default.mp3'></audio>");
-        setTimeout(function(){
-            $("audio").remove();
-        }, 2000);
+        var audio = new Audio();
+        audio.src="/public/static/default/default.mp3";
+        audio.play();
     }
 </script>
 <!-- <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_537983_p50sudb7q2xogvi.css"/> -->

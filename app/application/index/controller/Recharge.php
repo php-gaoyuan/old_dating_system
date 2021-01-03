@@ -64,6 +64,11 @@ class Recharge extends Base {
                     //file_put_contents("paypal_str.txt", var_export($str,1)."\n\n",FILE_APPEND);
                     return $str;
                 }
+                if ($pay_method == "ipasspay") {
+                    $payUrl = "/index/payment/pay?oid={$ordernumber}";
+                    //echo "<pre>";print_r($payUrl);exit;
+                    header("location:{$payUrl}");exit;
+                }
                 $this->assign("order",["pay_type"=>$pay_type,"oid"=>$ordernumber,"am"=>$money]);
                 return $this->fetch("payment/{$pay_method}");
             }

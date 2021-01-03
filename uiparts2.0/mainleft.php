@@ -212,11 +212,11 @@ if ($days <= 0 && !$group) {
             <span class="left-nav-icon ln-gift-box-icon"></span>
             <a href="/main2.0.php?app=gift_box"><?php echo $gf_langpackage->gf_putin;?></a>
         </li>
-        <li>
-            <span class="left-nav-icon ln-card-icon"></span>
-            <a href="/main2.0.php?app=gift_outbox"><?php echo $gf_langpackage->gf_putout;?></a>
-        </li>
-        <li class="li-title"></li>
+<!--        <li>-->
+<!--            <span class="left-nav-icon ln-card-icon"></span>-->
+<!--            <a href="/main2.0.php?app=gift_outbox">--><?php //echo $gf_langpackage->gf_putout;?><!--</a>-->
+<!--        </li>-->
+<!--        <li class="li-title"></li>-->
   </ul>
 </div>
 <!--左列表-->

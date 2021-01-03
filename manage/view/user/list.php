@@ -156,7 +156,12 @@
 					return d.user_name+'/'+user_sex+'/'+age;
 					}},
 				{title: '头像',width:80,templet:function(d){
-						return '<img src="/'+d.user_ico+'" class="layui-circle" style="width:50px;" onerror="this.src=\'/Public/adminnew/images/default_header.png\';">';
+						//return '<img src="/'+d.user_ico+'" class="layui-circle" style="width:50px;" onerror="this.src=\'/Public/adminnew/images/default_header.png\';">';
+                        if(d.user_ico.indexOf('http')!=-1){
+                            return '<img src="'+d.user_ico+'" class="layui-circle" style="width:50px;height:50px;">';
+                        }else{
+                            return '<img src="/'+d.user_ico+'" class="layui-circle" style="width:50px;height:50px;">';
+                        }
 					}},
 				//{field: 'country', title: '国籍'},
 				{title: '绑定员工',templet:"#tuid",width:90},
@@ -173,9 +178,9 @@
 					if(d.user_group==1){
 						return '普通会员';
 					}else if(d.user_group==2){
-						return '白金会员（'+d.end_date+'）';
+						return '蓝钻会员（'+d.end_date+'）';
 					}else if(d.user_group == 3){
-						return '钻石会员（'+d.end_date+'）';
+						return '皇冠会员（'+d.end_date+'）';
 					}
 					}},
 				{field: 'golds', title: '剩余金币数',width:100,edit:'text'},

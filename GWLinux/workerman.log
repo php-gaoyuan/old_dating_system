@@ -8,3 +8,9 @@
 2020-12-27 18:58:09 pid:8069 Workerman[start.php] Stopping ...
 2020-12-27 18:58:09 pid:8069 Workerman[start.php] has been stopped
 2020-12-27 18:58:12 pid:16683 Workerman[GWLinux/start.php] start in DAEMON mode
+2020-12-30 18:27:03 pid:18393 Workerman[GWLinux/start.php] stop 
+2020-12-30 18:27:03 pid:18393 Workerman[GWLinux/start.php] is stoping ...
+2020-12-30 18:27:03 pid:16685 Workerman[start.php] Stopping ...
+2020-12-30 18:27:03 pid:16685 Workerman[start.php] has been stopped
+2020-12-30 18:27:03 pid:18393 Workerman[GWLinux/start.php] stop success
+2020-12-30 18:27:07 pid:18398 Workerman[GWLinux/start.php] start in DAEMON mode

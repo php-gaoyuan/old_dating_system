@@ -11,7 +11,7 @@ $paymentlp = new paymentlp();
 $dbo = new dbex;
 dbtarget('w',$dbServs);
 
-$hashkey = 'uHj1dRlO28ihan1wV0cjsFxrE2kcVXl6CH2writiPnlGD3UgJBwqkvnYj1xkHi1fWlNCuFeMH2Ceu0WJhdCuA3WhtemzUiJGufSsqsVewTSq1iDseWcDPHN2xFiqsO1y'; // 测试商户证书
+$hashkey = 'SkKCUlfRiQxtajoRpPACePhloARbzirFAabg4QG3kfpVrXvd5Hj3hh2cdyotCer8y128hiWHjGs7zu3zeNe18xxsg7cFCmAgXqxz4v5XUKUKX3MREXpX8z8bDJ2ifrf5'; // 测试商户证书
 
 
 if (!empty($_GET) && empty($_POST)) {
@@ -23,10 +23,12 @@ if (empty($_POST)) {
 }
 $_GET = $_POST;
 $merchant_id = $_GET ['merchant_id'];
+$merch_order_ori_id = $_GET ['merch_order_ori_id'];
 $merch_order_id = $_GET ['merch_order_id'];
+$bill_email = $_GET ['bill_email'];
 $price_currency = $_GET ['price_currency'];
 $price_amount = $_GET ['price_amount'];
-$merch_order_ori_id = $_GET ['merch_order_ori_id'];
+$order_remark = $_GET ['order_remark'];
 $order_id = $_GET ['order_id'];
 $status = $_GET ['status'];
 $message = $_GET ['message'];

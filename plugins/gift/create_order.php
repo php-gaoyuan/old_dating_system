@@ -58,72 +58,67 @@
 	$gift_num=$_GET[num];
 	//echo "<pre>";print_r($_REQUEST);
 
+    if($golds < $score){
+        echo "<script>alert('".$pu_langpackage->less_golds."');</script>";
+        echo "<script>top.location.href='/main2.0.php?app=user_pay';</script>";
+        exit;
+    }
 
     //提交并写入订单
-    if($_POST && ((!empty($_POST['toself']) || !empty($_POST['tofriends']) ))){
-        //得到接受者信息
-        $accept_name=$_POST['tofriends'];
-        if($accept_name){
-            $sql="select user_id from wy_users where user_name='$accept_name'";
-            $accept_info=$dbo->getRow($sql);
-            if(empty($accept_info)){
-                if($_COOKIE['lp_name'] == 'zh') echo "<script>top.Dialog.alert('找不到礼物接受人');</script>";
-                if($_COOKIE['lp_name'] == 'en') echo "<script>top.Dialog.alert('Can\'t find a gift recipient');</script>";
-                echo "<script>top.location.href='/main2.0.php?app=giftshop';</script>";
-                exit;
-            }
-        }
-        $accept_id=$accept_info['user_id'];
-
-        if($golds < $score){
-            //echo "<script>top.Dialog.alert('".$pu_langpackage->less_golds."');</script>";
-            echo "<script>alert('".$pu_langpackage->less_golds."');</script>";
-            echo "<script>top.location.href='/main2.0.php?app=user_pay';</script>";
-            exit;
-        }else{
-            dbplugin('w');
-
-            //如果送给自己
-            if(!empty($_POST['toself'])){
-                if($_POST['toself'] != $send_name){
-                    if($_COOKIE['lp_name'] == 'zh') echo "<script>alert('送给自己礼物出错');</script>";
-                    if($_COOKIE['lp_name'] == 'en') echo "<script>alert('Give yourself a present.');</script>";
-                    echo "<script>top.location.reload();</script>";
+    if($_POST && ((isset($_POST['toself']) || isset($_POST['tofriends']) ))){
+        $ordernumber='N-P'.time().mt_rand(100,999);
+        if(!empty($_POST['tofriends'])){
+            //得到接受者信息
+            $accept_name=$_POST['tofriends'];
+            if($accept_name){
+                $sql="select user_id from wy_users where user_name='$accept_name'";
+                $accept_info=$dbo->getRow($sql);
+                if(empty($accept_info)){
+                    $err_msg = "找不到礼物接受人";
+                    if($_COOKIE['lp_name'] == 'en'){
+                        $err_msg = "Can't find a gift recipient";
+                    }
+                    echo "<script>top.Dialog.alert('{$err_msg}');</script>";
+                    echo "<script>setTimeout(function(){top.location.href='/main2.0.php?app=giftshop';},2000);</script>";
                     exit;
                 }
-                $sql="insert into gift_order(send_id,accept_id,send_name,accept_name,msg,gift,send_time,gifttype,accept_address,gift_id,gift_num) values('$send_id','$send_id','$send_name','$send_name','$msg','$gift_path','$send_time','$gifttype','$address','$gift_id','{$gift_num}')";
-                //echo $sql;exit;
-                if($dbo->exeUpdate($sql)){
-                    echo "<script>top.Dialog.alert('$gf_langpackage->gf_mess_4');</script>";
-                    $sql="update wy_users set golds=$golds-$score where user_id=$send_id";
-                    $dbo->exeUpdate($sql);
-                }
-                //写充值记录
-                $ordernumber='N-P'.time().mt_rand(100,999);
-                $sql="insert into wy_balance set type='4',uid='$send_id',uname='$send_name',touid='$send_id',touname='$send_name',message='送禮物，價格：$score',state='2',addtime='$send_time',funds='$score',ordernumber='$ordernumber'";
-                $dbo->exeUpdate($sql);
+            }
+            //print_r($accept_info);exit;
+            $accept_id=$accept_info['user_id'];
 
-                api_proxy("message_set",$send_id,"{num}个礼物","main2.0.php?app=giftshop",0,20,"remind");
+            $sql="insert into gift_order(send_id,accept_id,send_name,accept_name,msg,gift,send_time,gifttype,gift_id,gift_num) values('$send_id','$accept_id','$send_name','$accept_name','$msg','$gift_path','$send_time','$gifttype','$gift_id','{$gift_num}')";
+            if($dbo->exeUpdate($sql)){
+                echo "<script>top.Dialog.alert('$gf_langpackage->gf_mess_4');</script>";
+                $sql="update wy_users set golds=$golds-$score where user_id=$send_id";
+
+                $dbo->exeUpdate($sql);
             }
 
-            if(!empty($_POST['tofriends'])){
-                $sql="insert into gift_order(send_id,accept_id,send_name,accept_name,msg,gift,send_time,gifttype,gift_id,gift_num) values('$send_id','$accept_id','$send_name','$accept_name','$msg','$gift_path','$send_time','$gifttype','$gift_id','{$gift_num}')";
-                if($dbo->exeUpdate($sql)){
-                    echo "<script>top.Dialog.alert('$gf_langpackage->gf_mess_4');</script>";
-                    $sql="update wy_users set golds=$golds-$score where user_id=$send_id";
+            //写充值记录
+            $sql="insert into wy_balance set type='4',uid='$send_id',uname='$send_name',touid='$accept_id',touname='$accept_name',message='送禮物，價格：$score',state='2',addtime='$send_time',funds='$score',ordernumber='$ordernumber'";
+            $dbo->exeUpdate($sql);
 
-                    $dbo->exeUpdate($sql);
-                }
-
-                //写充值记录
-                $ordernumber='N-P'.time().mt_rand(100,999);
-                $sql="insert into wy_balance set type='4',uid='$send_id',uname='$send_name',touid='$accept_id',touname='$accept_name',message='送禮物，價格：$score',state='2',addtime='$send_time',funds='$score',ordernumber='$ordernumber'";
-                $dbo->exeUpdate($sql);
-
-                api_proxy("message_set",$accept_id,"{num}个礼物","main2.0.php?app=giftshop",0,20,"remind");
+            //api_proxy("message_set",$accept_id,"{num}个礼物","main2.0.php?app=giftshop",0,20,"remind");
+        }elseif (!empty($_POST['toself'])){
+            //如果送给自己
+            if($_POST['toself'] != $send_name){
+                if($_COOKIE['lp_name'] == 'zh') echo "<script>alert('送给自己礼物出错');</script>";
+                if($_COOKIE['lp_name'] == 'en') echo "<script>alert('Give yourself a present.');</script>";
+                echo "<script>top.location.reload();</script>";
+                exit;
             }
+            $sql="insert into gift_order(send_id,accept_id,send_name,accept_name,msg,gift,send_time,gifttype,accept_address,gift_id,gift_num) values('$send_id','$send_id','$send_name','$send_name','$msg','$gift_path','$send_time','$gifttype','$address','$gift_id','{$gift_num}')";
+            //echo $sql;exit;
+            if($dbo->exeUpdate($sql)){
+                echo "<script>top.Dialog.alert('$gf_langpackage->gf_mess_4');</script>";
+                $sql="update wy_users set golds=$golds-$score where user_id=$send_id";
+                $dbo->exeUpdate($sql);
+            }
+            //写充值记录
+            $sql="insert into wy_balance set type='4',uid='$send_id',uname='$send_name',touid='$send_id',touname='$send_name',message='送禮物，價格：$score',state='2',addtime='$send_time',funds='$score',ordernumber='$ordernumber'";
+            $dbo->exeUpdate($sql);
 
-
+            //api_proxy("message_set",$send_id,"{num}个礼物","main2.0.php?app=giftshop",0,20,"remind");
         }
     }
 
@@ -169,13 +164,13 @@ a:hover {text-decoration:underline;color:#2C589E;}
             <label>
                 <input type="radio" id="label2" name="towho"/><?php echo $pu_langpackage->songpengyou;?>
             </label>
-            <input type="hidden" id="tofriends" name="tofriends"/>
-            <select id="friends_list" name="friends_select" onchange="document.getElementById('tofriends').value=value;">
+            <input type="text" id="tofriends" name="tofriends" placeholder="Friend's name"/>
+            <!--<select id="friends_list" name="friends_select" onchange="document.getElementById('tofriends').value=value;">
                 <option value="" id="option_s"><?php echo $pu_langpackage->xuanzehaoyou;?></option>
                 <?php foreach($friends as $friend){ ?>
                 <option value="<?php echo $friend['pals_name'];?>"><?php echo $friend['pals_name'];?></option>
                 <?php } ?>
-            </select>
+            </select>-->
         </div>
         <div class="giftitem_name"><?php echo $pu_langpackage->liwuxinxi;?></div>
         <div class="giftorderinfo">
@@ -199,15 +194,19 @@ a:hover {text-decoration:underline;color:#2C589E;}
         $('#friends_list').change(function(){
             $('#label2').click()
         })
+        $("#tofriends").focus(function(){
+            $('#label2').trigger("click");
+        })
     })
     function checkform(){
-        //if($('#tofriends').val() =='' && $('#toself').val() =='') {
-        if($('#label2').attr('checked') ) {
-            if($('#tofriends').val() ==''){
+        if($('#label2:checked').val()=='on') {
+            var friend_name = $('#tofriends').val();
+            if(friend_name ==''){
                 top.Dialog.alert('<?php echo $pu_langpackage->zengsongduixiang;?>');
                 return false;
             }
         }
+        //console.log($('#tofriends').val());return false;
         // if(!window.confirm("<?php echo $pu_langpackage->quedingma;?>")){
         // 	return false;
         // }

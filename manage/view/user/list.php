@@ -82,7 +82,7 @@
 			<table id="table" lay-filter="table"></table>
 			<!--记录操作工具条-->
 			<script type="text/html" id="bar">
-				<a class="layui-btn layui-btn-xs" lay-event="resetPass">重置密码</a>
+				<a class="layui-btn layui-btn-xs" lay-event="resetPass">修改密码</a>
 				<a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">删除</a>
 			</script>
 
@@ -121,6 +121,15 @@
 			<script type="text/html" id="lookImgTpl">
 				<button type="button" class="layui-btn layui-btn-sm" lay-event="lookImg">查看照片</button>
 			</script>
+
+            <script type="text/html" id="editPass">
+                <div style="padding:20px;">
+                    <input type="text" id="passwd" name="passwd" placeholder="请输入新密码">
+                    <br>
+                    <br>
+                    <button type="button" id="sub_passwd">提交</button>
+                </div>
+            </script>
 
 
 
@@ -162,7 +171,8 @@
 					return d.user_name+'/'+user_sex+'/'+age;
 					}},
 				{title: '头像',width:80,templet:function(d){
-						return '<img src="/'+d.user_ico+'" class="layui-circle" style="width:50px;" onerror="this.src=\'/Public/adminnew/images/default_header.png\';">';
+						//return '<img src="/'+d.user_ico+'" class="layui-circle" style="width:50px;" onerror="this.src=\'/Public/adminnew/images/default_header.png\';">';
+						return '<img src="'+d.user_ico+'" class="layui-circle" style="width:50px;">';
 					}},
 				//{field: 'country', title: '国籍'},
 				{title: '绑定员工',templet:"#tuid",width:90},
@@ -259,6 +269,27 @@
 					layer.close(index);
 				})
 			} else if (layEvent == 'resetPass') {
+                layui.layer.open({
+                    type: 1,
+                    title: "修改密码",
+                    fixed: true,
+                    maxmin: true,
+                    area: ["400px", "200px"],
+                    content: $("#editPass").html(),
+                    success: function(layero, index){
+                        console.log(layero, index);
+                        layero.find("#sub_passwd").click(function(){
+                            var passwd = layero.find("#passwd").val();
+                            if(passwd=='')return false;
+                            $.post("/manage/controller/User.php?act=editPass", {user_id: data.user_id,passwd:passwd}, function (res) {
+                                layer.alert(res.msg);
+                                return false;
+                            },"json");
+                            layer.close(index);
+                        })
+                    }
+                })
+                return ;
 				layer.confirm('您确定要重置'+data.user_email+'的密码吗？', function (index) {
 					$.post("/manage/controller/User.php?act=resetPass", {user_id: data.user_id}, function (res) {
 						layer.alert(res.msg);

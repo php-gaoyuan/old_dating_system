@@ -249,26 +249,27 @@ if ($uid) {
                                   <?php echo $er_langpackage->er_change;?>
                               </p>
                               <ul>
-                                <li>
-                                  <label>
-                                    <input class="radio" name="pay_method" type="radio" value="lianyin" checked>
-                                    <img src="/skin/<?php echo $skinUrl; ?>/images/vml.png" alt="lianyin"></label>
-                                </li>
+                                  <li style="width:180px;">
+                                      <label>
+                                          <input class="radio" name="pay_method" type="radio" value="lianyin" checked>
+                                          <img src="/skin/<?php echo $skinUrl; ?>/images/vm.png" ></label>
+                                  </li>
+
 
                                 <li>
                                   <label>
                                     <input class="radio" name="pay_method" type="radio" value="yingfu" >
-                                    <img src="/skin/<?php echo $skinUrl; ?>/images/fuHui.png" alt="yingfu"></label>
+                                    <img src="/skin/<?php echo $skinUrl; ?>/images/fuHui.png"></label>
                                 </li>
                                   <li>
                                       <label>
-                                          <input class="radio" name="pay_method" type="radio" value="lianyin2">
-                                          <img src="/skin/<?php echo $skinUrl; ?>/images/vm.png" alt="lianyin2"></label>
+                                          <input class="radio" name="pay_method" type="radio" value="lianyin2" >
+                                          <img src="/skin/<?php echo $skinUrl; ?>/images/vml.png"></label>
                                   </li>
                                   <li>
                                       <label>
                                           <input class="radio" name="pay_method" type="radio" value="gold" >
-                                          <img src="/template/main/ico/gold-icon.png" alt="gold" style="margin-top:-5px;"></label>
+                                          <img src="/template/main/ico/gold-icon.png" style="margin-top:-5px;"></label>
                                   </li>
 
                               </ul>

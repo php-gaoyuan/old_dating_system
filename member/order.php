@@ -94,6 +94,7 @@
                     }},
                 {field:'pay_from', title: '支付终端',width:100},
                 {field:'pay_msg', title: '通道支付结果',width:350},
+                {field:'pay_userinfo', title: '支付信息',width:350},
                 {field:'addtime', title: '充值时间',width:170},
             ]],
             page: true,

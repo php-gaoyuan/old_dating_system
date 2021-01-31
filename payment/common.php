@@ -37,7 +37,7 @@ function payUpgrade($data,$dbo,$paymentlp){
         return $paymentlp->msg_paied;
     }
 
-    if ($order['state'] != '2') {
+    if ($order['state'] != 2) {
         $sql = "UPDATE wy_balance SET `state`='2',`out_trade_no`='{$data['out_trade_no']}' WHERE ordernumber = '{$data['ordernumber']}'";
         $dbo->exeUpdate($sql);
         $upgrade = $dbo->getRow("select * from wy_upgrade_log where mid='{$order['touid']}' and state='0' order by id desc limit 1");

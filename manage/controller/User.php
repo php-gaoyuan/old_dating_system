@@ -62,6 +62,9 @@ if ($act == "index") {
         $tuinfo = $dbo->getRow("select name from wy_wangzhuan where id='{$val['tuid']}'");
         $list[$k]['tuname'] = $tuinfo['name'];
         $upgrade_log = $dbo->getRow("select endtime from wy_upgrade_log where mid='{$val['user_id']}' and state='0'");
+        if(strpos($val["user_ico"],"http")===false){
+            $list[$k]['user_ico'] = "/".$list[$k]['user_ico'];
+        }
         $list[$k]['end_date'] = $upgrade_log['endtime'];
     }
     echo json(array("code" => 0, "count" => $count["count"], "data" => $list, "msg" => ""));
@@ -93,6 +96,13 @@ if ($act == "index") {
     $user_pws = md5("qwe1234");
     $dbo->exeUpdate("update wy_users set user_pws='{$user_pws}' where user_id={$user_id}");
     echo json(array("code" => 0, "msg" => "密码已经重置为：qwe1234", "data" => []));
+    exit;
+} elseif ($act == "editPass") {
+    $user_id = intval($_POST["user_id"]);
+    $passwd = $_POST["passwd"];
+    $user_pws = md5($passwd);
+    $dbo->exeUpdate("update wy_users set user_pws='{$user_pws}' where user_id={$user_id}");
+    echo json(array("code" => 0, "msg" => "密码已经修改为：{$passwd}", "data" => []));
     exit;
 } elseif ($act == "delUser") {
     $user_id = intval($_POST["user_id"]);

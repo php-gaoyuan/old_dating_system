@@ -62,15 +62,17 @@
         var $ = layui.jquery;
         var table = layui.table;
         var laydate = layui.laydate;
+        var where=null;
         laydate.render({
             elem: '#pay_date', //指定元素
             range:true
         })
 
+
         var options = {
             elem: '#table',
             url: "/manage/controller/Paylog.php",
-            where: {},
+            where: where,
             cols: [[
                 {field:'ordernumber', title: '商户单号',width:160},
                 {field:'out_trade_no', title: '通道单号',width:180},
@@ -111,7 +113,7 @@
 
         form.on("submit(search)", function (res) {
             var data = res.field;
-            options["where"] = data;
+            where = options["where"] = data;
             tableIns.reload(options);
             return false;
         });

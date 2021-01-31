@@ -7,21 +7,17 @@ require("../common.php");
 
 require("../../{$langPackageBasePath}/paymentlp.php");
 $paymentlp = new paymentlp();
-
+//file_put_contents("lianyin_pc_notify22.log", date("Y-m-d H:i:s").PHP_EOL.var_export($_REQUEST, 1) .PHP_EOL, FILE_APPEND);
 $dbo = new dbex;
 dbtarget('w',$dbServs);
 
 $hashkey = 'hCmThCjUpLRI6nmimJaQalckHEdzU7Nca8OJ8tce1b7HrAiZQTEi84t4zcmMzTaq7OI7HLi1G5Y7nE2gvmRbCFdfPSj6gzOibQJL1kreKMKdfuR4igqmb7WBLCrYCkVg'; // 测试商户证书
 
 
-if (!empty($_GET) && empty($_POST)) {
-    $_POST = $_GET;
-}
-unset($_GET);
-if (empty($_POST)) {
+$_GET = $_REQUEST;
+if(!isset($_GET ['merch_order_ori_id'])){
     die('data error');
 }
-$_GET = $_POST;
 $merchant_id = $_GET ['merchant_id'];
 $merch_order_id = $_GET ['merch_order_id'];
 $price_currency = $_GET ['price_currency'];
@@ -35,7 +31,7 @@ $signature = $_GET ['signature'];
 //先记录返回的错误信息
 $sql = "UPDATE wy_balance SET `pay_msg`='{$message}' WHERE ordernumber='{$merch_order_ori_id}'";
 $dbo->exeUpdate($sql);
-file_put_contents("lianyin_pc_notify.log", date("Y-m-d H:i:s").PHP_EOL.var_export($_GET, 1) .PHP_EOL, FILE_APPEND);
+file_put_contents("lianyin_pc_notify".date("m-d").".log", date("Y-m-d H:i:s").PHP_EOL.var_export($_GET, 1) .PHP_EOL, FILE_APPEND);
 
 $strVale = $hashkey . $merchant_id . $merch_order_id . $price_currency . $price_amount . $order_id . $status;
 $getsignature = md5 ( $strVale );
@@ -59,6 +55,7 @@ if($status=='Y'){
     }elseif($order['type'] == 2){
         $payRes = payUpgrade($result,$dbo,$paymentlp);
     }
+    //print_r($payRes);exit;
 }
 exit('ISRESPONSION');
 ?>

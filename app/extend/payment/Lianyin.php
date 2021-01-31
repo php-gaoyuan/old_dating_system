@@ -53,9 +53,9 @@ class Lianyin{
 
 
         $protocol =((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
-        $url_sync = $protocol."partyings.com/payment/lianyin/notify.php";
-        $url_succ_back = $protocol."partyings.com/payment/lianyin/return.php";
-        $url_fail_back = $protocol."partyings.com/payment/lianyin/return.php";
+        $url_sync = "https://partyings.com/payment/lianyin/notify.php";
+        $url_succ_back = "https://partyings.com/payment/lianyin/return.php";
+        $url_fail_back = "https://partyings.com/payment/lianyin/return.php";
         $data = array(
             //基本信息
             'merchant_id' => urlencode($merchant_id), // 商户号

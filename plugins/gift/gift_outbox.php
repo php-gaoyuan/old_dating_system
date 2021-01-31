@@ -54,6 +54,10 @@ dbplugin('r');
     .giftshop_tit:hover{color:#2C589E;}
 
     li#active{background:#fff;}li#active a{color:#A33F3F}li a{color:#fff}
+    .pages_bar{}
+    .pages_bar a{display: inline-block;padding:3px 10px;text-decoration: none;margin:0 3px;background: #fff;color: #03a0d7;border: 1px solid #03a0d7;border-radius: 2px;}
+    .pages_bar a:hover{background: #03a0d7;color:#fff;}
+    .pages_bar a.current_page{background: #03a0d7;color:#fff;}
 </style>
 <script type="text/javascript" src="/plugins/gift/Common.js"></script>
 <script type="text/javascript" src="/servtools/dialog/zDrag.js"></script>
@@ -90,7 +94,7 @@ if(get_sess_userid())
 	$page_num=trim(get_argg('page'));
 	//查询用户的礼品
 	$dbo->setPages(6,$page_num);//设置分页	
-	$sql="select * from ".$order." where send_id=".get_sess_userid();
+	$sql="select * from ".$order." where send_id=".get_sess_userid()." order by send_time desc";
 	$rows=$dbo->getRs($sql);
 	$page_total=$dbo->totalPage;//分页总数
 	$no_accept="";
@@ -103,8 +107,8 @@ if(get_sess_userid())
 		{
 			//分别取出接收和未接收的礼品
 			
-			if($row['is_see']==0)$no_accept.="<div style='clear:both;height:85px;border-bottom:1px #ccc solid;line-height:25px;margin-bottom:5px;'><img style='display:block;float:left' src='/{$row['gift']}'/><span style='float:left;display:block;padding-left:10px;'>".$gf_langpackage->gf_mess_16.$row['send_time'].$gf_langpackage->gf_mess_17."<b>[{$row['accept_name']}]</b>".$gf_langpackage->gf_mess_18."<br />".$gf_langpackage->gf_zengyan."：$row[msg]</span></div>";
-			else $accept.="<div style='clear:both;height:85px;border-bottom:1px #ccc solid;line-height:25px;margin-bottom:5px;'><img style='display:block;float:left' src='/{$row['gift']}'/><span style='float:left;display:block;padding-left:10px;'>".$gf_langpackage->gf_mess_16.$row['send_time'].$gf_langpackage->gf_mess_17."<b>[{$row['accept_name']}]</b>".$gf_langpackage->gf_mess_18."<br />".$gf_langpackage->gf_zengyan."：$row[msg]</span></div>";
+			if($row['is_see']==0)$no_accept.="<div style='clear:both;height:85px;border-bottom:1px #ccc solid;line-height:25px;margin-bottom:5px;'><img style='display:block;float:left' src='/{$row['gift']}'/><span style='float:left;display:block;padding-left:10px;'>".$gf_langpackage->gf_mess_16.$row['send_time'].$gf_langpackage->gf_mess_17."<b>[{$row['accept_name']}]</b>".$gf_langpackage->gf_mess_18."&nbsp;&nbsp;&nbsp;&nbsp;X".$row['gift_num']."<br />".$gf_langpackage->gf_zengyan."：$row[msg]</span></div>";
+			else $accept.="<div style='clear:both;height:85px;border-bottom:1px #ccc solid;line-height:25px;margin-bottom:5px;'><img style='display:block;float:left' src='/{$row['gift']}'/><span style='float:left;display:block;padding-left:10px;'>".$gf_langpackage->gf_mess_16.$row['send_time'].$gf_langpackage->gf_mess_17."<b>[{$row['accept_name']}]</b>".$gf_langpackage->gf_mess_18."&nbsp;&nbsp;&nbsp;&nbsp;X".$row['gift_num']."<br />".$gf_langpackage->gf_zengyan."：$row[msg]</span></div>";
 		}
 	}
 	echo $no_accept;

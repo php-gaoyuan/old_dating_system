@@ -36,10 +36,10 @@ if ($act == "index") {
         $pay_date[1] = date("Y-m-d H:i:s",strtotime($pay_date[1]."+1day"));
         $where .= " and addtime between '{$pay_date[0]}' and '{$pay_date[1]}' ";
     }
-    if ($where !=  " type in ('1','2') ") {
-        $page = 1;
-        $limit_sql = ($page - 1) * $limit . "," . $limit;
-    }
+//    if ($where !=  " type in ('1','2') ") {
+//        $page = 1;
+//        $limit_sql = ($page - 1) * $limit . "," . $limit;
+//    }
 
     $count_sql = "select count(*) as count from wy_balance where {$where}";
     $list_sql = "select * from wy_balance where {$where} order by id desc limit {$limit_sql}";

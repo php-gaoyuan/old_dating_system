@@ -14,9 +14,9 @@ class Recharge extends Base {
             $friend = input("friend");
             $select_money = input("select_money"); //用户选择的金额
             $pay_method = input("pay_method");
-            $pay_type=2;//single
+            $pay_type=1;
             if($pay_method=="lianyin2"){
-                $pay_type=1;
+                $pay_type=2;//single
                 $pay_method="lianyin";
             }
             if (empty($money)) {
@@ -63,10 +63,10 @@ class Recharge extends Base {
                     //file_put_contents("paypal_str.txt", var_export($str,1)."\n\n",FILE_APPEND);
                     return $str;
                 }
-                if($pay_method=='lianyin' && $pay_type==2){
-                    $payUrl = url("payment/pay",['oid'=>$ordernumber,'pay_type'=>$pay_type]);
-                    header("location:{$payUrl}");exit;
-                }
+//                if($pay_method=='lianyin' && $pay_type==2){
+//                    $payUrl = url("payment/pay",['oid'=>$ordernumber,'pay_type'=>$pay_type]);
+//                    header("location:{$payUrl}");exit;
+//                }
                 $this->assign("order",["pay_type"=>$pay_type,"oid"=>$ordernumber,"am"=>$money]);
                 return $this->fetch("payment/{$pay_method}");
             }

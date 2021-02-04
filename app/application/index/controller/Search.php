@@ -9,9 +9,11 @@ class Search extends Base
 			if(empty($keyword)){
 				return false;
 			}
-
-
-			$list = model("Users")->where(["user_name"=>["like","%$keyword%"]])->field("user_id,user_ico,user_sex,user_name")->select();
+			$user_sex = $this->userinfo['user_sex']==1?0:1;
+			$list = model("Users")->where([
+			    "user_name"=>["like","%$keyword%"],
+			    "user_name"=>$user_sex
+			    ])->field("user_id,user_ico,user_sex,user_name")->select();
 			foreach ($list as $key => &$value) {
 	            $value["user_ico"] = img_path($value["user_ico"]);
 	        }

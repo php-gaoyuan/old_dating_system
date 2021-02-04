@@ -83,7 +83,7 @@ function check_userico($path,$user_sex=false){
 
 //正则匹配出图片
 function img_add_url($content){
-    $content = str_replace("src=\"", "src=\"http://jyo.henangaodu.com/", $content);
+    $content = str_replace("src=\"", "src=\"https://partyings.com/", $content);
     return $content;
 }
 

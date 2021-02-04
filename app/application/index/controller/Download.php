@@ -5,7 +5,6 @@ use think\Db;
 class Download extends Controller
 {
 	//http://app.partyings.com/index/download/index.html
-	//http://jyo.henangaodu.com/apk/partyings-1.1.5.apk
 	public function index(){
 		if(strpos($_SERVER['HTTP_USER_AGENT'], 'iPhone') !== false || strpos($_SERVER['HTTP_USER_AGENT'], 'iPad') !== false){
 			$this->redirect("Index/index");exit;

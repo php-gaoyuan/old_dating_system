@@ -115,8 +115,4 @@ class Index extends Controller
     }
 
 
-    // public function test(){
-    //     $list = file_get_contents("http://jyo.henangaodu.com/im/ajax.php?act=getmessagelist&pals=|");
-    //     halt($list);
-    // }
 }

@@ -31,7 +31,6 @@ class Update extends Controller{
 
 
 	//http://app.partyings.com/index/update/down.html
-	//http://jyo.henangaodu.com/apk/partyings-1.1.5.apk
 	public function down(){
 		if(strpos($_SERVER['HTTP_USER_AGENT'], 'iPhone') !== false || strpos($_SERVER['HTTP_USER_AGENT'], 'iPad') !== false){
 			$this->redirect("Index/index");exit;
